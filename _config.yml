@@ -15,7 +15,7 @@ title_separator          : "-"
 name                     : &name "ashish aka tp53"
 description              : &description "personal description"
 url                      : https://inventcures.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : "index.html" # the subpath of your site, e.g. "/blog"
+baseurl                  : "v0_8" # the subpath of your site, e.g. "/blog"
 repository               : "inventcures/inventcures.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.

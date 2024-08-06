@@ -11,5 +11,5 @@ location: "West Lafayette, IN, USA"
 Taught non-CS undergraudates, the basics of CS,
 and programming . The course was meant to introduce basic programming literacy to non-CS majors in the school of science.
 The language used was js(javascript).
-Designed and grraded, homeworks, tests and exams.
+Designed and graded, homeworks, tests and exams.
 

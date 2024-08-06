@@ -8,8 +8,7 @@ date: 2024-08-31
 location: "India"
 ---
 
-I have conceptualized, designed & built, a bioinformatics bootcamp to teach basic software and computational skills, to incoming
-M.Sc.(Masters of Science) in Biology grad students.
+[Sudipta Tung](https://sites.google.com/site/sudiptatung/) & I have conceptualized, designed & built, a bioinformatics bootcamp to teach basic software and computational skills, to incoming M.Sc.(Masters of Science) in Biology grad students at Ashoka.
 
 The first offering of this course, is in Fall 2024.
 

@@ -1,7 +1,7 @@
 ---
-title: "Bioinformatics Bootcamp for incoming grad students - Fall 2024"
+title: "Bioinformatics Bootcamp for incoming grad  (M.Sc. Biology)students - Fall 2024"
 collection: teaching
-type: "Bioinformatics bootcamp for incoming M.Sc.(Bio) students"
+type: "Bioinformatics bootcamp for incoming M.Sc.(Biology) students"
 permalink: /teaching/fall2024_au_bioinfo_bootcamp
 venue: "Department of Biology, Ashoka University"
 date: 2024-08-31

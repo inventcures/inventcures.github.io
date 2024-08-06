@@ -4,7 +4,7 @@ collection: teaching
 type: "Undergraduate course"
 permalink: /teaching/2008-spring-cs177-ta-purdue
 venue: "Purdue University, West Lafayette"
-date: Spring semester, 2008
+date: 2008-01-07
 location: "West Lafayette, IN, USA"
 ---
 

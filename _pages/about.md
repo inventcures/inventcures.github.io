@@ -19,7 +19,7 @@ However in the last 7-8 years, a variety of experiences in the family, and encou
 My purpose in life(which i discovered rather late in life) is to impact medicine & disease, by :
 
 1. __Building tools & systems, for drug discovery, at the interface of ml + biology__ : Develop systems & tools to accelerate discovery of  new drugs (which often takes of the order of decades, and still may fail in clinical trials or in the market), especially for cancers, for which no good therapies exists today
-2. __Building tools & systems, for drug discovery, at the interface of ml + medicine/healthcare__ : Use the vast amount of biomedical data & ml/ai, to design systems, to __help__ :
+2. __Building tools & systems, at the interface of ml + medicine/healthcare__ : Use the vast amount of biomedical data & ml/ai, to design systems, to __help__ :
 
   a. amplify productivity of clinicians by __helping them make clinical decisions better, faster, cheaper__.
 

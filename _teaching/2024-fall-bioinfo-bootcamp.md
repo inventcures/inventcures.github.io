@@ -1,5 +1,5 @@
 ---
-title: "Teaching experience 1"
+title: "Bioinformatics Bootcamp for incoming grad students - Fall 2024"
 collection: teaching
 type: "Bioinformatics bootcamp for incoming M.Sc.(Bio) students"
 permalink: /teaching/fall2024_au_bioinfo_bootcamp

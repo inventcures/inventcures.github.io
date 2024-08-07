@@ -28,7 +28,7 @@ My purpose in life(which i discovered rather late in life) is to impact medicine
 __Papers on cancer i find interesting (in no particular order):__
 
 
-1. [Why do patients with cancer die](https://www.nature.com/articles/s41568-024-00708-4)    
+1. [Why do patients with cancer die](https://www.nature.com/articles/s41568-024-00708-4){:target="_blank"}    
 
 [my_notes]()
 2. [From patterns to patients: Advances in clinical machine learning for cancer diagnosis, prognosis, and treatment](https://www.sciencedirect.com/science/article/pii/S0092867423000946)

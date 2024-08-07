@@ -31,15 +31,15 @@ __Papers on cancer i find interesting (in no particular order):__
 1. [Why do patients with cancer die](https://www.nature.com/articles/s41568-024-00708-4){:target="_blank"}    
 
 [my_notes]()
-2. [From patterns to patients: Advances in clinical machine learning for cancer diagnosis, prognosis, and treatment](https://www.sciencedirect.com/science/article/pii/S0092867423000946)
+2. [From patterns to patients: Advances in clinical machine learning for cancer diagnosis, prognosis, and treatment](https://www.sciencedirect.com/science/article/pii/S0092867423000946){:target="_blank"}
 
 [my_notes]()
 
 __theme: cancer drugs, drug discovery & clinical trials__
 
-3. [Global Oncology Trends 2024 by IQVIA](https://www.iqvia.com/insights/the-iqvia-institute/reports-and-publications/reports/global-oncology-trends-2024) 
+3. [Global Oncology Trends 2024 by IQVIA](https://www.iqvia.com/insights/the-iqvia-institute/reports-and-publications/reports/global-oncology-trends-2024){:target="_blank"} 
 
-4. [A target map of clinical combination therapies in oncology: an analysis of clinicaltrials.gov](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10441974/#)
+4. [A target map of clinical combination therapies in oncology: an analysis of clinicaltrials.gov](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10441974/){:target="_blank"}
 
 
 __What do i do for leisure__

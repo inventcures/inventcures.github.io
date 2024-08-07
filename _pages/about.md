@@ -25,5 +25,10 @@ My purpose in life(which i discovered rather late in life) is to impact medicine
 
   b. __patients become more engaged & involved in their care__, customized to their __custom medical literacy level & native language__.
 
+Papers on cancer i find interesting (in no particular order):
+
+1. [Why do patients with cancer die](https://www.nature.com/articles/s41568-024-00708-4)
+2. [From patterns to patients: Advances in clinical machine learning for cancer diagnosis, prognosis, and treatment](https://www.sciencedirect.com/science/article/pii/S0092867423000946)
+
 
 When i am not working - i enjoy long walks/runs, drinking chai, riding my bike(bicycle), watching (& someday performing ?) standup comedy, attending music performances & theatre, and spending time with family. I used to volunteer a lot more, and want to get back to doing that more often.

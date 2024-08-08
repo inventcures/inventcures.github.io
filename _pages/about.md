@@ -17,7 +17,7 @@ Finding drugs & therapies for cancer (& other diseases, especially rare genetic 
 I trained as an engineer during my undergrad and then got a masters in computer engineering at Purdue(Hail Purdue !)
 However in the last 7-8 years, a variety of experiences in the family, and encounters with patients, doctors and life-changing books have inspired me to pursue a career at the intersection of tech(ml) & medicine-biology, especially cancer.
 
-My purpose in life(which i discovered rather late in life) is to impact medicine & disease, by :
+My north star - guiding mission in everything i do professionally(which i discovered rather late in life) is to impact medicine & disease, by :
 
 1. __Building tools & systems, for drug discovery, at the interface of ml + biology__ : Develop systems & tools to accelerate discovery of  new drugs (which often takes of the order of decades, and still may fail in clinical trials or in the market), especially for cancers, for which no good therapies exists today
 2. __Building tools & systems, at the interface of ml + medicine/healthcare__ : Use the vast amount of biomedical data & ml/ai, to design systems, to __help__ :

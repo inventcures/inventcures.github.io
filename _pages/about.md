@@ -11,7 +11,8 @@ Hi ! I am __ashish__, but go by __tp53__
 
 { Read more about the tp53 gene [here](https://stetson.substack.com/p/the-tumor-suppressor-to-rule-them) & at wikipedia [here](https://en.wikipedia.org/wiki/P53) }
 
-As you can probably already tell, i am obsessed with finding drugs & therapies for cancer (& other diseases, especially rare genetic disorders & rare, aggressive cancers like GBM, etc)
+As you can probably already tell, i am extremely passionate(some would say obsessed :D !) with all things cancer & oncology - spanning cancer genomics, ml accelerated protein design &drug discovery, clinical trials, radiation oncology treatment planning, to palliative care.
+Finding drugs & therapies for cancer (& other diseases, especially rare genetic disorders &  aggressive cancers like GBM, etc)
 
 I trained as an engineer during my undergrad and then got a masters in computer engineering at Purdue(Hail Purdue !)
 However in the last 7-8 years, a variety of experiences in the family, and encounters with patients, doctors and life-changing books have inspired me to pursue a career at the intersection of tech(ml) & medicine-biology, especially cancer.

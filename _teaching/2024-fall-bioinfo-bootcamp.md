@@ -12,13 +12,15 @@ location: "India"
 
 The first offering of this course, is in Fall 2024.
 
-We will be covering 3 broad topics
+It is divided in two halves : bioinformatics taught by me, and Modelling of biological systems taught by Prof. Sudipta Tung.
 
-Introduction  to python, git & reproducible research practices
+I will be covering 3 broad topics :
+
+1. Introduction  to python, git & reproducible research practices
 ======
 
-Introduction to dna sequencing analysis
+2. Introduction to dna sequencing analysis
 ======
 
-Introduction to rna(bulk & sc-rna) sequencing analysis
+3. Introduction to rna(bulk & sc-rna) sequencing analysis
 ======

@@ -42,6 +42,20 @@ __theme: cancer drugs, drug discovery & clinical trials__
 
 4. [A target map of clinical combination therapies in oncology: an analysis of clinicaltrials.gov](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10441974/){:target="_blank"}
 
+__Some deep dives into drug discovery, which i  love, most of them by the amazing Alex Telford & Asimov Press__
+
+1. [The pharma industry from Paul Janssen to today: why drugs got harder to develop and what we can do about it](https://atelfo.github.io/2023/12/23/biopharma-from-janssen-to-today.html)
+
+2. [Some questions about biotech that I find interesting](https://atelfo.github.io/2024/04/01/biotech-questions.html)
+
+3. [Intelligence as efficient model building
+](https://atelfo.github.io/2023/05/17/intelligence-as-efficient-model-building.html)
+
+4. [A long but fascinating read on origins of the lab mouse, by Alex Telford, for Asimov Press](https://press.asimov.com/articles/mouse-microscope)
+(if you like this, please subscribe to Asimov Press & follow the amazing [Niko Mccarty on twitter](https://x.com/NikoMcCarty))
+
+5. [Why i should have loved biology](https://jsomers.net/i-should-have-loved-biology/)
+(Read it ages ago, and rediscovered it thanks to a [Niko McCarty tweet](https://x.com/NikoMcCarty/status/1819765419168903542))
 
 __What do i do for leisure__
 When i am not working - i enjoy long walks/runs, drinking chai, riding my bike(bicycle), watching (& someday performing ?) standup comedy, attending music performances & theatre, and spending time with family. I used to volunteer a lot more, and want to get back to doing that more often.

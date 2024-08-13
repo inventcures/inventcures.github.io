@@ -78,5 +78,16 @@ Very detailed, & at 615 pages, will take a while to read, but one gets a ringsid
 
 [Goodreads reviews](https://www.goodreads.com/book/show/53847362-breath-from-salt)
 
+
+__2 more books on rare disease, i really enjoyed !!! (both much shorter than Breath from Salt :D)__
+
+[Chasing my cure by David Fajgenbaum](https://chasingmycure.com/about/)
+
+[We the scientists by WSJ Pulitzer prize winning reprter, Amy Dockser Marcus](https://www.penguinrandomhouse.com/books/537125/we-the-scientists-by-amy-dockser-marcus/)
+
+
+
+
+
 __What do i do for leisure__
 When i am not working - i enjoy long walks/runs, drinking chai, riding my bike(bicycle), watching (& someday performing ?) standup comedy, attending music performances & theatre, and spending time with family. I used to volunteer a lot more, and want to get back to doing that more often.

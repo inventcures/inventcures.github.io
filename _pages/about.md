@@ -57,5 +57,27 @@ __Some deep dives into drug discovery, which i  love, most of them by the amazin
 5. [Why i should have loved biology](https://jsomers.net/i-should-have-loved-biology/)
 (Read it ages ago, and rediscovered it thanks to a [Niko McCarty tweet](https://x.com/NikoMcCarty/status/1819765419168903542))
 
+
+__Theme: Rare genetic diseases(dx, therapies and management)__
+
+1. [NYT piece on rare disease parents and families in India](https://www.nytimes.com/2022/04/06/business/india-spinal-muscular-atrophy.html)
+
+2. [One of the most inspiring stories i ahve read, a true hero, 
+Hunting down my son's killer by Matt Might](https://matt.might.net/articles/my-sons-killer/)
+
+3. [Two non scientists, Eric & Sonia Vallabh, take the plunge into science, after Sonia tests positive for a genetic mutation for prion disease, which her mother died from](https://www.newyorker.com/books/page-turner/a-prion-love-story)
+
+[Another piece on Eric & Sonia, in SciAm](https://www.scientificamerican.com/article/the-married-researchers-racing-to-stop-prion-disease/)
+
+4. [NYT piece on what life is like for rare disease parents & families, day to day](https://www.nytimes.com/2020/07/07/health/rare-diseases.html)
+
+5. [An Atlantic piece profiling the huge strides made in CF(Cystic Fibrosis) : from what was a guaranteed early death to now an almost normal lifespan](https://www.theatlantic.com/magazine/archive/2024/04/cystic-fibrosis-trikafta-breakthrough-treatment/677471/)
+
+[Also recommend the wonderfully researched book, Breath From Salt by Bijal P. Trivedi
+Very detailed, & at 615 pages, will take a while to read, but one gets a ringside view of the effort to find a drug/therapy for CF]
+(https://www.gatesnotes.com/Breath-From-Salt)
+
+[Goodreads reviews](https://www.goodreads.com/book/show/53847362-breath-from-salt)
+
 __What do i do for leisure__
 When i am not working - i enjoy long walks/runs, drinking chai, riding my bike(bicycle), watching (& someday performing ?) standup comedy, attending music performances & theatre, and spending time with family. I used to volunteer a lot more, and want to get back to doing that more often.

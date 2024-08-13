@@ -67,12 +67,12 @@ __Theme: Rare genetic diseases(dx, therapies and management)__
 2. 
 __One of my all time fav reads, on any topic__
 
-[One of the most inspiring stories i ahve read, a true hero, Matt Might.
+One of the most inspiring stories i ahve read, a true hero, Matt Might.
 Matt is an accomplished CS professor, and suddenly, their young son has strange symptoms, which no doctor can diagnose.
 The post chronicles, the diagnostic odyssey, typical of many rare disease families.
 And how Matt & his wife, drop everything and dive head first, to try to find a drug/therapy, for their son, Bertrand.
 
-Hunting down my son's killer by Matt Might](https://matt.might.net/articles/my-sons-killer/)
+[Hunting down my son's killer by Matt Might](https://matt.might.net/articles/my-sons-killer/)
 
 [Unfortunately, Bertrand passed away in 2020.
 Here is a poignant piece by Matt Might, reflecting on Bertrand's life & legacy](https://bertrand.might.net/articles/echoes-of-bertrand/)

@@ -79,18 +79,26 @@ Here is a poignant piece by Matt Might, reflecting on Bertrand's life & legacy](
 
 __Some other pieces by Matt, that i keep going back to, and have forced me to reflect & introspect on my life & relationships :__
 
-[1. Accepting the unacceptable](https://bertrand.might.net/articles/accepting-the-unacceptable/)
+[a. Accepting the unacceptable](https://bertrand.might.net/articles/accepting-the-unacceptable/)
 
 
-[2. The algorithm for precision medicine](https://bertrand.might.net/articles/algorithm-for-precision-medicine/)
+[b. The algorithm for precision medicine](https://bertrand.might.net/articles/algorithm-for-precision-medicine/)
 
-3. [Two non scientists, Eric & Sonia Vallabh, take the plunge into science, after Sonia tests positive for a genetic mutation for prion disease, which her mother died from](https://www.newyorker.com/books/page-turner/a-prion-love-story)
+3. __Another inspiring story of Rohan & Jen Seth's daughter Lydia__
+
+[a. Saving Lydia: Why I’m Open Sourcing My Baby To Save Her and Millions of Others](https://medium.com/lydian-accelerator/saving-lydia-62a1c0bdf0fb)
+
+[b. Saving Lydia: A Path from Diagnosis to Treatment in 3 months](https://medium.com/lydian-accelerator/saving-lydia-a-path-from-diagnosis-to-treatment-in-3-months-de9a1d8f0b95)
+
+[c. Saving Lydia (Our Research Strategy)](https://docs.google.com/document/d/1SSAx3OI3AX1SePqt8hoyU6CsSzxY3UmewUgwezcw-3Y/edit?usp=sharing)
+
+4. [Two non scientists, Eric & Sonia Vallabh, take the plunge into science, after Sonia tests positive for a genetic mutation for prion disease, which her mother died from](https://www.newyorker.com/books/page-turner/a-prion-love-story)
 
 [Another piece on Eric & Sonia, in SciAm](https://www.scientificamerican.com/article/the-married-researchers-racing-to-stop-prion-disease/)
 
-4. [NYT piece on what life is like for rare disease parents & families, day to day](https://www.nytimes.com/2020/07/07/health/rare-diseases.html)
+5. [NYT piece on what life is like for rare disease parents & families, day to day](https://www.nytimes.com/2020/07/07/health/rare-diseases.html)
 
-5. [An Atlantic piece profiling the huge strides made in CF(Cystic Fibrosis) : from what was a guaranteed early death to now an almost normal lifespan](https://www.theatlantic.com/magazine/archive/2024/04/cystic-fibrosis-trikafta-breakthrough-treatment/677471/)
+6. [An Atlantic piece profiling the huge strides made in CF(Cystic Fibrosis) : from what was a guaranteed early death to now an almost normal lifespan](https://www.theatlantic.com/magazine/archive/2024/04/cystic-fibrosis-trikafta-breakthrough-treatment/677471/)
 
 [Also recommend the wonderfully researched book, Breath From Salt by Bijal P. Trivedi
 Very detailed, & at 615 pages, will take a while to read, but one gets a ringside view of the effort to find a drug/therapy for CF](https://www.gatesnotes.com/Breath-From-Salt)

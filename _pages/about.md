@@ -74,8 +74,7 @@ Hunting down my son's killer by Matt Might](https://matt.might.net/articles/my-s
 5. [An Atlantic piece profiling the huge strides made in CF(Cystic Fibrosis) : from what was a guaranteed early death to now an almost normal lifespan](https://www.theatlantic.com/magazine/archive/2024/04/cystic-fibrosis-trikafta-breakthrough-treatment/677471/)
 
 [Also recommend the wonderfully researched book, Breath From Salt by Bijal P. Trivedi
-Very detailed, & at 615 pages, will take a while to read, but one gets a ringside view of the effort to find a drug/therapy for CF]
-(https://www.gatesnotes.com/Breath-From-Salt)
+Very detailed, & at 615 pages, will take a while to read, but one gets a ringside view of the effort to find a drug/therapy for CF](https://www.gatesnotes.com/Breath-From-Salt)
 
 [Goodreads reviews](https://www.goodreads.com/book/show/53847362-breath-from-salt)
 

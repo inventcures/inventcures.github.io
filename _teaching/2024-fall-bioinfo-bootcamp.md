@@ -6,6 +6,8 @@ permalink: /teaching/fall2024_au_bioinfo_bootcamp
 venue: "Department of Biology, Ashoka University"
 date: 2024-08-31
 location: "India"
+
+Course webpage : https://sites.google.com/ashoka.edu.in/bioinfo-modeling-bootcamp/
 ---
 
 [Sudipta Tung](https://sites.google.com/site/sudiptatung/) & I have conceptualized, designed & built, a bioinformatics bootcamp to teach basic software and computational skills, to incoming M.Sc.(Masters of Science) in Biology grad students at Ashoka.

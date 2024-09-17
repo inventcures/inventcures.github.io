@@ -14,7 +14,7 @@ location: "India"
 
 The first offering of this course, is in Fall 2024.
 
-Course webpage : https://sites.google.com/ashoka.edu.in/bioinfo-modeling-bootcamp/
+Official Course webpage : [https://sites.google.com/ashoka.edu.in/bioinfo-modeling-bootcamp/](https://sites.google.com/ashoka.edu.in/bioinfo-modeling-bootcamp/)
 
 
 It is divided in two halves : bioinformatics taught by me, and Modelling of biological systems taught by Prof. Sudipta Tung.

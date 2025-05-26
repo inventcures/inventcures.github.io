@@ -1,0 +1,225 @@
+5/26/25, 9:21 PM
+
+Abstract CT203: Fc-optimized anti-CD40 agonist antibody 2141-V11 for BCG-unresponsive non-muscle invasive bladder cancer: Updates o…
+
+ARTICLE NAVIGATION
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | APRIL 25 2025
+
+Abstract CT203: Fc-optimized anti-CD40 agonist antibody
+2141-V11 for BCG-unresponsive non-muscle invasive bladder
+cancer: Updates on phase 1 study clinical outcomes and
+biological correlatives 
+Juan C. Osorio; Lucas Blanchard; Ning Yao; Syed M. Alam; Juan Angulo-Lozano; Karissa Whiting; Venkatraman E. Seshan;
+Timothy F. Donahue; Eugene K. Cha; Robert Smith; Guido Dalbagni; Morgan Tomberlin; Melissa McCarter; Eugene J. Pietzak;
+Jonathan E. Rosenberg; Jeffrey V. Ravetch; Bernard H. Bochner
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT203.
+https://doi.org/10.1158/1538-7445.AM2025-CT203
+
+
+
+Split-Screen
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Introduction and Objectives:
+2141-V11 is a novel anti-CD40 antibody developed by our group, with enhanced binding to
+FcγRIIB that results in effective tumor-specific T-cell responses in vivo and in a recent first-inhuman phase I clinical trial (NCT04059588). In several preclinical bladder cancer models,
+including BCG-unresponsive disease, intravesical administration of 2141-V11 results in durable
+anti-tumor immunity without systemic toxicity. Based on these findings, we initiated a first in
+human Phase I/II study of intravesical 2141-V11 for the treatment of BCG-unresponsive NMIBC.
+
+Methods:
+This is an investigator-initiated Phase I, open-label, dose-escalation study to evaluate the safety
+and tolerability of intravesical 2141-V11 in patients with BCG-unresponsive NMIBC who are
+ineligible for or decline radical cystectomy (NCT05126472) (N=25). Following complete
+transurethral resection, intravesical 2141-V11 is administered once weekly for three doses with
+re-treatment eligibility at week 13 and 25, depending on disease status. Dose escalation follows
+an MCRM design (5 dose levels from 0.7 to 70 mg). The primary endpoints are safety and dose
+tolerability to determine maximal tolerated dose (MTD) and/or RP2D. Secondary endpoints
+include pharmacokinetic profiling and preliminary evaluation of clinical activity. Exploratory
+Skip
+to Maininclude
+Content
+objectives
+investigation biological markers of drug activity in tissue and urine
+biospecimens.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT203/761855/Abstract-CT203-Fc-optimized-anti-CD40-agonist
+
+1/5
+
+5/26/25, 9:21 PM
+
+Abstract CT203: Fc-optimized anti-CD40 agonist antibody 2141-V11 for BCG-unresponsive non-muscle invasive bladder cancer: Updates o…
+
+Results:
+Full enrollment (n= 25) was achieved by the data cutoff of December 28th, 2024. Patients
+included had carcinoma in situ (CIS) with or without TA/T1 (N=18) or TA/T1 without CIS (N=7).
+Intravesical 2141-V11 was well tolerated (no grade ≥3 events) with no dose-limiting toxicities up
+to the highest tested dose of 70mg of drug. MTD was not reached. Complete response (CR) was
+achieved in 10 (41.7%) out of 25 patients. Among 19 evaluable patients at six months, 7 (37%)
+achieved CR at 6 months, with final therapeutic analysis pending completion of follow up. At
+baseline, no significant differences were observed in the absolute counts of major immune cell
+populations (CD8+ T cells, CD4+ T cell, B cells, dendritic cells[DC], Tregs) between responders
+and non-responders. Post-treatment, responders exhibited increased interactions between DCs
+and specific CD8+ T cell subsets, including activated, cytotoxic, and CXCL13+ CD8+ T cells. In
+contrast, these interactions significantly decreased in non-responders. Tertiary lymphoid
+structures (TLS) were present in both responders and non-responders at baseline. However,
+responders showed an increase in TLS upon treatment with 2141-V11, while TLS numbers
+decreased in non-responders.
+
+Conclusions:
+In patients with BCG-unresponsive NMIBC, intravesical administration of 2141-V11 is safe and
+leads to CR in a subset of patients. 2141-V11 promotes immune interactions among dendritic
+cells and distinct subsets of CD8+ T cells and is associated with increased presence of TLS in
+clinical responders. These findings provide biological rationale for further evaluation of this agent
+in the treatment of NMIBC.
+
+Citation Format:
+Juan C. Osorio, Lucas Blanchard, Ning Yao, Syed M. Alam, Juan Angulo-Lozano, Karissa
+Whiting, Venkatraman E. Seshan, Timothy F. Donahue, Eugene K. Cha, Robert Smith, Guido
+Dalbagni, Morgan Tomberlin, Melissa McCarter, Eugene J. Pietzak, Jonathan E. Rosenberg,
+Jeffrey V. Ravetch, Bernard H. Bochner. Fc-optimized anti-CD40 agonist antibody 2141-V11 for
+BCG-unresponsive non-muscle invasive bladder cancer: Updates on phase 1 study clinical
+outcomes and biological correlatives [abstract]. In: Proceedings of the American Association for
+Cancer Research Annual Meeting 2025; Part 2 (Late-Breaking, Clinical Trial, and Invited
+Abstracts); 2025 Apr 25-30; Chicago, IL. Philadelphia (PA): AACR; Cancer Res
+2025;85(8_Suppl_2):Abstract nr CT203.
+
+©2025 American Association for Cancer Research
+
+Skip to Main Content
+
+Advertisement
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT203/761855/Abstract-CT203-Fc-optimized-anti-CD40-agonist
+
+2/5
+
+5/26/25, 9:21 PM
+
+Abstract CT203: Fc-optimized anti-CD40 agonist antibody 2141-V11 for BCG-unresponsive non-muscle invasive bladder cancer: Updates o…
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+ Email Alerts
+Article Activity Alert
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+
+Skip to Main Content
+
+Breaking
+PI3K Inhibitor Delays Chemotherapy Start
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT203/761855/Abstract-CT203-Fc-optimized-anti-CD40-agonist
+
+3/5
+
+5/26/25, 9:21 PM
+
+Abstract CT203: Fc-optimized anti-CD40 agonist antibody 2141-V11 for BCG-unresponsive non-muscle invasive bladder cancer: Updates o…
+
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Advertisement
+
+Issues
+
+News
+
+Online First
+
+Twitter
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+Blood Cancer
+Discovery
+Cancer Discovery
+Cancer
+Epidemiology,
+Biomarkers &
+Prevention
+
+Skip to Main Content
+Cancer Immunology
+Research
+
+Cancer Research
+Cancer Research
+Communications
+
+
+
+
+
+
+
+
+
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+Molecular Cancer
+Therapeutics
+
+Cancer Prevention
+Research
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT203/761855/Abstract-CT203-Fc-optimized-anti-CD40-agonist
+
+4/5
+
+5/26/25, 9:21 PM
+
+Abstract CT203: Fc-optimized anti-CD40 agonist antibody 2141-V11 for BCG-unresponsive non-muscle invasive bladder cancer: Updates o…
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT203/761855/Abstract-CT203-Fc-optimized-anti-CD40-agonist
+
+5/5
+
+

@@ -1,0 +1,226 @@
+5/26/25, 9:21 PM
+
+Abstract CT206: ICAM-1 directed chimeric antigen receptor (CAR) T cells (AIC100) in patients with advanced thyroid cancers: Clinical and…
+
+ARTICLE NAVIGATION
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | APRIL 25 2025
+
+Abstract CT206: ICAM-1 directed chimeric antigen receptor
+(CAR) T cells (AIC100) in patients with advanced thyroid
+cancers: Clinical and translational data from the phase 1
+dose escalation study 
+Samer A. Srour; Jochen H. Lorch; Mark E. Zafereo; Victoria M. Villaflor; Yan Xing; Sonal Gupta; Mimi I-Nan Hu; Ramona Dadu;
+Adam Lin; Yang Lu; Melissa Cushing; Scott Avecilla; Theresa Scognamiglio; Moonsoo Jin; Janusz Puc; Tripti Gaur Gaur;
+Stacey Ukrainskyj; Sebastian A. Mayer; Koen Van Besien; Maria E. Cabanallas
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT206.
+https://doi.org/10.1158/1538-7445.AM2025-CT206
+
+
+
+Split-Screen
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Background:
+Patients with newly diagnosed or relapsed/refractory (R/R) anaplastic thyroid cancer (ATC) and
+R/R poorly differentiated thyroid cancer (PDTC) have limited treatment options and an overall
+poor prognosis. ICAM-1, a cell surface glycoprotein also known as CD54 overexpressed in a
+variety of cancers including thyroid cancers, is known to play a key role in tumorigenesis. AIC100
+is a 3rd generation ICAM-1 directed CAR T-cell product engineered with affinity-tuned technology
+to selectively bind and kill tumor cells to improve safety. Another unique feature for AIC100 is coexpression of somatostatin receptor 2 to allow CAR T-cell monitoring with DOTATATE PET scan.
+We present here updated results from phase 1 dose-escalation clinical trial NCT04420754.
+
+Methods:
+The multicenter study was designed to explore 3 dose levels (DLs) of AIC100 at 1x 107, 1 x 108,
+and 5 x 108, respectively. An additional DL4 (7.5 x 108) was explored since no dose-limiting
+toxicities (DLTs) were observed previously. Key eligibility included adult patients (≥18 years) with
+newly diagnosed or R/R ATC or R/R PDTC, who had measurable disease, and with ECOG
+status 0-2. AIC100 was infused intravenously 48 hours after completing lymphodepletion
+(Fludarabine/Cyclophosphamide x 3 days). Primary objectives included safety assessment/DLTs
+Skip
+to 30
+Main
+Content
+within
+days
+of AIC100 infusion and to determine the recommended phase 2 dose (RP2D).
+
+Results:
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT206/761746/Abstract-CT206-ICAM-1-directed-chimeric-antigen
+
+1/5
+
+5/26/25, 9:21 PM
+
+Abstract CT206: ICAM-1 directed chimeric antigen receptor (CAR) T cells (AIC100) in patients with advanced thyroid cancers: Clinical and…
+
+As of 12-Dec-2024, 24 patients were enrolled and 15 (8 ATC; 7 PDTC) with a median age of 59
+(range, 47-69) years were infused with AIC100 at 4 DLs. Patients were predominantly male (N =
+11), with a median of 2 (range, 1-4) prior lines of systemic therapies. No DLTs were observed in
+the originally planned DLs 1-3. Two patients in the exploratory DL4 developed grade 3
+pneumonitis. 10 (66.7%) patients developed grade 1/2 CRS. No ICANS or other SAEs related to
+AIC100 occurred at DLs 1-3. 11 patients were evaluable for efficacy in DLs 1-3 at day 42 after
+infusion; responses were assessed per study site. No responses were observed in DL1. For
+evaluable patients in DL 2 and 3 (n = 9), the objective response rate (ORR) and disease control
+rate (DCR, defined as ORR + stable disease (SD)) were 22% and 56%, respectively. For ATC
+patients at DL2-DL3 (N=4), the ORR was 50% [1 each with partial response (PR) and complete
+response (CR) in DL 2 and 3, respectively]. In PDTC at DL2-DL3 (N=5), DCR was 60%. AIC100
+expansion was observed in all patients. Additional transaltional data will be presented at the
+meeting. Based on safety and efficacy, 5 x 108 (DL3) was declared as RP2D.
+
+Conclusions:
+AIC100, a first-in-human ICAM-1 directed CAR T-cell therapy, demonstrated an acceptable
+safety profile in patients with relapsed/refractory ATC and PDTCs. The observed durable
+responses in DL2 and DL3 are encouraging and provide a proof of concept for potential role of
+AIC100 in aggressive thyroid cancer patients and other advanced cancers. DL3 is determined as
+the RP2D. Cohort expansion at RP2D will be initiated in Q2 2025 in 2 indications; ATC and
+PDTC.
+
+Citation Format:
+Samer A. Srour, Jochen H. Lorch, Mark E. Zafereo, Victoria M. Villaflor, Yan Xing, Sonal Gupta,
+Mimi I-Nan Hu, Ramona Dadu, Adam Lin, Yang Lu, Melissa Cushing, Scott Avecilla, Theresa
+Scognamiglio, Moonsoo Jin, Janusz Puc, Tripti Gaur Gaur, Stacey Ukrainskyj, Sebastian A.
+Mayer, Koen Van Besien, Maria E. Cabanallas. ICAM-1 directed chimeric antigen receptor (CAR)
+T cells (AIC100) in patients with advanced thyroid cancers: Clinical and translational data from
+the phase 1 dose escalation study [abstract]. In: Proceedings of the American Association for
+Cancer Research Annual Meeting 2025; Part 2 (Late-Breaking, Clinical Trial, and Invited
+Abstracts); 2025 Apr 25-30; Chicago, IL. Philadelphia (PA): AACR; Cancer Res
+2025;85(8_Suppl_2):Abstract nr CT206.
+
+©2025 American Association for Cancer Research
+
+Advertisement
+
+Skip to Main Content
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT206/761746/Abstract-CT206-ICAM-1-directed-chimeric-antigen
+
+2/5
+
+5/26/25, 9:21 PM
+
+Abstract CT206: ICAM-1 directed chimeric antigen receptor (CAR) T cells (AIC100) in patients with advanced thyroid cancers: Clinical and…
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+ Email Alerts
+Article Activity Alert
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+
+Skip to Main Content
+
+Breaking
+PI3K Inhibitor Delays Chemotherapy Start
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT206/761746/Abstract-CT206-ICAM-1-directed-chimeric-antigen
+
+3/5
+
+5/26/25, 9:21 PM
+
+Abstract CT206: ICAM-1 directed chimeric antigen receptor (CAR) T cells (AIC100) in patients with advanced thyroid cancers: Clinical and…
+
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Advertisement
+
+Issues
+
+News
+
+Online First
+
+Twitter
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+Blood Cancer
+Discovery
+Cancer Discovery
+Cancer
+Epidemiology,
+Biomarkers &
+Prevention
+
+Skip to Main Content
+Cancer Immunology
+Research
+
+Cancer Research
+Cancer Research
+Communications
+
+
+
+
+
+
+
+
+
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+Molecular Cancer
+Therapeutics
+
+Cancer Prevention
+Research
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT206/761746/Abstract-CT206-ICAM-1-directed-chimeric-antigen
+
+4/5
+
+5/26/25, 9:21 PM
+
+Abstract CT206: ICAM-1 directed chimeric antigen receptor (CAR) T cells (AIC100) in patients with advanced thyroid cancers: Clinical and…
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT206/761746/Abstract-CT206-ICAM-1-directed-chimeric-antigen
+
+5/5
+
+

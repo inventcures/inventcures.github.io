@@ -1,0 +1,222 @@
+5/26/25, 9:22 PM
+
+Abstract CT269: First-in-human trial in patients with metastatic colorectal cancer using CRISPR-engineered tumor infiltrating lymphocytes i…
+
+ARTICLE NAVIGATION
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | APRIL 25 2025
+
+Abstract CT269: First-in-human trial in patients with
+metastatic colorectal cancer using CRISPR-engineered
+tumor infiltrating lymphocytes in which the intracellular
+immune checkpoint CISH is inhibited 
+Emil Lou; Modassir S. Choudhry; Timothy K. Starr; Timothy Folsom; Jason Bell; Blaine Rathmann; Anthony P. DeFeo;
+Ji Hyun Kim; Nicholas Slipek; Zhaohui Jin; Darin Sumstad; Christopher A. Klebanoff; Katherine Ladner; Akshat Sarkari;
+R Scott McIvor; Thomas A. Murray; Jeffrey Miller; Madhuri Rao; Eric Jensen; Jacob Ankeny; Mahmoud A. Khalifa;
+Anil Chauhan; Benjamin Spilseth; Ajay Dixit; Paolo P. Provenzano; Wenjing Pan; Daniel Weber; Miranda Byrne-Steele;
+Tom Henley; David H. McKenna; Matthew J. Johnson; Beau R. Webber; Branden S. Moriarity
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT269.
+https://doi.org/10.1158/1538-7445.AM2025-CT269
+
+
+
+Split-Screen
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Background:
+Given the dramatic rise in incidence of colorectal cancer in young adults, there remain limited
+treatment options effective in metastatic disease. Although T cell-based therapies have been
+successful in treating highly antigenic cancers, like melanoma and lung, they have not yet been
+shown to induce consistent and durable tumor regression in common epithelial malignancies,
+including metastatic colorectal cancer (mCRC). CISH (Cytokine inducible SH2 containing
+protein) is a novel intracellular checkpoint target demonstrating PD-L1 ligand independent
+mechanisms of enhanced anti-cancer activity. Given that CISH is not currently tractable via
+antibody or small molecule drug modalities, we employed CRISPR for precise inhibition of CISH
+in tumor infiltrating lymphocytes (TILs). Here, we provide the first clinical report of safety and
+anti-tumor activity of CISH edited TILs in 12 patients with metastatic gastrointestinal cancers
+(NCT04426669), including a clinical complete response (CR) in a young-adult patient with
+immunotherapy-refractory mCRC.
+
+Methods:
+Tumors were surgically resected for TIL harvest, followed by a rapid expansion protocol and
+Skip to Main Content
+CRISPR/Cas9 knockout (KO) CISH. CISH KO, neoantigen-reactive TILs were expanded, then
+infused following non-myeloablative lymphocyte depleting (LD) chemotherapy
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT269/761879/Abstract-CT269-First-in-human-trial-in-patients
+
+1/5
+
+5/26/25, 9:22 PM
+
+Abstract CT269: First-in-human trial in patients with metastatic colorectal cancer using CRISPR-engineered tumor infiltrating lymphocytes i…
+
+(cyclophosphamide & fludarabine) followed by high-dose IL-2. To establish mechanistic
+attribution of the CR, we used iR-RepSeq+ for serial analysis of the TCR immune repertoire.
+
+Results:
+Our CRISPR engineering led to KO of CISH in T cells with high-efficiency (>90%) without
+detectable off-target editing. We safely dosed patients at all five dose levels (range: 1.91e 8 to
+9.93e10 cells). No dose-limiting toxicities attributable to the CISH-KO TIL product were observed.
+Adverse events were consistent with established risks of LD chemotherapy, IL-2, or disease
+progression. A durable ongoing complete response (>21 months) was achieved in a patient with
+microsatellite instability-high (MSI-H) mCRC refractory to anti-PD1/CTLA-4 combination therapy.
+
+Conclusions:
+We provide the first clinical report of CISH checkpoint targeting via genetically modified T cell
+therapy, with complete response in a patient with mCRC. Persistence and expansion of unique
+TCR clonotypes detected in neoantigen responsive TIL was temporally consistent with spikes in
+CISH edited alleles detected by NGS assay; in the patient with CR, four of the clonotypes
+exhibiting prolonged persistence greater than one-year post-infusion exhibited significantly
+reduced or undetectable expression of CISH compared to the total infused TIL population. Given
+these findings, further investigation of CISH checkpoint inhibition, via gene and cell therapy, and
+next-generation small molecule drugging modalities, is underway.
+
+Citation Format:
+Emil Lou, Modassir S. Choudhry, Timothy K. Starr, Timothy Folsom, Jason Bell, Blaine
+Rathmann, Anthony P. DeFeo, Ji Hyun Kim, Nicholas Slipek, Zhaohui Jin, Darin Sumstad,
+Christopher A. Klebanoff, Katherine Ladner, Akshat Sarkari, R Scott McIvor, Thomas A. Murray,
+Jeffrey Miller, Madhuri Rao, Eric Jensen, Jacob Ankeny, Mahmoud A. Khalifa, Anil Chauhan,
+Benjamin Spilseth, Ajay Dixit, Paolo P. Provenzano, Wenjing Pan, Daniel Weber, Miranda ByrneSteele, Tom Henley, David H. McKenna, Matthew J. Johnson, Beau R. Webber, Branden S.
+Moriarity. First-in-human trial in patients with metastatic colorectal cancer using CRISPRengineered tumor infiltrating lymphocytes in which the intracellular immune checkpoint CISH is
+inhibited [abstract]. In: Proceedings of the American Association for Cancer Research Annual
+Meeting 2025; Part 2 (Late-Breaking, Clinical Trial, and Invited Abstracts); 2025 Apr 25-30;
+Chicago, IL. Philadelphia (PA): AACR; Cancer Res 2025;85(8_Suppl_2):Abstract nr CT269.
+
+©2025 American Association for Cancer Research
+
+Skip to Main Content
+
+Advertisement
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT269/761879/Abstract-CT269-First-in-human-trial-in-patients
+
+2/5
+
+5/26/25, 9:22 PM
+
+Abstract CT269: First-in-human trial in patients with metastatic colorectal cancer using CRISPR-engineered tumor infiltrating lymphocytes i…
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+ Email Alerts
+Article Activity Alert
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+
+Skip to Main Content
+
+Breaking
+PI3K Inhibitor Delays Chemotherapy Start
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT269/761879/Abstract-CT269-First-in-human-trial-in-patients
+
+3/5
+
+5/26/25, 9:22 PM
+
+Abstract CT269: First-in-human trial in patients with metastatic colorectal cancer using CRISPR-engineered tumor infiltrating lymphocytes i…
+
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Advertisement
+
+Issues
+
+News
+
+Online First
+
+Twitter
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+Blood Cancer
+Discovery
+Cancer Discovery
+Cancer
+Epidemiology,
+Biomarkers &
+Prevention
+
+Skip to Main Content
+Cancer Immunology
+Research
+
+Cancer Research
+Cancer Research
+Communications
+
+
+
+
+
+
+
+
+
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+Molecular Cancer
+Therapeutics
+
+Cancer Prevention
+Research
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT269/761879/Abstract-CT269-First-in-human-trial-in-patients
+
+4/5
+
+5/26/25, 9:22 PM
+
+Abstract CT269: First-in-human trial in patients with metastatic colorectal cancer using CRISPR-engineered tumor infiltrating lymphocytes i…
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT269/761879/Abstract-CT269-First-in-human-trial-in-patients
+
+5/5
+
+

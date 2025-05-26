@@ -1,0 +1,218 @@
+5/26/25, 9:18 PM
+
+Abstract CT002: Circulating tumor DNA status to direct adjuvant immunotherapy for mismatch repair deficient tumors | Cancer Research | A…
+
+ARTICLE NAVIGATION
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | MAY 22 2025
+
+Abstract CT002: Circulating tumor DNA status to direct
+adjuvant immunotherapy for mismatch repair deficient
+tumors 
+Yelena Yuriy Janjigian; Michael B. Foote; Melissa Lumish; Marinela Capanu; Joanne Chou; Julio Garcia-Aguilar; Martin Weiser;
+Jason Konner; Vivian Strong; Elizabeth Jewell; Jennifer Mueller; Steven Maron; Ping Gu; Rona Yaeger; Sree Chalasani;
+Andrea Cercek; Jia Li; Maliha Nusrat; Ryan Sugarman; David Jones; Daniela Molena; David Solit; Brian Loomis; Marc Ladanyi;
+Michael Berger; Luis A. Diaz
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT002.
+https://doi.org/10.1158/1538-7445.AM2025-CT002
+
+
+
+Split-Screen
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Background:
+Patients with early-stage solid tumors who harbor minimal residual disease (MRD) following
+surgical resection as detected by circulating tumor DNA (ctDNA), have a high risk of recurrence.
+It remains uncertain whether therapeutic intervention of MRD in this context reduces cancer
+recurrence. We evaluated the efficacy of PD-1 blockade in resected early-stage mismatch repair
+deficient (MMRd) tumors with ctDNA-detected MRD, given high sensitivity of MMRd tumors to
+immune checkpoint blockade.
+
+Methods:
+We conducted a prospective clinical study assessing PD-1 blockade with pembrolizumab in
+patients with resected MMRd solid tumors treated with surgery and standard of care adjuvant
+therapy. Treatment with PD-1 blockade was guided by ctDNA status, measured 6-10 weeks after
+curative intent surgery and standard of care adjuvant therapy. Study arms included, Arm A
+(Interventional) comprised of ctDNA-positive patients treated with pembrolizumab for 6 months,
+and Arm B (Observational) comprised of ctDNA-negative patients. The primary endpoint was
+ctDNA clearance at 6 months in 40% of study patients. Recurrence-free survival (RFS) and
+overall survival (OS) were included as exploratory endpoints.
+Skip to Main Content
+
+Results:
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT002/762491/Abstract-CT002-Circulating-tumor-DNA-status-to
+
+1/5
+
+5/26/25, 9:18 PM
+
+Abstract CT002: Circulating tumor DNA status to direct adjuvant immunotherapy for mismatch repair deficient tumors | Cancer Research | A…
+
+Three-hundred and three patients with resected MMRd solid tumors were screened and ctDNA
+status was measured in 174 of these patients in 16 different tumor types. Twenty-two patients
+(12.6%) were ctDNA positive and enrolled in Arm A (Interventional). Of these 22, 13 ctDNApositive patients received six months of PD-1 blockade and 9 did not because of radiographically
+detected disease recurrence prior to initiation of therapy. Fifty-two ctDNA-negative patients were
+enrolled in Arm B (Observational) and observed. The median follow-up time for all patients was
+32.1 months. The study met the primary endpoint; 85% (11/13) of patients in Arm A
+(Interventional) achieved ctDNA clearance at 6 months, the median RFS was not reached, and
+the recurrence rate was 38% (5/13). In those that were ctDNA positive that did not receive PD-1
+blockade the median RFS was 0.8 months (95% CI 0.3-1.3) and the recurrence rate was 100%
+(9/9). In Arm B (Observational) the median RFS was not reached, and the recurrence rate was
+5.9% (9/152). Overall survival at 2 years was 92% (95%CI: 79-100%) in ctDNA positive patients
+who received PD-1 blockade and 78% (95%CI: 55%-100%) in patients that did not receive PD-1
+blockade. In ctDNA negative patients, the OS at 2 years was 98% (95%CI: 96%-100% ).
+
+Conclusion:
+Adjuvant PD-1 blockade directed by ctDNA status post-resection early-stage MMRd
+malignancies may provide clinical benefit in a agnostic of tumor type.
+
+Citation Format:
+Yelena Yuriy Janjigian, Michael B. Foote, Melissa Lumish, Marinela Capanu, Joanne Chou, Julio
+Garcia-Aguilar, Martin Weiser, Jason Konner, Vivian Strong, Elizabeth Jewell, Jennifer Mueller,
+Steven Maron, Ping Gu, Rona Yaeger, Sree Chalasani, Andrea Cercek, Jia Li, Maliha Nusrat,
+Ryan Sugarman, David Jones, Daniela Molena, David Solit, Brian Loomis, Marc Ladanyi,
+Michael Berger, Luis A. Diaz. Circulating tumor DNA status to direct adjuvant immunotherapy for
+mismatch repair deficient tumors [abstract]. In: Proceedings of the American Association for
+Cancer Research Annual Meeting 2025; Part 2 (Late-Breaking, Clinical Trial, and Invited
+Abstracts); 2025 Apr 25-30; Chicago, IL. Philadelphia (PA): AACR; Cancer Res
+2025;85(8_Suppl_2):Abstract nr CT002.
+
+©2025 American Association for Cancer Research
+
+Advertisement
+
+Skip to Main Content
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT002/762491/Abstract-CT002-Circulating-tumor-DNA-status-to
+
+2/5
+
+5/26/25, 9:18 PM
+
+Abstract CT002: Circulating tumor DNA status to direct adjuvant immunotherapy for mismatch repair deficient tumors | Cancer Research | A…
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+ Email Alerts
+Article Activity Alert
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+
+Skip to Main Content
+
+Breaking
+PI3K Inhibitor Delays Chemotherapy Start
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT002/762491/Abstract-CT002-Circulating-tumor-DNA-status-to
+
+3/5
+
+5/26/25, 9:18 PM
+
+Abstract CT002: Circulating tumor DNA status to direct adjuvant immunotherapy for mismatch repair deficient tumors | Cancer Research | A…
+
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Advertisement
+
+Issues
+
+News
+
+Online First
+
+Twitter
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+Blood Cancer
+Discovery
+Cancer Discovery
+Cancer
+Epidemiology,
+Biomarkers &
+Prevention
+
+Skip to Main Content
+Cancer Immunology
+Research
+
+Cancer Research
+Cancer Research
+Communications
+
+
+
+
+
+
+
+
+
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+Molecular Cancer
+Therapeutics
+
+Cancer Prevention
+Research
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT002/762491/Abstract-CT002-Circulating-tumor-DNA-status-to
+
+4/5
+
+5/26/25, 9:18 PM
+
+Abstract CT002: Circulating tumor DNA status to direct adjuvant immunotherapy for mismatch repair deficient tumors | Cancer Research | A…
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT002/762491/Abstract-CT002-Circulating-tumor-DNA-status-to
+
+5/5
+
+

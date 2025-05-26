@@ -1,0 +1,219 @@
+5/26/25, 9:20 PM
+
+Abstract CT130: Neoadjuvant botensilimab plus balstilimab in MMR proficient and deficient early stage cancers: First results of the pan-can…
+
+ARTICLE NAVIGATION
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | APRIL 25 2025
+
+Abstract CT130: Neoadjuvant botensilimab plus balstilimab
+in MMR proficient and deficient early stage cancers: First
+results of the pan-cancer NEOASIS study 
+Peter G. de Gooyer; Lauren D. van den Dungen; Marnix H. Geukes Foppen; Cecile Grootscholten; Simone Dokter;
+Thomas R. de Wijkerslooth; Brechtje A. Grotenhuis; Caroline A. Drukker; Winan J. van Houdt; Sara Balduzzi; John B. Haanen;
+José G. van den Berg; Marleen Kok; Myriam Chalabi
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT130.
+https://doi.org/10.1158/1538-7445.AM2025-CT130
+
+
+
+Split-Screen
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Background:
+Dual immune checkpoint inhibition with botensilimab (bot, Fc-enhanced anti-CTLA4) plus
+balstilimab (bal, anti-PD1) has shown promising efficacy across a variety of classically nonimmunogenic tumors, such as mismatch-repair proficient (pMMR) colorectal cancers (CRC) and
+sarcomas. In the adaptive, pan-cancer, phase II NEOASIS study, we hypothesize a high rate of
+pathological responses to neoadjuvant bot/bal in both pMMR and MMR deficient (dMMR)
+tumors. Here we present the safety and efficacy data from the safety run-in cohorts of the
+NEOASIS study.
+
+Methods:
+Patients (pts) with non-metastatic solid tumors were assigned to the dMMR or pMMR safety runin cohorts based on IHC assessment of MMR proteins and were planned for surgery within 8
+weeks of start of study treatment. Each cohort consisted of 10 pts. Patients were treated with bal
+450mg on D1 and D22 plus bot on D1, at a dose of 25mg for the first 5 pts and 50mg for the next
+5 pts. The primary objective of the safety run-ins was safety. Secondary objectives included
+pathological response (≤50% residual viable tumor, RVT), major pathological response (MPR,
+≤10% RVT) and pathological complete response (pCR).
+
+Results:
+Skip
+to Main Content
+A total of 20 pts were treated: 10 with a dMMR and 10 with a pMMR tumor. The dMMR cohort
+included 9 pts with CRC and 1 with duodenal cancer (25mg bot cohort). The pMMR cohort
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT130/761762/Abstract-CT130-Neoadjuvant-botensilimab-plus
+
+1/5
+
+5/26/25, 9:20 PM
+
+Abstract CT130: Neoadjuvant botensilimab plus balstilimab in MMR proficient and deficient early stage cancers: First results of the pan-can…
+
+consisted of pts with triple negative breast cancer (TNBC, n=6), ER+ BC (n=2), Merkel cell
+carcinoma (MCC, n=1) and sarcoma (n=1). No dose-limiting toxicities occurred at either 25mg or
+50mg bot doses and all pts underwent timely surgery. One grade 3 immune-related adverse
+event (irAE, hepatitis) was observed in the 50mg cohort. Grade 1-2 irAEs occurred in 75% of pts,
+with fatigue (25%), dermatitis (20%) and hypothyroidism (15%) being the most frequent. IrAEs
+led to omission of the second dose of bal in 2 (10%) pts. All 5 pts in the pMMR 25mg bot cohort
+had a pathological response including 2 pts with a pCR (MCC, TNBC) and 3 pts with an MPR
+(sarcoma, ER+ BC, TNBC). In the pMMR bot 50 mg cohort, 2 pts had a pathological response,
+both an MPR (2 TNBC). In the dMMR 25mg bot cohort, 4 pts with CRC had a pathological
+response, including 2 pCR, 1 MPR and 1 PR. The only pt with limited response (duodenal
+cancer) had suspicion of peritoneal metastases per-operatively and while biopsies revealed no
+RVT in these lesions, the primary tumor showed limited response. All 5 CRC pts treated with bot
+50mg had a pCR.
+
+Conclusion:
+Data of the safety run-in of 20 pts show that neoadjuvant bot/bal was safe and did not lead to
+surgical delays. In addition, the observed pathological responses are encouraging and suggest a
+potential for neoadjuvant immunotherapy using bot/bal across tumor types, including pMMR BC
+and sarcoma. Accrual in efficacy baskets for both dMMR and pMMR tumors is currently ongoing
+at the bot 50mg dose level.
+
+Citation Format:
+Peter G. de Gooyer, Lauren D. van den Dungen, Marnix H. Geukes Foppen, Cecile
+Grootscholten, Simone Dokter, Thomas R. de Wijkerslooth, Brechtje A. Grotenhuis, Caroline A.
+Drukker, Winan J. van Houdt, Sara Balduzzi, John B. Haanen, José G. van den Berg, Marleen
+Kok, Myriam Chalabi. Neoadjuvant botensilimab plus balstilimab in MMR proficient and deficient
+early stage cancers: First results of the pan-cancer NEOASIS study [abstract]. In: Proceedings of
+the American Association for Cancer Research Annual Meeting 2025; Part 2 (Late-Breaking,
+Clinical Trial, and Invited Abstracts); 2025 Apr 25-30; Chicago, IL. Philadelphia (PA): AACR;
+Cancer Res 2025;85(8_Suppl_2):Abstract nr CT130.
+
+©2025 American Association for Cancer Research
+
+Advertisement
+
+Skip to Main Content
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT130/761762/Abstract-CT130-Neoadjuvant-botensilimab-plus
+
+2/5
+
+5/26/25, 9:20 PM
+
+Abstract CT130: Neoadjuvant botensilimab plus balstilimab in MMR proficient and deficient early stage cancers: First results of the pan-can…
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+ Email Alerts
+Article Activity Alert
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+
+Skip to Main Content
+
+Breaking
+PI3K Inhibitor Delays Chemotherapy Start
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT130/761762/Abstract-CT130-Neoadjuvant-botensilimab-plus
+
+3/5
+
+5/26/25, 9:20 PM
+
+Abstract CT130: Neoadjuvant botensilimab plus balstilimab in MMR proficient and deficient early stage cancers: First results of the pan-can…
+
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Advertisement
+
+Issues
+
+News
+
+Online First
+
+Twitter
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+Blood Cancer
+Discovery
+Cancer Discovery
+Cancer
+Epidemiology,
+Biomarkers &
+Prevention
+
+Skip to Main Content
+Cancer Immunology
+Research
+
+Cancer Research
+Cancer Research
+Communications
+
+
+
+
+
+
+
+
+
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+Molecular Cancer
+Therapeutics
+
+Cancer Prevention
+Research
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT130/761762/Abstract-CT130-Neoadjuvant-botensilimab-plus
+
+4/5
+
+5/26/25, 9:20 PM
+
+Abstract CT130: Neoadjuvant botensilimab plus balstilimab in MMR proficient and deficient early stage cancers: First results of the pan-can…
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT130/761762/Abstract-CT130-Neoadjuvant-botensilimab-plus
+
+5/5
+
+

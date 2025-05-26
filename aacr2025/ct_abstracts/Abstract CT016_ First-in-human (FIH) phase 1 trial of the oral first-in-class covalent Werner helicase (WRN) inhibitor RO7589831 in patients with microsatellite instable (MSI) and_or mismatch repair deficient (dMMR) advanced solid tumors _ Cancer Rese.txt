@@ -1,0 +1,224 @@
+5/26/25, 9:23 PM
+
+Abstract CT016: First-in-human (FIH) phase 1 trial of the oral first-in-class covalent Werner helicase (WRN) inhibitor RO7589831 in patient…
+
+ARTICLE NAVIGATION
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | APRIL 25 2025
+
+Abstract CT016: First-in-human (FIH) phase 1 trial of the oral
+first-in-class covalent Werner helicase (WRN) inhibitor
+RO7589831 in patients with microsatellite instable (MSI)
+and/or mismatch repair deficient (dMMR) advanced solid
+tumors 
+Timothy A. Yap; Natalie Cook; Elisa Fontana; Erica S. Tsang; Oliver Bechter; Marwan Fakih; Kristoffer S. Rohrberg;
+Emiliano Calvo; Elena M. Elez; Meredith Pelster; John H. Strickler; Ignacio Matos; Adam Sharp; Sophia Blake; David Dejardin;
+Stephen Fowler; Nina Henkel; Michael Hettich; Angelika Lahr; Ting Liu; Christophe Meille; Piergiorgio Pettazzoni;
+Denise Reeves; Barbara Romagnoli; Sotirios Sotiriou; Daniel Waterkamp; Yali Fu; Sophie Postel-Vinay
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT016.
+https://doi.org/10.1158/1538-7445.AM2025-CT016
+
+
+
+Split-Screen
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Background:
+WRN is an enzyme critical for DNA repair and genome stability and is a promising synthetic
+lethal target for MSI cancers. 40-70 % of patients (pts) with MSI/dMMR solid tumors do not
+respond to immune checkpoint inhibitors (ICI) or develop resistance, representing an unmet
+need in MSI cancers. RO7589831 is a novel first-in-class covalent, irreversible WRN inhibitor
+that induces dose-dependent DNA damage and tumor growth inhibition in MSI preclinical
+models, supporting its clinical evaluation in MSI pts.
+
+Methods:
+This open-label, multi-center, FIH study assesses the safety, pharmacokinetics (PK),
+pharmacodynamics (PD) and preliminary anti-tumor activity of RO7589831 in pts with MSI and/or
+dMMR advanced solid tumors (NCT06004245). The primary objective is to determine the
+maximum tolerated dose (MTD) and/or recommended Phase 2 dose (RP2D). 14 paired tumor
+biopsies were collected for translational analysis.
+
+Results:
+Skip
+to Main Content
+As of Nov 25, 2024, 44 pts (24 F, 20 M; median age 62y (32-77y)) were enrolled in six dose
+cohorts at RO7589831 daily doses from 150 mg to 2000 mg. Based on clinical first dose PK data
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT016/761432/Abstract-CT016-First-in-human-FIH-phase-1-trial-of
+
+1/5
+
+5/26/25, 9:23 PM
+
+Abstract CT016: First-in-human (FIH) phase 1 trial of the oral first-in-class covalent Werner helicase (WRN) inhibitor RO7589831 in patient…
+
+(rapid absorption, mean Tmax 2.6 h [± 1.3h] and half-life 4.4 h [±1.8h], n=41), RO7589831 was
+dosed orally once (QD) or twice (BID) daily. Among the 44 pts (22 colorectal (CRC) and 22 nonCRC), median prior treatment lines were 3 (range 1-12); 89% had received ICIs. 35 pts had MSI
+tumors (18 CRC and 17 non-CRC). No dose-limiting toxicities (DLTs) have been reported and the
+MTD has not been reached. The most common treatment-emergent AEs across all doses were
+nausea (52.3%), diarrhea (34.1%), and vomiting (31.8%). Grade (G)3 treatment related AEs
+(TRAE) were nausea and increased AST/ALT in 2 pts each (4.3%) as well as fatigue and anemia
+in 1 pt each (2.1%). No G4 or worse TRAEs were observed. Of the efficacy evaluable MSI pts
+(n= 32), four RECISTv1.1 partial responses (PRs) (2 confirmed and 2 ongoing unconfirmed PRs)
+were observed in post-ICI-treated MSI CRC (n=1), ovarian (n=1), and endometrial cancer (n=2)
+for up to 9.5+ mths. Disease control rate (DCR) was 68.8% (95%CI 51.13, 86.37) and 20
+(62.5%) pts achieved RECISTv1.1 stable disease (SD). 48.4% (15/31) of FDG-PET scan
+evaluable pts across all dose levels showed metabolic responses to RO7589831. All pts with
+RECIST PR showed pronounced metabolic responses (-50% to -90%). ctDNA molecular
+responses were observed in 2/2 pts with RECISTv1.1 PR, 8/9 pts with SD and 0/5 pts with
+disease progression.
+
+Conclusions:
+RO7589831 is generally safe and well tolerated, with promising DCR, durable RECISTv1.1,
+FDG-PET metabolic and ctDNA molecular responses in pts with advanced MSI cancers,
+including ICI-treated pts, providing the first early clinical proof-of-concept for effectively drugging
+WRN. Dose optimization cohorts are ongoing to establish the RP2D.
+
+Citation Format:
+Timothy A. Yap, Natalie Cook, Elisa Fontana, Erica S. Tsang, Oliver Bechter, Marwan Fakih,
+Kristoffer S. Rohrberg, Emiliano Calvo, Elena M. Elez, Meredith Pelster, John H. Strickler,
+Ignacio Matos, Adam Sharp, Sophia Blake, David Dejardin, Stephen Fowler, Nina Henkel,
+Michael Hettich, Angelika Lahr, Ting Liu, Christophe Meille, Piergiorgio Pettazzoni, Denise
+Reeves, Barbara Romagnoli, Sotirios Sotiriou, Daniel Waterkamp, Yali Fu, Sophie Postel-Vinay.
+First-in-human (FIH) phase 1 trial of the oral first-in-class covalent Werner helicase (WRN)
+inhibitor RO7589831 in patients with microsatellite instable (MSI) and/or mismatch repair
+deficient (dMMR) advanced solid tumors [abstract]. In: Proceedings of the American Association
+for Cancer Research Annual Meeting 2025; Part 2 (Late-Breaking, Clinical Trial, and Invited
+Abstracts); 2025 Apr 25-30; Chicago, IL. Philadelphia (PA): AACR; Cancer Res
+2025;85(8_Suppl_2):Abstract nr CT016.
+
+©2025 American Association for Cancer Research
+
+Skip to Main Content
+Advertisement
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT016/761432/Abstract-CT016-First-in-human-FIH-phase-1-trial-of
+
+2/5
+
+5/26/25, 9:23 PM
+
+Abstract CT016: First-in-human (FIH) phase 1 trial of the oral first-in-class covalent Werner helicase (WRN) inhibitor RO7589831 in patient…
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+ Email Alerts
+Article Activity Alert
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+
+Skip to Main Content
+
+Breaking
+PI3K Inhibitor Delays Chemotherapy Start
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT016/761432/Abstract-CT016-First-in-human-FIH-phase-1-trial-of
+
+3/5
+
+5/26/25, 9:23 PM
+
+Abstract CT016: First-in-human (FIH) phase 1 trial of the oral first-in-class covalent Werner helicase (WRN) inhibitor RO7589831 in patient…
+
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Advertisement
+
+Issues
+
+News
+
+Online First
+
+Twitter
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+Blood Cancer
+Discovery
+Cancer Discovery
+Cancer
+Epidemiology,
+Biomarkers &
+Prevention
+
+Skip to Main Content
+Cancer Immunology
+Research
+
+Cancer Research
+Cancer Research
+Communications
+
+
+
+
+
+
+
+
+
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+Molecular Cancer
+Therapeutics
+
+Cancer Prevention
+Research
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT016/761432/Abstract-CT016-First-in-human-FIH-phase-1-trial-of
+
+4/5
+
+5/26/25, 9:23 PM
+
+Abstract CT016: First-in-human (FIH) phase 1 trial of the oral first-in-class covalent Werner helicase (WRN) inhibitor RO7589831 in patient…
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT016/761432/Abstract-CT016-First-in-human-FIH-phase-1-trial-of
+
+5/5
+
+

@@ -1,0 +1,219 @@
+5/26/25, 9:16 PM
+
+Abstract CT008: First-in-human study of SYS6010, a novel EGFR targeting antibody drug conjugate (ADC) for patients with advanced solid…
+
+ARTICLE NAVIGATION
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | APRIL 25 2025
+
+Abstract CT008: First-in-human study of SYS6010, a novel
+EGFR targeting antibody drug conjugate (ADC) for patients
+with advanced solid tumors 
+Shun Lu; Zhen Zhou; Zi-Ming Li; Zhi-Yong HE; Jian Fang; Hong-Mei Sun; Yi Gong; Ying Cheng; Yi-Bing LIU; Yu Yao; Yan Yu;
+Yan-Hong Shang; Xiang-Lin Yuan; Liang Han; Mingjun Zhang; Kun-Yu Yang; Liqiong Zhang; Xuechao Wan; Huanhuan Qi;
+Yang Yang
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT008.
+https://doi.org/10.1158/1538-7445.AM2025-CT008
+
+
+
+Split-Screen
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Background:
+SYS6010 is a novel ADC comprising of an anti-epidermal growth factor receptor (EGFR)
+humanized IgG1 monoclonal antibody conjugated to topoisomerase I inhibitor JS-1 via a
+cleavable glycine̶̶-glycine-phenylalanine-glycine tetrapeptide linker.
+
+Methods:
+This multicenter, open-label, phase 1 study evaluated the safety, tolerability and preliminary
+efficacy of SYS6010 in patients with advanced solid tumors who had failed or were intolerant to
+standard treatment. The study consisted of two parts, dose escalation, PK expansion (part 1)
+and dose expansion (part 2), part 1 used a 3+3 dose-escalation design with six dose levels of
+SYS6010 (0.6, 1.8, 3.6, 4.8, 5.6 and 6.4 mg/kg) administered intravenously every 3 weeks and
+PK expansion. Part 2 was dose expansion at effective doses identified in part 1. The primary
+endpoints were safety, maximum tolerated dose (MTD) and recommended phase II dose
+(RP2D).
+
+Results:
+As of December 26, 2024, 232 patients received ≥ 1 dose of SYS6010. Most frequent cancer
+type was non-small cell lung cancer (NSCLC, n=137). The median (range) prior anti-cancer drug
+Skip to Main Content
+therapy regimen was 3 (1-11). One dose-limiting toxicity (grade 4 thrombocytopenia) occurred at
+6.4 mg/kg. MTD was not reached. 213 (91.8%) patients had treatment-related adverse events
+(TRAEs) with ≥ grade 3 TRAEs at 47%. The most common (all grade/≥ grade 3) TRAEs were
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT008/761554/Abstract-CT008-First-in-human-study-of-SYS6010-a
+
+1/5
+
+5/26/25, 9:16 PM
+
+Abstract CT008: First-in-human study of SYS6010, a novel EGFR targeting antibody drug conjugate (ADC) for patients with advanced solid…
+
+leukopenia (47.8%/20.7%), anemia (46.1%/7.3%), nausea (46.1%/0.9%), thrombocytopenia
+(44.8%/13.8%), neutropenia (42.7%/23.7%), decreased appetite (41.8%/1.7%), asthenia
+(41.8%/2.2%), vomiting (33.2%/1.3%), rash (26.3%/0.4%), and alopecia (22.8%/0%). 174
+patients were efficacy evaluable. The objective response rate (ORR) and disease control rate
+(DCR) were 32.8% (95% CI 25.85-40.27) and 86.2% (95% CI 80.18-90.96), respectively. The
+ORR and DCR in ≥ 4.8 mg/kg groups were 39.1% (45/115) and 78.3% (90/115), respectively.
+The ORR and DCR in ≥ 4.8 mg/kg groups in EGFR-mutant nonsquamous NSCLC (nsq-NSCLC)
+were 50% (27/52) and 92.3% (48/52), respectively. In the EGFR-mutant NSCLC subjects who
+failed prior EGFR tyrosine kinase inhibitors (TKIs), the ORR and DCR were 90% (9/10) and
+100% (10/10), respectively, and the ORR and DCR were 41.5% (17/41) and 90.2% (37/41) for
+those who failed prior EGFR TKI as well as a platinum-based chemotherapy. In EGFR wild-type
+nsq-NSCLC patients who failed both immunotherapy and chemotherapy, the ORR and DCR
+were 50% (3/6) and 83.3% (5/6) in ≥ 4.8 mg/kg groups, respectively. The Cmax and AUC of JS-1
+were significantly lower than those of ADC and total antibody, indicating SYS6010 was stable in
+the circulation. The Cmax and AUC of ADC increased linearly with doses ranging from 0.6 to 6.4
+mg/kg.
+
+Conclusions:
+SYS6010 demonstrated a tolerable safety profile with promising efficacy in patients with
+advanced solid tumors, particularly in nsq-NSCLC subjects with EGFR TKI resistance or EGFR
+wild type.
+
+Citation Format:
+Shun Lu, Zhen Zhou, Zi-Ming Li, HE Zhi-Yong, Jian Fang, Hong-Mei Sun, Yi Gong, Ying Cheng,
+LIU Yi-Bing, Yu Yao, Yan Yu, Yan-Hong Shang, Xiang-Lin Yuan, Liang Han, Mingjun Zhang, KunYu Yang, Liqiong Zhang, Xuechao Wan, Huanhuan Qi, Yang Yang. First-in-human study of
+SYS6010, a novel EGFR targeting antibody drug conjugate (ADC) for patients with advanced
+solid tumors [abstract]. In: Proceedings of the American Association for Cancer Research Annual
+Meeting 2025; Part 2 (Late-Breaking, Clinical Trial, and Invited Abstracts); 2025 Apr 25-30;
+Chicago, IL. Philadelphia (PA): AACR; Cancer Res 2025;85(8_Suppl_2):Abstract nr CT008.
+
+©2025 American Association for Cancer Research
+
+Advertisement
+
+Skip to Main Content
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT008/761554/Abstract-CT008-First-in-human-study-of-SYS6010-a
+
+2/5
+
+5/26/25, 9:16 PM
+
+Abstract CT008: First-in-human study of SYS6010, a novel EGFR targeting antibody drug conjugate (ADC) for patients with advanced solid…
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+ Email Alerts
+Article Activity Alert
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+
+Skip to Main Content
+
+Breaking
+PI3K Inhibitor Delays Chemotherapy Start
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT008/761554/Abstract-CT008-First-in-human-study-of-SYS6010-a
+
+3/5
+
+5/26/25, 9:16 PM
+
+Abstract CT008: First-in-human study of SYS6010, a novel EGFR targeting antibody drug conjugate (ADC) for patients with advanced solid…
+
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Advertisement
+
+Issues
+
+News
+
+Online First
+
+Twitter
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+Blood Cancer
+Discovery
+Cancer Discovery
+Cancer
+Epidemiology,
+Biomarkers &
+Prevention
+
+Skip to Main Content
+Cancer Immunology
+Research
+
+Cancer Research
+Cancer Research
+Communications
+
+
+
+
+
+
+
+
+
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+Molecular Cancer
+Therapeutics
+
+Cancer Prevention
+Research
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT008/761554/Abstract-CT008-First-in-human-study-of-SYS6010-a
+
+4/5
+
+5/26/25, 9:16 PM
+
+Abstract CT008: First-in-human study of SYS6010, a novel EGFR targeting antibody drug conjugate (ADC) for patients with advanced solid…
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT008/761554/Abstract-CT008-First-in-human-study-of-SYS6010-a
+
+5/5
+
+

@@ -1,0 +1,222 @@
+5/26/25, 9:20 PM
+
+Abstract CT129: Immunity induction with atezolizumab, EIK1001, and radiotherapy in virus-associated tumors: Results of the AGADIR Tri…
+
+ARTICLE NAVIGATION
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | APRIL 25 2025
+
+Abstract CT129: Immunity induction with atezolizumab,
+EIK1001, and radiotherapy in virus-associated tumors:
+Results of the AGADIR Trial 
+Antoine Italiano; Carlos Gomez-Roca; François Ghiringhelli; Jean-Philippe Metges; Philippe Rochigneux; Aurelien Carnot;
+Florian Estrade; Marie-Paule Sablin; Pierre-Emmanuel Brachet; Nicolas Isambert; Jade Dupin; Sophie Cousin;
+Jean-Philippe Guegan; Alban Bessede; Marina Pulido; Paul Sargos
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT129.
+https://doi.org/10.1158/1538-7445.AM2025-CT129
+
+
+
+Split-Screen
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Background:
+Virus-associated tumors, characterized by immune evasion and angiogenic signaling, remain a
+therapeutic challenge. Human papillomavirus (HPV)-associated cancers such as cervical, anal,
+and oropharyngeal cancers represent a significant subset of virus-associated tumors and are
+characterized by immune evasion mediated by viral oncoproteins such as E6 and E7. Toll-like
+receptor 7/8 (TLR7/8) agonists such as EIK1001 have been shown to activate innate immune
+pathways, enhancing antigen presentation and inducing a robust adaptive immune response.
+This is particularly relevant in HPV-related tumors, where viral oncoproteins E6 and E7 suppress
+immune surveillance. By targeting TLR7/8, EIK1001 may overcome this immune suppression,
+priming the tumor microenvironment for synergistic effects with immune checkpoint blockade.
+Additionally, stereotactic radiation therapy of a metastatic site can enhance immunotherapy
+efficacy by inducing immunogenic cell death, promoting the release of tumor antigens, and
+facilitating systemic immune activation (the abscopal effect).
+
+Methods:
+This phase II trial included 47 patients with metastatic virus-associated tumors across 10 sites
+between June 2021 and July 2023. Treatment comprised atezolizumab (1200 mg IV every 3
+weeks), EIK1001 (0.75 mg/m2 IV on a weekly schedule for 9 weeks, then every 3 weeks), and
+Skip
+to Main radiotherapy
+Content
+stereotactic
+(27-60 Gy in 3-5 fractions to a metastatic site). Primary endpoint was
+disease control rate (DCR) at 24 weeks per RECIST v1.1. at 24 weeks per RECIST v1.1.
+Secondary endpoints included objective response rate (ORR), progression-free survival (PFS),
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT129/761763/Abstract-CT129-Immunity-induction-with
+
+1/5
+
+5/26/25, 9:20 PM
+
+Abstract CT129: Immunity induction with atezolizumab, EIK1001, and radiotherapy in virus-associated tumors: Results of the AGADIR Tri…
+
+overall survival (OS), safety, and biomarkers of immune activation (proteomics and spatial
+transcriptomics).
+
+Results:
+Forty-one patients with virus-associated tumors were enrolled between June 2021 and July
+2023. The majority (85%) had HPV-related tumors, including cervical (40%), anal (30%), and
+oropharyngeal (15%) cancers. At 24 weeks, the DCR was 56.1% (90% CI: 42.1%-69.4%), with
+an ORR of 19.5% (90% CI: 10.1%-32.5%). Median PFS was 2.6 months (95% CI: 1.4-2.8), and
+median OS was 10.4 months (95% CI: 6.9-19.0). The most common Grade 3/4 treatment-related
+adverse events were fatigue (10%), diarrhea (8%), and pneumonitis (5%). Proteomic analyses of
+plasma demonstrated significant upregulation of immune effector proteins, indicating systemic
+immune activation. Spatial transcriptomics on tumor biopsies revealed enhanced T-cell infiltration
+and reprogramming of the tumor microenvironment, correlating with clinical responses.
+
+Conclusions:
+The combination of atezolizumab, EIK1001, and radiotherapy met its primary endpoint of disease
+control rate at 24 weeks, underscoring the potential of this regimen. in virus-associated tumors,
+particularly HPV-related cancers. Biomarker analyses support the immunogenic potential of this
+regimen, suggesting a paradigm shift in treating immunologically ‘cold’ virus-associated tumors.
+Further investigations will explore predictive biomarkers and refine patient selection.
+
+Citation Format:
+Antoine Italiano, Carlos Gomez-Roca, François Ghiringhelli, Jean-Philippe Metges, Philippe
+Rochigneux, Aurelien Carnot, Florian Estrade, Marie-Paule Sablin, Pierre-Emmanuel Brachet,
+Nicolas Isambert, Jade Dupin, Sophie Cousin, Jean-Philippe Guegan, Alban Bessede, Marina
+Pulido, Paul Sargos. Immunity induction with atezolizumab, EIK1001, and radiotherapy in virusassociated tumors: Results of the AGADIR Trial [abstract]. In: Proceedings of the American
+Association for Cancer Research Annual Meeting 2025; Part 2 (Late-Breaking, Clinical Trial, and
+Invited Abstracts); 2025 Apr 25-30; Chicago, IL. Philadelphia (PA): AACR; Cancer Res
+2025;85(8_Suppl_2):Abstract nr CT129.
+
+©2025 American Association for Cancer Research
+
+Advertisement
+
+Skip to Main Content
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT129/761763/Abstract-CT129-Immunity-induction-with
+
+2/5
+
+5/26/25, 9:20 PM
+
+Abstract CT129: Immunity induction with atezolizumab, EIK1001, and radiotherapy in virus-associated tumors: Results of the AGADIR Tri…
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+ Email Alerts
+Article Activity Alert
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+
+Skip to Main Content
+
+Breaking
+PI3K Inhibitor Delays Chemotherapy Start
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT129/761763/Abstract-CT129-Immunity-induction-with
+
+3/5
+
+5/26/25, 9:20 PM
+
+Abstract CT129: Immunity induction with atezolizumab, EIK1001, and radiotherapy in virus-associated tumors: Results of the AGADIR Tri…
+
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Advertisement
+
+Issues
+
+News
+
+Online First
+
+Twitter
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+Blood Cancer
+Discovery
+Cancer Discovery
+Cancer
+Epidemiology,
+Biomarkers &
+Prevention
+
+Skip to Main Content
+Cancer Immunology
+Research
+
+Cancer Research
+Cancer Research
+Communications
+
+
+
+
+
+
+
+
+
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+Molecular Cancer
+Therapeutics
+
+Cancer Prevention
+Research
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT129/761763/Abstract-CT129-Immunity-induction-with
+
+4/5
+
+5/26/25, 9:20 PM
+
+Abstract CT129: Immunity induction with atezolizumab, EIK1001, and radiotherapy in virus-associated tumors: Results of the AGADIR Tri…
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT129/761763/Abstract-CT129-Immunity-induction-with
+
+5/5
+
+

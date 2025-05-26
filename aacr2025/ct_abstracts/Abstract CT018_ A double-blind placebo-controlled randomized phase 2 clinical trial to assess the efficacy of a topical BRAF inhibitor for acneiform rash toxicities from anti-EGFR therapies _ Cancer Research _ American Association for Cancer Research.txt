@@ -1,0 +1,272 @@
+5/26/25, 9:23 PM
+
+Abstract CT018: A double-blind placebo-controlled randomized phase 2 clinical trial to assess the efficacy of a topical BRAF inhibitor for ac…
+
+ARTICLE NAVIGATION
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | MAY 22 2025
+
+Abstract CT018: A double-blind placebo-controlled
+randomized phase 2 clinical trial to assess the efficacy of a
+topical BRAF inhibitor for acneiform rash toxicities from
+anti-EGFR therapies 
+Anisha B. Patel; Ofer Purim; Zev A. Wainberg; Nicole LeBoeuf; Iman Imanirad; Efrat Dotan; John Khoury; Veronica Rotemberg;
+Richard Zuniga; Abhishek Marballi; Esther Tahover; Anil Veluvolu; Samuel Bailey; David Greenberg; Adil Akhtar; Noa Shelach;
+Benjamin W. Corn; Antoni Ribas; Mario E. Lacouture
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT018.
+https://doi.org/10.1158/1538-7445.AM2025-CT018
+
+
+
+Split-Screen
+
+ Views 
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Background:
+Development of acneiform rash in patients with colon cancer treated with anti-EGFR therapies
+frequently results in dose attenuation or discontinuation, thereby limiting benefits. BRAF
+inhibitors block the MAPK pathway in BRAF V600 mutant cells, while they paradoxically activate
+the MAPK pathway in BRAF wild type cells. We hypothesized that a topical formulation of a
+BRAF inhibitor (LUT014 gel) applied to the areas of acneiform rash would reverse the upstream
+inhibition of EGFR in skin, thereby reactivating the MAPK pathway and improving the rash and
+cancer treatment.
+
+Methods:
+Patients with colorectal cancer with grade 2 or non-infected grade 3 acneiform rash while
+receiving cetuximab or panitumumab were randomized 1:1:1 to: LUT014 gel 0.03%, LUT014 gel
+0.1%, or placebo gel. Patients applied the gel to all areas of rash daily for 28 days. Primary
+endpoint was the proportion of patients who achieved treatment “success” defined as
+improvement of at least one grade CTCAE score or an improvement of at least 5 for the skinspecific FACT-EGFRI-18 HRQoL. Patients were analyzed via intention to treat (ITT) or as
+“evaluable pts (EP)” (i.e., those who applied the drug at least once and did not drop out due to
+Skip
+to Main
+Content
+reasons
+besides
+rash such as disease progression). Sample size calculation was based on an
+expected treatment success of 20% for the placebo group and 50% for one of the treatment
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT018/762487/Abstract-CT018-A-double-blind-placebo-controlled
+
+1/5
+
+5/26/25, 9:23 PM
+
+Abstract CT018: A double-blind placebo-controlled randomized phase 2 clinical trial to assess the efficacy of a topical BRAF inhibitor for ac…
+
+groups. A total of 117 patients were required for a two group
+significance and 80% power.
+
+2 test with a 0.05 two-sided
+
+Results:
+The trial enrolled 117 patients from 23 sites. Efficacy is shown in the table. In the ITT as well as
+the EP, the composite endpoint demonstrated statistically significant rates of success for both
+LUT014 groups compared to placebo. The table also shows grade 1-5 adverse events (AE)
+related or suspected to be related to treatment.
+Treatment Arm
+
+N
+
+Success Rate (ITT)
+
+P-Value vs Placebo
+
+N
+
+Success Rate (EP)
+
+P-Value vs Placeb
+
+LUT-014 0.1%
+
+39
+
+74%
+
+0.0001
+
+34
+
+85%
+
+0.0001
+
+LUT-014 0.03%
+
+39
+
+56%
+
+0.021
+
+32
+
+69%
+
+0.009
+
+Placebo
+
+39
+
+28%
+
+28
+
+32%
+
+NB: P-value when comparing all 3 arms = 0.00021 (ITT) and p = 0.00006 (EP)
+
+Conclusion:
+This is the first placebo-controlled randomized clinical trial demonstrating the benefit and safety
+of an agent for treatment of the acneiform rash associated with anti-EGFR.
+
+Citation Format:
+Anisha B. Patel, Ofer Purim, Zev A. Wainberg, Nicole LeBoeuf, Iman Imanirad, Efrat Dotan, John
+Khoury, Veronica Rotemberg, Richard Zuniga, Abhishek Marballi, Esther Tahover, Anil Veluvolu,
+Samuel Bailey, David Greenberg, Adil Akhtar, Noa Shelach, Benjamin W. Corn, Antoni Ribas,
+Mario E. Lacouture. A double-blind placebo-controlled randomized phase 2 clinical trial to assess
+the efficacy of a topical BRAF inhibitor for acneiform rash toxicities from anti-EGFR therapies
+[abstract]. In: Proceedings of the American Association for Cancer Research Annual Meeting
+2025; Part 2 (Late-Breaking, Clinical Trial, and Invited Abstracts); 2025 Apr 25-30; Chicago, IL.
+Philadelphia (PA): AACR; Cancer Res 2025;85(8_Suppl_2):Abstract nr CT018.
+
+©2025 American Association for Cancer Research
+
+Advertisement
+
+Skip to Main Content
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT018/762487/Abstract-CT018-A-double-blind-placebo-controlled
+
+2/5
+
+5/26/25, 9:23 PM
+
+Abstract CT018: A double-blind placebo-controlled randomized phase 2 clinical trial to assess the efficacy of a topical BRAF inhibitor for ac…
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+ Email Alerts
+Article Activity Alert
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+
+Skip to Main Content
+
+Breaking
+PI3K Inhibitor Delays Chemotherapy Start
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT018/762487/Abstract-CT018-A-double-blind-placebo-controlled
+
+3/5
+
+5/26/25, 9:23 PM
+
+Abstract CT018: A double-blind placebo-controlled randomized phase 2 clinical trial to assess the efficacy of a topical BRAF inhibitor for ac…
+
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Advertisement
+
+Issues
+
+News
+
+Online First
+
+Twitter
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+Blood Cancer
+Discovery
+Cancer Discovery
+Cancer
+Epidemiology,
+Biomarkers &
+Prevention
+
+Skip to Main Content
+Cancer Immunology
+Research
+
+Cancer Research
+Cancer Research
+Communications
+
+
+
+
+
+
+
+
+
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+Molecular Cancer
+Therapeutics
+
+Cancer Prevention
+Research
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT018/762487/Abstract-CT018-A-double-blind-placebo-controlled
+
+4/5
+
+5/26/25, 9:23 PM
+
+Abstract CT018: A double-blind placebo-controlled randomized phase 2 clinical trial to assess the efficacy of a topical BRAF inhibitor for ac…
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT018/762487/Abstract-CT018-A-double-blind-placebo-controlled
+
+5/5
+
+

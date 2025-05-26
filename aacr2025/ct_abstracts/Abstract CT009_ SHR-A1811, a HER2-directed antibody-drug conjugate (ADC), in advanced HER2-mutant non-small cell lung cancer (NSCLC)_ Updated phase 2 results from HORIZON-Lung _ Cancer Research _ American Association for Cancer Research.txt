@@ -1,0 +1,298 @@
+5/26/25, 9:16 PM
+
+Abstract CT009: SHR-A1811, a HER2-directed antibody-drug conjugate (ADC), in advanced HER2-mutant non-small cell lung cancer (NS…
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | APRIL 25 2025
+
+Abstract CT009: SHR-A1811, a HER2-directed antibody-drug
+conjugate (ADC), in advanced HER2-mutant non-small cell
+lung cancer (NSCLC): Updated phase 2 results from
+HORIZON-Lung 
+Shun Lu; Ziming Li; Yan Wang; Yuping Sun; Linlin Wang; Xingya Li; Longhua Sun; Zhiyi He; Haiyan Yang; Yongsheng Wang;
+Qiming Wang; Zhengbo Song; Wei Hong; Yong Wang; Guohao Xia; Yan Yu; Min Peng; Yong Song; Donglin Wang; Rui Meng;
+Jian Fang; Yongzhong Luo; Wenhua Liang; Sheng Hu; Zhihui Wang; Haichuan Su; Zhiyong He; Liuning Li; Wei Guo;
+Zhentian Liu; Qitao Yu; Yun Zhao; Runxiang Yang; Peng Chen; Yiru Wang; You Li; Lulu Yang; Wei Shi
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT009.
+https://doi.org/10.1158/1538-7445.AM2025-CT009
+
+
+
+Split-Screen
+
+ Views 
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Background:
+SHR-A1811 is a novel ADC consisting of a humanized HER2-directed monoclonal antibody,
+cleavable tetrapeptide-based linker, and DNA topoisomerase I inhibitor. We conducted a
+multicenter, open-label, phase 1/2 study to evaluate SHR-A1811 in HER2-altered NSCLC. In the
+registrational phase 2 portion in patients (pts) with HER2-mutant NSCLC, the primary endpoint of
+IRC-assessed ORR was met (DCO, Jun. 14, 2024). Here, we presented an updated analysis
+after an additional 6-mo follow-up, focusing on survival outcomes.
+
+Methods:
+Pts with advanced NSCLC and centrally confirmed HER2 mutation, previously treated with (or
+intolerance to) platinum-based chemo and anti-PD-1/PD-L1 therapy, were enrolled. SHR-A1811
+was administered at 4.8 mg/kg IV Q3W.
+
+Results:
+94 pts were enrolled and treated. Median prior lines of therapy was 2 (range 1-9); all received
+platinum-based chemo and anti-PD-1/PD-L1 therapy and 23.4% received anti-HER2 TKI. 25.5%
+had BM at baseline. The most common HER2 mutation was exon 20 insertions (overall, 94.7%;
+A775_G776insYVMA, 72.3%). As of DCO (Dec. 14, 2024), median follow-up was 14.2 mo (range
+4.7-18.2). Per IRC, ORR was 74.5% (95% CI 64.4-82.9); median DoR was 9.8 mo (95% CI 8.3Skip to Main Content
+13.9). Median PFS was 11.5 mo (95% CI 9.7-15.2), with consistent benefits observed across
+baseline subgroups (Table 1). Efficacy per INV is shown in Table 1. Median OS was not
+reached; 12-mo OS rate was 88.2% (95% CI 79.8-93.3). Grade ≥3 TRAEs occurred in 63
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT009/761353/Abstract-CT009-SHR-A1811-a-HER2-directed-antibody
+
+1/5
+
+5/26/25, 9:16 PM
+
+Abstract CT009: SHR-A1811, a HER2-directed antibody-drug conjugate (ADC), in advanced HER2-mutant non-small cell lung cancer (NS…
+
+(67.0%) pts; all with incidence ≥5% were haematological toxicities. ILD occurred in 8 (8.5%;
+grade 1-2, n=7; grade 3, n=1) pts. TRAEs led to dose discontinuation in 2 (2.1%) pts. There was
+no treatment-related death.
+
+Conclusions:
+At the updated analysis, SHR-A1811 continued to show clinically meaningful efficacy with a
+manageable safety profile in pts with previously treated HER2-mutant NSCLC, supporting it as a
+potential new treatment option for this population.
+
+Table 1
+Efficacy summary
+
+Patients (n=94)
+IRC
+
+INV
+
+ORR, % (n/N; 95% CI)
+
+74.5 (70/94; 64.4-82.9)
+
+68.1 (64/94; 57.7-77.3)
+
+Median DoR, mo (95% CI)
+
+9.8 (8.3-13.9)
+
+9.9 (7.2-11.5)
+
+DCR, % (n/N; 95% CI)
+
+98.9 (93/94; 94.2-100.0)
+
+96.8 (91/94; 91.0-99.3)
+
+Median PFS, mo (95% CI)
+
+11.5 (9.7-15.2)
+
+12.5 (9.9-15.1)
+
+BM (n=24)
+
+11.3 (9.5-NR)
+
+-
+
+No BM (n=70)
+
+11.5 (8.5-15.2)
+
+-
+
+1 line of prior therapy (n=43)
+
+9.9 (8.1-NR)
+
+-
+
+≥2 lines of prior therapy (n=51)
+
+13.9 (9.7-16.8)
+
+-
+
+Prior anti-HER2 TKI (n=22)
+
+9.7 (8.3-16.8)
+
+-
+
+No prior anti-HER2 TKI (n=72)
+
+11.5 (9.9-NR)
+
+-
+
+A775_G776insYVMA (n=68)
+
+15.2 (10.6-16.8)
+
+-
+
+Other mutations (n=26)
+
+9.6 (7.1-11.1)
+
+-
+
+PFS by baseline subgroup, mo (95% CI)
+
+BM, brain metastases; DCR, disease control rate; DoR, duration of response; INV, investigator; IRC, independent
+review committee; NR, not reached; ORR, objective response rate; PFS, progression-free survival; TKI, tyrosine
+kinase inhibitor.
+
+Skip to Main Content
+
+Citation Format:
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT009/761353/Abstract-CT009-SHR-A1811-a-HER2-directed-antibody
+
+2/5
+
+5/26/25, 9:16 PM
+
+Abstract CT009: SHR-A1811, a HER2-directed antibody-drug conjugate (ADC), in advanced HER2-mutant non-small cell lung cancer (NS…
+
+Shun Lu, Ziming Li, Yan Wang, Yuping Sun, Linlin Wang, Xingya Li, Longhua Sun, Zhiyi He,
+Haiyan Yang, Yongsheng Wang, Qiming Wang, Zhengbo Song, Wei Hong, Yong Wang, Guohao
+Xia, Yan Yu, Min Peng, Yong Song, Donglin Wang, Rui Meng, Jian Fang, Yongzhong Luo,
+Wenhua Liang, Sheng Hu, Zhihui Wang, Haichuan Su, Zhiyong He, Liuning Li, Wei Guo,
+Zhentian Liu, Qitao Yu, Yun Zhao, Runxiang Yang, Peng Chen, Yiru Wang, You Li, Lulu Yang,
+Wei Shi. SHR-A1811, a HER2-directed antibody-drug conjugate (ADC), in advanced HER2mutant non-small cell lung cancer (NSCLC): Updated phase 2 results from HORIZON-Lung
+[abstract]. In: Proceedings of the American Association for Cancer Research Annual Meeting
+2025; Part 2 (Late-Breaking, Clinical Trial, and Invited Abstracts); 2025 Apr 25-30; Chicago, IL.
+Philadelphia (PA): AACR; Cancer Res 2025;85(8_Suppl_2):Abstract nr CT009.
+
+©2025 American Association for Cancer Research
+
+Advertisement
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+Skip to Main Content
+
+ Email Alerts
+Article Activity Alert
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT009/761353/Abstract-CT009-SHR-A1811-a-HER2-directed-antibody
+
+3/5
+
+5/26/25, 9:16 PM
+
+Abstract CT009: SHR-A1811, a HER2-directed antibody-drug conjugate (ADC), in advanced HER2-mutant non-small cell lung cancer (NS…
+
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+
+Breaking
+PI3K Inhibitor Delays Chemotherapy Start
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Advertisement
+
+Skip to Main Content
+Issues
+
+News
+
+Online First
+
+Twitter
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT009/761353/Abstract-CT009-SHR-A1811-a-HER2-directed-antibody
+
+4/5
+
+5/26/25, 9:16 PM
+
+Abstract CT009: SHR-A1811, a HER2-directed antibody-drug conjugate (ADC), in advanced HER2-mutant non-small cell lung cancer (NS…
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+Blood Cancer
+Discovery
+Cancer Discovery
+Cancer
+Epidemiology,
+Biomarkers &
+Prevention
+Cancer Immunology
+Research
+
+Cancer Research
+Cancer Research
+Communications
+
+
+
+
+
+
+
+
+
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+Molecular Cancer
+Therapeutics
+
+Cancer Prevention
+Research
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT009/761353/Abstract-CT009-SHR-A1811-a-HER2-directed-antibody
+
+5/5
+
+

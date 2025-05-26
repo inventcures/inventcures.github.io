@@ -1,0 +1,230 @@
+5/26/25, 9:19 PM
+
+Abstract CT126: Aumolertinib as adjuvant therapy in patients with stage II-IIIB EGFR-mutated NSCLC after complete tumor resection: A ra…
+
+ARTICLE NAVIGATION
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | APRIL 25 2025
+
+Abstract CT126: Aumolertinib as adjuvant therapy in
+patients with stage II-IIIB EGFR-mutated NSCLC after
+complete tumor resection: A randomized, double-blind,
+placebo-controlled, phase 3 trial (ARTS) 
+Ying Cheng; Xiqin Zhang; Lin Wu; Wenxiang Wang; Wenqun Xing; Chunling Liu; Caigang Liu; Kai Chen; Jianhua Shi;
+Peng Zhang; Shidong Xu; Xiaodong Zhang; Xiaorong Dong; Haohui Fang; Xinmin Yu; Yang Gao; Gaofeng Li; Liang Chen;
+Huiyuan Gong; Renhua Guo; Zhenyuan Gao; Yinghua Ji; Lunxu Liu; Xianling Liu; Hui Tian; Fei Xiong; Xin Zhao; Lejie Cao;
+Qing Geng; Hongxu Liu; Jixian Liu; Li Yang; Zhenfa Zhang; Di Ge; Xingya Li; Minghui Wang; Yan Xu; Zhi Xu; Jun Chen;
+Zhaoxia Dai; Jian Hu; Juan Li; Shujun Li; Min Ye; Aimin Zang; Chanjuan Xie; Zhenzhong Su; Zhenmin Chen; Shaonan Fan
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT126.
+https://doi.org/10.1158/1538-7445.AM2025-CT126
+
+
+
+Split-Screen
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Background:
+Lung cancer is the primary cause of cancer-related morbidity and mortality globally.
+Approximately 30% of patients with EGFR mutation (EGFRm) in NSCLC are diagnosed at an
+early stage and are candidates for curative-intent surgical resection; however, disease
+recurrence remains a substantial clinical challenge. Aumolertinib is a third-generation EGFR TKI
+that potently inhibits both sensitizing EGFR mutations (ex19del/L858R) and the resistance
+mutation T790M. ARTS (NCT04687241) is a randomized, double-blind, placebo-controlled,
+multicenter, phase 3 trial designed to evaluate the efficacy and safety of adjuvant aumolertinib
+versus placebo in patients with stage II-IIIB EGFRm NSCLC after complete resection, with or
+without adjuvant chemotherapy.
+
+Methods:
+Inclusion criteria included patients aged ≥18 years, ECOG PS 0-1, primary non-squamous stage
+II/IIIA/IIIB (T3N2M0) NSCLC, confirmed EGFRm (ex19del or L858R), complete resection with full
+postsurgical recovery, with or without postoperative adjuvant chemotherapy. Patients were
+randomized in a 1:1 ratio to receive aumolertinib (110 mg orally, once daily) or matched placebo
+Skip to Main Content
+for a planned treatment duration of 3 years. Stratification was based on stage (II, IIIA N2-, IIIA/B
+N2+) and mutation type (ex19del, L858R). The primary endpoint was disease-free survival
+(DFS), assessed by blinded independent central review (BICR). Secondary endpoints included
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT126/761422/Abstract-CT126-Aumolertinib-as-adjuvant-therapy-in
+
+1/5
+
+5/26/25, 9:19 PM
+
+Abstract CT126: Aumolertinib as adjuvant therapy in patients with stage II-IIIB EGFR-mutated NSCLC after complete tumor resection: A ra…
+
+investigator-assessed DFS, overall survival (OS), and safety profile. Data cutoff (DCO): April 15,
+2024.
+
+Results:
+A total of 214 patients from China were randomized to treatment (Aumolertinib n=107, Placebo
+n=107). Baseline characteristics were balanced across treatment arms (aumolertinib/placebo):
+female 55.1%/57.0%, ever-smokers 28.0%/29.9%, stage II 44.9%/44.9%, stage III 54.2%/52.3%,
+ex19del 47.7%/50.5%, L858R 52.3%/49.5%, ECOG PS 0 36.4%/41.1%, ECOG PS 1
+63.6%/58.9%. Median follow-up for DFS was 27.6 months. The mDFS assessed by BICR was
+not reached (95% CI, 29.1 to NA) in the aumolertinib arm versus 19.4 months (95% CI, 11.2 to
+26.2) in the placebo arm; hazard ratio (HR) 0.166 (95% CI, 0.094 to 0.294); p<0.0001. The 2year DFS rate was 88.2% in the aumolertinib arm versus 40.6% in the placebo arm. Investigatorassessed DFS was concordant with BICR assessment. OS data were immature at DCO
+(aumolertinib/placebo OS maturity: 2.8%/3.8%). The incidence of AEs leading to dose
+interruptions, dose reductions, and discontinuation in the aumolertinib/ placebo arm was 12.3%/
+17.8%, 9.4%/ 1.9%, and 0.9%/ 0, respectively. No new safety risks were observed.
+
+Conclusions:
+Adjuvant aumolertinib demonstrates a statistically significant and clinically meaningful
+improvement in DFS in patients with stage II-IIIB EGFRm NSCLC following complete tumor
+resection and adjuvant chemotherapy, when indicated. This DFS benefit underscores the
+promise of aumolertinib in fulfilling an unmet need for effective adjuvant EGFR-targeted therapy
+in early-stage NSCLC.
+
+Citation Format:
+Ying Cheng, Xiqin Zhang, Lin Wu, Wenxiang Wang, Wenqun Xing, Chunling Liu, Caigang Liu,
+Kai Chen, Jianhua Shi, Peng Zhang, Shidong Xu, Xiaodong Zhang, Xiaorong Dong, Haohui
+Fang, Xinmin Yu, Yang Gao, Gaofeng Li, Liang Chen, Huiyuan Gong, Renhua Guo, Zhenyuan
+Gao, Yinghua Ji, Lunxu Liu, Xianling Liu, Hui Tian, Fei Xiong, Xin Zhao, Lejie Cao, Qing Geng,
+Hongxu Liu, Jixian Liu, Li Yang, Zhenfa Zhang, Di Ge, Xingya Li, Minghui Wang, Yan Xu, Zhi Xu,
+Jun Chen, Zhaoxia Dai, Jian Hu, Juan Li, Shujun Li, Min Ye, Aimin Zang, Chanjuan Xie,
+Zhenzhong Su, Zhenmin Chen, Shaonan Fan. Aumolertinib as adjuvant therapy in patients with
+stage II-IIIB EGFR-mutated NSCLC after complete tumor resection: A randomized, double-blind,
+placebo-controlled, phase 3 trial (ARTS) [abstract]. In: Proceedings of the American Association
+for Cancer Research Annual Meeting 2025; Part 2 (Late-Breaking, Clinical Trial, and Invited
+Abstracts); 2025 Apr 25-30; Chicago, IL. Philadelphia (PA): AACR; Cancer Res
+2025;85(8_Suppl_2):Abstract nr CT126.
+
+Skip to Main Content
+©2025 American Association for Cancer Research
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT126/761422/Abstract-CT126-Aumolertinib-as-adjuvant-therapy-in
+
+2/5
+
+5/26/25, 9:19 PM
+
+Abstract CT126: Aumolertinib as adjuvant therapy in patients with stage II-IIIB EGFR-mutated NSCLC after complete tumor resection: A ra…
+Advertisement
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+ Email Alerts
+Article Activity Alert
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+Skip to Main Content
+
+Breaking
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT126/761422/Abstract-CT126-Aumolertinib-as-adjuvant-therapy-in
+
+3/5
+
+5/26/25, 9:19 PM
+
+Abstract CT126: Aumolertinib as adjuvant therapy in patients with stage II-IIIB EGFR-mutated NSCLC after complete tumor resection: A ra…
+
+PI3K Inhibitor Delays Chemotherapy Start
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Advertisement
+
+Issues
+
+News
+
+Online First
+
+Twitter
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+Blood Cancer
+Discovery
+
+Cancer Prevention
+Research
+
+Cancer Discovery
+
+Cancer Research
+
+Cancer
+Epidemiology,
+Biomarkers
+& Content
+Skip
+to Main
+Prevention
+
+Cancer Research
+Communications
+
+Cancer Immunology
+Research
+
+
+
+
+
+
+
+
+
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT126/761422/Abstract-CT126-Aumolertinib-as-adjuvant-therapy-in
+
+4/5
+
+5/26/25, 9:19 PM
+
+Abstract CT126: Aumolertinib as adjuvant therapy in patients with stage II-IIIB EGFR-mutated NSCLC after complete tumor resection: A ra…
+
+Molecular Cancer
+Therapeutics
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT126/761422/Abstract-CT126-Aumolertinib-as-adjuvant-therapy-in
+
+5/5
+
+

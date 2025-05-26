@@ -1,0 +1,232 @@
+5/26/25, 9:21 PM
+
+Abstract CT204: Phase 1a/b study of runimotamab, a HER2 x CD3 T cell-engaging bispecific antibody, administered as a single agent and in…
+
+ARTICLE NAVIGATION
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | APRIL 25 2025
+
+Abstract CT204: Phase 1a/b study of runimotamab, a HER2
+x CD3 T cell-engaging bispecific antibody, administered as
+a single agent and in combination with trastuzumab in
+patients with HER2-expressing breast cancer (BC) 
+Shanu Modi; Timothy A. Yap; Tira J. Tan; Armando Santoro; Valentina Gambardella; Philippe Cassier; Haeseong Park;
+Erika Hamilton; Chia-Chi Lin; Capucine Baldini; Philippe L. Bedard; Seock-Ah Im; Jean-Luc Canon; Iben Spanggaard;
+Valentina Boni; Maria de Miguel; Patricia LoRusso; Antoine Italiano; Carlos Gomez-Roca; Simon Lord; Chang-Fang Chiu;
+Sherene Loi; Victor Moreno; Kohei Shitara; Cristina Saura; Marloes van Dongen; Salvatore Siena; Giuseppe Curigliano;
+Sharareh Monemi; Sharmeen Hassan; Michelle Wilhite; Emiko Gale; Zao Li; Zhaojun Yin; Chunze Li; Luciana Molinero;
+Kelly DuPree; Teemu Junttila; Aditi Qamra; Lina Alon; Iris T. Chan; Kyung Hae Jung
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT204.
+https://doi.org/10.1158/1538-7445.AM2025-CT204
+
+
+
+Split-Screen
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Background:
+Runimotamab is a HER2 x CD3 T cell-engaging bispecific antibody developed for patients with
+human epidermal growth factor receptor 2 (HER2)-expressing cancers that promotes cytotoxic T
+cell lysis of HER2-expressing cells. We hypothesized that co-treatment with trastuzumab may
+reduce on-target/off-tumor toxicities of runimotamab and increase its therapeutic index due to
+decreased runimotamab binding to low-expressing HER2 normal tissues. This first-in-human,
+dose-escalation study assessed the preliminary safety and anti-tumor activity of runimotamab
+alone and with trastuzumab in patients with HER2-expressing BC.
+
+Methods:
+Patients with locally advanced or metastatic BC received escalating doses of runimotamab IV
+either alone (Ph 1a) or in combination with trastuzumab (Ph 1b) to determine maximum tolerated
+doses. In Cycle (C) 1, runimotamab was administered using step dose fractionation, with a stepup dose given on Day (D) 1, followed by the initial target dose on D8. Subsequent runimotamab
+target doses were given on D1 of each 3-week cycle (Q3W). In Ph 1b, trastuzumab was
+Skip
+to Main Content
+administered
+prior to runimotamab, first on C1D-1, and then Q3W on D1 of each cycle. Study
+objectives included evaluation of safety and tolerability, pharmacokinetics (PK),
+pharmacodynamics, and anti-tumor activity. Data cut-off date was 01Aug2024.
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT204/761748/Abstract-CT204-Phase-1a-b-study-of-runimotamab-a
+
+1/5
+
+5/26/25, 9:21 PM
+
+Abstract CT204: Phase 1a/b study of runimotamab, a HER2 x CD3 T cell-engaging bispecific antibody, administered as a single agent and in…
+
+Results:
+Overall, 73 BC patients were enrolled: 20 in Ph 1a and 53 in Ph 1b (NCT03448042). Median
+number of all prior therapies was 7 in Ph 1a and 8 in Ph 1b patients. The highest runimotamab
+doses administered in Ph 1b (100/300 mg on C1D1/D8) surpassed those in Ph 1a (1.7/5 mg). At
+or above pharmacologically active doses of runimotamab (≥ 0.72/2.2 mg), cytokine release
+syndrome (CRS) rate was lower in Ph 1b (31%, n=15/48, Grade 1-2) compared to Ph 1a (78%,
+n=7/9, Grade 1-2) patients. The most common treatment-related adverse events (TRAEs; ≥20%
+patients) among all safety-evaluable patients were CRS, hypophosphatemia, pyrexia, ALT/AST
+increased, headache, nausea, rash, pruritus, and fatigue. Grade ≥3 TRAEs occurred in 4 (20%)
+Ph 1a and 20 (37.7%) Ph 1b patients. Runimotamab PK was dose-proportional in Ph 1a/b
+patients. Co-administration with trastuzumab dampened runimotamab-induced T cell activation
+and cytokine induction. Anti-tumor activity was observed in Ph 1b only, at runimotamab doses
+≥2.2/6.6 mg. Runimotamab 20/60 mg combined with trastuzumab was chosen for dose
+expansion. Seven of 23 (30.4%) runimotamab 20/60 mg patients had confirmed responses,
+including 1 CR and 6 PRs.
+
+Conclusions:
+Improved tolerability and higher runimotamab dose levels were achieved in combination with
+trastuzumab, compared to runimotamab alone. Runimotamab + trastuzumab demonstrated a
+manageable safety profile and encouraging clinical activity in heavily pretreated HER2-positive
+BC patients.
+
+Citation Format:
+Shanu Modi, Timothy A. Yap, Tira J. Tan, Armando Santoro, Valentina Gambardella, Philippe
+Cassier, Haeseong Park, Erika Hamilton, Chia-Chi Lin, Capucine Baldini, Philippe L. Bedard,
+Seock-Ah Im, Jean-Luc Canon, Iben Spanggaard, Valentina Boni, Maria de Miguel, Patricia
+LoRusso, Antoine Italiano, Carlos Gomez-Roca, Simon Lord, Chang-Fang Chiu, Sherene Loi,
+Victor Moreno, Kohei Shitara, Cristina Saura, Marloes van Dongen, Salvatore Siena, Giuseppe
+Curigliano, Sharareh Monemi, Sharmeen Hassan, Michelle Wilhite, Emiko Gale, Zao Li, Zhaojun
+Yin, Chunze Li, Luciana Molinero, Kelly DuPree, Teemu Junttila, Aditi Qamra, Lina Alon, Iris T.
+Chan, Kyung Hae Jung. Phase 1a/b study of runimotamab, a HER2 x CD3 T cell-engaging
+bispecific antibody, administered as a single agent and in combination with trastuzumab in
+patients with HER2-expressing breast cancer (BC) [abstract]. In: Proceedings of the American
+Association for Cancer Research Annual Meeting 2025; Part 2 (Late-Breaking, Clinical Trial, and
+Invited Abstracts); 2025 Apr 25-30; Chicago, IL. Philadelphia (PA): AACR; Cancer Res
+2025;85(8_Suppl_2):Abstract nr CT204.
+
+Skip to Main Content
+©2025 American Association for Cancer Research
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT204/761748/Abstract-CT204-Phase-1a-b-study-of-runimotamab-a
+
+2/5
+
+5/26/25, 9:21 PM
+
+Abstract CT204: Phase 1a/b study of runimotamab, a HER2 x CD3 T cell-engaging bispecific antibody, administered as a single agent and in…
+Advertisement
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+ Email Alerts
+Article Activity Alert
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+Skip to Main Content
+
+Breaking
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT204/761748/Abstract-CT204-Phase-1a-b-study-of-runimotamab-a
+
+3/5
+
+5/26/25, 9:21 PM
+
+Abstract CT204: Phase 1a/b study of runimotamab, a HER2 x CD3 T cell-engaging bispecific antibody, administered as a single agent and in…
+
+PI3K Inhibitor Delays Chemotherapy Start
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Advertisement
+
+Issues
+
+News
+
+Online First
+
+Twitter
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+Blood Cancer
+Discovery
+
+Cancer Prevention
+Research
+
+Cancer Discovery
+
+Cancer Research
+
+Cancer
+Epidemiology,
+Biomarkers
+& Content
+Skip
+to Main
+Prevention
+
+Cancer Research
+Communications
+
+Cancer Immunology
+Research
+
+
+
+
+
+
+
+
+
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT204/761748/Abstract-CT204-Phase-1a-b-study-of-runimotamab-a
+
+4/5
+
+5/26/25, 9:21 PM
+
+Abstract CT204: Phase 1a/b study of runimotamab, a HER2 x CD3 T cell-engaging bispecific antibody, administered as a single agent and in…
+
+Molecular Cancer
+Therapeutics
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT204/761748/Abstract-CT204-Phase-1a-b-study-of-runimotamab-a
+
+5/5
+
+

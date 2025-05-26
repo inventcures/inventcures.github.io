@@ -1,0 +1,219 @@
+5/26/25, 9:20 PM
+
+Abstract CT132: Phase 2 trial of metastasis directed radiotherapy without systemic therapy (MRWS) for oligometastatic clear cell renal cell c…
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | APRIL 25 2025
+
+Abstract CT132: Phase 2 trial of metastasis directed
+radiotherapy without systemic therapy (MRWS) for
+oligometastatic clear cell renal cell carcinoma (ccRCC) and
+investigation of circulating tumor DNA (ctDNA) as a
+personalized biomarker 
+Chad Tang; Alexander Sherry; Aaron Seo; Kieko Hara; Haesun Choi; Suyu Liu; Xiaowen Sun; Anya Montoya; Ethan Ludmir;
+Amishi Y. Shah; Eric Jonasch; Amado J. Zurita; Craig Kovitz; Christopher J. Battey; Sarah Ratzel; Giannicola Genovese;
+Kanishka Sircar; Jose Karam; Nizar Tannir; Pavlos Msaouel
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT132.
+https://doi.org/10.1158/1538-7445.AM2025-CT132
+
+
+
+Split-Screen
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Background:
+Current treatment for frontline ccRCC focuses on systemic therapy doublets. Although effective,
+such combinations exhibit substantial toxicities and healthcare costs. An underutilized option is
+MRWS, which may facilitate a prolonged systemic therapy-free interval in select patients.
+Unfortunately, no reliable prognostic markers exist to select patients for MRWS. Although ctDNA
+assays may guide patient selection, implementation in ccRCC has proven challenging due to
+limited ctDNA shedding. Therefore, advanced sequencing and bioinformatic pipelines are
+needed to enhance ctDNA reliability in ccRCC.
+
+Methods:
+This phase 2 single-arm trial (NCT03575611) enrolled patients with oligometastatic ccRCC and
+up to 5 metastases. All patients had either never received systemic therapy or ceased >1 month
+earlier. Patients were treated with MRWS, consisting of predominately stereotactic radiation
+therapy to all sites of disease. Subsequent rounds of MRWS were administered if limited
+progression was observed. The co-primary endpoints were progression free survival (PFS) and
+systemic therapy free survival (STFS). For the latter, a median STFS of >24 months (mo) was
+prespecified as the threshold for success. Individualized ctDNA panels (Myriad Genetics) were
+created from tumor whole genome sequencing and applied to serial plasma samples. Molecular
+residual disease (MRD) status was determined based on whether ctDNA was detected (MRD+)
+Skip to Main Content
+or not (MRD-).
+
+Results:
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT132/761760/Abstract-CT132-Phase-2-trial-of-metastasis
+
+1/5
+
+5/26/25, 9:20 PM
+
+Abstract CT132: Phase 2 trial of metastasis directed radiotherapy without systemic therapy (MRWS) for oligometastatic clear cell renal cell c…
+
+Between July 2018 to May 2023, 121 oligometastatic ccRCC patients were enrolled. Median
+follow up was 36 mo (range 13-68 mo). Most patients (72%) had 1 site of metastatic disease and
+had never received systemic therapy (70%). The median PFS was 18 mo (95% CI: 15-22 mo)
+and STFS was 34 mo (95% CI: 28-54 mo). The lower bounds of 95% CI of the median STFS
+exceeded the prespecified 24 mo threshold for success. Two-year PFS and STFS were 40% and
+75%, respectively. Median OS was not reached, and 2- and 3-year OS were 94% and 87%,
+respectively. Eight (7%) patients experienced grade 3+ toxicities at least possibly attributed to
+MRWS. There were no grade 5 toxicities.MRD+ was detected in 56% of patients at baseline and
+associated with significantly shorter STFS (HR 2.9, 95% CI 1.4-6.1, P=0.003). Patients who were
+MRD+ and MRD- at baseline exhibited 27 vs. 54 mo median STFS, respectively. Three months
+after MRWS, 31% of MRD + patients converted to MRD-. Positive MRD status at 3 month follow
+up was strongly associated with shorter STFS (HR 4.3, 95% CI 2.0-9.0, P<0.001).
+
+Conclusions:
+MRWS exhibited excellent tolerability and facilitated prolonged time off systemic therapy without
+compromising OS. Our ctDNA approach appears to be a promising baseline prognostic
+biomarker for STFS and a dynamic marker of MRWS response.
+
+Citation Format:
+Chad Tang, Alexander Sherry, Aaron Seo, Kieko Hara, Haesun Choi, Suyu Liu, Xiaowen Sun,
+Anya Montoya, Ethan Ludmir, Amishi Y. Shah, Eric Jonasch, Amado J. Zurita, Craig Kovitz,
+Christopher J. Battey, Sarah Ratzel, Giannicola Genovese, Kanishka Sircar, Jose Karam, Nizar
+Tannir, Pavlos Msaouel. Phase 2 trial of metastasis directed radiotherapy without systemic
+therapy (MRWS) for oligometastatic clear cell renal cell carcinoma (ccRCC) and investigation of
+circulating tumor DNA (ctDNA) as a personalized biomarker [abstract]. In: Proceedings of the
+American Association for Cancer Research Annual Meeting 2025; Part 2 (Late-Breaking, Clinical
+Trial, and Invited Abstracts); 2025 Apr 25-30; Chicago, IL. Philadelphia (PA): AACR; Cancer Res
+2025;85(8_Suppl_2):Abstract nr CT132.
+
+©2025 American Association for Cancer Research
+
+Advertisement
+
+Skip to Main Content
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT132/761760/Abstract-CT132-Phase-2-trial-of-metastasis
+
+2/5
+
+5/26/25, 9:20 PM
+
+Abstract CT132: Phase 2 trial of metastasis directed radiotherapy without systemic therapy (MRWS) for oligometastatic clear cell renal cell c…
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+ Email Alerts
+Article Activity Alert
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+
+Skip to Main Content
+
+Breaking
+PI3K Inhibitor Delays Chemotherapy Start
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT132/761760/Abstract-CT132-Phase-2-trial-of-metastasis
+
+3/5
+
+5/26/25, 9:20 PM
+
+Abstract CT132: Phase 2 trial of metastasis directed radiotherapy without systemic therapy (MRWS) for oligometastatic clear cell renal cell c…
+
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Advertisement
+
+Issues
+
+News
+
+Online First
+
+Twitter
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+Blood Cancer
+Discovery
+Cancer Discovery
+Cancer
+Epidemiology,
+Biomarkers &
+Prevention
+
+Skip to Main Content
+Cancer Immunology
+Research
+
+Cancer Research
+Cancer Research
+Communications
+
+
+
+
+
+
+
+
+
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+Molecular Cancer
+Therapeutics
+
+Cancer Prevention
+Research
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT132/761760/Abstract-CT132-Phase-2-trial-of-metastasis
+
+4/5
+
+5/26/25, 9:20 PM
+
+Abstract CT132: Phase 2 trial of metastasis directed radiotherapy without systemic therapy (MRWS) for oligometastatic clear cell renal cell c…
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT132/761760/Abstract-CT132-Phase-2-trial-of-metastasis
+
+5/5
+
+

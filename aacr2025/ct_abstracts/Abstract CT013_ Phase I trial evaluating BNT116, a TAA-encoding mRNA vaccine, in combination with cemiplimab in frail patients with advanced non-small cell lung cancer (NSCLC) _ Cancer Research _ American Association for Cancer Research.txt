@@ -1,0 +1,222 @@
+5/26/25, 9:17 PM
+
+Abstract CT013: Phase I trial evaluating BNT116, a TAA-encoding mRNA vaccine, in combination with cemiplimab in frail patients with ad…
+
+ARTICLE NAVIGATION
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | APRIL 25 2025
+
+Abstract CT013: Phase I trial evaluating BNT116, a TAAencoding mRNA vaccine, in combination with cemiplimab
+in frail patients with advanced non-small cell lung cancer
+(NSCLC) 
+Rafal Dziadziuszko; Dániel Deme; Rodryg Ramlau; Erdem Göker; Bulent Yalcin; Neru Munshi; Janet L. Markman;
+Victoria Chen; Manas Kumar Rout; Chiara Dalle Fratte; Tobias Burkard; Iryna Tsyhankova; Chris D. Hermann; Michael Wenger;
+Israel Lowy; Frank Seebach; Patrick Forde; Akin Atmaca; Özlem Türeci; Uğur Şahin; Patrick Brueck
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT013.
+https://doi.org/10.1158/1538-7445.AM2025-CT013
+
+
+
+Split-Screen
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Background:
+First-line platinum-based chemotherapy (PBC) for NSCLC extends survival; however, many
+patients (pts) with considerable comorbidities or older age are unable to tolerate PBC. BNT116,
+an intravenously administered, unmodified RNA-based lipoplex cancer vaccine, is composed of
+six mRNAs (CLDN6, KK-LC-1, MAGE-A3, MAGE-A4, MAGE-C1, PRAME), each encoding a
+tumor-associated antigen (TAA) frequently expressed in NSCLC. In early studies, it
+demonstrated a favorable safety profile alone or in combination with cemiplimab. We present
+preliminary data for BNT116 plus cemiplimab in frail patients with advanced or metastatic
+NSCLC who were not eligible for PBC as first-line treatment.
+
+Methods:
+The open label, multiple cohort Phase I LuCa-MERIT-1 (NCT: 05142189) clinical trial aims to
+determine the safety (dose limiting toxicities; treatment-emergent adverse events) and clinical
+activity (RECIST v1.1) of BNT116, alone or in combinations. The findings from this cohort will
+evaluate BNT116 in combination with cemiplimab in frail pts (ECOG PS 0-2) who are not
+candidates for first-line chemotherapy as per investigator's assessment and had a PD-L1 tumor
+proportion score (TPS) ≥1% on tumor cells. Biomarker analysis includes immunogenicity
+Skip
+to Main
+Content
+(ELISpot,
+n=7),
+cytokines (MSD, n=19), ctDNA (Avenio ctDNA Surveillance, n=19), and PD-L1
+(IHC, n=20).
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT013/761601/Abstract-CT013-Phase-I-trial-evaluating-BNT116-a
+
+1/5
+
+5/26/25, 9:17 PM
+
+Abstract CT013: Phase I trial evaluating BNT116, a TAA-encoding mRNA vaccine, in combination with cemiplimab in frail patients with ad…
+
+Results:
+As of 01 DEC 2024, 20 pts (median age 69.5 years; 30% ECOG 0, 60% ECOG 1, 10% ECOG 2)
+received BNT116 in combination with cemiplimab. Treatment-related adverse events (TRAEs) to
+BNT116 were experienced by all pts, while 13 pts (65%) experienced cemiplimab TRAEs.
+BNT116 TRAEs ≥G3 were observed in 3 pts (15%) and included supraventricular tachycardia
+(n=1 [5%]), hypoxia (n=1 [5%]), and hypertension (n=1 [5%]). Cemiplimab TRAEs ≥G3 were
+observed in 2 pts (10%). Serious TRAEs were observed in 7 pts (35%), in 3 pts (15%) only
+related to BNT116 and in 3 pts (15%) only related to cemiplimab, with no fatal TRAEs. The best
+overall response was a partial response (PR) in 9 of 20 pts (45%), and stable disease in 7 of 20
+pts (35%). Of the 9 PR pts, 2 had a PD-L1 TPS <50%. The confirmed objective response rate
+was 45%, the disease control rate was 80%, and median progression-free survival was 9.9
+months (95% CI: 2.4, not estimable). Frail pts were able to mount a robust type 1 interferon
+cytokine response and de novo T-cell responses to multiple TAAs detected via ex vivo IFNγ
+ELISpot, which were comparable to non-frail pts in other cohorts. ctDNA analysis revealed strong
+molecular responses following treatment evidenced as early as week 3.
+
+Conclusions:
+BNT116 plus cemiplimab demonstrated promising anti-tumor activity, consistent immune
+response induction, and a manageable safety profile in frail pts with advanced NSCLC. Updated
+safety and clinical activity data will be presented along with biomarker data.
+
+Citation Format:
+Rafal Dziadziuszko, Dániel Deme, Rodryg Ramlau, Erdem Göker, Bulent Yalcin, Neru Munshi,
+Janet L. Markman, Victoria Chen, Manas Kumar Rout, Chiara Dalle Fratte, Tobias Burkard, Iryna
+Tsyhankova, Chris D. Hermann, Michael Wenger, Israel Lowy, Frank Seebach, Patrick Forde,
+Akin Atmaca, Özlem Türeci, Uğur Şahin, Patrick Brueck. Phase I trial evaluating BNT116, a TAAencoding mRNA vaccine, in combination with cemiplimab in frail patients with advanced nonsmall cell lung cancer (NSCLC) [abstract]. In: Proceedings of the American Association for
+Cancer Research Annual Meeting 2025; Part 2 (Late-Breaking, Clinical Trial, and Invited
+Abstracts); 2025 Apr 25-30; Chicago, IL. Philadelphia (PA): AACR; Cancer Res
+2025;85(8_Suppl_2):Abstract nr CT013.
+
+©2025 American Association for Cancer Research
+
+Advertisement
+
+Skip to Main Content
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT013/761601/Abstract-CT013-Phase-I-trial-evaluating-BNT116-a
+
+2/5
+
+5/26/25, 9:17 PM
+
+Abstract CT013: Phase I trial evaluating BNT116, a TAA-encoding mRNA vaccine, in combination with cemiplimab in frail patients with ad…
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+ Email Alerts
+Article Activity Alert
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+
+Skip to Main Content
+
+Breaking
+PI3K Inhibitor Delays Chemotherapy Start
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT013/761601/Abstract-CT013-Phase-I-trial-evaluating-BNT116-a
+
+3/5
+
+5/26/25, 9:17 PM
+
+Abstract CT013: Phase I trial evaluating BNT116, a TAA-encoding mRNA vaccine, in combination with cemiplimab in frail patients with ad…
+
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Advertisement
+
+Issues
+
+News
+
+Online First
+
+Twitter
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+Blood Cancer
+Discovery
+Cancer Discovery
+Cancer
+Epidemiology,
+Biomarkers &
+Prevention
+
+Skip to Main Content
+Cancer Immunology
+Research
+
+Cancer Research
+Cancer Research
+Communications
+
+
+
+
+
+
+
+
+
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+Molecular Cancer
+Therapeutics
+
+Cancer Prevention
+Research
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT013/761601/Abstract-CT013-Phase-I-trial-evaluating-BNT116-a
+
+4/5
+
+5/26/25, 9:17 PM
+
+Abstract CT013: Phase I trial evaluating BNT116, a TAA-encoding mRNA vaccine, in combination with cemiplimab in frail patients with ad…
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT013/761601/Abstract-CT013-Phase-I-trial-evaluating-BNT116-a
+
+5/5
+
+

@@ -1,0 +1,219 @@
+5/26/25, 9:23 PM
+
+Abstract CT017: A phase I study evaluating safety, pharmacokinetics, and clinical activity of the novel, paradox breaker BRAF inhibitor RG…
+
+ARTICLE NAVIGATION
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | APRIL 25 2025
+
+Abstract CT017: A phase I study evaluating safety,
+pharmacokinetics, and clinical activity of the novel,
+paradox breaker BRAF inhibitor RG6344 in patients with
+BRAF V600-mutant solid tumors 
+Maria Vieito; Elisa Fontana; Catherine Han; Eduardo Castanon; David J Pinato; Oliver Bechter; Irene Moreno; Rikke L Eefsen;
+Ruth Plummer; Reinhard Dummer; Hans Prenen; Giulia Pretelli; Gabriel Schnetzler; Piergiorgio Pettazzoni; Abiraj Keelara;
+David Dejardin; Andreas Roller; Ernesto Guarin; Elisa Cinato; Tomi Fakolade; Nino Keshelava; Ting Liu; Nick Flinn;
+Nicole A. Kratochwil
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT017.
+https://doi.org/10.1158/1538-7445.AM2025-CT017
+
+
+
+Split-Screen
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Background:
+Clinical benefit of first generation BRAF inhibitors (BRAFi) as monotherapy is limited due to
+paradoxical feedback activation of downstream MAPK or EGFR; combinations with MEK
+inhibitors (in melanoma) or EGFR antibodies (in colorectal cancer [CRC]) have become a
+standard of care in BRAF V600-mutant tumors. RG6344 (RO7276389) is a novel brain penetrant
+paradox breaker BRAFi designed to address the limitations of approved BRAFi.
+
+Methods:
+Dose escalation of RG6344, as a single agent and in combination with standard dose of
+cobimetinib, is being conducted in participants with solid tumors harboring a BRAF V600E
+mutation up to the protocol specified maximum daily dose. The objectives were to define the
+maximum tolerated dose (MTD), the recommended Phase 2 dose and additionally to
+characterize safety, PK/PD, and clinical outcomes (ISRCTN13713551).
+
+Results:
+As of December 5, 2024, 66 patients (56% with prior BRAFi treatment), including 7 patients with
+Skip
+to Main Content
+non-measurable
+brain lesions, have been treated with RG6344 in the monotherapy dose
+escalation part of the study and 12 patients in the combination part with cobimetinib including 5
+patients with measurable and one with non-measurable brain lesions. Eleven melanoma, 51
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT017/761335/Abstract-CT017-A-phase-I-study-evaluating-safety
+
+1/5
+
+5/26/25, 9:23 PM
+
+Abstract CT017: A phase I study evaluating safety, pharmacokinetics, and clinical activity of the novel, paradox breaker BRAF inhibitor RG…
+
+CRC, 4 patients with other cancers received at least one dose of study drug as a single agent
+(dose escalation in combination still ongoing and not reported). One dose limiting toxicity event
+of grade 3 rash maculo-papular was reported. MTD has not been reached up to the highest daily
+dose of 3600 mg. Grade 3 treatment-related AEs (TRAEs) occurred in 11 patients (16.6 %),
+grade 4 TRAEs in 2 patients (3%; both laboratory findings) and no grade 5 TRAEs were
+reported. 2 patients (3%) discontinued study treatment due to TRAEs. None of the known BRAFi
+class toxicities, such as cutaneous squamous cell carcinomas, including Palmar-Plantar
+Erythrodysesthesia (PPE) and keratoacanthoma, have been observed to date. Linear and timeindependent PK was demonstrated across the tested dose range, reaching Ctrough levels
+exceeding PK-derived pERK inhibition >90%. Exposure -response (metabolic responses
+measured with FDG-PET) relationship was observed. Objective response rate (ORR) was 25%
+in a total of 64 evaluable patients across tumor types and doses including patients with brain
+metastases and/or refractory to or relapsing on prior BRAFi treatment.
+
+Conclusions:
+RG6344 is well tolerated allowing unprecedented exposure for pERK inhibition and shows
+promising preliminary activity.
+
+Citation Format:
+Maria Vieito, Elisa Fontana, Catherine Han, Eduardo Castanon, David J Pinato, Oliver Bechter,
+Irene Moreno, Rikke L Eefsen, Ruth Plummer, Reinhard Dummer, Hans Prenen, Giulia Pretelli,
+Gabriel Schnetzler, Piergiorgio Pettazzoni, Abiraj Keelara, David Dejardin, Andreas Roller,
+Ernesto Guarin, Elisa Cinato, Tomi Fakolade, Nino Keshelava, Ting Liu, Nick Flinn, Nicole A.
+Kratochwil. A phase I study evaluating safety, pharmacokinetics, and clinical activity of the novel,
+paradox breaker BRAF inhibitor RG6344 in patients with BRAF V600-mutant solid tumors
+[abstract]. In: Proceedings of the American Association for Cancer Research Annual Meeting
+2025; Part 2 (Late-Breaking, Clinical Trial, and Invited Abstracts); 2025 Apr 25-30; Chicago, IL.
+Philadelphia (PA): AACR; Cancer Res 2025;85(8_Suppl_2):Abstract nr CT017.
+
+©2025 American Association for Cancer Research
+
+Advertisement
+
+Skip to Main Content
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT017/761335/Abstract-CT017-A-phase-I-study-evaluating-safety
+
+2/5
+
+5/26/25, 9:23 PM
+
+Abstract CT017: A phase I study evaluating safety, pharmacokinetics, and clinical activity of the novel, paradox breaker BRAF inhibitor RG…
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+ Email Alerts
+Article Activity Alert
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+
+Skip to Main Content
+
+Breaking
+PI3K Inhibitor Delays Chemotherapy Start
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT017/761335/Abstract-CT017-A-phase-I-study-evaluating-safety
+
+3/5
+
+5/26/25, 9:23 PM
+
+Abstract CT017: A phase I study evaluating safety, pharmacokinetics, and clinical activity of the novel, paradox breaker BRAF inhibitor RG…
+
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Advertisement
+
+Issues
+
+News
+
+Online First
+
+Twitter
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+Blood Cancer
+Discovery
+Cancer Discovery
+Cancer
+Epidemiology,
+Biomarkers &
+Prevention
+
+Skip to Main Content
+Cancer Immunology
+Research
+
+Cancer Research
+Cancer Research
+Communications
+
+
+
+
+
+
+
+
+
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+Molecular Cancer
+Therapeutics
+
+Cancer Prevention
+Research
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT017/761335/Abstract-CT017-A-phase-I-study-evaluating-safety
+
+4/5
+
+5/26/25, 9:23 PM
+
+Abstract CT017: A phase I study evaluating safety, pharmacokinetics, and clinical activity of the novel, paradox breaker BRAF inhibitor RG…
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT017/761335/Abstract-CT017-A-phase-I-study-evaluating-safety
+
+5/5
+
+

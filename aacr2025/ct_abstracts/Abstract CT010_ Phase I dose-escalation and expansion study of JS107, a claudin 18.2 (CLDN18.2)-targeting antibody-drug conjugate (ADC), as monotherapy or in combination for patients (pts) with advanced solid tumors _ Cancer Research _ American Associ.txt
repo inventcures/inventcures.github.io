@@ -1,0 +1,219 @@
+5/26/25, 9:16 PM
+
+Abstract CT010: Phase I dose-escalation and expansion study of JS107, a claudin 18.2 (CLDN18.2)-targeting antibody-drug conjugate (ADC…
+
+ARTICLE NAVIGATION
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | APRIL 25 2025
+
+Abstract CT010: Phase I dose-escalation and expansion
+study of JS107, a claudin 18.2 (CLDN18.2)-targeting
+antibody-drug conjugate (ADC), as monotherapy or in
+combination for patients (pts) with advanced solid tumors
+
+
+Rui-Hua Xu; Dan-Yun Ruan; Rong-Bo Lin; Jian-Zhen Shan; Peng Nie; Ying-Hua Ji; Jing Wang; Yu Cao; Fu-Nan Liu;
+Jie-Er Ying; Li Liu; Tao Zhang; Hui-Ting Xu; Yan-Qiao Zhang; Wen-Can Song; Jin Xia; Wen-Feng Li; Zhi-Ye Zhang; Jian Shi;
+Ming-Xia Wang; Long Wu; Yan-Yan Lu; Xiao Zhang; Yan-Yan Hu; Yong-Dong Zhang
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT010.
+https://doi.org/10.1158/1538-7445.AM2025-CT010
+
+
+
+Split-Screen
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Background:
+JS107 is a monomethyl auristatin E conjugated, CLDN18.2 specific ADC. JS107 exhibited potent
+anti-tumor activities in preclinical studies with a tolerable safety profile. Here we report the safety
+and efficacy results of JS107 monotherapy or in combination for pts with advanced solid tumors
+from the first-in-human phase 1 trial (NCT05502393).
+
+Methods:
+In Part A of the study, pts with advanced solid tumors refractory to standard therapies were
+treated with JS107 at 0.15-3.5 mg/kg Q3W during dose escalation and CLDN18.2+ pts were
+treated with JS107 at 2.0 and 3.0 mg/kg Q3W during dose expansion. In Part B of the study, pts
+with CLDN18.2+, HER2-negative, previously untreated, advanced gastric or gastroesophageal
+junction cancer (GC/GEJ) were treated with JS107 combined with toripalimab (240 mg Q3W)
+and XELOX (capecitabine and oxaliplatin), in dose escalation (JS107 at 2.0-3.0 mg/kg Q3W) and
+expansion (JS107 at 2.0 mg/kg Q3W) phases. The primary endpoint was safety. Secondary
+endpoints included efficacy and pharmacokinetics (PK).
+Skip
+to Main Content
+Results:
+As of January 7, 2025, 63 pts were enrolled in Part A (22 in dose escalation and 41 in dose
+expansion) and 27 enrolled in Part B (9 in dose escalation and 18 in dose expansion). The
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT010/761491/Abstract-CT010-Phase-I-dose-escalation-and
+
+1/5
+
+5/26/25, 9:16 PM
+
+Abstract CT010: Phase I dose-escalation and expansion study of JS107, a claudin 18.2 (CLDN18.2)-targeting antibody-drug conjugate (ADC…
+
+maximum tolerated dose was not reached for JS107 monotherapy and was 2.5 mg/kg for
+combination treatment. Grade 3 and above treatment-related adverse events (TRAEs) occurred
+in 47.6% pts in Part A and 40.7% pts in Part B. The most frequent grade 3 and above TRAE was
+neutropenia (22.2%) in Part A and thrombocytopenia (18.5%) in Part B. Among pts with
+CLDN18.2-high (defined as ≥20% of tumor cells with ≥2+ staining intensity) GC/GEJ who
+received JS107 monotherapy at 2.0-3.0 mg/kg (n=24), the objective response rate (ORR) was
+34.8% (8/23, 95%CI 16.4-57.3) and median progression-free survival was 4.11 months (95%CI
+3.15-9.63). Among efficacy evaluable pts with CLDN18.2-high GC/GEJ in Part B (n=14), the
+ORR was 78.6% (11/14, 95%CI 49.2-95.3). A positive association between CLDN18.2
+expression level and efficacy was observed in Part A and Part B. PK analysis showed a dosedependent ADC and total antibody exposure at doses of 0.15-3.5 mg/kg. JS107 elimination halflife was 4.41-6.96 days at doses of 2.0-3.5 mg/kg, with no obvious accumulation observed after
+multiple dosing.
+
+Conclusions:
+JS107 monotherapy or in combination with toripalimab and XELOX showed promising efficacy in
+pts with CLDN18.2-high advanced GC/GEJ with a manageable safety profile. The clinical benefit
+of CLDN18.2 ADC combination treatment was thus demonstrated for the first time. Further
+clinical development of JS107 in CLDN18.2+ advanced solid tumors is warranted.
+
+Citation Format:
+Rui-Hua Xu, Dan-Yun Ruan, Rong-Bo Lin, Jian-Zhen Shan, Peng Nie, Ying-Hua Ji, Jing Wang,
+Yu Cao, Fu-Nan Liu, Jie-Er Ying, Li Liu, Tao Zhang, Hui-Ting Xu, Yan-Qiao Zhang, Wen-Can
+Song, Jin Xia, Wen-Feng Li, Zhi-Ye Zhang, Jian Shi, Ming-Xia Wang, Long Wu, Yan-Yan Lu, Xiao
+Zhang, Yan-Yan Hu, Yong-Dong Zhang. Phase I dose-escalation and expansion study of JS107,
+a claudin 18.2 (CLDN18.2)-targeting antibody-drug conjugate (ADC), as monotherapy or in
+combination for patients (pts) with advanced solid tumors [abstract]. In: Proceedings of the
+American Association for Cancer Research Annual Meeting 2025; Part 2 (Late-Breaking, Clinical
+Trial, and Invited Abstracts); 2025 Apr 25-30; Chicago, IL. Philadelphia (PA): AACR; Cancer Res
+2025;85(8_Suppl_2):Abstract nr CT010.
+
+©2025 American Association for Cancer Research
+
+Advertisement
+
+Skip to Main Content
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT010/761491/Abstract-CT010-Phase-I-dose-escalation-and
+
+2/5
+
+5/26/25, 9:16 PM
+
+Abstract CT010: Phase I dose-escalation and expansion study of JS107, a claudin 18.2 (CLDN18.2)-targeting antibody-drug conjugate (ADC…
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+ Email Alerts
+Article Activity Alert
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+
+Skip to Main Content
+
+Breaking
+PI3K Inhibitor Delays Chemotherapy Start
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT010/761491/Abstract-CT010-Phase-I-dose-escalation-and
+
+3/5
+
+5/26/25, 9:16 PM
+
+Abstract CT010: Phase I dose-escalation and expansion study of JS107, a claudin 18.2 (CLDN18.2)-targeting antibody-drug conjugate (ADC…
+
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Advertisement
+
+Issues
+
+News
+
+Online First
+
+Twitter
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+Blood Cancer
+Discovery
+Cancer Discovery
+Cancer
+Epidemiology,
+Biomarkers &
+Prevention
+
+Skip to Main Content
+Cancer Immunology
+Research
+
+Cancer Research
+Cancer Research
+Communications
+
+
+
+
+
+
+
+
+
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+Molecular Cancer
+Therapeutics
+
+Cancer Prevention
+Research
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT010/761491/Abstract-CT010-Phase-I-dose-escalation-and
+
+4/5
+
+5/26/25, 9:16 PM
+
+Abstract CT010: Phase I dose-escalation and expansion study of JS107, a claudin 18.2 (CLDN18.2)-targeting antibody-drug conjugate (ADC…
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT010/761491/Abstract-CT010-Phase-I-dose-escalation-and
+
+5/5
+
+

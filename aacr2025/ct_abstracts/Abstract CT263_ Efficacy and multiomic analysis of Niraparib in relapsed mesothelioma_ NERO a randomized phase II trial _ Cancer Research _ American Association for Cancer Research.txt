@@ -1,0 +1,229 @@
+5/26/25, 9:21 PM
+
+Abstract CT263: Efficacy and multiomic analysis of Niraparib in relapsed mesothelioma: NERO a randomized phase II trial | Cancer Researc…
+
+ARTICLE NAVIGATION
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | APRIL 25 2025
+
+Abstract CT263: Efficacy and multiomic analysis of
+Niraparib in relapsed mesothelioma: NERO a randomized
+phase II trial 
+Dean Fennell; Kayleigh Hill; Zina Eminton; Daniel Griffiths; Abigail Morgan-Fox; Charlotte Poile; Aleksandra Bzura; Jake Spicer;
+Min Zhang; Joanna Dzialo; Daniel Faulkner; Jinli Luo; Apostolos Nakas; Kudzayi Kutywayo; Geoff Saunders;
+Theodora Nearchou; Andrea Corkhill; Katie Mansell; Zoë Konn; Oli Dewane; Mavis Nye; Kathryn Murphy; Julia Tabreham;
+Liz Darlison; Judith Cave; Sarah Danson; Liz Toy; Pooja Bhatnagar; Nicola Steele; Paul Shaw; Paul Taylor; Peter Szlosarek;
+Dionysis Papadatos-Pastos; Michael Lind; Harman Saman; Shagufta Mirza; Lynn Campbell; Peter-Wells Jordan; Amrita Bajaj;
+Sean Duloo; Maurice Dungey; Gareth Griffiths
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT263.
+https://doi.org/10.1158/1538-7445.AM2025-CT263
+
+
+
+Split-Screen
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Background:
+Mesothelioma is a lethal cancer caused by asbestos. Effective therapy in the relapsed setting,
+following standard of care treatments is lacking [1]. Inhibition of Poly-ADP ribose polymerase
+(PARPi) mediates synthetic lethality in cancers harboring DNA damage response gene (DDR)
+inactivation, notably BRCA1/2 resulting in homologous recombination deficiency (HRD), and
+transcription replication conflicts (TRCs). In relapsed mesothelioma PARPi was clinically active in
+the MIST1 phase II trial [2], warranting interrogation of underlying mechanisms and further
+randomized evaluation.
+
+Methods:
+NERO, NCT05455424 a multi-center, two-arm, open-label UK 2:1 randomized phase II trial
+compared active symptom control (ASC) with or without Niraparib (Nir). Eligibility: Relapsed
+mesothelioma with prior platinum doublet therapy (any line). The ASC+Nir arm received 200 or
+300 mg daily in a 3-weekly cycle up to 24 weeks, with the option to continue if there was ongoing
+disease control. Primary endpoint: progression-free survival (PFS), one-sided α=0.1 with 80%
+power. In parallel, whole exome and transcriptomic analyses of the NERO, MIST1 cohort [2],
+primary
+patient
+derived explants (PDEs) and cell lines were conducted to understand correlates
+Skip
+to Main
+Content
+of PARPi sensitivity.
+
+Results:
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT263/761533/Abstract-CT263-Efficacy-and-multiomic-analysis-of
+
+1/5
+
+5/26/25, 9:21 PM
+
+Abstract CT263: Efficacy and multiomic analysis of Niraparib in relapsed mesothelioma: NERO a randomized phase II trial | Cancer Researc…
+th
+
+Between 11 July 2022 and 21st December 2023, 88 patients were enrolled. Characteristics:
+male: n = 62 (70.5%), median age: 72 (range 33-84) years, disease site: 77 (87.5%) had pleural
+mesothelioma. 83 (94.3%) PFS events were observed. Median (95% CI) PFS was 4.14 months
+(m) (2.76, 4.73) in the ASC + Nir arm versus 2.76m (1.41, 3.02) corresponding to an unadjusted
+PFS HR of 0.73 (one sided 90% CI 0.99, p-value 0.091). 6m PFS rate (95% CI) was 24.6%
+(14.4%, 36.2%) for ASC+Nir versus 13.8% (4.4%, 28.6%) for ASC. Most common Adverse
+Events (>20%) in the ASC+Nir arm: Fatigue (52.6%), Constipation (45.6%) & Nausea (43.9%).
+Interferon (IFN) α transcription (9p21.3) but not HRD or DDR gene burden was correlated with
+sensitivity to PARPi in MIST1, two PDE cohorts (Niraparib and Rucaparib), and in mesothelioma
+cell lines treated with multiple PARPi’s. Pattern recognition receptor signaling (Toll and RIG-I)
+positively correlated with IFNα, which in turn was associated with R-loops, a surrogate of TRCs
+across all models. MTAP/IFNA deletion at 9p21.3 inhibited PARPi activity in patients.
+
+Conclusions:
+NERO met its primary endpoint of longer PFS in patients with relapsed mesothelioma. PARPi
+response is predicted by IFNα transcription and 9p21.3 deletion status. Multiomic analysis of
+NERO is ongoing and will be presented.
+NERO is funded by Asthma and Lung UK (MCTA20F\2) with drug supplied by GSK.
+[1] Janes, Alrifai, Fennell N Engl J Med 2021 (385) p1207-1218
+[2] Fennell et al, Lancet Respir Med 2021 (9) p593-600
+
+Citation Format:
+Dean Fennell, Kayleigh Hill, Zina Eminton, Daniel Griffiths, Abigail Morgan-Fox, Charlotte Poile,
+Aleksandra Bzura, Jake Spicer, Min Zhang, Joanna Dzialo, Daniel Faulkner, Jinli Luo, Apostolos
+Nakas, Kudzayi Kutywayo, Geoff Saunders, Theodora Nearchou, Andrea Corkhill, Katie Mansell,
+Zoë Konn, Oli Dewane, Mavis Nye, Kathryn Murphy, Julia Tabreham, Liz Darlison, Judith Cave,
+Sarah Danson, Liz Toy, Pooja Bhatnagar, Nicola Steele, Paul Shaw, Paul Taylor, Peter
+Szlosarek, Dionysis Papadatos-Pastos, Michael Lind, Harman Saman, Shagufta Mirza, Lynn
+Campbell, Peter-Wells Jordan, Amrita Bajaj, Sean Duloo, Maurice Dungey, Gareth Griffiths.
+Efficacy and multiomic analysis of Niraparib in relapsed mesothelioma: NERO a randomized
+phase II trial [abstract]. In: Proceedings of the American Association for Cancer Research Annual
+Meeting 2025; Part 2 (Late-Breaking, Clinical Trial, and Invited Abstracts); 2025 Apr 25-30;
+Chicago, IL. Philadelphia (PA): AACR; Cancer Res 2025;85(8_Suppl_2):Abstract nr CT263.
+
+©2025 American Association for Cancer Research
+
+Skip to Main Content
+Advertisement
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT263/761533/Abstract-CT263-Efficacy-and-multiomic-analysis-of
+
+2/5
+
+5/26/25, 9:21 PM
+
+Abstract CT263: Efficacy and multiomic analysis of Niraparib in relapsed mesothelioma: NERO a randomized phase II trial | Cancer Researc…
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+ Email Alerts
+Article Activity Alert
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+
+Skip to Main Content
+
+Breaking
+PI3K Inhibitor Delays Chemotherapy Start
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT263/761533/Abstract-CT263-Efficacy-and-multiomic-analysis-of
+
+3/5
+
+5/26/25, 9:21 PM
+
+Abstract CT263: Efficacy and multiomic analysis of Niraparib in relapsed mesothelioma: NERO a randomized phase II trial | Cancer Researc…
+
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Advertisement
+
+Issues
+
+News
+
+Online First
+
+Twitter
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+Blood Cancer
+Discovery
+Cancer Discovery
+Cancer
+Epidemiology,
+Biomarkers &
+Prevention
+
+Skip to Main Content
+Cancer Immunology
+Research
+
+Cancer Research
+Cancer Research
+Communications
+
+
+
+
+
+
+
+
+
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+Molecular Cancer
+Therapeutics
+
+Cancer Prevention
+Research
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT263/761533/Abstract-CT263-Efficacy-and-multiomic-analysis-of
+
+4/5
+
+5/26/25, 9:21 PM
+
+Abstract CT263: Efficacy and multiomic analysis of Niraparib in relapsed mesothelioma: NERO a randomized phase II trial | Cancer Researc…
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT263/761533/Abstract-CT263-Efficacy-and-multiomic-analysis-of
+
+5/5
+
+

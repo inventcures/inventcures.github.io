@@ -1,0 +1,330 @@
+5/26/25, 9:24 PM
+
+Abstract CT051: SKYSCRAPER-01: A phase III, randomized trial of tiragolumab (tira) + atezolizumab (atezo) versus placebo (pbo) + atezo …
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | APRIL 25 2025
+
+Abstract CT051: SKYSCRAPER-01: A phase III, randomized
+trial of tiragolumab (tira) + atezolizumab (atezo) versus
+placebo (pbo) + atezo in patients (pts) with previouslyuntreated PD-L1-high, locally advanced
+unresectable/metastatic NSCLC 
+Solange Peters; Roy Herbst; Hidehito Horinouchi; Luis Paz-Ares; Melissa Johnson; Benjamin Solomon; Mahmut Gumus;
+Mustafa Erman; Igor Bondarenko; Dong-Wan Kim; Enriqueta Felip; Alessandro Morabito; Maciej Bryl; Raymond Meng;
+Chipman Stroud; Palak Kundu; Xiaohui Wen; Namrata Patil; Meilin Huang; Byoung Chul Cho
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT051.
+https://doi.org/10.1158/1538-7445.AM2025-CT051
+
+
+
+Split-Screen
+
+ Views 
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Background:
+Tiragolumab (tira) + atezolizumab (atezo) has shown encouraging survival outcomes in pts with
+metastatic NSCLC, primarily in pts with PD-L1-high tumors (tumor proportion score [TPS] ≥50%).
+SKYSCRAPER-01 (NCT04294810) is a phase III, double-blind, placebo-controlled, randomized
+trial investigating the efficacy and safety of first-line tira + atezo in pts with PD-L1-high NSCLC.
+
+Methods:
+Eligible pts (previously untreated; PD-L1-high, locally advanced unresectable/metastatic NSCLC;
+EGFR/ALK wildtype) were randomized 1:1 to receive tira 600 mg IV + atezo 1200 mg IV or pbo +
+atezo 1200 mg IV every 3 weeks until disease progression, loss of clinical benefit, or
+unacceptable toxicity. Primary endpoints: investigator-assessed progression-free survival (INVPFS) and overall survival (OS) in the primary analysis set (PAS; TPS ≥50%; 22C3 assay).
+Secondary endpoints: INV-objective response rate (INV-ORR) and INV-duration of response
+(INV-DOR) in the PAS; OS in the secondary analysis set (SAS; tumor cell [TC] ≥50%; SP263
+assay).
+
+Results:
+A total of 534 pts were randomized (tira + atezo, n=266; pbo + atezo, n=268). Pt characteristics
+Skip
+Main Content
+weretobalanced
+between treatment arms. At the final PFS analysis (data cut-off 12 Mar 2022;
+median follow-up 9.9 months), median INV-PFS was 7.0 months with tira + atezo and 5.6 months
+with pbo + atezo (HR 0.78; 95% CI 0.63, 0.97; p=0.02; PAS). At the final OS analysis (data cuthttps://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT051/761657/Abstract-CT051-SKYSCRAPER-01-A-phase-III
+
+1/5
+
+5/26/25, 9:24 PM
+
+Abstract CT051: SKYSCRAPER-01: A phase III, randomized trial of tiragolumab (tira) + atezolizumab (atezo) versus placebo (pbo) + atezo …
+
+off 24 Sep 2024; median follow-up 17.9 months), median OS was 23.1 months with tira + atezo
+and 16.9 months with pbo + atezo (HR 0.87; 95% CI 0.71, 1.08; p=0.22; PAS; Table). Tira +
+atezo demonstrated an acceptable safety profile, consistent with previous observations.
+
+Table
+PAS (TPS ≥50% per 22C3 assay)
+
+Tira + atezo
+
+Pbo + atezo
+
+(n=262)
+
+(n=259)
+
+Median PFS, months (95% CI)*†
+
+7.0 (5.6, 9.8)
+
+5.6 (4.4, 7.0)
+
+HR (95% CI); p-value
+
+0.78 (0.63, 0.97); p=0.02
+
+Median OS, months (95% CI)*†
+
+23.1 (17.7, 28.8)
+
+HR (95% CI); p-value
+
+0.87 (0.71, 1.08); p=0.22
+
+ORR, %*
+
+45.8
+
+35.1
+
+Median DOR, months (95% CI)*
+
+18.0 (13.6, 24.4)
+
+14.6 (9.7, 18.6)
+
+SAS (TC ≥50% per SP263 assay)
+
+Tira + atezo
+
+Pbo + atezo
+
+(n=211)
+
+(n=209)
+
+Median OS, months (95% CI)*
+
+24.6 (17.9, 32.0)
+
+20.6 (16.6, 29.3)
+
+HR (95% CI)
+
+0.93 (0.73, 1.18)
+
+Safety evaluable set‡
+
+Tira + atezo
+
+Pbo + atezo
+
+(n=267)
+
+(n=263)
+
+Any grade AEs, %
+
+95.9
+
+91.3
+
+Grade 3-4 AEs, %
+
+41.2
+
+33.8
+
+Grade 5 AEs, %
+
+10.9
+
+9.9
+
+Treatment-related grade 5 AEs, %
+
+1.5
+
+0.8
+
+AEs leading to treatment withdrawal, %
+
+16.1
+
+6.5
+
+Any grade AESIs, %
+
+70.0
+
+50.6
+
+16.9 (14.6, 23.1)
+
+* PFS analysis: data cut-off 12 Mar 2022 (PFS final analysis/first OS interim analysis); OS ORR, and DOR analysis:
+data cut-off 24 Sep 2024 (OS final analysis). PFS, ORR and DOR were assessed by the investigator.
+† Primary endpoints.
+
+Skip ‡to All
+Main
+Content
+randomized
+patients who received ≥1 dose of study treatment. AE, adverse event; atezo, atezolizumab; AESIs,
+adverse events of special interest; CI, confidence interval; DOR, duration of response; HR, hazard ratio; ORR,
+objective response rate; OS, overall survival; PAS, primary analysis set; pbo, placebo; PFS, progression-free survival;
+SAS, secondary analysis set; TC, tumor cell; tira, tiragolumab; TPS, tumor proportion score.
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT051/761657/Abstract-CT051-SKYSCRAPER-01-A-phase-III
+
+2/5
+
+5/26/25, 9:24 PM
+
+Abstract CT051: SKYSCRAPER-01: A phase III, randomized trial of tiragolumab (tira) + atezolizumab (atezo) versus placebo (pbo) + atezo …
+
+Conclusion:
+The primary endpoints of INV-PFS and OS were not met in the SKYSCRAPER-01 study.
+Numerical improvements in both PFS and OS with tira + atezo versus pbo + atezo suggest
+potential antitumor activity of TIGIT targeting in NSCLC.
+
+Citation Format:
+Solange Peters, Roy Herbst, Hidehito Horinouchi, Luis Paz-Ares, Melissa Johnson, Benjamin
+Solomon, Mahmut Gumus, Mustafa Erman, Igor Bondarenko, Dong-Wan Kim, Enriqueta Felip,
+Alessandro Morabito, Maciej Bryl, Raymond Meng, Chipman Stroud, Palak Kundu, Xiaohui Wen,
+Namrata Patil, Meilin Huang, Byoung Chul Cho. SKYSCRAPER-01: A phase III, randomized trial
+of tiragolumab (tira) + atezolizumab (atezo) versus placebo (pbo) + atezo in patients (pts) with
+previously-untreated PD-L1-high, locally advanced unresectable/metastatic NSCLC [abstract]. In:
+Proceedings of the American Association for Cancer Research Annual Meeting 2025; Part 2
+(Late-Breaking, Clinical Trial, and Invited Abstracts); 2025 Apr 25-30; Chicago, IL. Philadelphia
+(PA): AACR; Cancer Res 2025;85(8_Suppl_2):Abstract nr CT051.
+
+©2025 American Association for Cancer Research
+
+Advertisement
+
+View Metrics
+
+Skip to Main Content
+
+Citing Articles Via
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT051/761657/Abstract-CT051-SKYSCRAPER-01-A-phase-III
+
+3/5
+
+5/26/25, 9:24 PM
+
+Abstract CT051: SKYSCRAPER-01: A phase III, randomized trial of tiragolumab (tira) + atezolizumab (atezo) versus placebo (pbo) + atezo …
+
+Google Scholar
+
+ Email Alerts
+Article Activity Alert
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+
+Breaking
+PI3K Inhibitor Delays Chemotherapy Start
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+
+Skip to Main Content
+
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT051/761657/Abstract-CT051-SKYSCRAPER-01-A-phase-III
+
+4/5
+
+5/26/25, 9:24 PM
+
+Abstract CT051: SKYSCRAPER-01: A phase III, randomized trial of tiragolumab (tira) + atezolizumab (atezo) versus placebo (pbo) + atezo …
+Advertisement
+
+Issues
+
+News
+
+Online First
+
+Twitter
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+Blood Cancer
+Discovery
+Cancer Discovery
+Cancer
+Epidemiology,
+Biomarkers &
+Prevention
+Cancer Immunology
+Research
+
+Cancer Research
+Cancer Research
+Communications
+
+
+
+
+
+
+
+
+
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+Molecular Cancer
+Therapeutics
+
+Cancer Prevention
+Research
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT051/761657/Abstract-CT051-SKYSCRAPER-01-A-phase-III
+
+5/5
+
+

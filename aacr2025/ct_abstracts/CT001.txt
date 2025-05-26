@@ -1,0 +1,226 @@
+5/26/25, 9:18 PM
+
+Abstract CT001: Neoadjuvant and adjuvant pembrolizumab plus standard of care (SOC) in resectable locally advanced head and neck squam…
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | MAY 22 2025
+
+Abstract CT001: Neoadjuvant and adjuvant pembrolizumab
+plus standard of care (SOC) in resectable locally advanced
+head and neck squamous cell carcinoma (LA HNSCC):
+Phase 3 KEYNOTE-689 study 
+Ravindra Uppaluri; Robert I. Haddad; Yungan Tao; Christophe Le Tourneau; Nancy Y. Lee; William Westra; Rebecca Chernock;
+Makoto Tahara; Kevin Harrington; Arkadiy L. Klochikhin; Irene Braña; Gustavo Vasconcelos Alves; Brett G.M. Hughes;
+Marc Oliva; Iane Pinto Figueiredo Lima; Tsutomu Ueda; Tomasz Rutkowski; Ursula Schroeder; Paul-Stefan Mauz;
+Thorsten Fuereder; Simon Laban; Nobuhiko Oridate; Aron Popovtzer; Nicolas Mach; Yevhen Korobko; Diogo Alpuim Costa;
+Anupama Hooda-Nehra; Cristina P. Rodriguez; R. Bryan Bell; Cole Manschot; Kimberly Benjamin; Burak Gumuscu;
+Douglas Adkins
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT001.
+https://doi.org/10.1158/1538-7445.AM2025-CT001
+
+
+
+Split-Screen
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Background:
+Neoadjuvant and adjuvant immune checkpoint inhibitors added to SOC (surgery + postoperative
+radiotherapy [PORT] ± concurrent chemotherapy) yielded promising efficacy results in
+participants (pts) with LA HNSCC in early phase studies. The randomized, open-label, phase 3
+KEYNOTE-689 study (NCT03765918) evaluates neoadjuvant and adjuvant pembrolizumab +
+SOC vs SOC in this population.
+
+Methods:
+Adults with newly diagnosed resectable LA HNSCC (larynx/hypopharynx/oral cavity stage III/IVA;
+oropharyngeal stage III/IVA p16− or stage III T4 N0-2 p16+) were randomized 1:1 to 2 cycles
+neoadjuvant and 3 cycles concurrent (during PORT) and 12 cycles adjuvant pembrolizumab 200
+mg IV Q3W + SOC vs SOC. SOC included surgery for all pts + PORT 60 Gy in 30 fractions for
+low-risk, PORT 66 Gy in 33 fractions + 3 cycles concurrent cisplatin 100 mg/m2 Q3W for highrisk, and PORT 70 Gy in 35 fractions + cisplatin for gross residual disease. The primary endpoint
+is event-free survival (EFS) per RECIST 1.1 by blinded independent central review. Key
+secondary endpoints are major pathological response (mPR; ≤10% invasive SCC) by blinded
+independent pathologist review and overall survival (OS). Efficacy endpoints are sequentially
+assessed in 3 populations: pts with tumors with PD-L1 combined positive score (CPS) ≥10, CPS
+Skip
+to Main
+Content
+≥1, and
+all pts.
+Treatment-related adverse events (TRAEs) are graded per CTCAE v4.03.
+
+Results:
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT001/762472/Abstract-CT001-Neoadjuvant-and-adjuvant
+
+1/5
+
+5/26/25, 9:18 PM
+
+Abstract CT001: Neoadjuvant and adjuvant pembrolizumab plus standard of care (SOC) in resectable locally advanced head and neck squam…
+
+From December 2018 to October 2023, 363 pts were randomized to pembrolizumab + SOC and
+351 to SOC. As of 25 July 2024 (first interim analysis), median follow-up was 38.3 months
+(range, 9.0-66.5). Baseline demographics were balanced between arms. The CPS ≥10
+population included 234 pts in the pembrolizumab + SOC arm and 231 in the SOC arm; the CPS
+≥1 population included 347 and 335 pts, respectively. EFS (CPS ≥10: median 59.7 vs 26.9
+months, HR 0.66, 95% CI 0.49-0.88, P=.00217; CPS ≥1: 59.7 vs 29.6 months, HR 0.70, 95% CI
+0.55-0.89, P=.00140; all pts: 51.8 vs 30.4 months, HR 0.73, 95% CI 0.58-0.92, P=.00411) and
+mPR rate difference (CPS ≥10: 13.7%, 95% CI 9.7-18.7, P<.00001; CPS ≥1: 9.8%, 95% CI 7.013.3, P<.00001; all pts: 9.3%, 95% CI 6.7-12.8, P<.00001) analyses were statistically significant
+with pembrolizumab + SOC vs SOC in all prespecified populations. Additional follow-up for OS is
+ongoing. Grade ≥3 TRAE frequency was similar (44.6% with pembrolizumab + SOC vs 42.9%
+with SOC); 4 and 1 deaths occurred due to TRAE, respectively. Immune-mediated AEs occurred
+in 43.2% of pts with pembrolizumab + SOC, most commonly hypothyroidism (24.7%).
+
+Conclusions:
+Adding neoadjuvant and adjuvant pembrolizumab to SOC significantly improved EFS and mPR
+rate difference in pts with resectable LA HNSCC independent of CPS. The safety profile of
+pembrolizumab was consistent with expectations.
+
+Citation Format:
+Ravindra Uppaluri, Robert I. Haddad, Yungan Tao, Christophe Le Tourneau, Nancy Y. Lee,
+William Westra, Rebecca Chernock, Makoto Tahara, Kevin Harrington, Arkadiy L. Klochikhin,
+Irene Braña, Gustavo Vasconcelos Alves, Brett G.M. Hughes, Marc Oliva, Iane Pinto Figueiredo
+Lima, Tsutomu Ueda, Tomasz Rutkowski, Ursula Schroeder, Paul-Stefan Mauz, Thorsten
+Fuereder, Simon Laban, Nobuhiko Oridate, Aron Popovtzer, Nicolas Mach, Yevhen Korobko,
+Diogo Alpuim Costa, Anupama Hooda-Nehra, Cristina P. Rodriguez, R. Bryan Bell, Cole
+Manschot, Kimberly Benjamin, Burak Gumuscu, Douglas Adkins. Neoadjuvant and adjuvant
+pembrolizumab plus standard of care (SOC) in resectable locally advanced head and neck
+squamous cell carcinoma (LA HNSCC): Phase 3 KEYNOTE-689 study [abstract]. In:
+Proceedings of the American Association for Cancer Research Annual Meeting 2025; Part 2
+(Late-Breaking, Clinical Trial, and Invited Abstracts); 2025 Apr 25-30; Chicago, IL. Philadelphia
+(PA): AACR; Cancer Res 2025;85(8_Suppl_2):Abstract nr CT001.
+
+©2025 American Association for Cancer Research
+
+Advertisement
+
+Skip to Main Content
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT001/762472/Abstract-CT001-Neoadjuvant-and-adjuvant
+
+2/5
+
+5/26/25, 9:18 PM
+
+Abstract CT001: Neoadjuvant and adjuvant pembrolizumab plus standard of care (SOC) in resectable locally advanced head and neck squam…
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+ Email Alerts
+Article Activity Alert
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+
+Skip to Main Content
+
+Breaking
+PI3K Inhibitor Delays Chemotherapy Start
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT001/762472/Abstract-CT001-Neoadjuvant-and-adjuvant
+
+3/5
+
+5/26/25, 9:18 PM
+
+Abstract CT001: Neoadjuvant and adjuvant pembrolizumab plus standard of care (SOC) in resectable locally advanced head and neck squam…
+
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Advertisement
+
+Issues
+
+News
+
+Online First
+
+Twitter
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+Blood Cancer
+Discovery
+Cancer Discovery
+Cancer
+Epidemiology,
+Biomarkers &
+Prevention
+
+Skip to Main Content
+Cancer Immunology
+Research
+
+Cancer Research
+Cancer Research
+Communications
+
+
+
+
+
+
+
+
+
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+Molecular Cancer
+Therapeutics
+
+Cancer Prevention
+Research
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT001/762472/Abstract-CT001-Neoadjuvant-and-adjuvant
+
+4/5
+
+5/26/25, 9:18 PM
+
+Abstract CT001: Neoadjuvant and adjuvant pembrolizumab plus standard of care (SOC) in resectable locally advanced head and neck squam…
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT001/762472/Abstract-CT001-Neoadjuvant-and-adjuvant
+
+5/5
+
+

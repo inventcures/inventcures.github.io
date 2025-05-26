@@ -1,0 +1,227 @@
+5/26/25, 9:24 PM
+
+Abstract CT053: Aumolertinib with or without chemotherapy as first line treatment in locally advanced or metastatic NSCLC with sensitizin…
+
+ARTICLE NAVIGATION
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | APRIL 25 2025
+
+Abstract CT053: Aumolertinib with or without
+chemotherapy as first line treatment in locally advanced or
+metastatic NSCLC with sensitizing EGFR mutations
+(AENEAS2) 
+Shun Lu; Jie Hu; Jianhua Chen; Yan Yu; Xiangjiao Meng; Xiaorong Dong; Yanping Hu; Yinghua Ji; Ying Cheng; Weibo Wang;
+Fangling Ning; Zhihong Zhang; Zhiye Zhang; Chunling Liu; Qiming Wang; Wei Zheng; Xiujuan Qu; Honghai Wang;
+Runxiang Yang; Renhua Guo; Jianhua Shi; Feng Wu; Dongqing Lv; Jian Fang; Zhi Xu; Huaqiu Shi; Haichuan Su;
+Yongxing Chen; Cheng zhi Zhou; Junhong Zhang; Xuewen Liu; Zhaoxia Dai; Wen Li; Zili Meng; Guojun Zhang; Biyong Ren;
+Lin Wu; Yalun Li; Xinmin Yu; Ziping Wang; Jian Feng; Yueyin Pan; Juan Li; Xiangdong Zhou; Suxian Hu; Tongmei Zhang;
+Laiyu Liu; Jiming Shen; Shaonan Fan; Zhenming Chen
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT053.
+https://doi.org/10.1158/1538-7445.AM2025-CT053
+
+
+
+Split-Screen
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Introduction:
+Aumolertinib, a third generation selective EGFR-TKI, is standard of care for the first-line
+treatment in advanced or metastatic NSCLC with sensitizing EGFR mutations in China. Evidence
+has shown that combining EGFR-TKIs with chemotherapy can improve outcomes compared to
+EGFR-TKIs monotherapy. AENEAS2 (NCT04923906) is a randomized, open-label, multicenter,
+phase 3 study assessing the efficacy and safety of aumolertinib plus chemotherapy versus
+aumolertinib alone as first-line treatment in locally advanced or metastatic NSCLC with
+sensitizing EGFR mutations.
+
+Methods:
+Patients who were naïve to treatment with locally advanced or metastatic NSCLC harboring
+EGFR mutations (exon 19 deletion or L858R mutation) were randomly assigned in a 1:1 ratio to
+receive aumolertinib 110 mg QD in combination with pemetrexed (500 mg/m2) plus cisplatin (75
+mg/m2) or carboplatin (AUC5), versus to receive aumolertinib 110 mg QD monotherapy. The
+primary endpoint is progression free survival (PFS) assessed by IRC (Independent Review
+Skip
+to Main Content
+Committee)
+per RECIST v1.1. Data cutoff date: 2024/06/18.
+
+Results:
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT053/761332/Abstract-CT053-Aumolertinib-with-or-without
+
+1/5
+
+5/26/25, 9:24 PM
+
+Abstract CT053: Aumolertinib with or without chemotherapy as first line treatment in locally advanced or metastatic NSCLC with sensitizin…
+
+A total of 624 patients were randomized to aumolertinib plus chemotherapy (n=310) or
+aumolertinib monotherapy (n=314) and stratified according to EGFR mutation status (Ex19del
+verse L858R) and CNS metastases at baseline (yes versus no). Baseline characteristics were
+balanced between treatment arms (aumolertinib plus chemotherapy versus aumolertinib):
+median age (range), 58.0 (30-84)/59.0 (31-81) years; 55.5/52.5 % female; 49.0/49.0% Ex19del;
+51.0/51.0% L858R; 30.0/30.9% CNS metastases. Median follow-up was 23.4 months. Median
+PFS assessed by IRC was 28.9 months (95% CI, 26.3 to NA) in combination arm versus 18.9
+months (95% CI, 17.8 to 21.1) in monotherapy arm; hazard ratio (HR) 0.471 (95% CI, 0.371 to
+0.598; p<0.0001). The PFS benefit was consistent across pre-defined subgroups. The overall
+survival (OS) was immature with event-patient rate 21.6%; HR 0.442 (95% CI, 0.308 to 0.636;
+p<0.0001). Median cycles of pemetrexed exposure (range) were 20.0 (1-42) cycles, 88.8% of
+patients completed 4∼6 cycles of platinum therapy. All causality grade ≥3 AEs (aumolertinib plus
+chemotherapy versus aumolertinib): 75.7%/23.7%; AEs leading to discontinuation of
+aumolertinib: 3.0%/1.3%. The safety profile of aumolertinib plus pemetrexed and platinum was
+consistent with the established profiles of the individual agent.
+
+Conclusion:
+Aumolertinib plus chemotherapy as a first-line treatment in advanced EGFR-mutant NSCLC
+demonstrated a statistically significant and clinically meaningful PFS improvement over
+aumoletinib monotherapy, with a manageable safety profile.
+
+Citation Format:
+Shun Lu, Jie Hu, Jianhua Chen, Yan Yu, Xiangjiao Meng, Xiaorong Dong, Yanping Hu, Yinghua
+Ji, Ying Cheng, Weibo Wang, Fangling Ning, Zhihong Zhang, Zhiye Zhang, Chunling Liu, Qiming
+Wang, Wei Zheng, Xiujuan Qu, Honghai Wang, Runxiang Yang, Renhua Guo, Jianhua Shi, Feng
+Wu, Dongqing Lv, Jian Fang, Zhi Xu, Huaqiu Shi, Haichuan Su, Yongxing Chen, Cheng zhi Zhou,
+Junhong Zhang, Xuewen Liu, Zhaoxia Dai, Wen Li, Zili Meng, Guojun Zhang, Biyong Ren, Lin
+Wu, Yalun Li, Xinmin Yu, Ziping Wang, Jian Feng, Yueyin Pan, Juan Li, Xiangdong Zhou, Suxian
+Hu, Tongmei Zhang, Laiyu Liu, Jiming Shen, Shaonan Fan, Zhenming Chen. Aumolertinib with or
+without chemotherapy as first line treatment in locally advanced or metastatic NSCLC with
+sensitizing EGFR mutations (AENEAS2) [abstract]. In: Proceedings of the American Association
+for Cancer Research Annual Meeting 2025; Part 2 (Late-Breaking, Clinical Trial, and Invited
+Abstracts); 2025 Apr 25-30; Chicago, IL. Philadelphia (PA): AACR; Cancer Res
+2025;85(8_Suppl_2):Abstract nr CT053.
+
+©2025 American Association for Cancer Research
+
+Skip to Main Content
+
+Advertisement
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT053/761332/Abstract-CT053-Aumolertinib-with-or-without
+
+2/5
+
+5/26/25, 9:24 PM
+
+Abstract CT053: Aumolertinib with or without chemotherapy as first line treatment in locally advanced or metastatic NSCLC with sensitizin…
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+ Email Alerts
+Article Activity Alert
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+
+Skip to Main Content
+
+Breaking
+PI3K Inhibitor Delays Chemotherapy Start
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT053/761332/Abstract-CT053-Aumolertinib-with-or-without
+
+3/5
+
+5/26/25, 9:24 PM
+
+Abstract CT053: Aumolertinib with or without chemotherapy as first line treatment in locally advanced or metastatic NSCLC with sensitizin…
+
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Advertisement
+
+Issues
+
+News
+
+Online First
+
+Twitter
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+Blood Cancer
+Discovery
+Cancer Discovery
+Cancer
+Epidemiology,
+Biomarkers &
+Prevention
+
+Skip to Main Content
+Cancer Immunology
+Research
+
+Cancer Research
+Cancer Research
+Communications
+
+
+
+
+
+
+
+
+
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+Molecular Cancer
+Therapeutics
+
+Cancer Prevention
+Research
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT053/761332/Abstract-CT053-Aumolertinib-with-or-without
+
+4/5
+
+5/26/25, 9:24 PM
+
+Abstract CT053: Aumolertinib with or without chemotherapy as first line treatment in locally advanced or metastatic NSCLC with sensitizin…
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT053/761332/Abstract-CT053-Aumolertinib-with-or-without
+
+5/5
+
+

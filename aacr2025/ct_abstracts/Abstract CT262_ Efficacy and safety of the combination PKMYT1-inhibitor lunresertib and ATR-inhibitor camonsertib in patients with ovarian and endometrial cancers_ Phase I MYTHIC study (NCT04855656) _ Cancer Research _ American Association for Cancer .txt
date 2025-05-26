@@ -1,0 +1,221 @@
+5/26/25, 9:21 PM
+
+Abstract CT262: Efficacy and safety of the combination PKMYT1-inhibitor lunresertib and ATR-inhibitor camonsertib in patients with ovari…
+
+ARTICLE NAVIGATION
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | APRIL 25 2025
+
+Abstract CT262: Efficacy and safety of the combination
+PKMYT1-inhibitor lunresertib and ATR-inhibitor
+camonsertib in patients with ovarian and endometrial
+cancers: Phase I MYTHIC study (NCT04855656) 
+Alison M. Schram; Elizabeth K. Lee; Martin Højgaard; Fiona Simpkins; Patricia LoRusso; Linda R. Duska;
+Ignacio Garrido-Laguna; Mia C. Weiss; Victoria Mandilaras; Benedito A. Carneiro; Cara A. Mathews; Joan R. Tymon-Rosario;
+Elia Aguado-Fraile; Sunantha Sethuraman; Isabel Soria-Bretones; Xizi Sun; Paul A. Basciano; Maria Koehler; Nathan Hawkey;
+Emeline S. Bacqué; Stephanie Lheureux; Timothy A. Yap
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT262.
+https://doi.org/10.1158/1538-7445.AM2025-CT262
+
+
+
+Split-Screen
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Background:
+Lunresertib (lunre), a first-in-class PKMYT1 inhibitor, in combination with the ATR inhibitor,
+camonsertib (cam), is synthetic lethal with CCNE1 amplification, and/or deleterious FBXW7 or
+PPP2R1A mutations (mut). Here we report updated safety in all patients (pts) treated at an
+individualized RP2D schedule and efficacy in pts with ovarian (OC) and endometrial cancer (EC)
+treated at RP2D.
+
+Methods:
+Safety of lunre + cam was analyzed in pts from MYTHIC treated at the RP2D of 80mg BID lunre
++ 80mg QD cam given 3d on/4d off after individualized schedule optimization, determined by
+baseline hemoglobin levels (weekly or 2w on/1w off). Efficacy evaluable pts with OC or EC were
+treated at RP2D and had measurable disease and ≥1 post-baseline scan. Endpoints were
+response rate (RECISTv1.1 unconfirmed+confirmed), clinical benefit rate (CBR; response per
+RECISTv1.1 or treatment for ≥16w w/o PD), progression-free survival (PFS), and molecular
+response rate (MRR; ≥50% decline in circulating tumor DNA). Target and pathway engagement
+were evaluated by IHC in paired tumor biopsies.
+Skip to Main Content
+
+Results:
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT262/761534/Abstract-CT262-Efficacy-and-safety-of-the
+
+1/5
+
+5/26/25, 9:21 PM
+
+Abstract CT262: Efficacy and safety of the combination PKMYT1-inhibitor lunresertib and ATR-inhibitor camonsertib in patients with ovari…
+
+As of November 2024, 67 pts received combination lunre + cam at the RP2D after schedule
+optimization. The most frequent Gr3 TRAE was anemia (26.9%); the only other Gr3+ TRAE
+occurring in >10% of pts was neutropenia (11.9%). No treatment-related deaths were reported.
+For pts with platinum-resistant or -ineligible OC (n=24; 100% p53 mut; 71% high-grade serous
+OC; 54% with ≥3 prior lines of therapy), the response rate was 38%. Tumor shrinkage occurred
+in 75% of pts. Median time to response [mTTR] was 7w (range: 5-18w) with 44% (4/9) occurring
+at or after the 2nd assessment. Overall, CBR was 79% with a median (mPFS) of 21w (95%CI:
+17-27w). Pts with EC (n=27; 85% p53 mut; none MSI high; 19% carcinosarcoma, 48% serous;
+78% with prior ICI; 59% with ≥3 prior lines of therapy), the response rate was 26%. Overall, 70%
+had reductions in tumor burden. The mTTR was 6w (range: 5-21w) with 29% (2/7) occurring at or
+after the 2nd assessment, while one pt achieved a CR 12w after initial PR. CBR was 48%, with
+mPFS of 17w (95%CI: 11-27w). Paired tumor analysis confirmed target engagement (-50%
+CDK1-Thr14 relative change) in 75% pts (9/12) and DNA damage induction (≥100% γ-H2AX
+increase) in 43% (6/14). MRR was 57.6% (19/33) across all patients.
+
+Conclusions:
+Lunre + cam is a tolerable and effective oral combination therapy of two novel targeted agents in
+molecularly-selected OC and EC with poor prognostic features and no approved targeted
+therapies. Enrollment closed in Dec 2024, the presentation will provide updated data for potential
+late-stage clinical development.
+
+Citation Format:
+Alison M. Schram, Elizabeth K. Lee, Martin Højgaard, Fiona Simpkins, Patricia LoRusso, Linda
+R. Duska, Ignacio Garrido-Laguna, Mia C. Weiss, Victoria Mandilaras, Benedito A. Carneiro,
+Cara A. Mathews, Joan R. Tymon-Rosario, Elia Aguado-Fraile, Sunantha Sethuraman, Isabel
+Soria-Bretones, Xizi Sun, Paul A. Basciano, Maria Koehler, Nathan Hawkey, Emeline S. Bacqué,
+Stephanie Lheureux, Timothy A. Yap. Efficacy and safety of the combination PKMYT1-inhibitor
+lunresertib and ATR-inhibitor camonsertib in patients with ovarian and endometrial cancers:
+Phase I MYTHIC study (NCT04855656) [abstract]. In: Proceedings of the American Association
+for Cancer Research Annual Meeting 2025; Part 2 (Late-Breaking, Clinical Trial, and Invited
+Abstracts); 2025 Apr 25-30; Chicago, IL. Philadelphia (PA): AACR; Cancer Res
+2025;85(8_Suppl_2):Abstract nr CT262.
+
+©2025 American Association for Cancer Research
+
+Advertisement
+
+Skip to Main Content
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT262/761534/Abstract-CT262-Efficacy-and-safety-of-the
+
+2/5
+
+5/26/25, 9:21 PM
+
+Abstract CT262: Efficacy and safety of the combination PKMYT1-inhibitor lunresertib and ATR-inhibitor camonsertib in patients with ovari…
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+ Email Alerts
+Article Activity Alert
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+
+Skip to Main Content
+
+Breaking
+PI3K Inhibitor Delays Chemotherapy Start
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT262/761534/Abstract-CT262-Efficacy-and-safety-of-the
+
+3/5
+
+5/26/25, 9:21 PM
+
+Abstract CT262: Efficacy and safety of the combination PKMYT1-inhibitor lunresertib and ATR-inhibitor camonsertib in patients with ovari…
+
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Issues
+
+News
+
+Online First
+
+Twitter
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+Blood Cancer
+Discovery
+Cancer Discovery
+Cancer
+Epidemiology,
+Biomarkers &
+Prevention
+Cancer
+Skip
+to Immunology
+Main Content
+Research
+
+Cancer Research
+Cancer Research
+Communications
+
+
+
+
+
+
+
+
+
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+Molecular Cancer
+Therapeutics
+
+Cancer Prevention
+Research
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT262/761534/Abstract-CT262-Efficacy-and-safety-of-the
+
+4/5
+
+5/26/25, 9:21 PM
+
+Abstract CT262: Efficacy and safety of the combination PKMYT1-inhibitor lunresertib and ATR-inhibitor camonsertib in patients with ovari…
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT262/761534/Abstract-CT262-Efficacy-and-safety-of-the
+
+5/5
+
+

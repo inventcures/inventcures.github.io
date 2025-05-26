@@ -1,0 +1,217 @@
+5/26/25, 9:19 PM
+
+Abstract CT128: RADIANT: A window of opportunity trial exploring preoperative immunomodulatory radiotherapy and durvalumab prior t…
+
+ARTICLE NAVIGATION
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | APRIL 25 2025
+
+Abstract CT128: RADIANT: A window of opportunity trial
+exploring preoperative immunomodulatory radiotherapy
+and durvalumab prior to radical cystectomy in patients
+with cisplatin-ineligible muscle-invasive bladder carcinoma
+
+
+Megan Hopkins; Deepak Dinakaran; Aly-Khan A. Lalani; Naveen S. Basappa; Melissa Huynh; Drashti Jain; Vida Talebian;
+Marc Walsh; Gregory R. Pond; Ricardo Ferandes; Ilias Cagiannos; Scott Morgan; Mark Corkum; Dominick Bosse;
+Martin N. Reaume; Ana-Alicia Beltran-Bless; Christina Canil; Melanie Spears; Michael Ong
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT128.
+https://doi.org/10.1158/1538-7445.AM2025-CT128
+
+
+
+Split-Screen
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Background:
+Ionizing radiotherapy (RT) can potentially enhance anti-tumour responses to immune checkpoint
+inhibitors. In doses of 6-9Gy/fraction, RT releases free cytosolic DNA which upregulates cyclic
+GMP-AMP synthase pathways (cGAS-STING) and increases tumor infiltrating CD8+ Tlymphocytes, inflammatory cytokines, programmed-death ligand 1 (PD-L1) expression, and
+antigen presentation. However >12Gy/fraction RT may paradoxically upregulate TREX1,
+degrade cytosolic DNA and lead to immunosuppression. We conducted a WOO trial to explore
+an immunomodulating dose of RT with anti-PD-L1 in patients with MIBC.
+
+Methods:
+Eligible patients had histologically confirmed urothelial carcinoma AJCC stage T2-T4aN0,
+planned for radical cystectomy, ECOG PS 0-2, and ineligible or refused neoadjuvant cisplatinbased chemotherapy. Patients received a single 8-Gy fraction of RT to bladder followed 4 days
+later by durvalumab 1500mg IV q3week x3. Cystectomy was performed 7-35 days after last
+durvalumab. Primary endpoint was pathological complete response (pCR: ypT0N0). Secondary
+endpoints were safety, pathological response (pCR: ypTisN0), recurrence-free survival, overall
+Skip to Main Content
+survival, and tumor/blood correlatives. Transurethral resection of bladder tumor (TURBT) and
+cystectomy samples were profiled using the Oncomine Comprehensive Assay Plus (DNA), Ion
+AmpliSeq (RNA), and GeoMx Digital Spatial Profiling (protein).
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT128/761420/Abstract-CT128-RADIANT-A-window-of-opportunity
+
+1/5
+
+5/26/25, 9:19 PM
+
+Abstract CT128: RADIANT: A window of opportunity trial exploring preoperative immunomodulatory radiotherapy and durvalumab prior t…
+
+Results:
+14 patients were enrolled with clinical stage T2 (n=9), T3 (n=3), and T4 (n=2). 5 (36%) had
+multifocal disease, 7 (50%) had associated carcinoma in situ, 4 (29%) had prior intravesicular
+therapy, and 11 (79%) had optimal TURBT prior to cystectomy. All patients received 8Gy RT and
+3 cycles of durvalumab. Durvalumab-related grade 1-2 adverse events (AE) were hypothyroidism
+(2), fatigue (1), shoulder pain (1), alkaline phosphatase increase (1), AST elevation (1), and
+pruritis (1). RT related grade 1-2 AEs were fatigue (2), dysuria (2), and rash (1). There were no
+related grade 3+ adverse events or surgical delays due to RT or durvalumab. PCR was obtained
+in 7/14 (50%); PR was demonstrated in 8/14 (57%) and more likely to occur in patients with
+multifocal disease and optimal TURBT. Luminal TCGA subtype, DNA damage repair gene
+alterations and high tumor mutational burden (≥10 mut/Mb) were enriched in PR (75%, 50% and
+50% respectively) compared with non-PR (33%, 17%, and 33%). The 12 and 18-month landmark
+survival for PR vs non-PR was 83.3 vs 62.5% and 83.3 vs 31.5% respectively.
+
+Conclusions:
+Immune modulating doses of RT and durvalumab were associated with a high pCR and PR rates
+with excellent tolerability. Further exploration of hypofractionated bladder RT schemes with antiPD-L1 are warranted.
+
+Citation Format:
+Megan Hopkins, Deepak Dinakaran, Aly-Khan A. Lalani, Naveen S. Basappa, Melissa Huynh,
+Drashti Jain, Vida Talebian, Marc Walsh, Gregory R. Pond, Ricardo Ferandes, Ilias Cagiannos,
+Scott Morgan, Mark Corkum, Dominick Bosse, Martin N. Reaume, Ana-Alicia Beltran-Bless,
+Christina Canil, Melanie Spears, Michael Ong. RADIANT: A window of opportunity trial exploring
+preoperative immunomodulatory radiotherapy and durvalumab prior to radical cystectomy in
+patients with cisplatin-ineligible muscle-invasive bladder carcinoma [abstract]. In: Proceedings of
+the American Association for Cancer Research Annual Meeting 2025; Part 2 (Late-Breaking,
+Clinical Trial, and Invited Abstracts); 2025 Apr 25-30; Chicago, IL. Philadelphia (PA): AACR;
+Cancer Res 2025;85(8_Suppl_2):Abstract nr CT128.
+
+©2025 American Association for Cancer Research
+
+Advertisement
+
+Skip to Main Content
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT128/761420/Abstract-CT128-RADIANT-A-window-of-opportunity
+
+2/5
+
+5/26/25, 9:19 PM
+
+Abstract CT128: RADIANT: A window of opportunity trial exploring preoperative immunomodulatory radiotherapy and durvalumab prior t…
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+ Email Alerts
+Article Activity Alert
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+
+Skip to Main Content
+
+Breaking
+PI3K Inhibitor Delays Chemotherapy Start
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT128/761420/Abstract-CT128-RADIANT-A-window-of-opportunity
+
+3/5
+
+5/26/25, 9:19 PM
+
+Abstract CT128: RADIANT: A window of opportunity trial exploring preoperative immunomodulatory radiotherapy and durvalumab prior t…
+
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Advertisement
+
+Issues
+
+News
+
+Online First
+
+Twitter
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+Blood Cancer
+Discovery
+Cancer Discovery
+Cancer
+Epidemiology,
+Biomarkers &
+Prevention
+
+Skip to Main Content
+Cancer Immunology
+Research
+
+Cancer Research
+Cancer Research
+Communications
+
+
+
+
+
+
+
+
+
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+Molecular Cancer
+Therapeutics
+
+Cancer Prevention
+Research
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT128/761420/Abstract-CT128-RADIANT-A-window-of-opportunity
+
+4/5
+
+5/26/25, 9:19 PM
+
+Abstract CT128: RADIANT: A window of opportunity trial exploring preoperative immunomodulatory radiotherapy and durvalumab prior t…
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT128/761420/Abstract-CT128-RADIANT-A-window-of-opportunity
+
+5/5
+
+

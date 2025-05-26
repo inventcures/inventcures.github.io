@@ -1,0 +1,220 @@
+5/26/25, 9:22 PM
+
+Abstract CT268: Preliminary results from a first-in-human study of IK-595, an oral MEK/RAF molecular glue, in patients with RAS- or RA…
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | APRIL 25 2025
+
+Abstract CT268: Preliminary results from a first-in-human
+study of IK-595, an oral MEK/RAF molecular glue, in
+patients with RAS- or RAF-altered advanced solid tumors
+
+
+Anthony W. Tolcher; Nehal J. Lakhani; Meredith McKean; Babar Bashir; Jason T. Henry; Andrae L. Vandross; Alexander I. Spira;
+Jennifer B. Valerin; Trupti Lingaraj; Katherine Kim; Wilmin Bartolini; Marissa Timothy; Katherine Kacena; David Damphousse;
+Jeffrey Ecsedy; Caroline Germa; Jason J. Luke
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT268.
+https://doi.org/10.1158/1538-7445.AM2025-CT268
+
+
+
+Split-Screen
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Background:
+The clinical utility of MEK inhibitors is limited to BRAF V600X mutant cancers and NF1 mutant
+neurofibromas due to early emergence of resistance and low therapeutic indices. IK-595, a novel
+MEK-RAF molecular glue, traps MEK in an inactive complex with all RAF isoforms and durably
+blocks MEK and ERK phosphorylation. IK-595 overcomes the key resistance mechanisms to
+approved MEK inhibitors including CRAF-mediated MEK reactivation and kinase independent
+CRAF activity. Moreover, the PK profile of IK-595 enables robust but intermittent pathway
+inhibition, which drives apoptosis in MAPK-pathway dependent cancers while minimizing toxicity
+to healthy cells.
+
+Methods:
+This is a phase 1, first-in-human, open-label, multicenter study to evaluate IK-595 as
+monotherapy in pts with RAS- or RAF-altered advanced solid tumors for whom there are no
+treatment options known to confer clinical benefit. The study consists of a Dose Escalation phase
+using a Bayesian Optimal Interval design, followed by a Dose Expansion phase. In Dose
+Escalation, IK-595 was administered orally at doses ranging from 0.5-8 mg on intermittent dosing
+schedules (QOD, Q3D, QW, and BIW). Study objectives included evaluation of safety, PK, PD,
+and antitumor activity (RECIST 1.1).
+
+Results:
+Skip to Main Content
+As of Jan 06, 2025, 51 pts enrolled in the Dose Escalation phase across 8 dose regimens.
+Median age was 61 years (range 35-84); 88% of pts had RAS mutations and 12% had RAF
+mutations; median number of prior lines of therapy was 3. More than half (53%) of the pts had a
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT268/761472/Abstract-CT268-Preliminary-results-from-a-first-in
+
+1/5
+
+5/26/25, 9:22 PM
+
+Abstract CT268: Preliminary results from a first-in-human study of IK-595, an oral MEK/RAF molecular glue, in patients with RAS- or RA…
+
+primary diagnosis of CRC, followed by pancreatic cancer (23.5%), and others (23.5%). The
+treatment was well tolerated and the most common treatment-related adverse events were grade
+1 or 2 rash, diarrhea, nausea, fatigue, vomiting, and retinopathy. IK-595 exposure increased
+dose proportionally and the t½ was ∼24 hrs. Robust pERK inhibition was demonstrated in a blood
+PD assay. Saturating inhibition occurred with doses ≥1 mg 4 hrs after dosing. The durability of
+inhibition increased with increased dose; 6mg resulted in a PD response of ∼90% at 24 hrs and
+∼80% at 72 hrs. Blood samples were collected to evaluate ctDNA dynamics and will be
+presented. The overall DCR was 44% (15/34) in disease-evaluable pts. Significant tumor
+reduction was observed in 5 pts; 2 cPRs occurred in KRAS G12D gastric (2 prior lines tx) and
+KRAS G12D ovarian cancer (3 prior lines tx including MEKi); 1 uPR occurred in KRAS G12R
+pancreatic cancer with liver metastases (1 prior line tx) with responses ongoing; 2 prolonged SD
+occurred in Class III BRAF mutant urothelial cancer (7 lines prior tx) for 29 weeks and KRAS
+G12D CRC (2 lines prior tx) for 30 weeks and ongoing.
+
+Conclusion:
+IK-595 is well tolerated in pts with low-grade skin and GI toxicities as the most frequently
+observed adverse events. Encouraging target inhibition and early antitumor activity in RAS- and
+RAF-altered solid tumors was observed. Clinical trial information: NCT06270082
+
+Citation Format:
+Anthony W. Tolcher, Nehal J. Lakhani, Meredith McKean, Babar Bashir, Jason T. Henry, Andrae
+L. Vandross, Alexander I. Spira, Jennifer B. Valerin, Trupti Lingaraj, Katherine Kim, Wilmin
+Bartolini, Marissa Timothy, Katherine Kacena, David Damphousse, Jeffrey Ecsedy, Caroline
+Germa, Jason J. Luke. Preliminary results from a first-in-human study of IK-595, an oral
+MEK/RAF molecular glue, in patients with RAS- or RAF-altered advanced solid tumors [abstract].
+In: Proceedings of the American Association for Cancer Research Annual Meeting 2025; Part 2
+(Late-Breaking, Clinical Trial, and Invited Abstracts); 2025 Apr 25-30; Chicago, IL. Philadelphia
+(PA): AACR; Cancer Res 2025;85(8_Suppl_2):Abstract nr CT268.
+
+©2025 American Association for Cancer Research
+
+Advertisement
+
+Skip to Main Content
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT268/761472/Abstract-CT268-Preliminary-results-from-a-first-in
+
+2/5
+
+5/26/25, 9:22 PM
+
+Abstract CT268: Preliminary results from a first-in-human study of IK-595, an oral MEK/RAF molecular glue, in patients with RAS- or RA…
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+ Email Alerts
+Article Activity Alert
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+
+Skip to Main Content
+
+Breaking
+PI3K Inhibitor Delays Chemotherapy Start
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT268/761472/Abstract-CT268-Preliminary-results-from-a-first-in
+
+3/5
+
+5/26/25, 9:22 PM
+
+Abstract CT268: Preliminary results from a first-in-human study of IK-595, an oral MEK/RAF molecular glue, in patients with RAS- or RA…
+
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Advertisement
+
+Issues
+
+News
+
+Online First
+
+Twitter
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+Blood Cancer
+Discovery
+Cancer Discovery
+Cancer
+Epidemiology,
+Biomarkers &
+Prevention
+
+Skip to Main Content
+Cancer Immunology
+Research
+
+Cancer Research
+Cancer Research
+Communications
+
+
+
+
+
+
+
+
+
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+Molecular Cancer
+Therapeutics
+
+Cancer Prevention
+Research
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT268/761472/Abstract-CT268-Preliminary-results-from-a-first-in
+
+4/5
+
+5/26/25, 9:22 PM
+
+Abstract CT268: Preliminary results from a first-in-human study of IK-595, an oral MEK/RAF molecular glue, in patients with RAS- or RA…
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT268/761472/Abstract-CT268-Preliminary-results-from-a-first-in
+
+5/5
+
+

@@ -1,0 +1,305 @@
+5/26/25, 9:18 PM
+
+Abstract CT004: KEYLYNK-007: Tumor agnostic trial of olaparib plus pembrolizumab in homologous recombination repair mutation- and h…
+
+ARTICLE NAVIGATION
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | APRIL 25 2025
+
+Abstract CT004: KEYLYNK-007: Tumor agnostic trial of
+olaparib plus pembrolizumab in homologous
+recombination repair mutation- and homologous
+recombination deficiency- positive advanced cancers 
+Timothy A. Yap; Ronnie Shapira-Frommer; Iwona Lugowska; Tudor Ciuleanu; Miguel Quintela-Fandino; Özgür Özyılkan;
+Serhii Lysenko; Akira Hirasawa; Simcha Pollack; Rachel Salisbury; Alexander Gozman; Michele Maio
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT004.
+https://doi.org/10.1158/1538-7445.AM2025-CT004
+
+
+
+Split-Screen
+
+ Views 
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Background:
+Early data suggest poly (ADP-ribose) polymerase inhibitor (PARPi)/anti-PD-[L]1 synergy in
+homologous recombination repair-mutated (HRRm) or homologous recombination deficient
+(HRD) cancers. KEYLYNK-007 (NCT04123366) is a tumor-agnostic trial that evaluated the
+PARPi olaparib plus pembrolizumab in HRRm/HRD advanced tumors.
+
+Methods:
+This phase 2 trial enrolled participants (pts) with HRRm or HRD+ advanced solid tumors to 3
+cohorts: BRCAm (except breast and ovarian), non-BRCA HRRm, and non-HRRm HRD.
+HRRm/HRD was centrally confirmed using the Lynparza HRR-HRD Assay before treatment with
+300 mg olaparib BID + 200 mg pembrolizumab Q3W (≤35 cycles). Primary endpoint was ORR
+per RECIST 1.1 by central review. Secondary endpoints were duration of response and PFS per
+RECIST 1.1 by central review, OS, and safety.
+
+Results:
+At data cutoff (May 16, 2024), 332 pts were enrolled (n = 132 [BRCAm], n = 104 [non-BRCA
+HRRm], n = 96 [non-HRRm HRD]) (Table). Median follow-up was 13.4 (BRCAm), 10.4 (nonSkip
+to Main
+Content
+BRCA
+HRRm),
+and 10.8 months (non-HRRm HRD). ORR was 27% (BRCAm), 12% (non-BRCA
+HRRm), and 12% (non-HRRm HRD). Confirmed RECIST 1.1 responders beyond PARPiapproved indications included pts with advanced breast, ovarian, pancreatic, urothelial, renal,
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT004/761552/Abstract-CT004-KEYLYNK-007-Tumor-agnostic-trial-of
+
+1/5
+
+5/26/25, 9:18 PM
+
+Abstract CT004: KEYLYNK-007: Tumor agnostic trial of olaparib plus pembrolizumab in homologous recombination repair mutation- and h…
+
+biliary, cervical, esophageal SCC, CRC, gastroesophageal adenocarcinoma, duodenal, small
+intestine, thyroid, salivary gland, HNSCC, NSCLC, SCLC, leiomyosarcoma, and other sarcomas.
+There were also multiple responses in HRRm prostate cancer. Grade ≥3 drug-related adverse
+events occurred in 30% pts; 1/332 (0.3%) pt died from septic shock.
+Table
+
+BRCA 1/2m
+
+non-BRCA HRRm
+
+non-HRRm HRD
+
+N = 132
+
+N = 104
+
+N = 96
+
+ORR, n (%) [95% CI]
+
+36 (27.3) [19.9 - 35.7]
+
+12 (11.5) [6.1-19.3]
+
+12 (12.5) [6.6-20.8]
+
+CR, n (%)
+
+11 (8.3)
+
+2 (1.9)
+
+5 (5.2)
+
+PR, n (%)
+
+25 (18.9)
+
+10 (9.6)
+
+7 (7.3)
+
+Median DOR mo (95% CI)
+
+19.1 (10.7-NR)
+
+8.3 (4.2-NR)
+
+11.5 (6.2-26.7)
+
+15-mo DOR rate, %
+
+53.7
+
+47.6
+
+41.7
+
+Median PFS mo (95% CI)
+
+4.4 (4.1-8.2)
+
+3.7 (2.3-4.1)
+
+4.1 (2.2-5.7)
+
+12-mo PFS rate, %
+
+31.6
+
+9.3
+
+12.0
+
+Median OS mo (95% CI)
+
+14.0 (11.5, 17.4)
+
+10.4 (7.9, 14.6)
+
+10.8 (8.3, 15.5)
+
+12-mo OS rate, %
+
+57.2
+
+47.1
+
+47.9
+
+CR, complete response; DOR, duration of response; HRRm, homologous recombination repair-mutated; HRD,
+homologous recombination deficient; mo, months; NR, not reached; ORR, objective response rate; OS, overall
+survival; PFS, progression-free survival; PR, partial response
+
+Conclusions:
+In this tumor-agnostic trial, olaparib plus pembrolizumab showed promising durable antitumor
+activity and manageable safety in HRRm and HRD+ (particularly BRCAm) advanced cancers
+beyond currently approved indications. Biomarker analysis is ongoing for other predictive
+biomarkers of response.
+
+Citation Format:
+Timothy A. Yap, Ronnie Shapira-Frommer, Iwona Lugowska, Tudor Ciuleanu, Miguel QuintelaFandino, Özgür Özyılkan, Serhii Lysenko, Akira Hirasawa, Simcha Pollack, Rachel Salisbury,
+Alexander Gozman, Michele Maio. KEYLYNK-007: Tumor agnostic trial of olaparib plus
+Skip
+to Main Content
+pembrolizumab
+in homologous recombination repair mutation- and homologous recombination
+deficiency- positive advanced cancers [abstract]. In: Proceedings of the American Association for
+Cancer Research Annual Meeting 2025; Part 2 (Late-Breaking, Clinical Trial, and Invited
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT004/761552/Abstract-CT004-KEYLYNK-007-Tumor-agnostic-trial-of
+
+2/5
+
+5/26/25, 9:18 PM
+
+Abstract CT004: KEYLYNK-007: Tumor agnostic trial of olaparib plus pembrolizumab in homologous recombination repair mutation- and h…
+
+Abstracts); 2025 Apr 25-30; Chicago, IL. Philadelphia (PA): AACR; Cancer Res
+2025;85(8_Suppl_2):Abstract nr CT004.
+
+©2025 American Association for Cancer Research
+
+Advertisement
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+ Email Alerts
+Article Activity Alert
+eTOC Alert
+
+Latest News
+Skip to Main Content
+
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT004/761552/Abstract-CT004-KEYLYNK-007-Tumor-agnostic-trial-of
+
+3/5
+
+5/26/25, 9:18 PM
+
+Abstract CT004: KEYLYNK-007: Tumor agnostic trial of olaparib plus pembrolizumab in homologous recombination repair mutation- and h…
+
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+
+Breaking
+PI3K Inhibitor Delays Chemotherapy Start
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Advertisement
+
+Issues
+
+News
+
+Online First
+
+Twitter
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+Skip to Main Content
+
+AACR Journals
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT004/761552/Abstract-CT004-KEYLYNK-007-Tumor-agnostic-trial-of
+
+4/5
+
+5/26/25, 9:18 PM
+
+Abstract CT004: KEYLYNK-007: Tumor agnostic trial of olaparib plus pembrolizumab in homologous recombination repair mutation- and h…
+
+Blood Cancer
+Discovery
+Cancer Discovery
+Cancer
+Epidemiology,
+Biomarkers &
+Prevention
+Cancer Immunology
+Research
+
+Cancer Research
+
+
+
+
+
+
+
+
+
+Cancer Research
+Communications
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+Molecular Cancer
+Therapeutics
+
+Cancer Prevention
+Research
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT004/761552/Abstract-CT004-KEYLYNK-007-Tumor-agnostic-trial-of
+
+5/5
+
+

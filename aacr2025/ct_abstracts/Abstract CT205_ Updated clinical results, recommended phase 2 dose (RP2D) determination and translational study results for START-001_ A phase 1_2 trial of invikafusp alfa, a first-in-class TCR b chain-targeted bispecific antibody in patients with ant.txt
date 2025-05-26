@@ -1,0 +1,225 @@
+5/26/25, 9:21 PM
+
+Abstract CT205: Updated clinical results, recommended phase 2 dose (RP2D) determination and translational study results for START-001: …
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | APRIL 25 2025
+
+Abstract CT205: Updated clinical results, recommended
+phase 2 dose (RP2D) determination and translational study
+results for START-001: A phase 1/2 trial of invikafusp alfa, a
+first-in-class TCR b chain-targeted bispecific antibody in
+patients with anti-PD(L)1-resistant, antigen-rich solid
+tumors 
+Ryan J. Sullivan; Claire F. Friedman; Nick Tschernia; Mercedes Herrera Juarez; Jeffrey Schlom; Yo-Ting Tsai;
+Renee N. Donahue; Guru P. Sonpavde; Aparna Parikh; Aurelien Marabelle; Shannon McCue; Karunya Srinivasan;
+Jacques Moisan; Madan Katragadda; Raj Chopra; Kevin Chin; Andrew Bayliffe; Zhen Su; Ke Liu; James L. Gulley; Lillian L. Siu
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT205.
+https://doi.org/10.1158/1538-7445.AM2025-CT205
+
+
+
+Split-Screen
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Background:
+Invikafusp alfa (STAR0602), a selective, dual T cell agonist targeting Vβ6/Vβ10 T cells, is being
+evaluated in START-001: a multicenter Phase 1/2 monotherapy trial in patients with anti-PD(L)1resistant, antigen-rich solid tumors (TMB-H, MSI-H/dMMR, or virally associated).
+
+Methods:
+Reported here are: 1) updated clinical results of the completed dose escalation of intravenous
+invikafusp, Q2W, per 3+3 design with backfill at optimal biological dose (OBD) levels; 2) first
+report on RP2D determination based on PK, PD, safety and anti-tumor activity; 3) new results of
+translational immunology studies.
+
+Results:
+As of 7 Jan 2025, 41 patients (18 with TMB-H tumors) with a median of 4 prior lines of therapies
+across 18 different types of antigen-rich tumors were enrolled. Updated clinical results: No new
+safety signals were seen since previously reported and the most common TEAE was CRS
+(mostly grades 1 and 2), consistent with invikafusp’s MoA. Of 12 patients with TMB-H tumors
+who received the OBD (either 0.08 or 0.12 mg/kg) monotherapy, 9 had ≥ 1 tumor assessment at
+Skip
+to Main
+Content
+the time
+of submission.
+Overall, 6 (66.6%) of these 9 patients had disease control [confirmed
+partial response (cPR) + stable disease (SD)]. Four (44.4%) of these 6 had measurable tumor
+shrinkage per RECIST: 2 (22.2%) MSS CRC patients experienced cPR with one response lasting
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT205/761747/Abstract-CT205-Updated-clinical-results
+
+1/5
+
+5/26/25, 9:21 PM
+
+Abstract CT205: Updated clinical results, recommended phase 2 dose (RP2D) determination and translational study results for START-001: …
+
+∼12 months; 2 (22.2%) (1 with melanoma and 1 with pancreatic cancer) had tumor shrinkage
+with overall SD. Another 2 (22.2%) of 6 (1 with esophageal cancer and the other with MSS CRC)
+had SD. RP2D: Invikafusp peak serum concentrations (Cmax) increased proportionally with
+doses ≥ 0.08 mg/kg resulting in Cmax at or above the pharmacological EC90. Dose-dependent,
+selective expansion of peripheral Vβ6 and Vβ10 T cells was observed in all patients by flow
+cytometry and gene expression analyses, with maximal peak expansion at 0.08 and 0.12 mg/kg
+doses and decreasing expansion at 0.16 mg/kg. At the RP2D (0.08 mg/kg), CD8+ Vβ6/ Vβ10 T
+cells reached an average peak expansion of ∼600% on Day 8. Translational studies (n=7
+patients): Consistent with preclinical studies, expanded peripheral Vβ6/Vβ10 T cells exhibited an
+atypical central memory (TCM) phenotype with expression of cytotoxic effector molecules.
+Selected patients had ctDNA decrease and expansion of antigen-specific Vβ6/Vβ10 T cells with
+one patient with ctDNA decrease who experienced stable disease and was on trial for ∼15
+months. Increase in soluble markers of T cell activation (e.g., IFN-γ, sCD25) within hours after
+dosing were observed, with less pro-inflammatory cytokine (e.g., TNF-α and IL-6) release up to
+the RP2D.
+
+Conclusions:
+Invikafusp, a selective, dual T cell agonist, as monotherapy, led to clinically meaningful antitumor activity in anti-PD(L)-1 resistant tumors. It promoted potent and selective expansion of
+mainly CD8+ Vβ6/ Vβ10 T cells with a novel TCM phenotype, and led to ctDNA decrease and
+expansion of antigen-specific T cells. Based on these initial clinical results, US FDA granted Fast
+track Designation for invikafusp in TMB-H CRC and a Phase 2 trial is ongoing in antigen-rich
+(e.g., TMB-H & MSI-H/dMMR) tumors.
+
+Citation Format:
+Ryan J. Sullivan, Claire F. Friedman, Nick Tschernia, Mercedes Herrera Juarez, Jeffrey Schlom,
+Yo-Ting Tsai, Renee N. Donahue, Guru P. Sonpavde, Aparna Parikh, Aurelien Marabelle,
+Shannon McCue, Karunya Srinivasan, Jacques Moisan, Madan Katragadda, Raj Chopra, Kevin
+Chin, Andrew Bayliffe, Zhen Su, Ke Liu, James L. Gulley, Lillian L. Siu. Updated clinical results,
+recommended phase 2 dose (RP2D) determination and translational study results for START001: A phase 1/2 trial of invikafusp alfa, a first-in-class TCR b chain-targeted bispecific antibody
+in patients with anti-PD(L)1-resistant, antigen-rich solid tumors [abstract]. In: Proceedings of the
+American Association for Cancer Research Annual Meeting 2025; Part 2 (Late-Breaking, Clinical
+Trial, and Invited Abstracts); 2025 Apr 25-30; Chicago, IL. Philadelphia (PA): AACR; Cancer Res
+2025;85(8_Suppl_2):Abstract nr CT205.
+
+©2025 American Association for Cancer Research
+
+Skip to Main Content
+Advertisement
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT205/761747/Abstract-CT205-Updated-clinical-results
+
+2/5
+
+5/26/25, 9:21 PM
+
+Abstract CT205: Updated clinical results, recommended phase 2 dose (RP2D) determination and translational study results for START-001: …
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+ Email Alerts
+Article Activity Alert
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+
+Skip to Main Content
+
+Breaking
+PI3K Inhibitor Delays Chemotherapy Start
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT205/761747/Abstract-CT205-Updated-clinical-results
+
+3/5
+
+5/26/25, 9:21 PM
+
+Abstract CT205: Updated clinical results, recommended phase 2 dose (RP2D) determination and translational study results for START-001: …
+
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Advertisement
+
+Issues
+
+News
+
+Online First
+
+Twitter
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+Blood Cancer
+Discovery
+Cancer Discovery
+Cancer
+Epidemiology,
+Biomarkers &
+Prevention
+
+Skip to Main Content
+Cancer Immunology
+Research
+
+Cancer Research
+Cancer Research
+Communications
+
+
+
+
+
+
+
+
+
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+Molecular Cancer
+Therapeutics
+
+Cancer Prevention
+Research
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT205/761747/Abstract-CT205-Updated-clinical-results
+
+4/5
+
+5/26/25, 9:21 PM
+
+Abstract CT205: Updated clinical results, recommended phase 2 dose (RP2D) determination and translational study results for START-001: …
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT205/761747/Abstract-CT205-Updated-clinical-results
+
+5/5
+
+

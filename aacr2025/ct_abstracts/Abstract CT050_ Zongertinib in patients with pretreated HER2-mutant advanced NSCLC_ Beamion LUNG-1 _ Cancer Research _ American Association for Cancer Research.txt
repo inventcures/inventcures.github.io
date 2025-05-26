@@ -1,0 +1,223 @@
+5/26/25, 9:23 PM
+
+Abstract CT050: Zongertinib in patients with pretreated HER2-mutant advanced NSCLC: Beamion LUNG-1 | Cancer Research | American …
+
+ARTICLE NAVIGATION
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | MAY 22 2025
+
+Abstract CT050: Zongertinib in patients with pretreated
+HER2-mutant advanced NSCLC: Beamion LUNG-1 
+John V. Heymach; Gerrina Ruiter; Myung-Ju Ahn; Nicolas Girard; Egbert Smit; David Planchard; Yi-Long Wu; Byoung Chul Cho;
+Noboru Yamamoto; Joshua K. Sabari; Yanqiu Zhao; Hai-Yan Tu; Kiyotaka Yoh; Ernest Nadal; Behbood Sadrolhefazi;
+Maren Rohrbacher; Ute von Wangenheim; Sabina Eigenbrod-Giese; Jon Zugazagoitia
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT050.
+https://doi.org/10.1158/1538-7445.AM2025-CT050
+
+
+
+Split-Screen
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Background:
+Zongertinib is an irreversible tyrosine kinase inhibitor that selectively inhibits HER2 while sparing
+EGFR, thereby limiting associated toxicities. Zongertinib was granted Fast Track and
+Breakthrough Therapy Designations by the FDA for patients (pts) with advanced, unresectable,
+or metastatic non-small cell lung cancer (NSCLC) whose tumors have activating HER2 mutations
+and who have received prior systemic therapy. Beamion LUNG-1 (NCT04886804) is a Phase
+(Ph) Ia/Ib study evaluating zongertinib in pts with HER2-mutant advanced/metastatic NSCLC in
+Ph Ib. At the primary analysis (May 2024) of Ph Ib Cohort 1, the primary endpoint, confirmed
+response by blinded independent central review (BICR), was met in pts with pretreated HER2mutant NSCLC within the tyrosine kinase domain (TKD). Here, we report the previously
+unreported median duration of response (DoR) and median progression-free survival (PFS) for
+Cohort 1, and first data from Cohorts 3 and 5.
+
+Methods:
+In Cohort 1, pts with pretreated HER2-mutant NSCLC within the TKD were initially randomized to
+receive zongertinib 120 mg or 240 mg once-daily; the 120 mg dose was selected at an interim
+analysis. In exploratory Cohort 3, pts had pretreated HER2-mutant NSCLC with TKD or non-TKD
+mutations. In Cohort 5, pts had HER2-mutant NSCLC within the TKD and were pretreated with a
+HER2-directed antibody-drug conjugate. In Cohorts 3 and 5, pts initially received zongertinib 240
+mg. to
+Once
+the
+120 mg dose was selected in Cohort 1, all newly recruited pts received zongertinib
+Skip
+Main
+Content
+120 mg. Primary endpoint was objective response (best overall response of complete or partial
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT050/762482/Abstract-CT050-Zongertinib-in-patients-with
+
+1/5
+
+5/26/25, 9:23 PM
+
+Abstract CT050: Zongertinib in patients with pretreated HER2-mutant advanced NSCLC: Beamion LUNG-1 | Cancer Research | American …
+
+response; RECIST v1.1) by BICR (Cohorts 1 and 5) and investigator review (Cohort 3).
+Secondary endpoints included DoR and PFS.
+
+Results:
+As of November 29, 2024, 75 pts in Cohort 1, 20 pts with non-TKD mutations in Cohort 3, and 31
+pts in Cohort 5 had received zongertinib 120 mg; treatment was ongoing in 33 (44%), 4 (20%),
+and 13 (42%) pts, respectively. In Cohort 1, the objective response rate (ORR) by BICR was
+71% (95% CI: 60-80) and disease control rate (DCR) was 96% (95% CI: 89-99). In Cohort 3, the
+ORR was 30% (95% CI: 15-52) and DCR was 65% (95% CI: 43-82). In Cohort 5, the ORR was
+48% (95% CI: 32-65) and DCR was 97% (95% CI: 84-99). Median (95% CI) DoR and PFS were
+14.1 (6.9-not evaluable [NE]) months and 12.4 (8.2-NE) months in Cohort 1 and 5.3 (2.8-NE)
+months and 6.8 (5.4-NE) months in Cohort 5. DoR and PFS in Cohort 3 were not yet mature.
+Drug-related adverse events (all/grade [G] ≥3) were reported in 97%/17%, 80%/25%, and
+77%/3% of pts in Cohorts 1, 3, and 5, respectively, most commonly diarrhea in all cohorts
+(mainly G1). There were no cases of drug-related interstitial lung disease (ILD).
+
+Conclusions:
+Zongertinib demonstrated significant and clinically meaningful activity with a manageable safety
+profile in pts with pretreated advanced NSCLC harboring HER2 mutations.
+
+Citation Format:
+John V. Heymach, Gerrina Ruiter, Myung-Ju Ahn, Nicolas Girard, Egbert Smit, David Planchard,
+Yi-Long Wu, Byoung Chul Cho, Noboru Yamamoto, Joshua K. Sabari, Yanqiu Zhao, Hai-Yan Tu
+Kiyotaka Yoh, Ernest Nadal, Behbood Sadrolhefazi, Maren Rohrbacher, Ute von Wangenheim,
+Sabina Eigenbrod-Giese, Jon Zugazagoitia. Zongertinib in patients with pretreated HER2-mutant
+advanced NSCLC: Beamion LUNG-1 [abstract]. In: Proceedings of the American Association for
+Cancer Research Annual Meeting 2025; Part 2 (Late-Breaking, Clinical Trial, and Invited
+Abstracts); 2025 Apr 25-30; Chicago, IL. Philadelphia (PA): AACR; Cancer Res
+2025;85(8_Suppl_2):Abstract nr CT050.
+
+©2025 American Association for Cancer Research
+
+Advertisement
+
+Skip to Main Content
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT050/762482/Abstract-CT050-Zongertinib-in-patients-with
+
+2/5
+
+5/26/25, 9:23 PM
+
+Abstract CT050: Zongertinib in patients with pretreated HER2-mutant advanced NSCLC: Beamion LUNG-1 | Cancer Research | American …
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+ Email Alerts
+Article Activity Alert
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+
+Skip to Main Content
+
+Breaking
+PI3K Inhibitor Delays Chemotherapy Start
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT050/762482/Abstract-CT050-Zongertinib-in-patients-with
+
+3/5
+
+5/26/25, 9:23 PM
+
+Abstract CT050: Zongertinib in patients with pretreated HER2-mutant advanced NSCLC: Beamion LUNG-1 | Cancer Research | American …
+
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Advertisement
+
+Issues
+
+News
+
+Online First
+
+Twitter
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+Blood Cancer
+Discovery
+Cancer Discovery
+Cancer
+Epidemiology,
+Biomarkers &
+Prevention
+
+Skip to Main Content
+Cancer Immunology
+Research
+
+Cancer Research
+Cancer Research
+Communications
+
+
+
+
+
+
+
+
+
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+Molecular Cancer
+Therapeutics
+
+Cancer Prevention
+Research
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT050/762482/Abstract-CT050-Zongertinib-in-patients-with
+
+4/5
+
+5/26/25, 9:23 PM
+
+Abstract CT050: Zongertinib in patients with pretreated HER2-mutant advanced NSCLC: Beamion LUNG-1 | Cancer Research | American …
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT050/762482/Abstract-CT050-Zongertinib-in-patients-with
+
+5/5
+
+

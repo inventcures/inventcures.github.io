@@ -1,0 +1,266 @@
+5/26/25, 9:17 PM
+
+Abstract CT012: Personalized neoantigen vaccine with or without pembrolizumab in patients with microsatellite-stable metastatic colorectal …
+
+
+
+Split-Screen
+
+ Share 
+
+ Tools 
+
+ Search Site
+
+ARTICLE NAVIGATION
+
+ Versions 
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | APRIL 25 2025
+
+Abstract CT012: Personalized neoantigen vaccine with or
+without pembrolizumab in patients with microsatellitestable metastatic colorectal cancer 
+Saurav Daniel Haldar; Gayathri Anandappa; Arjun Katailiha; Amjad Talukder; Sarah Shin; Jae Lee; Erin Coyne; Alens Valentin;
+Sapna Parshottam; Chantale Bernatchez; Jane Thomas; Jason Roszik; Anirban Maitra; Scott Kopetz; Elizabeth Jaffee;
+Won Jin Ho; Gregory Lizee; Michael Overman
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT012.
+https://doi.org/10.1158/1538-7445.AM2025-CT012
+
+Abstract
+Background:
+Novel immune strategies are needed to improve outcomes in patients (pts) with microsatellitestable metastatic colorectal cancer (MSS mCRC). Our personalized peptide vaccine platform termed NeoAg-VAX - targets up to 10 tumor-derived neoantigens per pt. We hypothesize that
+this vaccine combined with anti-PD-1 can enhance antitumor immunity and revert the cold status
+of the MSS CRC tumor microenvironment (TME).
+
+Methods:
+This is a single-center, non-randomized, open-label, investigator-led pilot study of NeoAg-VAX
++/- pembrolizumab (pembro) in MSS mCRC pts. Tumor antigens were selected based on
+predicted HLA-binding affinity using whole-exome/RNA sequencing and tandem mass
+spectrometry with bioinformatics tools. Key eligibility criteria: biopsiable disease, > 1 line of
+standard therapy, ECOG 0-1. Cohort A: NeoAg-VAX alone. Cohort B: NeoAg-VAX + pembro 200
+mg IV Q3W. Vaccines were given subcutaneously with topical imiquimod adjuvant on weeks 0, 1,
+3-6, 9, 12, 15, 18, 21, 27, 30, 39, and 51. Primary endpoints: feasibility, toxicity. Secondary
+endpoints: ORR, PFS, 12-week PFS rate, T cell response by IFNγ ELISPOT. Spatial proteomic
+analysis of TME immune features was performed using imaging mass cytometry (IMC) of pretreatment tumors.
+
+Results:
+A total
+of 28 Content
+pts were treated with NeoAg-VAX +/- pembro (Cohort A: n=13, Cohort B: n=15). Of
+Skip
+to Main
+note, 8 pts from Cohort A were sequentially retreated in Cohort B. In 24 of 28 pts, NeoAg-VAX
+was manufactured within 12 weeks of enrollment with at least 1 dose given, indicating a
+feasibility rate of 85.7%. Most treatment-emergent adverse events were grade 1-2 in severity,
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT012/761393/Abstract-CT012-Personalized-neoantigen-vaccine
+
+1/5
+
+5/26/25, 9:17 PM
+
+Abstract CT012: Personalized neoantigen vaccine with or without pembrolizumab in patients with microsatellite-stable metastatic colorectal …
+
+
+
+including pain (50.0%), immune-related hypothyroidism (17.8%), and arthralgias (10.7%). Two
+Share (ORR
+
+ Tools
+ Search Site
+pts achieved aSplit-Screen
+partial response per
+RECIST
+7.1%),
+while 
+15 pts experienced
+a best
+response of stable disease. Median PFS was 2.9 months with a 12-week PFS rate of 57.1%.
+
+ Versions 
+
+IFNγ ELISPOT of peripheral blood showed robust induction of neoantigen-specific T cell
+responses with a median 5.9-fold increase (range: 1.3-18.1) compared to baseline. IMC of pretreatment tumors (n=9) revealed heterogeneity in immune cell composition across different
+metastatic sites (6 lung, 2 liver, 1 ovary). Neighborhood analysis revealed shorter distances
+between T cells and tumor cells as well as longer distances between myeloid cells and tumor
+cells in lung vs liver mets. Lastly, there was a positive correlation between the magnitude of
+vaccine-induced T cell response and density of intratumor T cells (r=0.72, p=0.043), B cells
+(r=0.88, p=0.0043) and macrophages (r=0.72, p=0.044) at baseline.
+
+Conclusions:
+Personalized immunotherapy with NeoAg-VAX +/- anti-PD-1 was feasible, safe, and
+immunogenic in MSS mCRC pts. Although clinical responses were modest, spatial proteomics
+revealed key features of tumor immune contexture that may inform future therapeutic
+approaches.
+
+Citation Format:
+Saurav Daniel Haldar, Gayathri Anandappa, Arjun Katailiha, Amjad Talukder, Sarah Shin, Jae
+Lee, Erin Coyne, Alens Valentin, Sapna Parshottam, Chantale Bernatchez, Jane Thomas, Jason
+Roszik, Anirban Maitra, Scott Kopetz, Elizabeth Jaffee, Won Jin Ho, Gregory Lizee, Michael
+Overman. Personalized neoantigen vaccine with or without pembrolizumab in patients with
+microsatellite-stable metastatic colorectal cancer [abstract]. In: Proceedings of the American
+Association for Cancer Research Annual Meeting 2025; Part 2 (Late-Breaking, Clinical Trial, and
+Invited Abstracts); 2025 Apr 25-30; Chicago, IL. Philadelphia (PA): AACR; Cancer Res
+2025;85(8_Suppl_2):Abstract nr CT012.
+
+©2025 American Association for Cancer Research
+
+Advertisement
+
+Skip to Main Content
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT012/761393/Abstract-CT012-Personalized-neoantigen-vaccine
+
+2/5
+
+5/26/25, 9:17 PM
+
+Abstract CT012: Personalized neoantigen vaccine with or without pembrolizumab in patients with microsatellite-stable metastatic colorectal …
+
+
+
+Split-Screen
+
+ Share 
+
+ Tools 
+
+ Search Site
+
+ Versions 
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+ Email Alerts
+Article Activity Alert
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+
+Skip to Main Content
+
+Breaking
+PI3K Inhibitor Delays Chemotherapy Start
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT012/761393/Abstract-CT012-Personalized-neoantigen-vaccine
+
+3/5
+
+5/26/25, 9:17 PM
+
+Abstract CT012: Personalized neoantigen vaccine with or without pembrolizumab in patients with microsatellite-stable metastatic colorectal …
+
+
+
+Drug Combo Boosts Lung Cancer Survival
+Split-Screen
+ Share 
+ Tools 
+
+ Search Site
+
+Genentech, Orionis to Stick Together with Deal on Glues
+
+ Versions 
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Issues
+
+News
+
+Online First
+
+Twitter
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+Blood Cancer
+Discovery
+Cancer Discovery
+Cancer
+Epidemiology,
+Biomarkers &
+Prevention
+Cancer
+Skip
+to Immunology
+Main Content
+Research
+
+Cancer Research
+Cancer Research
+Communications
+
+
+
+
+
+
+
+
+
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+Molecular Cancer
+Therapeutics
+
+Cancer Prevention
+Research
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT012/761393/Abstract-CT012-Personalized-neoantigen-vaccine
+
+4/5
+
+5/26/25, 9:17 PM
+
+Abstract CT012: Personalized neoantigen vaccine with or without pembrolizumab in patients with microsatellite-stable metastatic colorectal …
+
+
+
+Split-Screen
+
+ Share 
+
+ Tools 
+
+ Search Site
+
+Information on
+ Versions 
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT012/761393/Abstract-CT012-Personalized-neoantigen-vaccine
+
+5/5
+
+

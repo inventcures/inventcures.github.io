@@ -1,0 +1,223 @@
+5/26/25, 9:20 PM
+
+Abstract CT131: A randomized, double-blind, phase III study comparing trifluridine/tipiracil (FTD/TPI) versus placebo in patients with mole…
+
+ARTICLE NAVIGATION
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | APRIL 25 2025
+
+Abstract CT131: A randomized, double-blind, phase III study
+comparing trifluridine/tipiracil (FTD/TPI) versus placebo in
+patients with molecular residual disease following curative
+resection of colorectal cancer (CRC): The ALTAIR Study 
+Hideaki Bando; Jun Watanabe; Masahito Kotaka; Nobuhisa Matsuhashi; Eiji Oki; Yoshito Komatsu; Manabu Shiozawa;
+Keiji Hirata; Yuji Miyamoto; Kun-Huei Yeh; Shruti Sharma; Vasily Aushev; Adham Jurdi; Minetta C. Liu; Alexey Aleshin;
+Ichiro Takemasa; Daisuke Kotani; Akihito Sato; Toshihiro Misumi; Yoshiaki Nakamura; Qian Shi; Hiroya Taniguchi; Takeshi Kato;
+Takayuki Yoshino
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT131.
+https://doi.org/10.1158/1538-7445.AM2025-CT131
+
+
+
+Split-Screen
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Background:
+Tumor-informed circulating tumor (ct) DNA testing is recognized as a powerful predictor of CRC
+recurrence. However, the benefit of systemic therapy to prevent or delay clinical recurrence in
+patients (pts) with molecular recurrence after curative surgery remains uncertain.
+
+Methods:
+Pts with CRC who had undergone curative resection of primary and/or metastatic sites +
+standard of care (SoC) adjuvant treatment, if applicable, were enrolled in ALTAIR study if they (1)
+prospectively tested positive for ctDNA using a clinically validated, personalized assay
+(Signatera™, Natera, Inc.) within 3 months before enrollment and (2) had no recurrence on
+radiological (CT) imaging. Pts were randomized to receive FTD/TPI or placebo for 6 months. CT
+scans and ctDNA analyses were conducted every 2 months in the first year, every 3 months in
+the second year, and every 6 months in the third year. The primary endpoint was disease-free
+survival (DFS), with secondary endpoints including ctDNA clearance, overall survival (OS), and
+adverse events. The study assumed a median DFS of 8 months in the placebo group, an HR of
+0.667 for the FTD/TPI group, 0.05 significance level, 0.80 power, 2-year enrollment, and 1-year
+follow-up,
+requiring
+Skip
+to Main
+Content240 pts and 190 DFS events. Baseline ctDNA levels were evaluated by mean
+tumor molecules (MTM)/ml.
+
+Results:
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT131/761761/Abstract-CT131-A-randomized-double-blind-phase-III
+
+1/5
+
+5/26/25, 9:20 PM
+
+Abstract CT131: A randomized, double-blind, phase III study comparing trifluridine/tipiracil (FTD/TPI) versus placebo in patients with mole…
+
+Between July 2020 and June 2023, 243 pts were enrolled and randomized to FTD/TPI (n=122)
+or placebo (n=121). Baseline characteristics were balanced, and 96.3% of pts received SoC
+treatment postoperatively. FTD/TPI group had a median DFS of 9.30 months vs. 5.55 months in
+the placebo group, which did not reach statistical significance in the primary population (HR,
+0.79; 95% CI, 0.60-1.05; P = 0.107). The benefit was highly pronounced, however, in stage IV
+pts (HR: 0.53, P = 0.012). In addition, after excluding pts with low ctDNA levels (<0.179 MTM/mL,
+threshold determined by ROC analysis) from both arms, significant benefit with FTD/TPI was
+observed in the primary population, resulting in an improved DFS (N=154, HR: 0.61 95% CI:
+0.43-0.85; P = 0.003) with a median DFS of 8.12 months for FTD/TPI vs. 3.89 months for
+placebo; consistent with these findings, a trend toward higher ctDNA clearance rate was
+observed for the FTD/TPI group (8.33%), compared to placebo (4.05%).OS data remain
+immature, with 24 events reported across both arms. Grade ≥3 adverse events occurred in
+73.0% of the FTD/TPI arm versus 3.3% in the placebo arm, with no new safety signals.
+
+Conclusions:
+Although statistical significance was not reached in the primary population, FTD/TPI showed
+benefit in pts with high molecular tumor burden and/ or Stage IV disease, resulting in improved
+DFS.
+
+Citation Format:
+Hideaki Bando, Jun Watanabe, Masahito Kotaka, Nobuhisa Matsuhashi, Eiji Oki, Yoshito
+Komatsu, Manabu Shiozawa, Keiji Hirata, Yuji Miyamoto, Kun-Huei Yeh, Shruti Sharma, Vasily
+Aushev, Adham Jurdi, Minetta C. Liu, Alexey Aleshin, Ichiro Takemasa, Daisuke Kotani, Akihito
+Sato, Toshihiro Misumi, Yoshiaki Nakamura, Qian Shi, Hiroya Taniguchi, Takeshi Kato, Takayuki
+Yoshino. A randomized, double-blind, phase III study comparing trifluridine/tipiracil (FTD/TPI)
+versus placebo in patients with molecular residual disease following curative resection of
+colorectal cancer (CRC): The ALTAIR Study [abstract]. In: Proceedings of the American
+Association for Cancer Research Annual Meeting 2025; Part 2 (Late-Breaking, Clinical Trial, and
+Invited Abstracts); 2025 Apr 25-30; Chicago, IL. Philadelphia (PA): AACR; Cancer Res
+2025;85(8_Suppl_2):Abstract nr CT131.
+
+©2025 American Association for Cancer Research
+
+Advertisement
+
+Skip to Main Content
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT131/761761/Abstract-CT131-A-randomized-double-blind-phase-III
+
+2/5
+
+5/26/25, 9:20 PM
+
+Abstract CT131: A randomized, double-blind, phase III study comparing trifluridine/tipiracil (FTD/TPI) versus placebo in patients with mole…
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+ Email Alerts
+Article Activity Alert
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+
+Skip to Main Content
+
+Breaking
+PI3K Inhibitor Delays Chemotherapy Start
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT131/761761/Abstract-CT131-A-randomized-double-blind-phase-III
+
+3/5
+
+5/26/25, 9:20 PM
+
+Abstract CT131: A randomized, double-blind, phase III study comparing trifluridine/tipiracil (FTD/TPI) versus placebo in patients with mole…
+
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Issues
+
+News
+
+Online First
+
+Twitter
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+Blood Cancer
+Discovery
+Cancer Discovery
+Cancer
+Epidemiology,
+Biomarkers &
+Prevention
+Cancer
+Skip
+to Immunology
+Main Content
+Research
+
+Cancer Research
+Cancer Research
+Communications
+
+
+
+
+
+
+
+
+
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+Molecular Cancer
+Therapeutics
+
+Cancer Prevention
+Research
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT131/761761/Abstract-CT131-A-randomized-double-blind-phase-III
+
+4/5
+
+5/26/25, 9:20 PM
+
+Abstract CT131: A randomized, double-blind, phase III study comparing trifluridine/tipiracil (FTD/TPI) versus placebo in patients with mole…
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT131/761761/Abstract-CT131-A-randomized-double-blind-phase-III
+
+5/5
+
+

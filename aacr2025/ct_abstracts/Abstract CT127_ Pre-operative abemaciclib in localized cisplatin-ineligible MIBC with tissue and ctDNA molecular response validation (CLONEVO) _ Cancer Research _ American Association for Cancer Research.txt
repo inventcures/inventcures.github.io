@@ -1,0 +1,232 @@
+5/26/25, 9:19 PM
+
+Abstract CT127: Pre-operative abemaciclib in localized cisplatin-ineligible MIBC with tissue and ctDNA molecular response validation (CL…
+
+ARTICLE NAVIGATION
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | APRIL 25 2025
+
+Abstract CT127: Pre-operative abemaciclib in localized
+cisplatin-ineligible MIBC with tissue and ctDNA molecular
+response validation (CLONEVO) 
+Bishoy M. Faltas; Mohamed Osman; Mark G. Evans; Daniel J. Margolis; Cora N. Sternberg; Jones T. Nauseef; Ana M. Molina;
+David M. Nanus; Neal A. Patel; Rohit K. Jain; Amie Patel; Michael Sigouros; Jyothi Manohar; Hiranmayi Ravichandran;
+Amanda Reid; Majd Al Assaad; Giovanni Medico; Giorgio Inghirami; Benjamin D. Hopkins; Juan Miguel Mosquera;
+Philip Abbosh; Manuel Hidalgo; William F. Hooper; Nicolas Robine; Olivier Elemento; Namrata Peswani; Suzanne Cole;
+Douglas S. Scherr; Scott T. Tagawa
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT127.
+https://doi.org/10.1158/1538-7445.AM2025-CT127
+
+
+
+Split-Screen
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Background:
+Up to 40% of patients with muscle-invasive bladder cancer (MIBC) are ineligible to receive
+standard-of-care neoadjuvant cisplatin-based chemotherapy, creating a significant unmet need
+for effective neoadjuvant therapies. Based on our prior findings of the high prevalence of somatic
+cell cycle alterations in MIBC, we conducted the first window-of-opportunity investigator-initiated
+trial of the CDK4/6 inhibitor abemaciclib (abema) followed by radical cystectomy (RC) in MIBC
+(CLONEVO, NCT03837821).
+
+Methods:
+Eligibility included MIBC appropriate for RC and cisplatin-ineligibility or refusal. Planned
+treatment was abema (200mg BID PO) for 4-8 weeks prior to RC. We planned to enroll 20
+patients (accounting for 20% attrition). With 16 evaluable patients, this provided 80% power to
+detect an effect size of 0.75 (α=0.05 and r=0.5 between pairs). Planned Whole-exome (WES)
+and RNA sequencing of pre- and post-abema tissues and serial evaluation of ctDNA WES were
+performed using Caris Life Sciences assays.
+
+Results:
+Skip to Main Content
+20 patients were enrolled and received abema for a median of 36 days. Median age was 73,
+16/20 (80%) were males, and 5/20 (25%) had cT4 stage. 3 patients didn't undergo RC, and 1
+withdrew consent. Abema resulted in pathologic complete response in 18.8% (3/16) and
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT127/761421/Abstract-CT127-Pre-operative-abemaciclib-in
+
+1/5
+
+5/26/25, 9:19 PM
+
+Abstract CT127: Pre-operative abemaciclib in localized cisplatin-ineligible MIBC with tissue and ctDNA molecular response validation (CL…
+
+pathologic downstaging in 31.3% (5/16) of 16 evaluable patients. No unexpected safety signals
+were detected. Grade 3 abema-related adverse events included anemia (4/20), diarrhea (1/20),
+abdominal pain (1/20), neutropenia (1/20), and leukopenia (1/20). Variant allele frequency of
+somatic mutations significantly decreased after abema by 20.5% (p =0.04), confirming its efficacy
+in reducing tumor burden. Serial ctDNA showed a significant reduction in tumor fraction (TF)
+following abema by 11.7% (p =0.03). Post-TURBT ctDNA TF increased prior to initiating abema
+but rapidly decreased within 2 weeks of starting abema (19.3%), confirming that responses were
+driven by abema, not TURBT. Patients with CCND1 amplification had the most significant
+decrease in ctDNA TF (45% vs. 1.1% p=0.001). The higher response in CCND1-amplified tumors
+aligns with its role as a driver of CDK4/6-dependent cell cycle progression, identifying a potential
+response biomarker. Abema significantly downregulated the expression of MKI67, CCNA2, and
+PCNA proliferation markers with log-fold changes of -1.2, -0.7, and -0.6 (p=0.001). Gene set
+enrichment analysis of matched pre- and post-abema samples showed significant
+downregulation of E2F targets and G1/S transition pathways. Patients who achieved pathologic
+downstaging had a significant decrease in E2F target scores (-1.6 vs. -0.4, p=0.01). These data
+confirm that abema suppressed E2F-dependent cancer cell proliferation, validating on-target
+drug activity. Interestingly, abema significantly inhibited the homologous recombination pathway
+of double-strand DNA breaks (DSB) repair (FDR=0.001), particularly TOPBP1 and RAD51.
+
+Conclusion:
+This first trial of short-term pre-operative abema in MIBC demonstrated favorable efficacy and
+tolerability while modulating cell cycle-dependent pathways, including DSB repair. Our findings
+support future trials investigating sequential therapy combining abema with antibody-drug
+conjugates such as enfortumab vedotin, where abema's effects on DSB repair enhance
+treatment responses.
+
+Citation Format:
+Bishoy M. Faltas, Mohamed Osman, Mark G. Evans, Daniel J. Margolis, Cora N. Sternberg,
+Jones T. Nauseef, Ana M. Molina, David M. Nanus, Neal A. Patel, Rohit K. Jain, Amie Patel,
+Michael Sigouros, Jyothi Manohar, Hiranmayi Ravichandran, Amanda Reid, Majd Al Assaad,
+Giovanni Medico, Giorgio Inghirami, Benjamin D. Hopkins, Juan Miguel Mosquera, Philip
+Abbosh, Manuel Hidalgo, William F. Hooper, Nicolas Robine, Olivier Elemento, Namrata
+Peswani, Suzanne Cole, Douglas S. Scherr, Scott T. Tagawa. Pre-operative abemaciclib in
+localized cisplatin-ineligible MIBC with tissue and ctDNA molecular response validation
+(CLONEVO) [abstract]. In: Proceedings of the American Association for Cancer Research Annual
+Meeting 2025; Part 2 (Late-Breaking, Clinical Trial, and Invited Abstracts); 2025 Apr 25-30;
+Chicago, IL. Philadelphia (PA): AACR; Cancer Res 2025;85(8_Suppl_2):Abstract nr CT127.
+
+Skip to Main Content
+©2025 American Association for Cancer Research
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT127/761421/Abstract-CT127-Pre-operative-abemaciclib-in
+
+2/5
+
+5/26/25, 9:19 PM
+
+Abstract CT127: Pre-operative abemaciclib in localized cisplatin-ineligible MIBC with tissue and ctDNA molecular response validation (CL…
+Advertisement
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+ Email Alerts
+Article Activity Alert
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+Skip to Main Content
+
+Breaking
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT127/761421/Abstract-CT127-Pre-operative-abemaciclib-in
+
+3/5
+
+5/26/25, 9:19 PM
+
+Abstract CT127: Pre-operative abemaciclib in localized cisplatin-ineligible MIBC with tissue and ctDNA molecular response validation (CL…
+
+PI3K Inhibitor Delays Chemotherapy Start
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Advertisement
+
+Issues
+
+News
+
+Online First
+
+Twitter
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+Blood Cancer
+Discovery
+
+Cancer Prevention
+Research
+
+Cancer Discovery
+
+Cancer Research
+
+Cancer
+Epidemiology,
+Biomarkers
+& Content
+Skip
+to Main
+Prevention
+
+Cancer Research
+Communications
+
+Cancer Immunology
+Research
+
+
+
+
+
+
+
+
+
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT127/761421/Abstract-CT127-Pre-operative-abemaciclib-in
+
+4/5
+
+5/26/25, 9:19 PM
+
+Abstract CT127: Pre-operative abemaciclib in localized cisplatin-ineligible MIBC with tissue and ctDNA molecular response validation (CL…
+
+Molecular Cancer
+Therapeutics
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT127/761421/Abstract-CT127-Pre-operative-abemaciclib-in
+
+5/5
+
+

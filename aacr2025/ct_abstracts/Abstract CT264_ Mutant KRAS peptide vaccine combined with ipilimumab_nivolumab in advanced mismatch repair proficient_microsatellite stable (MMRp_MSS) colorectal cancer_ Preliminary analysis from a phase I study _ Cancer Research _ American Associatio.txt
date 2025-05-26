@@ -1,0 +1,221 @@
+5/26/25, 9:22 PM
+
+Abstract CT264: Mutant KRAS peptide vaccine combined with ipilimumab/nivolumab in advanced mismatch repair proficient/microsatellite…
+
+ARTICLE NAVIGATION
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | APRIL 25 2025
+
+Abstract CT264: Mutant KRAS peptide vaccine combined
+with ipilimumab/nivolumab in advanced mismatch repair
+proficient/microsatellite stable (MMRp/MSS) colorectal
+cancer: Preliminary analysis from a phase I study 
+Hejia Henry Wang; Amanda Huff; Saurav Haldar; Maureen Berg; Christopher Thoburn; Katherine Bever; Michael Pishvaian;
+Valerie Lee; Dung Le; Eric Christenson; Marina Baretti; Jennifer Durham; Amy Thomas; Mark Yarchoan; Daniel Laheru;
+Julie Nauroth; Jiayun Lu; Hao Wang; Elizabeth M. Jaffee; Nilofer Azad; Neeha Zaidi
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT264.
+https://doi.org/10.1158/1538-7445.AM2025-CT264
+
+
+
+Split-Screen
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Background:
+Colorectal cancer (CRC) is the second leading cause of cancer death in the United States.
+Immune checkpoint inhibitors (ICIs) have minimal activity in the ∼95% of metastatic CRC that are
+MMRp/MSS, largely due to significantly lower expression of neoantigens. Combining neoantigen
+vaccines targeting mutant KRAS (mKRAS), an oncogenic driver found in ∼40% of CRC, with
+ICIs, may sensitize metastatic mKRAS MMRp/MSS CRC to immunotherapy.
+
+Methods:
+This is a first-in-human Phase 1 trial (NCT 04117087) of mKRAS-VAX - a pooled synthetic long
+peptide (SLP) vaccine targeting the six most common KRAS mutations (G12D, G13D, G12V,
+G12C, G12A, G12R) - in combination with ipilimumab/nivolumab (ipi/nivo) in patients with heavily
+pretreated MMRp/MSS CRC (progression on 2 or more lines of chemotherapy). Key inclusion
+criteria included tumor expression of a KRAS mutation included in mKRAS-VAX and prior 5fluorouracil, oxaliplatin, and irinotecan exposure. In the priming phase, patients received 4
+weekly doses of mKRAS-VAX as well as ipilimumab (1mg/kg every 6 weeks for 2 doses) and
+nivolumab (3mg/kg every 3 weeks for 4 doses). In the boost phase, patients received mKRASVAX every 8 weeks and nivolumab (480mg every 4 weeks) up to 1 year total. Primary endpoints
+Skip
+to Mainand
+Content
+are safety
+mKRAS-specific T cell response. Secondary endpoints are overall response rate
+(ORR), progression-free survival (PFS), and overall survival (OS).
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT264/761532/Abstract-CT264-Mutant-KRAS-peptide-vaccine
+
+1/5
+
+5/26/25, 9:22 PM
+
+Abstract CT264: Mutant KRAS peptide vaccine combined with ipilimumab/nivolumab in advanced mismatch repair proficient/microsatellite…
+
+Results:
+At the time of data cutoff (December 13, 2024), 12 patients have been treated. Most adverse
+events were grade 1 (61.2%) or grade 2 (29.6%). 31.6% of AEs were immune-related including
+three that were grade 3 (2 adrenal insufficiency, 1 arthralgia). There was one grade 4 adverse
+event (sepsis), which was not treatment related. 8/12 (75%) patients achieved a mKRAS-specific
+T cell response to their tumor specific KRAS mutation as assessed by serial IFNγ ELISpot, with a
+median 9-fold increase from baseline. There was one RECIST partial response (8.3%) and 2/7
+(29%) patients with active liver metastases had tumor shrinkage, a phenotype which is
+increasingly recognized as refractory to immunotherapy in MMRp/MSS CRC. The disease
+control rate (DCR) was 41.7% (5/12) with a median PFS was 3.7 months and median OS of 24.9
+months.
+
+Conclusions:
+mKRAS-VAX and ipi/nivo is well-tolerated and induced mKRAS-specific T-cell responses.
+Moreover, this strategy resulted in meaningful clinical responses in chemorefractory metastatic
+mKRAS MMRp/MSS CRC with OS that was provocative. Ongoing studies of the T cell repertoire
+in blood and tumor tissue will be used to identify biomarkers that predict response to mKRAStargeted immunotherapy. A Phase 1b clinical trial (NCT06411691) investigating mKRAS-VAX with
+ICIs balstilimab and botensilimab in advanced MMRp/MSS CRC and pancreatic ductal
+adenocarcinoma is underway.
+
+Citation Format:
+Hejia Henry Wang, Amanda Huff, Saurav Haldar, Maureen Berg, Christopher Thoburn, Katherine
+Bever, Michael Pishvaian, Valerie Lee, Dung Le, Eric Christenson, Marina Baretti, Jennifer
+Durham, Amy Thomas, Mark Yarchoan, Daniel Laheru, Julie Nauroth, Jiayun Lu, Hao Wang,
+Elizabeth M. Jaffee, Nilofer Azad, Neeha Zaidi. Mutant KRAS peptide vaccine combined with
+ipilimumab/nivolumab in advanced mismatch repair proficient/microsatellite stable (MMRp/MSS)
+colorectal cancer: Preliminary analysis from a phase I study [abstract]. In: Proceedings of the
+American Association for Cancer Research Annual Meeting 2025; Part 2 (Late-Breaking, Clinical
+Trial, and Invited Abstracts); 2025 Apr 25-30; Chicago, IL. Philadelphia (PA): AACR; Cancer Res
+2025;85(8_Suppl_2):Abstract nr CT264.
+
+©2025 American Association for Cancer Research
+
+Advertisement
+
+Skip to Main Content
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT264/761532/Abstract-CT264-Mutant-KRAS-peptide-vaccine
+
+2/5
+
+5/26/25, 9:22 PM
+
+Abstract CT264: Mutant KRAS peptide vaccine combined with ipilimumab/nivolumab in advanced mismatch repair proficient/microsatellite…
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+ Email Alerts
+Article Activity Alert
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+
+Skip to Main Content
+
+Breaking
+PI3K Inhibitor Delays Chemotherapy Start
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT264/761532/Abstract-CT264-Mutant-KRAS-peptide-vaccine
+
+3/5
+
+5/26/25, 9:22 PM
+
+Abstract CT264: Mutant KRAS peptide vaccine combined with ipilimumab/nivolumab in advanced mismatch repair proficient/microsatellite…
+
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Advertisement
+
+Issues
+
+News
+
+Online First
+
+Twitter
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+Blood Cancer
+Discovery
+Cancer Discovery
+Cancer
+Epidemiology,
+Biomarkers &
+Prevention
+
+Skip to Main Content
+Cancer Immunology
+Research
+
+Cancer Research
+Cancer Research
+Communications
+
+
+
+
+
+
+
+
+
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+Molecular Cancer
+Therapeutics
+
+Cancer Prevention
+Research
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT264/761532/Abstract-CT264-Mutant-KRAS-peptide-vaccine
+
+4/5
+
+5/26/25, 9:22 PM
+
+Abstract CT264: Mutant KRAS peptide vaccine combined with ipilimumab/nivolumab in advanced mismatch repair proficient/microsatellite…
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT264/761532/Abstract-CT264-Mutant-KRAS-peptide-vaccine
+
+5/5
+
+

@@ -1,0 +1,193 @@
+5/26/25, 9:22 PM
+
+Abstract CT265: KRASG12Dtargeting using engineered exosomes in pancreatic cancer: Results from the iEXPLORE phase 1 trial | Cancer …
+
+ARTICLE NAVIGATION
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | APRIL 25 2025
+
+Abstract CT265: KRASG12Dtargeting using engineered
+exosomes in pancreatic cancer: Results from the iEXPLORE
+phase 1 trial 
+Valerie S. LeBleu; Brandon Smaglo; Krishnan Mahadevan; Michelle Kirtley; Kathleen M. McAndrews; Mayela Mendt;
+Sujuan Yang; Shubam Pant; Elizabeth Shpall; Anirban Maitra; Raghu Kalluri
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT265.
+https://doi.org/10.1158/1538-7445.AM2025-CT265
+
+
+
+Split-Screen
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Despite its pivotal role in pancreatic ductal adenocarcinoma (PDAC), oncogenic Kras has eluded
+pharmacological targeting design, albeit with more recent and promising development. Given the
+preponderance of KrasG12D mutation in PDAC, we engineered exosomes from allogenic bone
+marrow derived mesenchymal cells with incorporation of KrasG12DsiRNA payload. We report on a
+comprehensive preclinical toxicology and biodistribution analysis of clinical grade iExosomes in
+mice and rhesus macaques, which informed on their safety as therapeutic agents in patients. We
+report on the clinical testing of iExosomes in a Phase 1 study that employed a classical 3+3 dose
+escalation design. Patients with metastatic disease were enrolled after multiple lines of therapy
+failure. No dose limiting toxicities (DLTs) were encountered for all 3 dose levels tested, and no
+DLT were noted for the 3 of the 9 patients who had stable disease after completing the first 3
+cycles and allowed to undergo an additional 3 consecutive cycles. A follow up accelerated dose
+titration trial enrolled an additional 3 patients. The maximum tolerated dose was not reached,
+with no DLT encountered at the highest dosage used. Stable disease of target lesions was
+observed in 6 of the 12 patients treated with iExosomes, permitting their enrollment in additional
+iExosomes doses, with no DLT encountered. All patients eventually demonstrated PD. Target
+engagement was studied with down regulation of circulating KrasG12D DNA and pre- and postbiopsy tissue analysis for Kras signaling. Immune profiling revealed opportunistic synergy with
+immune checkpoint blockade (ICB). Murine studies confirmed synergy of iExosomes with antiCTLA4 antibodies specifically, with iExosomes reprograming the tumor immune
+microenvironment and recruiting Tregs susceptible to anti-CTLA4 co-treatment. This trial is the
+Skip
+to Main Content
+first-in-human
+therapeutic trial utilizing engineered exosomes from bone marrow derived
+mesenchymal cells, and we report on the safety of exosomes as well as target engagement in
+pancreatic cancer with a payload suppressing oncogenic Kras. The trial informed on the
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT265/761475/Abstract-CT265-KRASG12Dtargeting-using-engineered
+
+1/4
+
+5/26/25, 9:22 PM
+
+Abstract CT265: KRASG12Dtargeting using engineered exosomes in pancreatic cancer: Results from the iEXPLORE phase 1 trial | Cancer …
+
+opportunistic and future combination therapy with ICB. ClinicalTrials.gov identifier:
+NCT03608631.
+
+Citation Format:
+Valerie S. LeBleu, Brandon Smaglo, Krishnan Mahadevan, Michelle Kirtley, Kathleen M.
+McAndrews, Mayela Mendt, Sujuan Yang, Shubam Pant, Elizabeth Shpall, Anirban Maitra,
+Raghu Kalluri. KRASG12Dtargeting using engineered exosomes in pancreatic cancer: Results
+from the iEXPLORE phase 1 trial [abstract]. In: Proceedings of the American Association for
+Cancer Research Annual Meeting 2025; Part 2 (Late-Breaking, Clinical Trial, and Invited
+Abstracts); 2025 Apr 25-30; Chicago, IL. Philadelphia (PA): AACR; Cancer Res
+2025;85(8_Suppl_2):Abstract nr CT265.
+
+©2025 American Association for Cancer Research
+
+Advertisement
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+Skip to Main Content
+
+ Email Alerts
+Article Activity Alert
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT265/761475/Abstract-CT265-KRASG12Dtargeting-using-engineered
+
+2/4
+
+5/26/25, 9:22 PM
+
+Abstract CT265: KRASG12Dtargeting using engineered exosomes in pancreatic cancer: Results from the iEXPLORE phase 1 trial | Cancer …
+
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+
+Breaking
+PI3K Inhibitor Delays Chemotherapy Start
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Advertisement
+
+Skip to Main Content
+Issues
+
+News
+
+Online First
+
+Twitter
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT265/761475/Abstract-CT265-KRASG12Dtargeting-using-engineered
+
+3/4
+
+5/26/25, 9:22 PM
+
+Abstract CT265: KRASG12Dtargeting using engineered exosomes in pancreatic cancer: Results from the iEXPLORE phase 1 trial | Cancer …
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+Blood Cancer
+Discovery
+Cancer Discovery
+Cancer
+Epidemiology,
+Biomarkers &
+Prevention
+Cancer Immunology
+Research
+
+Cancer Research
+Cancer Research
+Communications
+
+
+
+
+
+
+
+
+
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+Molecular Cancer
+Therapeutics
+
+Cancer Prevention
+Research
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT265/761475/Abstract-CT265-KRASG12Dtargeting-using-engineered
+
+4/4
+
+

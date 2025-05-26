@@ -1,0 +1,222 @@
+5/26/25, 9:22 PM
+
+Abstract CT266: D3S-001, a next generation GDP-bound KRAS G12C inhibitor, as monotherapy in KRAS G12C inhibitor resistant non-sm…
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | APRIL 25 2025
+
+Abstract CT266: D3S-001, a next generation GDP-bound
+KRAS G12C inhibitor, as monotherapy in KRAS G12C
+inhibitor resistant non-small cell lung cancer 
+Herbert H. Loong; Ziming Li; Byoung Chul Cho; Jun Zhao; John Park; Zhengbo Song; Bowyer Samantha; Ki Hyeong Lee;
+Xiaorong Dong; Jianya Zhou; Cheng Chen; Yangbo Liu; Yandong Shen; Shaonan Wang; Zifei Fan; Qian Chen; Hui Wang;
+Jing Zhang; Zhi Jian Chen; Tony S. Mok; Shun Lu
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT266.
+https://doi.org/10.1158/1538-7445.AM2025-CT266
+
+
+
+Split-Screen
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Background:
+Resistance mechanisms to first-generation (1G) KRAS G12C inhibitors (G12Ci) are diverse, with
+previous data revealing a heterogeneous pattern characterized by multiple subclonal events
+emerging after treatment (Tx). Incomplete G12C target engagement (TE) and G12Ci induced
+G12C amplification contributed to the resistance mechanisms against 1G G12Ci. D3S-001, a
+next-generation KRAS G12Ci, has demonstrated potent, faster and complete TE to effectively
+deplete active KRAS mutated protein. In pre-clinical studies, D3S-001 resulted in tumor
+regression in xenograft models that are resistant to sotorasib (soto) and adagrasib (ada). Phase
+1 results demonstrated favorable safety and promising early efficacy across NSCLC, CRC and
+PDAC; Here, we present findings in G12Ci resistant NSCLC patients (pts) from the ongoing
+Phase 2 trial (NCT05410145).
+
+Methods:
+Pts of locally advanced or metastatic NSCLC with historically confirmed KRAS G12C mutation
+were eligible for inclusion if they had radiologically or clinically documented PD following TX of 1
+prior KRAS G12Ci achieving CR/PR or SD for >= 6 months. In this cohort, D3S-001 was
+administered as monotherapy at 600mg once daily. The key objectives included safety, efficacy,
+and ctDNA kinetics by liquid biopsy.
+
+Results:
+As ofto14
+FebContent
+2024, a total of 20 pts were enrolled. Prior G12Ci Tx included FDA approved and
+Skip
+Main
+experimental G12Cis. 7 pts had soto, 1 pt had ada and 12 pts had other experimental G12Cis.
+During their prior G12Ci Tx, 8 pts (40%) achieved PR, 7 pts (35%) achieved SD, and 5 pts (25%)
+were unknown as the BOR. 14 pts (70%) were enrolled into this study immediately after PD from
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT266/761474/Abstract-CT266-D3S-001-a-next-generation-GDP-bound
+
+1/5
+
+5/26/25, 9:22 PM
+
+Abstract CT266: D3S-001, a next generation GDP-bound KRAS G12C inhibitor, as monotherapy in KRAS G12C inhibitor resistant non-sm…
+
+prior G12Ci. Median study follow-up was 4.7 months (range: 1.3-12.8 months), and 9 pts (45%)
+remain on-study Tx. TRAE of any grade occurred in 18 pts (90%). Of which, 2 (10%) were Grade
+3 (no >=G4). PR was achieved in 6 pts (30%). Median DOR was 8.2 months. DCR was 80% and
+tumor shrinkage was observed in 12 of the 20 (60%) pts. Of the 20 pts, 14 (70%) were KRAS
+G12C ctDNA positive at baseline [bG12C(+)]. Notable baseline co-mutations included secondary
+KRAS alterations (A146V, R68S and three G12C amplification), BRAF, EGFR, NTRK1/2/3, TP53,
+etc. Of the 14 bG12C(+) pts, 11 achieved >90% G12C MAF reduction including 8 with complete
+clearance. All 6 radiological responders were bG12C(+) and 5 of 6 had complete clearance of
+G12C MAF. Remarkably, of the 3 pts with KRAS amplification, 2 achieved PR and 1 SD with
+D3S-001 Tx. Conversely, pts who had immediate PD to D3S-001 carried baseline gene
+alterations of switch II pocket mutation (KRAS R68S), BRAF V600E, MYC amplification, NTRK2,
+CDKN2A and PIK3CG. These findings align with preclinical observation that D3S-001 was
+effective in G12Ci resistant xenograft model including those with KRAS G12C gene amplification.
+
+Conclusions:
+These findings highlight the potential of D3S-001 to overcome the limitations of earlier KRAS
+G12Ci and address unmet needs in G12Ci resistant NSCLC, offering a promising therapeutic
+option for pts with KRAS G12C-mutant cancers.
+
+Citation Format:
+Herbert H. Loong, Ziming Li, Byoung Chul Cho, Jun Zhao, John Park, Zhengbo Song, Bowyer
+Samantha, Ki Hyeong Lee, Xiaorong Dong, Jianya Zhou, Cheng Chen, Yangbo Liu, Yandong
+Shen, Shaonan Wang, Zifei Fan, Qian Chen, Hui Wang, Jing Zhang, Zhi Jian Chen, Tony S.
+Mok, Shun Lu. D3S-001, a next generation GDP-bound KRAS G12C inhibitor, as monotherapy in
+KRAS G12C inhibitor resistant non-small cell lung cancer [abstract]. In: Proceedings of the
+American Association for Cancer Research Annual Meeting 2025; Part 2 (Late-Breaking, Clinical
+Trial, and Invited Abstracts); 2025 Apr 25-30; Chicago, IL. Philadelphia (PA): AACR; Cancer Res
+2025;85(8_Suppl_2):Abstract nr CT266.
+
+©2025 American Association for Cancer Research
+
+Advertisement
+
+Skip to Main Content
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT266/761474/Abstract-CT266-D3S-001-a-next-generation-GDP-bound
+
+2/5
+
+5/26/25, 9:22 PM
+
+Abstract CT266: D3S-001, a next generation GDP-bound KRAS G12C inhibitor, as monotherapy in KRAS G12C inhibitor resistant non-sm…
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+ Email Alerts
+Article Activity Alert
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+“Brain Fog” after CAR T May Be Reversible
+
+View more recent articles 
+
+Skip to Main Content
+
+Breaking
+PI3K Inhibitor Delays Chemotherapy Start
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT266/761474/Abstract-CT266-D3S-001-a-next-generation-GDP-bound
+
+3/5
+
+5/26/25, 9:22 PM
+
+Abstract CT266: D3S-001, a next generation GDP-bound KRAS G12C inhibitor, as monotherapy in KRAS G12C inhibitor resistant non-sm…
+
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Advertisement
+
+Issues
+
+News
+
+Online First
+
+Twitter
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+Blood Cancer
+Discovery
+Cancer Discovery
+Cancer
+Epidemiology,
+Biomarkers &
+Prevention
+
+Skip to Main Content
+Cancer Immunology
+Research
+
+Cancer Research
+Cancer Research
+Communications
+
+
+
+
+
+
+
+
+
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+Molecular Cancer
+Therapeutics
+
+Cancer Prevention
+Research
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT266/761474/Abstract-CT266-D3S-001-a-next-generation-GDP-bound
+
+4/5
+
+5/26/25, 9:22 PM
+
+Abstract CT266: D3S-001, a next generation GDP-bound KRAS G12C inhibitor, as monotherapy in KRAS G12C inhibitor resistant non-sm…
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT266/761474/Abstract-CT266-D3S-001-a-next-generation-GDP-bound
+
+5/5
+
+

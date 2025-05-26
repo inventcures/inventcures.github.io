@@ -1,0 +1,276 @@
+5/26/25, 9:22 PM
+
+Abstract CT267: First results of ART0380 (an ATR kinase inhibitor) with low dose irinotecan in advanced or metastatic solid tumors | Cancer…
+
+ARTICLE NAVIGATION
+
+ORAL PRESENTATIONS - PROFFERED ABSTRACTS | APRIL 25 2025
+
+Abstract CT267: First results of ART0380 (an ATR kinase
+inhibitor) with low dose irinotecan in advanced or
+metastatic solid tumors 
+Susanna Ulahannan; Jason T. Henry; Kathleen N. Moore; Gerald S. Falchook; Meredith S. Pelster; Elisa Fontana;
+Bryony Harrop; Nicola Little; Helen Millward; Amelia Fielding; Sara Busacca; Emre Karakoc; Suraj Menon; Sarah V. Holt;
+Niall Martin; Graeme C. Smith; Desiree Headley; Ian C. Smith; Bert H. O'Neil; Babar Bashir
+
+ Author & Article Information
+Cancer Res (2025) 85 (8_Supplement_2): CT267.
+https://doi.org/10.1158/1538-7445.AM2025-CT267
+
+
+
+Split-Screen
+
+ Views 
+
+ Share 
+
+ Tools 
+
+ Versions 
+
+Abstract
+Background:
+Replication stress (RS) is a critical cancer vulnerability. ART0380 is an inhibitor of AtaxiaTelangiectasia and Rad3-related (ATR), the primary orchestrator of the cellular response to RS.
+This is the first clinical report of a development approach wherein tumor cells experience a triple
+combination of biological insults: induced RS by irinotecan, endogenous RS via ataxiatelangiectasia mutated (ATM) loss, and prevention of rescue from RS by ATR inhibition
+(NCT04657068).
+
+Methods:
+Patients (pts) with advanced cancers who had no satisfactory alternative treatment option
+received escalating doses of ART0380 (25mg to 400mg) on days 1-3 and 8-10 in combination
+with low dose irinotecan (60mg/m2 or 85mg/m2) on days 1 and 8 of a 21-day cycle. Pts in dose
+expansion were selected based on ATM protein expression. Key objectives included safety,
+tolerability, and preliminary efficacy.
+
+Results:
+At the data cut-off (01Nov24), 87 patients were dosed with ART0380 + irinotecan. The
+recommended phase 2 dose (RP2D) was established as 200mg ART0380 on days 1-3 and 8-10
+Skip to Main Content
+and 60mg/m2 irinotecan on days 1 and 8 of a 21-day cycle. At the RP2D (N=58), the median
+prior lines of therapy was 3 (range 1-7) with 59% of pts receiving prior irinotecan. The most
+common treatment related adverse events were neutropenia (53%), anemia (41%), fatigue
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT267/761473/Abstract-CT267-First-results-of-ART0380-an-ATR
+
+1/5
+
+5/26/25, 9:22 PM
+
+Abstract CT267: First results of ART0380 (an ATR kinase inhibitor) with low dose irinotecan in advanced or metastatic solid tumors | Cancer…
+
+(33%) and diarrhea (31%). Grade≥3 related diarrhea, nausea and vomiting each occurred in 1 pt.
+By intent-to-treat (ITT) analysis, the confirmed objective response rate (ORR) was higher in pts
+with ATM protein loss by immunohistochemistry compared to those with tumors that expressed
+ATM protein (see Table 1). Further analyses with longer follow-up will be available for conference
+presentation.
+
+Table 1:
+Clinical activity of triple DDR challenge: High endogenous RS + Induced RS by low dose irinotecan + inhibition of cellular
+protection to RS by ART0380
+
+ITT Population (H score)
+
+Confirmed RECIST ORR% (n)
+
+Median Duration of Response* months (range)
+
+T
+
+ATM negative (0)
+
+45% (9/20)
+
+5.2 (1.4-10.7)
+
+C
+
+ATM low (1-50)
+
+22% (4/18)
+
+Not reached (3.5-7.9)
+
+O
+
+ATM negative and low (0-50)
+
+34% (13/38)
+
+Not reached (1.4-10.7)
+
+C
+
+ATM high (>50)
+
+0% (0/13)
+
+Not applicable
+
+N
+
+ATM unknown/not possible
+
+0% (0/6)
+
+Not applicable
+
+N
+
+All pts
+
+23% (13/57^)
+
+Not reached (1.4-10.7)
+
+(s
+
+Footnotes:
+* Median duration of response estimated using Kaplan Meier methodology. Responses are ongoing and durations will
+continue to mature.
+^ 1 pt excluded from ITT due to early withdrawal of consent
+
+Conclusions:
+ART0380 and low dose irinotecan is well tolerated and suitable for long-term dosing. Clinically
+meaningful activity has been demonstrated and further refined via biomarker selection (45%
+confirmed RECIST response rate in patients with ATM negative cancers).
+
+Citation Format:
+Susanna Ulahannan, Jason T. Henry, Kathleen N. Moore, Gerald S. Falchook, Meredith S.
+Pelster, Elisa Fontana, Bryony Harrop, Nicola Little, Helen Millward, Amelia Fielding, Sara
+Busacca, Emre Karakoc, Suraj Menon, Sarah V. Holt, Niall Martin, Graeme C. Smith, Desiree
+Headley, Ian C. Smith, Bert H. O'Neil, Babar Bashir. First results of ART0380 (an ATR kinase
+inhibitor) with low dose irinotecan in advanced or metastatic solid tumors [abstract]. In:
+Proceedings of the American Association for Cancer Research Annual Meeting 2025; Part 2
+Skip
+to Main Content
+(Late-Breaking,
+Clinical Trial, and Invited Abstracts); 2025 Apr 25-30; Chicago, IL. Philadelphia
+(PA): AACR; Cancer Res 2025;85(8_Suppl_2):Abstract nr CT267.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT267/761473/Abstract-CT267-First-results-of-ART0380-an-ATR
+
+2/5
+
+5/26/25, 9:22 PM
+
+Abstract CT267: First results of ART0380 (an ATR kinase inhibitor) with low dose irinotecan in advanced or metastatic solid tumors | Cancer…
+
+©2025 American Association for Cancer Research
+
+Advertisement
+
+View Metrics
+
+Citing Articles Via
+Google Scholar
+
+ Email Alerts
+Article Activity Alert
+eTOC Alert
+
+Latest News
+Deploying AI to Better Suss Out HER2 Status
+New Ovarian Cancer Combo Shows Wider Promise
+
+Skip to Main Content
+“Brain Fog” after CAR T May Be Reversible
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT267/761473/Abstract-CT267-First-results-of-ART0380-an-ATR
+
+3/5
+
+5/26/25, 9:22 PM
+
+Abstract CT267: First results of ART0380 (an ATR kinase inhibitor) with low dose irinotecan in advanced or metastatic solid tumors | Cancer…
+
+View more recent articles 
+
+Breaking
+PI3K Inhibitor Delays Chemotherapy Start
+Drug Combo Boosts Lung Cancer Survival
+Genentech, Orionis to Stick Together with Deal on Glues
+
+View more recent articles 
+
+Research Watch
+Ferroptosis Is Induced by Lysosomal Iron Activation in
+Cancer Cells
+Common Blood Tests Predict CAR T-cell Therapy
+Response in Non-Hodgkin Lymphoma
+Frequent Blood Donation Influences DNMT3A-Driven
+Clonal Hematopoiesis
+
+View more recent articles 
+
+Advertisement
+
+Issues
+
+News
+
+Online First
+
+Twitter
+
+Collections
+
+Online ISSN 1538-7445
+
+Print ISSN 0008-5472
+
+AACR Journals
+
+Skip to Main Content
+Blood Cancer
+Discovery
+Cancer Discovery
+
+
+
+
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT267/761473/Abstract-CT267-First-results-of-ART0380-an-ATR
+
+
+
+
+4/5
+
+5/26/25, 9:22 PM
+
+Abstract CT267: First results of ART0380 (an ATR kinase inhibitor) with low dose irinotecan in advanced or metastatic solid tumors | Cancer…
+
+Cancer
+Epidemiology,
+Biomarkers &
+Prevention
+Cancer Immunology
+Research
+Cancer Prevention
+Research
+
+Cancer Research
+Communications
+Clinical Cancer
+Research
+Molecular Cancer
+Research
+Molecular Cancer
+Therapeutics
+
+Cancer Research
+
+Information on
+Advertising & Reprints
+Information for
+Institutions/Librarians
+RSS Feeds
+Privacy Policy
+
+Copyright © 2025 by the American Association for Cancer Research.
+
+https://aacrjournals.org/cancerres/article/85/8_Supplement_2/CT267/761473/Abstract-CT267-First-results-of-ART0380-an-ATR
+
+5/5
+
+

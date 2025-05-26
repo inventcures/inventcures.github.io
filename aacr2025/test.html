@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AACR 2025 Clinical Trial Results Dashboard - Test</title>
+    <meta name="description" content="Interactive dashboard visualizing objective response rates from clinical trials reported at AACR 2025">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- External libraries -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>AACR 2025 Clinical Trial Results</h1>
+            <p class="subtitle">Objective response rates from clinical trials reported in AACR (2025)</p>
+            
+            <div class="description">
+                <p>This interactive dashboard visualizes objective response rates from clinical trials reported at AACR 2025, featuring real data extracted from 15 clinical trial abstracts including breakthrough studies like KEYNOTE-689 (pembrolizumab in head & neck cancer), KEYLYNK-007 (olaparib + pembrolizumab tumor-agnostic trial), and Zoldonrasib (KRAS G12D inhibitor with 61% ORR). The dashboard allows filtering by cancer type, trial phase, and company, with interactive tooltips providing detailed trial information including sample sizes ranging from 12 to 714 patients and response rates from 8.3% to 85.7% across multiple cancer types.</p>
+            </div>
+            
+            <p class="note">Note: these results are extracted from congress literature with large language models. Please report any data quality issues to spiff007@gmail.com. Visualization inspired by <a href="https://aacr.convoke.bio/" target="_blank">aacr.convoke.bio</a> - thanks to Alex Telford for the inspiration!</p>
+        </header>
+
+        <div class="controls">
+            <div class="filter-group">
+                <label for="cancer-type-filter">Filter by cancer type</label>
+                <select id="cancer-type-filter" class="filter-select">
+                    <option value="">All cancer types</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="phase-filter">Type of trial (Phase)</label>
+                <select id="phase-filter" class="filter-select">
+                    <option value="">All phases</option>
+                    <option value="Phase 1">Phase 1</option>
+                    <option value="Phase 2">Phase 2</option>
+                    <option value="Phase 3">Phase 3</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="company-filter">Filter by company</label>
+                <select id="company-filter" class="filter-select">
+                    <option value="">All companies</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="cancer-type-list">
+                    <div class="cancer-type-item active" data-cancer="all">All cancer types</div>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <div id="scatter-plot"></div>
+                <div class="legend">
+                    <div class="legend-item">
+                        <span class="legend-dot" style="background-color: #ff9999;"></span>
+                        <span>2025</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot" style="background-color: #4d94ff;"></span>
+                        <span>Other years</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="background-section">
+            <h2>Background</h2>
+            <p>The results shown above are from AACR abstracts for clinical trial results with an objective response rate (ORR) endpoint from 2025. The data is extracted automatically using large language models, allowing you to quickly evaluate relevant results published in AACR. Please visit the original abstract to evaluate the results further. If you would like to learn more or report a data quality issue, please contact us at spiff007@gmail.com.</p>
+        </div>
+    </div>
+
+    <!-- Tooltip -->
+    <div id="tooltip" class="tooltip" style="display: none;">
+        <div class="tooltip-content">
+            <div class="tooltip-title"></div>
+            <div class="tooltip-details"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="ct_abstracts/clinical_trial_data.js"></script>
+    <script>
+        console.log('Clinical trial data loaded:', typeof clinicalTrialData !== 'undefined');
+        if (typeof clinicalTrialData !== 'undefined') {
+            console.log('Data length:', clinicalTrialData.length);
+        }
+    </script>
+    <script src="dashboard.js"></script>
+    <script>
+        console.log('Dashboard script loaded, D3 available:', typeof d3 !== 'undefined');
+        console.log('ClinicalTrialDashboard available:', typeof ClinicalTrialDashboard !== 'undefined');
+    </script>
+</body>
+</html>

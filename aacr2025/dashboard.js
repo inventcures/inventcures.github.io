@@ -105,16 +105,24 @@ class ClinicalTrialDashboard {
     }
 
     createChart() {
+        console.log('createChart called');
+        
         // Clear existing chart
         d3.select("#scatter-plot").selectAll("*").remove();
+        
+        console.log('Chart cleared');
 
         const svg = d3.select("#scatter-plot")
             .append("svg")
             .attr("width", this.width + this.margin.left + this.margin.right)
             .attr("height", this.height + this.margin.top + this.margin.bottom);
+            
+        console.log('SVG created with dimensions:', this.width + this.margin.left + this.margin.right, 'x', this.height + this.margin.top + this.margin.bottom);
 
         this.g = svg.append("g")
             .attr("transform", `translate(${this.margin.left},${this.margin.top})`);
+            
+        console.log('Main group created');
 
         // Create scales
         this.xScale = d3.scaleLinear()
@@ -164,12 +172,18 @@ class ClinicalTrialDashboard {
     }
 
     updateChart() {
+        console.log('updateChart called');
+        console.log('filteredData length:', this.filteredData.length);
+        
         // Filter data to only include trials with ORR data
         const validData = this.filteredData.filter(d => 
             d.objResponseRate !== null && 
             d.objResponseRate !== undefined &&
             d.sampleSize > 0
         );
+        
+        console.log('validData length:', validData.length);
+        console.log('validData:', validData);
 
         // Update scales domains
         const xExtent = d3.extent(validData, d => d.sampleSize);
@@ -337,14 +351,39 @@ class ClinicalTrialDashboard {
 
 // Initialize dashboard when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM Content Loaded - starting dashboard initialization');
+    
     // Check if clinical trial data is loaded
     if (typeof clinicalTrialData === 'undefined') {
         console.error('Clinical trial data not loaded');
         return;
     }
+    console.log('Clinical trial data available:', clinicalTrialData.length, 'trials');
+    
+    // Check if D3 is available
+    if (typeof d3 === 'undefined') {
+        console.error('D3.js not loaded');
+        return;
+    }
+    console.log('D3.js is available');
+    
+    // Check if scatter-plot element exists
+    const scatterPlotElement = document.getElementById('scatter-plot');
+    if (!scatterPlotElement) {
+        console.error('scatter-plot element not found');
+        return;
+    }
+    console.log('scatter-plot element found');
     
     // Initialize dashboard
-    const dashboard = new ClinicalTrialDashboard();
+    console.log('Creating ClinicalTrialDashboard instance');
+    try {
+        const dashboard = new ClinicalTrialDashboard();
+        console.log('Dashboard created successfully');
+        window.dashboard = dashboard; // Make it globally accessible for debugging
+    } catch (error) {
+        console.error('Error creating dashboard:', error);
+    }
 });
 
 // Handle responsive chart resizing

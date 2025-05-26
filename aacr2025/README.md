@@ -1,6 +1,6 @@
 # AACR 2025 Clinical Trial Results Dashboard
 
-An interactive dashboard visualizing objective response rates from clinical trials reported at AACR 2025.
+Interactive dashboard visualizing objective response rates from clinical trials reported at AACR 2025, featuring real-time visitor tracking and analytics.
 
 ## Overview
 
@@ -10,6 +10,8 @@ This dashboard presents clinical trial results extracted from AACR 2025 abstract
 - **Interactive scatter plot** showing ORR vs Sample Size
 - **Filtering capabilities** by cancer type, trial phase, and company
 - **Real-time tooltips** with detailed trial information
+- **Visitor tracking** with world map and analytics
+- **Google Analytics integration** for professional insights
 - **Responsive design** for all device sizes
 
 ## Data Sources

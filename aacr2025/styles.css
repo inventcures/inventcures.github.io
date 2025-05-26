@@ -203,7 +203,7 @@ body {
     padding: 12px;
     border-radius: 6px;
     font-size: 0.85rem;
-    max-width: 300px;
+    max-width: 400px;
     pointer-events: none;
     z-index: 1000;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -221,6 +221,24 @@ body {
 
 .tooltip-details div {
     margin-bottom: 3px;
+}
+
+.abstract-preview {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-style: italic;
+    line-height: 1.3;
+}
+
+.tooltip-action {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.8rem;
+    color: #80d8ff;
+    font-weight: 500;
+    text-align: center;
 }
 
 /* Chart Styles */

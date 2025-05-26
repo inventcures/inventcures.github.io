@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    
+    <!-- SEO -->
+    {% seo %}
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
+    
+    <!-- External libraries -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    
+    <!-- Analytics -->
+    {% include analytics.html %}
+</head>
+<body>
+    <div class="container">
+        {{ content }}
+        
+        <!-- Visitor Tracking Section -->
+        {% include visitor-map.html %}
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ '/ct_abstracts/clinical_trial_data.js' | relative_url }}"></script>
+    <script src="{{ '/dashboard.js' | relative_url }}"></script>
+    
+    <!-- Site-wide Visitor Tracker -->
+    <script src="{{ '../visitor-tracker.js' | relative_url }}"></script>
+</body>
+</html>

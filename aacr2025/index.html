@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AACR 2025 Clinical Trial Results Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-</head>
-<body>
-    <div class="container">
+---
+layout: default
+title: "AACR 2025 Clinical Trial Results Dashboard"
+description: "Interactive dashboard visualizing objective response rates from clinical trials reported at AACR 2025"
+---
         <header class="header">
             <h1>AACR 2025 Clinical Trial Results</h1>
             <p class="subtitle">Objective response rates from clinical trials reported in AACR (2025)</p>
@@ -29,7 +23,7 @@
             </div>
 
             <div class="filter-group">
-                <label for="phase-filter">AACR phase</label>
+                <label for="phase-filter">Type of trial (Phase)</label>
                 <select id="phase-filter" class="filter-select">
                     <option value="">All phases</option>
                     <option value="Phase 1">Phase 1</option>
@@ -72,17 +66,11 @@
             <h2>Background</h2>
             <p>The results shown above are from AACR abstracts for clinical trial results with an objective response rate (ORR) endpoint from 2025. The data is extracted automatically using large language models, allowing you to quickly evaluate relevant results published in AACR. Please visit the original abstract to evaluate the results further. If you would like to learn more or report a data quality issue, please contact us at spiff007@gmail.com.</p>
         </div>
-    </div>
 
-    <!-- Tooltip -->
-    <div id="tooltip" class="tooltip" style="display: none;">
-        <div class="tooltip-content">
-            <div class="tooltip-title"></div>
-            <div class="tooltip-details"></div>
-        </div>
+<!-- Tooltip -->
+<div id="tooltip" class="tooltip" style="display: none;">
+    <div class="tooltip-content">
+        <div class="tooltip-title"></div>
+        <div class="tooltip-details"></div>
     </div>
-
-    <script src="ct_abstracts/clinical_trial_data.js"></script>
-    <script src="dashboard.js"></script>
-</body>
-</html>
+</div>

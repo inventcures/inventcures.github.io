@@ -1,0 +1,23 @@
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ site.google_analytics }}');
+</script>
+
+<!-- Simple Visitor Counter for GitHub Pages -->
+<script>
+  // Initialize visitor tracking
+  (function() {
+    // Check if this is a new visit (not in session storage)
+    if (!sessionStorage.getItem('page_visit_logged')) {
+      // Track page view
+      fetch('https://api.github.com/repos/{{ site.github.owner_name }}/{{ site.github.repository_name }}/traffic/views')
+        .catch(() => {}); // Silently fail if no access
+      
+      sessionStorage.setItem('page_visit_logged', 'true');
+    }
+  })();
+</script>

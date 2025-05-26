@@ -10,7 +10,7 @@
     {% seo %}
     
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ site.baseurl }}/styles.css">
     
     <!-- External libraries -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
@@ -27,20 +27,20 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ '/ct_abstracts/clinical_trial_data.js' | relative_url }}"></script>
+    <script src="{{ site.baseurl }}/ct_abstracts/clinical_trial_data.js"></script>
     <script>
         console.log('Clinical trial data loaded:', typeof clinicalTrialData !== 'undefined');
         if (typeof clinicalTrialData !== 'undefined') {
             console.log('Data length:', clinicalTrialData.length);
         }
     </script>
-    <script src="{{ '/dashboard.js' | relative_url }}"></script>
+    <script src="{{ site.baseurl }}/dashboard.js"></script>
     <script>
         console.log('Dashboard script loaded, D3 available:', typeof d3 !== 'undefined');
         console.log('ClinicalTrialDashboard available:', typeof ClinicalTrialDashboard !== 'undefined');
     </script>
     
     <!-- Site-wide Visitor Tracker -->
-    <script src="{{ '/visitor-tracker.js' | relative_url }}"></script>
+    <script src="/visitor-tracker.js"></script>
 </body>
 </html>

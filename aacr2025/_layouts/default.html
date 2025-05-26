@@ -10,7 +10,7 @@
     {% seo %}
     
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="{{ site.baseurl }}/styles.css">
+    <link rel="stylesheet" href="/aacr2025/styles.css">
     
     <!-- External libraries -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
@@ -27,17 +27,31 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ site.baseurl }}/ct_abstracts/clinical_trial_data.js"></script>
+    <script src="/aacr2025/ct_abstracts/clinical_trial_data.js" onerror="console.error('Failed to load clinical trial data script')"></script>
     <script>
         console.log('Clinical trial data loaded:', typeof clinicalTrialData !== 'undefined');
         if (typeof clinicalTrialData !== 'undefined') {
             console.log('Data length:', clinicalTrialData.length);
+        } else {
+            console.error('clinicalTrialData is undefined - script may not have loaded');
         }
     </script>
-    <script src="{{ site.baseurl }}/dashboard.js"></script>
+    <script src="/aacr2025/dashboard.js" onerror="console.error('Failed to load dashboard script')"></script>
     <script>
         console.log('Dashboard script loaded, D3 available:', typeof d3 !== 'undefined');
         console.log('ClinicalTrialDashboard available:', typeof ClinicalTrialDashboard !== 'undefined');
+        
+        // Additional debugging for production
+        console.log('Current URL:', window.location.href);
+        console.log('Current path:', window.location.pathname);
+        console.log('Document ready state:', document.readyState);
+        
+        if (typeof d3 === 'undefined') {
+            console.error('D3.js not available - check CDN');
+        }
+        if (typeof ClinicalTrialDashboard === 'undefined') {
+            console.error('ClinicalTrialDashboard class not available - check dashboard.js');
+        }
     </script>
     
     <!-- Site-wide Visitor Tracker -->

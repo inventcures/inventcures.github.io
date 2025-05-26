@@ -72,19 +72,22 @@
 
         .controls {
             display: flex;
-            gap: 20px;
+            gap: 10px;
             margin-bottom: 30px;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
             justify-content: center;
             padding: 20px;
             background: #f8f9fa;
             border-radius: 8px;
+            overflow-x: auto;
         }
 
         .filter-group {
             display: flex;
             flex-direction: column;
             gap: 5px;
+            flex-shrink: 0;
+            min-width: 120px;
         }
 
         .filter-group label {
@@ -94,11 +97,11 @@
         }
 
         .filter-select {
-            padding: 8px 12px;
+            padding: 6px 8px;
             border: 2px solid #e0e0e0;
             border-radius: 6px;
-            font-size: 14px;
-            min-width: 140px;
+            font-size: 13px;
+            min-width: 120px;
             transition: border-color 0.2s ease;
         }
 
@@ -775,11 +778,12 @@ class ClinicalTrialDashboard {
             d.sampleSize > 0
         );
         
-        // Position trials without ORR at the middle of the y-axis
-        const yMiddle = validData.length > 0 ? (d3.max(validData, d => d.objResponseRate) * 1.1) / 2 : 50;
+        const validData = dataWithORR; // For scale calculation
+        
+        // Position trials without ORR on negative y-axis
         const dataWithoutORRPositioned = dataWithoutORR.map(d => ({
             ...d,
-            displayORR: yMiddle,
+            displayORR: -10,
             hasORR: false
         }));
         
@@ -790,13 +794,13 @@ class ClinicalTrialDashboard {
         }));
         
         const allDisplayData = [...dataWithORRPositioned, ...dataWithoutORRPositioned];
-        const validData = dataWithORR; // For scale calculation
 
         const xExtent = d3.extent(allDisplayData, d => d.sampleSize);
         const yExtent = validData.length > 0 ? d3.extent(validData, d => d.objResponseRate) : [0, 100];
         
         this.xScale.domain([0, Math.max(xExtent[1] * 1.1, 100)]);
-        this.yScale.domain([0, Math.max(yExtent[1] * 1.1, 100)]);
+        // Extend Y domain to include negative space for trials without ORR
+        this.yScale.domain([-20, Math.max(yExtent[1] * 1.1, 100)]);
 
         this.g.select(".x-axis")
             .transition()

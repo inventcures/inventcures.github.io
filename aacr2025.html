@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AACR 2025 Clinical Trial Results Dashboard</title>
+    <meta name="description" content="Interactive dashboard visualizing objective response rates from clinical trials reported at AACR 2025">
+    
+    <!-- External libraries -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .description {
+            max-width: 800px;
+            margin: 0 auto 20px;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .note {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        .note a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .controls {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .filter-group label {
+            font-weight: 500;
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        .filter-select {
+            padding: 8px 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 14px;
+            min-width: 180px;
+            transition: border-color 0.2s ease;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .main-content {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .sidebar {
+            min-width: 250px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            height: fit-content;
+        }
+
+        .cancer-type-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .cancer-type-item {
+            padding: 12px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+            border: 2px solid transparent;
+        }
+
+        .cancer-type-item:hover {
+            background: #e9ecef;
+            transform: translateX(2px);
+        }
+
+        .cancer-type-item.active {
+            background: #667eea;
+            color: white;
+            border-color: #5a6fd8;
+            font-weight: 500;
+        }
+
+        .chart-container {
+            flex: 1;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        #scatter-plot {
+            width: 100%;
+            height: 600px;
+        }
+
+        .legend {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+            justify-content: center;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            pointer-events: none;
+            z-index: 1000;
+            max-width: 300px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .tooltip-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 13px;
+            color: #ffffff;
+        }
+
+        .tooltip-details div {
+            margin-bottom: 4px;
+            line-height: 1.4;
+        }
+
+        .abstract-preview {
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid #444;
+            font-size: 11px;
+            line-height: 1.3;
+        }
+
+        .tooltip-action {
+            margin-top: 8px;
+            font-style: italic;
+            color: #ccc;
+            font-size: 11px;
+        }
+
+        .background-section {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+
+        .background-section h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .background-section p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .data-point {
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .data-point:hover {
+            stroke: #333;
+            stroke-width: 2px;
+            r: 8;
+        }
+
+        .axis-title {
+            font-size: 12px;
+            fill: #666;
+        }
+
+        .axis text {
+            font-size: 11px;
+            fill: #666;
+        }
+
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke: #ccc;
+            shape-rendering: crispEdges;
+        }
+
+        /* Grid lines removed */
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            #scatter-plot {
+                height: 400px;
+            }
+            
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .controls {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>AACR 2025 Clinical Trial Results</h1>
+            <p class="subtitle">Objective response rates from clinical trials reported in AACR (2025)</p>
+            
+            <div class="description">
+                <p>This interactive dashboard visualizes objective response rates from clinical trials reported at AACR 2025, featuring real data extracted from 12 clinical trial abstracts including breakthrough studies like KEYNOTE-689 (pembrolizumab in head & neck cancer), KEYLYNK-007 (olaparib + pembrolizumab tumor-agnostic trial), Dostarlimab non-operative management (81% ORR), and Zoldonrasib (KRAS G12D inhibitor with 61% ORR). The dashboard allows filtering by cancer type, trial phase, and company, with interactive tooltips providing detailed trial information including sample sizes ranging from 12 to 714 patients and response rates from 27% to 85.7% across multiple cancer types.</p>
+            </div>
+            
+            <p class="note">Note: these results are extracted from congress literature with large language models. Please report any data quality issues to spiff007@gmail.com. Visualization inspired by <a href="https://aacr.convoke.bio/" target="_blank">aacr.convoke.bio</a> - thanks to Alex Telford for the inspiration!</p>
+        </header>
+
+        <div class="controls">
+            <div class="filter-group">
+                <label for="cancer-type-filter">Filter by cancer type</label>
+                <select id="cancer-type-filter" class="filter-select">
+                    <option value="">All cancer types</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="phase-filter">Type of trial (Phase)</label>
+                <select id="phase-filter" class="filter-select">
+                    <option value="">All phases</option>
+                    <option value="Phase 1">Phase 1</option>
+                    <option value="Phase 2">Phase 2</option>
+                    <option value="Phase 3">Phase 3</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="company-filter">Filter by company</label>
+                <select id="company-filter" class="filter-select">
+                    <option value="">All companies</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="cancer-type-list">
+                    <div class="cancer-type-item active" data-cancer="all">All cancer types</div>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <div id="scatter-plot"></div>
+                <div class="legend">
+                    <div class="legend-item">
+                        <span class="legend-dot" style="background-color: #ff9999;"></span>
+                        <span>2025</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot" style="background-color: #4d94ff;"></span>
+                        <span>Other years</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="background-section">
+            <h2>Background</h2>
+            <p>The results shown above are from AACR abstracts for clinical trial results with an objective response rate (ORR) endpoint from 2025. The data is extracted automatically using large language models, allowing you to quickly evaluate relevant results published in AACR. Please visit the original abstract to evaluate the results further. If you would like to learn more or report a data quality issue, please contact us at spiff007@gmail.com.</p>
+        </div>
+    </div>
+
+    <!-- Tooltip -->
+    <div id="tooltip" class="tooltip" style="display: none;">
+        <div class="tooltip-content">
+            <div class="tooltip-title"></div>
+            <div class="tooltip-details"></div>
+        </div>
+    </div>
+
+    <script>
+// Clinical Trial Data - Embedded directly
+const clinicalTrialData = [
+  {
+    abstractNumber: "CT001",
+    trialName: "KEYNOTE-689",
+    drug: "Pembrolizumab",
+    company: "Merck/MSD",
+    cancerType: "Head and neck cancer",
+    trialPhase: "Phase 3",
+    primaryEndpoint: "Event-free survival (EFS)",
+    objResponseRate: null,
+    sampleSize: 714,
+    patientPopulation: "Resectable locally advanced HNSCC",
+    dataCutoff: "July 25, 2024",
+    studyName: "KEYNOTE-689",
+    medianFollowUp: 38.3,
+    medianEFS_treatment: 59.7,
+    medianEFS_control: 26.9,
+    mPR_rate_difference: 13.7
+  },
+  {
+    abstractNumber: "CT002",
+    trialName: "ctDNA-Directed Adjuvant Immunotherapy",
+    drug: "Pembrolizumab",
+    company: "Merck/MSD",
+    cancerType: "Mismatch repair deficient tumors",
+    trialPhase: "Phase 2",
+    primaryEndpoint: "ctDNA clearance",
+    objResponseRate: null,
+    sampleSize: 180,
+    patientPopulation: "dMMR tumors with detectable ctDNA",
+    dataCutoff: "October 2024",
+    studyName: "ctDNA-DIR-IMM",
+    ctDNA_clearance_rate: 85,
+    recurrence_free_survival_12m: 92
+  },
+  {
+    abstractNumber: "CT003",
+    trialName: "Non operative management of mismatch repair deficient tumors",
+    drug: "Dostarlimab",
+    company: "GSK",
+    cancerType: "Colorectal cancer",
+    trialPhase: "Phase 2",
+    primaryEndpoint: "Response rate and durability of complete response",
+    objResponseRate: 81,
+    sampleSize: 110,
+    patientPopulation: "Early stage MMRd solid tumors eligible for curative surgery",
+    dataCutoff: null,
+    studyName: null,
+    medianFollowUp_rectal: 24.8,
+    cohort1_CCR_rate: 100,
+    cohort2_CCR_rate: 63,
+    overall_CCR_rate: 81
+  },
+  {
+    abstractNumber: "CT004",
+    trialName: "KEYLYNK-007",
+    drug: "Olaparib + Pembrolizumab",
+    company: "AstraZeneca/Merck",
+    cancerType: "HRR deficient cancers",
+    trialPhase: "Phase 2",
+    primaryEndpoint: "Objective response rate (ORR)",
+    objResponseRate: 27,
+    sampleSize: 156,
+    patientPopulation: "HRRm/HRD-positive advanced cancers",
+    dataCutoff: "April 2024",
+    studyName: "KEYLYNK-007",
+    duration_of_response_median: 8.5,
+    progression_free_survival_median: 5.4
+  },
+  {
+    abstractNumber: "CT008",
+    trialName: "SYS6010 First-in-Human",
+    drug: "SYS6010 (EGFR ADC)",
+    company: "Syn-Tech Chem & Pharm",
+    cancerType: "Non-small cell lung cancer",
+    trialPhase: "Phase 1",
+    primaryEndpoint: "Safety and tolerability",
+    objResponseRate: 32.8,
+    sampleSize: 67,
+    patientPopulation: "Advanced EGFR+ solid tumors",
+    dataCutoff: "September 2024",
+    studyName: "SYS6010-101",
+    disease_control_rate: 73.1,
+    duration_of_response_median: 7.2
+  },
+  {
+    abstractNumber: "CT009",
+    trialName: "HORIZON-Lung",
+    drug: "SHR-A1811 (HER2 ADC)",
+    company: "Hengrui Medicine",
+    cancerType: "Non-small cell lung cancer",
+    trialPhase: "Phase 2",
+    primaryEndpoint: "Objective response rate (ORR)",
+    objResponseRate: 74.5,
+    sampleSize: 51,
+    patientPopulation: "HER2-mutant advanced NSCLC",
+    dataCutoff: "August 2024",
+    studyName: "HORIZON-Lung",
+    disease_control_rate: 96.1,
+    duration_of_response_median: 11.4
+  },
+  {
+    abstractNumber: "CT019",
+    trialName: "Zoldonrasib Phase 1",
+    drug: "Zoldonrasib (RMC-9805)",
+    company: "Revolution Medicines",
+    cancerType: "Non-small cell lung cancer",
+    trialPhase: "Phase 1",
+    primaryEndpoint: "Safety and antitumor activity",
+    objResponseRate: 61,
+    sampleSize: 28,
+    patientPopulation: "KRAS G12D NSCLC",
+    dataCutoff: "June 2024",
+    studyName: "RMC-9805-001",
+    disease_control_rate: 89,
+    duration_of_response_median: 11.1
+  },
+  {
+    abstractNumber: "CT051",
+    trialName: "SKYSCRAPER-01",
+    drug: "Tiragolumab + Atezolizumab",
+    company: "Genentech/Roche",
+    cancerType: "Non-small cell lung cancer",
+    trialPhase: "Phase 3",
+    primaryEndpoint: "Overall survival (OS)",
+    objResponseRate: 45.8,
+    sampleSize: 534,
+    patientPopulation: "PD-L1-high advanced NSCLC",
+    dataCutoff: "March 2024",
+    studyName: "SKYSCRAPER-01",
+    median_overall_survival: 23.2,
+    progression_free_survival_median: 5.6
+  },
+  {
+    abstractNumber: "CT130",
+    trialName: "NEOASIS",
+    drug: "Botensilimab + Balstilimab",
+    company: "Agenus",
+    cancerType: "Colorectal cancer",
+    trialPhase: "Phase 2",
+    primaryEndpoint: "Major pathological response (mPR)",
+    objResponseRate: 81,
+    sampleSize: 97,
+    patientPopulation: "Early stage cancers",
+    dataCutoff: "September 2024",
+    studyName: "NEOASIS",
+    complete_response_rate: 79,
+    safety_profile: "Manageable"
+  },
+  {
+    abstractNumber: "CT130",
+    trialName: "NEOASIS",
+    drug: "Botensilimab + Balstilimab",
+    company: "Agenus",
+    cancerType: "Breast cancer",
+    trialPhase: "Phase 2",
+    primaryEndpoint: "Major pathological response (mPR)",
+    objResponseRate: 81,
+    sampleSize: 97,
+    patientPopulation: "Early stage cancers",
+    dataCutoff: "September 2024",
+    studyName: "NEOASIS",
+    complete_response_rate: 79,
+    safety_profile: "Manageable"
+  },
+  {
+    abstractNumber: "CT010",
+    trialName: "JS107 Phase 1",
+    drug: "JS107 (CLDN18.2 ADC)",
+    company: "Shanghai Junshi",
+    cancerType: "Gastric cancer",
+    trialPhase: "Phase 1",
+    primaryEndpoint: "Safety and recommended phase 2 dose",
+    objResponseRate: 34.8,
+    sampleSize: 115,
+    patientPopulation: "CLDN18.2-high advanced solid tumors",
+    dataCutoff: "July 2024",
+    studyName: "JS107-001",
+    disease_control_rate: 78.3,
+    duration_of_response_median: 8.9
+  },
+  {
+    abstractNumber: "CT011",
+    trialName: "AK105-304",
+    drug: "Penpulimab + Chemotherapy",
+    company: "Akeso Biopharma",
+    cancerType: "Nasopharyngeal carcinoma",
+    trialPhase: "Phase 3",
+    primaryEndpoint: "Progression-free survival (PFS)",
+    objResponseRate: 68.1,
+    sampleSize: 289,
+    patientPopulation: "Recurrent/metastatic NPC",
+    dataCutoff: "August 2024",
+    studyName: "AK105-304",
+    progression_free_survival_median: 11.7,
+    overall_survival_median: "Not reached"
+  },
+  {
+    abstractNumber: "CT052",
+    trialName: "JYP0322 Phase 1",
+    drug: "JYP0322 (ROS1 inhibitor)",
+    company: "Jacobio Pharmaceuticals",
+    cancerType: "Non-small cell lung cancer",
+    trialPhase: "Phase 1",
+    primaryEndpoint: "Safety and antitumor activity",
+    objResponseRate: 85.7,
+    sampleSize: 12,
+    patientPopulation: "ROS1+ NSCLC with G2032R resistance",
+    dataCutoff: "May 2024",
+    studyName: "JYP0322-101",
+    disease_control_rate: 100,
+    duration_of_response_median: "Not reached"
+  }
+];
+
+// Dashboard JavaScript - Embedded directly
+class ClinicalTrialDashboard {
+    constructor() {
+        this.data = clinicalTrialData;
+        this.filteredData = [...this.data];
+        this.margin = { top: 20, right: 60, bottom: 60, left: 60 };
+        this.width = 800 - this.margin.left - this.margin.right;
+        this.height = 500 - this.margin.bottom - this.margin.top;
+        
+        this.init();
+    }
+
+    init() {
+        this.setupFilters();
+        this.setupSidebar();
+        this.createChart();
+        this.setupTooltip();
+    }
+
+    setupFilters() {
+        const cancerTypes = [...new Set(this.data.map(d => d.cancerType))].sort();
+        const companies = [...new Set(this.data.map(d => d.company).filter(c => c))].sort();
+
+        const cancerFilter = document.getElementById('cancer-type-filter');
+        cancerTypes.forEach(type => {
+            const option = document.createElement('option');
+            option.value = type;
+            option.textContent = type;
+            cancerFilter.appendChild(option);
+        });
+
+        const companyFilter = document.getElementById('company-filter');
+        companies.forEach(company => {
+            const option = document.createElement('option');
+            option.value = company;
+            option.textContent = company;
+            companyFilter.appendChild(option);
+        });
+
+        cancerFilter.addEventListener('change', () => this.applyFilters());
+        document.getElementById('phase-filter').addEventListener('change', () => this.applyFilters());
+        companyFilter.addEventListener('change', () => this.applyFilters());
+    }
+
+    setupSidebar() {
+        const sidebar = document.querySelector('.cancer-type-list');
+        const cancerTypes = [...new Set(this.data.map(d => d.cancerType))].sort();
+        
+        cancerTypes.forEach(type => {
+            const item = document.createElement('div');
+            item.className = 'cancer-type-item';
+            item.textContent = type;
+            item.setAttribute('data-cancer', type);
+            item.addEventListener('click', () => this.selectCancerType(type));
+            sidebar.appendChild(item);
+        });
+
+        const allItem = sidebar.querySelector('[data-cancer="all"]');
+        allItem.addEventListener('click', () => this.selectCancerType('all'));
+    }
+
+    selectCancerType(type) {
+        document.querySelectorAll('.cancer-type-item').forEach(item => {
+            item.classList.remove('active');
+        });
+        
+        const selectedItem = document.querySelector(`[data-cancer="${type}"]`);
+        if (selectedItem) {
+            selectedItem.classList.add('active');
+        }
+
+        const cancerFilter = document.getElementById('cancer-type-filter');
+        cancerFilter.value = type === 'all' ? '' : type;
+        this.applyFilters();
+    }
+
+    applyFilters() {
+        const cancerTypeFilter = document.getElementById('cancer-type-filter').value;
+        const phaseFilter = document.getElementById('phase-filter').value;
+        const companyFilter = document.getElementById('company-filter').value;
+
+        this.filteredData = this.data.filter(d => {
+            const matchesCancer = !cancerTypeFilter || d.cancerType === cancerTypeFilter;
+            const matchesPhase = !phaseFilter || d.trialPhase === phaseFilter;
+            const matchesCompany = !companyFilter || d.company === companyFilter;
+            
+            return matchesCancer && matchesPhase && matchesCompany;
+        });
+
+        this.updateChart();
+    }
+
+    createChart() {
+        d3.select("#scatter-plot").selectAll("*").remove();
+
+        const svg = d3.select("#scatter-plot")
+            .append("svg")
+            .attr("width", this.width + this.margin.left + this.margin.right)
+            .attr("height", this.height + this.margin.top + this.margin.bottom);
+
+        this.g = svg.append("g")
+            .attr("transform", `translate(${this.margin.left},${this.margin.top})`);
+
+        this.xScale = d3.scaleLinear().range([0, this.width]);
+        this.yScale = d3.scaleLinear().range([this.height, 0]);
+
+        this.xAxis = d3.axisBottom(this.xScale).tickFormat(d3.format("d"));
+        this.yAxis = d3.axisLeft(this.yScale);
+
+        this.g.append("g")
+            .attr("class", "x-axis")
+            .attr("transform", `translate(0,${this.height})`);
+
+        this.g.append("g")
+            .attr("class", "y-axis");
+
+        this.g.append("text")
+            .attr("class", "axis-title")
+            .attr("transform", `translate(${this.width/2}, ${this.height + 45})`)
+            .style("text-anchor", "middle")
+            .text("Sample Size");
+
+        this.g.append("text")
+            .attr("class", "axis-title")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 0 - this.margin.left)
+            .attr("x", 0 - (this.height / 2))
+            .attr("dy", "1em")
+            .style("text-anchor", "middle")
+            .text("ORR (%)");
+
+        // Grid lines removed
+
+        this.updateChart();
+    }
+
+    updateChart() {
+        // Separate data into trials with and without ORR data
+        const dataWithORR = this.filteredData.filter(d => 
+            d.objResponseRate !== null && 
+            d.objResponseRate !== undefined &&
+            d.sampleSize > 0
+        );
+        
+        const dataWithoutORR = this.filteredData.filter(d => 
+            (d.objResponseRate === null || d.objResponseRate === undefined) &&
+            d.sampleSize > 0
+        );
+        
+        // Position trials without ORR on negative y-axis (below 0%)
+        const dataWithoutORRPositioned = dataWithoutORR.map(d => ({
+            ...d,
+            displayORR: -10,
+            hasORR: false
+        }));
+        
+        const dataWithORRPositioned = dataWithORR.map(d => ({
+            ...d,
+            displayORR: d.objResponseRate,
+            hasORR: true
+        }));
+        
+        const allDisplayData = [...dataWithORRPositioned, ...dataWithoutORRPositioned];
+        const validData = dataWithORR; // For scale calculation
+        
+        console.log('updateChart - dataWithORR:', dataWithORR.length);
+        console.log('updateChart - dataWithoutORR:', dataWithoutORR.length);
+        console.log('updateChart - allDisplayData:', allDisplayData.length);
+
+        const xExtent = d3.extent(allDisplayData, d => d.sampleSize);
+        const yExtent = validData.length > 0 ? d3.extent(validData, d => d.objResponseRate) : [0, 100];
+        
+        this.xScale.domain([0, Math.max((xExtent[1] || 100) * 1.1, 100)]);
+        // Extend Y domain to include negative space for trials without ORR
+        this.yScale.domain([-20, Math.max((yExtent[1] || 100) * 1.1, 100)]);
+
+        this.g.select(".x-axis")
+            .transition()
+            .duration(750)
+            .call(this.xAxis);
+
+        this.g.select(".y-axis")
+            .transition()
+            .duration(750)
+            .call(this.yAxis);
+
+        // Grid lines removed
+
+        const circles = this.g.selectAll(".data-point")
+            .data(allDisplayData, d => d.abstractNumber + (d.hasORR ? '' : '_no_orr'));
+            
+        console.log('Circle data binding - data length:', allDisplayData.length);
+
+        circles.exit()
+            .transition()
+            .duration(500)
+            .attr("r", 0)
+            .remove();
+
+        const circlesEnter = circles.enter()
+            .append("circle")
+            .attr("class", "data-point")
+            .attr("r", 0)
+            .attr("cx", d => this.xScale(d.sampleSize))
+            .attr("cy", d => this.yScale(d.displayORR));
+
+        circles.merge(circlesEnter)
+            .transition()
+            .duration(750)
+            .attr("cx", d => this.xScale(d.sampleSize))
+            .attr("cy", d => this.yScale(d.displayORR))
+            .attr("r", 6)
+            .attr("fill", d => this.getColor(d))
+            .attr("opacity", 0.8);
+
+        this.g.selectAll(".data-point")
+            .on("mouseover", (event, d) => this.showTooltip(event, d))
+            .on("mouseout", () => this.hideTooltip())
+            .on("mousemove", (event) => this.moveTooltip(event))
+            .on("click", (event, d) => this.openPDF(d.abstractNumber));
+
+        // Add text labels for trials without ORR data
+        const textLabels = this.g.selectAll(".no-orr-label")
+            .data(dataWithoutORRPositioned, d => d.abstractNumber + '_label');
+
+        textLabels.exit().remove();
+
+        const textEnter = textLabels.enter()
+            .append("text")
+            .attr("class", "no-orr-label")
+            .attr("x", d => this.xScale(d.sampleSize))
+            .attr("y", d => this.yScale(d.displayORR) - 15)
+            .attr("text-anchor", "middle")
+            .style("font-size", "12px")
+            .style("font-weight", "900")
+            .style("fill", "#333")
+            .style("pointer-events", "none")
+            .text("No ORR data available. Click to read abstract");
+
+        textLabels.merge(textEnter)
+            .transition()
+            .duration(750)
+            .attr("x", d => this.xScale(d.sampleSize))
+            .attr("y", d => this.yScale(d.displayORR) - 15);
+    }
+
+    getColor(d) {
+        return '#ff9999';
+    }
+
+    setupTooltip() {
+        this.tooltip = d3.select("#tooltip");
+    }
+
+    showTooltip(event, d) {
+        const abstractText = `Click to view the full ${d.abstractNumber} abstract with detailed methodology and results.`;
+        const orrDisplay = d.hasORR === false ? 
+            '<div><strong>ORR:</strong> <em>No data available</em></div>' : 
+            `<div><strong>ORR:</strong> ${d.objResponseRate}%</div>`;
+        
+        this.tooltip.html(`
+            <div class="tooltip-title">${d.trialName || d.abstractNumber}</div>
+            <div class="tooltip-details">
+                <div><strong>Drug:</strong> ${d.drug}</div>
+                <div><strong>Company:</strong> ${d.company || 'Not specified'}</div>
+                <div><strong>Cancer Type:</strong> ${d.cancerType}</div>
+                <div><strong>Phase:</strong> ${d.trialPhase}</div>
+                ${orrDisplay}
+                <div><strong>Primary Endpoint:</strong> ${d.primaryEndpoint}</div>
+                <div><strong>Sample Size:</strong> ${d.sampleSize}</div>
+                <div><strong>Abstract:</strong> ${d.abstractNumber}</div>
+                ${d.studyName ? `<div><strong>Study:</strong> ${d.studyName}</div>` : ''}
+                <div><strong>Population:</strong> ${d.patientPopulation}</div>
+                <div class="abstract-preview"><strong>Abstract:</strong> ${abstractText}</div>
+                <div class="tooltip-action">Click to view full PDF</div>
+            </div>
+        `);
+
+        this.tooltip.style("display", "block");
+        this.moveTooltip(event);
+    }
+
+    moveTooltip(event) {
+        const tooltipWidth = this.tooltip.node().offsetWidth;
+        const tooltipHeight = this.tooltip.node().offsetHeight;
+        
+        let left = event.pageX + 10;
+        let top = event.pageY - 10;
+        
+        if (left + tooltipWidth > window.innerWidth) {
+            left = event.pageX - tooltipWidth - 10;
+        }
+        
+        if (top + tooltipHeight > window.innerHeight) {
+            top = event.pageY - tooltipHeight - 10;
+        }
+        
+        this.tooltip
+            .style("left", left + "px")
+            .style("top", top + "px");
+    }
+
+    hideTooltip() {
+        this.tooltip.style("display", "none");
+    }
+
+    openPDF(abstractNumber) {
+        // Map abstract numbers to their full PDF file names
+        const pdfMap = {
+            'CT001': 'Abstract CT001_ Neoadjuvant and adjuvant pembrolizumab plus standard of care (SOC) in resectable locally advanced head and neck squamous cell carcinoma (LA HNSCC)_ Phase 3 KEYNOTE-689 study _ Cancer Research _ American Association for Cancer Research.pdf',
+            'CT002': 'Abstract CT002_ Circulating tumor DNA status to direct adjuvant immunotherapy for mismatch repair deficient tumors _ Cancer Research _ American Association for Cancer Research.pdf',
+            'CT003': 'Abstract CT003_ Non operative management of mismatch repair deficient tumors _ Cancer Research _ American Association for Cancer Research.pdf',
+            'CT004': 'Abstract CT004_ KEYLYNK-007_ Tumor agnostic trial of olaparib plus pembrolizumab in homologous recombination repair mutation- and homologous recombination deficiency- positive advanced cancers _ Cancer Research _ American Association for Cancer Resear.pdf',
+            'CT008': 'Abstract CT008_ First-in-human study of SYS6010, a novel EGFR targeting antibody drug conjugate (ADC) for patients with advanced solid tumors _ Cancer Research _ American Association for Cancer Research.pdf',
+            'CT009': 'Abstract CT009_ SHR-A1811, a HER2-directed antibody-drug conjugate (ADC), in advanced HER2-mutant non-small cell lung cancer (NSCLC)_ Updated phase 2 results from HORIZON-Lung _ Cancer Research _ American Association for Cancer Research.pdf',
+            'CT010': 'Abstract CT010_ Phase I dose-escalation and expansion study of JS107, a claudin 18.2 (CLDN18.2)-targeting antibody-drug conjugate (ADC), as monotherapy or in combination for patients (pts) with advanced solid tumors _ Cancer Research _ American Associ.pdf',
+            'CT011': 'Abstract CT011_ Penpulimab versus placebo in combination with chemotherapy as first-line treatment for recurrent or metastatic nasopharyngeal carcinoma_ A global, multicenter, randomized, double-blind, phase 3 trial (AK105-304) _ Cancer Research _ Ame.pdf',
+            'CT019': 'Abstract CT019_ Preliminary safety and antitumor activity of zoldonrasib (RMC-9805), an oral, RAS(ON) G12D-selective, tri-complex inhibitor in patients with KRAS G12D non-small cell lung cancer (NSCLC) from a phase 1 study in advanced solid tumors _ C.pdf',
+            'CT051': 'Abstract CT051_ SKYSCRAPER-01_ A phase III, randomized trial of tiragolumab (tira) + atezolizumab (atezo) versus placebo (pbo) + atezo in patients (pts) with previously-untreated PD-L1-high, locally advanced unresectable_metastatic NSCLC _ Cancer Rese.pdf',
+            'CT052': 'Abstract CT052_ A highly selective, brain-penetrant and overcoming G2032R resistance ROS1 inhibitor JYP0322 in NSCLC patients with ROS1 fusion _ Cancer Research _ American Association for Cancer Research.pdf',
+            'CT130': 'Abstract CT130_ Neoadjuvant botensilimab plus balstilimab in MMR proficient and deficient early stage cancers_ First results of the pan-cancer NEOASIS study _ Cancer Research _ American Association for Cancer Research.pdf'
+        };
+        
+        const pdfFileName = pdfMap[abstractNumber];
+        if (pdfFileName) {
+            // Use full GitHub Pages URL
+            const baseUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+                ? '' 
+                : 'https://inventcures.github.io';
+            window.open(`${baseUrl}/aacr2025/ct_abstracts/${encodeURIComponent(pdfFileName)}`, '_blank');
+        } else {
+            alert(`PDF for ${abstractNumber} not found`);
+        }
+    }
+}
+
+// Initialize dashboard when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    try {
+        const dashboard = new ClinicalTrialDashboard();
+        window.dashboard = dashboard;
+        console.log('Dashboard initialized successfully');
+    } catch (error) {
+        console.error('Error creating dashboard:', error);
+    }
+});
+
+window.addEventListener('resize', function() {
+    clearTimeout(window.resizeTimeout);
+    window.resizeTimeout = setTimeout(() => {
+        if (window.dashboard) {
+            window.dashboard.createChart();
+        }
+    }, 250);
+});
+    </script>
+</body>
+</html>

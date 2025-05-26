@@ -14,7 +14,7 @@ tags:
 
 I've created an interactive dashboard visualizing objective response rates from clinical trials reported at AACR 2025, featuring real data extracted from 12 clinical trial abstracts including breakthrough studies like KEYNOTE-689 (pembrolizumab in head & neck cancer), KEYLYNK-007 (olaparib + pembrolizumab tumor-agnostic trial), Dostarlimab non-operative management (81% ORR), and Zoldonrasib (KRAS G12D inhibitor with 61% ORR). The dashboard allows filtering by cancer type, trial phase, and company, with interactive tooltips providing detailed trial information including sample sizes ranging from 12 to 714 patients and response rates from 27% to 85.7% across multiple cancer types. This visualization is inspired by the excellent work at [aacr.convoke.bio](https://aacr.convoke.bio/) - thanks to Alex Telford for the inspiration!
 
-[**🔗 View the Interactive Dashboard**](https://inventcures.github.io/aacr2025/)
+[**🔗 View the Interactive Dashboard**](https://inventcures.github.io/aacr2025.html)
 
 ### Key Features:
 - **Real AACR 2025 Data**: 12 clinical trials with comprehensive metadata

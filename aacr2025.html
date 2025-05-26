@@ -72,13 +72,14 @@
 
         .controls {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             margin-bottom: 30px;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
             justify-content: center;
             padding: 20px;
             background: #f8f9fa;
             border-radius: 8px;
+            overflow-x: auto;
         }
 
         .filter-group {
@@ -98,8 +99,12 @@
             border: 2px solid #e0e0e0;
             border-radius: 6px;
             font-size: 14px;
-            min-width: 180px;
+            min-width: 140px;
             transition: border-color 0.2s ease;
+        }
+
+        #trial-filter {
+            min-width: 120px;
         }
 
         .filter-select:focus {
@@ -329,6 +334,20 @@
                 <label for="company-filter">Filter by company</label>
                 <select id="company-filter" class="filter-select">
                     <option value="">All companies</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="trial-filter">Filter by trial name</label>
+                <select id="trial-filter" class="filter-select">
+                    <option value="">All trials</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="drug-filter">Filter by drug</label>
+                <select id="drug-filter" class="filter-select">
+                    <option value="">All drugs</option>
                 </select>
             </div>
         </div>
@@ -608,6 +627,8 @@ class ClinicalTrialDashboard {
     setupFilters() {
         const cancerTypes = [...new Set(this.data.map(d => d.cancerType))].sort();
         const companies = [...new Set(this.data.map(d => d.company).filter(c => c))].sort();
+        const trialNames = [...new Set(this.data.map(d => d.trialName).filter(t => t))].sort();
+        const drugs = [...new Set(this.data.map(d => d.drug).filter(d => d))].sort();
 
         const cancerFilter = document.getElementById('cancer-type-filter');
         cancerTypes.forEach(type => {
@@ -625,9 +646,27 @@ class ClinicalTrialDashboard {
             companyFilter.appendChild(option);
         });
 
+        const trialFilter = document.getElementById('trial-filter');
+        trialNames.forEach(trial => {
+            const option = document.createElement('option');
+            option.value = trial;
+            option.textContent = trial;
+            trialFilter.appendChild(option);
+        });
+
+        const drugFilter = document.getElementById('drug-filter');
+        drugs.forEach(drug => {
+            const option = document.createElement('option');
+            option.value = drug;
+            option.textContent = drug;
+            drugFilter.appendChild(option);
+        });
+
         cancerFilter.addEventListener('change', () => this.applyFilters());
         document.getElementById('phase-filter').addEventListener('change', () => this.applyFilters());
         companyFilter.addEventListener('change', () => this.applyFilters());
+        trialFilter.addEventListener('change', () => this.applyFilters());
+        drugFilter.addEventListener('change', () => this.applyFilters());
     }
 
     setupSidebar() {
@@ -666,13 +705,17 @@ class ClinicalTrialDashboard {
         const cancerTypeFilter = document.getElementById('cancer-type-filter').value;
         const phaseFilter = document.getElementById('phase-filter').value;
         const companyFilter = document.getElementById('company-filter').value;
+        const trialFilter = document.getElementById('trial-filter').value;
+        const drugFilter = document.getElementById('drug-filter').value;
 
         this.filteredData = this.data.filter(d => {
             const matchesCancer = !cancerTypeFilter || d.cancerType === cancerTypeFilter;
             const matchesPhase = !phaseFilter || d.trialPhase === phaseFilter;
             const matchesCompany = !companyFilter || d.company === companyFilter;
+            const matchesTrial = !trialFilter || d.trialName === trialFilter;
+            const matchesDrug = !drugFilter || d.drug === drugFilter;
             
-            return matchesCancer && matchesPhase && matchesCompany;
+            return matchesCancer && matchesPhase && matchesCompany && matchesTrial && matchesDrug;
         });
 
         this.updateChart();
@@ -751,9 +794,6 @@ class ClinicalTrialDashboard {
         const allDisplayData = [...dataWithORRPositioned, ...dataWithoutORRPositioned];
         const validData = dataWithORR; // For scale calculation
         
-        console.log('updateChart - dataWithORR:', dataWithORR.length);
-        console.log('updateChart - dataWithoutORR:', dataWithoutORR.length);
-        console.log('updateChart - allDisplayData:', allDisplayData.length);
 
         const xExtent = d3.extent(allDisplayData, d => d.sampleSize);
         const yExtent = validData.length > 0 ? d3.extent(validData, d => d.objResponseRate) : [0, 100];
@@ -776,8 +816,6 @@ class ClinicalTrialDashboard {
 
         const circles = this.g.selectAll(".data-point")
             .data(allDisplayData, d => d.abstractNumber + (d.hasORR ? '' : '_no_orr'));
-            
-        console.log('Circle data binding - data length:', allDisplayData.length);
 
         circles.exit()
             .transition()

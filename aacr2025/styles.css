@@ -72,7 +72,7 @@ body {
 .filter-group {
     display: flex;
     flex-direction: column;
-    min-width: 180px;
+    min-width: 90px;
 }
 
 .filter-group label {

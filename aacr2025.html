@@ -314,9 +314,9 @@
 
         <div class="controls">
             <div class="filter-group">
-                <label for="cancer-type-filter">Filter by cancer type</label>
-                <select id="cancer-type-filter" class="filter-select">
-                    <option value="">All cancer types</option>
+                <label for="population-filter">Filter by patient population/subgroup</label>
+                <select id="population-filter" class="filter-select">
+                    <option value="">All populations</option>
                 </select>
             </div>
 
@@ -610,6 +610,7 @@ class ClinicalTrialDashboard {
     constructor() {
         this.data = clinicalTrialData;
         this.filteredData = [...this.data];
+        this.selectedCancerType = '';
         this.margin = { top: 20, right: 60, bottom: 60, left: 60 };
         this.width = 800 - this.margin.left - this.margin.right;
         this.height = 500 - this.margin.bottom - this.margin.top;
@@ -625,17 +626,17 @@ class ClinicalTrialDashboard {
     }
 
     setupFilters() {
-        const cancerTypes = [...new Set(this.data.map(d => d.cancerType))].sort();
+        const populations = [...new Set(this.data.map(d => d.patientPopulation).filter(p => p))].sort();
         const companies = [...new Set(this.data.map(d => d.company).filter(c => c))].sort();
         const trialNames = [...new Set(this.data.map(d => d.trialName).filter(t => t))].sort();
         const drugs = [...new Set(this.data.map(d => d.drug).filter(d => d))].sort();
 
-        const cancerFilter = document.getElementById('cancer-type-filter');
-        cancerTypes.forEach(type => {
+        const populationFilter = document.getElementById('population-filter');
+        populations.forEach(population => {
             const option = document.createElement('option');
-            option.value = type;
-            option.textContent = type;
-            cancerFilter.appendChild(option);
+            option.value = population;
+            option.textContent = population;
+            populationFilter.appendChild(option);
         });
 
         const companyFilter = document.getElementById('company-filter');
@@ -662,7 +663,7 @@ class ClinicalTrialDashboard {
             drugFilter.appendChild(option);
         });
 
-        cancerFilter.addEventListener('change', () => this.applyFilters());
+        populationFilter.addEventListener('change', () => this.applyFilters());
         document.getElementById('phase-filter').addEventListener('change', () => this.applyFilters());
         companyFilter.addEventListener('change', () => this.applyFilters());
         trialFilter.addEventListener('change', () => this.applyFilters());
@@ -696,26 +697,26 @@ class ClinicalTrialDashboard {
             selectedItem.classList.add('active');
         }
 
-        const cancerFilter = document.getElementById('cancer-type-filter');
-        cancerFilter.value = type === 'all' ? '' : type;
+        this.selectedCancerType = type === 'all' ? '' : type;
         this.applyFilters();
     }
 
     applyFilters() {
-        const cancerTypeFilter = document.getElementById('cancer-type-filter').value;
+        const populationFilter = document.getElementById('population-filter').value;
         const phaseFilter = document.getElementById('phase-filter').value;
         const companyFilter = document.getElementById('company-filter').value;
         const trialFilter = document.getElementById('trial-filter').value;
         const drugFilter = document.getElementById('drug-filter').value;
 
         this.filteredData = this.data.filter(d => {
-            const matchesCancer = !cancerTypeFilter || d.cancerType === cancerTypeFilter;
+            const matchesCancer = !this.selectedCancerType || d.cancerType === this.selectedCancerType;
+            const matchesPopulation = !populationFilter || d.patientPopulation === populationFilter;
             const matchesPhase = !phaseFilter || d.trialPhase === phaseFilter;
             const matchesCompany = !companyFilter || d.company === companyFilter;
             const matchesTrial = !trialFilter || d.trialName === trialFilter;
             const matchesDrug = !drugFilter || d.drug === drugFilter;
             
-            return matchesCancer && matchesPhase && matchesCompany && matchesTrial && matchesDrug;
+            return matchesCancer && matchesPopulation && matchesPhase && matchesCompany && matchesTrial && matchesDrug;
         });
 
         this.updateChart();

@@ -1,4 +1,4 @@
-i<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -333,6 +333,20 @@ i<!DOCTYPE html>
                     <option value="">All companies</option>
                 </select>
             </div>
+
+            <div class="filter-group">
+                <label for="trial-filter">Filter by trial name</label>
+                <select id="trial-filter" class="filter-select">
+                    <option value="">All trials</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="drug-filter">Filter by drug</label>
+                <select id="drug-filter" class="filter-select">
+                    <option value="">All drugs</option>
+                </select>
+            </div>
         </div>
 
         <div class="main-content">
@@ -610,6 +624,8 @@ class ClinicalTrialDashboard {
     setupFilters() {
         const cancerTypes = [...new Set(this.data.map(d => d.cancerType))].sort();
         const companies = [...new Set(this.data.map(d => d.company).filter(c => c))].sort();
+        const trialNames = [...new Set(this.data.map(d => d.trialName).filter(t => t))].sort();
+        const drugs = [...new Set(this.data.map(d => d.drug).filter(d => d))].sort();
 
         const cancerFilter = document.getElementById('cancer-type-filter');
         cancerTypes.forEach(type => {
@@ -627,9 +643,27 @@ class ClinicalTrialDashboard {
             companyFilter.appendChild(option);
         });
 
+        const trialFilter = document.getElementById('trial-filter');
+        trialNames.forEach(trial => {
+            const option = document.createElement('option');
+            option.value = trial;
+            option.textContent = trial;
+            trialFilter.appendChild(option);
+        });
+
+        const drugFilter = document.getElementById('drug-filter');
+        drugs.forEach(drug => {
+            const option = document.createElement('option');
+            option.value = drug;
+            option.textContent = drug;
+            drugFilter.appendChild(option);
+        });
+
         cancerFilter.addEventListener('change', () => this.applyFilters());
         document.getElementById('phase-filter').addEventListener('change', () => this.applyFilters());
         companyFilter.addEventListener('change', () => this.applyFilters());
+        trialFilter.addEventListener('change', () => this.applyFilters());
+        drugFilter.addEventListener('change', () => this.applyFilters());
     }
 
     setupSidebar() {
@@ -668,13 +702,17 @@ class ClinicalTrialDashboard {
         const cancerTypeFilter = document.getElementById('cancer-type-filter').value;
         const phaseFilter = document.getElementById('phase-filter').value;
         const companyFilter = document.getElementById('company-filter').value;
+        const trialFilter = document.getElementById('trial-filter').value;
+        const drugFilter = document.getElementById('drug-filter').value;
 
         this.filteredData = this.data.filter(d => {
             const matchesCancer = !cancerTypeFilter || d.cancerType === cancerTypeFilter;
             const matchesPhase = !phaseFilter || d.trialPhase === phaseFilter;
             const matchesCompany = !companyFilter || d.company === companyFilter;
+            const matchesTrial = !trialFilter || d.trialName === trialFilter;
+            const matchesDrug = !drugFilter || d.drug === drugFilter;
             
-            return matchesCancer && matchesPhase && matchesCompany;
+            return matchesCancer && matchesPhase && matchesCompany && matchesTrial && matchesDrug;
         });
 
         this.updateChart();

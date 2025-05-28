@@ -254,6 +254,7 @@
             r: 8;
         }
 
+
         .axis-title {
             font-size: 12px;
             fill: #666;
@@ -875,9 +876,11 @@ class ClinicalTrialDashboard {
         return '#ff9999';
     }
 
+
     setupTooltip() {
         this.tooltip = d3.select("#tooltip");
     }
+
 
     showTooltip(event, d) {
         const abstractText = `Click to view the full ${d.abstractNumber} abstract with detailed methodology and results.`;
@@ -885,12 +888,17 @@ class ClinicalTrialDashboard {
             '<div><strong>ORR:</strong> <em>No data available</em></div>' : 
             `<div><strong>ORR:</strong> ${d.objResponseRate}%</div>`;
         
+        // Check if there are multiple entries with the same abstract number
+        const sameAbstractEntries = this.data.filter(entry => entry.abstractNumber === d.abstractNumber);
+        const cancerTypes = [...new Set(sameAbstractEntries.map(entry => entry.cancerType))];
+        const combinedCancerType = cancerTypes.join(' & ');
+        
         this.tooltip.html(`
             <div class="tooltip-title">${d.trialName || d.abstractNumber}</div>
             <div class="tooltip-details">
                 <div><strong>Drug:</strong> ${d.drug}</div>
                 <div><strong>Company:</strong> ${d.company || 'Not specified'}</div>
-                <div><strong>Cancer Type:</strong> ${d.cancerType}</div>
+                <div><strong>Cancer Type:</strong> ${combinedCancerType}</div>
                 <div><strong>Phase:</strong> ${d.trialPhase}</div>
                 ${orrDisplay}
                 <div><strong>Primary Endpoint:</strong> ${d.primaryEndpoint}</div>

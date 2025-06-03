@@ -1311,9 +1311,10 @@ class ASCOTrialDashboard {
             return matchesTrack && matchesPopulation && matchesPhase && matchesCompany && matchesTrial && matchesDrug;
         });
 
-        // Update search status if search is active
+        // Update search status and highlighting if search is active
         if (this.activeSearch && this.searchResults.length > 0) {
             this.updateSearchStatusWithFilters();
+            this.updateSearchHighlightingWithFilters();
         }
 
         this.updateChart();
@@ -1419,6 +1420,11 @@ class ASCOTrialDashboard {
             .on("mouseout", () => this.hideTooltip())
             .on("mousemove", (event) => this.moveTooltip(event))
             .on("click", (event, d) => this.openPDF(d));
+
+        // Reapply search highlighting if search is active
+        if (this.activeSearch && this.searchResults.length > 0) {
+            this.updateSearchHighlightingWithFilters();
+        }
     }
 
     getPhaseColor(phase) {
@@ -1863,19 +1869,19 @@ class ASCOTrialDashboard {
     }
 
     highlightSearchResults(results) {
-        // Get trial indices to highlight
-        const highlightIndices = new Set(results.map(r => r.trialIndex));
+        // Get search result TPS IDs
+        const searchResultTpsIds = new Set(results.map(r => r.tpsId));
+        
+        // Only highlight search results that are also visible in current filtered data
+        const visibleSearchResults = this.filteredData.filter(trial => searchResultTpsIds.has(trial.tpsId));
+        const visibleSearchTpsIds = new Set(visibleSearchResults.map(trial => trial.tpsId));
         
         // Update chart with highlighting
         this.g.selectAll('.data-point')
-            .classed('search-highlighted', d => {
-                const trialIndex = this.data.findIndex(trial => trial.tpsId === d.tpsId);
-                return highlightIndices.has(trialIndex);
-            })
-            .classed('search-dimmed', d => {
-                const trialIndex = this.data.findIndex(trial => trial.tpsId === d.tpsId);
-                return !highlightIndices.has(trialIndex);
-            });
+            .classed('search-highlighted', d => visibleSearchTpsIds.has(d.tpsId))
+            .classed('search-dimmed', d => !visibleSearchTpsIds.has(d.tpsId));
+        
+        console.log(`🔍 Initial highlighting: ${visibleSearchResults.length} trials match search + current filters`);
     }
 
     clearSearchHighlights() {
@@ -1912,6 +1918,32 @@ class ASCOTrialDashboard {
         }
         
         this.showSearchStatus(message, 'success');
+    }
+
+    updateSearchHighlightingWithFilters() {
+        if (!this.activeSearch || this.searchResults.length === 0) {
+            this.clearSearchHighlights();
+            return;
+        }
+
+        // Get search results that are also in filtered data
+        const searchResultTpsIds = new Set(this.searchResults.map(r => r.tpsId));
+        const visibleSearchResults = this.filteredData.filter(trial => searchResultTpsIds.has(trial.tpsId));
+        const visibleSearchTpsIds = new Set(visibleSearchResults.map(trial => trial.tpsId));
+        
+        // If no search results match the current filters, clear highlighting
+        if (visibleSearchResults.length === 0) {
+            this.g.selectAll('.data-point')
+                .classed('search-highlighted', false)
+                .classed('search-dimmed', false);
+            console.log(`🎯 No search results match current filters - cleared all highlighting`);
+        } else {
+            // Update chart with highlighting - only highlight points that match both search AND filters
+            this.g.selectAll('.data-point')
+                .classed('search-highlighted', d => visibleSearchTpsIds.has(d.tpsId))
+                .classed('search-dimmed', d => !visibleSearchTpsIds.has(d.tpsId));
+            console.log(`🎯 Updated highlighting: ${visibleSearchResults.length} trials match search + filters`);
+        }
     }
 
     getActiveFilterDescriptions() {

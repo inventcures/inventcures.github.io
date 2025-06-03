@@ -83,6 +83,31 @@
             font-weight: 600;
         }
 
+        .homepage-link {
+            position: absolute;
+            top: 20px;
+            left: 35px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .homepage-link:hover {
+            color: #64ffda;
+            transform: translateX(-2px);
+        }
+
+        .homepage-link::before {
+            content: "←";
+            font-size: 1.2rem;
+            color: #64ffda;
+        }
+
         .subtitle a {
             color: #64ffda;
             text-decoration: none;
@@ -419,6 +444,7 @@
 <body>
     <div class="container">
         <header class="header">
+            <a href="https://inventcures.github.io" class="homepage-link">Homepage</a>
             <h1>ASCO 2025 Clinical Trial Pipeline</h1>
             <p class="subtitle">Trials in Progress from the <a href="https://www.asco.org/meetings-events/annual-meeting" target="_blank">ASCO 2025 Annual Meeting</a></p>
             

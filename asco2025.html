@@ -653,6 +653,28 @@
             font-weight: 700;
         }
 
+        /* Disabled state styling */
+        .search-toggle-container.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+            filter: grayscale(0.5);
+        }
+
+        .search-toggle-container.disabled .toggle-option .toggle-icon,
+        .search-toggle-container.disabled .toggle-option .toggle-text {
+            opacity: 0.5;
+            color: #9ca3af !important;
+        }
+
+        .search-toggle-container.disabled .mobile-toggle-label {
+            background: #e5e7eb !important;
+            cursor: not-allowed;
+        }
+
+        .search-toggle-container.disabled .mobile-toggle-slider {
+            background: #d1d5db !important;
+        }
+
         /* Natural Language Search Styles */
         .nl-search-section {
             background: linear-gradient(135deg, #0f4c75 0%, #3282b8 100%);
@@ -665,6 +687,102 @@
             opacity: 0;
             transform: translateY(-20px);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* TPS ID Search Styles */
+        .tps-search-section {
+            background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            color: white;
+            box-shadow: 0 8px 32px rgba(142, 68, 173, 0.3);
+            display: none;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .tps-search-section.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .tps-search-section h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .tps-description {
+            margin-bottom: 20px;
+            opacity: 0.9;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        #tps-query {
+            flex: 1;
+            padding: 16px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            min-height: 60px;
+            background: rgba(255, 255, 255, 0.95);
+            transition: all 0.3s ease;
+            color: #333;
+        }
+
+        #tps-query:focus {
+            outline: none;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+        }
+
+        #tps-search-btn, #tps-clear-btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #tps-search-btn {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            border: none;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #tps-clear-btn {
+            background: #ffffff;
+            color: #374151;
+            border: 1px solid #d1d5db;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #tps-search-btn:hover {
+            background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3);
+        }
+
+        #tps-clear-btn:hover {
+            background: #f8f9fa;
+            border-color: #d1d5db;
+            transform: none;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
 
         .nl-search-section.show {
@@ -859,6 +977,12 @@
             border: 1px solid rgba(255, 152, 0, 0.3);
         }
 
+        .search-status.error {
+            background: rgba(244, 67, 54, 0.2);
+            color: #ffebee;
+            border: 1px solid rgba(244, 67, 54, 0.3);
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
@@ -876,6 +1000,35 @@
         .data-point.search-dimmed {
             opacity: 0.2;
             transition: opacity 0.5s ease;
+        }
+
+        /* TPS ID search highlighting */
+        .data-point.tps-highlighted {
+            stroke: #e74c3c;
+            stroke-width: 5px;
+            opacity: 1 !important;
+            animation: tpsPulse 2s infinite;
+            filter: drop-shadow(0 0 10px rgba(231, 76, 60, 0.8));
+        }
+
+        .data-point.tps-dimmed {
+            opacity: 0.15;
+            transition: opacity 0.5s ease;
+        }
+
+        @keyframes tpsPulse {
+            0% { 
+                stroke-width: 5px; 
+                filter: drop-shadow(0 0 10px rgba(231, 76, 60, 0.8));
+            }
+            50% { 
+                stroke-width: 7px; 
+                filter: drop-shadow(0 0 15px rgba(231, 76, 60, 1));
+            }
+            100% { 
+                stroke-width: 5px; 
+                filter: drop-shadow(0 0 10px rgba(231, 76, 60, 0.8));
+            }
         }
 
         @keyframes searchPulse {
@@ -1036,11 +1189,11 @@
             </p>
         </div>
 
-        <!-- Natural Language Search Toggle -->
+        <!-- Search Mode Toggle -->
         <div class="search-toggle-container">
             <div class="toggle-option">
                 <span class="toggle-icon">📊</span>
-                <span class="toggle-text">Static Trial Data</span>
+                <span class="toggle-text">Static Trial Data with filters(to slice and dice the data) </span>
             </div>
             
             <div class="mobile-toggle-switch">
@@ -1052,7 +1205,27 @@
             
             <div class="toggle-option">
                 <span class="toggle-icon">🔍</span>
-                <span class="toggle-text">Natural Language Search</span>
+                <span class="toggle-text">Search all trials using natural-language search</span>
+            </div>
+        </div>
+
+        <!-- TPS ID Search Toggle -->
+        <div class="search-toggle-container">
+            <div class="toggle-option">
+                <span class="toggle-icon">📊</span>
+                <span class="toggle-text">Show all trials (normal view)</span>
+            </div>
+            
+            <div class="mobile-toggle-switch">
+                <input type="checkbox" id="tps-search-toggle-input" class="mobile-toggle-input">
+                <label for="tps-search-toggle-input" class="mobile-toggle-label">
+                    <span class="mobile-toggle-slider"></span>
+                </label>
+            </div>
+            
+            <div class="toggle-option">
+                <span class="toggle-icon">🎯</span>
+                <span class="toggle-text">Search by TPS ID to view a single trial's data(e.g., enter 2088 for TPS2088)</span>
             </div>
         </div>
 
@@ -1081,6 +1254,21 @@
             </div>
             
             <div id="search-status" class="search-status"></div>
+        </div>
+
+        <!-- TPS ID Search Interface -->
+        <div class="tps-search-section">
+            <h3>🎯 TPS ID Search</h3>
+            <p class="tps-description">Search for a specific trial by TPS ID. Enter just the number (e.g., 2088 for TPS2088). Found trial will be displayed alone on the plot.</p>
+            
+            <div class="search-input-container">
+                <input type="text" id="tps-query" 
+                       placeholder="e.g., 2088, 1120, 3649">
+                <button id="tps-search-btn">Search</button>
+                <button id="tps-clear-btn">Clear</button>
+            </div>
+            
+            <div id="tps-search-status" class="search-status"></div>
         </div>
 
         <div class="controls">
@@ -1222,6 +1410,8 @@ class ASCOTrialDashboard {
         this.currentSearchQuery = '';
         this.searchCorpus = null;
         this.llmSummary = null;
+        this.tpsSearchActive = false;
+        this.currentTpsSearchId = '';
         this.margin = { top: 20, right: 60, bottom: 60, left: 60 };
         this.width = 800 - this.margin.left - this.margin.right;
         this.height = 500 - this.margin.bottom - this.margin.top;
@@ -1240,6 +1430,7 @@ class ASCOTrialDashboard {
         this.setupTooltip();
         this.loadSearchCorpus();
         this.setupNaturalLanguageSearch();
+        this.setupTpsIdSearch();
     }
 
     setupFilters() {
@@ -1346,6 +1537,14 @@ class ASCOTrialDashboard {
         if (this.activeSearch && this.searchResults.length > 0) {
             this.updateSearchStatusWithFilters();
             this.updateSearchHighlightingWithFilters();
+        }
+
+        // If TPS search is active, override filtered data to show only the searched trial
+        if (this.tpsSearchActive && this.currentTpsSearchId) {
+            const trial = this.data.find(t => t.tpsId === this.currentTpsSearchId);
+            if (trial) {
+                this.filteredData = [trial];
+            }
         }
 
         this.updateChart();
@@ -1473,18 +1672,76 @@ class ASCOTrialDashboard {
         this.tooltip = d3.select("#tooltip");
     }
 
+    extractResponseMetrics(trial) {
+        // Extract response rates and metrics from title and abstract
+        const searchText = `${trial.title} ${trial.backgroundExcerpt}`.toLowerCase();
+        const responseMetrics = [];
+        
+        // Pattern matching for various response metrics with metric name extraction
+        const patterns = [
+            { regex: /orr.*?(\d+(?:\.\d+)?%)/gi, metricName: 'ORR' },
+            { regex: /objective response rate.*?(\d+(?:\.\d+)?%)/gi, metricName: 'Objective Response Rate' },
+            { regex: /(\d+(?:\.\d+)?%).*?orr/gi, metricName: 'ORR' },
+            { regex: /(\d+(?:\.\d+)?%).*?objective response/gi, metricName: 'Objective Response Rate' },
+            { regex: /complete response rate.*?(\d+(?:\.\d+)?%)/gi, metricName: 'Complete Response Rate' },
+            { regex: /crr.*?(\d+(?:\.\d+)?%)/gi, metricName: 'CRR' },
+            { regex: /(\d+(?:\.\d+)?%).*?complete response/gi, metricName: 'Complete Response Rate' },
+            { regex: /disease control rate.*?(\d+(?:\.\d+)?%)/gi, metricName: 'Disease Control Rate' },
+            { regex: /dcr.*?(\d+(?:\.\d+)?%)/gi, metricName: 'DCR' },
+            { regex: /(\d+(?:\.\d+)?%).*?disease control/gi, metricName: 'Disease Control Rate' },
+            { regex: /response rate.*?(\d+(?:\.\d+)?%)/gi, metricName: 'Response Rate' },
+            { regex: /(\d+(?:\.\d+)?%).*?response rate/gi, metricName: 'Response Rate' },
+            { regex: /pathological complete response.*?(\d+(?:\.\d+)?%)/gi, metricName: 'Pathological Complete Response' },
+            { regex: /pcr.*?(\d+(?:\.\d+)?%)/gi, metricName: 'PCR' },
+            { regex: /(\d+(?:\.\d+)?%).*?response/gi, metricName: 'Response' }
+        ];
+        
+        patterns.forEach(pattern => {
+            const matches = [...searchText.matchAll(pattern.regex)];
+            matches.forEach(match => {
+                const percentMatch = match[0].match(/(\d+(?:\.\d+)?%)/);
+                if (percentMatch) {
+                    responseMetrics.push({
+                        value: percentMatch[1],
+                        metricName: pattern.metricName,
+                        context: match[0].replace(/\s+/g, ' ').trim()
+                    });
+                }
+            });
+        });
+        
+        // Remove duplicates based on value and metric name
+        const uniqueMetrics = responseMetrics.filter((metric, index, self) => 
+            index === self.findIndex(m => m.value === metric.value && m.metricName === metric.metricName)
+        );
+        
+        return uniqueMetrics.slice(0, 3); // Limit to 3 most relevant metrics
+    }
+
     showTooltip(event, d) {
         const abstractText = `Click to view the full ${d.tpsId} abstract with trial details.`;
+        
+        // Use pre-extracted response metrics from data structure
+        const responseMetrics = d.responseMetrics || [];
         
         // Debug: Log LLM summary status
         console.log('🔍 Tooltip Debug - LLM Summary:', this.llmSummary ? 'Available' : 'Not available');
         console.log('🔍 Tooltip Debug - API Key:', this.getGroqApiKey() ? 'Configured' : 'Missing');
         console.log('🔍 Tooltip Debug - Active Search:', this.activeSearch);
+        console.log('🔍 Tooltip Debug - Response Metrics Found:', responseMetrics.length);
         
         // Check if we have an API key but no LLM summary and this is from a search
         const apiKey = this.getGroqApiKey();
         const hasApiKey = !!apiKey;
         const showLLMStatus = hasApiKey && this.activeSearch;
+        
+        // Build response metrics section in the requested format
+        let responseSection = '';
+        if (responseMetrics.length > 0) {
+            responseSection = responseMetrics.map(metric => 
+                `<div><strong>Response Data(${metric.metricName}):</strong> <span style="color: #4fc3f7; font-weight: bold;">${metric.value}</span></div>`
+            ).join('');
+        }
         
         this.tooltip.html(`
             <div class="tooltip-title">${d.title}</div>
@@ -1500,6 +1757,7 @@ class ASCOTrialDashboard {
                 ${d.trialRegistry ? `<div><strong>Registry:</strong> ${d.trialRegistry}</div>` : ''}
                 ${d.originalPdfUrl ? `<div><strong>Abstract URL:</strong> <a href="${d.originalPdfUrl}" target="_blank" style="color: #64ffda; text-decoration: underline;">${d.originalPdfUrl}</a></div>` : ''}
                 <div class="abstract-preview"><strong>Background:</strong> ${d.backgroundExcerpt}</div>
+                ${responseSection}
                 ${this.llmSummary ? `<div class="llm-summary"><strong>🧠 AI Insight:</strong> ${this.llmSummary}<br><em style="font-size: 10px; color: #ccc;">Generated by LLM - Ancillary information</em></div>` : 
                   showLLMStatus && !this.llmSummary ? `<div class="llm-summary"><strong>🧠 AI Insight:</strong> <span style="color: #ffa726;">Generating insights...</span><br><em style="font-size: 10px; color: #ccc;">This may take a few seconds</em></div>` :
                   showLLMStatus === false && !hasApiKey ? `<div class="llm-summary"><strong>🧠 AI Insight:</strong> <span style="color: #ff9800;">Configure API key for insights</span><br><em style="font-size: 10px; color: #ccc;">Run: localStorage.setItem('ASCO_LLM_KEY', 'your-key')</em></div>` : ''}
@@ -1590,6 +1848,7 @@ class ASCOTrialDashboard {
         // Toggle functionality
         const handleToggle = () => {
             const isSearchVisible = toggleInput.checked;
+            const tpsToggle = document.getElementById('tps-search-toggle-input');
             
             if (isSearchVisible) {
                 // Show search section
@@ -1597,6 +1856,15 @@ class ASCOTrialDashboard {
                 setTimeout(() => {
                     searchSection.classList.add('show');
                 }, 10);
+                
+                // Disable TPS search toggle when natural language search is active
+                tpsToggle.disabled = true;
+                tpsToggle.checked = false;
+                this.clearTpsSearch();
+                
+                // Add visual feedback for disabled state
+                const tpsToggleContainer = tpsToggle.closest('.search-toggle-container');
+                tpsToggleContainer.classList.add('disabled');
             } else {
                 // Hide search section
                 searchSection.classList.remove('show');
@@ -1604,13 +1872,27 @@ class ASCOTrialDashboard {
                     searchSection.style.display = 'none';
                 }, 400);
                 
+                // Re-enable TPS search toggle when natural language search is turned off
+                tpsToggle.disabled = false;
+                
+                // Remove visual feedback for disabled state
+                const tpsToggleContainer = tpsToggle.closest('.search-toggle-container');
+                tpsToggleContainer.classList.remove('disabled');
+                
                 // Don't clear search when just hiding UI - preserve results and LLM summary
                 // this.clearSearch(); // REMOVED: Allows LLM summary to persist when UI is hidden
             }
         };
         
         // Add event listener
-        toggleInput.addEventListener('change', handleToggle);
+        toggleInput.addEventListener('change', (e) => {
+            // Prevent toggle if disabled
+            if (toggleInput.disabled) {
+                e.preventDefault();
+                return false;
+            }
+            handleToggle();
+        });
 
         // Search button click
         searchBtn.addEventListener('click', () => {
@@ -2219,7 +2501,205 @@ Keep it concise and factual. Do not make clinical recommendations.`;
         statusDiv.style.display = 'none';
         floatingStatusDiv.style.display = 'none';
     }
+
+    // TPS ID Search Methods
+    setupTpsIdSearch() {
+        const tpsSearchBtn = document.getElementById('tps-search-btn');
+        const tpsClearBtn = document.getElementById('tps-clear-btn');
+        const tpsQueryInput = document.getElementById('tps-query');
+        const tpsToggleInput = document.getElementById('tps-search-toggle-input');
+        const tpsSearchSection = document.querySelector('.tps-search-section');
+
+        // Toggle functionality
+        const handleTpsToggle = () => {
+            const isTpsSearchVisible = tpsToggleInput.checked;
+            const nlToggle = document.getElementById('search-toggle-input');
+            
+            if (isTpsSearchVisible) {
+                // Show TPS search section
+                tpsSearchSection.style.display = 'block';
+                setTimeout(() => {
+                    tpsSearchSection.classList.add('show');
+                }, 10);
+                
+                // Disable natural language search toggle when TPS search is active
+                nlToggle.disabled = true;
+                nlToggle.checked = false;
+                this.clearSearch();
+                
+                // Add visual feedback for disabled state
+                const nlToggleContainer = nlToggle.closest('.search-toggle-container');
+                nlToggleContainer.classList.add('disabled');
+            } else {
+                // Hide TPS search section
+                tpsSearchSection.classList.remove('show');
+                setTimeout(() => {
+                    tpsSearchSection.style.display = 'none';
+                }, 400);
+                
+                // Re-enable natural language search toggle when TPS search is turned off
+                nlToggle.disabled = false;
+                
+                // Remove visual feedback for disabled state
+                const nlToggleContainer = nlToggle.closest('.search-toggle-container');
+                nlToggleContainer.classList.remove('disabled');
+                
+                // Clear TPS search when hiding
+                this.clearTpsSearch();
+            }
+        };
+        
+        // Add event listener for toggle
+        tpsToggleInput.addEventListener('change', (e) => {
+            // Prevent toggle if disabled
+            if (tpsToggleInput.disabled) {
+                e.preventDefault();
+                return false;
+            }
+            handleTpsToggle();
+        });
+
+        // Search button click
+        tpsSearchBtn.addEventListener('click', () => {
+            const query = tpsQueryInput.value.trim();
+            if (query) {
+                this.performTpsIdSearch(query);
+            }
+        });
+
+        // Clear button click
+        tpsClearBtn.addEventListener('click', () => {
+            this.clearTpsSearch();
+        });
+
+        // Enter key in search input
+        tpsQueryInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const query = tpsQueryInput.value.trim();
+                if (query) {
+                    this.performTpsIdSearch(query);
+                }
+            }
+        });
+    }
+
+    performTpsIdSearch(query) {
+        console.log('🎯 TPS ID Search for:', query);
+        
+        // Normalize the query - add TPS prefix if not present
+        let tpsId = query.toUpperCase();
+        if (!tpsId.startsWith('TPS')) {
+            tpsId = 'TPS' + query;
+        }
+        
+        // Find the trial
+        const trial = this.data.find(t => t.tpsId === tpsId);
+        
+        if (trial) {
+            // Valid TPS ID found
+            this.tpsSearchActive = true;
+            this.currentTpsSearchId = tpsId;
+            
+            // Show success status
+            this.showTpsSearchStatus(`Found trial: ${tpsId} - ${trial.title}`, 'success');
+            
+            // Highlight the specific trial
+            this.highlightTpsResult(trial);
+            
+            console.log('✅ Found trial:', trial);
+        } else {
+            // Invalid TPS ID
+            this.showTpsSearchStatus('Not a valid TPS abstract id in my db', 'error');
+            this.clearTpsHighlights();
+            
+            console.log('❌ TPS ID not found:', tpsId);
+        }
+    }
+
+    highlightTpsResult(trial) {
+        // Clear any existing search highlights
+        this.clearSearchHighlights();
+        
+        // Update filteredData to show only the found trial
+        this.filteredData = [trial];
+        
+        // Update the chart to show only this single trial
+        this.updateChart();
+        
+        console.log(`🎯 Showing only TPS: ${trial.tpsId}`);
+    }
+
+    clearTpsHighlights() {
+        this.g.selectAll('.data-point')
+            .classed('tps-highlighted', false)
+            .classed('tps-dimmed', false);
+    }
+
+    clearTpsSearch() {
+        // Clear input
+        document.getElementById('tps-query').value = '';
+        
+        // Clear search state
+        this.tpsSearchActive = false;
+        this.currentTpsSearchId = '';
+        
+        // Restore filtered data to show all trials matching current filters
+        this.applyFilters();
+        
+        // Clear highlights
+        this.clearTpsHighlights();
+        
+        // Hide status
+        this.hideTpsSearchStatus();
+        
+        console.log('🧹 TPS search cleared - restored all filtered data');
+    }
+
+    showTpsSearchStatus(message, type = 'info') {
+        const statusDiv = document.getElementById('tps-search-status');
+        statusDiv.textContent = message;
+        statusDiv.className = `search-status ${type}`;
+        statusDiv.style.display = 'block';
+    }
+
+    hideTpsSearchStatus() {
+        const statusDiv = document.getElementById('tps-search-status');
+        statusDiv.style.display = 'none';
+    }
 }
+
+// Debugging function for response metrics extraction
+window.testResponseExtraction = function() {
+    if (!window.dashboard) {
+        console.error('Dashboard not initialized yet');
+        return;
+    }
+    
+    console.log('🔍 Testing response metrics extraction...');
+    let totalTrials = 0;
+    let trialsWithMetrics = 0;
+    
+    window.dashboard.data.forEach((trial, index) => {
+        const metrics = window.dashboard.extractResponseMetrics(trial);
+        totalTrials++;
+        
+        if (metrics.length > 0) {
+            trialsWithMetrics++;
+            console.log(`✅ ${trial.tpsId}: Found ${metrics.length} response metrics`);
+            metrics.forEach(metric => {
+                console.log(`   📊 Response Data (${metric.metricName}): ${metric.value}`);
+            });
+        }
+        
+        // Only show first 10 for debugging
+        if (index < 10 && metrics.length === 0) {
+            console.log(`❌ ${trial.tpsId}: No response metrics found`);
+        }
+    });
+    
+    console.log(`📈 Summary: ${trialsWithMetrics}/${totalTrials} trials (${(trialsWithMetrics/totalTrials*100).toFixed(1)}%) have response data`);
+    return { totalTrials, trialsWithMetrics, percentage: trialsWithMetrics/totalTrials*100 };
+};
 
 // Debugging function for manual API testing
 window.testGroqAPI = async function() {
@@ -2279,6 +2759,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.dashboard = dashboard;
         console.log('ASCO Dashboard initialized successfully');
         console.log('🧪 To test Groq API manually, run: testGroqAPI()');
+        console.log('📊 To test response metrics extraction, run: testResponseExtraction()');
     } catch (error) {
         console.error('Error creating dashboard:', error);
         console.error('Error details:', error.stack);

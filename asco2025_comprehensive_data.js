@@ -198,13 +198,7 @@ const ascoTrialData = [
     "trialName": "PACIFIC-647",
     "trackFull": "DEVELOPMENTAL THERAPEUTICS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16402-252510.pdf",
-    "responseMetrics": [
-      {
-        "value": "22%",
-        "metricName": "Complete Response Rate",
-        "context": "Expected Complete response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS11189",
@@ -244,13 +238,7 @@ const ascoTrialData = [
     "trialName": "NRG-BR008",
     "trackFull": "BREAST CANCER",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16342-252185.pdf",
-    "responseMetrics": [
-      {
-        "value": "46%",
-        "metricName": "ORR",
-        "context": "Expected Objective response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS1121",
@@ -290,13 +278,7 @@ const ascoTrialData = [
     "trialName": "T-DX",
     "trackFull": "BREAST CANCER",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16342-252200.pdf",
-    "responseMetrics": [
-      {
-        "value": "32%",
-        "metricName": "Biomarker Response",
-        "context": "Expected Biomarker response based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS1123",
@@ -376,13 +358,7 @@ const ascoTrialData = [
     "trialName": "HER2",
     "trackFull": "DEVELOPMENTAL THERAPEUTICS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16342-252195.pdf",
-    "responseMetrics": [
-      {
-        "value": "20%",
-        "metricName": "ORR",
-        "context": "Expected Objective response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS1127",
@@ -422,13 +398,7 @@ const ascoTrialData = [
     "trialName": "SIMRISE",
     "trackFull": "BREAST CANCER",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16342-252197.pdf",
-    "responseMetrics": [
-      {
-        "value": "24%",
-        "metricName": "Complete Response Rate",
-        "context": "Expected Complete response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS1129",
@@ -588,13 +558,7 @@ const ascoTrialData = [
     "trialName": "OTS",
     "trackFull": "BREAST CANCER",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16342-252204.pdf",
-    "responseMetrics": [
-      {
-        "value": "19%",
-        "metricName": "Biomarker Response",
-        "context": "Expected Biomarker response based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS1137",
@@ -674,13 +638,7 @@ const ascoTrialData = [
     "trialName": "TNBC",
     "trackFull": "BREAST CANCER",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16342-252186.pdf",
-    "responseMetrics": [
-      {
-        "value": "20%",
-        "metricName": "Complete Response Rate",
-        "context": "Expected Complete response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS1141",
@@ -760,13 +718,7 @@ const ascoTrialData = [
     "trialName": "GIST",
     "trackFull": "DEVELOPMENTAL THERAPEUTICS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16405-252513.pdf",
-    "responseMetrics": [
-      {
-        "value": "15%",
-        "metricName": "ORR",
-        "context": "Expected Objective response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS11579",
@@ -826,13 +778,7 @@ const ascoTrialData = [
     "trialName": "PYNNACLE",
     "trackFull": "DEVELOPMENTAL THERAPEUTICS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16405-252518.pdf",
-    "responseMetrics": [
-      {
-        "value": "39%",
-        "metricName": "ORR",
-        "context": "Expected Objective response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS11582",
@@ -852,13 +798,7 @@ const ascoTrialData = [
     "trialName": "IDH1",
     "trackFull": "SARCOMA",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16405-252520.pdf",
-    "responseMetrics": [
-      {
-        "value": "16%",
-        "metricName": "Complete Response Rate",
-        "context": "Expected Complete response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS11583",
@@ -978,13 +918,7 @@ const ascoTrialData = [
     "trialName": "INT230-6",
     "trackFull": "SARCOMA",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16405-252522.pdf",
-    "responseMetrics": [
-      {
-        "value": "49%",
-        "metricName": "Biomarker Response",
-        "context": "Expected Biomarker response based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS11589",
@@ -1224,13 +1158,7 @@ const ascoTrialData = [
     "trialName": "CHECKMATE-662",
     "trackFull": "DEVELOPMENTAL THERAPEUTICS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16408-252533.pdf",
-    "responseMetrics": [
-      {
-        "value": "37%",
-        "metricName": "Biomarker Response",
-        "context": "Expected Biomarker response based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS12147",
@@ -1370,13 +1298,7 @@ const ascoTrialData = [
     "trialName": "FORTE",
     "trackFull": "DEVELOPMENTAL THERAPEUTICS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16348-252218.pdf",
-    "responseMetrics": [
-      {
-        "value": "14%",
-        "metricName": "Complete Response Rate",
-        "context": "Expected Complete response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS2092",
@@ -1410,13 +1332,14 @@ const ascoTrialData = [
     "primaryEndpoint": "Safety and efficacy",
     "trialRegistry": "NCT05924562",
     "abstractId": "ABSTRACT497650",
-    "estimatedEnrollment": 209,
+    "estimatedEnrollment": 50,
     "backgroundExcerpt": "PEAR-GLIO (NCT06038760) is a UK-based, observational study enrolling 50 patients diagnosed with operable primary brain tumors, including grades 2–4 gliomas. Inclusion criteria require histologically c...",
     "company": "AstraZeneca",
     "trialName": "PEAR-GLIO",
     "trackFull": "CENTRAL NERVOUS SYSTEM - BRAIN TUMORS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16348-252220.pdf",
-    "responseMetrics": []
+    "responseMetrics": [],
+    "enrollmentSource": "actual"
   },
   {
     "tpsId": "TPS2094",
@@ -1476,13 +1399,7 @@ const ascoTrialData = [
     "trialName": "MGMT",
     "trackFull": "CENTRAL NERVOUS SYSTEM - BRAIN TUMORS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16348-252990.pdf",
-    "responseMetrics": [
-      {
-        "value": "14%",
-        "metricName": "Complete Response Rate",
-        "context": "Expected Complete response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS2097",
@@ -1602,13 +1519,7 @@ const ascoTrialData = [
     "trialName": "MIRAGE",
     "trackFull": "CENTRAL NERVOUS SYSTEM - BRAIN TUMORS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16348-253023.pdf",
-    "responseMetrics": [
-      {
-        "value": "15%",
-        "metricName": "ORR",
-        "context": "Expected Objective response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS2668",
@@ -1808,13 +1719,7 @@ const ascoTrialData = [
     "trialName": "DENALI-1",
     "trackFull": "DEVELOPMENTAL THERAPEUTICS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16351-252253.pdf",
-    "responseMetrics": [
-      {
-        "value": "8%",
-        "metricName": "Biomarker Response",
-        "context": "Expected Biomarker response based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS2678",
@@ -1988,19 +1893,14 @@ const ascoTrialData = [
     "primaryEndpoint": "Complete response rate",
     "trialRegistry": "NCT05768475",
     "abstractId": "ABSTRACT495542",
-    "estimatedEnrollment": 130,
+    "estimatedEnrollment": 25,
     "backgroundExcerpt": "This multi-center, first-in-human study is enrolling subjects with advanced solid tumors refractory to standard of care therapy. Phase 1a uses a Bayesian optimal interval (BOIN) dose-escalation design...",
     "company": "Bristol Myers Squibb",
     "trialName": "IMGS-001",
     "trackFull": "DEVELOPMENTAL THERAPEUTICS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16351-252245.pdf",
-    "responseMetrics": [
-      {
-        "value": "6%",
-        "metricName": "Complete Response Rate",
-        "context": "Expected Complete response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": [],
+    "enrollmentSource": "actual"
   },
   {
     "tpsId": "TPS2687",
@@ -2134,19 +2034,14 @@ const ascoTrialData = [
     "primaryEndpoint": "Complete response rate",
     "trialRegistry": "NCT05938503",
     "abstractId": "ABSTRACT496338",
-    "estimatedEnrollment": 78,
+    "estimatedEnrollment": 24,
     "backgroundExcerpt": "IMMUNORARE5 (NCT06790706) is a platform of 5 single arm phase II trials testing the efficacy and safety of DOMVANALIMAB (anti-TIGIT) and ZIMBERELIMAB (anti PD-1) in 5 independent cohorts of rare cance...",
     "company": "Daiichi Sankyo",
     "trialName": "IMMUNORARE5",
     "trackFull": "DEVELOPMENTAL THERAPEUTICS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16351-253061.pdf",
-    "responseMetrics": [
-      {
-        "value": "17%",
-        "metricName": "Complete Response Rate",
-        "context": "Expected Complete response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": [],
+    "enrollmentSource": "actual"
   },
   {
     "tpsId": "TPS2694",
@@ -2186,13 +2081,7 @@ const ascoTrialData = [
     "trialName": "SMARCB1",
     "trackFull": "DEVELOPMENTAL THERAPEUTICS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16351-252252.pdf",
-    "responseMetrics": [
-      {
-        "value": "24%",
-        "metricName": "ORR",
-        "context": "Expected Objective response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS2696",
@@ -2252,13 +2141,7 @@ const ascoTrialData = [
     "trialName": "KRAS",
     "trackFull": "GASTROINTESTINAL CANCER - GASTROESOPHAGEAL, PANCREATIC, AND HEPATOBILIARY",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16351-252237.pdf",
-    "responseMetrics": [
-      {
-        "value": "8%",
-        "metricName": "ORR",
-        "context": "Expected Objective response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS2699",
@@ -2532,13 +2415,14 @@ const ascoTrialData = [
     "primaryEndpoint": "Progression-free survival",
     "trialRegistry": "NCT05702557",
     "abstractId": "ABSTRACT501204",
-    "estimatedEnrollment": 159,
+    "estimatedEnrollment": 250,
     "backgroundExcerpt": "The study was designed as a matrix study with a master protocol (applicable to all substudies) and three substudy protocols (GC; NSCLC; PDAC). Based on the master protocol, patients aged ≥18 years, wi...",
     "company": "AstraZeneca",
     "trialName": "PROCEADE",
     "trackFull": "LUNG CANCER - NON-SMALL CELL LOCAL-REGIONAL/SMALL CELL/OTHER THORACIC CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16354-253193.pdf",
-    "responseMetrics": []
+    "responseMetrics": [],
+    "enrollmentSource": "actual"
   },
   {
     "tpsId": "TPS3166",
@@ -2578,13 +2462,7 @@ const ascoTrialData = [
     "trialName": "LNCB74",
     "trackFull": "DEVELOPMENTAL THERAPEUTICS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16354-252291.pdf",
-    "responseMetrics": [
-      {
-        "value": "9%",
-        "metricName": "Biomarker Response",
-        "context": "Expected Biomarker response based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS3168",
@@ -2664,13 +2542,7 @@ const ascoTrialData = [
     "trialName": "FGFR2",
     "trackFull": "GASTROINTESTINAL CANCER - GASTROESOPHAGEAL, PANCREATIC, AND HEPATOBILIARY",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16354-252281.pdf",
-    "responseMetrics": [
-      {
-        "value": "7%",
-        "metricName": "Complete Response Rate",
-        "context": "Expected Complete response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS3172",
@@ -2710,13 +2582,7 @@ const ascoTrialData = [
     "trialName": "PFL-721",
     "trackFull": "LUNG CANCER - NON-SMALL CELL LOCAL-REGIONAL/SMALL CELL/OTHER THORACIC CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16354-252276.pdf",
-    "responseMetrics": [
-      {
-        "value": "13%",
-        "metricName": "Biomarker Response",
-        "context": "Expected Biomarker response based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS3174",
@@ -2816,13 +2682,7 @@ const ascoTrialData = [
     "trialName": "ASP4396",
     "trackFull": "DEVELOPMENTAL THERAPEUTICS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16354-252284.pdf",
-    "responseMetrics": [
-      {
-        "value": "8%",
-        "metricName": "Complete Response Rate",
-        "context": "Expected Complete response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS3180",
@@ -2842,13 +2702,7 @@ const ascoTrialData = [
     "trialName": "PGRN",
     "trackFull": "DEVELOPMENTAL THERAPEUTICS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16354-252292.pdf",
-    "responseMetrics": [
-      {
-        "value": "24%",
-        "metricName": "Biomarker Response",
-        "context": "Expected Biomarker response based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS3181",
@@ -2928,13 +2782,7 @@ const ascoTrialData = [
     "trialName": "TRACY-1",
     "trackFull": "BREAST CANCER",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16354-252272.pdf",
-    "responseMetrics": [
-      {
-        "value": "10%",
-        "metricName": "Complete Response Rate",
-        "context": "Expected Complete response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS3185",
@@ -3014,13 +2862,7 @@ const ascoTrialData = [
     "trialName": "BRAF",
     "trackFull": "GASTROINTESTINAL CANCER - GASTROESOPHAGEAL, PANCREATIC, AND HEPATOBILIARY",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16354-252289.pdf",
-    "responseMetrics": [
-      {
-        "value": "17%",
-        "metricName": "Complete Response Rate",
-        "context": "Expected Complete response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS3633",
@@ -3060,13 +2902,7 @@ const ascoTrialData = [
     "trialName": "NRG-GI009",
     "trackFull": "GASTROINTESTINAL CANCER - GASTROESOPHAGEAL, PANCREATIC, AND HEPATOBILIARY",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16357-252299.pdf",
-    "responseMetrics": [
-      {
-        "value": "48%",
-        "metricName": "ORR",
-        "context": "Expected Objective response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS3635",
@@ -3120,13 +2956,14 @@ const ascoTrialData = [
     "primaryEndpoint": "Safety and efficacy",
     "trialRegistry": "NCT05823286",
     "abstractId": "ABSTRACT495000",
-    "estimatedEnrollment": 48,
+    "estimatedEnrollment": 200,
     "backgroundExcerpt": "This is a multicenter observational/translational study to prospectively evaluate the efficacy and safety of FRU as a 3rd- or later-line treatment, mainly after FTD/TPI + Bev in mCRC pts in clinical p...",
     "company": "Eisai",
     "trialName": "CC-19",
     "trackFull": "GASTROINTESTINAL CANCER - GASTROESOPHAGEAL, PANCREATIC, AND HEPATOBILIARY",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16357-252303.pdf",
-    "responseMetrics": []
+    "responseMetrics": [],
+    "enrollmentSource": "actual"
   },
   {
     "tpsId": "TPS3638",
@@ -3466,13 +3303,7 @@ const ascoTrialData = [
     "trialName": "IVB",
     "trackFull": "GASTROINTESTINAL CANCER - GASTROESOPHAGEAL, PANCREATIC, AND HEPATOBILIARY",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16360-252323.pdf",
-    "responseMetrics": [
-      {
-        "value": "44%",
-        "metricName": "Biomarker Response",
-        "context": "Expected Biomarker response based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS4206",
@@ -3552,13 +3383,7 @@ const ascoTrialData = [
     "trialName": "KEYMAKER-U06",
     "trackFull": "MELANOMA/SKIN CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16360-252332.pdf",
-    "responseMetrics": [
-      {
-        "value": "22%",
-        "metricName": "ORR",
-        "context": "Expected Objective response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS4210",
@@ -3578,13 +3403,7 @@ const ascoTrialData = [
     "trialName": "KEYNOTE-629",
     "trackFull": "DEVELOPMENTAL THERAPEUTICS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16360-252341.pdf",
-    "responseMetrics": [
-      {
-        "value": "40%",
-        "metricName": "ORR",
-        "context": "Expected Objective response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS4212",
@@ -3598,19 +3417,14 @@ const ascoTrialData = [
     "primaryEndpoint": "Biomarker response",
     "trialRegistry": "NCT05958935",
     "abstractId": "ABSTRACT498240",
-    "estimatedEnrollment": 100,
+    "estimatedEnrollment": 74,
     "backgroundExcerpt": "** This randomized, phase 2b, double-blind, placebo-controlled trial will evaluate itraconazole’s efficacy in accelerating BE eradication. Participants with high-risk BE, defined as BE ≥2 cm with low/...",
     "company": "Boehringer Ingelheim",
     "trialName": "BEACON-313",
     "trackFull": "DEVELOPMENTAL THERAPEUTICS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16360-253026.pdf",
-    "responseMetrics": [
-      {
-        "value": "11%",
-        "metricName": "Biomarker Response",
-        "context": "Expected Biomarker response based on similar trials"
-      }
-    ]
+    "responseMetrics": [],
+    "enrollmentSource": "actual"
   },
   {
     "tpsId": "TPS4213",
@@ -3624,13 +3438,14 @@ const ascoTrialData = [
     "primaryEndpoint": "Duration of response",
     "trialRegistry": "NCT05040234",
     "abstractId": "ABSTRACT498304",
-    "estimatedEnrollment": 18,
+    "estimatedEnrollment": 50,
     "backgroundExcerpt": "** This is a single-center, single-arm, phase II study enrolling 50 patients with histologically confirmed ESCC (T3/4aN0M0 or T1-4aN1-3M0 according to the AJCC Cancer Staging System 8th ed). Eligible ...",
     "company": "Akeso Biopharma",
     "trialName": "TNT-ESCC",
     "trackFull": "MELANOMA/SKIN CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16360-252338.pdf",
-    "responseMetrics": []
+    "responseMetrics": [],
+    "enrollmentSource": "actual"
   },
   {
     "tpsId": "TPS4214",
@@ -3644,13 +3459,14 @@ const ascoTrialData = [
     "primaryEndpoint": "Pharmacokinetics",
     "trialRegistry": "NCT05441139",
     "abstractId": "ABSTRACT484218",
-    "estimatedEnrollment": 53,
+    "estimatedEnrollment": 740,
     "backgroundExcerpt": "** This Phase 3, global, randomized, double-blind study will enroll ~740 pts with unresectable or mHCC. Key eligibility criteria include no prior systemic therapy (prior locoregional therapy allowed),...",
     "company": "Bristol Myers Squibb",
     "trialName": "TPST-1120",
     "trackFull": "GASTROINTESTINAL CANCER - GASTROESOPHAGEAL, PANCREATIC, AND HEPATOBILIARY",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16360-252317.pdf",
-    "responseMetrics": []
+    "responseMetrics": [],
+    "enrollmentSource": "actual"
   },
   {
     "tpsId": "TPS4215",
@@ -3670,13 +3486,7 @@ const ascoTrialData = [
     "trialName": "RHEA-1",
     "trackFull": "GASTROINTESTINAL CANCER - GASTROESOPHAGEAL, PANCREATIC, AND HEPATOBILIARY",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16360-253269.pdf",
-    "responseMetrics": [
-      {
-        "value": "6%",
-        "metricName": "Complete Response Rate",
-        "context": "Expected Complete response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS4216",
@@ -3716,13 +3526,7 @@ const ascoTrialData = [
     "trialName": "IL-27",
     "trackFull": "GASTROINTESTINAL CANCER - GASTROESOPHAGEAL, PANCREATIC, AND HEPATOBILIARY",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16360-252343.pdf",
-    "responseMetrics": [
-      {
-        "value": "17%",
-        "metricName": "Complete Response Rate",
-        "context": "Expected Complete response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS4218",
@@ -3756,13 +3560,14 @@ const ascoTrialData = [
     "primaryEndpoint": "Disease control rate",
     "trialRegistry": "NCT05558678",
     "abstractId": "ABSTRACT510150",
-    "estimatedEnrollment": 108,
+    "estimatedEnrollment": 40,
     "backgroundExcerpt": "** This is a phase 1b/2, multicenter, safety lead-in and dose expansion, open-label study of IVO in combination with DURVA/GEM/CIS in first-line therapy of locally advanced, unresectable, or metastati...",
     "company": "Novartis",
     "trialName": "TOPAZ-1",
     "trackFull": "GASTROINTESTINAL CANCER - GASTROESOPHAGEAL, PANCREATIC, AND HEPATOBILIARY",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16360-252350.pdf",
-    "responseMetrics": []
+    "responseMetrics": [],
+    "enrollmentSource": "actual"
   },
   {
     "tpsId": "TPS4220",
@@ -3796,19 +3601,14 @@ const ascoTrialData = [
     "primaryEndpoint": "Objective response rate",
     "trialRegistry": "NCT05741508",
     "abstractId": "ABSTRACT487800",
-    "estimatedEnrollment": 84,
+    "estimatedEnrollment": 100,
     "backgroundExcerpt": "** EMERALD-Y90 (NCT06040099) is a phase 2, single-arm study that will enroll ~100 pts aged ≥18 years with uHCC amenable to embolization who are ineligible for or have declined treatment with resection...",
     "company": "Boehringer Ingelheim",
     "trialName": "EMERALD-Y90",
     "trackFull": "GASTROINTESTINAL CANCER - GASTROESOPHAGEAL, PANCREATIC, AND HEPATOBILIARY",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16360-253336.pdf",
-    "responseMetrics": [
-      {
-        "value": "45%",
-        "metricName": "ORR",
-        "context": "Expected Objective response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": [],
+    "enrollmentSource": "actual"
   },
   {
     "tpsId": "TPS4222",
@@ -3842,19 +3642,14 @@ const ascoTrialData = [
     "primaryEndpoint": "Biomarker response",
     "trialRegistry": "NCT05941801",
     "abstractId": "ABSTRACT497072",
-    "estimatedEnrollment": 149,
+    "estimatedEnrollment": 70,
     "backgroundExcerpt": "** The study selected BTC patients prior to radical resection without any anti-tumor systemic therapy (including radiotherapy, chemotherapy, targeted therapy, immunotherapy) with at least one high-ris...",
     "company": "Johnson & Johnson",
     "trialName": "KEYNOTE-784",
     "trackFull": "DEVELOPMENTAL THERAPEUTICS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16360-252337.pdf",
-    "responseMetrics": [
-      {
-        "value": "30%",
-        "metricName": "Biomarker Response",
-        "context": "Expected Biomarker response based on similar trials"
-      }
-    ]
+    "responseMetrics": [],
+    "enrollmentSource": "actual"
   },
   {
     "tpsId": "TPS4224",
@@ -4108,13 +3903,14 @@ const ascoTrialData = [
     "primaryEndpoint": "Maximum tolerated dose",
     "trialRegistry": "NCT05497189",
     "abstractId": "ABSTRACT490536",
-    "estimatedEnrollment": 315,
+    "estimatedEnrollment": 27,
     "backgroundExcerpt": "** IMMUNORARE5 (NCT06790706) is a platform of 5 single arm phase II trials testing the safety and the efficacy of DOMVANALIMAB (anti-TIGIT) and ZIMBERELIMAB (anti PD-1) in 5 independent cohorts of rar...",
     "company": "Biogen",
     "trialName": "IMMUNORARE5",
     "trackFull": "LUNG CANCER - NON-SMALL CELL LOCAL-REGIONAL/SMALL CELL/OTHER THORACIC CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16360-252326.pdf",
-    "responseMetrics": []
+    "responseMetrics": [],
+    "enrollmentSource": "actual"
   },
   {
     "tpsId": "TPS4611",
@@ -4134,13 +3930,7 @@ const ascoTrialData = [
     "trialName": "STARLITE-1",
     "trackFull": "GENITOURINARY CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16363-252353.pdf",
-    "responseMetrics": [
-      {
-        "value": "7%",
-        "metricName": "ORR",
-        "context": "Expected Objective response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS4612",
@@ -4160,13 +3950,7 @@ const ascoTrialData = [
     "trialName": "STARLITE 2",
     "trackFull": "GENITOURINARY CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16363-252354.pdf",
-    "responseMetrics": [
-      {
-        "value": "32%",
-        "metricName": "Biomarker Response",
-        "context": "Expected Biomarker response based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS4613",
@@ -4246,13 +4030,7 @@ const ascoTrialData = [
     "trialName": "RCC",
     "trackFull": "GENITOURINARY CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16363-252373.pdf",
-    "responseMetrics": [
-      {
-        "value": "54%",
-        "metricName": "Biomarker Response",
-        "context": "Expected Biomarker response based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS4617",
@@ -4312,13 +4090,7 @@ const ascoTrialData = [
     "trialName": "TROPICS-590",
     "trackFull": "HEMATOLOGIC MALIGNANCIES",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16363-252366.pdf",
-    "responseMetrics": [
-      {
-        "value": "19%",
-        "metricName": "Complete Response Rate",
-        "context": "Expected Complete response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS4620",
@@ -4332,13 +4104,14 @@ const ascoTrialData = [
     "primaryEndpoint": "Progression-free survival",
     "trialRegistry": "NCT05561115",
     "abstractId": "ABSTRACT502162",
-    "estimatedEnrollment": 64,
+    "estimatedEnrollment": 58,
     "backgroundExcerpt": "** VOLGA 2 is a randomized, prospective, multicenter phase 2 trial. Patients with histologically confirmed mUC and measurable lesions according to RECIST 1.1, undergoing avelumab maintenance therapy w...",
     "company": "Guardant Health",
     "trialName": "VOLGA 2",
     "trackFull": "GENITOURINARY CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16363-252368.pdf",
-    "responseMetrics": []
+    "responseMetrics": [],
+    "enrollmentSource": "actual"
   },
   {
     "tpsId": "TPS4621",
@@ -4398,13 +4171,7 @@ const ascoTrialData = [
     "trialName": "STAR-EV",
     "trackFull": "GENITOURINARY CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16363-252357.pdf",
-    "responseMetrics": [
-      {
-        "value": "34%",
-        "metricName": "ORR",
-        "context": "Expected Objective response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS4624",
@@ -4544,13 +4311,7 @@ const ascoTrialData = [
     "trialName": "ABLE-22",
     "trackFull": "DEVELOPMENTAL THERAPEUTICS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16363-252352.pdf",
-    "responseMetrics": [
-      {
-        "value": "37%",
-        "metricName": "Biomarker Response",
-        "context": "Expected Biomarker response based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS4631",
@@ -4890,13 +4651,7 @@ const ascoTrialData = [
     "trialName": "SEC",
     "trackFull": "GENITOURINARY CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16366-252396.pdf",
-    "responseMetrics": [
-      {
-        "value": "16%",
-        "metricName": "Biomarker Response",
-        "context": "Expected Biomarker response based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS5126",
@@ -5096,7 +4851,8 @@ const ascoTrialData = [
     "trialName": "COSMIC-303",
     "trackFull": "DEVELOPMENTAL THERAPEUTICS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16369-253471.pdf",
-    "responseMetrics": []
+    "responseMetrics": [],
+    "enrollmentSource": "actual"
   },
   {
     "tpsId": "TPS5621",
@@ -5230,13 +4986,14 @@ const ascoTrialData = [
     "primaryEndpoint": "Pathological complete response",
     "trialRegistry": "NCT05077588",
     "abstractId": "ABSTRACT496524",
-    "estimatedEnrollment": 57,
+    "estimatedEnrollment": 530,
     "backgroundExcerpt": "This phase 3 study will enroll ~530 pts with platinum-resistant, high-grade serous or endometrioid epithelial OC, primary peritoneal cancer, or fallopian tube cancer regardless of FRα expression statu...",
     "company": "Shanghai Junshi",
     "trialName": "PROC",
     "trackFull": "GYNECOLOGIC CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16369-252407.pdf",
-    "responseMetrics": []
+    "responseMetrics": [],
+    "enrollmentSource": "actual"
   },
   {
     "tpsId": "TPS5628",
@@ -5250,19 +5007,14 @@ const ascoTrialData = [
     "primaryEndpoint": "Complete response rate",
     "trialRegistry": "NCT05123890",
     "abstractId": "ABSTRACT498912",
-    "estimatedEnrollment": 15,
+    "estimatedEnrollment": 140,
     "backgroundExcerpt": "This trial (KOV-02R, RECOVER) is a multicenter, open-label, 1:1 randomized, phase III trial that will enroll 140 patients with platinum-resistant recurrent epithelial ovarian cancer (NCT05316181). Aft...",
     "company": "Roche/Genentech",
     "trialName": "HIPEC-02",
     "trackFull": "GYNECOLOGIC CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16369-252409.pdf",
-    "responseMetrics": [
-      {
-        "value": "15%",
-        "metricName": "Complete Response Rate",
-        "context": "Expected Complete response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": [],
+    "enrollmentSource": "actual"
   },
   {
     "tpsId": "TPS5630",
@@ -5322,13 +5074,7 @@ const ascoTrialData = [
     "trialName": "PACIFIC-445",
     "trackFull": "GYNECOLOGIC CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16369-252401.pdf",
-    "responseMetrics": [
-      {
-        "value": "7%",
-        "metricName": "Complete Response Rate",
-        "context": "Expected Complete response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS5633",
@@ -5402,13 +5148,14 @@ const ascoTrialData = [
     "primaryEndpoint": "Recommended phase 2 dose",
     "trialRegistry": "NCT05070068",
     "abstractId": "ABSTRACT494306",
-    "estimatedEnrollment": 43,
+    "estimatedEnrollment": 27,
     "backgroundExcerpt": "IMMUNORARE5 (NCT NCT06790706) is a platform of 5 single-arm phase II trials testing the efficacy and tolerability of DOMVANALIMAB (anti-TIGIT) and ZIMBERELIMAB (anti PD-1) in 5 independent cohorts of ...",
     "company": "Eisai",
     "trialName": "IMMUNORARE5",
     "trackFull": "DEVELOPMENTAL THERAPEUTICS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16369-252404.pdf",
-    "responseMetrics": []
+    "responseMetrics": [],
+    "enrollmentSource": "actual"
   },
   {
     "tpsId": "TPS5637",
@@ -5482,13 +5229,14 @@ const ascoTrialData = [
     "primaryEndpoint": "Disease control rate",
     "trialRegistry": "NCT05908284",
     "abstractId": "ABSTRACT492170",
-    "estimatedEnrollment": 174,
+    "estimatedEnrollment": 14,
     "backgroundExcerpt": "Clinical study investigating novel therapeutic approaches in head and neck squamous cell carcinoma",
     "company": "Gilead Sciences",
     "trialName": "ACR-368",
     "trackFull": "MELANOMA/SKIN CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16372-252422.pdf",
-    "responseMetrics": []
+    "responseMetrics": [],
+    "enrollmentSource": "actual"
   },
   {
     "tpsId": "TPS6111",
@@ -5508,13 +5256,7 @@ const ascoTrialData = [
     "trialName": "VERSATILE-003",
     "trackFull": "MELANOMA/SKIN CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16372-252423.pdf",
-    "responseMetrics": [
-      {
-        "value": "16%",
-        "metricName": "Complete Response Rate",
-        "context": "Expected Complete response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS6112",
@@ -5714,13 +5456,7 @@ const ascoTrialData = [
     "trialName": "DESTINY-374",
     "trackFull": "MELANOMA/SKIN CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16372-252428.pdf",
-    "responseMetrics": [
-      {
-        "value": "13%",
-        "metricName": "Complete Response Rate",
-        "context": "Expected Complete response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS6122",
@@ -5734,13 +5470,14 @@ const ascoTrialData = [
     "primaryEndpoint": "Recommended phase 2 dose",
     "trialRegistry": "NCT05383586",
     "abstractId": "ABSTRACT505618",
-    "estimatedEnrollment": 279,
+    "estimatedEnrollment": 408,
     "backgroundExcerpt": "** TheASP-1929-381is a global phase 3, multi-center, randomized, open-label, controlled study of ASP-1929 PIT in combination with pembrolizumab vs pembrolizumab-based standard of care (SOC) in the fir...",
     "company": "Blueprint Medicines",
     "trialName": "ASP-1929",
     "trackFull": "MELANOMA/SKIN CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16372-253337.pdf",
-    "responseMetrics": []
+    "responseMetrics": [],
+    "enrollmentSource": "actual"
   },
   {
     "tpsId": "TPS6123",
@@ -5774,13 +5511,14 @@ const ascoTrialData = [
     "primaryEndpoint": "Event-free survival",
     "trialRegistry": "NCT05375630",
     "abstractId": "ABSTRACT484256",
-    "estimatedEnrollment": 92,
+    "estimatedEnrollment": 47,
     "backgroundExcerpt": "** This phase 2 open-label, clinical trial (NCT04620187) is enrolling patients (pts) with newly diagnosed SGC of any histology arising in the head and neck whose tumor overexpresses HER2 (2-3+ by IHC ...",
     "company": "Foundation Medicine",
     "trialName": "T-DM1",
     "trackFull": "BREAST CANCER",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16372-252419.pdf",
-    "responseMetrics": []
+    "responseMetrics": [],
+    "enrollmentSource": "actual"
   },
   {
     "tpsId": "TPS615",
@@ -5834,13 +5572,14 @@ const ascoTrialData = [
     "primaryEndpoint": "Time to progression",
     "trialRegistry": "NCT05023645",
     "abstractId": "ABSTRACT492204",
-    "estimatedEnrollment": 1068,
+    "estimatedEnrollment": 1400,
     "backgroundExcerpt": "** This phase 3b, multicenter, open-label, single-arm trial will evaluate, with early involvement of key pt advocacy groups, the efficacy and safety of adjuvant RIB + ET in a close-to-clinical-practic...",
     "company": "Seagen",
     "trialName": "WIDER",
     "trackFull": "BREAST CANCER",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16339-252173.pdf",
-    "responseMetrics": []
+    "responseMetrics": [],
+    "enrollmentSource": "actual"
   },
   {
     "tpsId": "TPS618",
@@ -6020,13 +5759,7 @@ const ascoTrialData = [
     "trialName": "ROSALIE",
     "trackFull": "BREAST CANCER",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16339-252183.pdf",
-    "responseMetrics": [
-      {
-        "value": "52%",
-        "metricName": "Biomarker Response",
-        "context": "Expected Biomarker response based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS629",
@@ -6166,13 +5899,7 @@ const ascoTrialData = [
     "trialName": "STELLAR-554",
     "trackFull": "HEMATOLOGIC MALIGNANCIES",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16375-252439.pdf",
-    "responseMetrics": [
-      {
-        "value": "32%",
-        "metricName": "ORR",
-        "context": "Expected Objective response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS6583",
@@ -6212,13 +5939,7 @@ const ascoTrialData = [
     "trialName": "IDH1",
     "trackFull": "HEMATOLOGIC MALIGNANCIES",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16375-252437.pdf",
-    "responseMetrics": [
-      {
-        "value": "43%",
-        "metricName": "ORR",
-        "context": "Expected Objective response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS6585",
@@ -6298,13 +6019,7 @@ const ascoTrialData = [
     "trialName": "STELLAR-548",
     "trackFull": "DEVELOPMENTAL THERAPEUTICS",
     "originalPdfUrl": "",
-    "responseMetrics": [
-      {
-        "value": "49%",
-        "metricName": "ORR",
-        "context": "Expected Objective response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS6589",
@@ -6378,13 +6093,14 @@ const ascoTrialData = [
     "primaryEndpoint": "Pharmacokinetics",
     "trialRegistry": "NCT05634323",
     "abstractId": "ABSTRACT503492",
-    "estimatedEnrollment": 114,
+    "estimatedEnrollment": 240,
     "backgroundExcerpt": "ALPHA3 (NCT06500273) will evaluate efficacy and safety of cema-cel with 1 of 2 lymphodepletion (LD) regimens compared to standard-of-care (SOC) observation in pts with LBCL who are in response at the ...",
     "company": "Kura Oncology",
     "trialName": "ALPHA3",
     "trackFull": "HEMATOLOGIC MALIGNANCIES",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16378-252454.pdf",
-    "responseMetrics": []
+    "responseMetrics": [],
+    "enrollmentSource": "actual"
   },
   {
     "tpsId": "TPS7086",
@@ -6444,13 +6160,7 @@ const ascoTrialData = [
     "trialName": "BELLWAVE-003",
     "trackFull": "HEMATOLOGIC MALIGNANCIES",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16378-253280.pdf",
-    "responseMetrics": [
-      {
-        "value": "35%",
-        "metricName": "ORR",
-        "context": "Expected Objective response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS7090",
@@ -6510,13 +6220,7 @@ const ascoTrialData = [
     "trialName": "LINE-010",
     "trackFull": "HEMATOLOGIC MALIGNANCIES",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16378-252448.pdf",
-    "responseMetrics": [
-      {
-        "value": "22%",
-        "metricName": "ORR",
-        "context": "Expected Objective response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS7093",
@@ -6616,13 +6320,7 @@ const ascoTrialData = [
     "trialName": "BTM-3566",
     "trackFull": "HEMATOLOGIC MALIGNANCIES",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16378-252453.pdf",
-    "responseMetrics": [
-      {
-        "value": "14%",
-        "metricName": "ORR",
-        "context": "Expected Objective response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS7563",
@@ -6722,13 +6420,7 @@ const ascoTrialData = [
     "trialName": "DREAMM-10",
     "trackFull": "HEMATOLOGIC MALIGNANCIES",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16381-252585.pdf",
-    "responseMetrics": [
-      {
-        "value": "14%",
-        "metricName": "Complete Response Rate",
-        "context": "Expected Complete response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS7568",
@@ -6768,13 +6460,7 @@ const ascoTrialData = [
     "trialName": "II-III",
     "trackFull": "LUNG CANCER - NON-SMALL CELL LOCAL-REGIONAL/SMALL CELL/OTHER THORACIC CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16384-252475.pdf",
-    "responseMetrics": [
-      {
-        "value": "7%",
-        "metricName": "Complete Response Rate",
-        "context": "Expected Complete response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS8114",
@@ -6834,13 +6520,7 @@ const ascoTrialData = [
     "trialName": "REGN7075",
     "trackFull": "LUNG CANCER - NON-SMALL CELL LOCAL-REGIONAL/SMALL CELL/OTHER THORACIC CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16384-252462.pdf",
-    "responseMetrics": [
-      {
-        "value": "20%",
-        "metricName": "Complete Response Rate",
-        "context": "Expected Complete response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS8117",
@@ -6894,13 +6574,14 @@ const ascoTrialData = [
     "primaryEndpoint": "Overall survival",
     "trialRegistry": "NCT05820387",
     "abstractId": "ABSTRACT505902",
-    "estimatedEnrollment": 60,
+    "estimatedEnrollment": 160,
     "backgroundExcerpt": "** Eligible patients must be ≥19 years of age, have an ECOG performance status of 0 or 1, non-squamous histology, stage IB–IIIB NSCLC based on the AJCC 8th edition, have confirmed sensitizing _EGFR_ m...",
     "company": "Shanghai Junshi",
     "trialName": "EGFR",
     "trackFull": "LUNG CANCER - NON-SMALL CELL LOCAL-REGIONAL/SMALL CELL/OTHER THORACIC CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16384-252472.pdf",
-    "responseMetrics": []
+    "responseMetrics": [],
+    "enrollmentSource": "actual"
   },
   {
     "tpsId": "TPS8120",
@@ -6980,13 +6661,7 @@ const ascoTrialData = [
     "trialName": "BEACON-612",
     "trackFull": "LUNG CANCER - NON-SMALL CELL LOCAL-REGIONAL/SMALL CELL/OTHER THORACIC CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16384-252465.pdf",
-    "responseMetrics": [
-      {
-        "value": "20%",
-        "metricName": "ORR",
-        "context": "Expected Objective response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS8124",
@@ -7040,13 +6715,14 @@ const ascoTrialData = [
     "primaryEndpoint": "Disease control rate",
     "trialRegistry": "NCT05534440",
     "abstractId": "ABSTRACT495630",
-    "estimatedEnrollment": 31,
+    "estimatedEnrollment": 50,
     "backgroundExcerpt": "** Eligible patients have ES-SCLC and have completed 3-4 cycles of induction therapy with etoposide, a platinum agent, and atezo without disease progression, and are thus eligible for maintenance ther...",
     "company": "Akeso Biopharma",
     "trialName": "ES-SCLC",
     "trackFull": "LUNG CANCER - NON-SMALL CELL LOCAL-REGIONAL/SMALL CELL/OTHER THORACIC CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16384-252466.pdf",
-    "responseMetrics": []
+    "responseMetrics": [],
+    "enrollmentSource": "actual"
   },
   {
     "tpsId": "TPS8127",
@@ -7100,13 +6776,14 @@ const ascoTrialData = [
     "primaryEndpoint": "Disease control rate",
     "trialRegistry": "NCT05572720",
     "abstractId": "ABSTRACT506244",
-    "estimatedEnrollment": 184,
+    "estimatedEnrollment": 439,
     "backgroundExcerpt": "** Thisglobal, randomized, double-blind, Phase 3 trial (NCT06712355) will enroll ~439 pts with histologically or cytologically confirmed SCLC, who have not received prior systemic therapy for ES-SCLC....",
     "company": "Agenus",
     "trialName": "ES-SCLC",
     "trackFull": "LUNG CANCER - NON-SMALL CELL LOCAL-REGIONAL/SMALL CELL/OTHER THORACIC CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16384-252474.pdf",
-    "responseMetrics": []
+    "responseMetrics": [],
+    "enrollmentSource": "actual"
   },
   {
     "tpsId": "TPS8130",
@@ -7120,13 +6797,14 @@ const ascoTrialData = [
     "primaryEndpoint": "Safety and efficacy",
     "trialRegistry": "NCT05941183",
     "abstractId": "ABSTRACT503554",
-    "estimatedEnrollment": 60,
+    "estimatedEnrollment": 26,
     "backgroundExcerpt": "** IMMUNORARE5 (NCT06790706) is a platform of 5 single arm phase II trials testing the safety and efficacy of Domvanalimab (anti-TIGIT) and Zimberelimab (anti PD-1) in 5 independent cohorts of rare ca...",
     "company": "Johnson & Johnson",
     "trialName": "IMMUNORARE5",
     "trackFull": "DEVELOPMENTAL THERAPEUTICS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16384-253240.pdf",
-    "responseMetrics": []
+    "responseMetrics": [],
+    "enrollmentSource": "actual"
   },
   {
     "tpsId": "TPS8648",
@@ -7186,13 +6864,7 @@ const ascoTrialData = [
     "trialName": "JIN-A02",
     "trackFull": "LUNG CANCER - NON-SMALL CELL LOCAL-REGIONAL/SMALL CELL/OTHER THORACIC CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16387-252561.pdf",
-    "responseMetrics": [
-      {
-        "value": "20%",
-        "metricName": "ORR",
-        "context": "Expected Objective response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS8651",
@@ -7212,13 +6884,7 @@ const ascoTrialData = [
     "trialName": "OSE2101",
     "trackFull": "LUNG CANCER - NON-SMALL CELL LOCAL-REGIONAL/SMALL CELL/OTHER THORACIC CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16387-252581.pdf",
-    "responseMetrics": [
-      {
-        "value": "21%",
-        "metricName": "Complete Response Rate",
-        "context": "Expected Complete response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS8652",
@@ -7258,13 +6924,7 @@ const ascoTrialData = [
     "trialName": "ARTEMIDE-L",
     "trackFull": "LUNG CANCER - NON-SMALL CELL LOCAL-REGIONAL/SMALL CELL/OTHER THORACIC CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16387-252562.pdf",
-    "responseMetrics": [
-      {
-        "value": "47%",
-        "metricName": "ORR",
-        "context": "Expected Objective response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS8655",
@@ -7564,13 +7224,7 @@ const ascoTrialData = [
     "trialName": "III",
     "trackFull": "LUNG CANCER - NON-SMALL CELL LOCAL-REGIONAL/SMALL CELL/OTHER THORACIC CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16387-252564.pdf",
-    "responseMetrics": [
-      {
-        "value": "7%",
-        "metricName": "Complete Response Rate",
-        "context": "Expected Complete response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS8670",
@@ -7584,13 +7238,14 @@ const ascoTrialData = [
     "primaryEndpoint": "Quality of life",
     "trialRegistry": "NCT05015544",
     "abstractId": "ABSTRACT510364",
-    "estimatedEnrollment": 48,
+    "estimatedEnrollment": 982,
     "backgroundExcerpt": "** This Phase 2/3, multisite, randomized, open-label trial will enroll ~982 pts with stage IIIB/C and stage IV non-squamous cell (NSQ) NSCLC (Substudy A) and squamous (SQ) NSCLC (Substudy B) without a...",
     "company": "Roche/Genentech",
     "trialName": "BNT327",
     "trackFull": "LUNG CANCER - NON-SMALL CELL LOCAL-REGIONAL/SMALL CELL/OTHER THORACIC CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16387-252582.pdf",
-    "responseMetrics": []
+    "responseMetrics": [],
+    "enrollmentSource": "actual"
   },
   {
     "tpsId": "TPS9046",
@@ -7750,13 +7405,7 @@ const ascoTrialData = [
     "trialName": "ADMIRAL-461",
     "trackFull": "MELANOMA/SKIN CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16392-253108.pdf",
-    "responseMetrics": [
-      {
-        "value": "51%",
-        "metricName": "ORR",
-        "context": "Expected Objective response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS9598",
@@ -7816,13 +7465,7 @@ const ascoTrialData = [
     "trialName": "ANK-101",
     "trackFull": "MELANOMA/SKIN CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16392-252489.pdf",
-    "responseMetrics": [
-      {
-        "value": "2%",
-        "metricName": "Complete Response Rate",
-        "context": "Expected Complete response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS9601",
@@ -7862,13 +7505,7 @@ const ascoTrialData = [
     "trialName": "PRAMETIME-M",
     "trackFull": "MELANOMA/SKIN CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16392-252499.pdf",
-    "responseMetrics": [
-      {
-        "value": "22%",
-        "metricName": "ORR",
-        "context": "Expected Objective response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS9603",
@@ -7908,13 +7545,7 @@ const ascoTrialData = [
     "trialName": "EIK1001",
     "trackFull": "MELANOMA/SKIN CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16392-252498.pdf",
-    "responseMetrics": [
-      {
-        "value": "22%",
-        "metricName": "Complete Response Rate",
-        "context": "Expected Complete response rate based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS9605",
@@ -7948,13 +7579,14 @@ const ascoTrialData = [
     "primaryEndpoint": "Safety and tolerability",
     "trialRegistry": "NCT05919109",
     "abstractId": "ABSTRACT489944",
-    "estimatedEnrollment": 31,
+    "estimatedEnrollment": 35,
     "backgroundExcerpt": "** Patients with HHI-naivelaBCCHN will receive response-adaptive, neoadjuvant IV cemiplimab350mg every 3 weeks for an initial 2 cycles. The primary endpoint is the fraction of patients demonstrating c...",
     "company": "Tempus Labs",
     "trialName": "TROPICS-254",
     "trackFull": "MELANOMA/SKIN CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16392-252481.pdf",
-    "responseMetrics": []
+    "responseMetrics": [],
+    "enrollmentSource": "actual"
   },
   {
     "tpsId": "TPS9607",
@@ -8034,13 +7666,7 @@ const ascoTrialData = [
     "trialName": "SCC",
     "trackFull": "MELANOMA/SKIN CANCERS",
     "originalPdfUrl": "https://d32wbias3z7pxg.cloudfront.net/meeting/327/abstract/pdf/327-16392-252494.pdf",
-    "responseMetrics": [
-      {
-        "value": "27%",
-        "metricName": "Biomarker Response",
-        "context": "Expected Biomarker response based on similar trials"
-      }
-    ]
+    "responseMetrics": []
   },
   {
     "tpsId": "TPS9611",

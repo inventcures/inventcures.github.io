@@ -451,6 +451,18 @@
         .phase-2 { background-color: #4ecdc4; }
         .phase-23 { background-color: #feca57; }
         .phase-3 { background-color: #8e44ad; }
+        
+        /* Enrollment Data Availability Styles */
+        .eda { 
+            background-color: #4ecdc4; 
+            opacity: 0.8; 
+        }
+        .edna { 
+            background-color: #4ecdc4; 
+            opacity: 0.5; 
+            border: 1px dashed #666; 
+            box-sizing: border-box;
+        }
 
         .stats-section {
             background: #f8f9fa;
@@ -1356,6 +1368,17 @@
                         <span>Phase 3</span>
                     </div>
                 </div>
+                
+                <div class="legend">
+                    <div class="legend-item">
+                        <span class="legend-dot eda"></span>
+                        <span>Enrollment Data Available</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot edna"></span>
+                        <span>Enrollment Data Not Available</span>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -1594,21 +1617,59 @@ class ASCOTrialDashboard {
 
     updateChart() {
         console.log('UpdateChart called. FilteredData length:', this.filteredData.length);
-        const validData = this.filteredData.filter(d => d.estimatedEnrollment > 0);
-        console.log('ValidData length:', validData.length);
+        
+        // Separate data into trials with and without enrollment data
+        const trialsWithEnrollment = this.filteredData.filter(d => d.estimatedEnrollment > 0 && d.enrollmentSource === 'actual');
+        const trialsWithoutEnrollment = this.filteredData.filter(d => !d.estimatedEnrollment || d.estimatedEnrollment <= 0 || d.enrollmentSource !== 'actual');
+        
+        console.log('Trials with enrollment:', trialsWithEnrollment.length);
+        console.log('Trials without enrollment:', trialsWithoutEnrollment.length);
         
         // Create y-position based on phase
         const phaseOrder = ["Phase 1", "Phase 1/2", "Phase 2", "Phase 2/3", "Phase 3"];
-        const dataWithPosition = validData.map((d, i) => ({
-            ...d,
-            yPosition: phaseOrder.indexOf(d.trialPhase) * 100 + (i % 5) * 15 + 50
-        }));
-        console.log('DataWithPosition length:', dataWithPosition.length);
-
-        const xExtent = d3.extent(dataWithPosition, d => d.estimatedEnrollment);
         
-        this.xScale.domain([0, Math.max(xExtent[1] * 1.1, 100)]);
+        // Position trials with enrollment data
+        const dataWithEnrollmentAndPosition = trialsWithEnrollment.map((d, i) => ({
+            ...d,
+            yPosition: phaseOrder.indexOf(d.trialPhase) * 100 + (i % 5) * 15 + 50,
+            hasEnrollmentData: true
+        }));
+        
+        // Position trials without enrollment data using trial index as fallback
+        const dataWithoutEnrollmentAndPosition = trialsWithoutEnrollment.map((d, i) => ({
+            ...d,
+            yPosition: phaseOrder.indexOf(d.trialPhase) * 100 + (i % 5) * 15 + 50,
+            fallbackXPosition: i + 1, // Use index as x-position
+            hasEnrollmentData: false
+        }));
+        
+        // Combine all data
+        const allDataWithPosition = [...dataWithEnrollmentAndPosition, ...dataWithoutEnrollmentAndPosition];
+        console.log('All data with position length:', allDataWithPosition.length);
+
+        // Set up scales for both types of data
+        const enrollmentExtent = trialsWithEnrollment.length > 0 ? 
+            d3.extent(trialsWithEnrollment, d => d.estimatedEnrollment) : [0, 100];
+        
+        // Use enrollment data for x-scale if available, otherwise show all data across full width
+        const maxEnrollment = enrollmentExtent[1] || 100;
+        const maxFallbackIndex = trialsWithoutEnrollment.length || 10;
+        
+        this.xScale.domain([0, Math.max(maxEnrollment * 1.1, maxFallbackIndex * 50)]);
         this.yScale.domain([0, 500]);
+
+        // Update axis label based on what we're showing
+        const hasEnrollmentData = trialsWithEnrollment.length > 0;
+        const hasNonEnrollmentData = trialsWithoutEnrollment.length > 0;
+        
+        let xAxisLabel = "Estimated Enrollment";
+        if (hasEnrollmentData && hasNonEnrollmentData) {
+            xAxisLabel = "Estimated Enrollment (actual data) / Trial Index (no enrollment data)";
+        } else if (!hasEnrollmentData && hasNonEnrollmentData) {
+            xAxisLabel = "Trial Index (no enrollment data available)";
+        }
+        
+        this.g.select(".x-axis-label").text(xAxisLabel);
 
         this.g.select(".x-axis")
             .transition()
@@ -1621,7 +1682,7 @@ class ASCOTrialDashboard {
             .call(this.yAxis);
 
         const circles = this.g.selectAll(".data-point")
-            .data(dataWithPosition, d => d.tpsId);
+            .data(allDataWithPosition, d => d.tpsId);
 
         circles.exit()
             .transition()
@@ -1633,28 +1694,171 @@ class ASCOTrialDashboard {
             .append("circle")
             .attr("class", "data-point")
             .attr("r", 0)
-            .attr("cx", d => this.xScale(d.estimatedEnrollment))
+            .attr("cx", d => {
+                if (d.hasEnrollmentData) {
+                    return this.xScale(d.estimatedEnrollment);
+                } else {
+                    // Position trials without enrollment data across the available space
+                    return this.xScale(d.fallbackXPosition * 50);
+                }
+            })
             .attr("cy", d => this.yScale(d.yPosition));
 
-        circles.merge(circlesEnter)
-            .transition()
-            .duration(750)
-            .attr("cx", d => this.xScale(d.estimatedEnrollment))
-            .attr("cy", d => this.yScale(d.yPosition))
-            .attr("r", 8)
-            .attr("fill", d => this.getPhaseColor(d.trialPhase))
-            .attr("opacity", 0.8);
-
-        this.g.selectAll(".data-point")
+        // Merge circles and apply static attributes first
+        const mergedCircles = circles.merge(circlesEnter);
+        
+        // Apply event handlers immediately (before transition)
+        mergedCircles
             .on("mouseover", (event, d) => this.showTooltip(event, d))
             .on("mouseout", () => this.hideTooltip())
             .on("mousemove", (event) => this.moveTooltip(event))
             .on("click", (event, d) => this.openPDF(d));
+            
+        // Then apply animated attributes
+        mergedCircles
+            .transition()
+            .duration(750)
+            .attr("cx", d => {
+                if (d.hasEnrollmentData) {
+                    return this.xScale(d.estimatedEnrollment);
+                } else {
+                    return this.xScale(d.fallbackXPosition * 50);
+                }
+            })
+            .attr("cy", d => this.yScale(d.yPosition))
+            .attr("r", 8)
+            .attr("fill", d => this.getPhaseColor(d.trialPhase))
+            .attr("opacity", d => d.hasEnrollmentData ? 0.8 : 0.5)
+            .attr("stroke", d => d.hasEnrollmentData ? "none" : "#666")
+            .attr("stroke-width", d => d.hasEnrollmentData ? 0 : 1)
+            .attr("stroke-dasharray", d => d.hasEnrollmentData ? "none" : "3,3");
+
+        // Enrollment legend is now handled by static HTML
 
         // Reapply search highlighting if search is active
         if (this.activeSearch && this.searchResults.length > 0) {
             this.updateSearchHighlightingWithFilters();
         }
+    }
+
+    updateEnrollmentLegend(hasEnrollmentData, hasNonEnrollmentData, enrollmentCount, noEnrollmentCount) {
+        // Check if svg exists (might be undefined if chart creation failed)
+        if (!this.svg) {
+            console.warn('⚠️ SVG not available, skipping enrollment legend');
+            return;
+        }
+        
+        // Remove existing enrollment legend
+        this.svg.selectAll(".enrollment-legend").remove();
+        
+        if (!hasEnrollmentData && !hasNonEnrollmentData) return;
+        
+        const legendGroup = this.svg.append("g")
+            .attr("class", "enrollment-legend")
+            .attr("transform", "translate(800, 20)");
+        
+        console.log('📊 Creating enrollment legend with:', enrollmentCount, 'with data,', noEnrollmentCount, 'without data');
+        
+        let legendY = 0;
+        
+        // Legend title
+        legendGroup.append("text")
+            .attr("x", 0)
+            .attr("y", legendY)
+            .attr("font-size", "14px")
+            .attr("font-weight", "bold")
+            .attr("fill", "white")
+            .text("Data Availability:");
+        
+        legendY += 25;
+        
+        if (hasEnrollmentData) {
+            // Solid circle for trials with enrollment data
+            legendGroup.append("circle")
+                .attr("cx", 8)
+                .attr("cy", legendY - 5)
+                .attr("r", 6)
+                .attr("fill", "#4ecdc4")
+                .attr("opacity", 0.8);
+            
+            legendGroup.append("text")
+                .attr("x", 20)
+                .attr("y", legendY)
+                .attr("font-size", "12px")
+                .attr("fill", "white")
+                .text(`With enrollment data (${enrollmentCount} trials)`);
+            
+            legendY += 20;
+        }
+        
+        if (hasNonEnrollmentData) {
+            // Dashed circle for trials without enrollment data
+            legendGroup.append("circle")
+                .attr("cx", 8)
+                .attr("cy", legendY - 5)
+                .attr("r", 6)
+                .attr("fill", "#4ecdc4")
+                .attr("opacity", 0.5)
+                .attr("stroke", "#666")
+                .attr("stroke-width", 1)
+                .attr("stroke-dasharray", "3,3");
+            
+            legendGroup.append("text")
+                .attr("x", 20)
+                .attr("y", legendY)
+                .attr("font-size", "12px")
+                .attr("fill", "white")
+                .text(`No enrollment data (${noEnrollmentCount} trials)`);
+        }
+        
+        // Add visual style legend below
+        legendY += 40;
+        
+        // Visual style legend title
+        legendGroup.append("text")
+            .attr("x", 0)
+            .attr("y", legendY)
+            .attr("font-size", "14px")
+            .attr("font-weight", "bold")
+            .attr("fill", "white")
+            .text("Visual Styles:");
+        
+        legendY += 25;
+        
+        // Solid circle legend
+        legendGroup.append("circle")
+            .attr("cx", 8)
+            .attr("cy", legendY - 5)
+            .attr("r", 6)
+            .attr("fill", "#4ecdc4")
+            .attr("opacity", 0.8);
+        
+        legendGroup.append("text")
+            .attr("x", 20)
+            .attr("y", legendY)
+            .attr("font-size", "12px")
+            .attr("fill", "white")
+            .text("Solid circles = Actual enrollment data");
+        
+        legendY += 20;
+        
+        // Dashed circle legend
+        legendGroup.append("circle")
+            .attr("cx", 8)
+            .attr("cy", legendY - 5)
+            .attr("r", 6)
+            .attr("fill", "#4ecdc4")
+            .attr("opacity", 0.5)
+            .attr("stroke", "#666")
+            .attr("stroke-width", 1)
+            .attr("stroke-dasharray", "3,3");
+        
+        legendGroup.append("text")
+            .attr("x", 20)
+            .attr("y", legendY)
+            .attr("font-size", "12px")
+            .attr("fill", "white")
+            .text("Dashed circles = No enrollment data");
     }
 
     getPhaseColor(phase) {
@@ -1670,6 +1874,23 @@ class ASCOTrialDashboard {
 
     setupTooltip() {
         this.tooltip = d3.select("#tooltip");
+        console.log('🛠️ Tooltip setup:', this.tooltip.node() ? 'Found' : 'NOT FOUND');
+        if (!this.tooltip.node()) {
+            console.error('❌ Tooltip element #tooltip not found in DOM!');
+            // Try to create tooltip element if it doesn't exist
+            this.tooltip = d3.select("body").append("div")
+                .attr("id", "tooltip")
+                .attr("class", "tooltip")
+                .style("display", "none")
+                .style("position", "absolute")
+                .style("background", "rgba(0, 0, 0, 0.9)")
+                .style("color", "white")
+                .style("padding", "10px")
+                .style("border-radius", "5px")
+                .style("pointer-events", "none")
+                .style("z-index", "1000");
+            console.log('🛠️ Created new tooltip element');
+        }
     }
 
     extractResponseMetrics(trial) {
@@ -1719,6 +1940,18 @@ class ASCOTrialDashboard {
     }
 
     showTooltip(event, d) {
+        // console.log('🎯 Tooltip triggered for:', d.tpsId, d);
+        
+        // Check if tooltip exists
+        if (!this.tooltip || !this.tooltip.node()) {
+            console.error('❌ Tooltip not available, reinitializing...');
+            this.setupTooltip();
+            if (!this.tooltip || !this.tooltip.node()) {
+                console.error('❌ Tooltip reinitialization failed');
+                return;
+            }
+        }
+        
         const abstractText = `Click to view the full ${d.tpsId} abstract with trial details.`;
         
         // Use pre-extracted response metrics from data structure
@@ -1751,13 +1984,13 @@ class ASCOTrialDashboard {
                 <div><strong>Phase:</strong> ${d.trialPhase}</div>
                 <div><strong>Cancer Type:</strong> ${d.cancerType}</div>
                 <div><strong>Drug:</strong> ${d.drug}</div>
+                ${responseSection}
                 <div><strong>Target Population:</strong> ${d.targetPopulation}</div>
                 <div><strong>Primary Endpoint:</strong> ${d.primaryEndpoint}</div>
-                <div><strong>Estimated Enrollment:</strong> ${d.estimatedEnrollment}</div>
+                ${d.enrollmentSource === 'actual' ? `<div><strong>Estimated Enrollment:</strong> ${d.estimatedEnrollment} patients</div>` : ''}
                 ${d.trialRegistry ? `<div><strong>Registry:</strong> ${d.trialRegistry}</div>` : ''}
                 ${d.originalPdfUrl ? `<div><strong>Abstract URL:</strong> <a href="${d.originalPdfUrl}" target="_blank" style="color: #64ffda; text-decoration: underline;">${d.originalPdfUrl}</a></div>` : ''}
                 <div class="abstract-preview"><strong>Background:</strong> ${d.backgroundExcerpt}</div>
-                ${responseSection}
                 ${this.llmSummary ? `<div class="llm-summary"><strong>🧠 AI Insight:</strong> ${this.llmSummary}<br><em style="font-size: 10px; color: #ccc;">Generated by LLM - Ancillary information</em></div>` : 
                   showLLMStatus && !this.llmSummary ? `<div class="llm-summary"><strong>🧠 AI Insight:</strong> <span style="color: #ffa726;">Generating insights...</span><br><em style="font-size: 10px; color: #ccc;">This may take a few seconds</em></div>` :
                   showLLMStatus === false && !hasApiKey ? `<div class="llm-summary"><strong>🧠 AI Insight:</strong> <span style="color: #ff9800;">Configure API key for insights</span><br><em style="font-size: 10px; color: #ccc;">Run: localStorage.setItem('ASCO_LLM_KEY', 'your-key')</em></div>` : ''}
@@ -1770,6 +2003,14 @@ class ASCOTrialDashboard {
     }
 
     moveTooltip(event) {
+        // console.log('📍 Moving tooltip', event.pageX, event.pageY);
+        
+        // Check if tooltip exists
+        if (!this.tooltip || !this.tooltip.node()) {
+            console.error('❌ Tooltip not available for move');
+            return;
+        }
+        
         const tooltipWidth = this.tooltip.node().offsetWidth;
         const tooltipHeight = this.tooltip.node().offsetHeight;
         
@@ -1790,6 +2031,14 @@ class ASCOTrialDashboard {
     }
 
     hideTooltip() {
+        // console.log('🙈 Hiding tooltip');
+        
+        // Check if tooltip exists
+        if (!this.tooltip || !this.tooltip.node()) {
+            console.error('❌ Tooltip not available for hide');
+            return;
+        }
+        
         this.tooltip.style("display", "none");
     }
 

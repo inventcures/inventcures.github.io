@@ -195,9 +195,9 @@
         }
 
         .cancer-type-item.active {
-            background: #667eea;
+            background: #3282b8;
             color: white;
-            border-color: #5a6fd8;
+            border-color: #64ffda;
             font-weight: 500;
         }
 
@@ -208,6 +208,90 @@
             padding: 20px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             position: relative;
+        }
+
+        /* Floating Search Bar */
+        .floating-search-bar {
+            position: sticky;
+            top: 20px;
+            margin: 0 -40px 20px -40px;
+            width: calc(100% + 80px);
+            min-height: 120px;
+            z-index: 1000;
+            background: linear-gradient(135deg, #0f4c75 0%, #3282b8 100%);
+            border-radius: 12px;
+            padding: 24px 40px;
+            box-shadow: 0 8px 32px rgba(15, 76, 117, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            display: none;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .floating-search-bar.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .floating-search-bar .search-input-container {
+            margin-bottom: 12px;
+            align-items: stretch;
+        }
+
+        .floating-search-bar #nl-query {
+            font-size: 20px;
+            padding: 30px 40px;
+            min-height: 120px;
+            flex: 4;
+            min-width: 800px;
+            width: 100%;
+        }
+
+        .floating-search-bar #nl-search-btn,
+        .floating-search-bar #nl-clear-btn {
+            padding: 14px 24px;
+            font-size: 15px;
+            min-height: 48px;
+        }
+
+        .floating-search-bar .search-status {
+            margin-top: 8px;
+            padding: 6px 12px;
+            font-size: 12px;
+            min-height: 16px;
+            max-width: 600px;
+            border-radius: 6px;
+        }
+
+        .floating-search-bar .suggested-queries {
+            display: none; /* Hide suggestions in floating mode */
+        }
+
+        /* Close button for floating search */
+        .floating-close-btn {
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 18px;
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+        }
+
+        .floating-close-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
         }
 
         #scatter-plot {
@@ -383,7 +467,7 @@
         .stat-number {
             font-size: 2rem;
             font-weight: bold;
-            color: #667eea;
+            color: #3282b8;
             display: block;
         }
 
@@ -436,8 +520,406 @@
         }
 
         .track-count {
-            color: #667eea;
+            color: #3282b8;
             font-weight: bold;
+        }
+
+        /* Mobile App Style Toggle Switch */
+        .search-toggle-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(248, 249, 250, 0.8);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .toggle-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            min-width: 120px;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-option .toggle-icon {
+            font-size: 24px;
+            transition: all 0.3s ease;
+            opacity: 0.6;
+        }
+
+        .toggle-option .toggle-text {
+            font-size: 13px;
+            font-weight: 600;
+            color: #6b7280;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-toggle-switch {
+            position: relative;
+            display: inline-block;
+        }
+
+        .mobile-toggle-input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+            position: absolute;
+        }
+
+        .mobile-toggle-label {
+            position: relative;
+            display: block;
+            width: 60px;
+            height: 34px;
+            background: #e5e7eb;
+            border-radius: 17px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-toggle-label:hover {
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.15), 0 0 0 8px rgba(59, 130, 246, 0.05);
+        }
+
+        .mobile-toggle-slider {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 30px;
+            height: 30px;
+            background: white;
+            border-radius: 50%;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-toggle-input:checked + .mobile-toggle-label {
+            background: #10b981;
+        }
+
+        .mobile-toggle-input:checked + .mobile-toggle-label .mobile-toggle-slider {
+            transform: translateX(26px);
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3), 0 1px 4px rgba(0, 0, 0, 0.15);
+        }
+
+        .mobile-toggle-input:focus + .mobile-toggle-label {
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+
+        /* Active state styling */
+        .search-toggle-container:has(.mobile-toggle-input:checked) .toggle-option:first-child .toggle-icon {
+            opacity: 0.4;
+        }
+
+        .search-toggle-container:has(.mobile-toggle-input:checked) .toggle-option:first-child .toggle-text {
+            color: #9ca3af;
+        }
+
+        .search-toggle-container:has(.mobile-toggle-input:checked) .toggle-option:last-child .toggle-icon {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        .search-toggle-container:has(.mobile-toggle-input:checked) .toggle-option:last-child .toggle-text {
+            color: #3b82f6;
+            font-weight: 700;
+        }
+
+        .search-toggle-container:has(.mobile-toggle-input:not(:checked)) .toggle-option:first-child .toggle-icon {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        .search-toggle-container:has(.mobile-toggle-input:not(:checked)) .toggle-option:first-child .toggle-text {
+            color: #374151;
+            font-weight: 700;
+        }
+
+        /* Natural Language Search Styles */
+        .nl-search-section {
+            background: linear-gradient(135deg, #0f4c75 0%, #3282b8 100%);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            color: white;
+            box-shadow: 0 8px 32px rgba(15, 76, 117, 0.3);
+            display: none;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nl-search-section.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .nl-search-section h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .nl-description {
+            margin-bottom: 20px;
+            opacity: 0.9;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .search-input-container {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        #nl-query {
+            flex: 1;
+            padding: 16px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            min-height: 60px;
+            background: rgba(255, 255, 255, 0.95);
+            transition: all 0.3s ease;
+        }
+
+        #nl-query:focus {
+            outline: none;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+        }
+
+        #nl-search-btn, #nl-clear-btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #nl-search-btn {
+            background: linear-gradient(135deg, #ffd60a 0%, #ffbe0b 100%);
+            color: #1a1a1a;
+            border: none;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #nl-clear-btn {
+            background: #ffffff;
+            color: #374151;
+            border: 1px solid #d1d5db;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #nl-search-btn:hover {
+            background: linear-gradient(135deg, #ffbe0b 0%, #ff9f1c 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 159, 28, 0.3);
+        }
+
+        #nl-clear-btn:hover {
+            background: #f8f9fa;
+            border-color: #d1d5db;
+            transform: none;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        #nl-search-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(255, 159, 28, 0.2);
+        }
+
+        #nl-clear-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        #nl-search-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s ease, height 0.3s ease;
+        }
+
+        #nl-clear-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s ease, height 0.3s ease;
+        }
+
+        #nl-search-btn:hover::before {
+            width: 100%;
+            height: 100%;
+        }
+
+        #nl-clear-btn:hover::before {
+            width: 100%;
+            height: 100%;
+        }
+
+        .suggested-queries {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .suggestion-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-right: 10px;
+            font-weight: 500;
+        }
+
+        .suggestion {
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 16px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .suggestion:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-1px);
+        }
+
+        .search-status {
+            margin-top: 15px;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .search-status.success {
+            background: rgba(76, 175, 80, 0.2);
+            color: #e8f5e8;
+            border: 1px solid rgba(76, 175, 80, 0.3);
+        }
+
+        .search-status.info {
+            background: rgba(33, 150, 243, 0.2);
+            color: #e3f2fd;
+            border: 1px solid rgba(33, 150, 243, 0.3);
+        }
+
+        .search-status.warning {
+            background: rgba(255, 152, 0, 0.2);
+            color: #fff3e0;
+            border: 1px solid rgba(255, 152, 0, 0.3);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Enhanced data point styling for search results */
+        .data-point.search-highlighted {
+            stroke: #3282b8;
+            stroke-width: 4px;
+            opacity: 1 !important;
+            animation: searchPulse 2s infinite;
+            filter: drop-shadow(0 0 8px rgba(50, 130, 184, 0.6));
+        }
+
+        .data-point.search-dimmed {
+            opacity: 0.2;
+            transition: opacity 0.5s ease;
+        }
+
+        @keyframes searchPulse {
+            0% { 
+                stroke-width: 4px; 
+                filter: drop-shadow(0 0 8px rgba(50, 130, 184, 0.6));
+            }
+            50% { 
+                stroke-width: 6px; 
+                filter: drop-shadow(0 0 12px rgba(50, 130, 184, 0.8));
+            }
+            100% { 
+                stroke-width: 4px; 
+                filter: drop-shadow(0 0 8px rgba(50, 130, 184, 0.6));
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .search-toggle-container {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+            
+            .toggle-option {
+                min-width: 100px;
+            }
+            
+            .toggle-option .toggle-text {
+                font-size: 12px;
+            }
+            
+            .mobile-toggle-switch {
+                order: -1;
+            }
+            
+            .search-input-container {
+                flex-direction: column;
+            }
+            
+            #nl-query {
+                margin-bottom: 10px;
+            }
+            
+            .suggested-queries {
+                justify-content: center;
+            }
+            
+            .suggestion-label {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
         }
     </style>
 </head>
@@ -544,6 +1026,53 @@
             </p>
         </div>
 
+        <!-- Natural Language Search Toggle -->
+        <div class="search-toggle-container">
+            <div class="toggle-option">
+                <span class="toggle-icon">📊</span>
+                <span class="toggle-text">Static Trial Data</span>
+            </div>
+            
+            <div class="mobile-toggle-switch">
+                <input type="checkbox" id="search-toggle-input" class="mobile-toggle-input">
+                <label for="search-toggle-input" class="mobile-toggle-label">
+                    <span class="mobile-toggle-slider"></span>
+                </label>
+            </div>
+            
+            <div class="toggle-option">
+                <span class="toggle-icon">🔍</span>
+                <span class="toggle-text">Natural Language Search</span>
+            </div>
+        </div>
+
+        <!-- Natural Language Search Interface -->
+        <div class="nl-search-section">
+            <h3>🔍 Natural Language Search</h3>
+            <p class="nl-description">Hybrid search: keywords + TF-IDF semantic similarity + concept groups - try complex queries like medical abbreviations, drug names, or specific cancer types</p>
+            
+            <div class="search-input-container">
+                <input type="text" id="nl-query" 
+                       placeholder="e.g., 'PCa trials', 'HCC immunotherapy', 'Phase 3 breast cancer ADC studies', 'pembrolizumab NSCLC'">
+                <button id="nl-search-btn">Search</button>
+                <button id="nl-clear-btn">Clear</button>
+            </div>
+            
+            <div class="suggested-queries">
+                <span class="suggestion-label">Try these examples:</span>
+                <span class="suggestion" data-query="PCa trials">PCa trials</span>
+                <span class="suggestion" data-query="HCC immunotherapy">HCC immunotherapy</span>
+                <span class="suggestion" data-query="breast cancer ADC">Breast cancer ADC</span>
+                <span class="suggestion" data-query="Phase 3 lung cancer">Phase 3 lung cancer</span>
+                <span class="suggestion" data-query="CAR-T therapy">CAR-T therapy</span>
+                <span class="suggestion" data-query="pembrolizumab NSCLC">Pembrolizumab NSCLC</span>
+                <span class="suggestion" data-query="early phase liver cancer">Early phase liver cancer</span>
+                <span class="suggestion" data-query="TNBC checkpoint inhibitor">TNBC checkpoint inhibitor</span>
+            </div>
+            
+            <div id="search-status" class="search-status"></div>
+        </div>
+
         <div class="controls">
             <div class="filter-group">
                 <label for="population-filter">Filter by patient population/subgroup</label>
@@ -594,6 +1123,18 @@
             </div>
 
             <div class="chart-container">
+                <!-- Floating Search Bar -->
+                <div id="floating-search-bar" class="floating-search-bar">
+                    <button class="floating-close-btn" id="floating-close-btn">×</button>
+                    <div class="search-input-container">
+                        <input type="text" id="floating-nl-query" 
+                               placeholder="e.g., 'PCa trials', 'HCC immunotherapy', 'Phase 3 breast cancer ADC studies'">
+                        <button id="floating-nl-search-btn">Search</button>
+                        <button id="floating-nl-clear-btn">Clear</button>
+                    </div>
+                    <div id="floating-search-status" class="search-status"></div>
+                </div>
+                
                 <div id="scatter-plot"></div>
                 <div class="legend">
                     <div class="legend-item">
@@ -634,7 +1175,8 @@
         </div>
     </div>
 
-    <script src="asco2025_comprehensive_data.js?v=20250603_1610"></script>
+    <script src="asco2025_comprehensive_data.js?v=20250603_1915"></script>
+    <script src="lightweight_hybrid_search.js"></script>
     <script>
 
 // Dashboard JavaScript
@@ -645,12 +1187,19 @@ class ASCOTrialDashboard {
         this.data = ascoTrialData;
         this.filteredData = [...this.data];
         this.selectedTrack = '';
+        this.searchResults = [];
+        this.activeSearch = false;
+        this.currentSearchQuery = '';
+        this.searchCorpus = null;
         this.margin = { top: 20, right: 60, bottom: 60, left: 60 };
         this.width = 800 - this.margin.left - this.margin.right;
         this.height = 500 - this.margin.bottom - this.margin.top;
         
         console.log('D3 available:', typeof d3);
         this.init();
+        
+        // Show loading message for search corpus
+        this.showSearchStatus('Loading search index...', 'info');
     }
 
     init() {
@@ -658,6 +1207,8 @@ class ASCOTrialDashboard {
         this.setupSidebar();
         this.createChart();
         this.setupTooltip();
+        this.loadSearchCorpus();
+        this.setupNaturalLanguageSearch();
     }
 
     setupFilters() {
@@ -759,6 +1310,11 @@ class ASCOTrialDashboard {
             
             return matchesTrack && matchesPopulation && matchesPhase && matchesCompany && matchesTrial && matchesDrug;
         });
+
+        // Update search status if search is active
+        if (this.activeSearch && this.searchResults.length > 0) {
+            this.updateSearchStatusWithFilters();
+        }
 
         this.updateChart();
     }
@@ -940,6 +1496,521 @@ class ASCOTrialDashboard {
             const pdfUrl = `${baseUrl}/tps_abstracts/${pdfFileName}`;
             window.open(pdfUrl, '_blank');
         }
+    }
+
+    // Natural Language Search Methods
+    async loadSearchCorpus() {
+        try {
+            // Use embedded lightweight hybrid search corpus (avoids CORS issues)
+            if (typeof lightweightHybridSearchData !== 'undefined') {
+                this.searchCorpus = lightweightHybridSearchData;
+                console.log('✅ Lightweight hybrid search corpus loaded:', this.searchCorpus.total_trials, 'trials,', this.searchCorpus.vocab_size, 'vocab terms');
+                this.showSearchStatus('🔍 Hybrid search ready! Try "PCa trials" or "HCC immunotherapy"', 'success');
+                return;
+            }
+
+            // Fallback to basic embedded search corpus
+            if (typeof searchCorpusData !== 'undefined') {
+                this.searchCorpus = searchCorpusData;
+                console.log('✅ Basic search corpus loaded:', this.searchCorpus.total_trials, 'trials');
+                this.showSearchStatus('🔍 Natural language search ready! Try "PCa trials" or "HCC immunotherapy"', 'success');
+                return;
+            }
+
+            // Fallback: try to fetch from server (works with http://)
+            console.log('📥 Loading search corpus from server...');
+            const response = await fetch('search_corpus.json');
+            this.searchCorpus = await response.json();
+            console.log('✅ Search corpus loaded from server:', this.searchCorpus.total_trials, 'trials');
+            this.showSearchStatus('🔍 Natural language search ready! Try "PCa trials" or "HCC immunotherapy"', 'success');
+        } catch (error) {
+            console.error('❌ Failed to load search corpus:', error);
+            this.showSearchStatus('❌ Search index failed to load. Please refresh or use a web server.', 'warning');
+        }
+    }
+
+    setupNaturalLanguageSearch() {
+        const searchBtn = document.getElementById('nl-search-btn');
+        const clearBtn = document.getElementById('nl-clear-btn');
+        const queryInput = document.getElementById('nl-query');
+        const statusDiv = document.getElementById('search-status');
+        const toggleInput = document.getElementById('search-toggle-input');
+        const searchSection = document.querySelector('.nl-search-section');
+
+        // Toggle functionality
+        const handleToggle = () => {
+            const isSearchVisible = toggleInput.checked;
+            
+            if (isSearchVisible) {
+                // Show search section
+                searchSection.style.display = 'block';
+                setTimeout(() => {
+                    searchSection.classList.add('show');
+                }, 10);
+            } else {
+                // Hide search section
+                searchSection.classList.remove('show');
+                setTimeout(() => {
+                    searchSection.style.display = 'none';
+                }, 400);
+                
+                // Clear any active search
+                this.clearSearch();
+            }
+        };
+        
+        // Add event listener
+        toggleInput.addEventListener('change', handleToggle);
+
+        // Search button click
+        searchBtn.addEventListener('click', () => {
+            const query = queryInput.value.trim();
+            if (query) {
+                this.performNaturalLanguageSearch(query);
+            }
+        });
+
+        // Clear button click
+        clearBtn.addEventListener('click', () => {
+            this.clearSearch();
+        });
+
+        // Enter key in search input
+        queryInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const query = queryInput.value.trim();
+                if (query) {
+                    this.performNaturalLanguageSearch(query);
+                }
+            }
+        });
+
+        // Suggestion clicks
+        document.querySelectorAll('.suggestion').forEach(suggestion => {
+            suggestion.addEventListener('click', () => {
+                const query = suggestion.getAttribute('data-query');
+                queryInput.value = query;
+                this.performNaturalLanguageSearch(query);
+            });
+        });
+
+        // Floating search bar controls
+        const floatingSearchBtn = document.getElementById('floating-nl-search-btn');
+        const floatingClearBtn = document.getElementById('floating-nl-clear-btn');
+        const floatingQueryInput = document.getElementById('floating-nl-query');
+        const floatingCloseBtn = document.getElementById('floating-close-btn');
+
+        // Floating search button click
+        floatingSearchBtn.addEventListener('click', () => {
+            const query = floatingQueryInput.value.trim();
+            if (query) {
+                this.performNaturalLanguageSearch(query, true); // true for floating mode
+            }
+        });
+
+        // Floating clear button click
+        floatingClearBtn.addEventListener('click', () => {
+            this.clearSearch();
+        });
+
+        // Floating enter key
+        floatingQueryInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const query = floatingQueryInput.value.trim();
+                if (query) {
+                    this.performNaturalLanguageSearch(query, true); // true for floating mode
+                }
+            }
+        });
+
+        // Floating close button
+        floatingCloseBtn.addEventListener('click', () => {
+            this.hideFloatingSearchBar();
+        });
+    }
+
+    performNaturalLanguageSearch(query, floatingMode = false) {
+        if (!this.searchCorpus) {
+            this.showSearchStatus('Search index loading... Please wait a moment and try again.', 'info');
+            // Try to reload the search corpus
+            this.loadSearchCorpus();
+            return;
+        }
+
+        console.log('🔍 Searching for:', query);
+        
+        // Expand abbreviations
+        const expandedQuery = this.expandMedicalAbbreviations(query.toLowerCase());
+        console.log('📝 Expanded query:', expandedQuery);
+
+        // Perform search
+        const results = this.searchTrials(expandedQuery);
+        this.searchResults = results;
+        this.activeSearch = true;
+        this.currentSearchQuery = query;
+
+        // Update UI
+        if (results.length > 0) {
+            const hasSemanticSearch = this.searchCorpus.vocabulary && this.searchCorpus.corpus[0] && this.searchCorpus.corpus[0].tfidf_vector;
+            const hasConceptGroups = this.searchCorpus.concept_groups;
+            
+            let searchType = 'keyword-based';
+            if (hasSemanticSearch && hasConceptGroups) {
+                searchType = 'hybrid (keywords + TF-IDF + concepts)';
+            } else if (hasSemanticSearch) {
+                searchType = 'semantic (keywords + TF-IDF)';
+            }
+            
+            // Show search status and sync inputs
+            this.showSearchStatus(`Found ${results.length} trials using ${searchType} search for "${query}"`, 'success');
+            this.syncSearchInputs(query);
+            this.highlightSearchResults(results);
+            
+            // Show floating search bar after highlighting
+            if (!floatingMode) {
+                setTimeout(() => this.showFloatingSearchBar(), 500);
+            }
+            
+            // Log detailed results for debugging
+            console.log(`🔍 Top 5 results (${searchType}):`);
+            results.slice(0, 5).forEach((result, i) => {
+                console.log(`  ${i+1}. ${result.tpsId} (total: ${result.score.toFixed(1)}, keyword: ${result.keywordScore?.toFixed(1)}, semantic: ${result.semanticScore?.toFixed(1)}, concept: ${result.conceptScore?.toFixed(1)})`);
+            });
+        } else {
+            this.showSearchStatus(`No trials found for "${query}". Try different terms.`, 'warning');
+            this.clearSearchHighlights();
+            this.hideFloatingSearchBar();
+        }
+
+        console.log('📊 Search results:', results.length, 'trials');
+    }
+
+    expandMedicalAbbreviations(query) {
+        if (!this.searchCorpus?.abbreviations) return query;
+
+        let expandedQuery = query;
+        
+        // Replace abbreviations with their expanded forms
+        for (const [abbrev, expansions] of Object.entries(this.searchCorpus.abbreviations)) {
+            const regex = new RegExp(`\\b${abbrev}\\b`, 'gi');
+            if (regex.test(expandedQuery)) {
+                // Add both the abbreviation and its expansions
+                expandedQuery += ' ' + expansions.join(' ');
+            }
+        }
+
+        return expandedQuery;
+    }
+
+    searchTrials(query) {
+        if (!this.searchCorpus) return [];
+
+        const queryTerms = query.toLowerCase().split(/\s+/).filter(term => term.length > 1);
+        const results = new Map(); // Use Map to avoid duplicates and store scores
+
+        // Check if we have TF-IDF vectors (hybrid corpus)
+        const hasSemanticSearch = this.searchCorpus.vocabulary && this.searchCorpus.corpus[0] && this.searchCorpus.corpus[0].tfidf_vector;
+
+        // Create query vector for semantic search
+        let queryVector = null;
+        if (hasSemanticSearch) {
+            queryVector = this.createQueryVector(queryTerms);
+        }
+
+        // Search through each trial
+        for (const item of this.searchCorpus.corpus) {
+            let keywordScore = 0;
+            let semanticScore = 0;
+            
+            const searchableText = item.searchable_text.toLowerCase();
+            const keywords = item.keywords.map(k => k.toLowerCase());
+
+            // 1. KEYWORD-BASED SCORING (as before)
+            for (const term of queryTerms) {
+                // Exact matches in keywords get highest score
+                if (keywords.includes(term)) {
+                    keywordScore += 10;
+                }
+                
+                // Partial matches in keywords
+                for (const keyword of keywords) {
+                    if (keyword.includes(term) || term.includes(keyword)) {
+                        keywordScore += 5;
+                    }
+                }
+
+                // Matches in searchable text
+                const termOccurrences = (searchableText.match(new RegExp(term, 'g')) || []).length;
+                keywordScore += termOccurrences * 2;
+
+                // Bonus for title matches
+                const titlePart = searchableText.substring(0, 200);
+                if (titlePart.includes(term)) {
+                    keywordScore += 3;
+                }
+            }
+
+            // 2. SEMANTIC SIMILARITY SCORING
+            if (hasSemanticSearch && queryVector && item.tfidf_vector) {
+                semanticScore = this.cosineSimilarity(queryVector, item.tfidf_vector) * 100;
+            }
+
+            // 3. CONCEPT GROUP MATCHING
+            let conceptScore = 0;
+            if (this.searchCorpus.concept_groups) {
+                conceptScore = this.matchConceptGroups(query, item);
+            }
+
+            // 4. COMBINED SCORING
+            // Weight: 60% keywords, 30% semantic, 10% concepts
+            const totalScore = (keywordScore * 0.6) + (semanticScore * 0.3) + (conceptScore * 0.1);
+
+            // Only include trials with positive scores
+            if (totalScore > 0) {
+                results.set(item.trial_index, {
+                    trialIndex: item.trial_index,
+                    tpsId: item.tps_id,
+                    score: totalScore,
+                    keywordScore: keywordScore,
+                    semanticScore: semanticScore,
+                    conceptScore: conceptScore
+                });
+            }
+        }
+
+        // Convert to array and sort by score
+        return Array.from(results.values())
+            .sort((a, b) => b.score - a.score)
+            .slice(0, 50); // Limit to top 50 results
+    }
+
+    createQueryVector(queryTerms) {
+        if (!this.searchCorpus.vocabulary) return null;
+
+        const vector = new Array(this.searchCorpus.vocabulary.length).fill(0);
+        const termCounts = {};
+        
+        // Count term frequencies in query
+        for (const term of queryTerms) {
+            termCounts[term] = (termCounts[term] || 0) + 1;
+        }
+
+        // Create TF vector for query
+        for (const [term, count] of Object.entries(termCounts)) {
+            const index = this.searchCorpus.vocabulary.indexOf(term);
+            if (index !== -1) {
+                // Simple TF weighting for query
+                vector[index] = 1 + Math.log(count);
+            }
+        }
+
+        return vector;
+    }
+
+    cosineSimilarity(vecA, vecB) {
+        if (vecA.length !== vecB.length) return 0;
+
+        let dotProduct = 0;
+        let normA = 0;
+        let normB = 0;
+
+        for (let i = 0; i < vecA.length; i++) {
+            dotProduct += vecA[i] * vecB[i];
+            normA += vecA[i] * vecA[i];
+            normB += vecB[i] * vecB[i];
+        }
+
+        if (normA === 0 || normB === 0) return 0;
+
+        return dotProduct / (Math.sqrt(normA) * Math.sqrt(normB));
+    }
+
+    matchConceptGroups(query, item) {
+        if (!this.searchCorpus.concept_groups) return 0;
+
+        let conceptScore = 0;
+        const queryLower = query.toLowerCase();
+        const itemText = item.searchable_text.toLowerCase();
+
+        // Check each concept group
+        for (const [groupName, concepts] of Object.entries(this.searchCorpus.concept_groups)) {
+            let queryMatchesGroup = false;
+            let itemMatchesGroup = false;
+
+            // Check if query matches this concept group
+            for (const concept of concepts) {
+                if (queryLower.includes(concept.toLowerCase())) {
+                    queryMatchesGroup = true;
+                    break;
+                }
+            }
+
+            // Check if item matches this concept group
+            for (const concept of concepts) {
+                if (itemText.includes(concept.toLowerCase())) {
+                    itemMatchesGroup = true;
+                    break;
+                }
+            }
+
+            // Score if both query and item match the same concept group
+            if (queryMatchesGroup && itemMatchesGroup) {
+                conceptScore += 20;
+            }
+        }
+
+        return conceptScore;
+    }
+
+    highlightSearchResults(results) {
+        // Get trial indices to highlight
+        const highlightIndices = new Set(results.map(r => r.trialIndex));
+        
+        // Update chart with highlighting
+        this.g.selectAll('.data-point')
+            .classed('search-highlighted', d => {
+                const trialIndex = this.data.findIndex(trial => trial.tpsId === d.tpsId);
+                return highlightIndices.has(trialIndex);
+            })
+            .classed('search-dimmed', d => {
+                const trialIndex = this.data.findIndex(trial => trial.tpsId === d.tpsId);
+                return !highlightIndices.has(trialIndex);
+            });
+    }
+
+    clearSearchHighlights() {
+        this.g.selectAll('.data-point')
+            .classed('search-highlighted', false)
+            .classed('search-dimmed', false);
+    }
+
+    updateSearchStatusWithFilters() {
+        if (!this.activeSearch || this.searchResults.length === 0) return;
+
+        // Count how many search results are currently visible after filtering
+        const searchResultTpsIds = new Set(this.searchResults.map(r => r.tpsId));
+        const visibleSearchResults = this.filteredData.filter(trial => searchResultTpsIds.has(trial.tpsId));
+        
+        // Get active filter descriptions
+        const activeFilters = this.getActiveFilterDescriptions();
+        
+        // Determine search type
+        const hasSemanticSearch = this.searchCorpus.vocabulary && this.searchCorpus.corpus[0] && this.searchCorpus.corpus[0].tfidf_vector;
+        const hasConceptGroups = this.searchCorpus.concept_groups;
+        
+        let searchType = 'keyword-based';
+        if (hasSemanticSearch && hasConceptGroups) {
+            searchType = 'hybrid';
+        } else if (hasSemanticSearch) {
+            searchType = 'semantic';
+        }
+
+        // Create status message
+        let message = `Found ${visibleSearchResults.length} trials using ${searchType} search for "${this.currentSearchQuery}"`;
+        if (activeFilters.length > 0) {
+            message += ` with filters: ${activeFilters.join(', ')}`;
+        }
+        
+        this.showSearchStatus(message, 'success');
+    }
+
+    getActiveFilterDescriptions() {
+        const filters = [];
+        
+        if (this.selectedTrack) {
+            filters.push(`track: ${this.selectedTrack}`);
+        }
+        
+        const populationFilter = document.getElementById('population-filter').value;
+        if (populationFilter) {
+            filters.push(`population: ${populationFilter}`);
+        }
+        
+        const phaseFilter = document.getElementById('phase-filter').value;
+        if (phaseFilter) {
+            filters.push(`phase: ${phaseFilter}`);
+        }
+        
+        const companyFilter = document.getElementById('company-filter').value;
+        if (companyFilter) {
+            filters.push(`company: ${companyFilter}`);
+        }
+        
+        const trialFilter = document.getElementById('trial-filter').value;
+        if (trialFilter) {
+            filters.push(`trial: ${trialFilter}`);
+        }
+        
+        const drugFilter = document.getElementById('drug-filter').value;
+        if (drugFilter) {
+            filters.push(`drug: ${drugFilter}`);
+        }
+        
+        return filters;
+    }
+
+    showFloatingSearchBar() {
+        const floatingBar = document.getElementById('floating-search-bar');
+        floatingBar.style.display = 'block';
+        setTimeout(() => {
+            floatingBar.classList.add('show');
+        }, 10);
+    }
+
+    hideFloatingSearchBar() {
+        const floatingBar = document.getElementById('floating-search-bar');
+        floatingBar.classList.remove('show');
+        setTimeout(() => {
+            floatingBar.style.display = 'none';
+        }, 300);
+    }
+
+    syncSearchInputs(query) {
+        // Sync both search inputs
+        document.getElementById('nl-query').value = query;
+        document.getElementById('floating-nl-query').value = query;
+    }
+
+    clearSearch() {
+        // Clear inputs
+        document.getElementById('nl-query').value = '';
+        document.getElementById('floating-nl-query').value = '';
+        
+        // Clear search state
+        this.searchResults = [];
+        this.activeSearch = false;
+        this.currentSearchQuery = '';
+        
+        // Clear highlights
+        this.clearSearchHighlights();
+        
+        // Hide floating bar and status
+        this.hideFloatingSearchBar();
+        this.hideSearchStatus();
+        
+        console.log('🧹 Search cleared');
+    }
+
+    showSearchStatus(message, type = 'info') {
+        // Update both status divs
+        const statusDiv = document.getElementById('search-status');
+        const floatingStatusDiv = document.getElementById('floating-search-status');
+        
+        statusDiv.textContent = message;
+        statusDiv.className = `search-status ${type}`;
+        statusDiv.style.display = 'block';
+        
+        floatingStatusDiv.textContent = message;
+        floatingStatusDiv.className = `search-status ${type}`;
+        floatingStatusDiv.style.display = 'block';
+    }
+
+    hideSearchStatus() {
+        const statusDiv = document.getElementById('search-status');
+        const floatingStatusDiv = document.getElementById('floating-search-status');
+        
+        statusDiv.style.display = 'none';
+        floatingStatusDiv.style.display = 'none';
     }
 }
 

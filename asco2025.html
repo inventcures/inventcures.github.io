@@ -454,20 +454,29 @@
         
         /* Enrollment Data Availability Styles */
         .eda { 
-            background-color: #4ecdc4; 
-            opacity: 0.9;
-            outline: 1px solid rgba(255, 255, 255, 0.5);
-            outline-offset: -1px;
+            background-color: #000; 
+            opacity: 1;
             width: 12px !important;
             height: 12px !important;
         }
         .edna { 
-            background-color: #4ecdc4; 
-            opacity: 0.6; 
-            border: 1px dashed #333; 
-            box-sizing: border-box;
+            background-color: #000; 
+            opacity: 1; 
             width: 12px !important;
             height: 12px !important;
+            position: relative;
+        }
+        
+        .edna::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border: 2px dashed #999;
+            border-radius: 50%;
+            box-sizing: border-box;
         }
 
         .stats-section {

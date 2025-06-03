@@ -634,12 +634,14 @@
         </div>
     </div>
 
-    <script src="asco2025_comprehensive_data.js?v=20250603_1551"></script>
+    <script src="asco2025_comprehensive_data.js?v=20250603_1610"></script>
     <script>
 
 // Dashboard JavaScript
 class ASCOTrialDashboard {
     constructor() {
+        console.log('Dashboard constructor called');
+        console.log('ascoTrialData available:', typeof ascoTrialData, ascoTrialData ? ascoTrialData.length : 'undefined');
         this.data = ascoTrialData;
         this.filteredData = [...this.data];
         this.selectedTrack = '';
@@ -647,6 +649,7 @@ class ASCOTrialDashboard {
         this.width = 800 - this.margin.left - this.margin.right;
         this.height = 500 - this.margin.bottom - this.margin.top;
         
+        console.log('D3 available:', typeof d3);
         this.init();
     }
 
@@ -803,7 +806,9 @@ class ASCOTrialDashboard {
     }
 
     updateChart() {
+        console.log('UpdateChart called. FilteredData length:', this.filteredData.length);
         const validData = this.filteredData.filter(d => d.estimatedEnrollment > 0);
+        console.log('ValidData length:', validData.length);
         
         // Create y-position based on phase
         const phaseOrder = ["Phase 1", "Phase 1/2", "Phase 2", "Phase 2/3", "Phase 3"];
@@ -811,6 +816,7 @@ class ASCOTrialDashboard {
             ...d,
             yPosition: phaseOrder.indexOf(d.trialPhase) * 100 + (i % 5) * 15 + 50
         }));
+        console.log('DataWithPosition length:', dataWithPosition.length);
 
         const xExtent = d3.extent(dataWithPosition, d => d.estimatedEnrollment);
         
@@ -889,6 +895,7 @@ class ASCOTrialDashboard {
                 <div><strong>Primary Endpoint:</strong> ${d.primaryEndpoint}</div>
                 <div><strong>Estimated Enrollment:</strong> ${d.estimatedEnrollment}</div>
                 ${d.trialRegistry ? `<div><strong>Registry:</strong> ${d.trialRegistry}</div>` : ''}
+                ${d.originalPdfUrl ? `<div><strong>Abstract URL:</strong> <a href="${d.originalPdfUrl}" target="_blank" style="color: #64ffda; text-decoration: underline;">${d.originalPdfUrl}</a></div>` : ''}
                 <div class="abstract-preview"><strong>Background:</strong> ${d.backgroundExcerpt}</div>
                 <div class="tooltip-action">Click to view full PDF abstract</div>
             </div>
@@ -923,25 +930,29 @@ class ASCOTrialDashboard {
     }
 
     openPDF(trial) {
-        // Construct the PDF filename based on TPS ID
-        const pdfFileName = `${trial.tpsId}.pdf`;
-        
-        // Use current directory path for PDFs
-        const baseUrl = window.location.href.split('/').slice(0, -1).join('/');
-        const pdfUrl = `${baseUrl}/tps_abstracts/${pdfFileName}`;
-        
-        window.open(pdfUrl, '_blank');
+        // Use original CloudFront URL if available, otherwise fall back to local PDF
+        if (trial.originalPdfUrl && trial.originalPdfUrl.trim() !== '') {
+            window.open(trial.originalPdfUrl, '_blank');
+        } else {
+            // Fallback to local PDF
+            const pdfFileName = `${trial.tpsId}.pdf`;
+            const baseUrl = window.location.href.split('/').slice(0, -1).join('/');
+            const pdfUrl = `${baseUrl}/tps_abstracts/${pdfFileName}`;
+            window.open(pdfUrl, '_blank');
+        }
     }
 }
 
 // Initialize dashboard when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     try {
+        console.log('DOM loaded, checking ascoTrialData:', typeof ascoTrialData, ascoTrialData ? ascoTrialData.length : 'undefined');
         const dashboard = new ASCOTrialDashboard();
         window.dashboard = dashboard;
         console.log('ASCO Dashboard initialized successfully');
     } catch (error) {
         console.error('Error creating dashboard:', error);
+        console.error('Error details:', error.stack);
     }
 });
 

@@ -634,7 +634,7 @@
         </div>
     </div>
 
-    <script src="asco2025_comprehensive_data.js?v=20250603_1525"></script>
+    <script src="asco2025_comprehensive_data.js?v=20250603_1551"></script>
     <script>
 
 // Dashboard JavaScript
@@ -881,7 +881,7 @@ class ASCOTrialDashboard {
             <div class="tooltip-title">${d.title}</div>
             <div class="tooltip-details">
                 <div><strong>TPS ID:</strong> ${d.tpsId}</div>
-                <div><strong>Track:</strong> ${d.track}</div>
+                <div><strong>Track:</strong> ${d.trackFull || d.track}</div>
                 <div><strong>Phase:</strong> ${d.trialPhase}</div>
                 <div><strong>Cancer Type:</strong> ${d.cancerType}</div>
                 <div><strong>Drug:</strong> ${d.drug}</div>

@@ -13,3 +13,16 @@ Gemfile.lock
 # Ingore files created by npm
 node_modules
 package-lock.json
+asco2025_comprehensive_data_backup.js
+asco2025_comprehensive_data_with_fake_metrics_backup.js
+attach/
+debug_dashboard.html
+extract_enrollment_data.py
+extract_response_metrics.js
+extracted_enrollment_data.json
+hybrid_search_corpus.json
+new_asco2025/
+response_metrics_summary.txt
+search_corpus.json
+search_corpus_data.js
+tps_response_metrics_summary.txt

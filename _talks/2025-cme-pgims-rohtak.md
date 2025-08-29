@@ -1,9 +1,9 @@
 ---
-title: "ICGA(Indian Cancer Genome Atlas) 2024 meeting"
+title: "CME on 'Transformative role of Artificial Intelligence in Medical Education & Healthcare: Innovation, Application & Future Pespectives'"
 #collection: teaching
 #type: "Undergraduate course"
 permalink: /talks/2025-08-28__ai-agents-in-medicine
-venue: "University of Health Sciences, Rohtak, India"
+venue: "University of Health Sciences"
 date: 2025-08-28
 location: "Rohtak, Haryana, India"
 ---

@@ -22,25 +22,7 @@ My mission is to impact medicine and disease through technology:
 
 **Building tools for healthcare** - Using AI and biomedical data to help clinicians make better decisions faster, and to help patients become more engaged in their care.
 
-## Computational Protein Design
-
-I'm exploring computational approaches to protein and antibody design, working alongside [Dr. Anurag Agrawal](https://en.wikipedia.org/wiki/Anurag_Agrawal_(medical_scientist)) at KCDH-A.
-
-**Recent projects:**
-
-- **CD20 Binder Design** - Participated in the [Bits to Binders 2024](https://github.com/ccalia/Bits_to_Binders_2024) challenge, designing computational binders targeting CD20 for B-cell lymphoma therapeutics.
-
-- **Nipah Virus Binder** - Competing in the [Adaptyv Nipah Competition](https://proteinbase.com/competitions/adaptyv-nipah-competition) using diffusion-based generative models including [BoltzGen](https://github.com/HannesStark/boltzgen) for *de novo* binder design. See [my designs](https://proteinbase.com/tp53).
-
-- **Immune Repertoire Profiling** - Participating in the [AIRR-ML-25 Challenge](https://uio-bmi.github.io/adaptive_immune_profiling_challenge_2025/) to predict disease states from T-cell receptor (TCR) repertoires. Built a [multi-stream ensemble pipeline](https://deepwiki.com/inventcures/airr-ml-25-challenge) combining DeepRC attention networks, ESM-2 protein language models, FAISS clustering, and immunological feature engineering.
-
-For a comprehensive overview of AI-driven antibody design, see this excellent [state-of-the-art review](https://www.booleanbiotech.com/p/ai-is-revolutionizing-antibody-engineering-part2).
-
-## Grants
-
-In November 2024, I was fortunate to receive a [Grand Challenges India](https://gcgh.grandchallenges.org/grant/clinical-decision-support-tool-comprising-extractive-and-conversational-generative-large) grant (funded by the Gates Foundation, administered by DBT-BIRAC) with [Dr. Anurag Agrawal](https://en.wikipedia.org/wiki/Anurag_Agrawal_(medical_scientist)) as PI and myself as co-investigator.
-
-We're building a clinical decision support tool using extractive and conversational generative LLMs. Read more about [our work](https://docs.google.com/document/d/1FQ4K4MkBgBlf4TTYtwiafDUmSQ0KggTW_jerPcG7DdY/edit?usp=sharing) and check out [my code](https://deepwiki.com/inventcures/rag_gci).
+See my [projects](/projects/) for details on computational protein design, bio ML challenges, and regulatory analysis work.
 
 ## Background
 

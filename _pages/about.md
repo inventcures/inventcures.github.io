@@ -32,6 +32,8 @@ I'm exploring computational approaches to protein and antibody design, working a
 
 - **Nipah Virus Binder** - Competing in the [Adaptyv Nipah Competition](https://proteinbase.com/competitions/adaptyv-nipah-competition) using diffusion-based generative models including [BoltzGen](https://github.com/HannesStark/boltzgen) for *de novo* binder design. See [my designs](https://proteinbase.com/tp53).
 
+- **Immune Repertoire Profiling** - Participating in the [AIRR-ML-25 Challenge](https://uio-bmi.github.io/adaptive_immune_profiling_challenge_2025/) to predict disease states from T-cell receptor (TCR) repertoires. Built a [multi-stream ensemble pipeline](https://deepwiki.com/inventcures/airr-ml-25-challenge) combining DeepRC attention networks, ESM-2 protein language models, FAISS clustering, and immunological feature engineering.
+
 For a comprehensive overview of AI-driven antibody design, see this excellent [state-of-the-art review](https://www.booleanbiotech.com/p/ai-is-revolutionizing-antibody-engineering-part2).
 
 ## Grants

@@ -10,7 +10,7 @@ redirect_from:
 
 # Hi, I'm Ashish
 
-I go by **tp53** online, named after the [tumor suppressor gene](https://en.wikipedia.org/wiki/P53) that's central to cancer research.
+I go by **tp53** online, named after the [tumor suppressor gene](https://en.wikipedia.org/wiki/P53) that's central to cancer research. To learn more about tp53, I highly recommend this very accessible (even to laymen!) [substack post](https://stetson.substack.com/p/the-tumor-suppressor-to-rule-them) by [Stetson Thacker](https://x.com/stetson_thacker) on tp53, the tumor suppressor to rule them all, often also christened "the guardian of the genome".
 
 I'm an engineer passionate about accelerating drug discovery and building tools at the intersection of machine learning and medicine. My focus is on cancer and oncology - from genomics and protein design to clinical trials and treatment planning.
 

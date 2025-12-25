@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<main class="main-content">
+  <div class="container-narrow">
+    {% if page.headshot %}
+    <div class="hero-section">
+      <div class="hero-image">
+        <img src="{{ site.baseurl }}/images/{{ page.headshot }}" alt="{{ site.author.name }}">
+      </div>
+      <div class="hero-content">
+        {{ content }}
+      </div>
+    </div>
+    {% else %}
+    {{ content }}
+    {% endif %}
+
+    {% include featured-projects.html %}
+  </div>
+</main>

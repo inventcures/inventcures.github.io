@@ -170,10 +170,10 @@ layout: default
         <p style="font-size: 0.75rem; color: #888; margin: 0 0 0.5rem 0; text-transform: uppercase; letter-spacing: 0.05em;">Supported by</p>
         <div style="display: flex; align-items: center; gap: 1.5rem;">
           <a href="https://www.gatesfoundation.org/" target="_blank" rel="noopener">
-            <img src="/images/gates-foundation-logo.svg" alt="Gates Foundation" style="height: 45px; width: auto; border-radius: 4px;">
+            <img src="/images/gates-foundation-logo.png" alt="Gates Foundation" style="height: 40px; width: auto;">
           </a>
           <a href="https://birac.nic.in/" target="_blank" rel="noopener">
-            <img src="/images/birac-dbt-logo.svg" alt="BIRAC / DBT" style="height: 45px; width: auto; border-radius: 4px;">
+            <img src="/images/birac-dbt-logo.png" alt="BIRAC / DBT" style="height: 50px; width: auto;">
           </a>
         </div>
       </div>

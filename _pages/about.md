@@ -24,7 +24,7 @@ My mission is to impact medicine and disease through technology:
 
 ## Computational Protein Design
 
-I'm exploring computational approaches to protein and antibody design, working alongside [Dr. Anurag](https://scholar.google.com/citations?user=OGdnQkUAAAAJ&hl=en) at KCDH-A.
+I'm exploring computational approaches to protein and antibody design, working alongside [Dr. Anurag Agrawal](https://en.wikipedia.org/wiki/Anurag_Agrawal_(medical_scientist)) at KCDH-A.
 
 **Recent projects:**
 
@@ -36,7 +36,7 @@ For a comprehensive overview of AI-driven antibody design, see this excellent [s
 
 ## Grants
 
-In November 2024, I was fortunate to receive a [Grand Challenges India](https://gcgh.grandchallenges.org/grant/clinical-decision-support-tool-comprising-extractive-and-conversational-generative-large) grant (funded by the Gates Foundation, administered by DBT-BIRAC) with [Dr. Anurag Agrawal](https://scholar.google.com/citations?user=OGdnQkUAAAAJ&hl=en) as PI and myself as co-investigator.
+In November 2024, I was fortunate to receive a [Grand Challenges India](https://gcgh.grandchallenges.org/grant/clinical-decision-support-tool-comprising-extractive-and-conversational-generative-large) grant (funded by the Gates Foundation, administered by DBT-BIRAC) with [Dr. Anurag Agrawal](https://en.wikipedia.org/wiki/Anurag_Agrawal_(medical_scientist)) as PI and myself as co-investigator.
 
 We're building a clinical decision support tool using extractive and conversational generative LLMs. Read more about [our work](https://docs.google.com/document/d/1FQ4K4MkBgBlf4TTYtwiafDUmSQ0KggTW_jerPcG7DdY/edit?usp=sharing) and check out [my code](https://deepwiki.com/inventcures/rag_gci).
 

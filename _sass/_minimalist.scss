@@ -243,19 +243,6 @@ $content-width: 720px;
     }
   }
 
-  // Full-width hero that aligns photo to left
-  .hero-section {
-    margin-left: -$spacing-6;
-    margin-right: -$spacing-6;
-    padding-right: $spacing-6;
-
-    @media (max-width: 768px) {
-      margin-left: 0;
-      margin-right: 0;
-      padding-right: 0;
-    }
-  }
-
   // =============================================================================
   // TYPOGRAPHY
   // =============================================================================
@@ -360,6 +347,8 @@ $content-width: 720px;
     gap: $spacing-12;
     align-items: start;
     margin-bottom: $spacing-8;
+    margin-left: -$spacing-6;
+    padding-right: $spacing-6;
 
     @media (max-width: 900px) {
       grid-template-columns: 350px 1fr;
@@ -369,6 +358,8 @@ $content-width: 720px;
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
       gap: $spacing-6;
+      margin-left: 0;
+      padding-right: 0;
     }
   }
 

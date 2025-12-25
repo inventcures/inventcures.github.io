@@ -168,9 +168,13 @@ layout: default
       </div>
       <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid #e5e7eb;">
         <p style="font-size: 0.75rem; color: #888; margin: 0 0 0.5rem 0; text-transform: uppercase; letter-spacing: 0.05em;">Supported by</p>
-        <div style="display: flex; align-items: center; gap: 1rem;">
-          <a href="https://www.gatesfoundation.org/" target="_blank" rel="noopener" style="display: inline-block; padding: 0.4rem 0.75rem; background: #1a1a2e; color: white; font-size: 0.8rem; font-weight: 500; border-radius: 4px; text-decoration: none;">Gates Foundation</a>
-          <a href="https://birac.nic.in/" target="_blank" rel="noopener" style="display: inline-block; padding: 0.4rem 0.75rem; background: #0d5c2e; color: white; font-size: 0.8rem; font-weight: 500; border-radius: 4px; text-decoration: none;">BIRAC / DBT</a>
+        <div style="display: flex; align-items: center; gap: 1.5rem;">
+          <a href="https://www.gatesfoundation.org/" target="_blank" rel="noopener">
+            <img src="/images/gates-foundation-logo.svg" alt="Gates Foundation" style="height: 45px; width: auto; border-radius: 4px;">
+          </a>
+          <a href="https://birac.nic.in/" target="_blank" rel="noopener">
+            <img src="/images/birac-dbt-logo.svg" alt="BIRAC / DBT" style="height: 45px; width: auto; border-radius: 4px;">
+          </a>
         </div>
       </div>
       <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 0.75rem;">

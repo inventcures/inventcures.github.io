@@ -144,7 +144,8 @@ layout: default
         </svg>
       </div>
       <h3 class="project-title">Grand Challenges India (Nov 2024)</h3>
-      <p class="project-description">Gates Foundation funded grant with <a href="https://en.wikipedia.org/wiki/Anurag_Agrawal_(medical_scientist)">Dr. Anurag Agrawal</a> as PI. Building clinical decision support using LLMs.</p>
+      <p class="project-description">Building palliative care decision support for caregivers using LLMs, RAG & a dataset of Indian palliative care case scenarios with clinical partners (Max Healthcare & Pallium India).</p>
+      <p class="project-description" style="margin-top: 0.5rem; font-size: 0.85rem;"><strong>PI:</strong> <a href="https://en.wikipedia.org/wiki/Anurag_Agrawal_(medical_scientist)">Dr. Anurag Agrawal</a> · <strong>Co-investigator:</strong> Ashish Makani</p>
       <span class="project-link">
         View grant
         <svg viewBox="0 0 20 20" fill="currentColor">

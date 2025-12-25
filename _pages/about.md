@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "About"
+title: 'whoami : echo "Ashish Makani, Research Scientist, ml + {medicine, biology}"'
 layout: home
 headshot: tp53.jpeg
 redirect_from:

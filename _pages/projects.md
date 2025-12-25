@@ -10,10 +10,9 @@ layout: default
 <h1>Projects</h1>
 <p>A collection of my work in digital health, computational biology, drug discovery, and biomedical ML.</p>
 
-<div style="margin-bottom: 1.5rem; color: #666;">
-  <p>I work at KCDH-A under the mentorship of <a href="https://en.wikipedia.org/wiki/Anurag_Agrawal_(medical_scientist)">Dr. Anurag Agrawal</a> on a slew of research projects at the intersection of ML (machine learning) & medicine, spanning palliative care, cancer & medical voice agents (aka scribes), all sharing a common thread of digital health with a north star objective of improving patient outcomes.</p>
-  <p style="margin-top: 0.75rem;">I also started a medical AI journal club at Ashoka, with Dr. Anurag's support in 2023. We meet somewhat infrequently but hope to meet at a more regular cadence in 2026!</p>
-</div>
+<p>I work at KCDH-A under the mentorship of <a href="https://en.wikipedia.org/wiki/Anurag_Agrawal_(medical_scientist)">Dr. Anurag Agrawal</a> on a slew of research projects at the intersection of ML (machine learning) & medicine, spanning palliative care, cancer & medical voice agents (aka scribes), all sharing a common thread of digital health with a north star objective of improving patient outcomes.</p>
+
+<p>I also started a medical AI journal club at Ashoka, with Dr. Anurag's support in 2023. We meet somewhat infrequently but hope to meet at a more regular cadence in 2026!</p>
 
 <div style="margin: 1.5rem 0 2rem 0; padding: 1rem 1.25rem; background: #f8f9fa; border-left: 3px solid #22c55e; border-radius: 4px;">
   <p style="margin: 0 0 0.75rem 0;"><strong>Looking for research interns!</strong> I am looking for enthusiastic students (both undergrads & grad students) to work with me on any of my research interests.</p>

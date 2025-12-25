@@ -30,7 +30,7 @@ I'm exploring computational approaches to protein and antibody design, working a
 
 - **CD20 Binder Design** - Participated in the [Bits to Binders 2024](https://github.com/ccalia/Bits_to_Binders_2024) challenge, designing computational binders targeting CD20 for B-cell lymphoma therapeutics.
 
-- **Nipah Virus Binder** - Competing in the [Adaptyv Nipah Competition](https://proteinbase.com/competitions/adaptyv-nipah-competition) using diffusion-based generative models including [BoltzGen](https://proteinbase.bio/profile/ashishdatta) for *de novo* binder design.
+- **Nipah Virus Binder** - Competing in the [Adaptyv Nipah Competition](https://proteinbase.com/competitions/adaptyv-nipah-competition) using diffusion-based generative models including [BoltzGen](https://github.com/HannesStark/boltzgen) for *de novo* binder design. See [my designs](https://proteinbase.com/tp53).
 
 For a comprehensive overview of AI-driven antibody design, see this excellent [state-of-the-art review](https://www.booleanbiotech.com/p/ai-is-revolutionizing-antibody-engineering-part2).
 

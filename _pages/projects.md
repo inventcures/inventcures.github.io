@@ -8,7 +8,12 @@ layout: default
   <div class="container-narrow">
 
 <h1>Projects</h1>
-<p>A collection of my work in computational biology, drug discovery, and biomedical ML.</p>
+<p>A collection of my work in digital health, computational biology, drug discovery, and biomedical ML.</p>
+
+<div style="margin: 1.5rem 0; padding: 1rem 1.25rem; background: #f8f9fa; border-left: 3px solid #22c55e; border-radius: 4px;">
+  <p style="margin: 0 0 0.75rem 0;"><strong>Looking for research interns!</strong> I am looking for enthusiastic students (both undergrads & grad students) to work with me on any of my research interests.</p>
+  <p style="margin: 0; color: #555;">If you are interested, write to me at my Ashoka email with the subject line <em>"Research Intern interest"</em>, including a short paragraph about your background and which of these areas you would like to do research on. Feel free to suggest a research topic of your interest — if not aligned with my interests, I will try to connect you to the appropriate person in the Ashoka community who might be able to advise you.</p>
+</div>
 
 <div style="margin-bottom: 2rem; color: #666;">
   <p>Working under the mentorship of <a href="https://en.wikipedia.org/wiki/Anurag_Agrawal_(medical_scientist)">Dr. Anurag Agrawal</a> at KCDH-A on a slew of research projects at the intersection of ML (machine learning) & medicine, spanning palliative care, cancer & medical voice agents (aka scribes), all sharing a common thread of digital health with a north star objective of improving patient outcomes.</p>

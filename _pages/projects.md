@@ -137,7 +137,7 @@ layout: default
   <h2 class="section-title">Grants</h2>
 
   <div class="project-grid">
-    <a href="https://gcgh.grandchallenges.org/grant/clinical-decision-support-tool-comprising-extractive-and-conversational-generative-large" class="project-card" target="_blank" rel="noopener">
+    <div class="project-card">
       <div class="project-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
@@ -145,27 +145,17 @@ layout: default
       </div>
       <h3 class="project-title">Grand Challenges India (Awarded November 2024)</h3>
       <p class="project-description">Building palliative care decision support for caregivers using LLMs, RAG & a dataset of Indian palliative care case scenarios with clinical partners (Max Healthcare & Pallium India).</p>
-      <div style="margin-top: 0.5rem; font-size: 0.85rem; display: grid; grid-template-columns: auto 1fr; gap: 0.25rem 0.5rem;">
+      <div style="margin-top: 0.75rem; font-size: 0.85rem; display: grid; grid-template-columns: auto 1fr; gap: 0.25rem 0.5rem;">
         <strong>PI</strong><span>: <a href="https://en.wikipedia.org/wiki/Anurag_Agrawal_(medical_scientist)">Dr. Anurag Agrawal</a></span>
         <strong>Co-investigator</strong><span>: Ashish Makani</span>
       </div>
-      <span class="project-link">
-        View grant
-        <svg viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-        </svg>
-      </span>
-    </a>
-
-    <div class="project-card" style="background: white;">
-      <div class="project-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-        </svg>
-      </div>
-      <h3 class="project-title">GCI RAG Pipeline</h3>
-      <p class="project-description">Code for the clinical decision support tool using extractive and conversational generative LLMs.</p>
-      <div style="display: flex; gap: 1.5rem; margin-top: 0.5rem;">
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 0.75rem;">
+        <a href="https://gcgh.grandchallenges.org/grant/clinical-decision-support-tool-comprising-extractive-and-conversational-generative-large" target="_blank" rel="noopener" class="project-link">
+          View grant
+          <svg viewBox="0 0 20 20" fill="currentColor" style="width: 16px; height: 16px;">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+          </svg>
+        </a>
         <a href="https://github.com/inventcures/rag_gci/" target="_blank" rel="noopener" class="project-link">
           GitHub repo
           <svg viewBox="0 0 20 20" fill="currentColor" style="width: 16px; height: 16px;">

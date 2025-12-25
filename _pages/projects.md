@@ -88,7 +88,7 @@ layout: default
   <h2 class="section-title">Drug Discovery & Regulatory Analysis</h2>
 
   <div class="project-grid">
-    <a href="https://deepwiki.com/inventcures/fda_crl_analysis" class="project-card" target="_blank" rel="noopener">
+    <div class="project-card" style="background: white;">
       <div class="project-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
@@ -96,13 +96,21 @@ layout: default
       </div>
       <h3 class="project-title">FDA Complete Response Letter Analysis</h3>
       <p class="project-description">ML platform analyzing 297 FDA rejection letters. Predicts approval outcomes with 72% accuracy and uncovers patterns in drug deficiencies.</p>
-      <span class="project-link">
-        View project
-        <svg viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-        </svg>
-      </span>
-    </a>
+      <div style="display: flex; gap: 1.5rem; margin-top: 0.5rem;">
+        <a href="https://fda-crl-analysis.vercel.app/" target="_blank" rel="noopener" class="project-link">
+          Project page on Vercel
+          <svg viewBox="0 0 20 20" fill="currentColor" style="width: 16px; height: 16px;">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+          </svg>
+        </a>
+        <a href="https://deepwiki.com/inventcures/fda_crl_analysis" target="_blank" rel="noopener" class="project-link">
+          Code description
+          <svg viewBox="0 0 20 20" fill="currentColor" style="width: 16px; height: 16px;">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+          </svg>
+        </a>
+      </div>
+    </div>
 
     <a href="/aacr2025/" class="project-card">
       <div class="project-icon">

@@ -47,7 +47,7 @@ layout: default
       </a>
     </div>
 
-    <a href="https://deepwiki.com/inventcures/airr-ml-25-challenge" class="project-card" target="_blank" rel="noopener">
+    <div class="project-card" style="background: white;">
       <div class="project-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
@@ -55,13 +55,27 @@ layout: default
       </div>
       <h3 class="project-title">Immune Repertoire Profiling</h3>
       <p class="project-description">AIRR-ML-25 Challenge: Predicting disease states from TCR repertoires using DeepRC, ESM-2, FAISS clustering, and immunological features.</p>
-      <span class="project-link">
-        View pipeline
-        <svg viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-        </svg>
-      </span>
-    </a>
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 0.5rem;">
+        <a href="https://deepwiki.com/inventcures/airr-ml-25-challenge" target="_blank" rel="noopener" class="project-link">
+          My pipeline
+          <svg viewBox="0 0 20 20" fill="currentColor" style="width: 16px; height: 16px;">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+          </svg>
+        </a>
+        <a href="https://uio-bmi.github.io/adaptive_immune_profiling_challenge_2025" target="_blank" rel="noopener" class="project-link">
+          Contest page
+          <svg viewBox="0 0 20 20" fill="currentColor" style="width: 16px; height: 16px;">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+          </svg>
+        </a>
+        <a href="https://www.kaggle.com/competitions/adaptive-immune-profiling-challenge-2025/data" target="_blank" rel="noopener" class="project-link">
+          Kaggle
+          <svg viewBox="0 0 20 20" fill="currentColor" style="width: 16px; height: 16px;">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+          </svg>
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 

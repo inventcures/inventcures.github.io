@@ -143,9 +143,12 @@ layout: default
           <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
         </svg>
       </div>
-      <h3 class="project-title">Grand Challenges India (Nov 2024)</h3>
+      <h3 class="project-title">Grand Challenges India (Awarded November 2024)</h3>
       <p class="project-description">Building palliative care decision support for caregivers using LLMs, RAG & a dataset of Indian palliative care case scenarios with clinical partners (Max Healthcare & Pallium India).</p>
-      <p class="project-description" style="margin-top: 0.5rem; font-size: 0.85rem;"><strong>PI:</strong> <a href="https://en.wikipedia.org/wiki/Anurag_Agrawal_(medical_scientist)">Dr. Anurag Agrawal</a> · <strong>Co-investigator:</strong> Ashish Makani</p>
+      <div style="margin-top: 0.5rem; font-size: 0.85rem; display: grid; grid-template-columns: auto 1fr; gap: 0.25rem 0.5rem;">
+        <strong>PI</strong><span>: <a href="https://en.wikipedia.org/wiki/Anurag_Agrawal_(medical_scientist)">Dr. Anurag Agrawal</a></span>
+        <strong>Co-investigator</strong><span>: Ashish Makani</span>
+      </div>
       <span class="project-link">
         View grant
         <svg viewBox="0 0 20 20" fill="currentColor">

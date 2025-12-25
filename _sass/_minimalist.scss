@@ -48,12 +48,18 @@ $content-width: 720px;
   font-size: 16px;
   line-height: 1.6;
   color: $color-text;
-  background-color: $color-bg; // Lavender background
+  background-color: $color-bg !important; // Lavender background #EEF1FF
+  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
   * {
     box-sizing: border-box;
+  }
+
+  // Ensure html/body also get lavender
+  &, html, body {
+    background-color: $color-bg !important;
   }
 
   // =============================================================================
@@ -490,14 +496,14 @@ $content-width: 720px;
   }
 
   // =============================================================================
-  // FOOTER - Simple, clean (white background)
+  // FOOTER - Simple, clean (white background like header)
   // =============================================================================
 
   .site-footer {
-    background: $color-bg-white;
+    background: $color-bg-white !important;
     margin-top: 0;
     padding: $spacing-12 $spacing-6;
-    border-top: none;
+    border-top: 1px solid $color-border;
 
     .footer-inner {
       max-width: $max-width;

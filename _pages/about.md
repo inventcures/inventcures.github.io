@@ -34,6 +34,12 @@ I'm exploring computational approaches to protein and antibody design, working a
 
 For a comprehensive overview of AI-driven antibody design, see this excellent [state-of-the-art review](https://www.booleanbiotech.com/p/ai-is-revolutionizing-antibody-engineering-part2).
 
+## Grants
+
+In November 2024, I was fortunate to receive a [Grand Challenges India](https://gcgh.grandchallenges.org/grant/clinical-decision-support-tool-comprising-extractive-and-conversational-generative-large) grant (funded by the Gates Foundation, administered by DBT-BIRAC) with [Dr. Anurag Agrawal](https://scholar.google.com/citations?user=OGdnQkUAAAAJ&hl=en) as PI and myself as co-investigator.
+
+We're building a clinical decision support tool using extractive and conversational generative LLMs. Read more about [our work](https://docs.google.com/document/d/1FQ4K4MkBgBlf4TTYtwiafDUmSQ0KggTW_jerPcG7DdY/edit?usp=sharing) and check out [my code](https://deepwiki.com/inventcures/rag_gci).
+
 ## Background
 
 I trained as an engineer during undergrad and got my Master's in Computer Engineering at Purdue. Over the past several years, personal experiences and encounters with patients and doctors have inspired me to pursue a career at the intersection of tech and medicine.

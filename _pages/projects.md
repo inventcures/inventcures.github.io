@@ -166,6 +166,17 @@ layout: default
         <strong>PI</strong><span>: <a href="https://en.wikipedia.org/wiki/Anurag_Agrawal_(medical_scientist)">Dr. Anurag Agrawal</a></span>
         <strong>Co-investigator</strong><span>: Ashish Makani</span>
       </div>
+      <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid #e5e7eb;">
+        <p style="font-size: 0.75rem; color: #888; margin: 0 0 0.5rem 0; text-transform: uppercase; letter-spacing: 0.05em;">Supported by</p>
+        <div style="display: flex; align-items: center; gap: 1.5rem;">
+          <a href="https://www.gatesfoundation.org/" target="_blank" rel="noopener" style="display: block;">
+            <img src="/images/gates-foundation-logo.png" alt="Gates Foundation" style="height: 40px; width: auto; opacity: 0.8;">
+          </a>
+          <a href="https://birac.nic.in/" target="_blank" rel="noopener" style="display: block;">
+            <img src="/images/birac-dbt-logo.png" alt="BIRAC / DBT" style="height: 40px; width: auto; opacity: 0.8;">
+          </a>
+        </div>
+      </div>
       <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 0.75rem;">
         <a href="https://gcgh.grandchallenges.org/grant/clinical-decision-support-tool-comprising-extractive-and-conversational-generative-large" target="_blank" rel="noopener" class="project-link">
           View grant

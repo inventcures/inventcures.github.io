@@ -10,13 +10,14 @@ layout: default
 <h1>Projects</h1>
 <p>A collection of my work in computational biology, drug discovery, and biomedical ML.</p>
 
+<div style="margin-bottom: 2rem; color: #666;">
+  <p>Working under the mentorship of <a href="https://en.wikipedia.org/wiki/Anurag_Agrawal_(medical_scientist)">Dr. Anurag Agrawal</a> at KCDH-A on a slew of research projects at the intersection of ML (machine learning) & medicine, spanning palliative care, cancer & medical voice agents (aka scribes), all sharing a common thread of digital health with a north star objective of improving patient outcomes.</p>
+  <p style="margin-top: 0.75rem;">I also started a medical AI journal club at Ashoka, with Dr. Anurag's support in 2023. We meet somewhat infrequently but hope to meet at a more regular cadence in 2026!</p>
+</div>
+
 <section class="featured-section">
   <h2 class="section-title">Computational Protein Design</h2>
-  <div style="margin-bottom: 1.5rem; color: #666;">
-    <p>Working under the mentorship of <a href="https://en.wikipedia.org/wiki/Anurag_Agrawal_(medical_scientist)">Dr. Anurag Agrawal</a> at KCDH-A on a slew of research projects at the intersection of ML (machine learning) & medicine, spanning palliative care, cancer & medical voice agents (aka scribes), all sharing a common thread of digital health with a north star objective of improving patient outcomes.</p>
-    <p style="margin-top: 0.75rem;">I also started a medical AI journal club at Ashoka, with Dr. Anurag's support in 2023. We meet somewhat infrequently but hope to meet at a more regular cadence in 2026!</p>
-    <p style="margin-top: 0.75rem;">In my spare time, I am also interested in computational approaches to protein and antibody design. Methods progress in this area is accelerating, starting from RFDiffusion by the Baker Lab at IPD, followed by Chai, Chai-2, BoltzGen, RFAntibody, & a spate of others. The field is very fertile & pace of progress is accelerating! For a comprehensive overview of AI-driven antibody design, see this excellent <a href="https://blog.booleanbiotech.com/ai-antibody-design-2025">state-of-the-art review</a> by Brian Naughton.</p>
-  </div>
+  <p style="margin-bottom: 1.5rem; color: #666;">In my spare time, I am also interested in computational approaches to protein and antibody design. Methods progress in this area is accelerating, starting from RFDiffusion by the Baker Lab at IPD, followed by Chai, Chai-2, BoltzGen, RFAntibody, & a spate of others. The field is very fertile & pace of progress is accelerating! For a comprehensive overview of AI-driven antibody design, see this excellent <a href="https://blog.booleanbiotech.com/ai-antibody-design-2025">state-of-the-art review</a> by Brian Naughton.</p>
 
   <div class="project-grid">
     <a href="https://github.com/ccalia/Bits_to_Binders_2024" class="project-card" target="_blank" rel="noopener">

@@ -12,7 +12,7 @@ layout: default
 
 <section class="featured-section">
   <h2 class="section-title">Computational Protein Design</h2>
-  <p style="margin-bottom: 1.5rem; color: #666;">Working alongside <a href="https://en.wikipedia.org/wiki/Anurag_Agrawal_(medical_scientist)">Dr. Anurag Agrawal</a> at KCDH-A on computational approaches to protein and antibody design.</p>
+  <p style="margin-bottom: 1.5rem; color: #666;">Working alongside <a href="https://en.wikipedia.org/wiki/Anurag_Agrawal_(medical_scientist)">Dr. Anurag Agrawal</a> at KCDH-A on computational approaches to protein and antibody design. For a comprehensive overview of AI-driven antibody design, see this excellent <a href="https://www.booleanbiotech.com/p/ai-is-revolutionizing-antibody-engineering-part2">state-of-the-art review</a>.</p>
 
   <div class="project-grid">
     <a href="https://github.com/ccalia/Bits_to_Binders_2024" class="project-card" target="_blank" rel="noopener">
@@ -31,14 +31,14 @@ layout: default
       </span>
     </a>
 
-    <a href="https://proteinbase.com/competitions/adaptyv-nipah-competition" class="project-card" target="_blank" rel="noopener">
+    <a href="https://proteinbase.com/tp53" class="project-card" target="_blank" rel="noopener">
       <div class="project-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
         </svg>
       </div>
       <h3 class="project-title">Nipah Virus Binder</h3>
-      <p class="project-description">Competing in Adaptyv Nipah Competition using diffusion-based generative models including <a href="https://github.com/HannesStark/boltzgen">BoltzGen</a> for de novo binder design.</p>
+      <p class="project-description">Competing in <a href="https://proteinbase.com/competitions/adaptyv-nipah-competition">Adaptyv Nipah Competition</a> using diffusion-based generative models including <a href="https://github.com/HannesStark/boltzgen">BoltzGen</a> for de novo binder design.</p>
       <span class="project-link">
         See my designs
         <svg viewBox="0 0 20 20" fill="currentColor">
@@ -156,8 +156,6 @@ layout: default
     </a>
   </div>
 </section>
-
-<p style="margin-top: 2rem; color: #666;">For a comprehensive overview of AI-driven antibody design, see this excellent <a href="https://www.booleanbiotech.com/p/ai-is-revolutionizing-antibody-engineering-part2">state-of-the-art review</a>.</p>
 
   </div>
 </main>

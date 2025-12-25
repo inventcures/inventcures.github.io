@@ -2,6 +2,11 @@
 // Clean, minimal academic/research aesthetic
 
 // =============================================================================
+// FONT IMPORTS - Inter from Google Fonts
+// =============================================================================
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+// =============================================================================
 // VARIABLES
 // =============================================================================
 
@@ -21,9 +26,9 @@ $color-accent-yellow: #c5f74f; // Yellow/lime for active indicator
 $color-accent-orange: #ff6b35; // Orange/coral for dividers
 $color-accent-blue: #6b7cff; // Blue accent
 
-// Typography - System fonts, clean
-$font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-$font-mono: 'SF Mono', Monaco, 'Cascadia Code', Consolas, monospace;
+// Typography - Inter for body, JetBrains Mono for code/labels
+$font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-mono: 'JetBrains Mono', 'SF Mono', Monaco, Consolas, monospace;
 
 // Spacing
 $spacing-1: 0.25rem;

@@ -108,10 +108,18 @@ $content-width: 720px;
         text-decoration: none;
         font-weight: 400;
         position: relative;
+        padding: 2px 4px;
+        margin: -2px -4px;
+        transition: background-color 0.1s ease;
 
+        // Hover: Yellow highlight
         &:hover {
-          text-decoration: underline;
-          text-underline-offset: 4px;
+          background-color: $color-accent-yellow;
+        }
+
+        // Active/Click: Darker
+        &:active {
+          background-color: darken($color-accent-yellow, 15%);
         }
 
         // Yellow dot indicator for active nav (like SpiralDB)
@@ -121,7 +129,7 @@ $content-width: 720px;
           &::before {
             content: '';
             position: absolute;
-            left: -12px;
+            left: -8px;
             top: 50%;
             transform: translateY(-50%);
             width: 6px;
@@ -266,10 +274,19 @@ $content-width: 720px;
     text-decoration: underline;
     text-underline-offset: 3px;
     text-decoration-thickness: 1px;
+    transition: background-color 0.1s ease, color 0.1s ease;
 
+    // Hover: Yellow highlight like SpiralDB
     &:hover {
-      color: $color-link-hover;
-      text-decoration-thickness: 2px;
+      background-color: $color-accent-yellow;
+      color: $color-text;
+      text-decoration-thickness: 1px;
+    }
+
+    // Active/Click: Darker feedback
+    &:active {
+      background-color: darken($color-accent-yellow, 15%);
+      color: $color-text;
     }
   }
 
@@ -407,13 +424,22 @@ $content-width: 720px;
     border: 2px solid $color-border-dark;
     border-radius: 0;
     text-decoration: none;
-    transition: box-shadow 0.15s;
+    transition: box-shadow 0.15s, transform 0.15s, background-color 0.15s;
     // SpiralDB-style shadow offset
     box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 1);
 
+    // Hover: Larger shadow + slight lift
     &:hover {
       box-shadow: 6px 6px 0 0 rgba(0, 0, 0, 1);
+      transform: translate(-2px, -2px);
       text-decoration: none;
+    }
+
+    // Active/Click: Press down effect
+    &:active {
+      box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 1);
+      transform: translate(2px, 2px);
+      background-color: $color-bg;
     }
 
     .project-icon {
@@ -532,9 +558,18 @@ $content-width: 720px;
         font-size: 0.875rem;
         color: $color-text;
         text-decoration: none;
+        padding: 2px 4px;
+        margin: -2px -4px;
+        transition: background-color 0.1s ease;
 
+        // Hover: Yellow highlight
         &:hover {
-          text-decoration: underline;
+          background-color: $color-accent-yellow;
+        }
+
+        // Active/Click: Darker
+        &:active {
+          background-color: darken($color-accent-yellow, 15%);
         }
 
         svg {
@@ -668,9 +703,17 @@ $content-width: 720px;
       color: $color-text;
       text-decoration: underline;
       text-underline-offset: 3px;
+      transition: background-color 0.1s ease;
 
+      // Hover: Yellow highlight
       &:hover {
-        color: $color-text-muted;
+        background-color: $color-accent-yellow;
+        color: $color-text;
+      }
+
+      // Active/Click: Darker
+      &:active {
+        background-color: darken($color-accent-yellow, 15%);
       }
     }
   }
@@ -705,10 +748,16 @@ $content-width: 720px;
       a {
         color: $color-text;
         text-decoration: none;
+        transition: background-color 0.1s ease;
 
+        // Hover: Yellow highlight
         &:hover {
-          color: $color-link;
-          text-decoration: underline;
+          background-color: $color-accent-yellow;
+        }
+
+        // Active/Click: Darker
+        &:active {
+          background-color: darken($color-accent-yellow, 15%);
         }
       }
     }

@@ -7,53 +7,157 @@ layout: default
 <main class="main-content">
   <div class="container-narrow">
 
-# Projects
+<h1>Projects</h1>
+<p>A collection of my work in computational biology, drug discovery, and biomedical ML.</p>
 
-A collection of my work in computational biology, drug discovery, and biomedical ML.
+<section class="featured-section">
+  <h2 class="section-title">Computational Protein Design</h2>
+  <p style="margin-bottom: 1.5rem; color: #666;">Working alongside <a href="https://en.wikipedia.org/wiki/Anurag_Agrawal_(medical_scientist)">Dr. Anurag Agrawal</a> at KCDH-A on computational approaches to protein and antibody design.</p>
 
----
+  <div class="project-grid">
+    <a href="https://github.com/ccalia/Bits_to_Binders_2024" class="project-card" target="_blank" rel="noopener">
+      <div class="project-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+        </svg>
+      </div>
+      <h3 class="project-title">CD20 Binder Design</h3>
+      <p class="project-description">Participated in Bits to Binders 2024 challenge, designing computational binders targeting CD20 for B-cell lymphoma therapeutics.</p>
+      <span class="project-link">
+        View on GitHub
+        <svg viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+        </svg>
+      </span>
+    </a>
 
-## Computational Protein Design
+    <a href="https://proteinbase.com/competitions/adaptyv-nipah-competition" class="project-card" target="_blank" rel="noopener">
+      <div class="project-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+        </svg>
+      </div>
+      <h3 class="project-title">Nipah Virus Binder</h3>
+      <p class="project-description">Competing in Adaptyv Nipah Competition using diffusion-based generative models including <a href="https://github.com/HannesStark/boltzgen">BoltzGen</a> for de novo binder design.</p>
+      <span class="project-link">
+        See my designs
+        <svg viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+        </svg>
+      </span>
+    </a>
 
-Working alongside [Dr. Anurag Agrawal](https://en.wikipedia.org/wiki/Anurag_Agrawal_(medical_scientist)) at KCDH-A on computational approaches to protein and antibody design.
+    <a href="https://deepwiki.com/inventcures/airr-ml-25-challenge" class="project-card" target="_blank" rel="noopener">
+      <div class="project-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+        </svg>
+      </div>
+      <h3 class="project-title">Immune Repertoire Profiling</h3>
+      <p class="project-description">AIRR-ML-25 Challenge: Predicting disease states from TCR repertoires using DeepRC, ESM-2, FAISS clustering, and immunological features.</p>
+      <span class="project-link">
+        View pipeline
+        <svg viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+        </svg>
+      </span>
+    </a>
+  </div>
+</section>
 
-### CD20 Binder Design
-Participated in the [Bits to Binders 2024](https://github.com/ccalia/Bits_to_Binders_2024) challenge, designing computational binders targeting CD20 for B-cell lymphoma therapeutics.
+<section class="featured-section">
+  <h2 class="section-title">Drug Discovery & Regulatory Analysis</h2>
 
-### Nipah Virus Binder
-Competing in the [Adaptyv Nipah Competition](https://proteinbase.com/competitions/adaptyv-nipah-competition) using diffusion-based generative models including [BoltzGen](https://github.com/HannesStark/boltzgen) for *de novo* binder design. See [my designs](https://proteinbase.com/tp53).
+  <div class="project-grid">
+    <a href="https://deepwiki.com/inventcures/fda_crl_analysis" class="project-card" target="_blank" rel="noopener">
+      <div class="project-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+        </svg>
+      </div>
+      <h3 class="project-title">FDA Complete Response Letter Analysis</h3>
+      <p class="project-description">ML platform analyzing 297 FDA rejection letters. Predicts approval outcomes with 72% accuracy and uncovers patterns in drug deficiencies.</p>
+      <span class="project-link">
+        View project
+        <svg viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+        </svg>
+      </span>
+    </a>
 
-### Immune Repertoire Profiling
-Participating in the [AIRR-ML-25 Challenge](https://uio-bmi.github.io/adaptive_immune_profiling_challenge_2025/) to predict disease states from T-cell receptor (TCR) repertoires. Built a [multi-stream ensemble pipeline](https://deepwiki.com/inventcures/airr-ml-25-challenge) combining DeepRC attention networks, ESM-2 protein language models, FAISS clustering, and immunological feature engineering.
+    <a href="/aacr2025/" class="project-card">
+      <div class="project-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+        </svg>
+      </div>
+      <h3 class="project-title">AACR 2025 Clinical Trials Dashboard</h3>
+      <p class="project-description">Interactive visualization of clinical trial data from AACR 2025. Explore trial phases, therapeutic targets, and outcomes.</p>
+      <span class="project-link">
+        Explore dashboard
+        <svg viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+        </svg>
+      </span>
+    </a>
 
-For a comprehensive overview of AI-driven antibody design, see this excellent [state-of-the-art review](https://www.booleanbiotech.com/p/ai-is-revolutionizing-antibody-engineering-part2).
+    <a href="/asco2025.html" class="project-card">
+      <div class="project-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/>
+        </svg>
+      </div>
+      <h3 class="project-title">ASCO 2025 Data Visualization</h3>
+      <p class="project-description">Comprehensive analysis and visualization of oncology research presented at ASCO 2025 annual meeting.</p>
+      <span class="project-link">
+        View analysis
+        <svg viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+        </svg>
+      </span>
+    </a>
+  </div>
+</section>
 
----
+<section class="featured-section">
+  <h2 class="section-title">Grants</h2>
 
-## Drug Discovery & Regulatory Analysis
+  <div class="project-grid">
+    <a href="https://gcgh.grandchallenges.org/grant/clinical-decision-support-tool-comprising-extractive-and-conversational-generative-large" class="project-card" target="_blank" rel="noopener">
+      <div class="project-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+        </svg>
+      </div>
+      <h3 class="project-title">Grand Challenges India (Nov 2024)</h3>
+      <p class="project-description">Gates Foundation funded grant with <a href="https://en.wikipedia.org/wiki/Anurag_Agrawal_(medical_scientist)">Dr. Anurag Agrawal</a> as PI. Building clinical decision support using LLMs.</p>
+      <span class="project-link">
+        View grant
+        <svg viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+        </svg>
+      </span>
+    </a>
 
-### FDA Complete Response Letter Analysis
-Built a [comprehensive analysis platform](https://deepwiki.com/inventcures/fda_crl_analysis) examining 297 FDA Complete Response Letters (drug application rejections) to uncover patterns in approval outcomes.
+    <a href="https://deepwiki.com/inventcures/rag_gci" class="project-card" target="_blank" rel="noopener">
+      <div class="project-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+        </svg>
+      </div>
+      <h3 class="project-title">GCI RAG Pipeline</h3>
+      <p class="project-description">Code for the clinical decision support tool using extractive and conversational generative LLMs.</p>
+      <span class="project-link">
+        View code
+        <svg viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+        </svg>
+      </span>
+    </a>
+  </div>
+</section>
 
-**Key features:**
-- Random Forest classifier achieving 72% accuracy in predicting ultimate approval outcome
-- Language analysis measuring FDA tone through severity and certainty scoring
-- Pattern recognition identifying which deficiency categories lead to approval vs. permanent rejection
-- Interactive dashboards with full-text search across the entire document corpus
-
-**Major finding:** Nearly half of CRLs eventually lead to approval, yet certain deficiency types like clinical efficacy failures have <25% rescue rates.
-
-### Clinical Trials Dashboards
-- [AACR 2025 Clinical Trials Dashboard](/aacr2025/) - Interactive visualization of clinical trial data from AACR 2025
-- [ASCO 2025 Data Visualization](/asco2025.html) - Analysis of oncology research from ASCO 2025 annual meeting
-
----
-
-## Grants
-
-In November 2024, I received a [Grand Challenges India](https://gcgh.grandchallenges.org/grant/clinical-decision-support-tool-comprising-extractive-and-conversational-generative-large) grant (funded by the Gates Foundation, administered by DBT-BIRAC) with [Dr. Anurag Agrawal](https://en.wikipedia.org/wiki/Anurag_Agrawal_(medical_scientist)) as PI and myself as co-investigator.
-
-We're building a clinical decision support tool using extractive and conversational generative LLMs. Read more about [our work](https://docs.google.com/document/d/1FQ4K4MkBgBlf4TTYtwiafDUmSQ0KggTW_jerPcG7DdY/edit?usp=sharing) and check out [my code](https://deepwiki.com/inventcures/rag_gci).
+<p style="margin-top: 2rem; color: #666;">For a comprehensive overview of AI-driven antibody design, see this excellent <a href="https://www.booleanbiotech.com/p/ai-is-revolutionizing-antibody-engineering-part2">state-of-the-art review</a>.</p>
 
   </div>
 </main>

@@ -234,8 +234,26 @@ $content-width: 720px;
   }
 
   .container-narrow {
-    max-width: $content-width;
+    max-width: $max-width;
     margin: 0 auto;
+    padding: 0 $spacing-6;
+
+    @media (max-width: 768px) {
+      padding: 0 $spacing-4;
+    }
+  }
+
+  // Full-width hero that aligns photo to left
+  .hero-section {
+    margin-left: -$spacing-6;
+    margin-right: -$spacing-6;
+    padding-right: $spacing-6;
+
+    @media (max-width: 768px) {
+      margin-left: 0;
+      margin-right: 0;
+      padding-right: 0;
+    }
   }
 
   // =============================================================================
@@ -333,18 +351,19 @@ $content-width: 720px;
   }
 
   // =============================================================================
-  // HERO / ABOUT SECTION - Large photo on left
+  // HERO / ABOUT SECTION - Large photo on left, flush to margin
   // =============================================================================
 
   .hero-section {
     display: grid;
-    grid-template-columns: 350px 1fr;
-    gap: $spacing-8;
+    grid-template-columns: 450px 1fr;
+    gap: $spacing-12;
     align-items: start;
     margin-bottom: $spacing-8;
 
     @media (max-width: 900px) {
-      grid-template-columns: 280px 1fr;
+      grid-template-columns: 350px 1fr;
+      gap: $spacing-8;
     }
 
     @media (max-width: 768px) {
@@ -359,20 +378,23 @@ $content-width: 720px;
     }
 
     img {
-      width: 350px;
-      height: auto;
-      aspect-ratio: 1;
+      width: 450px;
+      height: 600px;
       object-fit: cover;
-      border-radius: 8px;
+      border-radius: 0;
       border: 2px solid $color-border-dark;
-      box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 1);
+      box-shadow: 6px 6px 0 0 rgba(0, 0, 0, 1);
 
       @media (max-width: 900px) {
-        width: 280px;
+        width: 350px;
+        height: 467px;
       }
 
       @media (max-width: 768px) {
-        width: 250px;
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        aspect-ratio: 3/4;
         margin: 0 auto;
         display: block;
       }
@@ -380,10 +402,12 @@ $content-width: 720px;
   }
 
   .hero-content {
+    padding-top: $spacing-4;
+
     h1 {
       margin-top: 0;
       margin-bottom: $spacing-4;
-      font-size: 2.5rem;
+      font-size: 2.75rem;
 
       @media (max-width: 768px) {
         text-align: center;
@@ -394,7 +418,7 @@ $content-width: 720px;
     p {
       color: $color-text;
       line-height: 1.7;
-      font-size: 1.0625rem;
+      font-size: 1.125rem;
 
       @media (max-width: 768px) {
         text-align: center;

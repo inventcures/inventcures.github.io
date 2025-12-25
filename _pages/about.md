@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: 'whoami : echo "Ashish Makani, Research Scientist, ml + {medicine, biology}"'
+title: '$whoami : echo "tp53(ashish), ml + {medicine, biology} tinkerer"'
 layout: home
 headshot: tp53.jpeg
 redirect_from:

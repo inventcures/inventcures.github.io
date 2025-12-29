@@ -20,6 +20,42 @@ layout: default
 </div>
 
 <section class="featured-section">
+  <h2 class="section-title">Patient Education Tools</h2>
+
+  <div class="project-grid">
+    <div class="project-card" style="background: white;">
+      <div class="project-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/>
+        </svg>
+      </div>
+      <h3 class="project-title">Indic Layman RadOnc</h3>
+      <p class="project-description">AI-powered tool that converts complex radiation therapy prescriptions into accessible, multilingual patient education materials in five Indian languages (English, Hindi, Tamil, Marathi, Bengali) at three literacy levels, with automatic patient privacy protection.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 0.5rem;">
+        <a href="https://indic-layman-radonc.vercel.app/" target="_blank" rel="noopener" class="project-link">
+          Live app
+          <svg viewBox="0 0 20 20" fill="currentColor" style="width: 16px; height: 16px;">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+          </svg>
+        </a>
+        <a href="https://github.com/inventcures/indic-layman-radonc" target="_blank" rel="noopener" class="project-link">
+          GitHub repo
+          <svg viewBox="0 0 20 20" fill="currentColor" style="width: 16px; height: 16px;">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+          </svg>
+        </a>
+        <a href="https://deepwiki.com/inventcures/indic-layman-radonc" target="_blank" rel="noopener" class="project-link">
+          DeepWiki docs
+          <svg viewBox="0 0 20 20" fill="currentColor" style="width: 16px; height: 16px;">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="featured-section">
   <h2 class="section-title">Computational Protein Design</h2>
   <p style="margin-bottom: 1.5rem; color: #666;">In my spare time, I am also interested in computational approaches to protein and antibody design. Methods progress in this area is accelerating, starting from RFDiffusion by the Baker Lab at IPD, followed by Chai, Chai-2, BoltzGen, RFAntibody, & a spate of others. The field is very fertile & pace of progress is accelerating! For a comprehensive overview of AI-driven antibody design, see this excellent <a href="https://blog.booleanbiotech.com/ai-antibody-design-2025">state-of-the-art review</a> by Brian Naughton.</p>
 

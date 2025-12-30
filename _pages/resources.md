@@ -57,6 +57,9 @@ Excellent long-form pieces, mostly by Alex Telford and Asimov Press:
 
 Stories of families, researchers, and the quest for treatments:
 
+**[Learn Something Wonderful About Rare Diseases](https://learn-something-wonderful-about-rare-diseases.vercel.app/){:target="_blank"}**
+   Inspired by [readsomethingwonderful.com](https://readsomethingwonderful.com){:target="_blank"} and built with matter.js, this is my curated collection of favorite rare disease readings in an interactive, physics-based interface. *[GitHub](https://github.com/inventcures/learn-something-wonderful-rare-disease){:target="_blank"} · [DeepWiki docs](https://deepwiki.com/inventcures/learn-something-wonderful-rare-disease){:target="_blank"}*
+
 ### Inspiring Parent Stories
 
 1. **[Hunting down my son's killer](https://matt.might.net/articles/my-sons-killer/){:target="_blank"}** by Matt Might

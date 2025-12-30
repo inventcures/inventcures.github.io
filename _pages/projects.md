@@ -237,5 +237,41 @@ layout: default
   </div>
 </section>
 
+<section class="featured-section">
+  <h2 class="section-title">Rare Disease Resources</h2>
+
+  <div class="project-grid">
+    <div class="project-card" style="background: white;">
+      <div class="project-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+        </svg>
+      </div>
+      <h3 class="project-title">Learn Something Wonderful About Rare Diseases</h3>
+      <p class="project-description">Inspired by <a href="https://readsomethingwonderful.com" target="_blank" rel="noopener">readsomethingwonderful.com</a> and built with matter.js, this is a curated collection of my favorite rare disease readings presented in an interactive, physics-based interface.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 0.5rem;">
+        <a href="https://learn-something-wonderful-about-rare-diseases.vercel.app/" target="_blank" rel="noopener" class="project-link">
+          Live app
+          <svg viewBox="0 0 20 20" fill="currentColor" style="width: 16px; height: 16px;">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+          </svg>
+        </a>
+        <a href="https://github.com/inventcures/learn-something-wonderful-rare-disease" target="_blank" rel="noopener" class="project-link">
+          GitHub repo
+          <svg viewBox="0 0 20 20" fill="currentColor" style="width: 16px; height: 16px;">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+          </svg>
+        </a>
+        <a href="https://deepwiki.com/inventcures/learn-something-wonderful-rare-disease" target="_blank" rel="noopener" class="project-link">
+          DeepWiki docs
+          <svg viewBox="0 0 20 20" fill="currentColor" style="width: 16px; height: 16px;">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
   </div>
 </main>

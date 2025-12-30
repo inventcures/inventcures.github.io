@@ -57,8 +57,35 @@ Excellent long-form pieces, mostly by Alex Telford and Asimov Press:
 
 Stories of families, researchers, and the quest for treatments:
 
-**[Learn Something Wonderful About Rare Diseases](https://learn-something-wonderful-about-rare-diseases.vercel.app/){:target="_blank"}**
-   Inspired by [readsomethingwonderful.com](https://readsomethingwonderful.com){:target="_blank"} and built with matter.js, this is my curated collection of favorite rare disease readings in an interactive, physics-based interface. *[GitHub](https://github.com/inventcures/learn-something-wonderful-rare-disease){:target="_blank"} · [DeepWiki docs](https://deepwiki.com/inventcures/learn-something-wonderful-rare-disease){:target="_blank"}*
+<div class="project-card" style="background: white; padding: 1.5rem; border: 1px solid #e5e7eb; border-radius: 8px; margin: 1.5rem 0;">
+  <div class="project-icon" style="width: 40px; height: 40px; background: #f0f9ff; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+    </svg>
+  </div>
+  <h3 style="margin: 0 0 0.75rem 0; font-size: 1.25rem; font-weight: 600;">Learn Something Wonderful About Rare Diseases</h3>
+  <p style="margin: 0 0 1rem 0; color: #555;">Inspired by <a href="https://readsomethingwonderful.com" target="_blank" rel="noopener">readsomethingwonderful.com</a> and built with matter.js, this is a curated collection of my favorite rare disease readings presented in an interactive, physics-based interface.</p>
+  <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+    <a href="https://learn-something-wonderful-about-rare-diseases.vercel.app/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.25rem; color: #111; text-decoration: underline;">
+      Live app
+      <svg viewBox="0 0 20 20" fill="currentColor" style="width: 16px; height: 16px;">
+        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+      </svg>
+    </a>
+    <a href="https://github.com/inventcures/learn-something-wonderful-rare-disease" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.25rem; color: #111; text-decoration: underline;">
+      GitHub repo
+      <svg viewBox="0 0 20 20" fill="currentColor" style="width: 16px; height: 16px;">
+        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+      </svg>
+    </a>
+    <a href="https://deepwiki.com/inventcures/learn-something-wonderful-rare-disease" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.25rem; color: #111; text-decoration: underline;">
+      DeepWiki docs
+      <svg viewBox="0 0 20 20" fill="currentColor" style="width: 16px; height: 16px;">
+        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+      </svg>
+    </a>
+  </div>
+</div>
 
 ### Inspiring Parent Stories
 

@@ -26,10 +26,10 @@ layout: default
     <div class="project-card" style="background: white;">
       <div class="project-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7v4m-2-2h4"/>
         </svg>
       </div>
-      <h3 class="project-title">Indic Layman RadOnc</h3>
+      <h3 class="project-title">Understand Your Cancer Records</h3>
       <p class="project-description">AI-powered tool that transforms any cancer medical record—imaging reports, biopsy results, oncology prescriptions, genetic testing, histopathology reports, and more—into accessible, multilingual patient education materials in five Indian languages at multiple literacy levels, with automatic privacy protection.</p>
       <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 0.5rem;">
         <a href="https://understand-your-cancer-medical-records-in-layman-ese.vercel.app/" target="_blank" rel="noopener" class="project-link">

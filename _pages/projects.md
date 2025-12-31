@@ -30,9 +30,9 @@ layout: default
         </svg>
       </div>
       <h3 class="project-title">Indic Layman RadOnc</h3>
-      <p class="project-description">AI-powered tool that converts complex radiation therapy prescriptions into accessible, multilingual patient education materials in five Indian languages (English, Hindi, Tamil, Marathi, Bengali) at three literacy levels, with automatic patient privacy protection.</p>
+      <p class="project-description">AI-powered tool that transforms any cancer medical record—imaging reports, biopsy results, oncology prescriptions, genetic testing, histopathology reports, and more—into accessible, multilingual patient education materials in five Indian languages at multiple literacy levels, with automatic privacy protection.</p>
       <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 0.5rem;">
-        <a href="https://indic-layman-radonc.vercel.app/" target="_blank" rel="noopener" class="project-link">
+        <a href="https://understand-your-cancer-medical-records-in-layman-ese.vercel.app/" target="_blank" rel="noopener" class="project-link">
           Live app
           <svg viewBox="0 0 20 20" fill="currentColor" style="width: 16px; height: 16px;">
             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>

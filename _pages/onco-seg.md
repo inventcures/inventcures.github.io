@@ -245,13 +245,10 @@ layout: default
   <p class="tagline">Multi-modal AI for tumor & organ delineation across CT, MRI, Ultrasound, and more</p>
 
   <div class="cta-buttons">
-    <a href="https://huggingface.co/tp53/medsam3_latest" class="cta-button cta-primary" target="_blank">
-      🤗 Model on HuggingFace
+    <a href="https://github.com/inventcures/onco-segment" class="cta-button cta-primary" target="_blank">
+      📦 GitHub Repo
     </a>
-    <a href="https://github.com/inventcures/onco-segment" class="cta-button cta-secondary" target="_blank">
-      GitHub Repo
-    </a>
-    <a href="/files/medsam3_paper.pdf" class="cta-button cta-outline">
+    <a href="/files/medsam3_paper.pdf" class="cta-button cta-secondary">
       📄 Read Paper
     </a>
   </div>
@@ -367,14 +364,11 @@ layout: default
 <h2 class="section-title">Get Started</h2>
 
 <div class="cta-buttons" style="justify-content: flex-start;">
-  <a href="https://huggingface.co/tp53/medsam3_latest" class="cta-button cta-primary" target="_blank">
-    🤗 Download Model
-  </a>
-  <a href="https://github.com/inventcures/onco-segment" class="cta-button cta-secondary" target="_blank">
+  <a href="https://github.com/inventcures/onco-segment" class="cta-button cta-primary" target="_blank">
     📦 View Code
   </a>
-  <a href="https://huggingface.co/spaces/tp53/medsam3-eval" class="cta-button cta-outline" target="_blank">
-    🚀 Try Demo
+  <a href="mailto:ashish.makani@ashoka.edu.in?subject=Onco-Seg%20Model%20Access" class="cta-button cta-secondary">
+    📧 Request Model Access
   </a>
 </div>
 

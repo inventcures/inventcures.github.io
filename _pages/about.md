@@ -24,6 +24,23 @@ My mission is to impact medicine and disease through technology:
 
 See my [projects](/projects/) for details on computational protein design, bio ML challenges, and regulatory analysis work.
 
+<div style="margin: 2rem 0;">
+  <a href="/onco-seg/" style="display: block; background: linear-gradient(135deg, #0a0a12 0%, #1a1a2e 100%); border: 2px solid #28c840; border-radius: 12px; overflow: hidden; text-decoration: none;">
+    <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 0;">
+      <div style="padding: 1.5rem 2rem;">
+        <div style="display: inline-block; background: #28c840; color: #000; font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">New</div>
+        <h3 style="color: #fff; font-size: 1.5rem; margin: 0 0 0.4rem 0; font-weight: 700;">Onco-Seg</h3>
+        <p style="color: #28c840; font-size: 0.9rem; margin: 0 0 0.75rem 0; font-weight: 500;">Adapting SAM3 for Medical Image Segmentation</p>
+        <p style="color: #aaa; font-size: 0.85rem; line-height: 1.5; margin: 0 0 1rem 0;">Multi-modal AI for tumor & organ segmentation across CT, MRI, ultrasound, and 5 more modalities. Trained on 98K+ cases using parameter-efficient LoRA fine-tuning.</p>
+        <span style="color: #28c840; font-weight: 600; font-size: 0.9rem;">View Project →</span>
+      </div>
+      <div style="background: #0c0c14; display: flex; align-items: center; justify-content: center; padding: 1rem;">
+        <img src="/images/medsam3/segmentation_demo.gif" alt="Onco-Seg demo" style="max-width: 100%; max-height: 200px; border-radius: 6px;">
+      </div>
+    </div>
+  </a>
+</div>
+
 ## Background
 
 I trained as an engineer during undergrad and got my Master's in Computer Engineering at Purdue. Over the past several years, personal experiences and encounters with patients and doctors have inspired me to pursue a career at the intersection of tech and medicine.

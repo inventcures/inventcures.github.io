@@ -20,6 +20,35 @@ layout: default
 </div>
 
 <section class="featured-section">
+  <h2 class="section-title" style="border-bottom-color: #28c840;">Featured: Medical AI</h2>
+
+  <a href="/onco-seg/" class="project-card" style="background: linear-gradient(135deg, #0a0a12 0%, #1a1a2e 100%); border: 2px solid #28c840; padding: 0; overflow: hidden; display: block;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
+      <div style="padding: 2rem;">
+        <div style="display: inline-block; background: #28c840; color: #000; font-size: 0.7rem; font-weight: 700; padding: 0.25rem 0.6rem; border-radius: 4px; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em;">New Release</div>
+        <h3 style="color: #fff; font-size: 1.8rem; margin: 0 0 0.5rem 0; font-weight: 700;">Onco-Seg</h3>
+        <p style="color: #28c840; font-size: 1rem; margin: 0 0 1rem 0; font-weight: 500;">Adapting SAM3 for Medical Image Segmentation</p>
+        <p style="color: #aaa; font-size: 0.9rem; line-height: 1.6; margin: 0 0 1.5rem 0;">Multi-modal AI for tumor & organ delineation. One unified model handles CT, MRI, ultrasound, dermoscopy, endoscopy, PET-CT, X-ray, and histopathology. Trained on 35 datasets, 98K+ cases.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem;">
+          <span style="background: rgba(40,200,64,0.15); color: #28c840; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">LoRA Fine-tuning</span>
+          <span style="background: rgba(40,200,64,0.15); color: #28c840; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">8 Modalities</span>
+          <span style="background: rgba(40,200,64,0.15); color: #28c840; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">12 Benchmarks</span>
+        </div>
+        <span style="color: #28c840; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem;">
+          View Project
+          <svg viewBox="0 0 20 20" fill="currentColor" style="width: 16px; height: 16px;">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+          </svg>
+        </span>
+      </div>
+      <div style="background: #0c0c14; display: flex; align-items: center; justify-content: center; padding: 1rem;">
+        <img src="/images/medsam3/segmentation_demo.gif" alt="Onco-Seg liver segmentation demo" style="max-width: 100%; max-height: 280px; border-radius: 8px;">
+      </div>
+    </div>
+  </a>
+</section>
+
+<section class="featured-section">
   <h2 class="section-title">Patient Education Tools</h2>
 
   <div class="project-grid">

@@ -385,7 +385,11 @@ layout: default
 
 <h2 class="section-title">Acknowledgments</h2>
 
-<p>This work was supported by the <strong>Koita Centre for Digital Health at Ashoka University (KCDH-A)</strong>. We thank RunPod for GPU infrastructure, Weights & Biases for experiment tracking, Meta AI for releasing SAM3, and the creators of benchmark datasets (Medical Segmentation Decathlon, BraTS, LiTS, ISIC, Kvasir-SEG, PROMISE12, BUSI, and others).</p>
+<p>This work was supported by the <strong>Koita Centre for Digital Health at Ashoka University (KCDH-A)</strong>. We thank RunPod for GPU infrastructure, Weights & Biases for experiment tracking, and Meta AI for releasing SAM3.</p>
+
+<p>We are deeply grateful to <strong><a href="https://www.cancerimagingarchive.net/" target="_blank">The Cancer Imaging Archive (TCIA)</a></strong> for creating such a wonderful open-access resource that has enabled countless research innovations in medical imaging AI. Special thanks to <strong>Justin Kirby</strong> at TCIA for helping debug minor data access issues and for consistently encouraging innovation built on top of TCIA's datasets.</p>
+
+<p>We also thank the creators of benchmark datasets (Medical Segmentation Decathlon, BraTS, LiTS, ISIC, Kvasir-SEG, PROMISE12, BUSI, and others).</p>
 
 <hr style="margin: 2rem 0; border: none; border-top: 1px solid #ddd;">
 

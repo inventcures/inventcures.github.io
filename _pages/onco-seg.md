@@ -385,9 +385,17 @@ layout: default
 
 <h2 class="section-title">Acknowledgments</h2>
 
-<p>This work was supported by the <strong>Koita Centre for Digital Health at Ashoka University (KCDH-A)</strong>. We thank RunPod for GPU infrastructure, Weights & Biases for experiment tracking, and Meta AI for releasing SAM3.</p>
+<p>This work was supported by the <strong>Koita Centre for Digital Health at Ashoka University (KCDH-A)</strong>. We thank RunPod for GPU infrastructure and Weights & Biases for experiment tracking.</p>
 
-<p>We are deeply grateful to <strong><a href="https://www.cancerimagingarchive.net/" target="_blank">The Cancer Imaging Archive (TCIA)</a></strong> for creating such a wonderful open-access resource that has enabled countless research innovations in medical imaging AI. Special thanks to <strong>Justin Kirby</strong> at TCIA for helping debug minor data access issues and for consistently encouraging innovation built on top of TCIA's datasets.</p>
+<p><strong>Deep thanks & gratitude to:</strong></p>
+
+<p><strong>1. Meta AI & the SAM Team:</strong> Special thanks to Meta and the entire SAM team, led by <strong>Nikhila Ravi</strong>, for being torchbearers of research and innovation in this field with their prolific releases of SAM, SAM2, and SAM3. More importantly, we thank them for making a conscious choice to embrace open source and releasing detailed technical reports and open weights for all SAM releases. We believe innovation in ML & AI at large, and in biomedical & cancer informatics specifically, can truly be accelerated by <a href="https://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants" target="_blank">standing on the shoulders of giants</a>.</p>
+
+<p><strong>2. Bo Wang Lab:</strong> The brilliant <strong><a href="https://vectorinstitute.ai/team/bo-wang/" target="_blank">Bo Wang</a></strong> (<a href="https://x.com/BoWang87" target="_blank">@BoWang87</a>) and his <a href="https://github.com/bowang-lab" target="_blank">prolific lab</a> have been an inspiration. Their pioneering <a href="https://github.com/bowang-lab/MedSAM" target="_blank">MedSAM</a> work demonstrated the potential of adapting foundation models for medical imaging and paved the way for projects like Onco-Seg.</p>
+
+<p><strong>3. NCI, CBIIT & TCIA:</strong> We are deeply grateful to the <strong><a href="https://www.cancer.gov/" target="_blank">National Cancer Institute (NCI)</a></strong>, its <strong><a href="https://www.cancer.gov/about-nci/organization/cbiit/projects" target="_blank">Center for Biomedical Informatics and Information Technology (CBIIT)</a></strong>, and <strong><a href="https://www.cancerimagingarchive.net/" target="_blank">The Cancer Imaging Archive (TCIA)</a></strong> for creating such a wonderful open-access resource that has enabled countless research innovations in medical imaging AI. Special thanks to <strong>Justin Kirby</strong> at TCIA for helping debug minor data access issues and for consistently encouraging innovation built on top of TCIA's datasets.</p>
+
+<p>The availability of open-source datasets greatly accelerated our progress on this project. We hope that as research in biomedical machine learning and AI progresses, there is an even greater emphasis on building and releasing open datasets—as the success of <strong>AlphaFold</strong> has so aptly demonstrated—for the greater public good.</p>
 
 <p>We also thank the creators of benchmark datasets (Medical Segmentation Decathlon, BraTS, LiTS, ISIC, Kvasir-SEG, PROMISE12, BUSI, and others).</p>
 

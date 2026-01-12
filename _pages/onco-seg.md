@@ -294,6 +294,20 @@ layout: default
   <p>This animation shows a CT scan of a patient's abdomen. The AI automatically identifies and highlights the <strong>liver</strong> (shown in green). This task—which typically takes radiologists several minutes per scan—is completed by Onco-Seg in under a second. Accurate organ segmentation is critical for radiation therapy planning, surgical navigation, and treatment monitoring.</p>
 </div>
 
+<!-- Brain Tumor Demo Section (video/GIF to be embedded after recording) -->
+<!--
+<h2 class="section-title">Brain Tumor Segmentation Demo</h2>
+
+<div class="demo-container">
+  <img src="/images/medsam3/oncoseg_brain_demo.gif" alt="Onco-Seg brain tumor segmentation demo" class="demo-gif">
+</div>
+
+<div class="explainer-box">
+  <h3>🧠 Brain Tumor Segmentation</h3>
+  <p>This demo shows Onco-Seg segmenting a <strong>glioblastoma</strong> from a BraTS MRI scan using the napari plugin. The clinician clicks on the tumor center, and the AI instantly generates a segmentation mask. The mask is then propagated through all slices to create a complete 3D contour—a process that would take a radiation oncologist 15-30 minutes to perform manually.</p>
+</div>
+-->
+
 <h2 class="section-title">Why Onco-Seg?</h2>
 
 <p>Manual tumor and organ contouring remains a major bottleneck in cancer care. Radiation oncologists spend <strong>2-4 hours per patient</strong> drawing boundaries around 30+ organs-at-risk. Radiologists manually measure tumors for treatment response. This process is time-consuming, variable between experts, and difficult to scale.</p>
@@ -437,6 +451,11 @@ napari
 ```
 
 <p>The plugin supports automatic checkpoint download from HuggingFace, with pre-trained models for general-purpose segmentation as well as specialized checkpoints for breast, liver, and brain imaging.</p>
+
+<div class="explainer-box">
+  <h3>Recording a Demo</h3>
+  <p>Want to create your own demo video? See our detailed <a href="https://github.com/inventcures/onco-segment/blob/main/docs/v17_napari_demo_howto.md"><strong>step-by-step guide</strong></a> for recording brain tumor segmentation demos using the napari plugin.</p>
+</div>
 
 <h2 class="section-title">Get Started</h2>
 

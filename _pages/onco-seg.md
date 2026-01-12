@@ -72,6 +72,23 @@ layout: default
   border-radius: 0 8px 8px 0;
 }
 
+.clinical-note {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border: 1px solid #f59e0b;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  font-size: 0.95rem;
+  color: #92400e;
+  max-width: 550px;
+  margin: 1.5rem auto;
+  text-align: center;
+}
+
+.clinical-note a {
+  color: #b45309;
+  text-decoration: underline;
+}
+
 .explainer-box h3 {
   color: #1a1a2e;
   margin-top: 0;
@@ -258,10 +275,14 @@ layout: default
     <a href="https://github.com/inventcures/onco-segment" class="cta-button cta-primary" target="_blank">
       📦 GitHub Repo
     </a>
-    <a href="/files/medsam3_paper.pdf" class="cta-button cta-secondary">
-      📄 Read Paper
+    <a href="/files/oncoseg_preprint_v7.pdf" class="cta-button cta-secondary" target="_blank">
+      📄 Preprint (v7)
     </a>
   </div>
+</div>
+
+<div class="clinical-note" style="margin-top: 1.5rem;">
+  <strong>📝 Preprint Available:</strong> Our technical paper is available as a <a href="/files/oncoseg_preprint_v7.pdf" target="_blank"><strong>preprint</strong></a> (not yet peer-reviewed). In the spirit of open science, we are releasing this work early so others can build upon it, provide feedback, and accelerate progress in medical imaging AI.
 </div>
 
 <div class="demo-container">
@@ -371,11 +392,60 @@ layout: default
 
 <p><strong>Infrastructure:</strong> 4× NVIDIA RTX 4090 GPUs, PyTorch Lightning, Weights & Biases tracking</p>
 
+<h2 class="section-title">napari Plugin</h2>
+
+<p>Onco-Seg is available as a <strong>napari plugin</strong> for interactive medical image segmentation. The plugin provides a graphical interface for clinicians and researchers who prefer point-and-click workflows over command-line tools.</p>
+
+<div class="feature-grid">
+  <div class="feature-card">
+    <h4><span class="emoji-icon">🖱️</span> Interactive Segmentation</h4>
+    <p>Click-to-segment with point prompts or draw bounding boxes. See results instantly overlaid on your medical image.</p>
+  </div>
+
+  <div class="feature-card">
+    <h4><span class="emoji-icon">📝</span> Multiple Prompt Types</h4>
+    <p>Point prompts (click on target) and box prompts (draw rectangle)—text-based prompting planned for future releases.</p>
+  </div>
+
+  <div class="feature-card">
+    <h4><span class="emoji-icon">📦</span> Multi-Format Export</h4>
+    <p>Save segmentation masks as NIfTI (.nii.gz) for research or DICOM-RT Structure Sets for radiation oncology treatment planning systems.</p>
+  </div>
+
+  <div class="feature-card">
+    <h4><span class="emoji-icon">🔄</span> 3D Propagation</h4>
+    <p>Segment one slice, propagate to the entire volume. The plugin handles slice-by-slice inference with centroid tracking.</p>
+  </div>
+</div>
+
+<div class="explainer-box">
+  <h3>Installation</h3>
+  <p>The napari plugin is included in the main repository:</p>
+</div>
+
+```bash
+# Clone the repository
+git clone https://github.com/inventcures/onco-segment.git
+cd onco-segment/napari_plugin
+
+# Install in development mode
+pip install -e ".[dev]"
+
+# Launch napari
+napari
+# Then go to Plugins > OncoSeg
+```
+
+<p>The plugin supports automatic checkpoint download from HuggingFace, with pre-trained models for general-purpose segmentation as well as specialized checkpoints for breast, liver, and brain imaging.</p>
+
 <h2 class="section-title">Get Started</h2>
 
 <div class="cta-buttons" style="justify-content: flex-start;">
   <a href="https://github.com/inventcures/onco-segment" class="cta-button cta-primary" target="_blank">
     📦 View Code
+  </a>
+  <a href="https://github.com/inventcures/onco-segment/tree/main/napari_plugin" class="cta-button cta-outline" target="_blank">
+    🔌 napari Plugin
   </a>
   <a href="mailto:ashish.makani@ashoka.edu.in?subject=Onco-Seg%20Model%20Access" class="cta-button cta-secondary">
     📧 Request Model Access

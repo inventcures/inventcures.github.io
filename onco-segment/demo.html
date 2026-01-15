@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OncoSeg Demo - Brain Tumor Visualization</title>
+    <style>
+:root {
+    --bg-dark: #0d1117;
+    --bg-card: #161b22;
+    --bg-hover: #21262d;
+    --border-color: #30363d;
+    --text-primary: #f0f6fc;
+    --text-secondary: #8b949e;
+    --text-muted: #6e7681;
+    --accent-blue: #58a6ff;
+    --accent-green: #3fb950;
+    --accent-red: #f85149;
+    --tumor-red: #ff4444;
+    --edema-yellow: #ffaa00;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    background: linear-gradient(135deg, var(--accent-blue), #a371f7);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.logo-text {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--bg-hover);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.header-btn:hover {
+    background: var(--bg-card);
+    color: var(--text-primary);
+    border-color: var(--text-muted);
+}
+
+.main-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 24px;
+}
+
+.viewer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 700px;
+}
+
+.viewport-container {
+    position: relative;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+#imageCanvas, #overlayCanvas {
+    display: block;
+}
+
+#overlayCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.viewport-annotations {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    padding: 12px;
+    font-size: 13px;
+    color: var(--accent-green);
+    font-family: monospace;
+}
+
+.annotation { position: absolute; }
+.annotation.top-left { top: 12px; left: 12px; }
+.annotation.top-right { top: 12px; right: 12px; text-align: right; }
+.annotation.bottom-left { bottom: 12px; left: 12px; }
+.annotation.bottom-right { bottom: 12px; right: 12px; text-align: right; }
+
+.controls-panel {
+    background: var(--bg-card);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.slice-control {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.slice-control label {
+    color: var(--text-secondary);
+    font-size: 14px;
+    min-width: 50px;
+}
+
+.slice-slider {
+    flex: 1;
+    -webkit-appearance: none;
+    height: 8px;
+    background: var(--bg-dark);
+    border-radius: 4px;
+    outline: none;
+}
+
+.slice-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--accent-blue);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(88, 166, 255, 0.4);
+}
+
+.slice-value {
+    color: var(--text-primary);
+    font-weight: 600;
+    min-width: 80px;
+    text-align: right;
+}
+
+.controls-row {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.control-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.control-group label {
+    display: block;
+    color: var(--text-muted);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.control-group input[type="range"] {
+    width: 100%;
+    -webkit-appearance: none;
+    height: 4px;
+    background: var(--bg-dark);
+    border-radius: 2px;
+}
+
+.control-group input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    background: var(--text-secondary);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.info-panel {
+    background: var(--bg-card);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    width: 280px;
+}
+
+.panel-title {
+    color: var(--text-muted);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.info-row:last-child { border-bottom: none; }
+
+.info-label { color: var(--text-secondary); font-size: 13px; }
+.info-value { color: var(--text-primary); font-size: 13px; font-weight: 500; }
+
+.legend {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+}
+
+.legend-color {
+    width: 20px;
+    height: 4px;
+    border-radius: 2px;
+}
+
+.legend-color.tumor { background: var(--tumor-red); }
+.legend-color.edema { background: var(--edema-yellow); }
+
+.legend-text { color: var(--text-secondary); font-size: 13px; }
+
+.toggle-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+}
+
+.toggle-row input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--accent-blue);
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--bg-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    z-index: 1000;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid var(--border-color);
+    border-top-color: var(--accent-blue);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading-text {
+    color: var(--text-secondary);
+    font-size: 16px;
+}
+
+.loading-progress {
+    width: 200px;
+    height: 4px;
+    background: var(--border-color);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.loading-progress-bar {
+    height: 100%;
+    background: var(--accent-blue);
+    width: 0%;
+    transition: width 0.3s;
+}
+
+.keyboard-hint {
+    margin-top: 16px;
+    padding: 12px;
+    background: var(--bg-dark);
+    border-radius: 8px;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.keyboard-hint kbd {
+    background: var(--bg-hover);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+@media (max-width: 900px) {
+    .main-container { flex-direction: column; align-items: center; }
+    .info-panel { width: 100%; max-width: 700px; }
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-left">
+            <div class="logo">
+                <span class="logo-icon">MRI</span>
+                <span class="logo-text">OncoSeg Demo</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <a href="https://github.com/inventcures/onco-segment" class="header-btn" target="_blank">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                </svg>
+                GitHub
+            </a>
+            <a href="./" class="header-btn">← Back</a>
+        </div>
+    </header>
+
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <div class="loading-text" id="loadingText">Loading brain MRI...</div>
+        <div class="loading-progress">
+            <div class="loading-progress-bar" id="loadingBar"></div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="viewer-section">
+            <div class="viewport-container">
+                <canvas id="imageCanvas" width="600" height="600"></canvas>
+                <canvas id="overlayCanvas" width="600" height="600"></canvas>
+                <div class="viewport-annotations">
+                    <div class="annotation top-left">
+                        <div>Brain FLAIR</div>
+                        <div id="caseId">BRATS_001</div>
+                    </div>
+                    <div class="annotation top-right">
+                        <div id="sliceInfo">--/--</div>
+                        <div>Axial</div>
+                    </div>
+                    <div class="annotation bottom-right">
+                        <div id="zoomLevel">1.0x</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls-panel">
+                <div class="slice-control">
+                    <label>Slice:</label>
+                    <input type="range" id="sliceSlider" class="slice-slider" min="0" max="154" value="77">
+                    <span class="slice-value" id="sliceValue">78 / 155</span>
+                </div>
+                <div class="controls-row">
+                    <div class="control-group">
+                        <label>BRIGHTNESS</label>
+                        <input type="range" id="brightness" min="0" max="200" value="100">
+                    </div>
+                    <div class="control-group">
+                        <label>CONTRAST</label>
+                        <input type="range" id="contrast" min="0" max="200" value="100">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <h3 class="panel-title">CASE INFORMATION</h3>
+            <div class="info-row">
+                <span class="info-label">Modality</span>
+                <span class="info-value">MRI (FLAIR)</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Organ</span>
+                <span class="info-value">Brain</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Pathology</span>
+                <span class="info-value">Glioblastoma</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Dimensions</span>
+                <span class="info-value" id="dimensions">--</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Tumor Slices</span>
+                <span class="info-value" id="tumorRange">--</span>
+            </div>
+
+            <div class="legend">
+                <h3 class="panel-title">SEGMENTATION LEGEND</h3>
+                <div class="toggle-row">
+                    <input type="checkbox" id="showTumor" checked>
+                    <div class="legend-color tumor"></div>
+                    <span class="legend-text">Tumor Core</span>
+                </div>
+                <div class="toggle-row">
+                    <input type="checkbox" id="showEdema" checked>
+                    <div class="legend-color edema"></div>
+                    <span class="legend-text">Peritumoral Edema</span>
+                </div>
+            </div>
+
+            <div class="keyboard-hint">
+                <strong>Controls:</strong><br>
+                <kbd>↑</kbd><kbd>↓</kbd> or scroll: Navigate slices<br>
+                <kbd>+</kbd><kbd>-</kbd>: Zoom in/out<br>
+                <kbd>R</kbd>: Reset view
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/nifti-reader-js@0.6.8/dist/nifti-reader.min.js"></script>
+    <script>
+class DemoViewer {
+    constructor() {
+        this.canvas = document.getElementById('imageCanvas');
+        this.overlayCanvas = document.getElementById('overlayCanvas');
+        this.ctx = this.canvas.getContext('2d');
+        this.overlayCtx = this.overlayCanvas.getContext('2d');
+
+        this.volumeData = null;
+        this.contours = {};
+        this.edemaContours = {};
+        this.metadata = null;
+
+        this.currentSlice = 0;
+        this.totalSlices = 0;
+        this.imageWidth = 0;
+        this.imageHeight = 0;
+
+        this.zoom = 1.0;
+        this.pan = { x: 0, y: 0 };
+        this.brightness = 100;
+        this.contrast = 100;
+
+        this.showTumor = true;
+        this.showEdema = true;
+
+        this.sliceMinMax = {};
+        this.offscreenCanvas = document.createElement('canvas');
+        this.offscreenCtx = this.offscreenCanvas.getContext('2d');
+        this.imageDataBuffer = null;
+
+        this.isDragging = false;
+        this.lastMousePos = { x: 0, y: 0 };
+
+        this.init();
+    }
+
+    async init() {
+        this.setupEventListeners();
+        await this.loadDemoData();
+    }
+
+    setupEventListeners() {
+        document.getElementById('sliceSlider').addEventListener('input', (e) => {
+            this.currentSlice = parseInt(e.target.value);
+            this.updateSliceDisplay();
+            this.render();
+        });
+
+        document.getElementById('brightness').addEventListener('input', (e) => {
+            this.brightness = parseInt(e.target.value);
+            this.render();
+        });
+
+        document.getElementById('contrast').addEventListener('input', (e) => {
+            this.contrast = parseInt(e.target.value);
+            this.render();
+        });
+
+        document.getElementById('showTumor').addEventListener('change', (e) => {
+            this.showTumor = e.target.checked;
+            this.render();
+        });
+
+        document.getElementById('showEdema').addEventListener('change', (e) => {
+            this.showEdema = e.target.checked;
+            this.render();
+        });
+
+        this.canvas.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            if (e.deltaY < 0) this.nextSlice();
+            else this.prevSlice();
+        });
+
+        this.canvas.addEventListener('mousedown', (e) => {
+            this.isDragging = true;
+            this.lastMousePos = { x: e.clientX, y: e.clientY };
+        });
+
+        this.canvas.addEventListener('mousemove', (e) => {
+            if (!this.isDragging) return;
+            const dx = e.clientX - this.lastMousePos.x;
+            const dy = e.clientY - this.lastMousePos.y;
+            this.brightness = Math.max(0, Math.min(200, this.brightness + dy * 0.5));
+            this.contrast = Math.max(0, Math.min(200, this.contrast + dx * 0.5));
+            document.getElementById('brightness').value = this.brightness;
+            document.getElementById('contrast').value = this.contrast;
+            this.render();
+            this.lastMousePos = { x: e.clientX, y: e.clientY };
+        });
+
+        this.canvas.addEventListener('mouseup', () => this.isDragging = false);
+        this.canvas.addEventListener('mouseleave', () => this.isDragging = false);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowUp' || e.key === 'ArrowRight') this.nextSlice();
+            else if (e.key === 'ArrowDown' || e.key === 'ArrowLeft') this.prevSlice();
+            else if (e.key === '+' || e.key === '=') this.zoomIn();
+            else if (e.key === '-') this.zoomOut();
+            else if (e.key === 'r' || e.key === 'R') this.resetView();
+        });
+    }
+
+    updateLoading(text, progress) {
+        document.getElementById('loadingText').textContent = text;
+        document.getElementById('loadingBar').style.width = progress + '%';
+    }
+
+    hideLoading() {
+        document.getElementById('loadingOverlay').style.display = 'none';
+    }
+
+    async loadDemoData() {
+        try {
+            this.updateLoading('Loading metadata...', 10);
+            const metaResponse = await fetch('demo-data/metadata.json');
+            this.metadata = await metaResponse.json();
+
+            this.updateLoading('Loading contours...', 30);
+            const contoursResponse = await fetch('demo-data/contours.json');
+            const contoursData = await contoursResponse.json();
+            this.contours = contoursData.tumor_contours || {};
+            this.edemaContours = contoursData.edema_contours || {};
+
+            this.updateLoading('Loading MRI volume (~3MB)...', 50);
+            const niftiResponse = await fetch('demo-data/brats_flair.nii.gz');
+            const arrayBuffer = await niftiResponse.arrayBuffer();
+
+            this.updateLoading('Decompressing...', 80);
+            await this.parseNifti(arrayBuffer);
+
+            this.updateLoading('Rendering...', 95);
+            this.updateUI();
+            this.render();
+
+            this.hideLoading();
+
+        } catch (error) {
+            console.error('Failed to load demo data:', error);
+            document.getElementById('loadingText').textContent = 'Error loading demo data. Please refresh.';
+        }
+    }
+
+    async parseNifti(arrayBuffer) {
+        let data = arrayBuffer;
+
+        if (nifti.isCompressed(data)) {
+            data = nifti.decompress(data);
+        }
+
+        if (!nifti.isNIFTI(data)) {
+            throw new Error('Not a valid NIfTI file');
+        }
+
+        const header = nifti.readHeader(data);
+        const imageData = nifti.readImage(header, data);
+
+        this.totalSlices = header.dims[1];
+        this.imageHeight = header.dims[2];
+        this.imageWidth = header.dims[3];
+
+        const typedData = new Float32Array(imageData);
+        this.volumeData = typedData;
+
+        this.currentSlice = this.metadata?.recommended_start_slice || Math.floor(this.totalSlices / 2);
+    }
+
+    updateUI() {
+        const slider = document.getElementById('sliceSlider');
+        slider.max = this.totalSlices - 1;
+        slider.value = this.currentSlice;
+        this.updateSliceDisplay();
+
+        document.getElementById('dimensions').textContent =
+            `${this.imageWidth}×${this.imageHeight}×${this.totalSlices}`;
+
+        if (this.metadata?.tumor_slice_range) {
+            document.getElementById('tumorRange').textContent =
+                `${this.metadata.tumor_slice_range[0]}-${this.metadata.tumor_slice_range[1]}`;
+        }
+    }
+
+    updateSliceDisplay() {
+        document.getElementById('sliceValue').textContent = `${this.currentSlice + 1} / ${this.totalSlices}`;
+        document.getElementById('sliceSlider').value = this.currentSlice;
+        document.getElementById('sliceInfo').textContent = `${this.currentSlice + 1}/${this.totalSlices}`;
+    }
+
+    render() {
+        if (!this.volumeData) return;
+
+        const width = this.canvas.width;
+        const height = this.canvas.height;
+
+        this.ctx.fillStyle = '#000';
+        this.ctx.fillRect(0, 0, width, height);
+
+        const sliceSize = this.imageWidth * this.imageHeight;
+        const sliceOffset = this.currentSlice * sliceSize;
+
+        if (!this.sliceMinMax[this.currentSlice]) {
+            let min = Infinity, max = -Infinity;
+            for (let i = 0; i < sliceSize; i++) {
+                const val = this.volumeData[sliceOffset + i];
+                if (val < min) min = val;
+                if (val > max) max = val;
+            }
+            this.sliceMinMax[this.currentSlice] = { min, max };
+        }
+        const { min, max } = this.sliceMinMax[this.currentSlice];
+
+        if (!this.imageDataBuffer || this.offscreenCanvas.width !== this.imageWidth) {
+            this.offscreenCanvas.width = this.imageWidth;
+            this.offscreenCanvas.height = this.imageHeight;
+            this.imageDataBuffer = this.offscreenCtx.createImageData(this.imageWidth, this.imageHeight);
+        }
+
+        const brightnessFactor = this.brightness / 100;
+        const contrastFactor = this.contrast / 100;
+        const range = max - min || 1;
+        const data = this.imageDataBuffer.data;
+
+        for (let i = 0; i < sliceSize; i++) {
+            let val = (this.volumeData[sliceOffset + i] - min) / range;
+            val = (val - 0.5) * contrastFactor + 0.5;
+            val = val * brightnessFactor;
+            val = Math.max(0, Math.min(1, val)) * 255;
+
+            const idx = i * 4;
+            data[idx] = val;
+            data[idx + 1] = val;
+            data[idx + 2] = val;
+            data[idx + 3] = 255;
+        }
+
+        this.offscreenCtx.putImageData(this.imageDataBuffer, 0, 0);
+
+        const scale = Math.min(width / this.imageWidth, height / this.imageHeight) * this.zoom;
+        const displayWidth = this.imageWidth * scale;
+        const displayHeight = this.imageHeight * scale;
+        const offsetX = (width - displayWidth) / 2 + this.pan.x;
+        const offsetY = (height - displayHeight) / 2 + this.pan.y;
+
+        this.ctx.imageSmoothingEnabled = false;
+        this.ctx.drawImage(this.offscreenCanvas, offsetX, offsetY, displayWidth, displayHeight);
+
+        document.getElementById('zoomLevel').textContent = this.zoom.toFixed(1) + 'x';
+
+        this.renderOverlay(offsetX, offsetY, scale);
+    }
+
+    renderOverlay(offsetX, offsetY, scale) {
+        this.overlayCtx.clearRect(0, 0, this.overlayCanvas.width, this.overlayCanvas.height);
+
+        if (this.showEdema) {
+            this.drawContourSet(this.edemaContours[this.currentSlice], offsetX, offsetY, scale, '#ffaa00', 2);
+        }
+        if (this.showTumor) {
+            this.drawContourSet(this.contours[this.currentSlice], offsetX, offsetY, scale, '#ff4444', 2.5);
+        }
+    }
+
+    drawContourSet(contour, offsetX, offsetY, scale, color, lineWidth) {
+        if (!contour || contour.length === 0) return;
+
+        const ctx = this.overlayCtx;
+        ctx.strokeStyle = color;
+        ctx.lineWidth = lineWidth;
+
+        for (const path of contour) {
+            if (path.length < 2) continue;
+
+            ctx.beginPath();
+            ctx.moveTo(offsetX + path[0][1] * scale, offsetY + path[0][0] * scale);
+
+            for (let i = 1; i < path.length; i++) {
+                ctx.lineTo(offsetX + path[i][1] * scale, offsetY + path[i][0] * scale);
+            }
+
+            ctx.closePath();
+            ctx.stroke();
+        }
+    }
+
+    nextSlice() {
+        if (this.currentSlice < this.totalSlices - 1) {
+            this.currentSlice++;
+            this.updateSliceDisplay();
+            this.render();
+        }
+    }
+
+    prevSlice() {
+        if (this.currentSlice > 0) {
+            this.currentSlice--;
+            this.updateSliceDisplay();
+            this.render();
+        }
+    }
+
+    zoomIn() {
+        this.zoom = Math.min(5, this.zoom * 1.2);
+        this.render();
+    }
+
+    zoomOut() {
+        this.zoom = Math.max(0.5, this.zoom / 1.2);
+        this.render();
+    }
+
+    resetView() {
+        this.zoom = 1.0;
+        this.pan = { x: 0, y: 0 };
+        this.brightness = 100;
+        this.contrast = 100;
+        document.getElementById('brightness').value = 100;
+        document.getElementById('contrast').value = 100;
+        this.render();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    window.viewer = new DemoViewer();
+});
+    </script>
+</body>
+</html>

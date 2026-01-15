@@ -1,0 +1,24 @@
+{
+  "case_id": "BRATS_001",
+  "modality": "MRI",
+  "sequence": "FLAIR",
+  "organ": "Brain",
+  "pathology": "Glioblastoma",
+  "dimensions": [
+    155,
+    240,
+    240
+  ],
+  "voxel_spacing": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "tumor_slice_range": [
+    32,
+    101
+  ],
+  "recommended_start_slice": 67,
+  "source": "BraTS 2021 Challenge (Medical Segmentation Decathlon)",
+  "license": "CC BY-SA 4.0"
+}

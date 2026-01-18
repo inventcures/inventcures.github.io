@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antibodies from Thin Air | AI Drug Discovery | InventCures</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --jam2: #E63946;
+            --chai2: #457B9D;
+            --origin1: #2A9D8F;
+            --rfantibody: #E9C46A;
+            --accent: #1D3557;
+            --text: #333333;
+            --light-bg: #F8F8F8;
+            --border: #E0E0E0;
+            --gpcr: #3498DB;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            color: var(--text);
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #fff;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            font-size: 2.4em;
+            color: var(--accent);
+            margin-bottom: 0.3em;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 0.5em;
+        }
+
+        .date {
+            font-style: italic;
+            color: #888;
+            margin-bottom: 1em;
+        }
+
+        .pdf-notice {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e8f4f8 100%);
+            border-left: 4px solid var(--chai2);
+            padding: 1em 1.5em;
+            margin: 1.5em 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95em;
+        }
+
+        .pdf-notice p {
+            margin: 0;
+        }
+
+        .pdf-notice a {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 1.6em;
+            color: var(--accent);
+            margin-top: 2em;
+            margin-bottom: 0.8em;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.3em;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            color: var(--text);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        p {
+            margin-bottom: 1.2em;
+        }
+
+        .lead {
+            font-size: 1.15em;
+            line-height: 1.8;
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        strong {
+            font-weight: 600;
+        }
+
+        .primer-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-left: 4px solid var(--accent);
+            padding: 1.5em 2em;
+            margin: 1.5em 0 2.5em 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .primer-section h2 {
+            border-bottom: none;
+            margin-top: 0;
+            color: var(--accent);
+        }
+
+        .antibody-diagram {
+            text-align: center;
+            margin: 1.5em 0;
+            padding: 1em;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .antibody-diagram svg {
+            max-width: 400px;
+            height: auto;
+        }
+
+        .platform-card {
+            border-left: 4px solid var(--accent);
+            background: var(--light-bg);
+            padding: 1.2em 1.5em;
+            margin: 1.5em 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .platform-card.jam2 { border-color: var(--jam2); }
+        .platform-card.chai2 { border-color: var(--chai2); }
+        .platform-card.origin1 { border-color: var(--origin1); }
+        .platform-card.rfantibody { border-color: var(--rfantibody); }
+
+        .platform-card h3 {
+            margin-top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .platform-card .tagline {
+            font-size: 0.85em;
+            color: #666;
+            font-style: italic;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1em;
+            margin: 1.5em 0;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 1em;
+            background: var(--light-bg);
+            border-radius: 8px;
+        }
+
+        .stat-box .number {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .stat-box .label {
+            font-size: 0.85em;
+            color: #666;
+        }
+
+        .chart-container {
+            background: var(--light-bg);
+            padding: 1.5em;
+            border-radius: 12px;
+            margin: 2em 0;
+        }
+
+        .chart-container h4 {
+            text-align: center;
+            margin-bottom: 1em;
+            color: var(--accent);
+            font-size: 1.1em;
+        }
+
+        .chart-container .source {
+            font-size: 0.8em;
+            color: #888;
+            text-align: right;
+            margin-top: 0.5em;
+        }
+
+        .chart-wrapper {
+            position: relative;
+            height: 350px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+            font-size: 0.95em;
+        }
+
+        th, td {
+            padding: 0.8em 1em;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: var(--accent);
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background: var(--light-bg);
+        }
+
+        .callout {
+            background: linear-gradient(135deg, var(--chai2) 0%, var(--accent) 100%);
+            color: white;
+            padding: 1.5em 2em;
+            border-radius: 12px;
+            margin: 2em 0;
+        }
+
+        .callout h3 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .oncology-section {
+            border-top: 3px solid var(--jam2);
+            margin-top: 2.5em;
+            padding-top: 1em;
+        }
+
+        .target-category {
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #666;
+            margin-top: 2em;
+            margin-bottom: 0.5em;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 1em 0;
+            margin: 2em 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 1em 0;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 12px;
+            height: 12px;
+            background: var(--chai2);
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item.future::before {
+            background: #ccc;
+            border: 2px dashed var(--accent);
+        }
+
+        .timeline-left, .timeline-right {
+            width: 45%;
+        }
+
+        .timeline-left {
+            text-align: right;
+            padding-right: 2em;
+        }
+
+        .timeline-right {
+            padding-left: 2em;
+        }
+
+        .caveat-box {
+            border: 2px solid #E63946;
+            background: rgba(230, 57, 70, 0.05);
+            padding: 1.5em;
+            border-radius: 8px;
+            margin: 2em 0;
+        }
+
+        .caveat-box h3 {
+            color: #E63946;
+            margin-top: 0;
+        }
+
+        ul {
+            margin: 1em 0 1em 1.5em;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        .pipeline-viz {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 2em 0;
+            overflow-x: auto;
+            padding: 1em 0;
+        }
+
+        .pipeline-stage {
+            flex: 1;
+            min-width: 90px;
+            text-align: center;
+            padding: 0.8em 0.5em;
+            margin: 0 0.2em;
+            border-radius: 8px;
+            font-size: 0.8em;
+            position: relative;
+        }
+
+        .pipeline-stage.done {
+            background: rgba(42, 157, 143, 0.2);
+            border: 2px solid var(--origin1);
+        }
+
+        .pipeline-stage.partial {
+            background: rgba(233, 196, 106, 0.2);
+            border: 2px solid var(--rfantibody);
+        }
+
+        .pipeline-stage.future {
+            background: rgba(128, 128, 128, 0.1);
+            border: 2px dashed #999;
+            color: #666;
+        }
+
+        .pipeline-stage::after {
+            content: '\2192';
+            position: absolute;
+            right: -0.8em;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+
+        .pipeline-stage:last-child::after {
+            content: '';
+        }
+
+        blockquote {
+            border-left: 4px solid var(--chai2);
+            padding-left: 1.5em;
+            margin: 1.5em 0;
+            font-style: italic;
+            color: #555;
+        }
+
+        .footer {
+            margin-top: 3em;
+            padding-top: 2em;
+            border-top: 1px solid var(--border);
+            font-size: 0.9em;
+            color: #666;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            .stat-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+            }
+
+            .timeline-left, .timeline-right {
+                width: 100%;
+                text-align: center;
+                padding: 0.5em 0;
+            }
+
+            .timeline::before {
+                left: 1em;
+            }
+
+            .timeline-item::before {
+                left: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="back-link">&larr; Back to Home</a>
+
+    <article>
+        <h1>Antibodies from Thin Air</h1>
+        <p class="subtitle">Four AI Platforms Are Rewriting the Rules of Cancer Drug Discovery</p>
+        <p class="date">January 2026</p>
+
+        <div class="pdf-notice">
+            <p>This post is intended to be brief and accessible to a lay audience. For a more scientific and detailed exposition, <a href="/files/v3_denovo_antibody_design_comparison.pdf" target="_blank">read the full technical report (PDF)</a>.</p>
+        </div>
+
+        <!-- PRIMER SECTION -->
+        <div class="primer-section">
+            <h2>A Quick Primer: What Are Antibodies, Anyway?</h2>
+
+            <p>Before we dive into the AI revolution, let's talk about what we're actually designing.</p>
+
+            <p>Antibodies are Y-shaped proteins your immune system makes to fight infections. Each antibody is exquisitely specific—it recognizes one target (an "antigen") and grabs onto it like a lock-and-key. Your body can generate billions of different antibodies, each with a unique binding site, which is why you can fight off such a diverse range of pathogens.</p>
+
+            <div class="antibody-diagram">
+                <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Y-shaped antibody body -->
+                    <path d="M200 280 L200 180 L120 100 L100 80 L110 60 L130 60 L140 80 L160 120 L200 180 L240 120 L260 80 L270 60 L290 60 L300 80 L280 100 L200 180"
+                          fill="#E8F0F8" stroke="#1D3557" stroke-width="3"/>
+
+                    <!-- CDR regions (binding sites) -->
+                    <circle cx="120" cy="70" r="15" fill="#E63946"/>
+                    <circle cx="280" cy="70" r="15" fill="#E63946"/>
+
+                    <!-- Target antigen -->
+                    <circle cx="80" cy="40" r="20" fill="#2A9D8F" opacity="0.7"/>
+                    <line x1="95" y1="50" x2="110" y2="65" stroke="#666" stroke-width="2" stroke-dasharray="5,3"/>
+
+                    <!-- Labels -->
+                    <text x="320" y="75" font-size="12" fill="#333">Variable Region (Fab)</text>
+                    <text x="320" y="92" font-size="10" fill="#666" font-style="italic">Where binding happens</text>
+                    <text x="220" y="250" font-size="12" fill="#333">Constant Region (Fc)</text>
+                    <text x="220" y="267" font-size="10" fill="#666" font-style="italic">Talks to immune system</text>
+                    <text x="120" y="45" font-size="10" fill="#E63946" font-weight="bold">CDRs</text>
+                    <text x="280" y="45" font-size="10" fill="#E63946" font-weight="bold">CDRs</text>
+                    <text x="50" y="25" font-size="10" fill="#2A9D8F">Target</text>
+                </svg>
+                <p style="font-size: 0.85em; color: #666; margin-top: 0.5em;"><strong>Antibody structure.</strong> The Y-shaped protein has two arms (Fab regions) that bind targets, and a stem (Fc region) that signals the immune system. The CDRs at the tips are where specificity comes from—and where AI design focuses.</p>
+            </div>
+
+            <p>Pharma companies figured out they could turn antibodies into drugs. Instead of fighting infections, therapeutic antibodies can:</p>
+            <ul>
+                <li>Block cancer growth signals (Herceptin for HER2+ breast cancer)</li>
+                <li>Unleash the immune system on tumors (Keytruda, worth $30 billion in 2024)</li>
+                <li>Neutralize inflammatory molecules (Humira for autoimmune disease)</li>
+            </ul>
+
+            <p>The problem? Making these antibodies has been stuck in the 1970s.</p>
+
+            <h3>The Old Way: Mice, Prayers, and Luck</h3>
+            <p>Here's the traditional process: You inject a mouse with your target protein. Wait weeks for its immune system to respond. Harvest B cells from its spleen. Fuse them with immortal cancer cells to create "hybridomas." Screen thousands of these colonies. Hope one produces an antibody that binds where you want it to.</p>
+            <p>This takes 12–24 months. Most campaigns fail.</p>
+
+            <h3>The New Way: Design from First Principles</h3>
+            <p>What if you could skip the mice entirely?</p>
+            <p>That's what "de novo" antibody design promises. Instead of evolving antibodies through biological selection, you <em>compute</em> them. You specify exactly where on the target you want to bind (the "epitope"), and software generates protein sequences that should fold into antibodies hitting that exact spot.</p>
+            <p>Until recently, this was science fiction. Now it's not.</p>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <h2>The $200 Billion Shakeup</h2>
+
+        <p class="lead">The antibody business has a dirty secret.</p>
+
+        <p>Behind the $200 billion market, behind the gleaming biologics facilities and the billion-dollar acquisitions, there's a process that would embarrass a medieval alchemist. Inject mice, wait, hope. That's basically it.</p>
+
+        <p><strong>Four groups just demonstrated something different.</strong></p>
+
+        <p>Using generative AI—the same class of technology behind ChatGPT and Midjourney—they've shown you can design antibodies <em>de novo</em>. From scratch. No mice, no phage display, no hybridomas. You specify where on the target you want to bind, and the software generates sequences that fold into antibodies capable of hitting that spot with nanomolar affinity.</p>
+
+        <div class="stat-grid">
+            <div class="stat-box">
+                <div class="number">15-40%</div>
+                <div class="label">Hit Rates</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">4-8 wks</div>
+                <div class="label">Timeline</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">First</div>
+                <div class="label">GPCR Agonist</div>
+            </div>
+        </div>
+
+        <p>This is JAM-2 from Nabla Bio, Chai-2 from Chai Discovery, Origin-1 from AbSci, and RFAntibody from the Baker Lab—with hundreds to thousands of experimentally validated designs, cryo-EM structural confirmation, and (in one case) an MIT license that lets anyone reproduce the work.</p>
+
+        <h2>The Four Contenders</h2>
+
+        <div class="platform-card jam2">
+            <h3>JAM-2 <span class="tagline">"The Pragmatist"</span></h3>
+            <p>Nabla Bio's JAM-2 has the numbers that make drug hunters pay attention: a <strong>39% hit rate</strong> for VHH-Fc antibodies, 18% for full mAbs, tested across 923+ designs on 26+ targets. More importantly, 57% of their designs pass <em>all</em> developability filters on the first try—thermostability, monomericity, low polyreactivity—without any optimization.</p>
+            <p>The architecture is zero-shot, meaning the model doesn't need to be retrained for each new target. Designs are genuinely novel: over 95% have RMSD >10 Å to the closest known structure. They've hit GPCRs (CXCR4 at 1.4 nM), checkpoint inhibitors (PD-L1), and receptor tyrosine kinases (TrkA at &lt;100 pM).</p>
+        </div>
+
+        <div class="platform-card chai2">
+            <h3>Chai-2 <span class="tagline">"The Precision Instrument"</span></h3>
+            <p>Chai Discovery's Chai-2 achieves something almost unreasonable: structural accuracy below <strong>1.7 Å RMSD</strong>. Their cryo-EM validations show interface RMSDs as low as 0.54 Å—essentially atomic-level prediction of where the antibody contacts the antigen.</p>
+            <p>Their KRAS G12V antibody binds at 1.5 nM and discriminates between G12V and wild-type <em>and</em> G12D—a single amino acid difference. But the headline is the GPCR agonist: an antibody against CXCR4 that doesn't just bind—it <strong>activates</strong> the receptor (EC50 = 164 nM). That's never been done computationally.</p>
+        </div>
+
+        <div class="platform-card origin1">
+            <h3>Origin-1 <span class="tagline">"The Pioneer"</span></h3>
+            <p>AbSci's Origin-1 is built for a specific problem: targets where no structural precedent exists. Their "zero-prior" epitope focus means they're designing antibodies for binding sites with ≤60% sequence identity to any protein with a known antibody complex.</p>
+            <p>Hit rates are lower (~4% per target), but the targets they're hitting are precisely the ones that fail with conventional methods. Cryo-EM validation on COL6A3 and AZGP1 confirms the structures are real.</p>
+        </div>
+
+        <div class="platform-card rfantibody">
+            <h3>RFAntibody <span class="tagline">"The Open-Source Idealist"</span></h3>
+            <p>David Baker's lab has released RFAntibody under an <strong>MIT license</strong>, making it the only fully reproducible option. The hit rates are lower (~1-2%) and you need to generate 9,000+ designs per target, but the validation is rigorous.</p>
+            <p>For academic labs and biotechs that can't afford proprietary platforms, this is a genuine alternative. The trade-off is throughput—months of validation versus weeks for commercial platforms.</p>
+        </div>
+
+        <h2>The Head-to-Head</h2>
+
+        <p>So which platform wins? It depends on what you're optimizing for.</p>
+
+        <div class="chart-container">
+            <h4>Hit Rate vs. Design Efficiency</h4>
+            <div class="chart-wrapper">
+                <canvas id="efficiencyChart"></canvas>
+            </div>
+            <p class="source">Source: Platform publications 2024–2025</p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Platform</th>
+                    <th>Compute</th>
+                    <th>Designs/Target</th>
+                    <th>Wet-Lab</th>
+                    <th>Open Source</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>JAM-2</strong></td>
+                    <td>2-3 days</td>
+                    <td>45-100</td>
+                    <td>&lt;4 weeks</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td><strong>Chai-2</strong></td>
+                    <td>~1 week</td>
+                    <td>50-100</td>
+                    <td>2 weeks</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td><strong>Origin-1</strong></td>
+                    <td>~1 week</td>
+                    <td>&lt;100</td>
+                    <td>6 weeks</td>
+                    <td>Partial</td>
+                </tr>
+                <tr>
+                    <td><strong>RFAntibody</strong></td>
+                    <td>~1 week</td>
+                    <td>9,000+</td>
+                    <td>Months</td>
+                    <td>Yes (MIT)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- ONCOLOGY SECTION -->
+        <div class="oncology-section">
+            <h2>The Oncology Landscape: Where AI Meets Cancer</h2>
+
+            <p>Cancer is where these platforms will prove their worth—or won't. The oncology antibody market represents over $80 billion annually, and the targets are as diverse as cancer itself.</p>
+
+            <p class="target-category">Immune Checkpoints</p>
+            <p><strong>PD-L1 (CD274):</strong> JAM-2 demonstrated low-nanomolar VHH binders against PD-L1. With 1,996 disease associations and 13 approved drugs (durvalumab, atezolizumab, avelumab), PD-L1 is as validated as targets get.</p>
+
+            <p class="target-category">Receptor Tyrosine Kinases</p>
+            <p><strong>VEGFR2:</strong> JAM-2 achieved 3.3 nM binding—the receptor that drives tumor angiogenesis across virtually every solid tumor type.</p>
+            <p><strong>TrkA:</strong> JAM-2's sub-100 pM avid binding is remarkable. NTRK fusions drive cancers across tissue types—the basis for tumor-agnostic drugs like larotrectinib.</p>
+
+            <p class="target-category">Oncology GPCRs — The New Frontier</p>
+            <p>This is where the platforms diverge most dramatically. GPCRs have been "undruggable" by antibodies for decades. Now they're not.</p>
+
+            <p><strong>CXCR4:</strong> The metastasis receptor. JAM-2's 1.4 nM binder and Chai-2's 164 nM functional agonist represent two different approaches: pure affinity versus functional modulation.</p>
+            <p><strong>CCR8:</strong> The Treg target. Expressed selectively on tumor-infiltrating regulatory T cells. Chai-2's 453 pM binder (50% hit rate) represents a potential first-in-class opportunity—zero approved drugs exist.</p>
+            <p><strong>GPRC5D:</strong> The myeloma target. Chai-2's 48% hit rate and 189 nM affinity—against a target not in their training data—demonstrates generalization.</p>
+
+            <div class="chart-container">
+                <h4>GPCR Binding Affinities Achieved</h4>
+                <div class="chart-wrapper" style="height: 280px;">
+                    <canvas id="gpcrChart"></canvas>
+                </div>
+                <p class="source">Lower values = tighter binding. *EC50 for functional agonist activity.</p>
+            </div>
+
+            <p class="target-category">Neoepitopes / pMHC — Precision Immunotherapy</p>
+            <p>This is where cancer meets immunology at the molecular level. TCR-mimetic antibodies that recognize neoepitope-MHC complexes can distinguish cancer from healthy tissue with exquisite precision.</p>
+
+            <p><strong>KRAS G12V:</strong> Chai-2's tour de force. The antibody binds at 1.5 nM and shows <strong>no detectable binding</strong> to wild-type KRAS or G12D—a single amino acid difference. This is the precision required for safe neoepitope targeting.</p>
+            <p><strong>TP53 R175H:</strong> With 3,277 disease associations—more than any other target—TP53 represents the ultimate "undruggable" oncogene. Chai-2 targeted it.</p>
+
+            <div class="chart-container">
+                <h4>KRAS Single-Residue Discrimination</h4>
+                <div class="chart-wrapper" style="height: 220px;">
+                    <canvas id="krasChart"></canvas>
+                </div>
+                <p class="source">N.D. = Not Detected. Source: Chai-2 publication.</p>
+            </div>
+        </div>
+
+        <h2>The GPCR Moment</h2>
+
+        <div class="callout">
+            <h3>Why GPCRs Matter</h3>
+            <p>G protein-coupled receptors are 34% of all approved drugs but almost all are targeted by small molecules, not antibodies. They're membrane-embedded, conformationally dynamic, and have tiny extracellular loops. Designing antibodies against them was considered basically impossible until now.</p>
+        </div>
+
+        <p>JAM-2 achieved 1.4 nM binding to CXCR4. But Chai-2's result is something else entirely. Their CXCR4 antibody is an <em>agonist</em>—it triggers downstream calcium signaling with an EC50 of 164 nM. To design an antibody that not only finds its target but also induces a specific functional response represents capability that simply didn't exist before.</p>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-left"><strong>2020</strong></div>
+                <div class="timeline-right">"Basically impossible"</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-left"><strong>2023</strong></div>
+                <div class="timeline-right">First computational attempts</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-left"><strong>2025</strong></div>
+                <div class="timeline-right">Sub-10 nM binders, functional agonists</div>
+            </div>
+            <div class="timeline-item future">
+                <div class="timeline-left"><strong>2027?</strong></div>
+                <div class="timeline-right">Clinical candidates</div>
+            </div>
+        </div>
+
+        <h2>The Caveats</h2>
+
+        <div class="caveat-box">
+            <h3>Reality Check</h3>
+            <ul>
+                <li><strong>No in vivo data.</strong> None of these platforms have published mouse PK, tumor xenografts, or any in vivo proof of concept.</li>
+                <li><strong>Immunogenicity is untested.</strong> Novel CDR sequences may trigger anti-drug antibody responses. Clinical data is years away.</li>
+                <li><strong>Manufacturing is unvalidated.</strong> Producing these at clinical scale in CHO cells hasn't been demonstrated.</li>
+                <li><strong>Most aren't available.</strong> JAM-2, Chai-2, and Origin-1 are proprietary. RFAntibody requires 9,000+ designs per target.</li>
+                <li><strong>Hit rate ≠ drug.</strong> Affinity maturation, epitope optimization, format engineering—most hard work is downstream.</li>
+            </ul>
+        </div>
+
+        <blockquote>
+            We've solved the "can we generate binders" problem. We haven't solved the "will they work in humans" problem. That second problem takes 10-15 years and a billion dollars per drug, with or without AI.
+        </blockquote>
+
+        <h3>What's Actually Been Demonstrated</h3>
+
+        <div class="pipeline-viz">
+            <div class="pipeline-stage done">Hit Discovery</div>
+            <div class="pipeline-stage done">Lead Optimization</div>
+            <div class="pipeline-stage partial">Developability</div>
+            <div class="pipeline-stage future">In Vivo</div>
+            <div class="pipeline-stage future">IND-Enabling</div>
+            <div class="pipeline-stage future">Clinical</div>
+        </div>
+
+        <h2>So What?</h2>
+
+        <p><strong>For big pharma:</strong> Computational antibody design capabilities will be table stakes in three years. Build, buy, or partner—but don't ignore.</p>
+
+        <p><strong>For biotechs:</strong> If your differentiation is "we can find antibodies to hard targets," that moat is eroding fast.</p>
+
+        <p><strong>For VCs:</strong> Platform plays need sharper differentiation than "we use AI." What's the moat when RFAntibody is MIT-licensed?</p>
+
+        <p><strong>For academics:</strong> RFAntibody exists. The barrier to computational antibody design just dropped to "can you run Python and validate 9,000 candidates."</p>
+
+        <h2>Where This Goes</h2>
+
+        <p>Eighteen months from now, I expect:</p>
+
+        <ul>
+            <li><strong>IND-enabling data</strong> from at least one platform</li>
+            <li><strong>Narrowing performance gaps</strong> as competition intensifies</li>
+            <li><strong>Integration with AI affinity maturation</strong> for end-to-end computational pipelines</li>
+            <li><strong>Expansion to harder formats</strong>—bispecifics, ADCs, multi-specific engagers</li>
+        </ul>
+
+        <p>I would not bet against the idea that computational antibody design becomes the default starting point for any new campaign within five years. The traditional 12-24 month discovery timeline—inject a mouse, wait, screen, hope—may soon look as quaint as searching the literature by hand.</p>
+
+        <p>The $200 billion antibody market isn't going away. But how we populate it is about to change fundamentally.</p>
+
+        <div class="pdf-notice" style="margin-top: 2em;">
+            <p><strong>Want more depth?</strong> This post only scratches the surface. For detailed methodology comparisons, additional oncology targets, antibody biology background, and full citations, <a href="/files/v3_denovo_antibody_design_comparison.pdf" target="_blank">read the comprehensive technical report (PDF)</a>.</p>
+        </div>
+
+        <div class="footer">
+            <p>Data sources: JAM-2, Chai-2, Origin-1, and RFAntibody publications and preprints (2024-2025). Open Targets Platform for disease associations. All figures author-generated following data visualization best practices.</p>
+            <p style="margin-top: 1em;"><a href="/" style="color: var(--accent);">&larr; Back to inventcures.github.io</a></p>
+        </div>
+    </article>
+
+    <script>
+        Chart.defaults.font.family = 'Georgia, serif';
+        Chart.defaults.font.size = 12;
+
+        const efficiencyCtx = document.getElementById('efficiencyChart').getContext('2d');
+        new Chart(efficiencyCtx, {
+            type: 'scatter',
+            data: {
+                datasets: [
+                    {
+                        label: 'JAM-2 (VHH-Fc)',
+                        data: [{x: 70, y: 39}],
+                        backgroundColor: '#E63946',
+                        pointRadius: 18,
+                        pointHoverRadius: 20
+                    },
+                    {
+                        label: 'JAM-2 (mAb)',
+                        data: [{x: 70, y: 18}],
+                        backgroundColor: 'rgba(230, 57, 70, 0.6)',
+                        pointRadius: 12,
+                        pointHoverRadius: 14
+                    },
+                    {
+                        label: 'Chai-2 (GPRC5D)',
+                        data: [{x: 75, y: 48}],
+                        backgroundColor: '#457B9D',
+                        pointRadius: 16,
+                        pointHoverRadius: 18
+                    },
+                    {
+                        label: 'Chai-2 (avg)',
+                        data: [{x: 75, y: 16}],
+                        backgroundColor: 'rgba(69, 123, 157, 0.6)',
+                        pointRadius: 10,
+                        pointHoverRadius: 12
+                    },
+                    {
+                        label: 'Origin-1',
+                        data: [{x: 100, y: 4}],
+                        backgroundColor: '#2A9D8F',
+                        pointRadius: 12,
+                        pointHoverRadius: 14
+                    },
+                    {
+                        label: 'RFAntibody',
+                        data: [{x: 9000, y: 1.5}],
+                        backgroundColor: '#E9C46A',
+                        pointRadius: 14,
+                        pointHoverRadius: 16
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        type: 'logarithmic',
+                        title: {
+                            display: true,
+                            text: 'Designs Required per Target (log scale)',
+                            font: { size: 12 }
+                        },
+                        min: 30,
+                        max: 15000
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Hit Rate (%)',
+                            font: { size: 12 }
+                        },
+                        min: 0,
+                        max: 55
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: { font: { size: 11 } }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.dataset.label}: ${context.parsed.y}% hit rate, ${context.parsed.x} designs`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        const gpcrCtx = document.getElementById('gpcrChart').getContext('2d');
+        new Chart(gpcrCtx, {
+            type: 'bar',
+            data: {
+                labels: ['CCR8 (Chai-2)', 'CXCR4 (JAM-2)', 'CXCR7 (JAM-2)', 'CXCR4 agonist (Chai-2)*', 'GPRC5D (Chai-2)'],
+                datasets: [{
+                    label: 'Binding Affinity (nM)',
+                    data: [0.453, 1.4, 23, 164, 189],
+                    backgroundColor: ['#3498DB', '#3498DB', '#3498DB', '#9B59B6', '#3498DB'],
+                    borderColor: ['#2980B9', '#2980B9', '#2980B9', '#8E44AD', '#2980B9'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        type: 'logarithmic',
+                        title: {
+                            display: true,
+                            text: 'Binding Affinity (nM, log scale) — lower is better',
+                            font: { size: 11 }
+                        },
+                        min: 0.1,
+                        max: 500
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const val = context.parsed.x;
+                                if (val < 1) return (val * 1000).toFixed(0) + ' pM';
+                                return val + ' nM';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        const krasCtx = document.getElementById('krasChart').getContext('2d');
+        new Chart(krasCtx, {
+            type: 'bar',
+            data: {
+                labels: ['G12V-pMHC', 'WT-pMHC', 'G12D-pMHC'],
+                datasets: [{
+                    label: 'Binding Affinity',
+                    data: [1.5, null, null],
+                    backgroundColor: ['#457B9D', '#E0E0E0', '#E0E0E0'],
+                    borderColor: ['#457B9D', '#999', '#999'],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        type: 'logarithmic',
+                        min: 0.1,
+                        max: 100000,
+                        title: {
+                            display: true,
+                            text: 'Binding Affinity (nM, log scale)',
+                            font: { size: 11 }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                if (context.parsed.x === null) return 'Not Detected';
+                                return context.parsed.x + ' nM';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

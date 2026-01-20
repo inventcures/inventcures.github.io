@@ -1,0 +1,213 @@
+---
+layout: null
+permalink: /files/v3_report/
+title: "De Novo Antibody Design Comparison (v3)"
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De Novo Antibody Design Comparison (v3) | InventCures</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #f5f5f5;
+        }
+        
+        .update-banner {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .update-banner .icon {
+            font-size: 1.5em;
+        }
+        
+        .update-banner .message {
+            font-size: 0.95em;
+            text-align: center;
+        }
+        
+        .update-banner .message strong {
+            color: #ffd700;
+        }
+        
+        .update-banner a.btn {
+            background: white;
+            color: #764ba2;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9em;
+            transition: transform 0.2s, box-shadow 0.2s;
+            white-space: nowrap;
+        }
+        
+        .update-banner a.btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        
+        .update-banner a.btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+        
+        .update-banner a.btn-secondary:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .pdf-container {
+            width: 100%;
+            height: calc(100vh - 70px);
+        }
+        
+        .pdf-container iframe,
+        .pdf-container embed,
+        .pdf-container object {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .fallback {
+            display: none;
+            text-align: center;
+            padding: 60px 20px;
+            background: white;
+            margin: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        .fallback h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .fallback p {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .fallback .buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .fallback a.download-btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1em;
+            transition: transform 0.2s;
+        }
+        
+        .fallback a.download-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .fallback a.download-btn.primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .fallback a.download-btn.secondary {
+            background: #f0f0f0;
+            color: #333;
+        }
+        
+        @media (max-width: 768px) {
+            .update-banner {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+                gap: 12px;
+            }
+            
+            .update-banner .message {
+                font-size: 0.9em;
+            }
+            
+            .update-banner .buttons {
+                display: flex;
+                gap: 10px;
+            }
+            
+            .update-banner a.btn {
+                padding: 8px 14px;
+                font-size: 0.85em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="update-banner">
+        <span class="icon">📢</span>
+        <span class="message">
+            <strong>Newer Version Available!</strong> 
+            v5 now includes <strong>Latent-X2</strong> with first-ever immunogenicity data &amp; macrocycle design.
+        </span>
+        <div class="buttons">
+            <a href="/files/v5_denovo_antibody_design_comparison.pdf" class="btn">View v5 (Latest) →</a>
+            <a href="/files/v3_denovo_antibody_design_comparison.pdf" class="btn btn-secondary" download>Download v3 PDF</a>
+        </div>
+    </div>
+    
+    <div class="pdf-container" id="pdfContainer">
+        <object data="/files/v3_denovo_antibody_design_comparison.pdf" type="application/pdf" width="100%" height="100%">
+            <embed src="/files/v3_denovo_antibody_design_comparison.pdf" type="application/pdf" width="100%" height="100%">
+                <div class="fallback" style="display: block;">
+                    <h2>PDF Viewer</h2>
+                    <p>Your browser doesn't support embedded PDFs.<br>Please download the file directly.</p>
+                    <div class="buttons">
+                        <a href="/files/v5_denovo_antibody_design_comparison.pdf" class="download-btn primary">Download v5 (Latest)</a>
+                        <a href="/files/v3_denovo_antibody_design_comparison.pdf" class="download-btn secondary">Download v3</a>
+                    </div>
+                </div>
+            </embed>
+        </object>
+    </div>
+    
+    <script>
+        // Mobile detection - show fallback with download links
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            document.getElementById('pdfContainer').innerHTML = `
+                <div class="fallback" style="display: block;">
+                    <h2>Technical Report</h2>
+                    <p>De Novo Antibody Design Platform Comparison<br><em>Version 3 (4 platforms)</em></p>
+                    <div class="buttons">
+                        <a href="/files/v5_denovo_antibody_design_comparison.pdf" class="download-btn primary">Download v5 (Latest - 5 platforms)</a>
+                        <a href="/files/v3_denovo_antibody_design_comparison.pdf" class="download-btn secondary">Download v3</a>
+                    </div>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>

@@ -52,8 +52,22 @@ author_profile: false
   margin: 2rem 0;
 }
 .personal-story h3 {
-  color: #c7d2fe;
+  color: #e0e7ff;
   margin-top: 0;
+  font-size: 1.4rem;
+}
+.personal-story p {
+  color: #f1f5f9;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+.personal-story em {
+  color: #fbbf24;
+  font-style: italic;
+}
+.personal-story strong {
+  color: #ffffff;
+  font-weight: 700;
 }
 .cta-button {
   display: inline-flex;

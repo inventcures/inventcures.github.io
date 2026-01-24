@@ -25,6 +25,26 @@ My mission is to impact medicine and disease through technology:
 See my [projects](/projects/) for details on computational protein design, bio ML challenges, and regulatory analysis work.
 
 <div style="margin: 2rem 0;">
+  <a href="/ai-powered-virtual-mtb/" style="display: block; background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); border: 2px solid #818cf8; border-radius: 12px; overflow: hidden; text-decoration: none; position: relative;">
+    <div style="position: absolute; top: -8px; right: 20px; background: linear-gradient(135deg, #f59e0b, #ef4444); color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.3rem 0.6rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);">Featured</div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
+      <div style="padding: 1.5rem 2rem;">
+        <div style="display: inline-block; background: #818cf8; color: #1e1b4b; font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">AI + Healthcare</div>
+        <h3 style="color: #fff; font-size: 1.5rem; margin: 0 0 0.4rem 0; font-weight: 700;">Virtual Tumor Board</h3>
+        <p style="color: #c7d2fe; font-size: 0.9rem; margin: 0 0 0.75rem 0; font-weight: 500;">7 AI Specialists. 256 Guidelines. One Consensus.</p>
+        <p style="color: #a5b4fc; font-size: 0.85rem; line-height: 1.5; margin: 0 0 1rem 0;">Multi-agent AI that simulates a real tumor board meeting. Surgical, medical, radiation oncology, palliative care, radiology, pathology, and genetics specialists deliberate on cancer cases—grounded in NCCN, ESMO, ASTRO guidelines with Indian healthcare context.</p>
+        <span style="color: #c7d2fe; font-weight: 600; font-size: 0.9rem;">Try Live Demo →</span>
+      </div>
+      <div style="background: #0f0a1e; display: flex; align-items: center; justify-content: center; padding: 1rem;">
+        <video autoplay loop muted playsinline style="max-width: 100%; max-height: 220px; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
+          <source src="/files/virtual-mtb/vtb-demo.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </a>
+</div>
+
+<div style="margin: 2rem 0;">
   <a href="/abs_for_cancer_targets/" style="display: block; background: linear-gradient(135deg, #1D3557 0%, #457B9D 100%); border: 2px solid #E63946; border-radius: 12px; overflow: hidden; text-decoration: none;">
     <div style="padding: 1.5rem 2rem;">
       <div style="display: inline-block; background: #E63946; color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Analysis</div>

@@ -5,6 +5,16 @@ layout: single
 author_profile: false
 ---
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EZ92F8GGBM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EZ92F8GGBM');
+</script>
+
 <style>
 .hero-video {
   width: 100%;

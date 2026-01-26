@@ -154,6 +154,12 @@ twq('config','r27u1');
   </video>
 </div>
 
+<div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 2px solid #f59e0b; border-radius: 12px; padding: 1.25rem; margin: 1.5rem 0;">
+  <p style="color: #78350f; margin: 0; font-size: 0.95rem; line-height: 1.6;">
+    <strong style="color: #92400e;">Research Prototype:</strong> This is early-stage conceptual research evaluated only on synthetic cases. All "performance metrics" are design goals, not validated results. We are actively seeking clinical validation partnerships. <strong>Not for clinical use without physician oversight.</strong>
+  </p>
+</div>
+
 <div style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border: 2px solid #6366f1; border-radius: 12px; padding: 1.5rem; margin: 2rem 0; position: relative;">
   <span style="position: absolute; top: -12px; left: 20px; background: linear-gradient(135deg, #ef4444, #f97316); color: white; font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">New</span>
   <h3 style="color: #e0e7ff; margin: 0.5rem 0 0.75rem 0; font-size: 1.3rem;">Scientific Preprint</h3>
@@ -279,13 +285,13 @@ An AI system that simulates a real tumor board meeting with **7 specialist agent
 
 ### Evidence-Based, India-Aware
 
-The system retrieves from **256 clinical guideline documents**:
-- NCCN Guidelines (67 documents)
-- ESMO Guidelines (19 documents)  
-- ASTRO Guidelines (20 documents)
-- ACR Appropriateness Criteria (42 documents)
-- CAP Cancer Protocols (103 documents)
-- ClinVar/CIViC Genomics (5 documents)
+The system retrieves from **clinical guideline documents** across major oncology organizations:
+- NCCN Guidelines
+- ESMO Guidelines  
+- ASTRO Guidelines
+- ACR Appropriateness Criteria
+- CAP Cancer Protocols
+- ClinVar/CIViC Genomics
 
 **Crucially, it considers Indian context**:
 - Drug availability in India (DCGI approvals)
@@ -313,10 +319,10 @@ The demo shows a sample case: **58-year-old male with Stage IIIA NSCLC, KRAS G12
 Our system integrates three core components representing a shift from "chatbot oncology" to rigorous clinical deliberation:
 
 ### 1. MARC-v1 Reliability Loops
-**Evaluator-Optimizer pattern** for verified data extraction:
-- 95%+ extraction confidence threshold before deliberation begins
-- Prevents hallucinations like misreading "HER2 Equivocal" as "HER2 Positive"
-- 97.3% biomarker extraction accuracy validated against source documents
+**Evaluator-Optimizer pattern** designed for verified data extraction:
+- Extraction confidence threshold before deliberation begins (threshold configurable)
+- Designed to prevent hallucinations like misreading "HER2 Equivocal" as "HER2 Positive"
+- *Accuracy not yet formally validated — clinical validation study planned*
 
 ### 2. MAI-DxO Adversarial Deliberation
 **Enforcing productive conflict** rather than sycophantic consensus:
@@ -330,22 +336,27 @@ Our system integrates three core components representing a shift from "chatbot o
 - Automated RECIST 1.1 response calculations
 - Integration with OncoSeg (MedSAM3) for 3D tumor volumetry
 
-### Performance Metrics (Synthetic Evaluation)
+### Design Goals (Validation Pending)
 
-| Metric | Result |
-|--------|--------|
-| Guideline-compliant plans | 92% (46/50 decisions) |
-| Safety risks identified | 100% |
-| Biomarker extraction accuracy | 97.3% |
-| Full deliberation time | <5 minutes |
-| Cost reduction via biosimilars | Up to 70% |
+<div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+  <span style="color: #78350f; font-size: 0.9rem;"><strong style="color: #92400e;">Transparency Note:</strong> The metrics below represent our <em>design targets</em>, not validated results. We are actively seeking clinical validation partnerships to rigorously evaluate system performance.</span>
+</div>
+
+| Design Target | Status |
+|---------------|--------|
+| Guideline-concordant recommendations | Goal — validation study needed |
+| Safety risk identification | Goal — formal testing required |
+| Biomarker extraction reliability | Goal — accuracy TBD |
+| Full deliberation time | ~3-5 minutes (observed) |
+| Cost optimization via biosimilars | Potential — needs real-world validation |
 
 ### RAG Infrastructure
-174 indexed guideline documents across 7 sources:
-- **NCCN** (76 documents) — primary for Medical Oncology
-- **ASTRO** (20 documents) — primary for Radiation Oncology  
-- **ClinVar/CIViC** (12 documents) — primary for Genetics
+Clinical guideline documents indexed via Gemini File Search:
+- **NCCN** — primary for Medical Oncology
+- **ASTRO** — primary for Radiation Oncology  
+- **ClinVar/CIViC** — primary for Genetics
 - ACR, CAP, ESMO for additional coverage
+- **SSO** — Surgical Oncology guidelines (being added)
 
 ### Stack
 - **LLM**: Claude 3.5 Sonnet (Anthropic API with prompt caching)
@@ -373,6 +384,8 @@ Interested in collaborating or piloting this at your institution?
 
 ---
 
-<p style="text-align: center; color: #64748b; font-size: 0.85rem; margin-top: 3rem;">
-  <em>Disclaimer: This is a research prototype. AI-generated recommendations should always be verified by qualified oncologists. Not intended for clinical decision-making without physician oversight.</em>
-</p>
+<div style="background: #1e293b; border: 1px solid #475569; border-radius: 8px; padding: 1.25rem; margin-top: 3rem;">
+  <p style="text-align: center; color: #94a3b8; font-size: 0.9rem; margin: 0; line-height: 1.6;">
+    <strong style="color: #f1f5f9;">Disclaimer:</strong> This is a research prototype evaluated only on synthetic cases. No performance claims have been clinically validated. AI-generated recommendations must always be verified by qualified oncologists. <strong style="color: #fbbf24;">Not intended for clinical decision-making without physician oversight.</strong>
+  </p>
+</div>

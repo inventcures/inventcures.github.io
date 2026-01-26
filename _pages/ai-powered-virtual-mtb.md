@@ -301,19 +301,57 @@ The demo shows a sample case: **58-year-old male with Stage IIIA NSCLC, KRAS G12
 *"The Agentic Tumor Board: Democratizing Precision Oncology via Hybrid Multi-Agent Orchestration"*
 <br>Ashish Makani & Anurag Agrawal | KCDH-A, Ashoka University | January 2026
 
+<div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-left: 4px solid #f59e0b; border-radius: 0 8px 8px 0; padding: 1rem 1.5rem; margin: 1.5rem 0;">
+<strong style="color: #92400e;">Early-Stage Research</strong><br>
+<span style="color: #78350f; font-size: 0.95rem;">This is early conceptual work evaluated on synthetic cases. We are actively seeking partnerships with oncology departments in India and internationally to conduct rigorous prospective clinical validation. <a href="mailto:spiff007@gmail.com" style="color: #b45309;">Contact us</a> for collaboration opportunities.</span>
+</div>
+
 ---
 
-## Technical Details
+## Technical Architecture
 
-**Architecture**: Multi-agent orchestrator adapted from [Microsoft's MAI-DxO](https://arxiv.org/abs/2412.03992)
+Our system integrates three core components representing a shift from "chatbot oncology" to rigorous clinical deliberation:
 
-**LLM**: Claude 3.5 Sonnet via Anthropic API (prompt caching for cost efficiency)
+### 1. MARC-v1 Reliability Loops
+**Evaluator-Optimizer pattern** for verified data extraction:
+- 95%+ extraction confidence threshold before deliberation begins
+- Prevents hallucinations like misreading "HER2 Equivocal" as "HER2 Positive"
+- 97.3% biomarker extraction accuracy validated against source documents
 
-**RAG**: Google Gemini File Search API for guideline retrieval
+### 2. MAI-DxO Adversarial Deliberation
+**Enforcing productive conflict** rather than sycophantic consensus:
+- **Scientific Critic (Dr. Tark)**: Red-team auditor identifying safety risks, guideline deviations, and hallucinations
+- **Stewardship Agent (Dr. Samata)**: Financial conscience evaluating cost-effectiveness and biosimilar alternatives
+- **Domain Authority Veto**: Specialists have veto power in their domain (e.g., only Surgical Oncologist can override resectability assessment)
 
-**Stack**: Next.js, TypeScript, Railway deployment
+### 3. MedGemma Multimodal Grounding
+**Anchoring decisions in pixel-level evidence**:
+- Reconciles AI-measured tumor dimensions with text reports
+- Automated RECIST 1.1 response calculations
+- Integration with OncoSeg (MedSAM3) for 3D tumor volumetry
 
-**Cost optimization**: Cached responses for demo, batch API for production
+### Performance Metrics (Synthetic Evaluation)
+
+| Metric | Result |
+|--------|--------|
+| Guideline-compliant plans | 92% (46/50 decisions) |
+| Safety risks identified | 100% |
+| Biomarker extraction accuracy | 97.3% |
+| Full deliberation time | <5 minutes |
+| Cost reduction via biosimilars | Up to 70% |
+
+### RAG Infrastructure
+174 indexed guideline documents across 7 sources:
+- **NCCN** (76 documents) — primary for Medical Oncology
+- **ASTRO** (20 documents) — primary for Radiation Oncology  
+- **ClinVar/CIViC** (12 documents) — primary for Genetics
+- ACR, CAP, ESMO for additional coverage
+
+### Stack
+- **LLM**: Claude 3.5 Sonnet (Anthropic API with prompt caching)
+- **RAG**: Google Gemini File Search API
+- **Frontend**: Next.js 14, TypeScript, Tailwind CSS
+- **Deployment**: Railway (production), Vercel (preview)
 
 ---
 

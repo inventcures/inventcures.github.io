@@ -294,6 +294,15 @@ The demo shows a sample case: **58-year-old male with Stage IIIA NSCLC, KRAS G12
 
 ---
 
+## Preprint
+
+**[Read the Scientific Paper (PDF)](/files/virtual-mtb/agentic_tumor_board_preprint_v11.pdf)**
+
+*"The Agentic Tumor Board: Democratizing Precision Oncology via Hybrid Multi-Agent Orchestration"*
+<br>Ashish Makani & Anurag Agrawal | KCDH-A, Ashoka University | January 2026
+
+---
+
 ## Technical Details
 
 **Architecture**: Multi-agent orchestrator adapted from [Microsoft's MAI-DxO](https://arxiv.org/abs/2412.03992)

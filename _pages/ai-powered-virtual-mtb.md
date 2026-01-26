@@ -154,6 +154,20 @@ twq('config','r27u1');
   </video>
 </div>
 
+<div style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border: 2px solid #6366f1; border-radius: 12px; padding: 1.5rem; margin: 2rem 0; position: relative;">
+  <span style="position: absolute; top: -12px; left: 20px; background: linear-gradient(135deg, #ef4444, #f97316); color: white; font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">New</span>
+  <h3 style="color: #e0e7ff; margin: 0.5rem 0 0.75rem 0; font-size: 1.3rem;">Scientific Preprint</h3>
+  <p style="margin: 0 0 1rem 0;">
+    <a href="/files/virtual-mtb/agentic_tumor_board_preprint_v11.pdf" style="color: #818cf8; font-weight: 600; font-size: 1.1rem; text-decoration: none;">Read the Scientific Paper (PDF)</a>
+  </p>
+  <p style="color: #94a3b8; margin: 0 0 1rem 0; font-style: italic;">
+    "The Agentic Tumor Board: Democratizing Precision Oncology via Hybrid Multi-Agent Orchestration"
+  </p>
+  <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 8px; padding: 0.75rem 1rem; margin-top: 0.5rem;">
+    <span style="color: #78350f; font-size: 0.9rem;"><strong style="color: #92400e;">Early-Stage Research:</strong> This is conceptual work evaluated on synthetic cases. We are actively seeking partnerships with oncology departments in India and internationally for clinical validation. <a href="mailto:spiff007@gmail.com" style="color: #b45309;">Contact us</a> for collaboration.</span>
+  </div>
+</div>
+
 ## The Problem: Tumor Boards Save Lives, But Most Patients Never Get One
 
 A **Multidisciplinary Tumor Board (MTB)** is a meeting where oncologists from different specialties—surgery, medical oncology, radiation, pathology, radiology, genetics, and palliative care—gather to discuss complex cancer cases and reach a consensus treatment plan.
@@ -291,20 +305,6 @@ The system retrieves from **256 clinical guideline documents**:
 </div>
 
 The demo shows a sample case: **58-year-old male with Stage IIIA NSCLC, KRAS G12C positive, PD-L1 60%**. Watch all 7 agents deliberate and reach consensus.
-
----
-
-## Preprint
-
-**[Read the Scientific Paper (PDF)](/files/virtual-mtb/agentic_tumor_board_preprint_v11.pdf)**
-
-*"The Agentic Tumor Board: Democratizing Precision Oncology via Hybrid Multi-Agent Orchestration"*
-<br>Ashish Makani & Anurag Agrawal | KCDH-A, Ashoka University | January 2026
-
-<div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-left: 4px solid #f59e0b; border-radius: 0 8px 8px 0; padding: 1rem 1.5rem; margin: 1.5rem 0;">
-<strong style="color: #92400e;">Early-Stage Research</strong><br>
-<span style="color: #78350f; font-size: 0.95rem;">This is early conceptual work evaluated on synthetic cases. We are actively seeking partnerships with oncology departments in India and internationally to conduct rigorous prospective clinical validation. <a href="mailto:spiff007@gmail.com" style="color: #b45309;">Contact us</a> for collaboration opportunities.</span>
-</div>
 
 ---
 

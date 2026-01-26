@@ -164,7 +164,7 @@ twq('config','r27u1');
     "The Agentic Tumor Board: Democratizing Precision Oncology via Hybrid Multi-Agent Orchestration"
   </p>
   <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 8px; padding: 0.75rem 1rem; margin-top: 0.5rem;">
-    <span style="color: #78350f; font-size: 0.9rem;"><strong style="color: #92400e;">Early-Stage Research:</strong> This is conceptual work evaluated on synthetic cases. We are actively seeking partnerships with oncology departments in India and internationally for clinical validation. <a href="mailto:spiff007@gmail.com" style="color: #b45309;">Contact us</a> for collaboration.</span>
+    <span style="color: #78350f; font-size: 0.9rem;"><strong style="color: #92400e;">Early-Stage Research:</strong> This is conceptual work evaluated on synthetic cases. We are actively seeking partnerships with oncology departments in India and internationally for clinical validation. <a href="mailto:spiff007@gmail.com?cc=tp53@aitumorboardcancer.org&subject=Clinical%20Validation%20Partnership%20-%20Agentic%20Tumor%20Board" style="color: #b45309;">Contact us</a> for collaboration.</span>
   </div>
 </div>
 

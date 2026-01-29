@@ -25,6 +25,20 @@ My mission is to impact medicine and disease through technology:
 See my [projects](/projects/) for details on computational protein design, bio ML challenges, and regulatory analysis work.
 
 <div style="margin: 2rem 0;">
+  <a href="/proposal_for_devovo_ab-design_benchmark/" style="display: block; background: linear-gradient(135deg, #1D3557 0%, #457B9D 100%); border: 2px solid #E63946; border-radius: 12px; overflow: hidden; text-decoration: none; position: relative;">
+    <div style="position: absolute; top: -8px; right: 20px; background: linear-gradient(135deg, #E63946, #ff6b6b); color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.3rem 0.6rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 12px rgba(230, 57, 70, 0.4);">New</div>
+    <div style="padding: 1.5rem 2rem;">
+      <div style="display: inline-block; background: #E63946; color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Analysis</div>
+      <h3 style="color: #fff; font-size: 1.5rem; margin: 0 0 0.4rem 0; font-weight: 700;">DADB-v1.0 Benchmark</h3>
+      <p style="color: #E9C46A; font-size: 0.9rem; margin: 0 0 0.75rem 0; font-weight: 500;">A Therapeutic Decathlon for De Novo Antibody Design</p>
+      <p style="color: #ddd; font-size: 0.85rem; line-height: 1.5; margin: 0 0 1rem 0;">The first comprehensive benchmark measuring what actually matters: binding, structure, developability, and immunogenicity. Featuring 5 AI platforms with first-ever human immunogenicity data.</p>
+      <p style="color: #E9C46A; font-size: 0.7rem; margin: 0 0 0.5rem 0; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">🆕 Available Online: 29 January 2026</p>
+      <span style="color: #E9C46A; font-weight: 600; font-size: 0.9rem;">Read Proposal →</span>
+    </div>
+  </a>
+</div>
+
+<div style="margin: 2rem 0;">
   <a href="/ai-powered-virtual-mtb/" style="display: block; background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); border: 2px solid #818cf8; border-radius: 12px; overflow: hidden; text-decoration: none; position: relative;">
     <div style="position: absolute; top: -8px; right: 20px; background: linear-gradient(135deg, #f59e0b, #ef4444); color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.3rem 0.6rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);">Featured</div>
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
@@ -57,18 +71,6 @@ See my [projects](/projects/) for details on computational protein design, bio M
 </div>
 
 <div style="margin: 2rem 0;">
-
-<div style="margin: 2rem 0;">
-  <a href="/proposal_for_devovo_ab-design_benchmark/" style="display: block; background: linear-gradient(135deg, #1D3557 0%, #457B9D 100%); border: 2px solid #E63946; border-radius: 12px; overflow: hidden; text-decoration: none;">
-    <div style="padding: 1.5rem 2rem;">
-      <div style="display: inline-block; background: #E63946; color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Analysis</div>
-      <h3 style="color: #fff; font-size: 1.5rem; margin: 0 0 0.4rem 0; font-weight: 700;">DADB-v1.0 Benchmark</h3>
-      <p style="color: #E9C46A; font-size: 0.9rem; margin: 0 0 0.75rem 0; font-weight: 500;">A Therapeutic Decathlon for De Novo Antibody Design</p>
-      <p style="color: #ddd; font-size: 0.85rem; line-height: 1.5; margin: 0 0 1rem 0;">The first comprehensive benchmark measuring what actually matters: binding, structure, developability, and immunogenicity. Featuring 5 AI platforms including JAM-2, Chai-2, Origin-1, RFAntibody, and Latent-X2 with first-ever human immunogenicity data.</p>
-      <span style="color: #E9C46A; font-weight: 600; font-size: 0.9rem;">Read Proposal →</span>
-    </div>
-  </a>
-</div>
 
   <a href="/onco-seg/" style="display: block; background: linear-gradient(135deg, #0a0a12 0%, #1a1a2e 100%); border: 2px solid #28c840; border-radius: 12px; overflow: hidden; text-decoration: none;">
     <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 0;">

@@ -1,0 +1,409 @@
+<!-- 
+  HOMEPAGE CARDS for inventcures.github.io
+  
+  Choose ONE of these options to add to your homepage.
+  Each includes a prominent link to the DADB proposal and PDF.
+-->
+
+<!-- ============================================================ -->
+<!-- OPTION 1: FEATURED CARD (Large, prominent) -->
+<!-- ============================================================ -->
+
+<style>
+  .dadb-featured-card {
+    background: linear-gradient(135deg, #1a5276 0%, #2874a6 100%);
+    border-radius: 16px;
+    padding: 2.5rem;
+    color: white;
+    box-shadow: 0 10px 40px rgba(26, 82, 118, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .dadb-featured-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+  }
+  
+  .dadb-featured-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(26, 82, 118, 0.4);
+  }
+  
+  .dadb-card-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+  }
+  
+  .dadb-featured-card h3 {
+    font-size: 1.8rem;
+    margin: 0 0 0.5rem 0;
+    font-weight: 700;
+  }
+  
+  .dadb-featured-card p {
+    margin: 0 0 1.5rem 0;
+    opacity: 0.9;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+  
+  .dadb-stats {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .dadb-stat {
+    text-align: center;
+  }
+  
+  .dadb-stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    display: block;
+    line-height: 1;
+  }
+  
+  .dadb-stat-label {
+    font-size: 0.7rem;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .dadb-card-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .dadb-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+  }
+  
+  .dadb-btn-primary {
+    background: white;
+    color: #1a5276;
+  }
+  
+  .dadb-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+  
+  .dadb-btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255,255,255,0.5);
+  }
+  
+  .dadb-btn-secondary:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: white;
+  }
+  
+  .dadb-highlight {
+    background: rgba(231, 76, 60, 0.9);
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+</style>
+
+<div class="dadb-featured-card">
+  <span class="dadb-highlight">NEW</span>
+  <span class="dadb-card-badge">Open Consortium</span>
+  <h3>🎪 DADB-v1.0 Benchmark</h3>
+  <p>A Therapeutic Decathlon for De Novo Antibody Design. The first comprehensive benchmark measuring binding, structure, developability, and immunogenicity.</p>
+  
+  <div class="dadb-stats">
+    <div class="dadb-stat">
+      <span class="dadb-stat-number">5</span>
+      <span class="dadb-stat-label">Platforms</span>
+    </div>
+    <div class="dadb-stat">
+      <span class="dadb-stat-number">25</span>
+      <span class="dadb-stat-label">Targets</span>
+    </div>
+    <div class="dadb-stat">
+      <span class="dadb-stat-number">4</span>
+      <span class="dadb-stat-label">Pillars</span>
+    </div>
+  </div>
+  
+  <div class="dadb-card-actions">
+    <a href="/proposal_for_devovo_ab-design_benchmark/" class="dadb-btn dadb-btn-primary">
+      <span>🚀</span> Join Consortium
+    </a>
+    <a href="/proposal_for_devovo_ab-design_benchmark/v6_denovo-ab-design-benchmark_scientific-paper.pdf" class="dadb-btn dadb-btn-secondary">
+      <span>📄</span> Read Paper (PDF)
+    </a>
+  </div>
+</div>
+
+
+<!-- ============================================================ -->
+<!-- OPTION 2: PDF-FOCUSED CARD (Emphasizes the scientific paper) -->
+<!-- ============================================================ -->
+
+<style>
+  .dadb-pdf-card {
+    background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+    border-radius: 16px;
+    padding: 2rem;
+    color: white;
+    box-shadow: 0 10px 40px rgba(231, 76, 60, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .dadb-pdf-card::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -10%;
+    width: 200px;
+    height: 200px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+  }
+  
+  .dadb-pdf-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(231, 76, 60, 0.4);
+  }
+  
+  .dadb-pdf-icon {
+    font-size: 4rem;
+    flex-shrink: 0;
+  }
+  
+  .dadb-pdf-content {
+    flex: 1;
+  }
+  
+  .dadb-pdf-content h3 {
+    font-size: 1.4rem;
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .dadb-pdf-content p {
+    margin: 0 0 1rem 0;
+    opacity: 0.95;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .dadb-pdf-meta {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.8rem;
+    opacity: 0.9;
+    margin-bottom: 1rem;
+  }
+  
+  .dadb-pdf-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: white;
+    color: #c0392b;
+    padding: 0.7rem 1.3rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
+  
+  .dadb-pdf-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+  
+  @media (max-width: 600px) {
+    .dadb-pdf-card {
+      flex-direction: column;
+      text-align: center;
+    }
+    .dadb-pdf-icon {
+      font-size: 3rem;
+    }
+  }
+</style>
+
+<div class="dadb-pdf-card">
+  <div class="dadb-pdf-icon">📑</div>
+  <div class="dadb-pdf-content">
+    <h3>New Paper: DADB-v1.0 Benchmark Proposal</h3>
+    <p>A Therapeutic Decathlon for De Novo Antibody Design — measuring what actually matters: binding, structure, developability, and immunogenicity.</p>
+    <div class="dadb-pdf-meta">
+      <span>📄 25 pages</span>
+      <span>🔬 5 platforms</span>
+      <span>✅ v6.0 Security-reviewed</span>
+    </div>
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+      <a href="/proposal_for_devovo_ab-design_benchmark/v6_denovo-ab-design-benchmark_scientific-paper.pdf" class="dadb-pdf-btn">
+        <span>⬇️</span> Download PDF
+      </a>
+      <a href="/proposal_for_devovo_ab-design_benchmark/" style="color: white; opacity: 0.9; text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.3rem;">
+        Learn more →
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================================================ -->
+<!-- OPTION 3: COMPACT HORIZONTAL (For tight spaces) -->
+<!-- ============================================================ -->
+
+<style>
+  .dadb-compact {
+    background: linear-gradient(90deg, #1a5276 0%, #2874a6 100%);
+    border-radius: 12px;
+    padding: 1.2rem 1.5rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .dadb-compact-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .dadb-compact-icon {
+    font-size: 2rem;
+  }
+  
+  .dadb-compact-text h4 {
+    margin: 0 0 0.2rem 0;
+    font-size: 1rem;
+  }
+  
+  .dadb-compact-text p {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 0.85rem;
+  }
+  
+  .dadb-compact-actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .dadb-compact-btn {
+    background: white;
+    color: #1a5276;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+  }
+  
+  .dadb-compact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  }
+  
+  .dadb-compact-btn-secondary {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.5);
+  }
+  
+  @media (max-width: 600px) {
+    .dadb-compact {
+      flex-direction: column;
+      text-align: center;
+    }
+    .dadb-compact-content {
+      flex-direction: column;
+    }
+  }
+</style>
+
+<div class="dadb-compact">
+  <div class="dadb-compact-content">
+    <span class="dadb-compact-icon">🎪</span>
+    <div class="dadb-compact-text">
+      <h4>DADB-v1.0 Benchmark Proposal</h4>
+      <p>A Therapeutic Decathlon for AI-driven antibody design</p>
+    </div>
+  </div>
+  <div class="dadb-compact-actions">
+    <a href="/proposal_for_devovo_ab-design_benchmark/v6_denovo_ab-design_benchmark_scientific-paper.pdf" class="dadb-compact-btn">
+      📄 PDF
+    </a>
+    <a href="/proposal_for_devovo_ab-design_benchmark/" class="dadb-compact-btn dadb-compact-btn-secondary">
+      Learn more →
+    </a>
+  </div>
+</div>
+
+
+<!-- ============================================================ -->
+<!-- DEPLOYMENT INSTRUCTIONS -->
+<!-- ============================================================ -->
+<!--
+
+1. Choose ONE of the options above (Featured, PDF-focused, or Compact)
+
+2. Copy the corresponding HTML and CSS to your inventcures.github.io homepage
+
+3. The links assume this structure:
+   inventcures.github.io/
+   ├── index.html (your homepage)
+   └── proposal_for_devovo_ab-design_benchmark/
+       ├── index.html
+       └── v6_denovo-ab-design-benchmark_scientific-paper.pdf
+
+4. Make sure to copy the v6 PDF to the correct directory:
+   
+   cp v6_denovo-ab-design-benchmark_scientific-paper.pdf \
+      proposal_for_devovo_ab-design_benchmark/
+
+5. If your site uses a different CSS framework (Bootstrap, Tailwind, etc.),
+   you may need to adjust the class names.
+
+-->

@@ -303,7 +303,7 @@ layout: default
   <div class="explainer-box">
     <h3>🧠 Brain Tumor Segmentation</h3>
     <p>This demo shows Onco-Seg segmenting a <strong>glioblastoma</strong> from a BraTS MRI scan using the interactive viewer. The AI user types "tumor" as a text prompt, clicks "Find It" to segment the current slice, then "Segment Entire Scan" to propagate the mask across all slices — significantly speeding up segmentation & contouring workflows, largely done manually today. 
-    The custom interactive DICOM viewer in the video shows <strong>yellow</strong> for tumor core and <strong>red</strong> for edema. </p>
+    The custom interactive DICOM viewer in the video shows <strong>yellow</strong> for tumor core and <wstrong>red</strong> for edema. </p>
   </div>
 
 <h2 class="section-title">Why Onco-Seg?</h2>

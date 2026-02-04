@@ -33,41 +33,7 @@ layout: default
   </button>
 </div>
 
-<script>
-function showSection(section) {
-  const medicineSection = document.getElementById('section-medicine');
-  const biotechSection = document.getElementById('section-biotech');
-  const btnMedicine = document.getElementById('btn-medicine');
-  const btnBiotech = document.getElementById('btn-biotech');
-  
-  if (section === 'medicine') {
-    medicineSection.style.display = 'block';
-    biotechSection.style.display = 'none';
-    btnMedicine.style.background = '#818cf8';
-    btnMedicine.style.color = 'white';
-    btnBiotech.style.background = '#f3f4f6';
-    btnBiotech.style.color = '#1D3557';
-  } else {
-    medicineSection.style.display = 'none';
-    biotechSection.style.display = 'block';
-    btnMedicine.style.background = '#f3f4f6';
-    btnMedicine.style.color = '#1e1b4b';
-    btnBiotech.style.background = '#E63946';
-    btnBiotech.style.color = 'white';
-  }
-  
-  // Update URL hash without scrolling
-  history.replaceState(null, null, '#' + section);
-}
 
-// Check URL hash on page load
-document.addEventListener('DOMContentLoaded', function() {
-  const hash = window.location.hash.substring(1);
-  if (hash === 'biotech') {
-    showSection('biotech');
-  }
-});
-</script>
 
 <!-- ==================== ML + MEDICINE ==================== -->
 <div id="section-medicine">
@@ -420,3 +386,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
   </div>
 </main>
+
+<script>
+function showSection(section) {
+  var medicineSection = document.getElementById('section-medicine');
+  var biotechSection = document.getElementById('section-biotech');
+  var btnMedicine = document.getElementById('btn-medicine');
+  var btnBiotech = document.getElementById('btn-biotech');
+  
+  if (section === 'medicine') {
+    medicineSection.style.display = 'block';
+    biotechSection.style.display = 'none';
+    btnMedicine.style.background = '#818cf8';
+    btnMedicine.style.color = 'white';
+    btnBiotech.style.background = '#f3f4f6';
+    btnBiotech.style.color = '#1D3557';
+  } else {
+    medicineSection.style.display = 'none';
+    biotechSection.style.display = 'block';
+    btnMedicine.style.background = '#f3f4f6';
+    btnMedicine.style.color = '#1e1b4b';
+    btnBiotech.style.background = '#E63946';
+    btnBiotech.style.color = 'white';
+  }
+  
+  history.replaceState(null, null, '#' + section);
+}
+
+(function() {
+  var hash = window.location.hash.substring(1);
+  if (hash === 'biotech') {
+    showSection('biotech');
+  }
+})();
+</script>

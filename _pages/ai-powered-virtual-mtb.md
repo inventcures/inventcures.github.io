@@ -179,7 +179,7 @@ author_profile: false
 
 A **Multidisciplinary Tumor Board (MTB)** is a meeting where oncologists from different specialties—surgery, medical oncology, radiation, pathology, radiology, genetics, and palliative care—gather to discuss complex cancer cases and reach a consensus treatment plan.
 
-**The evidence is clear**: MTB discussions improve cancer outcomes, reduce treatment delays, and ensure patients get guideline-concordant care.
+**The evidence is clear**: MTB discussions improve cancer outcomes, reduce treatment delays, and ensure patients receive optimal, evidence-based care.
 
 <div class="stat-grid">
   <div class="stat-card">
@@ -232,15 +232,15 @@ A proprietary AI system that simulates comprehensive tumor board deliberation wi
 - Pathology
 - Genetics/Genomics
 
-The system produces **structured, guideline-grounded treatment recommendations** with citations to NCCN, ESMO, ASTRO, and other authoritative sources—while being aware of **Indian healthcare context** including drug availability, costs, and insurance coverage.
+The system produces **structured treatment recommendations** grounded in internationally recognized clinical guidelines and best practices—while being aware of **Indian healthcare context** including drug availability, costs, and insurance coverage.
 
 <div class="value-prop">
   <h3>Key Differentiators</h3>
   <ul>
     <li><strong>True Multi-Agent Deliberation</strong> — Not a single chatbot, but specialized agents that debate and reach consensus</li>
-    <li><strong>Adversarial Safety Architecture</strong> — Built-in mechanisms to catch errors and prevent hallucinations</li>
-    <li><strong>Guideline-Grounded</strong> — Every recommendation citable to clinical guidelines</li>
-    <li><strong>India-Aware</strong> — Considers DCGI approvals, INR costs, Ayushman Bharat coverage</li>
+    <li><strong>Safety-First Architecture</strong> — Built-in mechanisms to catch errors and ensure reliability</li>
+    <li><strong>Evidence-Based</strong> — Recommendations grounded in established clinical standards</li>
+    <li><strong>India-Aware</strong> — Considers local drug availability, costs, and insurance coverage</li>
     <li><strong>Multimodal</strong> — Can incorporate imaging and pathology data</li>
   </ul>
 </div>
@@ -260,7 +260,7 @@ The system produces **structured, guideline-grounded treatment recommendations**
   </div>
   <div class="audience-card">
     <h4>🏛️ Healthcare Systems & CMIOs</h4>
-    <p>Standardize care quality across your network. Ensure guideline concordance. Generate structured documentation. Reduce variability in treatment planning.</p>
+    <p>Standardize care quality across your network. Ensure consistent, evidence-based recommendations. Generate structured documentation. Reduce variability in treatment planning.</p>
   </div>
   <div class="audience-card">
     <h4>💼 Investors</h4>

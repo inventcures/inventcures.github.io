@@ -59,6 +59,19 @@ See my [projects](/projects/) for details on computational protein design, bio M
 </div>
 
 <div style="margin: 2rem 0;">
+  <a href="/flab_dataset_analyses/" style="display: block; background: linear-gradient(135deg, #1a5276 0%, #2874a6 100%); border: 2px solid #27AE60; border-radius: 12px; overflow: hidden; text-decoration: none; position: relative;">
+    <div style="position: absolute; top: -8px; right: 20px; background: linear-gradient(135deg, #27AE60, #2ecc71); color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.3rem 0.6rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 12px rgba(39, 174, 96, 0.4);">New</div>
+    <div style="padding: 1.5rem 2rem;">
+      <div style="display: inline-block; background: #27AE60; color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Research</div>
+      <h3 style="color: #fff; font-size: 1.5rem; margin: 0 0 0.4rem 0; font-weight: 700;">Does Developability Come For Free?</h3>
+      <p style="color: #82e0aa; font-size: 0.9rem; margin: 0 0 0.75rem 0; font-weight: 500;">FLAb Dataset Analysis: Testing Emergent Developability in De Novo Antibody Design</p>
+      <p style="color: #ddd; font-size: 0.85rem; line-height: 1.5; margin: 0 0 1rem 0;">Analysis of 160 FLAb datasets revealing how training data bias explains "free" developability. ESM-2 benchmarks, immunogenicity prediction (0.74 AUROC), and why humanness alone fails.</p>
+      <span style="color: #82e0aa; font-weight: 600; font-size: 0.9rem;">View Analysis →</span>
+    </div>
+  </a>
+</div>
+
+<div style="margin: 2rem 0;">
   <a href="/abs_for_cancer_targets/" style="display: block; background: linear-gradient(135deg, #1D3557 0%, #457B9D 100%); border: 2px solid #E63946; border-radius: 12px; overflow: hidden; text-decoration: none;">
     <div style="padding: 1.5rem 2rem;">
       <div style="display: inline-block; background: #E63946; color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Analysis</div>
@@ -69,6 +82,8 @@ See my [projects](/projects/) for details on computational protein design, bio M
     </div>
   </a>
 </div>
+
+<p style="text-align: center; margin: 1rem 0 2rem;"><a href="/antibody-research/" style="color: #1a5276; font-weight: 600;">View all antibody research →</a></p>
 
 <div style="margin: 2rem 0;">
 

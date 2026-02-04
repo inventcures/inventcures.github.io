@@ -5,18 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Does Developability Come For Free? | FLAb Dataset Analysis</title>
     <meta name="description" content="Analysis of the FLAb antibody benchmark testing whether de novo design models learn developability without explicit training.">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Does Developability Come For Free?">
+    <meta property="og:description" content="Testing whether de novo antibody design models learn therapeutic-like properties without explicit training.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://inventcures.github.io/flab_dataset_analyses/">
+    
     <style>
         :root {
-            /* Dataset colors - semantically meaningful */
+            /* Dataset colors - semantically meaningful (following Saloni's guidelines) */
             --sabdab: #4285F4;      /* Blue - structural database (reference) */
-            --oas: #EA4335;         /* Red - natural repertoire (worse) */
-            --cst: #34A853;         /* Green - therapeutics (best) */
-            --denovo: #9C27B0;      /* Purple - de novo designs (test) */
+            --oas: #EA4335;         /* Red - natural repertoire (worse developability) */
+            --cst: #34A853;         /* Green - therapeutics (gold standard) */
+            --denovo: #9C27B0;      /* Purple - de novo designs (test subject) */
             
-            /* Performance colors */
-            --positive: #27AE60;    /* Green - good correlation */
-            --negative: #E74C3C;    /* Red - negative correlation */
-            --neutral: #95A5A6;     /* Gray - no correlation */
+            /* Performance colors - intuitive mapping */
+            --positive: #27AE60;    /* Green - good/favorable */
+            --negative: #E74C3C;    /* Red - bad/unfavorable */
+            --neutral: #7F8C8D;     /* Gray - neutral/baseline */
             
             /* UI colors */
             --primary: #1a5276;
@@ -26,250 +33,391 @@
             --bg: #ffffff;
             --bg-alt: #f8f9fa;
             --text: #2c3e50;
-            --gray: #6c757d;
+            --text-muted: #6c757d;
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
             line-height: 1.7;
             color: var(--text);
             background: var(--bg);
         }
         
-        /* Hero Section */
+        /* ===== INSPIRATION BANNER ===== */
+        .inspiration-banner {
+            background: linear-gradient(135deg, #fef9e7 0%, #fdebd0 100%);
+            border-bottom: 1px solid #f5b041;
+            padding: 1rem 1.5rem;
+        }
+        .inspiration-banner p {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 0.9rem;
+            color: #7d6608;
+            text-align: center;
+            line-height: 1.6;
+        }
+        .inspiration-banner strong { color: #9a7b0a; }
+        .inspiration-banner a {
+            color: #1a5276;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px dotted #1a5276;
+        }
+        .inspiration-banner a:hover { border-bottom-style: solid; }
+        
+        /* ===== HERO SECTION ===== */
         .hero {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
-            padding: 4rem 2rem;
+            padding: 3rem 2rem 4rem;
             text-align: center;
         }
-        
         .hero h1 {
             font-size: 2.5rem;
             font-weight: 800;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             line-height: 1.2;
         }
-        
         .hero .subtitle {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             opacity: 0.95;
-            margin-bottom: 2rem;
-            max-width: 800px;
+            margin-bottom: 1.5rem;
+            max-width: 750px;
             margin-left: auto;
             margin-right: auto;
         }
+        
+        /* Paper link banner */
+        .paper-banner {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem auto;
+            max-width: 600px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            backdrop-filter: blur(10px);
+        }
+        .paper-banner .icon { font-size: 2rem; }
+        .paper-banner .text { text-align: left; flex: 1; }
+        .paper-banner .text strong { display: block; font-size: 1rem; }
+        .paper-banner .text span { font-size: 0.85rem; opacity: 0.9; }
+        .paper-banner a {
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .paper-banner a:hover { background: rgba(255,255,255,0.3); }
         
         .cta-buttons {
             display: flex;
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
+            margin-top: 1.5rem;
         }
-        
         .btn {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 1rem 2rem;
+            padding: 0.875rem 1.75rem;
             border-radius: 8px;
             font-weight: 600;
             text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 1rem;
+            transition: all 0.2s ease;
+            font-size: 0.95rem;
         }
-        
-        .btn-primary {
-            background: white;
-            color: var(--primary);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-        
         .btn-secondary {
             background: transparent;
             color: white;
             border: 2px solid rgba(255,255,255,0.5);
         }
-        
         .btn-secondary:hover {
             background: rgba(255,255,255,0.1);
             border-color: white;
         }
         
-        /* Container */
+        /* ===== LAYOUT ===== */
         .container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1.5rem;
         }
-        
-        /* Section Styles */
-        section {
-            padding: 4rem 0;
-        }
-        
+        section { padding: 4rem 0; }
         .section-header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
         }
-        
         .section-header h2 {
-            font-size: 2rem;
+            font-size: 1.875rem;
             color: var(--dark);
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
         }
-        
         .section-header p {
-            font-size: 1.1rem;
-            color: var(--gray);
-            max-width: 700px;
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 650px;
             margin: 0 auto;
         }
         
-        /* Key Finding Cards */
-        .findings-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+        /* ===== TL;DR SUMMARY ===== */
+        .tldr-section {
+            background: linear-gradient(135deg, #e8f8f5 0%, #d5f5e3 100%);
+            border-bottom: 3px solid var(--positive);
         }
-        
-        .finding-card {
+        .tldr-box {
             background: white;
             border-radius: 12px;
             padding: 2rem;
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            border-left: 4px solid var(--primary);
+        }
+        .tldr-box h2 {
+            color: var(--positive);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        .tldr-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .tldr-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+        .tldr-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        .tldr-item h4 {
+            font-size: 1rem;
+            color: var(--dark);
+            margin-bottom: 0.25rem;
+        }
+        .tldr-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
         }
         
-        .finding-card h3 {
-            font-size: 1.2rem;
+        /* ===== WHAT IS DEVELOPABILITY ===== */
+        .explainer-box {
+            background: #f0f4f8;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        .explainer-box h3 {
+            color: var(--primary);
             margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        .explainer-box p {
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        .explainer-box ul {
+            margin-left: 1.5rem;
+            color: var(--text-muted);
+        }
+        .explainer-box li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* ===== KEY FINDINGS CARDS ===== */
+        .findings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .finding-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.75rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border-top: 4px solid var(--primary);
+        }
+        .finding-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
             color: var(--dark);
         }
-        
         .finding-card .stat {
             font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 0.5rem;
+            font-variant-numeric: tabular-nums;
         }
-        
         .finding-card .stat.positive { color: var(--positive); }
         .finding-card .stat.negative { color: var(--negative); }
-        .finding-card .stat.neutral { color: var(--neutral); }
-        
+        .finding-card .stat.neutral { color: var(--primary); }
         .finding-card p {
-            color: var(--gray);
-            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
         }
         
-        /* Chart Container */
-        .chart-section {
-            background: var(--bg-alt);
+        /* ===== THREE HYPOTHESES ===== */
+        .hypotheses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
         }
-        
-        .chart-container {
+        .hypothesis-card {
             background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border-left: 4px solid var(--neutral);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .hypothesis-card.tested {
+            border-color: var(--positive);
+            background: #f0fff4;
+        }
+        .hypothesis-card h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        .hypothesis-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .hypothesis-card .badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .hypothesis-card .badge.tested {
+            background: var(--positive);
+            color: white;
+        }
+        .hypothesis-card .badge.untested {
+            background: var(--neutral);
+            color: white;
+        }
+        
+        /* ===== HYPOTHESIS DIAGRAM ===== */
+        .hypothesis-section { background: var(--bg-alt); }
+        .hypothesis-diagram {
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+        .hypothesis-diagram svg {
+            width: 100%;
+            height: auto;
+        }
+        .diagram-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+            font-style: italic;
+        }
+        
+        /* Callout box */
+        .callout {
+            background: #fff9e6;
+            border-left: 4px solid #f0ad4e;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .callout strong { color: #8a6d3b; }
+        .callout.insight {
+            background: #e8f5e9;
+            border-color: var(--positive);
+        }
+        .callout.insight strong { color: #2e7d32; }
+        .callout.warning {
+            background: #fce4ec;
+            border-color: var(--negative);
+        }
+        .callout.warning strong { color: #c0392b; }
+        
+        /* ===== CHART CONTAINERS ===== */
+        .chart-section { background: white; }
+        .chart-container {
+            background: var(--bg-alt);
             border-radius: 12px;
             padding: 2rem;
             margin-bottom: 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
-        
         .chart-title {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
             color: var(--dark);
         }
-        
         .chart-subtitle {
             font-size: 0.95rem;
-            color: var(--gray);
+            color: var(--text-muted);
             margin-bottom: 1.5rem;
         }
-        
-        /* SVG Chart Styles */
-        .bar-chart {
-            width: 100%;
-            max-width: 700px;
-            margin: 0 auto;
+        .source {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid #e0e0e0;
         }
         
-        .bar-label {
-            font-size: 14px;
-            font-weight: 600;
-            fill: var(--text);
-        }
-        
-        .bar-value {
-            font-size: 12px;
-            font-weight: 600;
-            fill: white;
-        }
-        
-        .axis-label {
-            font-size: 12px;
-            fill: var(--gray);
-        }
-        
-        /* Horizontal Bar Chart */
-        .h-bar-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .h-bar-row {
+        /* ===== BAR CHARTS ===== */
+        .bar-chart-h { margin: 1.5rem 0; }
+        .bar-row {
             display: flex;
             align-items: center;
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
         }
-        
-        .h-bar-label {
-            width: 120px;
+        .bar-label {
+            width: 100px;
             font-weight: 600;
             font-size: 0.9rem;
             text-align: right;
             padding-right: 1rem;
+            flex-shrink: 0;
         }
-        
-        .h-bar-track {
+        .bar-track {
             flex: 1;
-            height: 28px;
-            background: var(--light);
+            height: 32px;
+            background: #e9ecef;
             border-radius: 4px;
             position: relative;
             overflow: hidden;
         }
-        
-        .h-bar-fill {
+        .bar-fill {
             height: 100%;
             border-radius: 4px;
             display: flex;
             align-items: center;
-            justify-content: flex-end;
-            padding-right: 8px;
+            padding: 0 10px;
             color: white;
             font-weight: 600;
             font-size: 0.85rem;
-            transition: width 0.5s ease;
+            transition: width 0.6s ease;
         }
+        .bar-fill.sabdab { background: var(--sabdab); }
+        .bar-fill.oas { background: var(--oas); }
+        .bar-fill.cst { background: var(--cst); }
+        .bar-fill.denovo { background: var(--denovo); }
+        .bar-value { margin-left: auto; }
         
-        .h-bar-fill.sabdab { background: var(--sabdab); }
-        .h-bar-fill.oas { background: var(--oas); }
-        .h-bar-fill.cst { background: var(--cst); }
-        .h-bar-fill.denovo { background: var(--denovo); }
-        
-        /* Legend */
+        /* ===== LEGEND ===== */
         .legend {
             display: flex;
             gap: 1.5rem;
@@ -277,352 +425,409 @@
             flex-wrap: wrap;
             margin-top: 1.5rem;
             padding-top: 1rem;
-            border-top: 1px solid var(--light);
+            border-top: 1px solid #e0e0e0;
         }
-        
         .legend-item {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
-        
         .legend-dot {
-            width: 12px;
-            height: 12px;
+            width: 14px;
+            height: 14px;
             border-radius: 3px;
+            flex-shrink: 0;
         }
-        
         .legend-dot.sabdab { background: var(--sabdab); }
         .legend-dot.oas { background: var(--oas); }
         .legend-dot.cst { background: var(--cst); }
         .legend-dot.denovo { background: var(--denovo); }
-        .legend-dot.positive { background: var(--positive); }
-        .legend-dot.negative { background: var(--negative); }
         
-        /* Heatmap Table */
-        .heatmap-table {
+        /* ===== TABLES ===== */
+        .data-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 1rem;
-        }
-        
-        .heatmap-table th,
-        .heatmap-table td {
-            padding: 1rem;
-            text-align: center;
-            border: 1px solid var(--light);
-        }
-        
-        .heatmap-table th {
-            background: var(--bg-alt);
-            font-weight: 600;
+            margin: 1rem 0;
             font-size: 0.9rem;
         }
-        
-        .heatmap-table td {
-            font-weight: 700;
-            font-size: 1rem;
-        }
-        
-        .heatmap-table .property {
+        .data-table th, .data-table td {
+            padding: 0.875rem 1rem;
             text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .data-table th {
+            background: var(--dark);
+            color: white;
             font-weight: 600;
-            background: var(--bg-alt);
-        }
-        
-        /* Color cells based on value */
-        .cell-positive { background: rgba(39, 174, 96, 0.2); color: #1e8449; }
-        .cell-negative { background: rgba(231, 76, 60, 0.2); color: #c0392b; }
-        .cell-neutral { background: rgba(149, 165, 166, 0.1); color: var(--gray); }
-        .cell-good { background: rgba(39, 174, 96, 0.3); color: #1e8449; }
-        .cell-bad { background: rgba(231, 76, 60, 0.3); color: #c0392b; }
-        
-        /* Model Comparison Table */
-        .model-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        
-        .model-table th,
-        .model-table td {
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid var(--light);
-        }
-        
-        .model-table th {
-            font-weight: 600;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            color: var(--gray);
+            letter-spacing: 0.03em;
+        }
+        .data-table th:first-child { border-radius: 6px 0 0 0; }
+        .data-table th:last-child { border-radius: 0 6px 0 0; }
+        .data-table tbody tr:hover { background: var(--bg-alt); }
+        .data-table .property { font-weight: 600; }
+        .cell-good { background: rgba(39, 174, 96, 0.15); color: #1e8449; font-weight: 600; }
+        .cell-bad { background: rgba(231, 76, 60, 0.15); color: #c0392b; font-weight: 600; }
+        .cell-neutral { background: rgba(127, 140, 141, 0.1); color: var(--text-muted); }
+        
+        /* ===== LIMITATIONS ===== */
+        .limitations-box {
+            background: #fff5f5;
+            border: 1px solid #fed7d7;
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+        }
+        .limitations-box h3 {
+            color: var(--negative);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .limitations-box ul {
+            margin-left: 1.5rem;
+        }
+        .limitations-box li {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+        .limitations-box li strong {
+            color: var(--negative);
         }
         
-        .model-table tr:hover {
-            background: var(--bg-alt);
-        }
-        
-        .model-table .best {
-            background: rgba(39, 174, 96, 0.1);
-        }
-        
-        .model-table .worst {
-            background: rgba(231, 76, 60, 0.1);
-        }
-        
-        .auroc-bar {
-            display: inline-block;
-            height: 8px;
-            border-radius: 4px;
-            margin-right: 0.5rem;
-            vertical-align: middle;
-        }
-        
-        /* Methods Section */
-        .methods {
-            background: white;
-        }
-        
+        /* ===== METHODS SECTION ===== */
         .methods-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
         }
-        
         .method-card {
             background: var(--bg-alt);
             padding: 1.5rem;
             border-radius: 8px;
         }
-        
         .method-card h4 {
             color: var(--primary);
             margin-bottom: 0.5rem;
+            font-size: 1rem;
         }
-        
         .method-card p {
             font-size: 0.9rem;
-            color: var(--gray);
+            color: var(--text-muted);
+            line-height: 1.6;
         }
         
-        /* Hypothesis Diagram */
-        .hypothesis-diagram {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin: 2rem 0;
-        }
-        
-        .hypothesis-box {
-            padding: 1.5rem 2rem;
-            border-radius: 8px;
-            text-align: center;
-            font-weight: 600;
-        }
-        
-        .hypothesis-box.training {
-            background: var(--sabdab);
-            color: white;
-        }
-        
-        .hypothesis-box.model {
-            background: var(--dark);
-            color: white;
-        }
-        
-        .hypothesis-box.output {
-            background: var(--cst);
-            color: white;
-        }
-        
-        .hypothesis-arrow {
-            font-size: 2rem;
-            color: var(--gray);
-        }
-        
-        /* Footer */
+        /* ===== FOOTER ===== */
         footer {
             background: var(--dark);
             color: white;
             padding: 3rem 2rem;
             text-align: center;
         }
-        
+        footer .links { margin-bottom: 1.5rem; }
         footer a {
             color: white;
             text-decoration: none;
             margin: 0 1rem;
-            opacity: 0.8;
+            opacity: 0.85;
+            transition: opacity 0.2s;
         }
-        
-        footer a:hover {
-            opacity: 1;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 1.8rem; }
-            .section-header h2 { font-size: 1.6rem; }
-            .h-bar-label { width: 80px; font-size: 0.8rem; }
-        }
-        
-        /* Annotation callout */
-        .callout {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 1rem 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 0 8px 8px 0;
-        }
-        
-        .callout strong {
-            color: #856404;
-        }
-        
-        /* Source citation */
-        .source {
-            font-size: 0.85rem;
-            color: var(--gray);
+        footer a:hover { opacity: 1; text-decoration: underline; }
+        footer .credits {
+            font-size: 0.9rem;
+            opacity: 0.7;
             margin-top: 1rem;
-            font-style: italic;
+        }
+        .acknowledgment {
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem auto;
+            max-width: 600px;
+            text-align: center;
+        }
+        .acknowledgment p {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .acknowledgment a { margin: 0; font-weight: 600; }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.875rem; }
+            .hero .subtitle { font-size: 1.05rem; }
+            .section-header h2 { font-size: 1.5rem; }
+            .bar-label { width: 80px; font-size: 0.8rem; }
+            .paper-banner { flex-direction: column; text-align: center; }
+            .paper-banner .text { text-align: center; }
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
+    <!-- ===== INSPIRATION BANNER ===== -->
+    <div class="inspiration-banner">
+        <div class="container">
+            <p><strong>What sparked this analysis:</strong> 
+                <a href="https://ayusuf.substack.com/p/developability" target="_blank">Adil Yusuf's thought-provoking post</a> asking "Does developability come for free?" combined with 
+                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7424510232644530176/" target="_blank">Michael Chungyoun's announcement</a> that FLAb is now available on 
+                <a href="https://registry.opendata.aws/flab/" target="_blank">AWS</a> (500K datapoints) and 
+                <a href="https://github.com/Graylab/FLAb" target="_blank">GitHub</a> (4M+ datapoints)—plus my ongoing exploration of the AI antibody design landscape.
+            </p>
+        </div>
+    </div>
+
+    <!-- ===== HERO SECTION ===== -->
     <header class="hero">
         <div class="container">
             <h1>Does Developability Come For Free?</h1>
             <p class="subtitle">Testing whether de novo antibody design models learn therapeutic-like properties without explicit training, using the FLAb benchmark.</p>
+            
+            <div class="paper-banner">
+                <div class="icon">📄</div>
+                <div class="text">
+                    <strong>Read the Scientific Paper</strong>
+                    <span>Emergent Developability in De Novo Antibody Design (Feb 2026)</span>
+                </div>
+                <a href="emergent_developability_paper.pdf">Download PDF</a>
+            </div>
+            
             <div class="cta-buttons">
-                <a href="emergent_developability_paper.pdf" class="btn btn-primary">
-                    Read Full Paper (PDF)
-                </a>
-                <a href="https://github.com/inventcures/flab_gray-lab-jhu_ab_chars" class="btn btn-secondary">
-                    View Code on GitHub
-                </a>
+                <a href="https://github.com/inventcures/flab_gray-lab-jhu_ab_chars" class="btn btn-secondary">View Code on GitHub</a>
+                <a href="https://github.com/Graylab/FLAb" class="btn btn-secondary">FLAb Benchmark</a>
+                <a href="/antibody-research/" class="btn btn-secondary">All Antibody Research</a>
             </div>
         </div>
     </header>
 
-    <!-- Key Findings -->
+    <!-- ===== TL;DR SUMMARY ===== -->
+    <section class="tldr-section">
+        <div class="container">
+            <div class="tldr-box">
+                <h2>TL;DR: The Bottom Line</h2>
+                <div class="tldr-grid">
+                    <div class="tldr-item">
+                        <div class="tldr-icon">🎯</div>
+                        <div>
+                            <h4>Yes, but it's not magic</h4>
+                            <p>De novo models produce antibodies with reasonable developability—because their training data (SAbDab/PDB) is already biased toward well-behaved proteins.</p>
+                        </div>
+                    </div>
+                    <div class="tldr-item">
+                        <div class="tldr-icon">⚠️</div>
+                        <div>
+                            <h4>Not therapeutic-quality</h4>
+                            <p>De novo designs are better than natural antibodies but still don't match the optimization level of approved therapeutics. Traditional developability engineering remains valuable.</p>
+                        </div>
+                    </div>
+                    <div class="tldr-item">
+                        <div class="tldr-icon">🤖</div>
+                        <div>
+                            <h4>Zero-shot PLMs fail</h4>
+                            <p>ESM-2 without fine-tuning shows weak or negative correlations with experimental properties. Don't use it for fitness prediction out of the box.</p>
+                        </div>
+                    </div>
+                    <div class="tldr-item">
+                        <div class="tldr-icon">🔬</div>
+                        <div>
+                            <h4>Humanness ≠ low immunogenicity</h4>
+                            <p>Humanness alone predicts immunogenicity worse than random (AUROC 0.28). Multi-feature models achieve 0.74 AUROC but dataset is tiny (n=217).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHAT IS DEVELOPABILITY ===== -->
+    <section>
+        <div class="container">
+            <div class="explainer-box">
+                <h3>What is "Developability" and why does it matter?</h3>
+                <p><strong>Developability</strong> refers to the likelihood that an antibody candidate will successfully progress through manufacturing and clinical development. It encompasses multiple properties:</p>
+                <ul>
+                    <li><strong>Expression</strong> — Can it be produced at high yield in cell culture?</li>
+                    <li><strong>Stability</strong> — Does it remain folded and functional over time?</li>
+                    <li><strong>Aggregation</strong> — Does it clump together (bad for injection)?</li>
+                    <li><strong>Immunogenicity</strong> — Will patients develop antibodies against it?</li>
+                </ul>
+                <p style="margin-top: 1rem;">A substantial fraction of clinical failures are attributable to developability issues. This is why the claim that AI models achieve "free developability" is so intriguing—and why we need to understand the mechanism.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== KEY FINDINGS ===== -->
     <section style="background: var(--bg-alt);">
         <div class="container">
             <div class="section-header">
                 <h2>Key Findings</h2>
-                <p>Our analysis of 160 FLAb datasets reveals how training data bias shapes model outputs.</p>
+                <p>Our analysis of the FLAb benchmark reveals how training data bias shapes de novo antibody design.</p>
             </div>
             
             <div class="findings-grid">
                 <div class="finding-card" style="border-color: var(--positive);">
-                    <h3>De Novo Designs Resemble Therapeutics</h3>
+                    <h3>Training Data Bias Confirmed</h3>
                     <div class="stat positive">d = -1.19</div>
-                    <p>Effect size (Cohen's d) for liability motifs: SAbDab-trained models produce fewer problematic sequences than natural antibodies (OAS).</p>
+                    <p>Cohen's d effect size for liability motifs. Structural databases (SAbDab) have significantly fewer problematic sequences than natural antibodies (OAS). This is the largest effect we observed.</p>
                 </div>
                 
                 <div class="finding-card" style="border-color: var(--negative);">
-                    <h3>Zero-Shot ESM-2 Fails on Fitness</h3>
-                    <div class="stat negative">r = -0.14</div>
-                    <p>Pearson correlation for thermostability prediction. PLMs require task-specific fine-tuning for property prediction.</p>
+                    <h3>Zero-Shot PLMs Fail</h3>
+                    <div class="stat negative">ρ = -0.27</div>
+                    <p>Spearman correlation for ESM-2 expression prediction. Negative correlation means sequences ESM-2 calls "unnatural" actually express <em>better</em>—the opposite of what you'd want.</p>
                 </div>
                 
                 <div class="finding-card" style="border-color: var(--primary);">
-                    <h3>Immunogenicity Prediction Works</h3>
-                    <div class="stat" style="color: var(--primary);">0.737</div>
-                    <p>AUROC for logistic regression. Sequence features outperform humanness-only baselines (0.284 AUROC).</p>
+                    <h3>Immunogenicity Prediction</h3>
+                    <div class="stat neutral">0.74</div>
+                    <p>AUROC for immunogenicity classification with multi-feature models. Humanness-only baselines achieve just 0.28 AUROC—worse than random guessing.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- The Hypothesis -->
-    <section>
+    <!-- ===== THE THREE HYPOTHESES ===== -->
+    <section class="hypothesis-section">
         <div class="container">
             <div class="section-header">
-                <h2>The "Developability Comes For Free" Hypothesis</h2>
-                <p>If models are trained on curated therapeutic sequences (SAbDab), do they implicitly learn good developability?</p>
+                <h2>Three Hypotheses for "Free Developability"</h2>
+                <p>Why might de novo antibody design models produce developable sequences without explicit optimization?</p>
             </div>
             
+            <div class="hypotheses-grid">
+                <div class="hypothesis-card">
+                    <span class="badge untested">Untested</span>
+                    <h4>1. Weak Metrics Hypothesis</h4>
+                    <p>Current in silico developability metrics may be insufficiently stringent, allowing most sequences to pass regardless of true developability.</p>
+                </div>
+                
+                <div class="hypothesis-card tested">
+                    <span class="badge tested">Tested Here</span>
+                    <h4>2. Training Data Bias Hypothesis</h4>
+                    <p>Structural databases (PDB/SAbDab) contain an inherent bias toward developable antibodies—poorly behaved sequences rarely get crystallized and deposited.</p>
+                </div>
+                
+                <div class="hypothesis-card">
+                    <span class="badge untested">Untested</span>
+                    <h4>3. Undisclosed Filtering Hypothesis</h4>
+                    <p>Reported results may reflect post-hoc filtering or framework selection not fully described in publications.</p>
+                </div>
+            </div>
+            
+            <!-- SVG Flowchart Diagram -->
             <div class="hypothesis-diagram">
-                <div class="hypothesis-box training">
-                    SAbDab<br><span style="font-weight: 400; font-size: 0.9rem;">Curated therapeutics</span>
-                </div>
-                <div class="hypothesis-arrow">→</div>
-                <div class="hypothesis-box model">
-                    De Novo Model<br><span style="font-weight: 400; font-size: 0.9rem;">Learns distribution</span>
-                </div>
-                <div class="hypothesis-arrow">→</div>
-                <div class="hypothesis-box output">
-                    Generated Abs<br><span style="font-weight: 400; font-size: 0.9rem;">Therapeutic-like?</span>
-                </div>
+                <svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="20" y="60" width="180" height="80" rx="10" fill="#4285F4" opacity="0.9"/>
+                    <text x="110" y="95" text-anchor="middle" fill="white" font-weight="700" font-size="16">SAbDab / PDB</text>
+                    <text x="110" y="118" text-anchor="middle" fill="white" font-size="12" opacity="0.9">Curated structures</text>
+                    
+                    <path d="M 210 100 L 280 100" stroke="#2c3e50" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+                    <text x="245" y="85" text-anchor="middle" fill="#6c757d" font-size="11">trains</text>
+                    
+                    <rect x="290" y="60" width="180" height="80" rx="10" fill="#2c3e50"/>
+                    <text x="380" y="95" text-anchor="middle" fill="white" font-weight="700" font-size="16">De Novo Model</text>
+                    <text x="380" y="118" text-anchor="middle" fill="white" font-size="12" opacity="0.9">Learns distribution</text>
+                    
+                    <path d="M 480 100 L 550 100" stroke="#2c3e50" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+                    <text x="515" y="85" text-anchor="middle" fill="#6c757d" font-size="11">generates</text>
+                    
+                    <rect x="560" y="60" width="180" height="80" rx="10" fill="#34A853" opacity="0.9"/>
+                    <text x="650" y="95" text-anchor="middle" fill="white" font-weight="700" font-size="16">Designed Abs</text>
+                    <text x="650" y="118" text-anchor="middle" fill="white" font-size="12" opacity="0.9">Therapeutic-like?</text>
+                    
+                    <path d="M 110 150 Q 110 170 200 170 Q 290 170 380 170 Q 470 170 560 170 Q 650 170 650 150" 
+                          stroke="#f0ad4e" stroke-width="2" stroke-dasharray="5,5" fill="none"/>
+                    <text x="380" y="190" text-anchor="middle" fill="#8a6d3b" font-size="12" font-weight="600">
+                        Developability bias inherited through training data
+                    </text>
+                    
+                    <defs>
+                        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#2c3e50"/>
+                        </marker>
+                    </defs>
+                </svg>
             </div>
+            <p class="diagram-caption">Figure 1: The training data bias hypothesis. Structural databases have inherent selection for well-behaved proteins.</p>
             
-            <div class="callout">
-                <strong>Key insight:</strong> SAbDab sequences have significantly better developability profiles than natural antibodies (OAS). Models trained on SAbDab inherit this bias—developability appears "for free" but is actually encoded in the training data.
+            <div class="callout insight">
+                <strong>Key insight:</strong> Antibodies in SAbDab have significantly better developability profiles than natural repertoires (OAS). De novo models trained on structural data inherit this bias—developability appears "for free" but is actually encoded in the training data.
             </div>
         </div>
     </section>
 
-    <!-- Developability Comparison Chart -->
+    <!-- ===== DEVELOPABILITY COMPARISON ===== -->
     <section class="chart-section">
         <div class="container">
+            <div class="section-header">
+                <h2>Developability Profile Comparison</h2>
+                <p>Comparing four antibody sources on key developability metrics.</p>
+            </div>
+            
+            <!-- Liability Motifs Bar Chart -->
             <div class="chart-container">
                 <div class="chart-title">Liability Motifs by Dataset</div>
-                <div class="chart-subtitle">Fewer liability motifs = better developability. CST (clinical therapeutics) is the gold standard.</div>
+                <div class="chart-subtitle">Fewer liability motifs = better developability. CST therapeutics set the gold standard.</div>
                 
-                <!-- Horizontal bar chart for liability motifs -->
-                <div class="h-bar-group">
-                    <div class="h-bar-row">
-                        <div class="h-bar-label" style="color: var(--cst);">CST</div>
-                        <div class="h-bar-track">
-                            <div class="h-bar-fill cst" style="width: 34%;">1.36</div>
+                <div class="bar-chart-h">
+                    <div class="bar-row">
+                        <div class="bar-label" style="color: var(--cst);">CST</div>
+                        <div class="bar-track">
+                            <div class="bar-fill cst" style="width: 34%; justify-content: flex-end;">
+                                <span class="bar-value">1.36</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="h-bar-row">
-                        <div class="h-bar-label" style="color: var(--sabdab);">SAbDab</div>
-                        <div class="h-bar-track">
-                            <div class="h-bar-fill sabdab" style="width: 51%;">2.03</div>
+                    <div class="bar-row">
+                        <div class="bar-label" style="color: var(--sabdab);">SAbDab</div>
+                        <div class="bar-track">
+                            <div class="bar-fill sabdab" style="width: 51%; justify-content: flex-end;">
+                                <span class="bar-value">2.03</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="h-bar-row">
-                        <div class="h-bar-label" style="color: var(--denovo);">De Novo</div>
-                        <div class="h-bar-track">
-                            <div class="h-bar-fill denovo" style="width: 66%;">2.62</div>
+                    <div class="bar-row">
+                        <div class="bar-label" style="color: var(--denovo);">De Novo*</div>
+                        <div class="bar-track">
+                            <div class="bar-fill denovo" style="width: 66%; justify-content: flex-end;">
+                                <span class="bar-value">2.62</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="h-bar-row">
-                        <div class="h-bar-label" style="color: var(--oas);">OAS</div>
-                        <div class="h-bar-track">
-                            <div class="h-bar-fill oas" style="width: 99%;">3.96</div>
+                    <div class="bar-row">
+                        <div class="bar-label" style="color: var(--oas);">OAS</div>
+                        <div class="bar-track">
+                            <div class="bar-fill oas" style="width: 99%; justify-content: flex-end;">
+                                <span class="bar-value">3.96</span>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="legend">
-                    <div class="legend-item"><div class="legend-dot cst"></div>CST: Clinical-stage therapeutics (best)</div>
-                    <div class="legend-item"><div class="legend-dot sabdab"></div>SAbDab: Structural database</div>
-                    <div class="legend-item"><div class="legend-dot denovo"></div>De Novo: Model-generated</div>
-                    <div class="legend-item"><div class="legend-dot oas"></div>OAS: Natural repertoire (worst)</div>
+                    <div class="legend-item"><div class="legend-dot cst"></div>CST: Clinical-stage therapeutics (n=137)</div>
+                    <div class="legend-item"><div class="legend-dot sabdab"></div>SAbDab: Structural database (n=500)</div>
+                    <div class="legend-item"><div class="legend-dot denovo"></div>De Novo*: Simulated designs (n=500)</div>
+                    <div class="legend-item"><div class="legend-dot oas"></div>OAS: Natural repertoire (n=500)</div>
                 </div>
                 
-                <p class="source">Data: FLAb benchmark, n=1000 sequences per dataset. Lower values indicate fewer problematic sequence motifs.</p>
+                <p class="source">*Note: De novo sequences are <strong>simulated</strong> to match reported distributions, not actual model outputs. This is a limitation of our analysis. Liability motifs include NG, NS, DG deamidation/isomerization sites and N-glycosylation sequons.</p>
             </div>
             
-            <!-- Full developability comparison table -->
+            <!-- Full Comparison Table -->
             <div class="chart-container">
                 <div class="chart-title">Complete Developability Profile</div>
-                <div class="chart-subtitle">Four key developability metrics across antibody sources. Green = better, Red = worse.</div>
+                <div class="chart-subtitle">Four key metrics across antibody sources. Green = favorable, Red = unfavorable.</div>
                 
-                <table class="heatmap-table">
+                <table class="data-table">
                     <thead>
                         <tr>
                             <th>Dataset</th>
                             <th>Hydrophobicity</th>
                             <th>Net Charge</th>
                             <th>Liability Motifs</th>
-                            <th>Aromatic Content</th>
+                            <th>Aromatic %</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -631,160 +836,197 @@
                             <td class="cell-good">-0.604</td>
                             <td class="cell-good">0.94</td>
                             <td class="cell-good">1.36</td>
-                            <td class="cell-good">0.069</td>
+                            <td class="cell-good">6.9%</td>
                         </tr>
                         <tr>
                             <td class="property" style="color: var(--sabdab);">SAbDab</td>
-                            <td class="cell-positive">-0.498</td>
+                            <td class="cell-good">-0.498</td>
                             <td class="cell-neutral">2.10</td>
-                            <td class="cell-positive">2.03</td>
-                            <td class="cell-neutral">0.080</td>
+                            <td class="cell-good">2.03</td>
+                            <td class="cell-neutral">8.0%</td>
                         </tr>
                         <tr>
-                            <td class="property" style="color: var(--denovo);">De Novo</td>
-                            <td class="cell-positive">-0.452</td>
+                            <td class="property" style="color: var(--denovo);">De Novo (Simulated)*</td>
+                            <td class="cell-neutral">-0.452</td>
                             <td class="cell-neutral">2.50</td>
                             <td class="cell-neutral">2.62</td>
-                            <td class="cell-neutral">0.078</td>
+                            <td class="cell-neutral">7.8%</td>
                         </tr>
                         <tr>
                             <td class="property" style="color: var(--oas);">OAS (Natural)</td>
                             <td class="cell-bad">-0.327</td>
                             <td class="cell-bad">3.14</td>
                             <td class="cell-bad">3.96</td>
-                            <td class="cell-bad">0.088</td>
+                            <td class="cell-bad">8.8%</td>
                         </tr>
                     </tbody>
                 </table>
                 
-                <div class="callout" style="margin-top: 1.5rem;">
-                    <strong>Interpretation:</strong> De novo models produce antibodies closer to SAbDab than OAS across all metrics—supporting the training data bias hypothesis. However, they don't quite reach CST-level quality, suggesting room for improvement.
+                <div class="callout">
+                    <strong>Interpretation:</strong> De novo designs show profiles closer to SAbDab than OAS across all metrics—supporting the training data bias hypothesis. However, they don't match CST-level optimization, suggesting explicit developability engineering remains valuable.
                 </div>
+                
+                <p class="source">Data: FLAb CST panel (Jain et al. 2017), SAbDab (Oxford), OAS paired sequences. *De novo sequences are simulated, not actual model outputs. Hydrophobicity: Kyte-Doolittle scale (lower = better). Net charge at pH 7.4.</p>
+            </div>
+            
+            <!-- Effect Size Visualization -->
+            <div class="chart-container">
+                <div class="chart-title">Effect Sizes: SAbDab vs. OAS</div>
+                <div class="chart-subtitle">Cohen's d comparing structural database to natural repertoire. Negative values favor SAbDab (better developability).</div>
+                
+                <svg viewBox="0 0 700 200" style="width: 100%; max-width: 700px; display: block; margin: 1.5rem auto;">
+                    <line x1="150" y1="25" x2="150" y2="175" stroke="#2c3e50" stroke-width="2"/>
+                    <line x1="350" y1="25" x2="350" y2="175" stroke="#2c3e50" stroke-width="2" stroke-dasharray="4,4"/>
+                    <line x1="550" y1="25" x2="550" y2="175" stroke="#2c3e50" stroke-width="2"/>
+                    
+                    <text x="150" y="190" text-anchor="middle" font-size="11" fill="#6c757d">-1.5</text>
+                    <text x="350" y="190" text-anchor="middle" font-size="11" fill="#6c757d">0</text>
+                    <text x="550" y="190" text-anchor="middle" font-size="11" fill="#6c757d">+1.5</text>
+                    <text x="350" y="15" text-anchor="middle" font-size="10" fill="#6c757d">← Favors SAbDab | Favors OAS →</text>
+                    
+                    <text x="20" y="50" font-size="12" font-weight="600" fill="#2c3e50">Liability Motifs</text>
+                    <rect x="191" y="40" width="159" height="20" rx="3" fill="#27AE60"/>
+                    <text x="270" y="54" text-anchor="middle" font-size="11" font-weight="600" fill="white">d = -1.19</text>
+                    
+                    <text x="20" y="90" font-size="12" font-weight="600" fill="#2c3e50">Hydrophobicity</text>
+                    <rect x="293" y="80" width="57" height="20" rx="3" fill="#27AE60"/>
+                    <text x="321" y="94" text-anchor="middle" font-size="11" font-weight="600" fill="white">-0.43</text>
+                    
+                    <text x="20" y="130" font-size="12" font-weight="600" fill="#2c3e50">Aromatic Content</text>
+                    <rect x="309" y="120" width="41" height="20" rx="3" fill="#27AE60"/>
+                    <text x="329" y="134" text-anchor="middle" font-size="11" font-weight="600" fill="white">-0.31</text>
+                    
+                    <text x="20" y="170" font-size="12" font-weight="600" fill="#2c3e50">Net Charge</text>
+                    <rect x="317" y="160" width="33" height="20" rx="3" fill="#27AE60"/>
+                    <text x="333" y="174" text-anchor="middle" font-size="11" font-weight="600" fill="white">-0.25</text>
+                </svg>
+                
+                <p class="source">Effect sizes (Cohen's d) from Mann-Whitney U tests. All comparisons p < 0.001. Interpretation: d = 0.2 small, 0.5 medium, 0.8 large effect.</p>
             </div>
         </div>
     </section>
 
-    <!-- ESM-2 Benchmark Results -->
-    <section>
+    <!-- ===== ESM-2 BENCHMARK ===== -->
+    <section style="background: var(--bg-alt);">
         <div class="container">
             <div class="section-header">
-                <h2>Zero-Shot PLM Performance (FLAB-002)</h2>
+                <h2>Zero-Shot PLM Performance</h2>
                 <p>Can ESM-2 embeddings predict antibody fitness without fine-tuning? Short answer: No.</p>
             </div>
             
-            <div class="chart-container">
+            <div class="chart-container" style="background: white;">
                 <div class="chart-title">ESM-2 Correlation with Experimental Properties</div>
-                <div class="chart-subtitle">Pearson correlation (r) and Spearman rank correlation (ρ) for n=300 sequences per property.</div>
+                <div class="chart-subtitle">Spearman rank correlation (ρ) for n=300 sequences per property. Values near zero indicate no predictive power.</div>
                 
-                <table class="heatmap-table">
-                    <thead>
-                        <tr>
-                            <th>Property</th>
-                            <th>Pearson r</th>
-                            <th>Spearman ρ</th>
-                            <th>AUROC</th>
-                            <th>Interpretation</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="property">Thermostability</td>
-                            <td class="cell-negative">-0.140</td>
-                            <td class="cell-negative">-0.143</td>
-                            <td class="cell-bad">0.42</td>
-                            <td style="font-size: 0.9rem;">Worse than random</td>
-                        </tr>
-                        <tr>
-                            <td class="property">Expression</td>
-                            <td class="cell-negative">-0.060</td>
-                            <td class="cell-negative">-0.267</td>
-                            <td class="cell-bad">0.35</td>
-                            <td style="font-size: 0.9rem;">Worse than random</td>
-                        </tr>
-                        <tr>
-                            <td class="property">Binding Affinity</td>
-                            <td class="cell-neutral">0.010</td>
-                            <td class="cell-positive">0.175</td>
-                            <td class="cell-neutral">0.56</td>
-                            <td style="font-size: 0.9rem;">Weak signal</td>
-                        </tr>
-                        <tr>
-                            <td class="property">Aggregation</td>
-                            <td class="cell-negative">-0.052</td>
-                            <td class="cell-negative">-0.088</td>
-                            <td class="cell-bad">0.46</td>
-                            <td style="font-size: 0.9rem;">No predictive value</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <svg viewBox="0 0 700 220" style="width: 100%; max-width: 700px; display: block; margin: 1.5rem auto;">
+                    <rect x="180" y="20" width="340" height="180" fill="#f8f9fa" rx="4"/>
+                    <line x1="350" y1="20" x2="350" y2="200" stroke="#2c3e50" stroke-width="2"/>
+                    <line x1="265" y1="20" x2="265" y2="200" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="3,3"/>
+                    <line x1="435" y1="20" x2="435" y2="200" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="3,3"/>
+                    
+                    <text x="180" y="215" text-anchor="middle" font-size="10" fill="#6c757d">-0.5</text>
+                    <text x="265" y="215" text-anchor="middle" font-size="10" fill="#6c757d">-0.25</text>
+                    <text x="350" y="215" text-anchor="middle" font-size="10" fill="#6c757d">0</text>
+                    <text x="435" y="215" text-anchor="middle" font-size="10" fill="#6c757d">+0.25</text>
+                    <text x="520" y="215" text-anchor="middle" font-size="10" fill="#6c757d">+0.5</text>
+                    
+                    <text x="170" y="55" text-anchor="end" font-size="12" font-weight="500" fill="#2c3e50">Expression</text>
+                    <line x1="259" y1="50" x2="350" y2="50" stroke="#E74C3C" stroke-width="3"/>
+                    <circle cx="259" cy="50" r="8" fill="#E74C3C"/>
+                    <text x="259" y="38" text-anchor="middle" font-size="10" font-weight="600" fill="#E74C3C">-0.27</text>
+                    
+                    <text x="170" y="95" text-anchor="end" font-size="12" font-weight="500" fill="#2c3e50">Binding</text>
+                    <line x1="350" y1="90" x2="410" y2="90" stroke="#27AE60" stroke-width="3"/>
+                    <circle cx="410" cy="90" r="8" fill="#27AE60"/>
+                    <text x="410" y="78" text-anchor="middle" font-size="10" font-weight="600" fill="#27AE60">+0.18</text>
+                    
+                    <text x="170" y="135" text-anchor="end" font-size="12" font-weight="500" fill="#2c3e50">Thermostability</text>
+                    <line x1="301" y1="130" x2="350" y2="130" stroke="#E74C3C" stroke-width="3"/>
+                    <circle cx="301" cy="130" r="8" fill="#E74C3C"/>
+                    <text x="301" y="118" text-anchor="middle" font-size="10" font-weight="600" fill="#E74C3C">-0.14</text>
+                    
+                    <text x="170" y="175" text-anchor="end" font-size="12" font-weight="500" fill="#2c3e50">Aggregation</text>
+                    <line x1="320" y1="170" x2="350" y2="170" stroke="#7F8C8D" stroke-width="3"/>
+                    <circle cx="320" cy="170" r="8" fill="#7F8C8D"/>
+                    <text x="320" y="158" text-anchor="middle" font-size="10" font-weight="600" fill="#7F8C8D">-0.09</text>
+                    
+                    <circle cx="560" cy="60" r="6" fill="#27AE60"/>
+                    <text x="575" y="64" font-size="11" fill="#2c3e50">Positive correlation</text>
+                    <circle cx="560" cy="85" r="6" fill="#E74C3C"/>
+                    <text x="575" y="89" font-size="11" fill="#2c3e50">Negative correlation</text>
+                    <circle cx="560" cy="110" r="6" fill="#7F8C8D"/>
+                    <text x="575" y="114" font-size="11" fill="#2c3e50">No correlation</text>
+                </svg>
                 
                 <div class="callout">
-                    <strong>Key finding:</strong> Zero-shot ESM-2 embeddings show negative correlations with most fitness properties. This confirms the FLAb paper's finding that task-specific fine-tuning is essential for antibody property prediction.
+                    <strong>Key finding:</strong> Zero-shot ESM-2 shows weak or negative correlations with most fitness properties. Expression shows a moderate <em>negative</em> correlation (ρ = -0.27), meaning sequences ESM-2 considers "unnatural" may actually express better—possibly because therapeutic antibodies are engineered away from germline.
                 </div>
                 
-                <p class="source">Method: Mean-pooled ESM-2 (650M) embeddings with linear regression. Data: FLAb benchmark experimental measurements.</p>
+                <p class="source">Method: ESM-2 (650M) pseudo-log-likelihood scoring. Data: FLAb benchmark. This confirms findings from the original FLAb paper (Chungyoun et al. 2024).</p>
             </div>
         </div>
     </section>
 
-    <!-- Immunogenicity Results -->
-    <section class="chart-section">
+    <!-- ===== IMMUNOGENICITY ===== -->
+    <section>
         <div class="container">
             <div class="section-header">
-                <h2>Immunogenicity Prediction (FLAB-004)</h2>
-                <p>Predicting which antibodies will trigger immune responses in patients.</p>
+                <h2>Immunogenicity Prediction</h2>
+                <p>Predicting which antibodies will trigger immune responses—and the critical data gap.</p>
             </div>
             
             <div class="chart-container">
-                <div class="chart-title">Model Comparison for Immunogenicity Classification</div>
-                <div class="chart-subtitle">Binary classification: immunogenic vs non-immunogenic. Higher AUROC = better.</div>
+                <div class="chart-title">Model Performance for Immunogenicity Classification</div>
+                <div class="chart-subtitle">AUROC for binary immunogenic vs. non-immunogenic classification (n=217 antibodies with clinical ADA data).</div>
                 
-                <table class="model-table">
-                    <thead>
-                        <tr>
-                            <th>Model</th>
-                            <th>Accuracy</th>
-                            <th>AUROC</th>
-                            <th style="width: 200px;">Performance</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="best">
-                            <td><strong>Logistic Regression</strong></td>
-                            <td>0.641</td>
-                            <td><strong>0.737</strong></td>
-                            <td><span class="auroc-bar" style="width: 147px; background: var(--positive);"></span></td>
-                        </tr>
-                        <tr>
-                            <td>Gradient Boosting</td>
-                            <td>0.673</td>
-                            <td>0.727</td>
-                            <td><span class="auroc-bar" style="width: 145px; background: var(--positive);"></span></td>
-                        </tr>
-                        <tr>
-                            <td>Random Forest</td>
-                            <td>0.654</td>
-                            <td>0.723</td>
-                            <td><span class="auroc-bar" style="width: 144px; background: var(--positive);"></span></td>
-                        </tr>
-                        <tr class="worst">
-                            <td>Humanness Only (baseline)</td>
-                            <td>0.673</td>
-                            <td>0.284</td>
-                            <td><span class="auroc-bar" style="width: 57px; background: var(--negative);"></span></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <svg viewBox="0 0 600 200" style="width: 100%; max-width: 600px; display: block; margin: 1.5rem auto;">
+                    <line x1="300" y1="20" x2="300" y2="180" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="4,4"/>
+                    <text x="300" y="195" text-anchor="middle" font-size="10" fill="#6c757d">Random (0.50)</text>
+                    
+                    <text x="20" y="50" font-size="12" font-weight="600" fill="#2c3e50">Logistic Regression</text>
+                    <rect x="150" y="38" width="294" height="24" rx="4" fill="#27AE60"/>
+                    <text x="440" y="55" font-size="13" font-weight="700" fill="#27AE60">0.737</text>
+                    
+                    <text x="20" y="90" font-size="12" font-weight="600" fill="#2c3e50">Gradient Boosting</text>
+                    <rect x="150" y="78" width="290" height="24" rx="4" fill="#27AE60" opacity="0.8"/>
+                    <text x="440" y="95" font-size="13" font-weight="700" fill="#27AE60">0.727</text>
+                    
+                    <text x="20" y="130" font-size="12" font-weight="600" fill="#2c3e50">Random Forest</text>
+                    <rect x="150" y="118" width="286" height="24" rx="4" fill="#27AE60" opacity="0.7"/>
+                    <text x="440" y="135" font-size="13" font-weight="700" fill="#27AE60">0.723</text>
+                    
+                    <text x="20" y="170" font-size="12" font-weight="600" fill="#2c3e50">Humanness Only</text>
+                    <rect x="150" y="158" width="114" height="24" rx="4" fill="#E74C3C"/>
+                    <text x="440" y="175" font-size="13" font-weight="700" fill="#E74C3C">0.284</text>
+                </svg>
                 
-                <div class="callout">
-                    <strong>Critical insight:</strong> Humanness alone (AUROC 0.284) is worse than random chance at predicting immunogenicity. This challenges the common assumption that "more human = less immunogenic." Multi-feature models using sequence properties achieve meaningful prediction (AUROC 0.737).
+                <div class="callout warning">
+                    <strong>Critical insight:</strong> Humanness alone (AUROC 0.284) is <em>worse than random chance</em> at predicting immunogenicity. This challenges the common assumption that "more human = less immunogenic." Multi-feature models achieve 0.74 AUROC, but the dataset is tiny (n=217).
                 </div>
+                
+                <p class="source">Data: Immunogenicity data aggregated in FLAb (n=217 antibodies with clinical ADA data). Method: Leave-one-out cross-validation. Features: Sequence properties + humanness scores + ESM-2 embeddings.</p>
             </div>
         </div>
     </section>
 
-    <!-- Methods Overview -->
-    <section class="methods">
+    <!-- ===== LIMITATIONS ===== -->
+    <section style="background: var(--bg-alt);">
+        <div class="container">
+            <div class="limitations-box">
+                <h3>Important Limitations</h3>
+                <ul>
+                    <li><strong>Simulated de novo data:</strong> We used sequences sampled from reported distributions, not actual de novo design outputs. This is a proxy, not direct evidence.</li>
+                    <li><strong>Sequence-only features:</strong> Our analysis was limited to sequence-based metrics. Structure-based features may provide additional predictive value.</li>
+                    <li><strong>Small immunogenicity dataset:</strong> Only 217 samples—too small for reliable deep learning and may not generalize to new antibody formats.</li>
+                    <li><strong>No experimental validation:</strong> We did not experimentally validate predictions. Feature comparisons do not guarantee actual developability outcomes.</li>
+                    <li><strong>Exploratory statistics:</strong> No correction for multiple comparisons was applied. Results should be treated as hypothesis-generating.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== METHODS ===== -->
+    <section>
         <div class="container">
             <div class="section-header">
                 <h2>Methods</h2>
@@ -794,25 +1036,25 @@
             <div class="methods-grid">
                 <div class="method-card">
                     <h4>Data Source</h4>
-                    <p>FLAb benchmark from Gray Lab (Johns Hopkins). 160 CSV files covering thermostability, expression, binding, and aggregation.</p>
+                    <p>FLAb benchmark from Gray Lab (Johns Hopkins). 160 CSV files across thermostability, expression, binding, and aggregation properties. ~4M datapoints total.</p>
                 </div>
                 <div class="method-card">
                     <h4>Embeddings</h4>
-                    <p>ESM-2 (650M parameters) with mean pooling over sequence length. GPU inference on Modal cloud.</p>
+                    <p>ESM-2 (650M parameters) with mean pooling. GPU inference on Modal cloud infrastructure (~$15-20 total compute cost).</p>
                 </div>
                 <div class="method-card">
                     <h4>Developability</h4>
-                    <p>TAP2 tool for liability motif detection, hydrophobicity, charge, and aromatic content analysis.</p>
+                    <p>Sequence-based metrics: liability motif detection, Kyte-Doolittle hydrophobicity, net charge at pH 7.4, aromatic content (F, W, Y fraction).</p>
                 </div>
                 <div class="method-card">
-                    <h4>Statistical Tests</h4>
-                    <p>Welch's t-test with Bonferroni correction. Cohen's d for effect sizes. Bootstrap CI for correlations.</p>
+                    <h4>Statistics</h4>
+                    <p>Mann-Whitney U tests for group comparisons. Cohen's d for effect sizes. Leave-one-out CV for immunogenicity models.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Citation Section -->
+    <!-- ===== CITATION ===== -->
     <section style="background: var(--bg-alt);">
         <div class="container">
             <div class="section-header">
@@ -820,9 +1062,9 @@
             </div>
             
             <div class="chart-container" style="background: var(--dark); color: white;">
-                <pre style="font-size: 0.9rem; overflow-x: auto; white-space: pre-wrap;">@article{flab_developability_2026,
+                <pre style="font-size: 0.85rem; overflow-x: auto; white-space: pre-wrap; margin: 0;">@article{flab_developability_2026,
   title={Emergent Developability in De Novo Antibody Design: 
-         Does Developability Come For Free?},
+         A Computational Analysis of the FLAb Benchmark},
   author={FLAb Analysis Team},
   journal={bioRxiv},
   year={2026},
@@ -832,15 +1074,22 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ===== FOOTER ===== -->
     <footer>
-        <div style="margin-bottom: 2rem;">
+        <div class="links">
             <a href="emergent_developability_paper.pdf">Full Paper (PDF)</a>
             <a href="https://github.com/inventcures/flab_gray-lab-jhu_ab_chars">GitHub Repository</a>
-            <a href="https://github.com/gray-lab/flab">FLAb Benchmark</a>
+            <a href="https://github.com/Graylab/FLAb">FLAb Benchmark</a>
+            <a href="/">inventcures.github.io</a>
         </div>
-        <p style="opacity: 0.6; font-size: 0.9rem;">
-            FLAb Dataset Analysis | February 2026 | Built with data from Gray Lab (JHU)
+        
+        <div class="acknowledgment">
+            <p>Thanks to <a href="https://x.com/charles_irl" target="_blank">Charles Frye (@charles_irl on X)</a> of <a href="https://modal.com" target="_blank">Modal</a> for providing Modal credits that enabled these analyses to run quickly, and for always being supportive!</p>
+        </div>
+        
+        <p class="credits">
+            FLAb Dataset Analysis | February 2026<br>
+            Built with data from Gray Lab (Johns Hopkins University)
         </p>
     </footer>
 </body>

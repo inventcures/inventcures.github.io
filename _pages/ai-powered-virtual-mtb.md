@@ -1,6 +1,6 @@
 ---
 permalink: /ai-powered-virtual-mtb/
-title: "AI-Powered Virtual Tumor Board"
+title: "AI for Cancer Treatment Planning"
 layout: single
 author_profile: false
 ---
@@ -11,7 +11,6 @@ author_profile: false
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-EZ92F8GGBM');
 </script>
 
@@ -25,8 +24,9 @@ author_profile: false
 }
 .hero-section h2 {
   color: #fff;
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin: 0 0 1rem 0;
+  line-height: 1.3;
 }
 .hero-tagline {
   color: #c7d2fe;
@@ -84,23 +84,29 @@ author_profile: false
   color: #ffffff;
   font-weight: 700;
 }
-.value-prop {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  border: 2px solid #334155;
-  border-radius: 12px;
-  padding: 2rem;
+.outcome-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
   margin: 2rem 0;
 }
-.value-prop h3 {
-  color: #f1f5f9;
-  margin-top: 0;
+.outcome-card {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
 }
-.value-prop ul {
-  color: #cbd5e1;
-  line-height: 1.8;
+.outcome-card h4 {
+  color: #818cf8;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
 }
-.value-prop li {
-  margin-bottom: 0.5rem;
+.outcome-card p {
+  color: #94a3b8;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 .cta-section {
   background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
@@ -138,133 +144,96 @@ author_profile: false
   color: #4f46e5;
   text-decoration: none;
 }
-.audience-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  margin: 2rem 0;
-}
-.audience-card {
+.audience-list {
   background: #1e293b;
   border: 1px solid #334155;
   border-radius: 12px;
-  padding: 1.5rem;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
 }
-.audience-card h4 {
+.audience-list h4 {
   color: #f1f5f9;
-  margin: 0 0 0.75rem 0;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  margin: 0 0 1rem 0;
 }
-.audience-card p {
-  color: #94a3b8;
+.audience-list ul {
+  color: #cbd5e1;
   margin: 0;
-  font-size: 0.9rem;
-  line-height: 1.6;
+  padding-left: 1.25rem;
+  line-height: 1.8;
 }
 @media (max-width: 768px) {
-  .stat-grid, .audience-grid {
+  .stat-grid, .outcome-grid {
     grid-template-columns: 1fr;
   }
 }
 </style>
 
 <div class="hero-section">
-  <h2>AI-Powered Virtual Tumor Board</h2>
-  <p class="hero-tagline">Democratizing Expert Cancer Care Through Multi-Agent AI</p>
+  <h2>Expert-Level Cancer Treatment Planning,<br>Accessible Anywhere</h2>
+  <p class="hero-tagline">AI-powered clinical decision support for oncology</p>
 </div>
 
-## The Problem: Tumor Boards Save Lives, But Most Patients Never Get One
+## The Problem
 
-A **Multidisciplinary Tumor Board (MTB)** is a meeting where oncologists from different specialties—surgery, medical oncology, radiation, pathology, radiology, genetics, and palliative care—gather to discuss complex cancer cases and reach a consensus treatment plan.
+In oncology, the best patient outcomes come from **multidisciplinary expert review**—multiple specialists examining a case together and reaching consensus on the optimal treatment plan.
 
-**The evidence is clear**: MTB discussions improve cancer outcomes, reduce treatment delays, and ensure patients receive optimal, evidence-based care.
+**But this level of care is inaccessible to most patients.**
 
 <div class="stat-grid">
   <div class="stat-card">
     <div class="stat-number">&lt;5%</div>
-    <div class="stat-label">of Indian cancer patients get MTB review</div>
+    <div class="stat-label">of cancer patients in India receive expert multidisciplinary review</div>
   </div>
   <div class="stat-card">
     <div class="stat-number">1.4M</div>
-    <div class="stat-label">new cancer cases in India yearly</div>
+    <div class="stat-label">new cancer cases in India every year</div>
   </div>
   <div class="stat-card">
-    <div class="stat-number">~800</div>
-    <div class="stat-label">oncologists per 100,000 patients (US has 3,000+)</div>
+    <div class="stat-number">4x</div>
+    <div class="stat-label">fewer oncologists per capita than the US</div>
   </div>
 </div>
 
-**Why don't more patients get tumor boards?**
-- Severe oncologist shortage, especially outside metros
-- Time constraints—a single MTB meeting takes 1-2 hours
-- Coordination challenges across specialties
-- No reimbursement for MTB participation in most settings
+The result: **delayed diagnoses, suboptimal treatment plans, and preventable deaths**—especially outside major metro areas.
 
 ---
 
 <div class="personal-story">
-  <h3>Why I Built This</h3>
+  <h3>Why This Matters to Me</h3>
   
   <p>Last year, my aunt was diagnosed with cancer. During staging, her MRI showed a lesion in her vertebra. The radiologist's report was ambiguous: <em>"sclerotic change, possibly age-related, cannot rule out metastatic disease."</em></p>
   
   <p>That single sentence was the difference between Stage II (curable) and Stage IV (incurable).</p>
   
-  <p>We were fortunate. Through family connections, we got her case reviewed at a tumor board with some of India's best oncologists. After careful review, they concluded it was a benign age-related change. She received curative-intent treatment.</p>
+  <p>We were fortunate—through family connections, we got her case reviewed by top specialists. They concluded it was benign. She received curative treatment.</p>
   
-  <p><strong>Most Indian cancer patients don't have that privilege.</strong> They don't have connections to top oncologists. They can't travel to metros. They can't afford private consultations with 7 specialists.</p>
+  <p><strong>Most patients aren't that lucky.</strong> They don't have connections. They can't travel to metros. They can't afford multiple specialist consultations.</p>
   
-  <p>I'm building the AI Virtual Tumor Board to democratize access to expert-level multidisciplinary deliberation.</p>
+  <p>I'm building technology to change that.</p>
 </div>
 
 ---
 
-## The Solution
+## What We're Building
 
-A proprietary AI system that simulates comprehensive tumor board deliberation with **multiple specialist agents** covering:
+A proprietary AI system that delivers **expert-level treatment recommendations** for cancer patients—making world-class oncology decision support accessible regardless of geography or resources.
 
-- Surgical Oncology
-- Medical Oncology  
-- Radiation Oncology
-- Palliative Care
-- Radiology
-- Pathology
-- Genetics/Genomics
-
-The system produces **structured treatment recommendations** grounded in internationally recognized clinical guidelines and best practices—while being aware of **Indian healthcare context** including drug availability, costs, and insurance coverage.
-
-<div class="value-prop">
-  <h3>Key Differentiators</h3>
-  <ul>
-    <li><strong>True Multi-Agent Deliberation</strong> — Not a single chatbot, but specialized agents that debate and reach consensus</li>
-    <li><strong>Safety-First Architecture</strong> — Built-in mechanisms to catch errors and ensure reliability</li>
-    <li><strong>Evidence-Based</strong> — Recommendations grounded in established clinical standards</li>
-    <li><strong>India-Aware</strong> — Considers local drug availability, costs, and insurance coverage</li>
-    <li><strong>Multimodal</strong> — Can incorporate imaging and pathology data</li>
-  </ul>
-</div>
-
----
-
-## Who This Is For
-
-<div class="audience-grid">
-  <div class="audience-card">
-    <h4>🏥 Hospital Oncology Departments</h4>
-    <p>Augment your tumor board capacity. Handle more cases with consistent quality. Reduce time-to-treatment-decision for routine cases while freeing up expert bandwidth for complex ones.</p>
+<div class="outcome-grid">
+  <div class="outcome-card">
+    <h4>Faster Decisions</h4>
+    <p>Reduce time from diagnosis to treatment plan from weeks to minutes</p>
   </div>
-  <div class="audience-card">
-    <h4>👨‍⚕️ Community Oncologists</h4>
-    <p>Get second-opinion-level deliberation for your patients without referral delays. Especially valuable in tier-2/tier-3 cities with limited specialist access.</p>
+  <div class="outcome-card">
+    <h4>Consistent Quality</h4>
+    <p>Evidence-based recommendations aligned with international standards</p>
   </div>
-  <div class="audience-card">
-    <h4>🏛️ Healthcare Systems & CMIOs</h4>
-    <p>Standardize care quality across your network. Ensure consistent, evidence-based recommendations. Generate structured documentation. Reduce variability in treatment planning.</p>
+  <div class="outcome-card">
+    <h4>Local Context</h4>
+    <p>Aware of drug availability, costs, and insurance coverage in India</p>
   </div>
-  <div class="audience-card">
-    <h4>💼 Investors</h4>
-    <p>Precision oncology market growing rapidly. AI in healthcare is at an inflection point. First-mover opportunity in India's 1.4M annual cancer cases.</p>
+  <div class="outcome-card">
+    <h4>Scalable Access</h4>
+    <p>Expert-level care for tier-2/tier-3 cities and rural areas</p>
   </div>
 </div>
 
@@ -272,30 +241,41 @@ The system produces **structured treatment recommendations** grounded in interna
 
 ## Current Status
 
-- **Working prototype** with multi-agent deliberation
-- **Evaluated on synthetic cases** — seeking clinical validation partnerships
-- **Pre-seed stage** — actively exploring fundraising
+We have a **working prototype** and are actively seeking:
+
+- **Clinical validation partners** — oncology departments interested in piloting
+- **Strategic investors** — pre-seed stage, India-focused healthtech
 
 <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 2px solid #f59e0b; border-radius: 12px; padding: 1.25rem; margin: 2rem 0;">
   <p style="color: #78350f; margin: 0; font-size: 0.95rem; line-height: 1.6;">
-    <strong style="color: #92400e;">Research Stage:</strong> This is early-stage work evaluated only on synthetic cases. All performance metrics are design goals, not validated results. We are actively seeking clinical validation partnerships with oncology departments.
+    <strong style="color: #92400e;">Early Stage:</strong> Currently evaluated on synthetic cases. Seeking partnerships for clinical validation. Not yet approved for clinical use.
   </p>
+</div>
+
+<div class="audience-list">
+  <h4>Who should reach out:</h4>
+  <ul>
+    <li>Hospital oncology departments looking to augment capacity</li>
+    <li>Healthcare systems interested in standardizing cancer care quality</li>
+    <li>Oncologists in underserved areas seeking decision support</li>
+    <li>Investors in healthtech / precision oncology</li>
+  </ul>
 </div>
 
 ---
 
 <div class="cta-section">
-  <h3>Let's Talk</h3>
-  <p>Interested in piloting, partnering, or investing? I'd love to hear from you.</p>
-  <a href="mailto:spiff007@gmail.com?subject=Virtual%20Tumor%20Board%20-%20Interest" class="cta-button">
+  <h3>Interested? Let's Talk.</h3>
+  <p>I'm happy to share more details under NDA.</p>
+  <a href="mailto:spiff007@gmail.com?subject=Cancer%20AI%20-%20Interest" class="cta-button">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-    Contact Me
+    Get in Touch
   </a>
 </div>
 
 <div style="text-align: center; margin-top: 1rem;">
   <p style="color: #64748b; font-size: 0.9rem;">
-    Or connect on <a href="https://twitter.com/inventcures" style="color: #818cf8;">Twitter/X</a> · <a href="https://linkedin.com/in/tp53" style="color: #818cf8;">LinkedIn</a>
+    <a href="https://twitter.com/inventcures" style="color: #818cf8;">Twitter/X</a> · <a href="https://linkedin.com/in/tp53" style="color: #818cf8;">LinkedIn</a>
   </p>
 </div>
 
@@ -303,6 +283,6 @@ The system produces **structured treatment recommendations** grounded in interna
 
 <div style="background: #1e293b; border: 1px solid #475569; border-radius: 8px; padding: 1.25rem; margin-top: 3rem;">
   <p style="text-align: center; color: #94a3b8; font-size: 0.85rem; margin: 0; line-height: 1.6;">
-    <strong style="color: #f1f5f9;">Disclaimer:</strong> This is a research prototype. AI-generated recommendations must always be verified by qualified oncologists. Not intended for clinical decision-making without physician oversight.
+    <strong style="color: #f1f5f9;">Disclaimer:</strong> Research prototype. Not for clinical use without physician oversight.
   </p>
 </div>

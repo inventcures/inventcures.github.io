@@ -17,8 +17,61 @@ layout: default
   <p style="margin: 0; color: #555;">If you are interested, write to me at my Ashoka email with the subject line <em>"Research Intern interest"</em>, including a short paragraph about your background and which of these areas you would like to do research on.</p>
 </div>
 
+<!-- Toggle Navigation -->
+<div style="display: flex; gap: 0; margin: 2rem 0 2.5rem 0; border-radius: 8px; overflow: hidden; border: 2px solid #e5e7eb;">
+  <button onclick="showSection('medicine')" id="btn-medicine" style="flex: 1; padding: 1rem 1.5rem; border: none; background: #818cf8; color: white; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px;">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+    </svg>
+    ML + Medicine
+  </button>
+  <button onclick="showSection('biotech')" id="btn-biotech" style="flex: 1; padding: 1rem 1.5rem; border: none; background: #f3f4f6; color: #1D3557; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px;">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+    </svg>
+    ML + Biology/Biotech
+  </button>
+</div>
+
+<script>
+function showSection(section) {
+  const medicineSection = document.getElementById('section-medicine');
+  const biotechSection = document.getElementById('section-biotech');
+  const btnMedicine = document.getElementById('btn-medicine');
+  const btnBiotech = document.getElementById('btn-biotech');
+  
+  if (section === 'medicine') {
+    medicineSection.style.display = 'block';
+    biotechSection.style.display = 'none';
+    btnMedicine.style.background = '#818cf8';
+    btnMedicine.style.color = 'white';
+    btnBiotech.style.background = '#f3f4f6';
+    btnBiotech.style.color = '#1D3557';
+  } else {
+    medicineSection.style.display = 'none';
+    biotechSection.style.display = 'block';
+    btnMedicine.style.background = '#f3f4f6';
+    btnMedicine.style.color = '#1e1b4b';
+    btnBiotech.style.background = '#E63946';
+    btnBiotech.style.color = 'white';
+  }
+  
+  // Update URL hash without scrolling
+  history.replaceState(null, null, '#' + section);
+}
+
+// Check URL hash on page load
+document.addEventListener('DOMContentLoaded', function() {
+  const hash = window.location.hash.substring(1);
+  if (hash === 'biotech') {
+    showSection('biotech');
+  }
+});
+</script>
+
 <!-- ==================== ML + MEDICINE ==================== -->
-<h2 style="margin-top: 3rem; padding-bottom: 0.5rem; border-bottom: 3px solid #818cf8; color: #1e1b4b;">ML + Medicine</h2>
+<div id="section-medicine">
+<h2 style="margin-top: 1rem; padding-bottom: 0.5rem; border-bottom: 3px solid #818cf8; color: #1e1b4b;">ML + Medicine</h2>
 <p style="color: #666; margin-bottom: 2rem;">Clinical AI, healthcare tools, and medical decision support systems.</p>
 
 <!-- Virtual Tumor Board - Featured -->
@@ -244,8 +297,11 @@ layout: default
 </section>
 
 
+</div><!-- end section-medicine -->
+
 <!-- ==================== ML + BIOLOGY/BIOTECH ==================== -->
-<h2 style="margin-top: 4rem; padding-bottom: 0.5rem; border-bottom: 3px solid #E63946; color: #1D3557;">ML + Biology/Biotech</h2>
+<div id="section-biotech" style="display: none;">
+<h2 style="margin-top: 1rem; padding-bottom: 0.5rem; border-bottom: 3px solid #E63946; color: #1D3557;">ML + Biology/Biotech</h2>
 <p style="color: #666; margin-bottom: 2rem;">Computational protein design, antibody engineering, and drug discovery tools.</p>
 
 <!-- DADB Benchmark - Featured -->
@@ -359,6 +415,8 @@ layout: default
     </div>
   </div>
 </section>
+
+</div><!-- end section-biotech -->
 
   </div>
 </main>

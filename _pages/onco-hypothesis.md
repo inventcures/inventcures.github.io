@@ -361,18 +361,18 @@ layout: default
 </div>
 
 <div class="prior-art-item">
-  <h4>ARK (Augmented Reasoning over Knowledge)</h4>
-  <p>The knowledge graph construction pipeline is inspired by ARK's approach to building contextualized knowledge graphs from biomedical text. <a href="https://arxiv.org/abs/2311.16249" target="_blank">arXiv:2311.16249</a></p>
+  <h4>ARK (Adaptive Reasoning over Knowledge) &mdash; Internal Module</h4>
+  <p>"ARK" is our internal codename for the knowledge graph construction pipeline. It combines <a href="https://github.com/urchade/GLiNER" target="_blank">GLiNER2</a> entity extraction with <a href="https://platform.opentargets.org/" target="_blank">OpenTargets</a> GraphQL enrichment and <a href="https://networkx.org/" target="_blank">NetworkX</a> graph assembly. There is no external paper called "ARK" that this is based on &mdash; the name was coined for this project.</p>
 </div>
 
 <div class="prior-art-item">
-  <h4>MEDEA (Multi-Evidence DEcision Agent)</h4>
-  <p>The multi-source validation approach draws from MEDEA's framework for combining heterogeneous evidence sources to validate biomedical hypotheses. <a href="https://arxiv.org/abs/2404.10901" target="_blank">arXiv:2404.10901</a></p>
+  <h4>Validation Module &mdash; Internal Module</h4>
+  <p>The multi-source validation module (internally codenamed "MEDEA") runs parallel checks against <a href="https://depmap.org/" target="_blank">DepMap</a> (gene dependency), <a href="https://www.cbioportal.org/" target="_blank">cBioPortal</a> (genomic alterations), <a href="https://gtexportal.org/" target="_blank">GTEx</a> (tissue expression), <a href="https://clinicaltrials.gov/" target="_blank">ClinicalTrials.gov</a> (active trials), and <a href="https://www.ebi.ac.uk/chembl/" target="_blank">ChEMBL</a> (drug-target bioactivity). There is no external paper called "MEDEA" that this is based on &mdash; the name was coined for this project.</p>
 </div>
 
 <div class="prior-art-item">
   <h4>Test-Time Training (TTT)</h4>
-  <p>The activation propagation mechanism is inspired by TTT's concept of adapting model parameters at inference time using test inputs. By Yu Sun et al. <a href="https://arxiv.org/abs/2407.04620" target="_blank">arXiv:2407.04620</a></p>
+  <p>The project name references the concept of Test-Time Training by Yu Sun et al. (<a href="https://arxiv.org/abs/2407.04620" target="_blank">arXiv:2407.04620</a>), which adapts neural network parameters at inference time. <strong>Transparency note:</strong> our current implementation is a simplified graph-based activation propagation heuristic (keyword matching + neighbor spread over a NetworkX graph), not actual neural parameter adaptation. The name reflects our aspirational direction, not the current mechanism.</p>
 </div>
 
 <div class="prior-art-item">
@@ -454,8 +454,8 @@ layout: default
 
   <!-- TTT Adaptation -->
   <rect x="722" y="40" width="130" height="56" rx="10" fill="#3b82f6" filter="url(#shadow)"/>
-  <text x="787" y="64" text-anchor="middle" fill="#fff" font-size="13" font-weight="600">TTT Adaptation</text>
-  <text x="787" y="82" text-anchor="middle" fill="#bfdbfe" font-size="10">Activation Prop.</text>
+  <text x="787" y="64" text-anchor="middle" fill="#fff" font-size="13" font-weight="600">Activation Prop.</text>
+  <text x="787" y="82" text-anchor="middle" fill="#bfdbfe" font-size="10">Graph Traversal</text>
 
   <!-- Arrow down from TTT to Hypothesis -->
   <line x1="787" y1="101" x2="787" y2="138" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
@@ -519,6 +519,7 @@ layout: default
 <svg viewBox="0 0 620 380" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, sans-serif">
   <!-- Title -->
   <text x="310" y="28" text-anchor="middle" fill="#1e293b" font-size="15" font-weight="700">Entity Types Recognized</text>
+  <text x="310" y="378" text-anchor="middle" fill="#999" font-size="10" font-style="italic">Bar lengths are illustrative only and do not represent empirical extraction frequencies.</text>
 
   <!-- Bars: label on left, colored bar extending right, category name on bar -->
   <!-- Gene -->
@@ -614,7 +615,7 @@ layout: default
 <div class="feature-grid">
   <div class="feature-card">
     <h4><span class="emoji-icon">&#x2705;</span> Validation Dashboard</h4>
-    <p>Cross-references hypotheses against DepMap (gene dependency), cBioPortal (genomic alterations), GTEx (tissue expression), ClinicalTrials.gov (active trials), and ChEMBL (drug-target bioactivity).</p>
+    <p>Cross-references hypotheses against DepMap (gene dependency), cBioPortal (genomic alterations), GTEx (tissue expression), ClinicalTrials.gov (active trials), and OpenTargets (drug-target tractability). Uses curated fallback data when live APIs are unavailable.</p>
   </div>
 
   <div class="feature-card">

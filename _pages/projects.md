@@ -270,6 +270,35 @@ layout: default
 <h2 style="margin-top: 1rem; padding-bottom: 0.5rem; border-bottom: 3px solid #E63946; color: #1D3557;">ML + Biology/Biotech</h2>
 <p style="color: #666; margin-bottom: 2rem;">Computational protein design, antibody engineering, and drug discovery tools.</p>
 
+<!-- Onco-TTT - Featured -->
+<section class="featured-section">
+  <a href="/onco-hypothesis/" style="display: block; background: linear-gradient(135deg, #0a0a12 0%, #1e293b 50%, #0f0f1a 100%); border: 2px solid #3b82f6; border-radius: 12px; overflow: hidden; text-decoration: none; position: relative; margin-bottom: 2rem;">
+    <div style="position: absolute; top: -8px; right: 20px; background: linear-gradient(135deg, #3b82f6, #7c3aed); color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.3rem 0.6rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);">New</div>
+    <div style="padding: 1.5rem 2rem;">
+      <div style="display: inline-block; background: #3b82f6; color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">AI + Oncology</div>
+      <h3 style="color: #fff; font-size: 1.5rem; margin: 0 0 0.4rem 0; font-weight: 700;">Onco-TTT</h3>
+      <p style="color: #93c5fd; font-size: 0.9rem; margin: 0 0 0.75rem 0; font-weight: 500;">AI-Powered Cancer Hypothesis Generation</p>
+      <p style="color: #ddd; font-size: 0.85rem; line-height: 1.5; margin: 0 0 1rem 0;">Type a plain-English oncology question, get: zero-shot NER (GLiNER2) &rarr; knowledge graph (OpenTargets) &rarr; literature (Semantic Scholar) &rarr; 6-dimensional validation (DepMap, cBioPortal, GTEx, ClinicalTrials.gov). Inspired by Medea (Zitnik Lab) and LossFunk's AI-for-science work.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem;">
+        <span style="background: rgba(59,130,246,0.15); color: #93c5fd; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">GLiNER2 NER</span>
+        <span style="background: rgba(59,130,246,0.15); color: #93c5fd; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">Knowledge Graph</span>
+        <span style="background: rgba(59,130,246,0.15); color: #93c5fd; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">6-Axis Validation</span>
+        <span style="background: rgba(59,130,246,0.15); color: #93c5fd; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">13 View Modes</span>
+      </div>
+      <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center;">
+        <span style="color: #93c5fd; font-weight: 600; font-size: 0.9rem;">View Project &rarr;</span>
+        <span style="color: #a78bfa; font-size: 0.75rem;">
+          <a href="https://onco-hypothesis.up.railway.app/" target="_blank" style="color: #a78bfa; text-decoration: underline;">Live Demo</a>
+          &middot;
+          <a href="https://github.com/inventcures/oncology_hypothesis_generation" target="_blank" style="color: #a78bfa; text-decoration: underline;">GitHub</a>
+          &middot;
+          <a href="https://github.com/inventcures/oncology_hypothesis_generation/blob/main/out/v0_onco-hypothesis_scientific-preprint/onco-hypothesis.pdf" target="_blank" style="color: #a78bfa; text-decoration: underline;">Preprint (PDF)</a>
+        </span>
+      </div>
+    </div>
+  </a>
+</section>
+
 <!-- DADB Benchmark - Featured -->
 <section class="featured-section">
   <a href="/proposal_for_devovo_ab-design_benchmark/" style="display: block; background: linear-gradient(135deg, #1D3557 0%, #457B9D 100%); border: 2px solid #E63946; border-radius: 12px; overflow: hidden; text-decoration: none; position: relative; margin-bottom: 2rem;">

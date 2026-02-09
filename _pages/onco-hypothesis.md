@@ -4,6 +4,16 @@ title: "Onco-Hypothesis"
 layout: default
 ---
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DL14WPLF01"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DL14WPLF01');
+</script>
+
 <style>
 .onco-hypothesis-hero {
   background: linear-gradient(135deg, #0a0a12 0%, #1e293b 50%, #0f0f1a 100%);

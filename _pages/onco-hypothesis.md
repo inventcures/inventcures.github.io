@@ -346,6 +346,9 @@ layout: default
     <a href="https://github.com/inventcures/oncology_hypothesis_generation" class="cta-button cta-secondary" target="_blank">
       View Source
     </a>
+    <a href="https://github.com/inventcures/oncology_hypothesis_generation/blob/main/out/v0_onco-hypothesis_scientific-preprint/onco-hypothesis.pdf" class="cta-button cta-outline" style="border-color:#fff; color:#fff;" target="_blank">
+      Read Preprint (PDF)
+    </a>
   </div>
 </div>
 
@@ -366,8 +369,8 @@ layout: default
 </div>
 
 <div class="prior-art-item">
-  <h4>Validation Module &mdash; Internal Module</h4>
-  <p>The multi-source validation module (internally codenamed "MEDEA") runs parallel checks against <a href="https://depmap.org/" target="_blank">DepMap</a> (gene dependency), <a href="https://www.cbioportal.org/" target="_blank">cBioPortal</a> (genomic alterations), <a href="https://gtexportal.org/" target="_blank">GTEx</a> (tissue expression), <a href="https://clinicaltrials.gov/" target="_blank">ClinicalTrials.gov</a> (active trials), and <a href="https://www.ebi.ac.uk/chembl/" target="_blank">ChEMBL</a> (drug-target bioactivity). There is no external paper called "MEDEA" that this is based on &mdash; the name was coined for this project.</p>
+  <h4>Validation Module &mdash; Inspired by Medea (Zitnik Lab)</h4>
+  <p>The multi-source validation module was inspired by <strong>Medea</strong>, an omics AI agent for therapeutic discovery from Marinka Zitnik's lab at Harvard (<a href="https://www.biorxiv.org/content/10.64898/2026.01.16.696667v1" target="_blank">bioRxiv 2026</a>). Medea's core insight &mdash; that verification-aware agents improve performance by producing transparent, multi-evidence analyses &mdash; directly shaped our design. Our module runs parallel checks against <a href="https://depmap.org/" target="_blank">DepMap</a> (gene dependency), <a href="https://www.cbioportal.org/" target="_blank">cBioPortal</a> (genomic alterations), <a href="https://gtexportal.org/" target="_blank">GTEx</a> (tissue expression), <a href="https://clinicaltrials.gov/" target="_blank">ClinicalTrials.gov</a> (active trials), and <a href="https://platform.opentargets.org/" target="_blank">OpenTargets</a> (drug-target tractability).</p>
 </div>
 
 <div class="prior-art-item">
@@ -393,6 +396,21 @@ layout: default
 <div class="prior-art-item">
   <h4>CELLxGENE Census</h4>
   <p>Single-cell atlas data from the Chan Zuckerberg Initiative's CELLxGENE Census. <a href="https://cellxgene.cziscience.com/" target="_blank">cellxgene.cziscience.com</a></p>
+</div>
+
+<div class="prior-art-item">
+  <h4>Medea &mdash; Omics AI Agent (Zitnik Lab, Harvard)</h4>
+  <p>The verification-aware, multi-evidence analysis approach in Medea directly inspired our validation dashboard design. Medea uses 20 tools spanning single-cell and bulk transcriptomic datasets, cancer vulnerability maps, and pathway knowledge bases. By Sui, Li, Gao, Shen, Giunchiglia, Shen, Huang, Kong &amp; Zitnik. <a href="https://www.biorxiv.org/content/10.64898/2026.01.16.696667v1" target="_blank">bioRxiv 2026</a></p>
+</div>
+
+<div class="prior-art-item">
+  <h4>Why LLMs Aren't Scientists Yet (LossFunk)</h4>
+  <p>Honest failure mode analysis of autonomous AI research attempts. The six documented failure modes &mdash; bias toward training data defaults, implementation drift, memory degradation, overexcitement, insufficient domain intelligence, and weak scientific taste &mdash; informed our design decisions about what to automate vs. leave to the researcher. By Dhruv Trehan &amp; Paras Chopra. <a href="https://arxiv.org/abs/2601.03315" target="_blank">arXiv:2601.03315</a></p>
+</div>
+
+<div class="prior-art-item">
+  <h4>METIS &mdash; AI Research Mentor (LossFunk)</h4>
+  <p>A tool-augmented, stage-aware AI assistant for guiding students from idea to paper. METIS's approach of combining literature search with methodology checks and curated guidelines influenced our pipeline design. By Kumar, Trehan &amp; Chopra. <a href="https://arxiv.org/abs/2601.13075" target="_blank">arXiv:2601.13075</a></p>
 </div>
 
 <div class="prior-art-disclaimer">
@@ -615,7 +633,7 @@ layout: default
 <div class="feature-grid">
   <div class="feature-card">
     <h4><span class="emoji-icon">&#x2705;</span> Validation Dashboard</h4>
-    <p>Cross-references hypotheses against DepMap (gene dependency), cBioPortal (genomic alterations), GTEx (tissue expression), ClinicalTrials.gov (active trials), and OpenTargets (drug-target tractability). Uses curated fallback data when live APIs are unavailable.</p>
+    <p>Inspired by <a href="https://www.biorxiv.org/content/10.64898/2026.01.16.696667v1" target="_blank">Medea</a>'s verification-aware approach. Cross-references hypotheses against DepMap (gene dependency), cBioPortal (genomic alterations), GTEx (tissue expression), ClinicalTrials.gov (active trials), and OpenTargets (drug-target tractability). Uses curated fallback data when live APIs are unavailable.</p>
   </div>
 
   <div class="feature-card">
@@ -702,13 +720,24 @@ layout: default
 <!-- Section: Citation                                              -->
 <!-- ============================================================ -->
 
-<h2 class="section-title">Citation</h2>
+<h2 class="section-title">Preprint &amp; Citation</h2>
+
+<p>A scientific preprint describing Onco-TTT's architecture, methods, and limitations is available:</p>
+
+<div class="explainer-box">
+  <h3>Preprint</h3>
+  <p><strong>Onco-TTT: An Open-Source Platform for Automated Cancer Hypothesis Generation via Entity Extraction, Knowledge Graphs, and Multi-Source Validation</strong><br>
+  Ashish Makani. February 2026. Not peer-reviewed.<br>
+  <a href="https://github.com/inventcures/oncology_hypothesis_generation/blob/main/out/v0_onco-hypothesis_scientific-preprint/onco-hypothesis.pdf" target="_blank">Download PDF</a> &middot; <a href="https://github.com/inventcures/oncology_hypothesis_generation/blob/main/out/v0_onco-hypothesis_scientific-preprint/onco-hypothesis.tex" target="_blank">LaTeX source</a></p>
+</div>
 
 <p>If you use Onco-TTT in your research, please cite:</p>
 
 ```bibtex
 @software{makani2026oncottt,
-  title={Onco-TTT: AI-Powered Cancer Hypothesis Generation Platform},
+  title={Onco-TTT: An Open-Source Platform for Automated Cancer
+         Hypothesis Generation via Entity Extraction, Knowledge
+         Graphs, and Multi-Source Validation},
   author={Makani, Ashish},
   url={https://github.com/inventcures/oncology_hypothesis_generation},
   year={2026}
@@ -727,6 +756,9 @@ layout: default
   </a>
   <a href="https://github.com/inventcures/oncology_hypothesis_generation" class="cta-button cta-secondary" target="_blank">
     GitHub Repo
+  </a>
+  <a href="https://github.com/inventcures/oncology_hypothesis_generation/blob/main/out/v0_onco-hypothesis_scientific-preprint/onco-hypothesis.pdf" class="cta-button cta-outline" target="_blank">
+    Preprint (PDF)
   </a>
   <a href="mailto:ashish.makani@ashoka.edu.in?subject=Onco-TTT%20Feedback" class="cta-button cta-outline">
     Contact

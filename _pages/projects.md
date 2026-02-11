@@ -270,20 +270,6 @@ layout: default
 <h2 style="margin-top: 1rem; padding-bottom: 0.5rem; border-bottom: 3px solid #E63946; color: #1D3557;">ML + Biology/Biotech</h2>
 <p style="color: #666; margin-bottom: 2rem;">Computational protein design, antibody engineering, and drug discovery tools.</p>
 
-<!-- rfab-harness - Featured -->
-<section class="featured-section">
-  <a href="/harness_for_rfantibody/" style="display: block; background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%); border: 2px solid #00b4d8; border-radius: 12px; overflow: hidden; text-decoration: none; position: relative; margin-bottom: 2rem;">
-    <div style="position: absolute; top: -8px; right: 20px; background: linear-gradient(135deg, #00b4d8, #0077b6); color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.3rem 0.6rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 12px rgba(0, 180, 216, 0.4);">New</div>
-    <div style="padding: 1.5rem 2rem;">
-      <div style="display: inline-block; background: #00b4d8; color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Open Source Tool</div>
-      <h3 style="color: #fff; font-size: 1.5rem; margin: 0 0 0.4rem 0; font-weight: 700;">rfab-harness</h3>
-      <p style="color: #90e0ef; font-size: 0.9rem; margin: 0 0 0.75rem 0; font-weight: 500;">Campaign Orchestration for RFAntibody</p>
-      <p style="color: #ddd; font-size: 0.85rem; line-height: 1.5; margin: 0 0 1rem 0;">One YAML config, one CLI command, full antibody design campaign. Wraps the 3-stage RFAntibody pipeline (RFdiffusion &rarr; ProteinMPNN &rarr; RF2) with target prep, multi-GPU parallelization, automated filtering, and 21 pre-built configs for cancer &amp; rare disease targets.</p>
-      <span style="color: #90e0ef; font-weight: 600; font-size: 0.9rem;">View Project →</span>
-    </div>
-  </a>
-</section>
-
 <!-- Onco-TTT - Featured -->
 <section class="featured-section">
   <a href="/onco-hypothesis/" style="display: block; background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%); border: 2px solid #3b82f6; border-radius: 12px; overflow: hidden; text-decoration: none; position: relative; margin-bottom: 2rem;">
@@ -294,6 +280,20 @@ layout: default
       <p style="color: #93c5fd; font-size: 0.9rem; margin: 0 0 0.75rem 0; font-weight: 500;">AI-Powered Cancer Hypothesis Generation</p>
       <p style="color: #ddd; font-size: 0.85rem; line-height: 1.5; margin: 0 0 1rem 0;">Type a plain-English oncology question, get: zero-shot NER (GLiNER2) &rarr; knowledge graph &rarr; literature &rarr; 6-dimensional validation (DepMap, cBioPortal, GTEx, ClinicalTrials.gov). 13 interactive views.</p>
       <span style="color: #93c5fd; font-weight: 600; font-size: 0.9rem;">View Project →</span>
+    </div>
+  </a>
+</section>
+
+<!-- rfab-harness - Featured -->
+<section class="featured-section">
+  <a href="/harness_for_rfantibody/" style="display: block; background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%); border: 2px solid #00b4d8; border-radius: 12px; overflow: hidden; text-decoration: none; position: relative; margin-bottom: 2rem;">
+    <div style="position: absolute; top: -8px; right: 20px; background: linear-gradient(135deg, #00b4d8, #0077b6); color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.3rem 0.6rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 12px rgba(0, 180, 216, 0.4);">New</div>
+    <div style="padding: 1.5rem 2rem;">
+      <div style="display: inline-block; background: #00b4d8; color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Open Source Tool</div>
+      <h3 style="color: #fff; font-size: 1.5rem; margin: 0 0 0.4rem 0; font-weight: 700;">rfab-harness</h3>
+      <p style="color: #90e0ef; font-size: 0.9rem; margin: 0 0 0.75rem 0; font-weight: 500;">Campaign Orchestration for RFAntibody</p>
+      <p style="color: #ddd; font-size: 0.85rem; line-height: 1.5; margin: 0 0 1rem 0;">One YAML config, one CLI command, full antibody design campaign. Wraps the 3-stage RFAntibody pipeline (RFdiffusion &rarr; ProteinMPNN &rarr; RF2) with target prep, multi-GPU parallelization, automated filtering, and 21 pre-built configs for cancer &amp; rare disease targets.</p>
+      <span style="color: #90e0ef; font-weight: 600; font-size: 0.9rem;">View Project →</span>
     </div>
   </a>
 </section>

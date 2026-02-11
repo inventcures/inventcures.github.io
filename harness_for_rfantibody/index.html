@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XE3Q1ZF9J3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XE3Q1ZF9J3');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rfab-harness: De Novo Antibody Design for Cancer Targets | InventCures</title>
+    <style>
+        :root {
+            --accent: #1D3557;
+            --rfab: #2A9D8F;
+            --pipeline: #E9C46A;
+            --cancer: #E63946;
+            --rare: #457B9D;
+            --text: #333333;
+            --light-bg: #F8F8F8;
+            --border: #E0E0E0;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Georgia', serif; line-height: 1.7; color: var(--text); max-width: 720px; margin: 0 auto; padding: 40px 20px; background: #fff; }
+        .back-link { display: inline-block; margin-bottom: 1.5rem; color: var(--accent); text-decoration: none; font-size: 0.9em; }
+        .back-link:hover { text-decoration: underline; }
+        h1 { font-size: 2.2em; color: var(--accent); margin-bottom: 0.3em; line-height: 1.2; }
+        .subtitle { font-size: 1.15em; color: #666; margin-bottom: 0.5em; }
+        .date { font-style: italic; color: #888; margin-bottom: 1.5em; }
+        h2 { font-size: 1.5em; color: var(--accent); margin-top: 2em; margin-bottom: 0.8em; border-bottom: 2px solid var(--border); padding-bottom: 0.3em; }
+        h3 { font-size: 1.15em; color: var(--text); margin-top: 1.5em; margin-bottom: 0.5em; }
+        p { margin-bottom: 1.2em; }
+        .lead { font-size: 1.1em; line-height: 1.8; }
+        a { color: var(--accent); }
+        code { background: #f0f0f0; padding: 0.15em 0.4em; border-radius: 3px; font-size: 0.9em; }
+        pre { background: #1e1e2e; color: #cdd6f4; padding: 1.2em 1.5em; border-radius: 8px; overflow-x: auto; margin: 1.5em 0; font-size: 0.88em; line-height: 1.5; }
+        pre code { background: none; padding: 0; color: inherit; }
+        .comment { color: #6c7086; }
+        .cmd { color: #a6e3a1; }
+
+        .motivation-box { background: linear-gradient(135deg, #f0f7ff 0%, #e8f4f8 100%); border-left: 4px solid var(--rfab); padding: 1.5em 2em; margin: 1.5em 0 2em 0; border-radius: 0 12px 12px 0; }
+        .motivation-box h3 { margin-top: 0; color: var(--accent); }
+
+        .pipeline-flow { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.5em; margin: 2em 0; padding: 1em; }
+        .pipeline-step { text-align: center; padding: 0.8em 1em; border-radius: 8px; font-size: 0.85em; min-width: 100px; }
+        .pipeline-step.config { background: rgba(29, 53, 87, 0.1); border: 2px solid var(--accent); }
+        .pipeline-step.prep { background: rgba(42, 157, 143, 0.15); border: 2px solid var(--rfab); }
+        .pipeline-step.stage { background: rgba(233, 196, 106, 0.2); border: 2px solid var(--pipeline); }
+        .pipeline-step.analysis { background: rgba(230, 57, 70, 0.1); border: 2px solid var(--cancer); }
+        .pipeline-arrow { font-size: 1.4em; color: #999; }
+
+        .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1em; margin: 1.5em 0; }
+        .stat-box { text-align: center; padding: 1em; background: var(--light-bg); border-radius: 8px; }
+        .stat-box .number { font-size: 1.6em; font-weight: 700; color: var(--accent); }
+        .stat-box .label { font-size: 0.85em; color: #666; }
+
+        table { width: 100%; border-collapse: collapse; margin: 1.5em 0; font-size: 0.9em; }
+        th, td { padding: 0.6em 0.8em; text-align: left; border-bottom: 1px solid var(--border); }
+        th { background: var(--accent); color: white; font-weight: 600; }
+        tr:nth-child(even) { background: var(--light-bg); }
+
+        .target-section { border-left: 4px solid var(--cancer); background: var(--light-bg); padding: 1.2em 1.5em; margin: 1.5em 0; border-radius: 0 8px 8px 0; }
+        .target-section.rare { border-color: var(--rare); }
+        .target-section h3 { margin-top: 0; }
+
+        .cta-box { background: linear-gradient(135deg, var(--accent) 0%, #264653 100%); color: white; padding: 1.5em 2em; border-radius: 12px; margin: 2em 0; text-align: center; }
+        .cta-box a { color: #a6e3a1; font-weight: 600; }
+
+        ul { margin: 0.8em 0 1em 1.5em; }
+        li { margin-bottom: 0.4em; }
+
+        .footer { margin-top: 3em; padding-top: 2em; border-top: 1px solid var(--border); font-size: 0.9em; color: #666; font-style: italic; }
+
+        @media (max-width: 600px) {
+            .stat-grid { grid-template-columns: 1fr; }
+            .pipeline-flow { flex-direction: column; }
+            .pipeline-arrow { transform: rotate(90deg); }
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="back-link">&larr; Back to Home</a>
+    <article>
+        <h1>rfab-harness</h1>
+        <p class="subtitle">Campaign orchestration for de novo antibody design against cancer and rare disease targets</p>
+        <p class="date">February 2026</p>
+
+        <div class="motivation-box">
+            <h3>Why this exists</h3>
+            <p>In January 2025, the Baker Lab published <a href="https://doi.org/10.1038/s41586-024-08480-5" target="_blank">RFAntibody</a>&mdash;the first open-source pipeline for de novo antibody design using diffusion models. It demonstrated atomically accurate design of single-domain antibodies against five therapeutic targets.</p>
+            <p>The pipeline works. But running it against a <em>new</em> target requires stitching together three separate tools, converting file formats, manually selecting hotspot residues, tuning CDR loop lengths, and parsing raw Quiver score files. Each campaign is an ad hoc scripts-and-prayer affair.</p>
+            <p><strong>This harness turns a campaign into a single YAML file.</strong> Define your target, pick your antibody format, set your thresholds, and run one command. We provide 21 pre-built configs&mdash;6 reproducing the original paper, 10 for cancer immunotherapy targets, and 4 for rare diseases&mdash;so you can start designing antibodies on day one.</p>
+        </div>
+
+        <h2>The Pipeline</h2>
+
+        <p>RFAntibody designs antibodies in three stages, each a separate ML model:</p>
+
+        <div class="pipeline-flow">
+            <div class="pipeline-step config"><strong>YAML</strong><br>Campaign Config</div>
+            <span class="pipeline-arrow">&rarr;</span>
+            <div class="pipeline-step prep"><strong>Target Prep</strong><br>Fetch &bull; Truncate &bull; Validate</div>
+            <span class="pipeline-arrow">&rarr;</span>
+            <div class="pipeline-step stage"><strong>RFdiffusion</strong><br>Backbone generation</div>
+            <span class="pipeline-arrow">&rarr;</span>
+            <div class="pipeline-step stage"><strong>ProteinMPNN</strong><br>Sequence design</div>
+            <span class="pipeline-arrow">&rarr;</span>
+            <div class="pipeline-step stage"><strong>RF2</strong><br>Structure prediction</div>
+            <span class="pipeline-arrow">&rarr;</span>
+            <div class="pipeline-step analysis"><strong>Analysis</strong><br>Filter &bull; Rank &bull; Export</div>
+        </div>
+
+        <p><strong>Stage 1 (RFdiffusion)</strong> generates antibody backbone structures using SE(3)-equivariant denoising diffusion. You specify which target residues to contact (hotspots) and how long each CDR loop should be. It produces thousands of diverse backbone conformations.</p>
+
+        <p><strong>Stage 2 (ProteinMPNN)</strong> fills in amino acid sequences for each backbone, designing multiple sequence variants per structure. The CDR-specific masking ensures the framework regions stay fixed while loop sequences are optimized.</p>
+
+        <p><strong>Stage 3 (RF2)</strong> predicts the structure of each designed antibody-antigen complex and scores it. Three metrics determine whether a design is worth pursuing:</p>
+
+        <table>
+            <thead><tr><th>Metric</th><th>Threshold</th><th>What it measures</th></tr></thead>
+            <tbody>
+                <tr><td>pAE</td><td>&lt; 10 &Aring;</td><td>Predicted aligned error&mdash;confidence that the binding interface is real</td></tr>
+                <tr><td>RMSD</td><td>&lt; 2 &Aring;</td><td>How well the predicted structure matches the designed backbone</td></tr>
+                <tr><td>ddG</td><td>&lt; &minus;20 REU</td><td>Binding free energy&mdash;lower means tighter predicted binding</td></tr>
+            </tbody>
+        </table>
+
+        <p>Designs passing all three filters are ranked by a composite score (0.4&times;pAE + 0.3&times;RMSD + 0.3&times;ddG, min-max normalized) and exported as individual PDB files ready for experimental validation.</p>
+
+        <h2>What the Harness Adds</h2>
+
+        <div class="stat-grid">
+            <div class="stat-box"><div class="number">21</div><div class="label">Pre-built campaigns</div></div>
+            <div class="stat-box"><div class="number">33</div><div class="label">Unit tests</div></div>
+            <div class="stat-box"><div class="number">1 cmd</div><div class="label">Config &rarr; candidates</div></div>
+        </div>
+
+        <ul>
+            <li><strong>Campaign-as-config</strong> &mdash; One YAML file defines target, antibody format, CDR lengths, pipeline parameters, and filtering thresholds</li>
+            <li><strong>Target preparation</strong> &mdash; Automatic PDB fetching from RCSB, epitope-based truncation (10&Aring; buffer), hotspot validation (hydrophobicity, contiguity), framework conversion to HLT format</li>
+            <li><strong>15 validation rules</strong> &mdash; Catches misconfigured campaigns before burning GPU hours (hotspot &sube; epitope, CDR ranges within biological limits, VHH vs scFv chain requirements)</li>
+            <li><strong>Multi-GPU parallelization</strong> &mdash; Automatic splitting via Quiver <code>qvsplit</code> across available GPUs</li>
+            <li><strong>Checkpoint/resume</strong> &mdash; Pipeline stages write checkpoint files; interrupted runs resume from the last completed stage</li>
+            <li><strong>Analysis pipeline</strong> &mdash; Score extraction from Quiver files, configurable filtering, composite ranking, HTML/CSV reports with score distributions, PDB + FASTA export</li>
+            <li><strong>Experimental planning</strong> &mdash; Auto-generated protocols for gene synthesis orders (yeast codon-optimized), yeast surface display screening, SPR kinetics, and OrthoRep affinity maturation</li>
+        </ul>
+
+        <h2>Quick Start</h2>
+
+        <pre><code><span class="comment"># Install</span>
+<span class="cmd">git clone</span> https://github.com/inventcures/repro_rfantibody_for-cancer-targets.git
+<span class="cmd">cd</span> repro_rfantibody_for-cancer-targets
+<span class="cmd">pip install</span> -e .
+
+<span class="comment"># Validate a campaign config (no GPU needed)</span>
+<span class="cmd">rfab validate</span> campaigns/smoke_test.yaml
+
+<span class="comment"># Dry run &mdash; prepare inputs, check everything works</span>
+<span class="cmd">rfab run</span> campaigns/smoke_test.yaml --dry-run --rfantibody-root ./RFAntibody
+
+<span class="comment"># Full campaign</span>
+<span class="cmd">rfab run</span> campaigns/cancer/pdl1_vhh.yaml --rfantibody-root ./RFAntibody
+
+<span class="comment"># Re-analyze with different thresholds</span>
+<span class="cmd">rfab analyze</span> campaigns/cancer/pdl1_vhh.yaml</code></pre>
+
+        <h2>Paper Reproductions</h2>
+
+        <p>Six configs reproduce the targets from <a href="https://doi.org/10.1038/s41586-024-08480-5" target="_blank">Bennett et al. (2025)</a> with exact parameters from the paper:</p>
+
+        <table>
+            <thead><tr><th>Target</th><th>Format</th><th>PDB</th><th>Designs</th></tr></thead>
+            <tbody>
+                <tr><td>Influenza HA stem</td><td>VHH</td><td>4BGW</td><td>9,000</td></tr>
+                <tr><td>C. difficile TcdB</td><td>VHH</td><td>7UMN</td><td>10,000</td></tr>
+                <tr><td>C. difficile TcdB</td><td>scFv</td><td>7UMN</td><td>10,000</td></tr>
+                <tr><td>RSV Site III</td><td>VHH</td><td>4JHW</td><td>10,000</td></tr>
+                <tr><td>PHOX2B-HLA neoantigen</td><td>scFv</td><td>modeled</td><td>10,000</td></tr>
+                <tr><td>SARS-CoV-2 RBD</td><td>VHH</td><td>6M0J</td><td>10,000</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Cancer Targets</h2>
+
+        <p>Ten campaigns targeting validated cancer antigens, prioritized by structural data quality and therapeutic precedent:</p>
+
+        <div class="target-section">
+            <h3>Immune Checkpoints</h3>
+            <table>
+                <thead><tr><th>Target</th><th>Indication</th><th>PDB</th><th>Strategy</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>PD-L1</strong></td><td>Broad solid tumors</td><td>5N2C</td><td>VHH targeting BC/DE loop interface</td></tr>
+                    <tr><td><strong>CTLA-4</strong></td><td>Melanoma, renal</td><td>1I8L</td><td>VHH blocking B7 ligand binding</td></tr>
+                    <tr><td><strong>TIGIT</strong></td><td>Emerging checkpoint</td><td>6V33</td><td>VHH blocking PVR interaction</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="target-section">
+            <h3>Receptor Tyrosine Kinases &amp; Surface Antigens</h3>
+            <table>
+                <thead><tr><th>Target</th><th>Indication</th><th>PDB</th><th>Strategy</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>HER2</strong></td><td>Breast, gastric</td><td>1N8Z</td><td>VHH domain IV (trastuzumab-like)</td></tr>
+                    <tr><td><strong>EGFR</strong></td><td>NSCLC, colorectal</td><td>1NQL</td><td>VHH domain III blocking EGF</td></tr>
+                    <tr><td><strong>TROP-2</strong></td><td>Solid tumors (ADC)</td><td>7E5M</td><td>VHH for ADC conjugation</td></tr>
+                    <tr><td><strong>GPC3</strong></td><td>Hepatocellular carcinoma</td><td>7YIO</td><td>VHH targeting heparan sulfate site</td></tr>
+                    <tr><td><strong>Claudin-18.2</strong></td><td>Gastric, pancreatic</td><td>7RFB</td><td>VHH extracellular loop (exploratory)</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="target-section">
+            <h3>B-cell Antigens</h3>
+            <table>
+                <thead><tr><th>Target</th><th>Indication</th><th>PDB</th><th>Strategy</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>CD20</strong></td><td>B-cell lymphoma</td><td>6Y4A</td><td>VHH extracellular loop</td></tr>
+                    <tr><td><strong>CD19</strong></td><td>B-cell malignancies</td><td>6AL5</td><td>scFv (bispecific potential)</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Rare Disease Targets</h2>
+
+        <div class="target-section rare">
+            <h3>4 Campaigns</h3>
+            <table>
+                <thead><tr><th>Target</th><th>Indication</th><th>PDB</th><th>Strategy</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Complement C5</strong></td><td>PNH / aHUS</td><td>3CU7</td><td>VHH blocking C5 convertase cleavage</td></tr>
+                    <tr><td><strong>PCSK9</strong></td><td>Familial hypercholesterolemia</td><td>3BPS</td><td>VHH blocking LDLR interaction</td></tr>
+                    <tr><td><strong>IL-6R</strong></td><td>Systemic JIA</td><td>1N26</td><td>VHH blocking IL-6 binding</td></tr>
+                    <tr><td><strong>GNE</strong></td><td>GNE myopathy</td><td>4WMN</td><td>VHH enzyme stabilizer (unconventional)</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Technical Details</h2>
+
+        <h3>Campaign Config Schema</h3>
+        <p>Each campaign is a YAML file with six sections:</p>
+        <pre><code><span class="comment"># campaigns/cancer/pdl1_vhh.yaml</span>
+campaign:
+  name: "pdl1_vhh"
+
+target:
+  pdb_id: "5N2C"
+  chain_id: "A"
+  epitope_residues: [54, 56, 58, 60, 62, ...]
+  hotspot_residues: [56, 60, 115]
+  truncation:
+    enabled: true
+    buffer_angstroms: 10.0
+
+antibody:
+  format: "vhh"
+  framework: "builtin:NbBCII10"
+  cdr_loops:
+    H1: "7"
+    H2: "6"
+    H3: "5-13"    <span class="comment"># variable length range</span>
+
+pipeline:
+  rfdiffusion:
+    num_designs: 10000
+  proteinmpnn:
+    sequences_per_backbone: 5
+    temperature: 0.2
+
+filtering:
+  pae_threshold: 10.0
+  rmsd_threshold: 2.0
+  ddg_threshold: -20.0</code></pre>
+
+        <h3>Validation Rules</h3>
+        <p>The harness validates 15 rules before any GPU computation:</p>
+        <ul>
+            <li>Exactly one target source (PDB ID xor local file)</li>
+            <li>Hotspot residues must be a subset of epitope residues</li>
+            <li>Minimum 3 epitope residues and 3 hotspot residues</li>
+            <li>VHH format cannot specify light chain CDRs (L1/L2/L3)</li>
+            <li>scFv format must specify both heavy and light chain CDRs</li>
+            <li>Builtin framework name must exist in the framework registry</li>
+            <li>CDR loop lengths must fall within biological limits (max 20 residues)</li>
+            <li>Range specs must be valid (min &le; max)</li>
+            <li>Minimum 50 designs (below this, too few for meaningful filtering)</li>
+            <li>ProteinMPNN temperature between 0.01 and 1.0</li>
+        </ul>
+
+        <h3>Antibody Formats</h3>
+        <table>
+            <thead><tr><th>Format</th><th>Chains</th><th>CDR Loops</th><th>Framework</th><th>Use Case</th></tr></thead>
+            <tbody>
+                <tr><td><strong>VHH</strong> (nanobody)</td><td>H only</td><td>H1, H2, H3</td><td>NbBCII10</td><td>Single-domain, small (~15 kDa), stable</td></tr>
+                <tr><td><strong>scFv</strong></td><td>H + L</td><td>H1-H3, L1-L3</td><td>hu4D5-8</td><td>Full variable region (~27 kDa), bispecific building block</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Composite Scoring</h3>
+        <p>Designs passing all filters are ranked by:</p>
+        <pre><code>score = 0.4 &times; norm(pAE) + 0.3 &times; norm(RMSD) + 0.3 &times; norm(ddG)</code></pre>
+        <p>where <code>norm()</code> is min-max normalization across all passing designs (lower composite score = better candidate). Weights reflect that binding confidence (pAE) is the most informative single metric per the original paper.</p>
+
+        <h2>From Computation to Experiment</h2>
+
+        <p>The harness includes experimental planning modules that generate protocols for the complete design-to-validation cycle:</p>
+
+        <ul>
+            <li><strong>Gene synthesis</strong> &mdash; Yeast codon-optimized sequences with restriction site removal, ready for vendor upload (Twist, IDT, GenScript)</li>
+            <li><strong>Yeast surface display (YSD)</strong> &mdash; Expression induction, FACS staining (anti-HA-FITC + target-PE), sorting gates, timeline</li>
+            <li><strong>SPR characterization</strong> &mdash; Immobilization chemistry, concentration series (1.5&ndash;500 nM), kinetic fitting (1:1 Langmuir), regeneration conditions</li>
+            <li><strong>Affinity maturation</strong> &mdash; OrthoRep continuous evolution plan: 4 selection rounds with decreasing antigen concentration, expected ~100&times; affinity improvement over 8 weeks</li>
+        </ul>
+
+        <p>This mirrors the validation workflow from the RFAntibody paper, where YSD screening followed by SPR confirmation identified binders from 1&ndash;2% of computationally passing designs.</p>
+
+        <div class="cta-box">
+            <p><strong>Source code &amp; all campaign configs:</strong><br>
+            <a href="https://github.com/inventcures/repro_rfantibody_for-cancer-targets">github.com/inventcures/repro_rfantibody_for-cancer-targets</a></p>
+            <p style="font-size: 0.9em; margin-bottom: 0;">Related: <a href="/abs_for_cancer_targets">Antibodies from Thin Air</a> &mdash; comparison of five de novo antibody design platforms</p>
+        </div>
+
+        <div class="footer">
+            <p>Built by <a href="/">tp53(ashish)</a>. This harness wraps the <a href="https://github.com/RosettaCommons/RFAntibody" target="_blank">RFAntibody pipeline</a> by Bennett et al. (Nature, 2025). The upstream pipeline is MIT-licensed and developed by the Baker Lab at the University of Washington.</p>
+        </div>
+    </article>
+</body>
+</html>

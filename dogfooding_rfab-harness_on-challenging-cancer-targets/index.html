@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XE3Q1ZF9J3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XE3Q1ZF9J3');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dogfooding rfab-harness on 10 Challenging Cancer Targets | InventCures</title>
+    <style>
+        :root {
+            --accent: #1D3557;
+            --rfab: #2A9D8F;
+            --pipeline: #E9C46A;
+            --cancer: #E63946;
+            --rare: #457B9D;
+            --text: #333333;
+            --light-bg: #F8F8F8;
+            --border: #E0E0E0;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Georgia', serif; line-height: 1.7; color: var(--text); max-width: 780px; margin: 0 auto; padding: 40px 20px; background: #fff; }
+        .back-link { display: inline-block; margin-bottom: 1.5rem; color: var(--accent); text-decoration: none; font-size: 0.9em; }
+        .back-link:hover { text-decoration: underline; }
+        h1 { font-size: 2em; color: var(--accent); margin-bottom: 0.3em; line-height: 1.2; }
+        .subtitle { font-size: 1.1em; color: #666; margin-bottom: 0.5em; }
+        .date { font-style: italic; color: #888; margin-bottom: 1.5em; }
+        h2 { font-size: 1.4em; color: var(--accent); margin-top: 2em; margin-bottom: 0.8em; border-bottom: 2px solid var(--border); padding-bottom: 0.3em; }
+        h3 { font-size: 1.1em; color: var(--text); margin-top: 1.5em; margin-bottom: 0.5em; }
+        p { margin-bottom: 1.2em; }
+        .lead { font-size: 1.05em; line-height: 1.8; }
+        a { color: var(--accent); }
+        code { background: #f0f0f0; padding: 0.15em 0.4em; border-radius: 3px; font-size: 0.9em; }
+
+        .highlight-box { background: linear-gradient(135deg, #f0f7ff 0%, #e8f4f8 100%); border-left: 4px solid var(--rfab); padding: 1.5em 2em; margin: 1.5em 0 2em 0; border-radius: 0 12px 12px 0; }
+        .highlight-box h3 { margin-top: 0; color: var(--accent); }
+
+        .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1em; margin: 1.5em 0; }
+        .stat-box { text-align: center; padding: 1em; background: var(--light-bg); border-radius: 8px; }
+        .stat-box .number { font-size: 1.5em; font-weight: 700; color: var(--accent); }
+        .stat-box .label { font-size: 0.8em; color: #666; }
+
+        .stat-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1em; margin: 1.5em 0; }
+
+        table { width: 100%; border-collapse: collapse; margin: 1.5em 0; font-size: 0.85em; }
+        th, td { padding: 0.5em 0.6em; text-align: left; border-bottom: 1px solid var(--border); }
+        th { background: var(--accent); color: white; font-weight: 600; }
+        tr:nth-child(even) { background: var(--light-bg); }
+        td.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+        .figure { margin: 2em 0; text-align: center; }
+        .figure img { max-width: 100%; border: 1px solid var(--border); border-radius: 6px; }
+        .figure figcaption { font-size: 0.85em; color: #666; margin-top: 0.6em; line-height: 1.5; }
+
+        .finding-box { border-left: 4px solid var(--cancer); background: var(--light-bg); padding: 1.2em 1.5em; margin: 1.5em 0; border-radius: 0 8px 8px 0; }
+        .finding-box h3 { margin-top: 0; color: var(--cancer); }
+
+        .cta-box { background: linear-gradient(135deg, var(--accent) 0%, #264653 100%); color: white; padding: 1.5em 2em; border-radius: 12px; margin: 2em 0; text-align: center; }
+        .cta-box a { color: #a6e3a1; font-weight: 600; }
+
+        ul { margin: 0.8em 0 1em 1.5em; }
+        li { margin-bottom: 0.4em; }
+
+        .footer { margin-top: 3em; padding-top: 2em; border-top: 1px solid var(--border); font-size: 0.9em; color: #666; font-style: italic; }
+
+        @media (max-width: 600px) {
+            .stat-grid { grid-template-columns: repeat(2, 1fr); }
+            .stat-grid-3 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="back-link">&larr; Back to Home</a>
+    <article>
+        <h1>Dogfooding rfab-harness on 10 Challenging Cancer Targets</h1>
+        <p class="subtitle">De novo VHH nanobody design against MPNST, DIPG, neuroblastoma, glioblastoma, and pancreatic cancer</p>
+        <p class="date">February 2026 &mdash; Preprint v3.0</p>
+
+        <div style="margin-bottom: 2em;">
+            <a href="v3_scientific_preprint.pdf" style="background: var(--accent); color: white; padding: 0.8em 1.2em; border-radius: 6px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center;">
+                <span style="font-size: 1.2em; margin-right: 0.5em;">&#128196;</span> Read the Full v3 Preprint (PDF)
+            </a>
+            &nbsp;&nbsp;
+            <a href="https://github.com/inventcures/repro_rfantibody_for-cancer-targets" style="background: var(--rfab); color: white; padding: 0.8em 1.2em; border-radius: 6px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center;">
+                <span style="font-size: 1.2em; margin-right: 0.5em;">&#128187;</span> GitHub Repo
+            </a>
+        </div>
+
+        <div class="highlight-box">
+            <h3>What this is</h3>
+            <p>We built <a href="/harness_for_rfantibody/">rfab-harness</a> to make the RFAntibody pipeline accessible via a single YAML config and CLI command. To test whether it actually works in practice, we pointed it at <strong>10 of the hardest cancer targets we could find</strong>&mdash;targets where no effective antibody therapy exists and patients face dismal prognoses.</p>
+            <p>This page summarizes the results: 4,085 designs scored across 10 campaigns, 135 candidates that passed stringent quality filters, and a 60-fold variation in design difficulty across targets.</p>
+        </div>
+
+        <!-- Key numbers -->
+        <h2>By the Numbers</h2>
+
+        <div class="stat-grid">
+            <div class="stat-box">
+                <div class="number">10</div>
+                <div class="label">Cancer targets</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">5</div>
+                <div class="label">Indications</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">4,085</div>
+                <div class="label">Designs scored</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">135</div>
+                <div class="label">Passed filters</div>
+            </div>
+        </div>
+
+        <div class="stat-grid-3">
+            <div class="stat-box">
+                <div class="number">3.3%</div>
+                <div class="label">Global pass rate</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">~75 min</div>
+                <div class="label">Wall-clock time (10 A100 GPUs)</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">60&times;</div>
+                <div class="label">Range in per-target pass rates</div>
+            </div>
+        </div>
+
+        <!-- Pipeline -->
+        <h2>What We Ran</h2>
+
+        <p>Each campaign used the three-stage <a href="https://github.com/RosettaCommons/RFAntibody">RFAntibody</a> pipeline, orchestrated by rfab-harness:</p>
+
+        <ol>
+            <li><strong>RFdiffusion</strong> &mdash; SE3-equivariant diffusion model generates backbone scaffolds conditioned on the target epitope (817 backbones total, 53&ndash;118 per campaign).</li>
+            <li><strong>ProteinMPNN</strong> &mdash; Graph neural network designs 5 amino acid sequences per backbone at temperature 0.2 (4,085 sequences total).</li>
+            <li><strong>RoseTTAFold2</strong> &mdash; Structure prediction scores each design in complex with the target (10 recycling iterations per design).</li>
+        </ol>
+
+        <p>All 10 campaigns ran in parallel on NVIDIA A100-80GB GPUs via <a href="https://modal.com">Modal</a> cloud infrastructure. One YAML per target, one CLI command to launch.</p>
+
+        <!-- Design funnel -->
+        <div class="figure">
+            <img src="figures/fig5_design_funnel.png" alt="Design funnel showing attrition from 817 backbones to 4,085 sequences to 135 passing designs">
+            <figcaption><strong>Figure 1.</strong> Design funnel. 817 backbone scaffolds expanded to 4,085 sequenced designs, of which 135 (3.3%) passed dual-threshold filtering (pAE &lt; 10, CDR RMSD &lt; 2.0 &Aring;).</figcaption>
+        </div>
+
+        <!-- Targets -->
+        <h2>The 10 Targets</h2>
+
+        <p>We screened 43 target&ndash;indication pairs across five cancers with devastating unmet need, then selected 10 structurally actionable targets for de novo VHH nanobody design:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Target</th>
+                    <th>Indication(s)</th>
+                    <th>PDB</th>
+                    <th>Backbones</th>
+                    <th>Designs</th>
+                    <th>Passed</th>
+                    <th>Rate</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>B7-H3</td><td>GBM, MPNST, DIPG, NB</td><td>9LME</td><td class="num">82</td><td class="num">410</td><td class="num">11</td><td class="num">2.7%</td></tr>
+                <tr><td>2</td><td>CD47</td><td>GBM</td><td>5IWL</td><td class="num">96</td><td class="num">480</td><td class="num">19</td><td class="num">4.0%</td></tr>
+                <tr><td>3</td><td><strong>CEACAM5</strong></td><td>PDAC</td><td>8BW0</td><td class="num">82</td><td class="num">410</td><td class="num"><strong>81</strong></td><td class="num"><strong>19.8%</strong></td></tr>
+                <tr><td>4</td><td>EGFR</td><td>GBM, MPNST, PDAC</td><td>1YY9</td><td class="num">64</td><td class="num">320</td><td class="num">5</td><td class="num">1.6%</td></tr>
+                <tr><td>5</td><td>EGFRvIII</td><td>GBM</td><td>8UKV</td><td class="num">73</td><td class="num">365</td><td class="num">1</td><td class="num">0.3%</td></tr>
+                <tr><td>6</td><td>EphA2</td><td>GBM</td><td>3SKJ</td><td class="num">70</td><td class="num">350</td><td class="num">3</td><td class="num">0.9%</td></tr>
+                <tr><td>7</td><td>GPC2</td><td>Neuroblastoma</td><td>6WJL</td><td class="num">53</td><td class="num">265</td><td class="num">2</td><td class="num">0.8%</td></tr>
+                <tr><td>8</td><td>HER2 Dom. IV</td><td>GBM, MPNST</td><td>1N8Z</td><td class="num">72</td><td class="num">360</td><td class="num">1</td><td class="num">0.3%</td></tr>
+                <tr><td>9</td><td>MSLN (N-term)</td><td>PDAC</td><td>4F3F</td><td class="num">107</td><td class="num">535</td><td class="num">6</td><td class="num">1.1%</td></tr>
+                <tr><td>10</td><td>MSLN (C-term)</td><td>PDAC</td><td>7U8C</td><td class="num">118</td><td class="num">590</td><td class="num">6</td><td class="num">1.0%</td></tr>
+                <tr style="font-weight: bold; border-top: 2px solid var(--accent);">
+                    <td colspan="4">Total</td>
+                    <td class="num">817</td>
+                    <td class="num">4,085</td>
+                    <td class="num">135</td>
+                    <td class="num">3.3%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Pass rates -->
+        <h2>Per-Target Pass Rates</h2>
+
+        <p>Filter pass rates varied more than 60-fold across the 10 campaigns, revealing substantial differences in computational design difficulty among cancer targets:</p>
+
+        <div class="figure">
+            <img src="figures/fig1_pass_rates.png" alt="Bar chart of filter pass rates by target">
+            <figcaption><strong>Figure 2.</strong> Filter pass rates by target. CEACAM5 dominates with 81 passing designs (19.8%), while EGFRvIII and HER2 Domain IV each produced only a single passing candidate.</figcaption>
+        </div>
+
+        <p>The targets clustered into three difficulty tiers:</p>
+        <ul>
+            <li><strong>High tractability:</strong> CEACAM5 (19.8%) &mdash; alone contributed 60% of all passing designs</li>
+            <li><strong>Moderate:</strong> CD47 (4.0%), B7-H3 (2.7%), EGFR (1.6%), MSLN-N (1.1%), MSLN-C (1.0%)</li>
+            <li><strong>Low tractability:</strong> EphA2 (0.9%), GPC2 (0.8%), EGFRvIII (0.3%), HER2 Dim. IV (0.3%)</li>
+        </ul>
+
+        <!-- Joint scatter -->
+        <h2>Score Distributions</h2>
+
+        <p>The joint distribution of pAE (interface confidence) and CDR RMSD (backbone accuracy) across all 4,085 designs shows where the passing candidates live:</p>
+
+        <div class="figure">
+            <img src="figures/fig4_pae_vs_rmsd.png" alt="Scatter plot of pAE vs CDR RMSD for all designs">
+            <figcaption><strong>Figure 3.</strong> pAE vs. CDR RMSD for all 4,085 designs, colored by campaign. The shaded lower-left quadrant marks the 135 designs passing both filters. The dense cluster at low pAE / high RMSD represents antibodies correctly positioned at the interface but with CDR loops in the wrong conformation.</figcaption>
+        </div>
+
+        <div class="finding-box">
+            <h3>Key finding: CDR RMSD is the bottleneck</h3>
+            <p>CDR RMSD&mdash;not pAE&mdash;is the dominant determinant of design success. Median CDR RMSDs of 8&ndash;21 &Aring; across campaigns indicate that most designs produce CDR loops that are structurally reasonable in isolation (framework-aligned H3 RMSD medians of 1.0&ndash;1.6 &Aring;) but incorrectly positioned relative to the target antigen. The RFdiffusion backbone generation step is the rate-limiting stage.</p>
+        </div>
+
+        <!-- Metric heatmap -->
+        <h2>Structural Quality Across Campaigns</h2>
+
+        <div class="figure">
+            <img src="figures/fig6_metric_heatmap.png" alt="Heatmap of key structural metrics across all 10 campaigns">
+            <figcaption><strong>Figure 4.</strong> Key structural metrics across all 10 campaigns. pLDDT (global fold confidence) is uniformly high (0.88&ndash;0.91), confirming the VHH framework is robustly recapitulated regardless of target. The variation is concentrated in interface metrics (pAE) and CDR positioning (RMSD).</figcaption>
+        </div>
+
+        <div class="figure">
+            <img src="figures/fig7_h3_rmsd_violin.png" alt="Violin plots of CDR-H3 loop RMSD">
+            <figcaption><strong>Figure 5.</strong> Framework-aligned CDR-H3 loop RMSD. The consistently low H3 RMSDs (medians 1.0&ndash;1.6 &Aring;) show that CDR-H3 loop geometry is well-preserved by ProteinMPNN&mdash;the design challenge lies in positioning these loops correctly on the target, not in their intrinsic shape.</figcaption>
+        </div>
+
+        <!-- Top candidates -->
+        <h2>Top Candidates</h2>
+
+        <div class="figure">
+            <img src="figures/fig9_top_candidates.png" alt="Table of best-scoring candidate per target">
+            <figcaption><strong>Figure 6.</strong> Best-scoring candidate per target, ranked by composite score. The strongest candidates (CEACAM5, B7-H3, MSLN-N) achieve pAE below 3.0 &Aring; and CDR RMSD below 1.5 &Aring;.</figcaption>
+        </div>
+
+        <p>The three highest-confidence designs&mdash;immediate priorities for experimental validation:</p>
+
+        <div class="stat-grid-3">
+            <div class="stat-box">
+                <div class="number" style="font-size: 1.2em;">CEACAM5</div>
+                <div class="label">pAE 2.59, RMSD 0.68 &Aring;</div>
+            </div>
+            <div class="stat-box">
+                <div class="number" style="font-size: 1.2em;">MSLN-N</div>
+                <div class="label">pAE 2.19, RMSD 1.33 &Aring;</div>
+            </div>
+            <div class="stat-box">
+                <div class="number" style="font-size: 1.2em;">B7-H3</div>
+                <div class="label">pAE 2.20, RMSD 1.10 &Aring;</div>
+            </div>
+        </div>
+
+        <!-- Key discussion points -->
+        <h2>What We Learned</h2>
+
+        <div class="finding-box">
+            <h3>Design difficulty is wildly target-dependent</h3>
+            <p>The 60-fold range in pass rates (0.3% to 19.8%) substantially exceeds what sampling noise could explain. CEACAM5's concave epitope surface and extended H3 loop lengths (10&ndash;18 residues) drove its success. EGFRvIII's deletion junction neoepitope&mdash;a geometrically novel surface with limited structural precedent&mdash;drove its near-complete failure.</p>
+        </div>
+
+        <div class="finding-box" style="border-color: var(--rare);">
+            <h3>Model bias vs. intrinsic difficulty</h3>
+            <p>Several lines of evidence favor the design-difficulty interpretation over model bias. Global fold quality (pLDDT) was uniform across all targets (medians 0.88&ndash;0.91). Template resolution did not predict success: CEACAM5 (19.8% pass) used a 3.1 &Aring; template while EGFRvIII (0.3%) used a 2.9 &Aring; template. The best-performing targets share concave epitope surfaces; the worst present convex or novel geometries.</p>
+        </div>
+
+        <div class="finding-box" style="border-color: var(--rfab);">
+            <h3>Backbone topology is king</h3>
+            <p>Passing designs concentrated on a small fraction of backbones. For B7-H3, 11 passing designs came from only 3 of 82 backbones (3.7%). For MSLN-C, 4 of 6 hits came from a single backbone. This suggests scaling backbone count&mdash;not sequences per backbone&mdash;is the most effective strategy for improving pass rates.</p>
+        </div>
+
+        <h3>Cross-indication efficiency</h3>
+        <p>B7-H3 is overexpressed across four of five indications studied (MPNST, DIPG, neuroblastoma, GBM). A single high-affinity VHH against B7-H3 could serve as a therapeutic or diagnostic agent across all four&mdash;approximately 15,000 patients annually. The 12 combined mesothelin candidates targeting two non-overlapping epitopes enable bispecific VHH construction for enhanced PDAC therapy.</p>
+
+        <h3>Limitations</h3>
+        <p>The backbone counts (53&ndash;118 per campaign) are ~100&times; smaller than production-scale runs. Computational metrics are predictive but not definitive&mdash;experimental validation is essential. The absence of &Delta;&Delta;G scoring means binding energy is not directly assessed. These are sanity-check-scale campaigns; scale-up runs with 10,000+ backbones are planned for the most promising targets.</p>
+
+        <!-- CTA -->
+        <div class="cta-box">
+            <p style="font-size: 1.1em; margin-bottom: 0.8em;"><strong>Everything is open source</strong></p>
+            <p>
+                <a href="v3_scientific_preprint.pdf">Full v3 Preprint (PDF)</a> &nbsp;|&nbsp;
+                <a href="https://github.com/inventcures/repro_rfantibody_for-cancer-targets">GitHub: Code, Configs &amp; Results</a> &nbsp;|&nbsp;
+                <a href="/harness_for_rfantibody/">rfab-harness Homepage</a>
+            </p>
+            <p style="margin-top: 1em; font-size: 0.9em; opacity: 0.85;">All 10 campaign configurations, analysis scripts, score CSVs, and designed sequences are available for the computational biology and cancer immunotherapy communities.</p>
+        </div>
+
+        <div class="footer">
+            <p>Ashish Makani &mdash; spiff007@gmail.com &mdash; KCDH-A, Ashoka University, Sonipat, India</p>
+            <p style="margin-top: 0.5em;">Built with <a href="/harness_for_rfantibody/" style="color: inherit;">rfab-harness</a>, powered by <a href="https://github.com/RosettaCommons/RFAntibody" style="color: inherit;">RFAntibody</a> (Baker Lab), computed on <a href="https://modal.com" style="color: inherit;">Modal</a>.</p>
+        </div>
+    </article>
+</body>
+</html>

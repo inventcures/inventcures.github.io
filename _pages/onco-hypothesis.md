@@ -368,6 +368,11 @@ layout: default
 
 <h2 class="section-title">Standing on the Shoulders of Giants</h2>
 
+<blockquote style="border-left: 4px solid #3b82f6; margin: 1.5rem 0; padding: 1rem 1.5rem; background: #f8fafc; border-radius: 0 8px 8px 0; font-style: italic; color: #475569; font-size: 1.05rem;">
+  "If I have seen further, it is by standing on the shoulders of Giants."
+  <br><span style="font-style: normal; font-size: 0.9rem; color: #94a3b8;">&mdash; Isaac Newton, 1675</span>
+</blockquote>
+
 <div class="prior-art-box">
   <h3>Acknowledgments &amp; Prior Art</h3>
   <p>Onco-TTT is an integration platform. It combines established methods and public data sources into a single workflow for cancer researchers. We are transparent about what we built vs. what we built <em>upon</em>.</p>
@@ -421,6 +426,11 @@ layout: default
 <div class="prior-art-item">
   <h4>METIS &mdash; AI Research Mentor (LossFunk)</h4>
   <p>A tool-augmented, stage-aware AI assistant for guiding students from idea to paper. METIS's approach of combining literature search with methodology checks and curated guidelines influenced our pipeline design. By Kumar, Trehan &amp; Chopra. <a href="https://arxiv.org/abs/2601.13075" target="_blank">arXiv:2601.13075</a></p>
+</div>
+
+<div class="prior-art-item">
+  <h4>Gemini Deep Think &mdash; Jeff Dean &amp; Team (Google DeepMind)</h4>
+  <p>We thank Jeff Dean and his team at Google DeepMind for the fantastic innovation behind Gemini Deep Think and for releasing a detailed technical report. Their work on accelerating mathematical and scientific discovery with extended thinking models resonates strongly with Onco-TTT's goals. Several ideas described in their tech report &mdash; including structured reasoning chains and iterative hypothesis refinement &mdash; overlap with approaches we had already implemented in our pipeline. <a href="https://deepmind.google/blog/accelerating-mathematical-and-scientific-discovery-with-gemini-deep-think/" target="_blank">Blog post</a> &middot; <a href="https://arxiv.org/abs/2602.03837" target="_blank">arXiv:2602.03837</a> &middot; <a href="https://arxiv.org/abs/2511.01846" target="_blank">arXiv:2511.01846</a> &middot; <a href="https://github.com/inventcures/oncology_hypothesis_generation/commit/11fe6aae95bc7c5375fc519abb8c9bc9f2201acc" target="_blank">Our prior implementation</a></p>
 </div>
 
 <div class="prior-art-disclaimer">

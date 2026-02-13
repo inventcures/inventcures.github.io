@@ -38,6 +38,27 @@ See my [projects](/projects/) for details on computational protein design, bio M
 </div>
 
 <div style="margin: 2rem 0;">
+  <a href="/dogfooding_rfab-harness_on-challenging-cancer-targets/" style="display: block; background: linear-gradient(135deg, #1a0a0a 0%, #4a1942 100%); border: 2px solid #E63946; border-radius: 12px; overflow: hidden; text-decoration: none; position: relative;">
+    <div style="position: absolute; top: -8px; right: 20px; background: linear-gradient(135deg, #E63946, #ff6b6b); color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.3rem 0.6rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 12px rgba(230, 57, 70, 0.4);">New &mdash; Feb 2026</div>
+    <div style="padding: 2rem 2rem 1rem;">
+      <div style="display: inline-block; background: #E63946; color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Preprint v3 &mdash; Results</div>
+      <h3 style="color: #fff; font-size: 1.6rem; margin: 0 0 0.4rem 0; font-weight: 700;">Dogfooding rfab-harness on 10 Cancer Targets</h3>
+      <p style="color: #f4a0a8; font-size: 0.95rem; margin: 0 0 0.75rem 0; font-weight: 500;">De novo VHH nanobody design against MPNST, DIPG, neuroblastoma, GBM, and pancreatic cancer</p>
+      <p style="color: #ddd; font-size: 0.85rem; line-height: 1.5; margin: 0 0 1rem 0;">We pointed rfab-harness at 10 of the hardest cancer targets with no effective antibody therapy. 4,085 designs scored across 10 parallel GPU campaigns in ~75 minutes. 135 candidates survived stringent dual-threshold filtering. Pass rates varied 60-fold &mdash; from 0.3% (EGFRvIII) to 19.8% (CEACAM5) &mdash; revealing that computational design difficulty is wildly target-dependent.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; padding: 0 2rem 1.5rem; text-align: center;">
+      <div><span style="color: #fff; font-size: 1.4rem; font-weight: 800;">4,085</span><br><span style="color: #f4a0a8; font-size: 0.7rem; text-transform: uppercase;">designs scored</span></div>
+      <div><span style="color: #fff; font-size: 1.4rem; font-weight: 800;">135</span><br><span style="color: #f4a0a8; font-size: 0.7rem; text-transform: uppercase;">passed filters</span></div>
+      <div><span style="color: #fff; font-size: 1.4rem; font-weight: 800;">3.3%</span><br><span style="color: #f4a0a8; font-size: 0.7rem; text-transform: uppercase;">global pass rate</span></div>
+      <div><span style="color: #fff; font-size: 1.4rem; font-weight: 800;">60&times;</span><br><span style="color: #f4a0a8; font-size: 0.7rem; text-transform: uppercase;">range in difficulty</span></div>
+    </div>
+    <div style="padding: 0 2rem 1.5rem;">
+      <span style="color: #f4a0a8; font-weight: 600; font-size: 0.9rem;">View Results & Preprint &rarr;</span>
+    </div>
+  </a>
+</div>
+
+<div style="margin: 2rem 0;">
   <a href="/onco-hypothesis/" style="display: block; background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%); border: 2px solid #3b82f6; border-radius: 12px; overflow: hidden; text-decoration: none; position: relative;">
     <div style="position: absolute; top: -8px; right: 20px; background: linear-gradient(135deg, #3b82f6, #7c3aed); color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.3rem 0.6rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);">New</div>
     <div style="padding: 1.5rem 2rem;">

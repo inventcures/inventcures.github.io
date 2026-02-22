@@ -61,6 +61,26 @@ layout: default
   </a>
 </section>
 
+<!-- Onco-Shikshak - NEW -->
+<section class="featured-section">
+  <a href="/onco-shikshak/" style="display: block; background: linear-gradient(135deg, #020617 0%, #1e1b4b 100%); border: 2px solid #818cf8; border-radius: 12px; overflow: hidden; text-decoration: none; position: relative; margin-bottom: 2rem;">
+    <div style="position: absolute; top: -8px; right: 20px; background: linear-gradient(135deg, #6366f1, #ec4899); color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.3rem 0.6rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);">New</div>
+    <div style="padding: 1.5rem 2rem;">
+      <div style="display: inline-block; background: #6366f1; color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">AI + Medical Education</div>
+      <h3 style="color: #fff; font-size: 1.5rem; margin: 0 0 0.4rem 0; font-weight: 700;">Onco-Shikshak</h3>
+      <p style="color: #a5b4fc; font-size: 0.9rem; margin: 0 0 0.75rem 0; font-weight: 500;">AI-Augmented Adaptive Oncology Education</p>
+      <p style="color: #ddd; font-size: 0.85rem; line-height: 1.5; margin: 0 0 1rem 0;">Three integrated learning modules&mdash;dynamic textbook generation, Socratic virtual preceptor, and spaced repetition&mdash;all grounded in 7 clinical guideline sources (NCCN, ESMO, ASTRO, ACR, CAP, ClinVar/CIViC, SSO) via retrieval-augmented generation. Pedagogical design mapped to 6 learning science frameworks.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem;">
+        <span style="background: rgba(99,102,241,0.15); color: #818cf8; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">7-Source RAG</span>
+        <span style="background: rgba(99,102,241,0.15); color: #818cf8; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">Socratic AI</span>
+        <span style="background: rgba(99,102,241,0.15); color: #818cf8; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">SM-2 Spaced Rep</span>
+        <span style="background: rgba(99,102,241,0.15); color: #818cf8; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">Preprint</span>
+      </div>
+      <span style="color: #a5b4fc; font-weight: 600; font-size: 0.9rem;">Read Preprint & View Project &rarr;</span>
+    </div>
+  </a>
+</section>
+
 <!-- Onco-Seg -->
 <section class="featured-section">
   <a href="/onco-seg/" class="project-card" style="background: linear-gradient(135deg, #0a0a12 0%, #1a1a2e 100%); border: 2px solid #28c840; padding: 0; overflow: hidden; display: block; margin-bottom: 2rem;">

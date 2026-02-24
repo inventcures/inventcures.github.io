@@ -465,6 +465,57 @@
             font-weight: 500;
         }
 
+        /* Screenshot gallery */
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+            margin-top: 32px;
+        }
+
+        .screenshot-item {
+            position: relative;
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 8px 40px rgba(0,0,0,0.4), 0 0 60px rgba(99,102,241,0.06);
+            transition: all 0.3s ease;
+        }
+
+        .screenshot-item img:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 60px rgba(0,0,0,0.5), 0 0 80px rgba(99,102,241,0.1);
+        }
+
+        .screenshot-meta {
+            margin-top: 16px;
+        }
+
+        .screenshot-meta h3 {
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+        }
+
+        .screenshot-meta p {
+            font-size: 0.88rem;
+            color: var(--slate-400);
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        .screenshots-pair {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        @media (max-width: 640px) {
+            .screenshots-pair { grid-template-columns: 1fr; }
+        }
+
         /* Footer */
         footer {
             padding: 48px 0;
@@ -526,20 +577,64 @@
     <div class="container">
         <div class="arch-highlight">
             <div class="arch-stat">
-                <span class="stat-value">3</span>
-                <span class="stat-label">Learning Modules</span>
-            </div>
-            <div class="arch-stat">
-                <span class="stat-value">7+2</span>
-                <span class="stat-label">Guideline &amp; Textbook Corpora</span>
+                <span class="stat-value">4</span>
+                <span class="stat-label">Clinical Workflows</span>
             </div>
             <div class="arch-stat">
                 <span class="stat-value">6</span>
-                <span class="stat-label">Learning Science Frameworks</span>
+                <span class="stat-label">Specialist AI Agents</span>
             </div>
             <div class="arch-stat">
-                <span class="stat-value">RAG</span>
-                <span class="stat-label">Gemini Grounded Generation</span>
+                <span class="stat-value">9</span>
+                <span class="stat-label">Pedagogy Algorithms</span>
+            </div>
+            <div class="arch-stat">
+                <span class="stat-value">18</span>
+                <span class="stat-label">Clinical Cases</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Screenshots -->
+<section>
+    <div class="container">
+        <div class="section-label">Product</div>
+        <h2>Clinical Workflows in Action</h2>
+        <p>Four authentic clinical workflows powered by 6 specialist AI agents, FSRS v4 spaced repetition, IRT-adaptive difficulty, and NCCN-grounded RAG.</p>
+
+        <div class="screenshots-grid">
+            <div class="screenshot-item">
+                <img src="../images/onco-shikshak/hub.png" alt="Onco-Shikshak learning hub dashboard" loading="lazy">
+                <div class="screenshot-meta">
+                    <h3>Learning Hub</h3>
+                    <p>Personalized dashboard with active sessions, due flashcards, weak area suggestions, and quick access to all clinical workflows.</p>
+                </div>
+            </div>
+
+            <div class="screenshot-item">
+                <img src="../images/onco-shikshak/tumor-board.png" alt="Virtual tumor board with 6 specialist AI agents" loading="lazy">
+                <div class="screenshot-meta">
+                    <h3>Virtual Tumor Board</h3>
+                    <p>Six specialist AI agents (pathology, radiology, surgical oncology, medical oncology, radiation oncology, supportive care) deliberate sequentially on real clinical cases. Each agent queries its own guideline sources via RAG.</p>
+                </div>
+            </div>
+
+            <div class="screenshots-pair">
+                <div class="screenshot-item">
+                    <img src="../images/onco-shikshak/morning-report.png" alt="Morning report Socratic clinical reasoning" loading="lazy">
+                    <div class="screenshot-meta">
+                        <h3>Morning Report</h3>
+                        <p>Socratic dialogue with Dr. Chandra. 6-phase clinical reasoning scaffolding with expertise-adaptive difficulty.</p>
+                    </div>
+                </div>
+                <div class="screenshot-item">
+                    <img src="../images/onco-shikshak/review.png" alt="FSRS spaced repetition flashcard review" loading="lazy">
+                    <div class="screenshot-meta">
+                        <h3>Spaced Repetition</h3>
+                        <p>FSRS v4 scheduling with confidence calibration, interleaved practice across cancer domains, and contextual card variants.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -558,27 +653,47 @@
 <!-- Modules -->
 <section>
     <div class="container">
-        <div class="section-label">Core Modules</div>
-        <h2>Three Integrated Learning Modalities</h2>
-        <p>Each module implements specific learning science principles through concrete architectural decisions, sharing a common RAG knowledge grounding layer.</p>
+        <div class="section-label">Clinical Workflows</div>
+        <h2>Four Authentic Clinical Learning Environments</h2>
+        <p>Each workflow mirrors a real clinical setting, powered by 6 specialist AI agents and 9 pedagogy algorithms sharing a common NCCN-grounded RAG layer.</p>
 
         <div class="modules-grid">
             <div class="module-card">
+                <div class="module-icon module-icon-preceptor">&#x1F3E5;</div>
+                <h3>Morning Report</h3>
+                <p>Present cases to Dr. Chandra via Socratic dialogue. 6-phase clinical reasoning scaffolding (problem representation through management justification) with expertise-adaptive difficulty from IRT ability estimation.</p>
+            </div>
+
+            <div class="module-card">
+                <div class="module-icon module-icon-textbook">&#x1F9D1;&#x200D;&#x2695;&#xFE0F;</div>
+                <h3>Tumor Board</h3>
+                <p>Six specialist AI agents (pathology, radiology, surgery, medical oncology, radiation oncology, supportive care) deliberate sequentially. Cognitive conflict forces the learner to synthesize disagreeing experts.</p>
+            </div>
+
+            <div class="module-card">
+                <div class="module-icon module-icon-spaced">&#x1F3E5;</div>
+                <h3>Clinic Day</h3>
+                <p>Manage 3&ndash;5 simultaneous patients with random clinical interruptions. SOAP note documentation under time pressure with NCCN-grounded attending feedback.</p>
+            </div>
+        </div>
+
+        <div class="modules-grid" style="margin-top: 20px;">
+            <div class="module-card">
+                <div class="module-icon" style="background: rgba(192,132,252,0.15); color: var(--purple-400);">&#x1F4DA;</div>
+                <h3>Spaced Repetition 2.0</h3>
+                <p>FSRS v4 replaces SM-2 for optimal scheduling. Interleaved practice across cancer domains, contextual card variants, confidence calibration, and closed-loop error-to-card generation.</p>
+            </div>
+
+            <div class="module-card">
                 <div class="module-icon module-icon-textbook">&#x1F4D6;</div>
                 <h3>Dynamic AI Textbook</h3>
-                <p>Generates personalized oncology chapters on demand, adapted to Medical Student, Resident, or Attending expertise levels. Content is grounded in NCCN guidelines and foundational textbooks via RAG, with embedded retrieval practice checkpoints.</p>
+                <p>Generates personalized oncology chapters adapted to expertise level. RAG-grounded with citations, related cases linked at chapter end, streamed via SSE.</p>
             </div>
 
             <div class="module-card">
-                <div class="module-icon module-icon-preceptor">&#x1F9D1;&#x200D;&#x2695;&#xFE0F;</div>
+                <div class="module-icon" style="background: rgba(244,63,94,0.15); color: var(--rose-400);">&#x1F3AF;</div>
                 <h3>Virtual Preceptor</h3>
-                <p>Dr. Chandra, an AI attending oncologist, uses Socratic questioning and progressive disclosure to guide clinical reasoning. Enforces NCCN compliance and introduces "desirable friction" to prevent automation bias.</p>
-            </div>
-
-            <div class="module-card">
-                <div class="module-icon module-icon-spaced">&#x1F4A1;</div>
-                <h3>Spaced Repetition</h3>
-                <p>Generates high-yield flashcards (MOA, TNM cutoffs, pathognomonic findings) from guideline and textbook context. SM-2 algorithm schedules reviews for optimal long-term retention.</p>
+                <p>One-on-one with any specialist agent. Scaffolding ranges from direct instruction (struggling) to challenge mode (advanced learners adding clinical noise).</p>
             </div>
         </div>
     </div>

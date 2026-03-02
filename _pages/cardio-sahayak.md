@@ -96,7 +96,8 @@ layout: default
     <p class="tagline">
       Optimized for the South Asian demographic, addressing unique genetic predispositions, clinical profiles, and socio-economic contexts to democratize advanced cardiac care.
     </p>
-    <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+      <a href="https://huggingface.co/spaces/tp53/cardio-sahayak-demo" target="_blank" rel="noopener" style="padding: 0.75rem 1.5rem; background: #be123c; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; box-shadow: 0 4px 12px rgba(190, 18, 60, 0.3);">Try Live Demo</a>
       <a href="https://github.com/inventcures/cardio-sahayak" target="_blank" rel="noopener" style="padding: 0.75rem 1.5rem; background: #be123c; color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">View Repository</a>
       <a href="/files/v2_cardio-sahayak_preprint.pdf" target="_blank" rel="noopener" style="padding: 0.75rem 1.5rem; background: white; color: #be123c; border: 1px solid #be123c; text-decoration: none; border-radius: 8px; font-weight: 600;">Read Preprint</a>
     </div>
@@ -144,6 +145,7 @@ layout: default
       By converting the fine-tuned model to GGUF format, Cardio-Sahayak India is designed to be deployed locally on resource-constrained hardware in rural Indian clinics. It acts as an expert clinical assistant (Sahayak), assisting physicians in early screening, accurate ECG interpretation, and personalized risk assessment.
     </p>
     <div style="text-align: center;">
+      <a href="https://huggingface.co/spaces/tp53/cardio-sahayak-demo" target="_blank" rel="noopener" style="padding: 0.75rem 1.5rem; background: #be123c; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; box-shadow: 0 4px 12px rgba(190, 18, 60, 0.3);">Try Live Demo</a>
       <a href="https://github.com/inventcures/cardio-sahayak" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">
         <div style="display: inline-block; padding: 1rem 2rem; background: #f1f5f9; border-radius: 8px; color: #334155; font-weight: 600;">
           Explore the Codebase on GitHub →

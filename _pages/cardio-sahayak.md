@@ -98,7 +98,7 @@ layout: default
     </p>
     <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
       <a href="https://github.com/inventcures/cardio-sahayak" target="_blank" rel="noopener" style="padding: 0.75rem 1.5rem; background: #be123c; color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">View Repository</a>
-      <a href="/files/v0_cardio-sahayak_preprint.pdf" target="_blank" rel="noopener" style="padding: 0.75rem 1.5rem; background: white; color: #be123c; border: 1px solid #be123c; text-decoration: none; border-radius: 8px; font-weight: 600;">Read Preprint</a>
+      <a href="/files/v1_cardio-sahayak_preprint.pdf" target="_blank" rel="noopener" style="padding: 0.75rem 1.5rem; background: white; color: #be123c; border: 1px solid #be123c; text-decoration: none; border-radius: 8px; font-weight: 600;">Read Preprint</a>
     </div>
   </section>
 

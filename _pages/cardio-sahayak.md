@@ -99,7 +99,7 @@ layout: default
     <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
       <a href="https://huggingface.co/spaces/tp53/cardio-sahayak-demo" target="_blank" rel="noopener" style="padding: 0.75rem 1.5rem; background: #be123c; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; box-shadow: 0 4px 12px rgba(190, 18, 60, 0.3);">Try Live Demo</a>
       <a href="https://github.com/inventcures/cardio-sahayak" target="_blank" rel="noopener" style="padding: 0.75rem 1.5rem; background: #be123c; color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">View Repository</a>
-      <a href="/files/v2_cardio-sahayak_preprint.pdf" target="_blank" rel="noopener" style="padding: 0.75rem 1.5rem; background: white; color: #be123c; border: 1px solid #be123c; text-decoration: none; border-radius: 8px; font-weight: 600;">Read Preprint</a>
+      <a href="/files/v5_cardio-sahayak_preprint.pdf" target="_blank" rel="noopener" style="padding: 0.75rem 1.5rem; background: white; color: #be123c; border: 1px solid #be123c; text-decoration: none; border-radius: 8px; font-weight: 600;">Read Preprint</a>
     </div>
   </section>
 
@@ -119,8 +119,8 @@ layout: default
         <p>Combining <strong>MedGemma-27B</strong> for deep clinical reasoning and a <strong>Vision-Language Model (MedSigLIP)</strong> for native 12-lead ECG interpretation.</p>
       </div>
       <div class="ps-card">
-        <h3>📊 Rigorous Clinical Guidelines</h3>
-        <p>Fine-tuned directly on the Indian National Consensus on Cardiology and ICMR guidelines for precise, actionable diagnostic support.</p>
+        <h3>📊 Two-Phase Contextualization</h3>
+        <p>Fine-tuned sequentially on foundational ICMR guidelines (Phase 1) and then on a rigorously curated dataset of real Indian clinical notes and Gemini-synthesized phenotype shifts (Phase 2).</p>
       </div>
     </div>
   </section>
@@ -133,16 +133,16 @@ layout: default
       <ul style="margin-top: 1rem; padding-left: 1.5rem;">
         <li><strong>Text & Reasoning Backbone:</strong> <code>google/medgemma-27b-it</code>, quantized using 4-bit NormalFloat (NF4) via bitsandbytes and fine-tuned using QLoRA.</li>
         <li><strong>Multimodal ECG Processing:</strong> <code>google/medsiglip-448</code> integrated via the MEIT framework, allowing raw 12-lead ECG ingestion and cross-modal diagnostic reasoning.</li>
-        <li><strong>Data Pipeline:</strong> Trained on a synthetically generated but rigorously validated dataset integrating PTB-XL records, ECGInstruct sets, and South-Asian clinical case histories.</li>
+        <li><strong>Data Pipeline:</strong> The V2 dataset explicitly integrates <code>ekacare</code> clinical notes, synthetic South Asian phenotype shifts, and digitized ECG mocks to deeply embed Indian cardiac contexts.</li>
       </ul>
     </div>
   </section>
 
   <!-- Impact Section -->
   <section class="ps-section" id="impact">
-    <h2>Democratizing Expert Care</h2>
+    <h2>Democratizing Expert Care (Offline-Ready)</h2>
     <p style="text-align: center; color: #4b5563; max-width: 800px; margin: 0 auto 2rem; line-height: 1.7;">
-      By converting the fine-tuned model to GGUF format, Cardio-Sahayak India is designed to be deployed locally on resource-constrained hardware in rural Indian clinics. It acts as an expert clinical assistant (Sahayak), assisting physicians in early screening, accurate ECG interpretation, and personalized risk assessment.
+      Through a custom architectural patch bypassing the complex Gemma3 VLM structure, we successfully converted the fine-tuned model into a highly compressed Q4_K_M GGUF format (16.6GB). Cardio-Sahayak India is fully capable of running completely offline on standard clinical laptops in resource-constrained rural clinics.
     </p>
     <div style="text-align: center;">
       <a href="https://huggingface.co/spaces/tp53/cardio-sahayak-demo" target="_blank" rel="noopener" style="padding: 0.75rem 1.5rem; background: #be123c; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; box-shadow: 0 4px 12px rgba(190, 18, 60, 0.3);">Try Live Demo</a>

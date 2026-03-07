@@ -6,7 +6,6 @@
     <title>Merlin CT Report Generation — Evaluation Results</title>
     <meta name="description" content="Interactive evaluation of Merlin AI radiology report generation on 10 AbdomenAtlas CT cases with NiiVue viewer.">
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script type="module" src="https://unpkg.com/@niivue/niivue@0.44.2/dist/niivue.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -344,7 +343,7 @@
 
 <script src="merlin_evals_data.js"></script>
 <script type="module">
-import { Niivue } from "https://unpkg.com/@niivue/niivue@0.44.2/dist/niivue.js";
+import { Niivue } from "https://unpkg.com/@niivue/niivue@0.57.0/dist/index.js";
 
 const data = MERLIN_EVAL_DATA;
 let nv = null;

@@ -22,6 +22,9 @@ layout: default
   .iml-domain svg { display: block; margin: 0 auto 0.4rem; }
   .iml-domain .label { font-size: 0.72rem; font-weight: 600; color: #374151; line-height: 1.3; }
   .iml-domain .count { font-size: 0.65rem; color: #9ca3af; margin-top: 0.15rem; }
+  a.iml-domain-link { text-decoration: none; color: inherit; }
+  a.iml-domain-link .iml-domain { transition: box-shadow 0.15s, border-color 0.15s; }
+  a.iml-domain-link:hover .iml-domain { box-shadow: 0 2px 8px rgba(0,0,0,0.08); border-color: #c7d2fe; }
 
   .iml-tiers { display: flex; gap: 0; margin: 2rem 0 0.5rem; }
   .iml-tiers button { flex: 1; padding: 0.7rem; border: 2px solid #e5e7eb; background: #f9fafb; color: #6b7280; font-weight: 600; font-size: 0.85rem; cursor: pointer; transition: all 0.15s; }
@@ -90,41 +93,41 @@ layout: default
 <h2 style="font-size: 0.85rem; color: #999; text-transform: uppercase; letter-spacing: 0.08em; margin: 2rem 0 0.5rem;">Seven Research Domains</h2>
 
 <div class="iml-domains">
-  <div class="iml-domain">
+  <a href="/iml-project-ideas/protein-design/" class="iml-domain-link"><div class="iml-domain">
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="10" r="5" stroke="#7c3aed" stroke-width="1.5"/><path d="M9 18c0-2.8 2.2-5 5-5s5 2.2 5 5" stroke="#7c3aed" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="22" r="2" stroke="#c4b5fd" stroke-width="1.2"/><circle cx="18" cy="22" r="2" stroke="#c4b5fd" stroke-width="1.2"/></svg>
     <div class="label">Protein &amp;<br>Antibody Design</div>
     <div class="count">14 projects</div>
-  </div>
-  <div class="iml-domain">
+  </div></a>
+  <a href="/iml-project-ideas/drug-discovery/" class="iml-domain-link"><div class="iml-domain">
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="6" y="8" width="6" height="14" rx="3" stroke="#2563eb" stroke-width="1.5"/><rect x="16" y="6" width="6" height="16" rx="3" stroke="#2563eb" stroke-width="1.5"/><path d="M12 15h4" stroke="#93c5fd" stroke-width="1.5" stroke-linecap="round"/></svg>
     <div class="label">Drug<br>Discovery</div>
     <div class="count">7 projects</div>
-  </div>
-  <div class="iml-domain">
+  </div></a>
+  <a href="/iml-project-ideas/clinical-ai/" class="iml-domain-link"><div class="iml-domain">
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 6v16M8 14h12" stroke="#dc2626" stroke-width="1.5" stroke-linecap="round"/><rect x="8" y="8" width="12" height="12" rx="2" stroke="#fca5a5" stroke-width="1.2"/></svg>
     <div class="label">Clinical AI &amp;<br>Med Education</div>
     <div class="count">6 projects</div>
-  </div>
-  <div class="iml-domain">
+  </div></a>
+  <a href="/iml-project-ideas/formal-math/" class="iml-domain-link"><div class="iml-domain">
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M7 21l7-14 7 14" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 16h8" stroke="#fcd34d" stroke-width="1.2" stroke-linecap="round"/></svg>
     <div class="label">Formal Math<br>&amp; Lean4</div>
     <div class="count">4 projects</div>
-  </div>
-  <div class="iml-domain">
+  </div></a>
+  <a href="/iml-project-ideas/neuro-symbolic/" class="iml-domain-link"><div class="iml-domain">
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="10" cy="14" r="4" stroke="#059669" stroke-width="1.5"/><circle cx="18" cy="14" r="4" stroke="#059669" stroke-width="1.5"/><path d="M13 12v4M15 12v4" stroke="#6ee7b7" stroke-width="1.2" stroke-linecap="round"/></svg>
     <div class="label">Neuro-<br>Symbolic AI</div>
     <div class="count">4 projects</div>
-  </div>
-  <div class="iml-domain">
+  </div></a>
+  <a href="/iml-project-ideas/medical-imaging/" class="iml-domain-link"><div class="iml-domain">
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="7" y="7" width="14" height="14" rx="2" stroke="#8b5cf6" stroke-width="1.5"/><circle cx="14" cy="14" r="4" stroke="#c4b5fd" stroke-width="1.2"/><path d="M11 11l6 6M17 11l-6 6" stroke="#ddd6fe" stroke-width="1"/></svg>
     <div class="label">Medical<br>Imaging</div>
     <div class="count">2 projects</div>
-  </div>
-  <div class="iml-domain">
+  </div></a>
+  <a href="/iml-project-ideas/math-foundations/" class="iml-domain-link"><div class="iml-domain">
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M7 21Q14 7 21 21" stroke="#0891b2" stroke-width="1.5" fill="none"/><circle cx="10" cy="18" r="1.5" fill="#67e8f9"/><circle cx="14" cy="11" r="1.5" fill="#67e8f9"/><circle cx="18" cy="16" r="1.5" fill="#67e8f9"/></svg>
     <div class="label">Math<br>Foundations</div>
     <div class="count">3 projects</div>
-  </div>
+  </div></a>
   <div class="iml-domain" style="border-style: dashed;">
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M8 14h12M14 8v12" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round"/></svg>
     <div class="label" style="color: #9ca3af;">Your<br>Idea Here</div>

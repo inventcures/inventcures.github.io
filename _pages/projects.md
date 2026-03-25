@@ -41,7 +41,7 @@ layout: default
 <p style="color: #666; margin-bottom: 2rem;">Clinical AI, healthcare tools, and medical decision support systems.</p>
 
 
-<!-- Merlin CT Evaluation -->
+<!-- Merlin CT Evaluation - HIDDEN until ready to publish
 <section class="featured-section">
   <a href="/merlin_evals.html" style="display: block; background: linear-gradient(135deg, #0a192f 0%, #112240 100%); border: 2px solid #64ffda; border-radius: 12px; overflow: hidden; text-decoration: none; position: relative; margin-bottom: 2rem;">
     <div style="position: absolute; top: -8px; right: 20px; background: linear-gradient(135deg, #64ffda, #00b4d8); color: #0a192f; font-size: 0.65rem; font-weight: 700; padding: 0.3rem 0.6rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 12px rgba(100, 255, 218, 0.4);">New</div>
@@ -59,6 +59,7 @@ layout: default
     </div>
   </a>
 </section>
+-->
 
 <!-- Cardio-Sahayak India - NEW -->
 <section class="featured-section">

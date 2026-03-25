@@ -24,6 +24,22 @@ My mission is to impact medicine and disease through technology:
 
 See my [projects](/projects/) for details on computational protein design, bio ML challenges, and regulatory analysis work.
 
+## News
+
+<div style="margin: 1.5rem 0 2.5rem 0; display: flex; flex-direction: column; gap: 1rem;">
+
+  <div style="padding: 1rem 1.25rem; background: #f8f9fa; border-left: 3px solid #818cf8; border-radius: 4px;">
+    <p style="margin: 0 0 0.1rem 0; font-size: 0.75rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em;">Feb 19, 2025</p>
+    <p style="margin: 0; font-size: 0.92rem; line-height: 1.5;">Our project <a href="/onco-seg/">Onco-Seg</a> (with <a href="https://en.wikipedia.org/wiki/Anurag_Agrawal_(medical_scientist)">Dr. Anurag Agrawal</a> & Dr. Anjali Agrawal) and Ashoka University were mentioned by <strong>Alexandr Wang</strong>, head of Meta Superintelligence Labs, during his closed-door keynote at the <strong>India AI Impact Summit</strong>. That was pretty surreal to watch. <a href="https://youtube.com/clip/UgkxzVCPINw4JDLaTF-lXEmOeQT11LwgWXs0?si=1RHZ7SW-TPozIFgy" target="_blank" rel="noopener">Clip</a> · <a href="https://x.com/AIatMeta/status/2024631824304022000" target="_blank" rel="noopener">Post</a></p>
+  </div>
+
+  <div style="padding: 1rem 1.25rem; background: #f8f9fa; border-left: 3px solid #818cf8; border-radius: 4px;">
+    <p style="margin: 0 0 0.1rem 0; font-size: 0.75rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em;">Feb 18, 2025</p>
+    <p style="margin: 0; font-size: 0.92rem; line-height: 1.5;">The <a href="/ai-powered-virtual-mtb/">Virtual Tumor Board</a> was covered by the <strong>Times of India</strong> in their <a href="https://timesofindia.indiatimes.com/technology/times-techies/ai-for-social-impact/articleshow/128493830.cms" target="_blank" rel="noopener">Times Techies: AI for Social Impact</a> feature. Grateful for the coverage&mdash;it's encouraging to see interest in using AI for cancer care access.</p>
+  </div>
+
+</div>
+
 <div style="margin: 2rem 0;">
   <a href="/harness_for_rfantibody/" style="display: block; background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%); border: 2px solid #00b4d8; border-radius: 12px; overflow: hidden; text-decoration: none; position: relative;">
     <div style="position: absolute; top: -8px; right: 20px; background: linear-gradient(135deg, #00b4d8, #0077b6); color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.3rem 0.6rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 12px rgba(0, 180, 216, 0.4);">New</div>

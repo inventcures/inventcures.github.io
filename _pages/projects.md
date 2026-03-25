@@ -41,6 +41,25 @@ layout: default
 <p style="color: #666; margin-bottom: 2rem;">Clinical AI, healthcare tools, and medical decision support systems.</p>
 
 
+<!-- Merlin CT Evaluation -->
+<section class="featured-section">
+  <a href="/merlin_evals.html" style="display: block; background: linear-gradient(135deg, #0a192f 0%, #112240 100%); border: 2px solid #64ffda; border-radius: 12px; overflow: hidden; text-decoration: none; position: relative; margin-bottom: 2rem;">
+    <div style="position: absolute; top: -8px; right: 20px; background: linear-gradient(135deg, #64ffda, #00b4d8); color: #0a192f; font-size: 0.65rem; font-weight: 700; padding: 0.3rem 0.6rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 12px rgba(100, 255, 218, 0.4);">New</div>
+    <div style="padding: 1.5rem 2rem;">
+      <div style="display: inline-block; background: #64ffda; color: #0a192f; font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Medical Imaging + NLP</div>
+      <h3 style="color: #fff; font-size: 1.5rem; margin: 0 0 0.4rem 0; font-weight: 700;">Merlin CT Report Evaluation</h3>
+      <p style="color: #64ffda; font-size: 0.9rem; margin: 0 0 0.75rem 0; font-weight: 500;">Evaluating AI Radiology Report Generation with NiiVue</p>
+      <p style="color: #ddd; font-size: 0.85rem; line-height: 1.5; margin: 0 0 1rem 0;">Interactive evaluation of Merlin AI radiology report generation on 10 AbdomenAtlas CT cases. Side-by-side comparison of AI-generated vs. ground-truth reports with an integrated NiiVue 3D CT viewer for visual verification.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem;">
+        <span style="background: rgba(100,255,218,0.15); color: #64ffda; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">Merlin 3D VLM</span>
+        <span style="background: rgba(100,255,218,0.15); color: #64ffda; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">AbdomenAtlas</span>
+        <span style="background: rgba(100,255,218,0.15); color: #64ffda; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">NiiVue Viewer</span>
+      </div>
+      <span style="color: #64ffda; font-weight: 600; font-size: 0.9rem;">View Evaluation Results →</span>
+    </div>
+  </a>
+</section>
+
 <!-- Cardio-Sahayak India - NEW -->
 <section class="featured-section">
   <a href="/cardio-sahayak/" style="display: block; background: linear-gradient(135deg, #1f0510 0%, #4c0519 100%); border: 2px solid #be123c; border-radius: 12px; overflow: hidden; text-decoration: none; position: relative; margin-bottom: 2rem;">

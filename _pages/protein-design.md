@@ -77,7 +77,7 @@ layout: default
 </section>
 
 <!-- ==================== RESOURCES ==================== -->
-<h2 style="margin-top: 3rem; padding-bottom: 0.5rem; border-bottom: 3px solid #27AE60; color: #1D3557;">Resources & Reading</h2>
+<h2 id="readings" style="margin-top: 3rem; padding-bottom: 0.5rem; border-bottom: 3px solid #27AE60; color: #1D3557;">Resources & Reading</h2>
 <p style="color: #666; margin-bottom: 2rem;">A curated collection of the best writing on antibody engineering, protein design, and computational biology. Useful starting points whether you're new to the field or deep in the weeds.</p>
 
 <!-- Primers & Overviews -->

@@ -9,6 +9,9 @@ main:
   - title: "Projects"
     url: /projects/
 
+  - title: "Protein Design"
+    url: /protein-design/
+
   - title: "Open Problems"
     url: /iml-project-ideas/
 

@@ -401,44 +401,23 @@ layout: default
   <p style="text-align: center; margin: 1rem 0 2rem;"><a href="/antibody-research/" style="color: #1a5276; font-weight: 600;">View all antibody research →</a></p>
 </section>
 
-<!-- Computational Protein Design Challenges -->
+<!-- Protein Design Challenges & Competitions -->
 <section class="featured-section">
-  <h3 class="section-title">Protein Design Challenges</h3>
-  <p style="margin-bottom: 1.5rem; color: #666;">Computational approaches to protein and antibody design using diffusion models, structure prediction, and generative AI. For a comprehensive overview of AI-driven antibody design, see this excellent <a href="https://blog.booleanbiotech.com/ai-antibody-design-2025">state-of-the-art review</a> by Brian Naughton.</p>
-
-  <div class="project-grid">
-    <a href="https://github.com/ccalia/Bits_to_Binders_2024" class="project-card" target="_blank" rel="noopener">
-      <div class="project-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
-        </svg>
-      </div>
-      <h3 class="project-title">CD20 Binder Design</h3>
-      <p class="project-description">Participated in Bits to Binders 2024 challenge, designing computational binders targeting CD20 for B-cell lymphoma therapeutics.</p>
-      <span class="project-link">
-        View on GitHub
-        <svg viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-        </svg>
-      </span>
-    </a>
-
-    <div class="project-card" style="background: white;">
-      <div class="project-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-        </svg>
-      </div>
-      <h3 class="project-title">Nipah Virus Binder</h3>
-      <p class="project-description">Competing in <a href="https://proteinbase.com/competitions/adaptyv-nipah-competition">Adaptyv Nipah Competition</a> using diffusion-based generative models including <a href="https://github.com/HannesStark/boltzgen">BoltzGen</a> for de novo binder design.</p>
-      <a href="https://proteinbase.com/tp53" target="_blank" rel="noopener" class="project-link">
-        See my designs
-        <svg viewBox="0 0 20 20" fill="currentColor" style="width: 16px; height: 16px;">
-          <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-        </svg>
-      </a>
+  <a href="/protein-design/" style="display: block; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border: 2px solid #a78bfa; border-radius: 12px; overflow: hidden; text-decoration: none; position: relative; margin-bottom: 1.5rem;">
+    <div style="padding: 1.5rem 2rem;">
+      <div style="display: inline-block; background: #a78bfa; color: #0f172a; font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Competitions + Resources</div>
+      <h3 style="color: #fff; font-size: 1.5rem; margin: 0 0 0.4rem 0; font-weight: 700;">Protein & Binder Design</h3>
+      <p style="color: #c4b5fd; font-size: 0.9rem; margin: 0 0 0.75rem 0; font-weight: 500;">Binder design competitions with experimental validation, plus curated reading on antibody engineering</p>
+      <p style="color: #ddd; font-size: 0.85rem; line-height: 1.5; margin: 0 0 1rem 0;">RBX1, Nipah, and CD20 binder design challenges (Adaptyv Bio, BioML Society). Curated resources from Escalante Bio, Owl Posting, Asimov Press, and more.</p>
+      <span style="color: #c4b5fd; font-weight: 600; font-size: 0.9rem;">View Competitions & Resources &rarr;</span>
     </div>
+  </a>
+</section>
 
+<!-- Immune Repertoire Profiling -->
+<section class="featured-section">
+  <h3 class="section-title">Other Challenges</h3>
+  <div class="project-grid">
     <div class="project-card" style="background: white;">
       <div class="project-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

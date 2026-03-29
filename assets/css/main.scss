@@ -42,3 +42,12 @@
 
 // New minimalist theme (overrides above)
 @import "minimalist";
+
+// Bold + highlight Cancer nav link
+.greedy-nav .visible-links a[href="/cancer/"] {
+  font-weight: 800;
+  color: #e74c3c;
+  &:hover {
+    color: #c0392b;
+  }
+}

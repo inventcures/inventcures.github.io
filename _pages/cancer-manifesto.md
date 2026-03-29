@@ -207,8 +207,6 @@ layout: default
 
 <p><em>tp53 (<a href="https://inventcures.github.io" target="_blank">Ashish Makani</a>) is a research engineer at KCDH-A, Ashoka University. MS Computer Engineering from <a href="https://www.purdue.edu/" target="_blank">Purdue</a>. <a href="https://www.grandchallenges.org/" target="_blank">Grand Challenges India Award</a> (Gates Foundation / BIRAC). Builder of <a href="https://github.com/inventcures/rfab-harness" target="_blank">rfab-harness</a>, <a href="https://github.com/inventcures" target="_blank">DADB</a>, <a href="https://inventcures.github.io/ai-powered-virtual-mtb/" target="_blank">Virtual Tumor Board</a>, and <a href="https://onco-hypothesis.up.railway.app/" target="_blank">Onco-TTT</a>. His friends say he has an unhealthy obsession with cancer. He's proud of it.</em></p>
 
-<p><em>Preprint: <a href="https://github.com/inventcures/encode-apply" target="_blank">DrugDiscovery@Home: Distributed AI Agent Design of Therapeutic Antibodies as a Focused Research Organization</a></em></p>
-
 <p><em>Full portfolio: <a href="https://inventcures.github.io/projects/" target="_blank">inventcures.github.io/projects</a></em></p>
 
 <p><em>Contact: spiff007@gmail.com | <a href="https://github.com/inventcures" target="_blank">@tp53</a> | <a href="https://inventcures.github.io" target="_blank">inventcures.github.io</a></em></p>

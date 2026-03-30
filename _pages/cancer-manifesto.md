@@ -26,7 +26,7 @@ layout: default
 
 <p>These weren't abstractions for me. They were instructions.</p>
 
-<p>In 2020, my uncle was diagnosed with hepatocellular carcinoma &mdash; liver cancer. He's alive today because of immunotherapy, because of bevacizumab, because someone designed a molecule that tells his immune system to fight. Last year, two of my aunts were diagnosed &mdash; one with breast cancer, one with ovarian cancer. I've been at the hospital. I've been in the waiting rooms. I've been on the phone calls where the oncologist explains what's next.</p>
+<p>In 2020, my uncle was diagnosed with hepatocellular carcinoma &mdash; liver cancer. He is doing well today, thanks to the remarkable progress in immunotherapy &mdash; drugs like bevacizumab that have been a godsend for cancer patients and their families everywhere. Someone designed those molecules. Someone made them real. Last year, two of my aunts were diagnosed &mdash; one with breast cancer, one with ovarian cancer. I've been at the hospital. I've been in the waiting rooms. I've been on the phone calls where the oncologist explains what's next.</p>
 
 <p>I named myself <strong>tp53</strong> online &mdash; after the p53 tumor suppressor gene, the "guardian of the genome." It's the most commonly mutated gene in human cancer. When p53 works, it kills damaged cells before they become tumors. When it doesn't, cancer grows.</p>
 

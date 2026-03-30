@@ -36,7 +36,7 @@ layout: default
 
 <hr>
 
-<h2>The Problem: We're Losing a War of Attrition</h2>
+<h2>Cancer adapts faster than we can keep up</h2>
 
 <p><strong>Ten million people die of cancer every year.</strong> That's more than HIV, malaria, and tuberculosis combined. It's a 9/11 every eight hours, every day, forever.</p>
 
@@ -60,7 +60,7 @@ layout: default
 
 <hr>
 
-<h2>The Insight That Changes Everything</h2>
+<h2>Wait — designing drugs is expensive, but checking them is dirt cheap?</h2>
 
 <p>Here's the thing almost nobody realizes:</p>
 
@@ -83,7 +83,7 @@ layout: default
 
 <hr>
 
-<h2>The Precedent: One Million People Built the World's Most Powerful Computer</h2>
+<h2>This has been done before (and it worked)</h2>
 
 <p>In the year 2000, a professor at Stanford named <a href="https://en.wikipedia.org/wiki/Vijay_Pande" target="_blank">Vijay Pande</a> had a crazy idea. He was inspired by <a href="https://en.wikipedia.org/wiki/Napster" target="_blank">Napster</a> &mdash; the music-sharing service. If people could share music files peer-to-peer, why couldn't they share <em>computing power</em> peer-to-peer for science?</p>
 
@@ -103,7 +103,7 @@ layout: default
 
 <hr>
 
-<h2>The Vision: DrugDiscovery@Home</h2>
+<h2>Ok so what if we actually did this for drug design?</h2>
 
 <p><a href="https://karpathy.ai/" target="_blank">Andrej Karpathy</a> &mdash; former head of AI at Tesla, one of the most influential minds in machine learning &mdash; recently proposed something he called <a href="https://github.com/karpathy/autoresearch" target="_blank"><strong>"AutoResearch at Home."</strong></a> His idea: a global swarm of AI agents, running on untrusted computers across the internet, each contributing to research in parallel.</p>
 
@@ -128,7 +128,7 @@ layout: default
 
 <hr>
 
-<h2>Use Case 1: The Cancer Drug That Doesn't Exist Yet</h2>
+<h2>The cancer drug that doesn't exist yet</h2>
 
 <p>Fifteen to twenty percent of lung cancer patients have EGFR mutations. That's hundreds of thousands of people every year, worldwide.</p>
 
@@ -147,7 +147,7 @@ layout: default
 
 <hr>
 
-<h2>Use Case 2: Day Zero Pandemic Readiness</h2>
+<h2>What about the next pandemic?</h2>
 
 <p>We can't predict when the next pandemic will come. But we can prepare.</p>
 
@@ -167,7 +167,7 @@ layout: default
 
 <hr>
 
-<h2>The Exhortation</h2>
+<h2>So here's what I'm asking</h2>
 
 <p>My grandmother died of leukemia before I was born. My uncle fights liver cancer today. My aunts battle breast and ovarian cancer as I write this sentence.</p>
 

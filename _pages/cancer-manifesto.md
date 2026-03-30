@@ -167,6 +167,30 @@ layout: default
 
 <hr>
 
+<h2>Will these designs actually work?</h2>
+
+<p>I'd be lying if I said every candidate that comes out of this pipeline will become a drug.</p>
+
+<p>Biology is hard. A molecule that binds a target in a computer simulation might not bind in a test tube. A molecule that binds in a test tube might not work in a cell. A molecule that works in a cell might be toxic. A molecule that's safe in mice might fail in humans. Roughly <strong>90% of drugs that enter clinical trials fail</strong> &mdash; and that's <em>after</em> years of pre-clinical optimization.</p>
+
+<p>So why bother?</p>
+
+<p>Because <strong>the bottleneck has never been the failure rate &mdash; it's been having enough candidates to try.</strong> The drug design space is astronomically large. For antibodies alone, the number of possible sequences is greater than the number of atoms in the observable universe. We've barely scratched the surface. Most targets considered "undruggable" aren't actually undruggable &mdash; we just haven't explored enough of the design space to find something that works.</p>
+
+<p>That's what DrugDiscovery@Home changes. Instead of one lab designing a hundred candidates against one target, we'd have a thousand GPUs designing ten thousand candidates against dozens of targets &mdash; simultaneously. More shots on goal. More exploration of that vast, uncharted space.</p>
+
+<p>And there's another killer lurking in the pipeline: <strong>toxicity.</strong> Many drugs that bind their target beautifully never become medicines because they're toxic &mdash; they interact with off-target proteins, they're metabolized into harmful compounds, they accumulate in the wrong tissues. This is the ADMET problem (absorption, distribution, metabolism, excretion, toxicity), and it kills more promising drug candidates than anything else.</p>
+
+<p>The good news: efforts like <a href="https://openadmet.org/" target="_blank">OpenADMET</a> &mdash; an open-science consortium funded by ARPA-H and the Astera Foundation &mdash; are building AI-powered "glass box" data engines to predict toxicity <em>before</em> a molecule is ever synthesized. Their first release: CYP inhibition and reaction phenotyping data for 1,200+ compounds, with plans to scale to 20,000+ across seven enzyme families. If we can predict which candidates will be toxic computationally, we save years and millions of dollars of dead-end experimental work.</p>
+
+<p>The computational design is the starting point, not the final product. Baker's lab showed this clearly: initial RFdiffusion-designed antibodies have modest affinity (tens to hundreds of nanomolar), but after affinity maturation, they achieve single-digit nanomolar binding &mdash; confirmed by cryo-EM at atomic resolution.</p>
+
+<p>Even if 99% of designs fail, the 1% that succeed could be the drug that saves your mother, your uncle, your aunt.</p>
+
+<p><strong>That's not a bad bet. That's the best bet we've ever had.</strong></p>
+
+<hr>
+
 <h2>So here's what I'm asking</h2>
 
 <p>My grandmother died of leukemia before I was born. My uncle fights liver cancer today. My aunts battle breast and ovarian cancer as I write this sentence.</p>

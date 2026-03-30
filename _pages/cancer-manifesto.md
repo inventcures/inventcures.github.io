@@ -117,7 +117,7 @@ layout: default
 
 <ol>
 <li><strong>You pick a "track"</strong> &mdash; a disease target. EGFR-C797S (drug-resistant lung cancer). Nipah virus. Influenza. Ebola.</li>
-<li><strong>Your GPU designs antibody binders</strong> against that target using open-source AI tools (<a href="https://github.com/RosettaCommons/RFdiffusion" target="_blank">RFdiffusion</a>, <a href="https://github.com/dauparas/ProteinMPNN" target="_blank">ProteinMPNN</a> &mdash; the same tools that won a <a href="https://www.nobelprize.org/prizes/chemistry/2024/summary/" target="_blank">Nobel Prize</a>).</li>
+<li><strong>Your GPU designs antibody binders</strong> against that target using open-source AI tools (<a href="https://github.com/RosettaCommons/RFdiffusion" target="_blank">RFdiffusion</a>, <a href="https://github.com/dauparas/ProteinMPNN" target="_blank">ProteinMPNN</a> &mdash; the same tools that won the <a href="https://www.nobelprize.org/prizes/chemistry/2024/summary/" target="_blank">Nobel Prize for Chemistry in 2024</a> for David Baker (50%), John Jumper (25%) &amp; Demis Hassabis (25%)).</li>
 <li><strong>A trusted central server checks every candidate</strong> &mdash; scoring binding affinity, safety, and drug-likeness in seconds.</li>
 <li><strong>The best candidates appear on a public leaderboard</strong> &mdash; open for the world to see, open for any lab to test.</li>
 </ol>
@@ -193,7 +193,7 @@ layout: default
 
 <h2>So here's what I'm asking</h2>
 
-<p>My grandmother died of leukemia before I was born. My uncle fights liver cancer today. My aunts battle breast and ovarian cancer as I write this sentence.</p>
+<p>All three of my extended family members diagnosed with cancer are thankfully doing well today &mdash; largely due to remarkable progress in medicines, surgery, and radiation therapy. But we need to accelerate the rate of discovery of new treatments. DrugDiscovery@Home is my attempt to make a start in the medicine space.</p>
 
 <p>I sat in <a href="https://en.wikipedia.org/wiki/David_Patterson_(computer_scientist)" target="_blank">Dave Patterson's course at Berkeley</a> in 2011, reading <a href="https://en.wikipedia.org/wiki/The_Cartoon_Guide_to_Genetics" target="_blank">"The Cartoon Guide to Genetics,"</a> and for the first time understood what DNA actually <em>does.</em> I watched <a href="https://www.youtube.com/watch?v=ji5_MqicxSo" target="_blank">Randy Pausch's last lecture</a> and understood what it means to fight. I read <a href="https://en.wikipedia.org/wiki/Paul_Kalanithi" target="_blank">Paul Kalanithi</a> and understood what it means to lose.</p>
 

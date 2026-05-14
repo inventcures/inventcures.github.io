@@ -13,10 +13,6 @@ layout: default
   .iml-hero .subtitle { font-size: 1.05rem; color: #666; max-width: 560px; margin: 0.75rem auto 0; line-height: 1.6; }
   .iml-badge { display: inline-block; background: linear-gradient(135deg, #f59e0b, #ef4444); color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.3rem 0.7rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
 
-  .iml-cta { margin: 1.5rem 0; padding: 1.1rem 1.4rem; background: #f0fdf4; border-left: 4px solid #22c55e; border-radius: 4px; }
-  .iml-cta p { margin: 0; font-size: 0.88rem; color: #15803d; line-height: 1.6; }
-  .iml-cta strong { color: #166534; }
-
   .iml-domains { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; margin: 1.5rem 0; }
   .iml-domain { text-align: center; padding: 0.8rem 0.5rem; border-radius: 8px; border: 1px solid #e5e7eb; }
   .iml-domain svg { display: block; margin: 0 auto 0.4rem; }
@@ -82,11 +78,6 @@ layout: default
   <div class="iml-badge">Open Problems &middot; Spring 2026</div>
   <h1>40 Open Research Problems<br>at the Frontier of ML + Science</h1>
   <p class="subtitle">Protein design. Drug discovery. Clinical AI. Formal mathematics.<br>All unsolved. All within reach.</p>
-</div>
-
-<!-- ===== CTA ===== -->
-<div class="iml-cta">
-  <p><strong>Interested?</strong> I can supervise ML/computational aspects. For domain expertise, I'll connect you with the right co-mentor &mdash; <strong>Prof. Sandeep Juneja</strong> (CDLDS) for probability &amp; optimization, biology faculty for wet-lab work, or other math/CS faculty. Email me at my Ashoka address with subject <em>"IML: [Project ID]"</em>. All levels welcome &mdash; undergrad, master's, PhD.</p>
 </div>
 
 <!-- ===== DOMAIN MAP (inline SVGs) ===== -->
@@ -282,12 +273,6 @@ layout: default
     <li><strong>Competitions</strong>: Adaptyv Bio monthly challenges, BioML benchmark, ICLR GEM workshop</li>
     <li><strong>Communities</strong>: Lean4 Zulip, Adaptyv Discord, Ashoka KCDHA reading groups</li>
   </ul>
-</div>
-
-<!-- ===== BOTTOM CTA ===== -->
-<div style="text-align: center; margin: 2rem 0 1rem; padding: 1.5rem; background: linear-gradient(135deg, #1e1b4b, #312e81); border-radius: 10px; color: white;">
-  <p style="margin: 0 0 0.5rem; font-size: 1.05rem; font-weight: 600;">Don't see your problem? Propose one.</p>
-  <p style="margin: 0; font-size: 0.85rem; color: #c7d2fe; line-height: 1.5;">If you have your own research question at the intersection of ML and science,<br>reach out &mdash; we'll find the right mentor combination.</p>
 </div>
 
 <p style="text-align: center; font-size: 0.7rem; color: #ccc; margin-top: 1rem;">Last updated March 2026. Full project details available on request.</p>

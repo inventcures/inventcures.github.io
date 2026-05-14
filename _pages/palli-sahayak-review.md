@@ -377,9 +377,9 @@ layout: default
         <dd><a href="https://github.com/inventcures/rag_gci/blob/main/docs/v53_phase2_difficult-scenarios_rubric_detailed-specs.md">docs/v53_phase2_difficult-scenarios_rubric_detailed-specs.md</a></dd>
 
         <dt>Reviewers</dt>
-        <dd>Dr. Naveen Salins (KMC Manipal), Dr. Jenifer Jeba (CMC Vellore),
-            Dr. Arun Ghoshal (KMC Manipal), Dr. Sreedevi Warrier (CCF Coimbatore),
-            Dr. Ravi Kannan (CCHRC Silchar), Dr. Parth Sharma (CCHRC Silchar)</dd>
+        <dd>Six anonymized reviewers (doc1–doc6) drawn from the four EVAH sites:
+            KMC Manipal (doc1, doc3), CMC Vellore (doc2), CCF Coimbatore (doc4),
+            CCHRC Silchar (doc5, doc6).</dd>
 
         <dt>Languages</dt>
         <dd>English, Hindi, Tamil, Bengali, Kannada (matching the four EVAH sites)</dd>

@@ -275,8 +275,6 @@ layout: default
   </ul>
 </div>
 
-<p style="text-align: center; font-size: 0.7rem; color: #ccc; margin-top: 1rem;">Last updated March 2026. Full project details available on request.</p>
-
 <script>
 function showTier(tier) {
   ['b','i','a'].forEach(function(t) {

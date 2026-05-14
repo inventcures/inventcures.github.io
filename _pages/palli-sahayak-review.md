@@ -218,7 +218,7 @@ layout: default
       six-dimension rubric anchored to WHO, IAPC, Pallium India, NICE and GOLD
       guidelines.
     </p>
-    <a class="ps-cta" href="https://palli-sahayak-review.up.railway.app">Open Review Console →</a>
+    <a class="ps-cta" href="https://palli-sahayak-review-production.up.railway.app">Open Review Console →</a>
     <a class="ps-cta ps-cta--secondary" href="https://github.com/inventcures/rag_gci/blob/main/docs/v53_phase2_difficult-scenarios_rubric_detailed-specs.md">Read the full spec</a>
   </div>
 
@@ -320,7 +320,7 @@ layout: default
       <div class="ps-step-body">
         <h4>Open the Review Console</h4>
         <p>
-          Go to <a href="https://palli-sahayak-review.up.railway.app">palli-sahayak-review.up.railway.app</a>
+          Go to <a href="https://palli-sahayak-review-production.up.railway.app">palli-sahayak-review-production.up.railway.app</a>
           on any modern browser (desktop recommended for the 3-column layout).
         </p>
       </div>

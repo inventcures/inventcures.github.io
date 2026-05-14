@@ -81,6 +81,26 @@ layout: default
   </a>
 </section>
 
+<!-- Palli Sahayak Review Console - NEW -->
+<section class="featured-section">
+  <a href="/palli-sahayak-review/" style="display: block; background: linear-gradient(135deg, #022c22 0%, #064e3b 100%); border: 2px solid #10b981; border-radius: 12px; overflow: hidden; text-decoration: none; position: relative; margin-bottom: 2rem;">
+    <div style="position: absolute; top: -8px; right: 20px; background: linear-gradient(135deg, #34d399, #047857); color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.3rem 0.6rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 12px rgba(4, 120, 87, 0.4);">New</div>
+    <div style="padding: 1.5rem 2rem;">
+      <div style="display: inline-block; background: #047857; color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">AI + Palliative Care</div>
+      <h3 style="color: #fff; font-size: 1.5rem; margin: 0 0 0.4rem 0; font-weight: 700;">Palli Sahayak Review Console 🇮🇳 🕊️</h3>
+      <p style="color: #6ee7b7; font-size: 0.9rem; margin: 0 0 0.75rem 0; font-weight: 500;">EVAH Pathway A — Phase 2 Clinical Evaluation</p>
+      <p style="color: #ddd; font-size: 0.85rem; line-height: 1.5; margin: 0 0 1rem 0;">Six blinded palliative care physicians (CMC Vellore, KMC Manipal, CCF Coimbatore, CCHRC Silchar) grade Palli Sahayak's RAG outputs on 40 difficult Indian palliative care vignettes (20 oncology + 20 pulmonology) using a six-dimension Likert rubric anchored to WHO / IAPC / Pallium India / NICE / GOLD guidelines.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem;">
+        <span style="background: rgba(16,185,129,0.15); color: #34d399; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">40 Vignettes</span>
+        <span style="background: rgba(16,185,129,0.15); color: #34d399; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">6-Dim Rubric</span>
+        <span style="background: rgba(16,185,129,0.15); color: #34d399; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">Cohen's κ ≥ 0.70</span>
+        <span style="background: rgba(16,185,129,0.15); color: #34d399; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">FastAPI + Railway</span>
+      </div>
+      <span style="color: #6ee7b7; font-weight: 600; font-size: 0.9rem;">View Study & Open Console →</span>
+    </div>
+  </a>
+</section>
+
 <!-- Virtual Tumor Board - Featured -->
 <section class="featured-section">
   <a href="/ai-powered-virtual-mtb/" style="display: block; background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); border: 2px solid #818cf8; border-radius: 12px; overflow: hidden; text-decoration: none; position: relative; margin-bottom: 2rem;">

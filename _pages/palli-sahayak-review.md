@@ -209,27 +209,28 @@ layout: default
 <div class="ps-landing">
 
   <div class="ps-hero">
-    <div class="badge">EVAH Pathway A — Phase 2 Clinical Evaluation</div>
+    <div class="badge">Clinical Review — 40 Difficult Cases</div>
     <h1>Palli Sahayak Review Console</h1>
     <p class="tagline">
-      Six palliative care physicians from CMC Vellore, KMC Manipal, CCF Coimbatore
-      and CCHRC Silchar grade Palli Sahayak's RAG outputs on 40 difficult Indian
-      palliative care vignettes — 20 oncology and 20 pulmonology — using a
-      six-dimension rubric anchored to WHO, IAPC, Pallium India, NICE and GOLD
-      guidelines.
+      Six independent palliative care doctors grade Palli Sahayak's RAG
+      outputs on 40 difficult Indian palliative care cases — 20 oncology
+      and 20 pulmonology — using a six-dimension rubric anchored to WHO,
+      IAPC, Pallium India, NICE and GOLD guidelines.
     </p>
     <a class="ps-cta" href="https://palli-sahayak-review-production.up.railway.app">Open Review Console →</a>
-    <a class="ps-cta ps-cta--secondary" href="https://github.com/inventcures/rag_gci/blob/main/docs/v53_phase2_difficult-scenarios_rubric_detailed-specs.md">Read the full spec</a>
+    <a class="ps-cta ps-cta--secondary" href="https://github.com/inventcures/rag_gci/blob/main/docs/v53_phase2_difficult-scenarios_rubric_detailed-specs.md">Read the rubric spec</a>
   </div>
 
   <div class="ps-section">
-    <h2>The study</h2>
+    <h2>About</h2>
     <p>
       Palli Sahayak is a voice-first AI clinical decision-support tool for
-      palliative care, deployed in 22 Indian languages via Sarvam AI and
-      grounded in evidence-based palliative-care guidelines. Under the EVAH
-      Pathway A protocol, we evaluate whether the tool measurably improves
-      frontline clinical responses on 40 difficult standardized cases.
+      palliative care, deployed in 22 Indian languages and grounded in
+      evidence-based palliative-care guidelines. This console is a small,
+      independent study: six palliative care doctors rate the tool's
+      answers on a set of difficult standardized cases that span pain
+      management, end-of-life care, end-stage COPD, post-TB fibrosis and
+      Indian occupational lung disease.
     </p>
 
     <div class="ps-grid">
@@ -370,19 +371,19 @@ layout: default
     <h2>Study metadata</h2>
     <div class="ps-meta">
       <dl>
-        <dt>Protocol</dt>
-        <dd>EVAH Pathway A — vignette crossover assessment (proposal §6.4)</dd>
+        <dt>Design</dt>
+        <dd>Six independent palliative care doctors rate Palli Sahayak's
+            RAG outputs on 40 difficult cases (20 oncology + 20 pulmonology).</dd>
 
-        <dt>Spec</dt>
+        <dt>Rubric spec</dt>
         <dd><a href="https://github.com/inventcures/rag_gci/blob/main/docs/v53_phase2_difficult-scenarios_rubric_detailed-specs.md">docs/v53_phase2_difficult-scenarios_rubric_detailed-specs.md</a></dd>
 
         <dt>Reviewers</dt>
-        <dd>Six anonymized reviewers (doc1–doc6) drawn from the four EVAH sites:
-            KMC Manipal (doc1, doc3), CMC Vellore (doc2), CCF Coimbatore (doc4),
-            CCHRC Silchar (doc5, doc6).</dd>
+        <dd>Six anonymized reviewers (doc1–doc6), all qualified palliative
+            care doctors. Reviewer identity is blinded for the rating.</dd>
 
         <dt>Languages</dt>
-        <dd>English, Hindi, Tamil, Bengali, Kannada (matching the four EVAH sites)</dd>
+        <dd>English, Hindi, Tamil, Bengali, Kannada</dd>
 
         <dt>Inter-rater reliability target</dt>
         <dd>Weighted Cohen's κ ≥ 0.70 per dimension (≥ 0.80 for safety)</dd>

@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RFantibody vs Biohub ESMFold2 — A Neutral-Oracle Face-off in De Novo Binder Design | InventCures</title>
-    <meta name="description" content="Head-to-head comparison of RFantibody VHHs and Biohub ESMC/ESMFold2 minibinders &amp; scFvs against challenging cancer antigens, validated with an independent Boltz-2 oracle.">
+    <meta name="description" content="Head-to-head comparison of RFantibody VHHs and Biohub ESMFold2 minibinders &amp; scFvs against challenging cancer antigens, validated with an independent Boltz-2 oracle.">
     <style>
         :root {
             --accent: #1D3557;
@@ -84,7 +84,7 @@
     <a href="/" class="back-link">&larr; Back to Home</a>
     <article>
         <h1>RFantibody vs Biohub ESMFold2: a neutral-oracle face-off</h1>
-        <p class="subtitle">De novo binder design head-to-head &mdash; RFantibody VHHs versus Biohub ESMC/ESMFold2 minibinders &amp; scFvs against challenging cancer antigens</p>
+        <p class="subtitle">De novo binder design head-to-head &mdash; RFantibody VHHs versus Biohub ESMFold2 minibinders &amp; scFvs against challenging cancer antigens</p>
         <p class="date">June 2026 &mdash; Preprint v1.0</p>
 
         <div style="margin-bottom: 2em;">
@@ -99,7 +99,7 @@
 
         <div class="highlight-box">
             <h3>What this is</h3>
-            <p>Two de novo binder design paradigms, on the same antigens. <strong>RFantibody</strong> (RFdiffusion &rarr; ProteinMPNN &rarr; RoseTTAFold2) &mdash; from our <a href="/dogfooding_rfab-harness_on-challenging-cancer-targets/">earlier dogfooding run</a>, one lead VHH per target. And <strong>Biohub's ESMC/ESMFold2</strong> protocol, which optimizes binders in the latent space of an ESMFold2 critic ensemble guided by the 6-billion-parameter ESMC language model.</p>
+            <p>Two de novo binder design paradigms, on the same antigens. <strong>RFantibody</strong> (RFdiffusion &rarr; ProteinMPNN &rarr; RoseTTAFold2) &mdash; from our <a href="/dogfooding_rfab-harness_on-challenging-cancer-targets/">earlier dogfooding run</a>, one lead VHH per target. And <strong>Biohub's ESMFold2</strong> protocol, which designs binders by gradient descent over the binder sequence against an <strong>ESMFold2</strong> structure objective (predicted inter-/intra-chain contacts), regularized by a down-weighted ESMC-6B language-model term. ESMFold2 is the design model; the 6-billion-parameter ESMC-6B is an auxiliary sequence prior.</p>
             <p>We ran the Biohub protocol on 14 antigens, generating minibinders and scFvs, then scored every design with ESMFold2 interface confidence (ipTM). Biohub wins on all 10 shared targets &mdash; but we show <strong>why that is largely an artifact of who is grading the exam</strong>, and settle it with an independent oracle.</p>
         </div>
 

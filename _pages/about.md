@@ -41,6 +41,27 @@ See my [projects](/projects/) for details on computational protein design, bio M
 </div>
 
 <div style="margin: 2rem 0;">
+  <a href="/de-novo-binder-design_rfantibody-vs-biohub-esmfold2/" style="display: block; background: linear-gradient(135deg, #0a1628 0%, #13294b 100%); border: 2px solid #0072B2; border-radius: 12px; overflow: hidden; text-decoration: none; position: relative;">
+    <div style="position: absolute; top: -8px; right: 20px; background: linear-gradient(135deg, #0072B2, #00b4d8); color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.3rem 0.6rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 12px rgba(0, 114, 178, 0.4);">New &mdash; Jun 2026</div>
+    <div style="padding: 2rem 2rem 1rem;">
+      <div style="display: inline-block; background: #0072B2; color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Preprint v1 &mdash; Results</div>
+      <h3 style="color: #fff; font-size: 1.6rem; margin: 0 0 0.4rem 0; font-weight: 700;">RFantibody vs Biohub ESMFold2: A Neutral-Oracle Face-off</h3>
+      <p style="color: #8ecae6; font-size: 0.95rem; margin: 0 0 0.75rem 0; font-weight: 500;">De novo binder design head-to-head &mdash; VHHs vs ESMC/ESMFold2 minibinders &amp; scFvs</p>
+      <p style="color: #ddd; font-size: 0.85rem; line-height: 1.5; margin: 0 0 1rem 0;">Under ESMFold2, Biohub's binders crush our RFantibody VHHs on all 10 shared cancer targets (median ipTM 0.85 vs 0.13) &mdash; but that is largely <strong>evaluation circularity</strong>: ESMFold2 is Biohub's own design objective. Re-scored with a neutral Boltz-2 oracle that neither platform optimized against, the gap <strong>halves</strong> (RFantibody recovers 0.13&rarr;0.37; Biohub falls to 0.69&ndash;0.74), though Biohub still leads &mdash; modestly &mdash; on 10/10.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; padding: 0 2rem 1.5rem; text-align: center;">
+      <div><span style="color: #fff; font-size: 1.4rem; font-weight: 800;">14</span><br><span style="color: #8ecae6; font-size: 0.7rem; text-transform: uppercase;">antigens</span></div>
+      <div><span style="color: #fff; font-size: 1.4rem; font-weight: 800;">224</span><br><span style="color: #8ecae6; font-size: 0.7rem; text-transform: uppercase;">Biohub designs</span></div>
+      <div><span style="color: #fff; font-size: 1.4rem; font-weight: 800;">Boltz-2</span><br><span style="color: #8ecae6; font-size: 0.7rem; text-transform: uppercase;">neutral oracle</span></div>
+      <div><span style="color: #fff; font-size: 1.4rem; font-weight: 800;">10/10</span><br><span style="color: #8ecae6; font-size: 0.7rem; text-transform: uppercase;">Biohub leads</span></div>
+    </div>
+    <div style="padding: 0 2rem 1.5rem;">
+      <span style="color: #8ecae6; font-weight: 600; font-size: 0.9rem;">View Results &amp; Preprint &rarr;</span>
+    </div>
+  </a>
+</div>
+
+<div style="margin: 2rem 0;">
   <a href="/harness_for_rfantibody/" style="display: block; background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%); border: 2px solid #00b4d8; border-radius: 12px; overflow: hidden; text-decoration: none; position: relative;">
     <div style="position: absolute; top: -8px; right: 20px; background: linear-gradient(135deg, #00b4d8, #0077b6); color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.3rem 0.6rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 12px rgba(0, 180, 216, 0.4);">New</div>
     <div style="padding: 1.5rem 2rem;">

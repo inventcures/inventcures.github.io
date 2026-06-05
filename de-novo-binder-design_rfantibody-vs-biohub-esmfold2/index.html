@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XE3Q1ZF9J3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XE3Q1ZF9J3');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RFantibody vs Biohub ESMFold2 — A Neutral-Oracle Face-off in De Novo Binder Design | InventCures</title>
+    <meta name="description" content="Head-to-head comparison of RFantibody VHHs and Biohub ESMC/ESMFold2 minibinders &amp; scFvs against challenging cancer antigens, validated with an independent Boltz-2 oracle.">
+    <style>
+        :root {
+            --accent: #1D3557;
+            --rfab: #6E6E6E;
+            --biohub: #0072B2;
+            --scfv: #D55E00;
+            --cancer: #E63946;
+            --rare: #457B9D;
+            --warn: #B00020;
+            --text: #333333;
+            --light-bg: #F8F8F8;
+            --border: #E0E0E0;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Georgia', serif; line-height: 1.7; color: var(--text); max-width: 780px; margin: 0 auto; padding: 40px 20px; background: #fff; }
+        .back-link { display: inline-block; margin-bottom: 1.5rem; color: var(--accent); text-decoration: none; font-size: 0.9em; }
+        .back-link:hover { text-decoration: underline; }
+        h1 { font-size: 2em; color: var(--accent); margin-bottom: 0.3em; line-height: 1.2; }
+        .subtitle { font-size: 1.1em; color: #666; margin-bottom: 0.5em; }
+        .date { font-style: italic; color: #888; margin-bottom: 1.5em; }
+        h2 { font-size: 1.4em; color: var(--accent); margin-top: 2em; margin-bottom: 0.8em; border-bottom: 2px solid var(--border); padding-bottom: 0.3em; }
+        h3 { font-size: 1.1em; color: var(--text); margin-top: 1.5em; margin-bottom: 0.5em; }
+        p { margin-bottom: 1.2em; }
+        .lead { font-size: 1.05em; line-height: 1.8; }
+        a { color: var(--accent); }
+        code { background: #f0f0f0; padding: 0.15em 0.4em; border-radius: 3px; font-size: 0.9em; }
+
+        .highlight-box { background: linear-gradient(135deg, #f0f7ff 0%, #e8f4f8 100%); border-left: 4px solid var(--biohub); padding: 1.5em 2em; margin: 1.5em 0 2em 0; border-radius: 0 12px 12px 0; }
+        .highlight-box h3 { margin-top: 0; color: var(--accent); }
+
+        .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1em; margin: 1.5em 0; }
+        .stat-box { text-align: center; padding: 1em; background: var(--light-bg); border-radius: 8px; }
+        .stat-box .number { font-size: 1.5em; font-weight: 700; color: var(--accent); }
+        .stat-box .label { font-size: 0.8em; color: #666; }
+
+        .stat-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1em; margin: 1.5em 0; }
+
+        table { width: 100%; border-collapse: collapse; margin: 1.5em 0; font-size: 0.85em; }
+        th, td { padding: 0.5em 0.6em; text-align: left; border-bottom: 1px solid var(--border); }
+        th { background: var(--accent); color: white; font-weight: 600; }
+        tr:nth-child(even) { background: var(--light-bg); }
+        td.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+        .figure { margin: 2em 0; text-align: center; }
+        .figure img { max-width: 100%; border: 1px solid var(--border); border-radius: 6px; }
+        .figure figcaption { font-size: 0.85em; color: #666; margin-top: 0.6em; line-height: 1.5; }
+
+        .finding-box { border-left: 4px solid var(--cancer); background: var(--light-bg); padding: 1.2em 1.5em; margin: 1.5em 0; border-radius: 0 8px 8px 0; }
+        .finding-box h3 { margin-top: 0; color: var(--cancer); }
+
+        .caveat-box { border-left: 4px solid var(--warn); background: #fdf3f4; padding: 1.2em 1.5em; margin: 1.5em 0; border-radius: 0 8px 8px 0; }
+        .caveat-box h3 { margin-top: 0; color: var(--warn); }
+
+        .cta-box { background: linear-gradient(135deg, var(--accent) 0%, #264653 100%); color: white; padding: 1.5em 2em; border-radius: 12px; margin: 2em 0; text-align: center; }
+        .cta-box a { color: #a6e3a1; font-weight: 600; }
+
+        ul { margin: 0.8em 0 1em 1.5em; }
+        li { margin-bottom: 0.4em; }
+
+        .footer { margin-top: 3em; padding-top: 2em; border-top: 1px solid var(--border); font-size: 0.9em; color: #666; font-style: italic; }
+
+        @media (max-width: 600px) {
+            .stat-grid { grid-template-columns: repeat(2, 1fr); }
+            .stat-grid-3 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="back-link">&larr; Back to Home</a>
+    <article>
+        <h1>RFantibody vs Biohub ESMFold2: a neutral-oracle face-off</h1>
+        <p class="subtitle">De novo binder design head-to-head &mdash; RFantibody VHHs versus Biohub ESMC/ESMFold2 minibinders &amp; scFvs against challenging cancer antigens</p>
+        <p class="date">June 2026 &mdash; Preprint v1.0</p>
+
+        <div style="margin-bottom: 2em;">
+            <a href="preprint.pdf" style="background: var(--accent); color: white; padding: 0.8em 1.2em; border-radius: 6px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center;">
+                <span style="font-size: 1.2em; margin-right: 0.5em;">&#128196;</span> Read the Full Preprint (PDF)
+            </a>
+            &nbsp;&nbsp;
+            <a href="/dogfooding_rfab-harness_on-challenging-cancer-targets/" style="background: var(--rfab); color: white; padding: 0.8em 1.2em; border-radius: 6px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center;">
+                <span style="font-size: 1.2em; margin-right: 0.5em;">&#129516;</span> The RFantibody Designs
+            </a>
+        </div>
+
+        <div class="highlight-box">
+            <h3>What this is</h3>
+            <p>Two de novo binder design paradigms, on the same antigens. <strong>RFantibody</strong> (RFdiffusion &rarr; ProteinMPNN &rarr; RoseTTAFold2) &mdash; from our <a href="/dogfooding_rfab-harness_on-challenging-cancer-targets/">earlier dogfooding run</a>, one lead VHH per target. And <strong>Biohub's ESMC/ESMFold2</strong> protocol, which optimizes binders in the latent space of an ESMFold2 critic ensemble guided by the 6-billion-parameter ESMC language model.</p>
+            <p>We ran the Biohub protocol on 14 antigens, generating minibinders and scFvs, then scored every design with ESMFold2 interface confidence (ipTM). Biohub wins on all 10 shared targets &mdash; but we show <strong>why that is largely an artifact of who is grading the exam</strong>, and settle it with an independent oracle.</p>
+        </div>
+
+        <h2>By the Numbers</h2>
+        <div class="stat-grid">
+            <div class="stat-box"><div class="number">2</div><div class="label">Design platforms</div></div>
+            <div class="stat-box"><div class="number">14</div><div class="label">Antigens</div></div>
+            <div class="stat-box"><div class="number">224</div><div class="label">Biohub designs</div></div>
+            <div class="stat-box"><div class="number">38</div><div class="label">Neutral-scored complexes</div></div>
+        </div>
+        <div class="stat-grid-3">
+            <div class="stat-box"><div class="number">10/10</div><div class="label">Targets Biohub leads (both oracles)</div></div>
+            <div class="stat-box"><div class="number">H200</div><div class="label">GPU (Modal); ESMC-6B + ESMFold2</div></div>
+            <div class="stat-box"><div class="number">Boltz-2</div><div class="label">Neutral oracle (AF3-class)</div></div>
+        </div>
+
+        <h2>The headline &mdash; and the catch</h2>
+        <p>Scored by ESMFold2, Biohub's best design beats the RFantibody VHH lead on every shared target, often by 0.6&ndash;0.9 ipTM units (median best ipTM <strong>0.85</strong> for Biohub vs <strong>0.13</strong> for RFantibody).</p>
+
+        <div class="figure">
+            <img src="figures/fig1_iptm_per_target.png" alt="Per-target ESMFold2 ipTM: RFantibody VHH vs Biohub minibinder vs scFv">
+            <figcaption><strong>Figure 1.</strong> Best ESMFold2 ipTM per target. The grey baseline is RFantibody; blue and orange are Biohub minibinders and scFvs. Biohub leads on all 10 shared targets &mdash; but read Figure 2 before calling it quality.</figcaption>
+        </div>
+
+        <div class="caveat-box">
+            <h3>The catch: evaluation circularity</h3>
+            <p>ESMFold2 ipTM is <em>exactly what the Biohub protocol optimizes</em>. A high score is guaranteed by construction &mdash; the precise mirror of our earlier finding that the same RFantibody VHHs sail through RoseTTAFold2's own filters (pLDDT &asymp; 0.90) yet score near zero on ESMFold2. <strong>Each platform looks excellent under the oracle that built it.</strong></p>
+        </div>
+
+        <div class="figure">
+            <img src="figures/fig2_circularity.png" alt="Pooled ESMFold2 ipTM distributions showing the circularity">
+            <figcaption><strong>Figure 2.</strong> Pooled ESMFold2 ipTM: RFantibody leads (n=10) vs all Biohub designs over the same 10 targets. Stark &mdash; but ESMFold2 is Biohub's home oracle, so the gap is expected, not proof of superiority.</figcaption>
+        </div>
+
+        <h2>The decisive test: a neutral oracle</h2>
+        <p>To remove home-oracle bias, we re-scored the best design per platform per target with <strong>Boltz-2</strong>, an open AlphaFold3-class model that neither platform optimized against (RFantibody used RoseTTAFold2; Biohub used ESMFold2). Genuine DeepMind AF3 cannot batch ~200 jobs and its weights are access-gated; Boltz-2 is the runnable, equally independent substitute.</p>
+
+        <div class="figure">
+            <img src="figures/fig4_neutral_oracle.png" alt="Home-oracle vs neutral-oracle ipTM dumbbell">
+            <figcaption><strong>Figure 3.</strong> Median best-per-target ipTM under each platform's design-region oracle (ESMFold2, open markers) versus the neutral Boltz-2 oracle (filled). RFantibody recovers; both Biohub modalities fall.</figcaption>
+        </div>
+
+        <div class="finding-box" style="border-color: var(--biohub);">
+            <h3>Under a neutral judge, the gap halves &mdash; but doesn't vanish</h3>
+            <p>RFantibody designs <strong>recover sharply</strong> (median ipTM 0.13 &rarr; 0.37): ESMFold2 had been unusually harsh on them. Biohub designs <strong>fall</strong> (0.85 &rarr; 0.74 minibinder, 0.69 scFv), directly quantifying home-oracle inflation. Yet Biohub's best design still out-scores the RFantibody lead on <strong>10/10</strong> shared targets &mdash; by smaller, more variable margins (on EGFRvIII the RFantibody VHH itself reaches 0.79). The advantage is real, but modest.</p>
+        </div>
+
+        <h2>Neutral Boltz-2 scores (10 shared targets)</h2>
+        <table>
+            <thead>
+                <tr><th>Target</th><th>RFab VHH</th><th>Biohub MB</th><th>Biohub scFv</th><th>Biohub best</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>b7h3</td><td class="num">0.496</td><td class="num">0.793</td><td class="num">0.601</td><td class="num"><strong>0.793</strong></td></tr>
+                <tr><td>cd47</td><td class="num">0.152</td><td class="num">0.453</td><td class="num">0.507</td><td class="num"><strong>0.507</strong></td></tr>
+                <tr><td>ceacam5</td><td class="num">0.253</td><td class="num">0.320</td><td class="num">0.472</td><td class="num"><strong>0.472</strong></td></tr>
+                <tr><td>egfr (cetuximab)</td><td class="num">0.226</td><td class="num">0.270</td><td class="num">0.782</td><td class="num"><strong>0.782</strong></td></tr>
+                <tr><td>egfrviii</td><td class="num">0.788</td><td class="num">0.894</td><td class="num">0.668</td><td class="num"><strong>0.894</strong></td></tr>
+                <tr><td>epha2</td><td class="num">0.273</td><td class="num">0.736</td><td class="num">0.399</td><td class="num"><strong>0.736</strong></td></tr>
+                <tr><td>gpc2</td><td class="num">0.175</td><td class="num">0.785</td><td class="num">0.861</td><td class="num"><strong>0.861</strong></td></tr>
+                <tr><td>her2 dom. IV</td><td class="num">0.464</td><td class="num">0.742</td><td class="num">0.835</td><td class="num"><strong>0.835</strong></td></tr>
+                <tr><td>msln (N-term)</td><td class="num">0.532</td><td class="num">0.907</td><td class="num">0.799</td><td class="num"><strong>0.907</strong></td></tr>
+                <tr><td>msln (C-term)*</td><td class="num">0.682</td><td class="num">0.904</td><td class="num">0.922</td><td class="num"><strong>0.922</strong></td></tr>
+                <tr style="font-weight: bold; border-top: 2px solid var(--accent);">
+                    <td>median</td><td class="num">0.369</td><td class="num">0.739</td><td class="num">0.685</td><td class="num">&mdash;</td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="font-size: 0.85em; color: #666;">*MSLN C-terminal antigen is a 15-residue peptide; ipTM there is unreliable for both platforms.</p>
+
+        <h2>What We Learned</h2>
+
+        <div class="finding-box">
+            <h3>Cross-oracle disagreement is the whole story</h3>
+            <p>Confidence metrics from a design platform's own structure model are not evidence of binding &mdash; they are evidence the design satisfied its own objective. RFantibody looks confident under RoseTTAFold2; Biohub looks confident under ESMFold2. Only a model neither side optimized against (here, Boltz-2) gives a comparison worth anything. It should become standard practice in this field.</p>
+        </div>
+
+        <div class="finding-box" style="border-color: var(--biohub);">
+            <h3>Minibinders generally beat scFvs</h3>
+            <p>On most targets, free-form 60&ndash;200&nbsp;aa minibinders reach higher ipTM than CDR design inside a fixed VH&ndash;VL framework &mdash; consistent with an easier optimization geometry. Useful when format flexibility is acceptable.</p>
+        </div>
+
+        <div class="caveat-box">
+            <h3>Read against the sampling asymmetry &mdash; and no wet lab yet</h3>
+            <p>The Biohub number is the <strong>best of 8 designs</strong> per modality; the RFantibody number is a <strong>single lead</strong>. That alone favours Biohub. There is no experimental binding data for any design &mdash; ipTM is a confidence proxy, not affinity. The honest gold-standard experiments remain a symmetric best-of-<em>N</em> comparison and, ultimately, SPR/BLI. A data-quality aside: two PDB IDs in our internal target list were wrong (6W0B is a K&#8314; channel, not HDAC8; 6R8H is triosephosphate isomerase, not PHD2), so those antigens were sourced from UniProt.</p>
+        </div>
+
+        <h3>Engineering notes</h3>
+        <p>Running the Biohub protocol reproducibly took two non-obvious fixes. The ESMC-6B + ESMFold2 critic ensemble occupies ~50&ndash;75&nbsp;GB; at batch size 8 even an H200 (141&nbsp;GB) ran out of memory, and a CUDA OOM on a <em>warm, shared</em> container corrupted its CUDA context, cascading into cuDNN/CUB failures on later jobs. Batch size 2 with automatic fallback eliminated all failures. On real Modal pricing (H200 $4.54/h, B200 $6.25/h) the dominant cost lever is amortizing the one-time model load across a batch &mdash; not the GPU tier; B200 is roughly cost-neutral for this small-batch, latency-bound optimization.</p>
+
+        <div class="cta-box">
+            <p style="font-size: 1.1em; margin-bottom: 0.8em;"><strong>Open &amp; reproducible</strong></p>
+            <p>
+                <a href="preprint.pdf">Full Preprint (PDF)</a> &nbsp;|&nbsp;
+                <a href="/dogfooding_rfab-harness_on-challenging-cancer-targets/">The RFantibody Designs</a> &nbsp;|&nbsp;
+                <a href="/antibody-research/">Antibody Research Hub</a>
+            </p>
+            <p style="margin-top: 1em; font-size: 0.9em; opacity: 0.85;">All designs (sequences, per-critic metrics, loss trajectories, predicted structures) and the neutral Boltz-2 scores are released for the computational protein design community.</p>
+        </div>
+
+        <div class="footer">
+            <p>Ashish (<a href="https://github.com/tp53" style="color: inherit;">@tp53</a>) &mdash; <a href="https://inventcures.github.io" style="color: inherit;">inventcures.github.io</a></p>
+            <p style="margin-top: 0.5em;">Designs computed on <a href="https://modal.com" style="color: inherit;">Modal</a>; binder design from <a href="https://biohub.ai" style="color: inherit;">Biohub ESMFold2</a>; baseline from <a href="https://github.com/RosettaCommons/RFantibody" style="color: inherit;">RFantibody</a> (Baker Lab); neutral scoring with <a href="https://github.com/jwohlwend/boltz" style="color: inherit;">Boltz-2</a>.</p>
+        </div>
+    </article>
+</body>
+</html>

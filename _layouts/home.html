@@ -1,22 +1,26 @@
----
-layout: default
----
-
-<main class="main-content">
-  <div class="container-narrow">
-    {% if page.headshot %}
-    <div class="hero-section">
-      <div class="hero-image">
-        <img src="{{ site.baseurl }}/images/{{ page.headshot }}" alt="{{ site.author.name }}">
-      </div>
-      <div class="hero-content">
-        {{ content }}
-      </div>
-    </div>
-    {% else %}
-    {{ content }}
-    {% endif %}
-
-    {% include featured-projects.html %}
-  </div>
+<!doctype html>
+<html lang="{{ site.locale | default: 'en-US' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | strip_html | escape }} — {{ site.title | escape }}</title>
+  <meta name="description" content="Ashish Makani (tp53). Building tools at the intersection of machine learning, medicine and biology.">
+  <link rel="canonical" href="{{ '/' | absolute_url }}">
+  <meta name="theme-color" content="#f4f1e9">
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/home-mark.svg' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/home-theme.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/home-practice.css' | relative_url }}">
+  <style>.home-navigation a:nth-child(n+6){display:inline}</style>
+</head>
+<body class="practice-home">
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav-wrap"><nav class="nav" aria-label="Main navigation"><a class="brand" href="{{ '/' | relative_url }}"><span class="brand-icon" aria-hidden="true">✳</span> tp53<span class="brand-dot">.</span></a><div class="home-navigation">{% for item in site.data.navigation.main %}<a href="{{ item.url | relative_url }}">{{ item.title }}</a>{% endfor %}</div><a class="home-github" href="https://github.com/{{ site.author.github }}">GitHub ↗</a></nav></header>
+<main id="main">
+  <section class="shell home-hero"><div class="home-hero-copy"><div class="eyebrow">Ashish Makani / engineer & researcher / India</div><h1>Machine learning.<br>Medicine.<br><span class="serif">Biology.</span></h1><p>Building tools at the intersection of ML and medicine.</p><div class="hero-actions"><a class="button primary" href="{{ '/projects/' | relative_url }}">Explore the projects ↗</a><a class="text-link" href="#about">A little about me ↓</a></div></div><div class="home-portrait">{% if page.headshot %}<img src="{{ site.baseurl }}/images/{{ page.headshot }}" alt="{{ site.author.name | escape }}" width="350" height="430">{% endif %}<span class="micro">tp53 / named after the tumor suppressor gene</span></div></section>
+  <div class="shell home-editorial"><aside class="home-sidebar"><span class="section-label">Notes from the intersection</span><a href="#about">About</a><a href="#news">News</a><a href="#background">Background</a><a href="#featured-work">Featured work</a><a href="{{ '/resources/' | relative_url }}">Reading list ↗</a></aside><article class="home-body" id="about">{{ content }}</article></div>
+  <div class="shell home-featured" id="featured-work">{% include featured-projects.html %}</div>
 </main>
+<footer class="shell home-footer"><div><a class="brand" href="{{ '/' | relative_url }}">✳ tp53.</a><p>Building tools at the intersection of ML and medicine.</p></div><div class="home-footer-links"><a href="{{ '/cv/' | relative_url }}">CV</a><a href="{{ '/teaching/' | relative_url }}">Teaching</a><a href="{{ '/resources/' | relative_url }}">Resources</a><a href="{{ '/sitemap/' | relative_url }}">Sitemap</a><a href="https://github.com/{{ site.author.github }}">GitHub ↗</a><a href="https://linkedin.com/in/{{ site.author.linkedin }}">LinkedIn ↗</a><a href="https://twitter.com/{{ site.author.twitter }}">Twitter ↗</a><a href="https://bsky.app/profile/{{ site.author.bluesky }}">Bluesky ↗</a><span>© {{ site.time | date: '%Y' }} {{ site.author.name }}</span></div></footer>
+<script src="{{ '/visitor-tracker.js' | relative_url }}"></script>
+</body>
+</html>

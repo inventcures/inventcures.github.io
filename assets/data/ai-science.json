@@ -1,0 +1,340 @@
+{
+  "title": "AI × Science",
+  "updated": "2026-09-23",
+  "vision": [
+    "I want a future in which AI agents help people ask better questions, explore more possibilities and turn reliable discoveries into benefits that reach more people. Science and mathematics offer extraordinary opportunities for this kind of collaboration, especially in medicine and biology, where better understanding can ultimately mean less suffering and more healthy life. I am interested in human–AI teams and collaborations across laboratories around the world, with each contributing strengths the others lack.",
+    "Progress should deepen human agency and meaning: the freedom to choose what matters, understand the work, challenge an answer and share in discovery. That means evaluating evidence rather than just fluent output, preserving uncertainty and giving people real authority over consequential decisions. It also means designing against accidental harm and deliberate misuse, taking dual-use risks seriously, and making the benefits of scientific capability broadly accessible."
+  ],
+  "date_policy": "Dates are first public posting/publication where verified; talks use upload dates. Year-only dates retain their original precision. OP means an original author/team post or identified commentary. Missing posts are marked as unverified.",
+  "entries": [
+    {
+      "id": "scientisttwo",
+      "title": "ScientistTwo: Pioneering the Human Knowledge Frontier with Autonomous AI",
+      "type": "Preprint",
+      "date": "2026-09-17",
+      "date_precision": "day",
+      "url": "https://arxiv.org/abs/2609.19644v1",
+      "op_url": null,
+      "op_label": null,
+      "summary": "An autonomous research pipeline combines experiments, ablations and simulated peer review; its reported successes require careful attention to selection and evaluation.",
+      "tags": [
+        "Agents",
+        "Evaluation",
+        "Scientific discovery"
+      ],
+      "related_urls": [
+        "https://scientist-two.github.io/"
+      ]
+    },
+    {
+      "id": "self-organizing-teams",
+      "title": "Self-Organizing Agent Teams Learn to Reason Together",
+      "type": "Preprint",
+      "date": "2026-09-19",
+      "date_precision": "day",
+      "url": "https://arxiv.org/abs/2609.22682v1",
+      "op_url": "https://x.com/aneeshpappu/status/2102428585986498609",
+      "op_label": "Aneesh Pappu · author post",
+      "summary": "Frozen teams learn reusable coordination strategies, with gains depending partly on their ability to recognize correct reasoning.",
+      "tags": [
+        "Agents",
+        "Collaboration",
+        "Evaluation"
+      ],
+      "related_urls": []
+    },
+    {
+      "id": "solipsistic-superintelligence",
+      "title": "Solipsistic Superintelligence is Unlikely to be Cooperative",
+      "type": "Paper",
+      "date": "2026-06-02",
+      "date_precision": "day",
+      "url": "https://arxiv.org/abs/2606.03237v1",
+      "op_url": null,
+      "op_label": null,
+      "summary": "Argues that cooperative AI must account for adaptive counterparts, institutions and human agency rather than optimize in isolation.",
+      "tags": [
+        "Governance",
+        "Human agency",
+        "Collaboration"
+      ],
+      "related_urls": []
+    },
+    {
+      "id": "economics-agi",
+      "title": "Some Simple Economics of AGI",
+      "type": "Working paper",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "url": "https://arxiv.org/abs/2602.20946",
+      "op_url": null,
+      "op_label": null,
+      "summary": "Develops an economic argument that verification capacity and responsibility become scarce as automated execution becomes cheaper.",
+      "tags": [
+        "Human agency",
+        "Verification",
+        "Economics"
+      ],
+      "related_urls": [
+        "https://ssrn.com/abstract=6298838"
+      ]
+    },
+    {
+      "id": "drug-discovery-path",
+      "title": "Artificial intelligence in drug discovery—what it is, where we stand and the path forward",
+      "type": "Perspective",
+      "date": "2026-08-07",
+      "date_precision": "day",
+      "url": "https://doi.org/10.1038/s41573-026-01496-2",
+      "op_url": null,
+      "op_label": null,
+      "summary": "Calls for evaluating AI by its contribution to better drug-development decisions and patient-relevant outcomes.",
+      "tags": [
+        "Biology",
+        "Medicine",
+        "Evaluation"
+      ],
+      "related_urls": []
+    },
+    {
+      "id": "cancer-25-years",
+      "title": "Reflecting on 25 years of cancer research: transformative advances and unmet expectations",
+      "type": "Viewpoint",
+      "date": "2026-09-08",
+      "date_precision": "day",
+      "url": "https://doi.org/10.1038/s41568-026-00974-4",
+      "op_url": null,
+      "op_label": null,
+      "summary": "Six researchers reflect on cancer biology, translational disappointments and opportunities for human–AI co-science.",
+      "tags": [
+        "Biology",
+        "Medicine",
+        "Human–AI collaboration"
+      ],
+      "related_urls": []
+    },
+    {
+      "id": "uncertainty-layer",
+      "title": "The scientific paper needs an uncertainty layer",
+      "type": "Perspective preprint",
+      "date": "2026-08-20",
+      "date_precision": "day",
+      "url": "https://doi.org/10.31222/osf.io/duymx_v1",
+      "op_url": "https://www.linkedin.com/posts/richardsever_the-scientific-paper-needs-an-uncertainty-activity-7497694294678339584-u68R",
+      "op_label": "Richard Sever · author commentary",
+      "summary": "Proposes attaching reusable qualifications and uncertainty records to scientific claims as humans and AI reuse them.",
+      "tags": [
+        "Evidence",
+        "Verification",
+        "Scientific communication"
+      ],
+      "related_urls": []
+    },
+    {
+      "id": "four-autonomous-attempts",
+      "title": "Why LLMs Aren’t Scientists Yet: Lessons from Four Autonomous Research Attempts",
+      "type": "Preprint",
+      "date": "2026-01-06",
+      "date_precision": "day",
+      "url": "https://arxiv.org/abs/2601.03315v1",
+      "op_url": null,
+      "op_label": null,
+      "summary": "Four autonomous ML research attempts expose implementation drift, weak evaluation and failures of scientific judgment.",
+      "tags": [
+        "Agents",
+        "Evaluation",
+        "Research taste"
+      ],
+      "related_urls": [
+        "https://github.com/Lossfunk/ai-scientist-artefacts-v1"
+      ]
+    },
+    {
+      "id": "cheating-whistleblowing",
+      "title": "A Case Study on Emergent Cheating and Whistleblowing in Autonomous Research Swarms",
+      "type": "Preprint",
+      "date": "2026-09-03",
+      "date_precision": "day",
+      "url": "https://arxiv.org/abs/2609.04170v1",
+      "op_url": null,
+      "op_label": null,
+      "summary": "A mathematical research swarm illustrates how shared infrastructure can spread both verifier exploits and organized resistance.",
+      "tags": [
+        "Agents",
+        "Governance",
+        "Mathematics"
+      ],
+      "related_urls": []
+    },
+    {
+      "id": "research-taste",
+      "title": "Eliciting Research Taste in LLMs through Future Research Direction Choice",
+      "type": "Workshop paper",
+      "date": "2026",
+      "date_precision": "year",
+      "url": "https://github.com/Lossfunk/research-taste-eval-v1",
+      "op_url": "https://www.linkedin.com/posts/lossfunk_new-paper-from-lossfunk-accepted-at-the-activity-7501276181154074624-Tttm",
+      "op_label": "Lossfunk · research-team post",
+      "summary": "Studies model preferences among future research directions using order-controlled pairs, without equating agreement with scientific merit.",
+      "tags": [
+        "Research taste",
+        "Evaluation",
+        "Scientific discovery"
+      ],
+      "related_urls": []
+    },
+    {
+      "id": "no-magic-wands",
+      "title": "Drug Discovery Has No Magic Wands",
+      "type": "Essay",
+      "date": "2026-08-03",
+      "date_precision": "day",
+      "url": "https://deepphenotype.substack.com/p/drug-discovery-has-no-magic-wands",
+      "op_url": null,
+      "op_label": null,
+      "summary": "Daphne Koller argues that useful AI drug discovery depends on better measurements and causal understanding of human biology.",
+      "tags": [
+        "Biology",
+        "Medicine",
+        "Scientific discovery"
+      ],
+      "related_urls": []
+    },
+    {
+      "id": "gemini-real-world",
+      "title": "Accelerating Scientific Research with Gemini in the Real-World",
+      "type": "Preprint",
+      "date": "2026-08-27",
+      "date_precision": "day",
+      "url": "https://arxiv.org/abs/2608.26701v1",
+      "op_url": null,
+      "op_label": null,
+      "summary": "Reports multi-agent research workflows across materials, biology and computing, with different levels of autonomy and validation.",
+      "tags": [
+        "Agents",
+        "Biology",
+        "Materials"
+      ],
+      "related_urls": []
+    },
+    {
+      "id": "claude-fermat-report",
+      "title": "Anthropic uses Claude to formalize proof of Fermat’s Last Theorem",
+      "type": "News article",
+      "date": "2026-09-04",
+      "date_precision": "day",
+      "url": "https://siliconangle.com/2026/09/04/anthropic-uses-claude-to-formalize-proof-of-fermats-last-theorem/",
+      "op_url": null,
+      "op_label": null,
+      "summary": "Reports on AI-assisted formalization of Fermat’s Last Theorem and the role of shared proof infrastructure.",
+      "tags": [
+        "Mathematics",
+        "Formal verification",
+        "Agents"
+      ],
+      "related_urls": []
+    },
+    {
+      "id": "medical-lab-partner",
+      "title": "Medical school lab scientists get a new partner: AI",
+      "type": "News article",
+      "date": "2026-09-08",
+      "date_precision": "day",
+      "url": "https://www.aamc.org/news/medical-school-lab-scientists-get-new-partner-ai",
+      "op_url": null,
+      "op_label": null,
+      "summary": "Describes medical researchers integrating specialized AI agents with vetted data, laboratory workflows and human oversight.",
+      "tags": [
+        "Medicine",
+        "Biology",
+        "Human–AI collaboration"
+      ],
+      "related_urls": []
+    },
+    {
+      "id": "chollet-third-axis",
+      "title": "Latent-space reasoning as a third axis of test-time scaling",
+      "type": "Post",
+      "date": "2026-09-05",
+      "date_precision": "day",
+      "url": "https://x.com/fchollet/status/2096310217898356739",
+      "op_url": "https://x.com/fchollet/status/2096310217898356739",
+      "op_label": "François Chollet · original post",
+      "summary": "François Chollet highlights latent iterations alongside longer reasoning and parallel exploration.",
+      "tags": [
+        "Reasoning",
+        "Compute",
+        "Agents"
+      ],
+      "related_urls": []
+    },
+    {
+      "id": "tao-ai-science",
+      "title": "The paradox at the heart of AI and science",
+      "type": "Talk",
+      "date": "2026-09-03",
+      "date_precision": "day",
+      "url": "https://www.youtube.com/watch?v=svl_1upFpQo",
+      "op_url": null,
+      "op_label": null,
+      "summary": "Terence Tao discusses scientific understanding, human learning and the limits of accelerating answer production.",
+      "tags": [
+        "Mathematics",
+        "Human agency",
+        "Scientific discovery"
+      ],
+      "related_urls": []
+    },
+    {
+      "id": "jun-future-science",
+      "title": "Imagining a new future for science",
+      "type": "Talk",
+      "date": "2026-09-04",
+      "date_precision": "day",
+      "url": "https://www.youtube.com/watch?v=hawgxIEpPqU",
+      "op_url": null,
+      "op_label": null,
+      "summary": "Eunice Jun explores representations and interfaces that make scientific reasoning more inspectable.",
+      "tags": [
+        "Human–AI collaboration",
+        "Scientific communication",
+        "Evidence"
+      ],
+      "related_urls": []
+    },
+    {
+      "id": "periodic-infrastructure",
+      "title": "AI Infrastructure at Periodic",
+      "type": "Technical article",
+      "date": "2026-09-15",
+      "date_precision": "day",
+      "url": "https://periodic.com/news/ai-infrastructure-at-periodic",
+      "op_url": "https://x.com/LiamFedus/status/2099896055030501702",
+      "op_label": "Liam Fedus · founder commentary",
+      "summary": "Describes infrastructure for long scientific tool runs, specialized models and efficient training; performance claims come from the company.",
+      "tags": [
+        "Infrastructure",
+        "Scientific discovery",
+        "Agents"
+      ],
+      "related_urls": []
+    },
+    {
+      "id": "ai-in-science",
+      "title": "AI in Science: Early Insights",
+      "type": "Report",
+      "date": "2026-09-15",
+      "date_precision": "day",
+      "url": "https://ai.google/static/documents/AI-in-Science.pdf",
+      "op_url": "https://x.com/arthurturrell/status/2099877915844325780",
+      "op_label": "Arthur Turrell · author commentary",
+      "summary": "Combines model-use data, a specialist-model inventory and a researcher survey to examine adoption, time savings and verification demands.",
+      "tags": [
+        "Human–AI collaboration",
+        "Evaluation",
+        "Scientific discovery"
+      ],
+      "related_urls": []
+    }
+  ]
+}

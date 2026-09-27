@@ -388,6 +388,53 @@
       "group_title": "A conversation: the future of mathematics",
       "group_order": 1,
       "group_role": "doomslide’s response to Litt"
+    },
+    {
+      "id": "gowers-fields-letter",
+      "title": "Why I didn’t sign the Fields medallists’ letter",
+      "type": "Essay",
+      "date": "2026-09-17",
+      "date_precision": "day",
+      "url": "https://gowers.wordpress.com/2026/09/17/why-i-didnt-sign-the-fields-medallists-letter/",
+      "op_url": "https://x.com/wtgowers/status/2100480035614343340",
+      "op_label": "Timothy Gowers · X author announcement",
+      "summary": "Timothy Gowers defends a plurality of mathematical motivations, including problem-solving, while arguing that preserving the institutions supporting shared understanding matters more than restricting the supply of AI-generated results.",
+      "tags": [
+        "Mathematics",
+        "Human agency",
+        "Governance"
+      ],
+      "related_urls": [],
+      "group_id": "future-of-mathematics",
+      "group_title": "A conversation: the future of mathematics",
+      "group_order": 2,
+      "group_role": "Timothy Gowers · a different view of the crisis"
+    },
+    {
+      "id": "hairer-agmai",
+      "title": "Why I agreed to join AGMAI",
+      "type": "Essay",
+      "date": "2026-09-22",
+      "date_precision": "day",
+      "url": "https://proofsandprompts.com/2026/09/22/why-i-agreed-to-join-agmai/",
+      "op_url": "https://x.com/wtgowers/status/2102510624219533693",
+      "op_label": "Timothy Gowers · commentary on Hairer’s essay",
+      "summary": "Martin Hairer explains his decision to join the Advisory Group on Mathematics and Artificial Intelligence, describes its independence and advisory limits, and argues for engagement with AI labs to improve scholarship and represent community concerns.",
+      "tags": [
+        "Mathematics",
+        "Governance",
+        "Scientific communication"
+      ],
+      "related_urls": [
+        "https://terrytao.wordpress.com/2026/09/22/why-i-agreed-to-join-agmai/"
+      ],
+      "related_labels": {
+        "https://terrytao.wordpress.com/2026/09/22/why-i-agreed-to-join-agmai/": "Same essay · guest post on Terence Tao’s blog"
+      },
+      "group_id": "future-of-mathematics",
+      "group_title": "A conversation: the future of mathematics",
+      "group_order": 3,
+      "group_role": "Martin Hairer · engaging through AGMAI"
     }
   ]
 }

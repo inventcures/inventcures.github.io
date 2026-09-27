@@ -26,8 +26,8 @@ for e in entries:
  group=e.get('group_id')
  if active_group and group!=active_group:cards.append('</section>')
  if group and group!=active_group:
-  cards.append('<section id="'+esc(group)+'" class="as-conversation" data-date="'+esc(max(x.get('date') or '' for x in groups[group]))+'" data-precision="day" data-title="'+esc(e['group_title'])+'" aria-label="'+esc(e['group_title'])+'"><p class="as-group-title">'+esc(e['group_title'])+'</p><p class="as-group-note">Read the original essay, then the response. Publication dates are preserved below.</p>')
-  md += ['### '+e['group_title'],'','Original essay followed by the response.','']
+  cards.append('<section id="'+esc(group)+'" class="as-conversation" data-date="'+esc(max(x.get('date') or '' for x in groups[group]))+'" data-precision="day" data-title="'+esc(e['group_title'])+'" aria-label="'+esc(e['group_title'])+'"><p class="as-group-title">'+esc(e['group_title'])+'</p><p class="as-group-note">Start with Litt and doomslide’s response, then read Gowers and Hairer on mathematical values and institutional engagement. Each entry retains its publication date.</p>')
+  md += ['### '+e['group_title'],'','Litt’s essay and doomslide’s response, followed by Gowers and Hairer on mathematical values and institutional engagement.','']
  active_group=group
  date=prettydate(e);tags=''.join('<span class="as-tag">'+esc(t)+'</span>' for t in e['tags'])
  op=('<a class="as-chip as-op" href="'+esc(e['op_url'])+'" target="_blank" rel="noopener noreferrer">OP · '+esc(e['op_label'])+' ↗</a>') if e.get('op_url') else '<span class="as-chip as-unverified">OP not yet verified</span>'

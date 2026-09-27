@@ -10,30 +10,9 @@ Dates are first public posting/publication where verified; talks use upload date
 
 ## Reading list
 
-### Self-Organizing Agent Teams Learn to Reason Together
-
-Frozen teams learn reusable coordination strategies, with gains depending partly on their ability to recognize correct reasoning.
-
-- Type: Preprint
-- Published: 19 Sep 2026
-- Resource: [Self-Organizing Agent Teams Learn to Reason Together](https://arxiv.org/abs/2609.22682v1)
-- OP: [Aneesh Pappu · author post](https://x.com/aneeshpappu/status/2102428585986498609)
-- Topics: Agents, Collaboration, Evaluation
-
-### ScientistTwo: Pioneering the Human Knowledge Frontier with Autonomous AI
-
-An autonomous research pipeline combines experiments, ablations and simulated peer review; its reported successes require careful attention to selection and evaluation.
-
-- Type: Preprint
-- Published: 17 Sep 2026
-- Resource: [ScientistTwo: Pioneering the Human Knowledge Frontier with Autonomous AI](https://arxiv.org/abs/2609.19644v1)
-- OP: not yet verified
-- Topics: Agents, Evaluation, Scientific discovery
-- Related: https://scientist-two.github.io/
-
 ### A conversation: the future of mathematics
 
-Original essay followed by the response.
+Litt’s essay and doomslide’s response, followed by Gowers and Hairer on mathematical values and institutional engagement.
 
 #### A beginning for mathematics
 
@@ -56,6 +35,48 @@ A critical response to Litt focused on provenance, credit, accountable authorshi
 - OP: [doomslide · author essay](https://doomslide.substack.com/p/mathematics-is-effectively-dead)
 - Topics: Mathematics, Governance, Scientific communication
 - doomslide · X discussion cited in essay: https://x.com/doomslide/status/2095440935505010726
+
+#### Why I didn’t sign the Fields medallists’ letter
+
+Timothy Gowers defends a plurality of mathematical motivations, including problem-solving, while arguing that preserving the institutions supporting shared understanding matters more than restricting the supply of AI-generated results.
+
+- Type: Essay
+- Published: 17 Sep 2026
+- Resource: [Why I didn’t sign the Fields medallists’ letter](https://gowers.wordpress.com/2026/09/17/why-i-didnt-sign-the-fields-medallists-letter/)
+- OP: [Timothy Gowers · X author announcement](https://x.com/wtgowers/status/2100480035614343340)
+- Topics: Mathematics, Human agency, Governance
+
+#### Why I agreed to join AGMAI
+
+Martin Hairer explains his decision to join the Advisory Group on Mathematics and Artificial Intelligence, describes its independence and advisory limits, and argues for engagement with AI labs to improve scholarship and represent community concerns.
+
+- Type: Essay
+- Published: 22 Sep 2026
+- Resource: [Why I agreed to join AGMAI](https://proofsandprompts.com/2026/09/22/why-i-agreed-to-join-agmai/)
+- OP: [Timothy Gowers · commentary on Hairer’s essay](https://x.com/wtgowers/status/2102510624219533693)
+- Topics: Mathematics, Governance, Scientific communication
+- Same essay · guest post on Terence Tao’s blog: https://terrytao.wordpress.com/2026/09/22/why-i-agreed-to-join-agmai/
+
+### Self-Organizing Agent Teams Learn to Reason Together
+
+Frozen teams learn reusable coordination strategies, with gains depending partly on their ability to recognize correct reasoning.
+
+- Type: Preprint
+- Published: 19 Sep 2026
+- Resource: [Self-Organizing Agent Teams Learn to Reason Together](https://arxiv.org/abs/2609.22682v1)
+- OP: [Aneesh Pappu · author post](https://x.com/aneeshpappu/status/2102428585986498609)
+- Topics: Agents, Collaboration, Evaluation
+
+### ScientistTwo: Pioneering the Human Knowledge Frontier with Autonomous AI
+
+An autonomous research pipeline combines experiments, ablations and simulated peer review; its reported successes require careful attention to selection and evaluation.
+
+- Type: Preprint
+- Published: 17 Sep 2026
+- Resource: [ScientistTwo: Pioneering the Human Knowledge Frontier with Autonomous AI](https://arxiv.org/abs/2609.19644v1)
+- OP: not yet verified
+- Topics: Agents, Evaluation, Scientific discovery
+- Related: https://scientist-two.github.io/
 
 ### AI Infrastructure at Periodic
 

@@ -4,7 +4,7 @@ I want a future in which AI agents help people ask better questions, explore mor
 
 Progress should deepen human agency and meaning: the freedom to choose what matters, understand the work, challenge an answer and share in discovery. That means evaluating evidence rather than just fluent output, preserving uncertainty and giving people real authority over consequential decisions. It also means designing against accidental harm and deliberate misuse, taking dual-use risks seriously, and making the benefits of scientific capability broadly accessible.
 
-Updated: 2026-09-23
+Updated: 2026-09-27
 
 Dates are first public posting/publication where verified; talks use upload dates. Year-only dates retain their original precision. OP means an original author/team post or identified commentary. Missing posts are marked as unverified.
 
@@ -31,6 +31,16 @@ An autonomous research pipeline combines experiments, ablations and simulated pe
 - Topics: Agents, Evaluation, Scientific discovery
 - Related: https://scientist-two.github.io/
 
+### Mathematics is effectively dead
+
+A critical response to Litt focused on provenance, credit, accountable authorship and open mathematical discourse; its claims about private-data reuse and opaque proof workflows are conditional or speculative.
+
+- Type: Essay
+- Published: 17 Sep 2026
+- Resource: [Mathematics is effectively dead](https://doomslide.substack.com/p/mathematics-is-effectively-dead)
+- OP: [doomslide · author essay](https://doomslide.substack.com/p/mathematics-is-effectively-dead)
+- Topics: Mathematics, Governance, Scientific communication
+
 ### AI in Science: Early Insights
 
 Combines model-use data, a specialist-model inventory and a researcher survey to examine adoption, time savings and verification demands.
@@ -50,6 +60,17 @@ Describes infrastructure for long scientific tool runs, specialized models and e
 - Resource: [AI Infrastructure at Periodic](https://periodic.com/news/ai-infrastructure-at-periodic)
 - OP: [Liam Fedus · founder commentary](https://x.com/LiamFedus/status/2099896055030501702)
 - Topics: Infrastructure, Scientific discovery, Agents
+
+### A beginning for mathematics
+
+Distinguishes producing mathematical results from cultivating human understanding, and proposes rewarding research programs, learning and community-building as AI capabilities grow. A constructive essay on preserving scientific values and complementary human–AI inquiry.
+
+- Type: Essay
+- Published: 13 Sep 2026
+- Resource: [A beginning for mathematics](https://www.daniellitt.com/blog/2026/9/13/a-beginning-for-mathematics/)
+- OP: [Daniel Litt · author essay](https://www.daniellitt.com/blog/2026/9/13/a-beginning-for-mathematics/)
+- Topics: Mathematics, Human agency, Human–AI collaboration, Research taste
+- Other version · Proofs and Prompts (14 Sep 2026): https://proofsandprompts.com/2026/09/14/a-beginning-for-mathematics/
 
 ### Reflecting on 25 years of cancer research: transformative advances and unmet expectations
 

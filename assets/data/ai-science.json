@@ -1,6 +1,6 @@
 {
   "title": "AI × Science",
-  "updated": "2026-09-23",
+  "updated": "2026-09-27",
   "vision": [
     "I want a future in which AI agents help people ask better questions, explore more possibilities and turn reliable discoveries into benefits that reach more people. Science and mathematics offer extraordinary opportunities for this kind of collaboration, especially in medicine and biology, where better understanding can ultimately mean less suffering and more healthy life. I am interested in human–AI teams and collaborations across laboratories around the world, with each contributing strengths the others lack.",
     "Progress should deepen human agency and meaning: the freedom to choose what matters, understand the work, challenge an answer and share in discovery. That means evaluating evidence rather than just fluent output, preserving uncertainty and giving people real authority over consequential decisions. It also means designing against accidental harm and deliberate misuse, taking dual-use risks seriously, and making the benefits of scientific capability broadly accessible."
@@ -333,6 +333,46 @@
         "Human–AI collaboration",
         "Evaluation",
         "Scientific discovery"
+      ],
+      "related_urls": []
+    },
+    {
+      "id": "litt-beginning-mathematics",
+      "title": "A beginning for mathematics",
+      "type": "Essay",
+      "date": "2026-09-13",
+      "date_precision": "day",
+      "url": "https://www.daniellitt.com/blog/2026/9/13/a-beginning-for-mathematics/",
+      "op_url": "https://www.daniellitt.com/blog/2026/9/13/a-beginning-for-mathematics/",
+      "op_label": "Daniel Litt · author essay",
+      "summary": "Distinguishes producing mathematical results from cultivating human understanding, and proposes rewarding research programs, learning and community-building as AI capabilities grow. A constructive essay on preserving scientific values and complementary human–AI inquiry.",
+      "tags": [
+        "Mathematics",
+        "Human agency",
+        "Human–AI collaboration",
+        "Research taste"
+      ],
+      "related_urls": [
+        "https://proofsandprompts.com/2026/09/14/a-beginning-for-mathematics/"
+      ],
+      "related_labels": {
+        "https://proofsandprompts.com/2026/09/14/a-beginning-for-mathematics/": "Other version · Proofs and Prompts (14 Sep 2026)"
+      }
+    },
+    {
+      "id": "doomslide-mathematics",
+      "title": "Mathematics is effectively dead",
+      "type": "Essay",
+      "date": "2026-09-17",
+      "date_precision": "day",
+      "url": "https://doomslide.substack.com/p/mathematics-is-effectively-dead",
+      "op_url": "https://doomslide.substack.com/p/mathematics-is-effectively-dead",
+      "op_label": "doomslide · author essay",
+      "summary": "A critical response to Litt focused on provenance, credit, accountable authorship and open mathematical discourse; its claims about private-data reuse and opaque proof workflows are conditional or speculative.",
+      "tags": [
+        "Mathematics",
+        "Governance",
+        "Scientific communication"
       ],
       "related_urls": []
     }

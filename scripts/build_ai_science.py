@@ -20,12 +20,12 @@ cards=[];md=['# AI × Science','',*sum(([p,''] for p in data['vision']),[]),'Upd
 for e in entries:
  date=prettydate(e);tags=''.join('<span class="as-tag">'+esc(t)+'</span>' for t in e['tags'])
  op=('<a class="as-chip as-op" href="'+esc(e['op_url'])+'" target="_blank" rel="noopener noreferrer">OP · '+esc(e['op_label'])+' ↗</a>') if e.get('op_url') else '<span class="as-chip as-unverified">OP not yet verified</span>'
- related=''.join('<a href="'+esc(u)+'" target="_blank" rel="noopener noreferrer">'+('Project page' if 'scientist-two' in u else 'Related resource')+' ↗</a>' for u in e.get('related_urls',[]))
+ related=''.join('<a href="'+esc(u)+'" target="_blank" rel="noopener noreferrer">'+esc(e.get('related_labels',{}).get(u, 'Project page' if 'scientist-two' in u else 'Related resource'))+' ↗</a>' for u in e.get('related_urls',[]))
  dateprefix='Uploaded' if e['type']=='Talk' else 'Published'
  datehtml=('<time datetime="'+esc(e['date'])+'">'+esc(date)+'</time>') if e.get('date_precision')=='day' else '<span>'+esc(date)+'</span>'
  cards.append(f'''<article class="as-entry" id="{esc(e['id'])}" data-type="{esc(e['type'])}" data-tags="{esc('|'.join(e['tags']))}" data-date="{esc(e.get('date') or '')}" data-precision="{esc(e.get('date_precision') or '')}">
 <div class="as-entry-type">{esc(e['type'])}</div><div class="as-entry-body"><h3><a href="{esc(e['url'])}" target="_blank" rel="noopener noreferrer">{esc(e['title'])}<span aria-hidden="true"> ↗</span></a></h3><p>{esc(e['summary'])}</p><div class="as-chips"><span class="as-chip">{dateprefix} · {datehtml}</span>{op}</div><div class="as-tags">{tags}{related}</div></div></article>''')
- md += ['### '+e['title'],'',e['summary'],'',f'- Type: {e["type"]}',f'- {dateprefix}: {date}',f'- Resource: [{e["title"]}]({e["url"]})',f'- OP: [{e["op_label"]}]({e["op_url"]})' if e.get('op_url') else '- OP: not yet verified','- Topics: '+', '.join(e['tags'])]+['- Related: '+u for u in e.get('related_urls',[])]+['']
+ md += ['### '+e['title'],'',e['summary'],'',f'- Type: {e["type"]}',f'- {dateprefix}: {date}',f'- Resource: [{e["title"]}]({e["url"]})',f'- OP: [{e["op_label"]}]({e["op_url"]})' if e.get('op_url') else '- OP: not yet verified','- Topics: '+', '.join(e['tags'])]+['- '+e.get('related_labels',{}).get(u,'Related')+': '+u for u in e.get('related_urls',[])]+['']
 opts=lambda vals:''.join('<option value="'+esc(x)+'">'+esc(x)+'</option>' for x in sorted(set(vals)))
 nav='''{% for item in site.data.navigation.main %}<a href="{{ item.url | relative_url }}"{% if item.url == '/ai+science/' %} aria-current="page"{% endif %}>{{ item.title }}</a>{% endfor %}'''
 page='''---

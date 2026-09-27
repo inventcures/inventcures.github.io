@@ -343,8 +343,8 @@
       "date": "2026-09-13",
       "date_precision": "day",
       "url": "https://www.daniellitt.com/blog/2026/9/13/a-beginning-for-mathematics/",
-      "op_url": "https://www.daniellitt.com/blog/2026/9/13/a-beginning-for-mathematics/",
-      "op_label": "Daniel Litt · author essay",
+      "op_url": "https://x.com/littmath/status/2099502187667673163",
+      "op_label": "Daniel Litt · X announcement thread",
       "summary": "Distinguishes producing mathematical results from cultivating human understanding, and proposes rewarding research programs, learning and community-building as AI capabilities grow. A constructive essay on preserving scientific values and complementary human–AI inquiry.",
       "tags": [
         "Mathematics",
@@ -374,7 +374,12 @@
         "Governance",
         "Scientific communication"
       ],
-      "related_urls": []
+      "related_urls": [
+        "https://x.com/doomslide/status/2095440935505010726"
+      ],
+      "related_labels": {
+        "https://x.com/doomslide/status/2095440935505010726": "doomslide · X discussion cited in essay"
+      }
     }
   ]
 }

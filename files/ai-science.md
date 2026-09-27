@@ -40,6 +40,7 @@ A critical response to Litt focused on provenance, credit, accountable authorshi
 - Resource: [Mathematics is effectively dead](https://doomslide.substack.com/p/mathematics-is-effectively-dead)
 - OP: [doomslide · author essay](https://doomslide.substack.com/p/mathematics-is-effectively-dead)
 - Topics: Mathematics, Governance, Scientific communication
+- doomslide · X discussion cited in essay: https://x.com/doomslide/status/2095440935505010726
 
 ### AI in Science: Early Insights
 
@@ -68,7 +69,7 @@ Distinguishes producing mathematical results from cultivating human understandin
 - Type: Essay
 - Published: 13 Sep 2026
 - Resource: [A beginning for mathematics](https://www.daniellitt.com/blog/2026/9/13/a-beginning-for-mathematics/)
-- OP: [Daniel Litt · author essay](https://www.daniellitt.com/blog/2026/9/13/a-beginning-for-mathematics/)
+- OP: [Daniel Litt · X announcement thread](https://x.com/littmath/status/2099502187667673163)
 - Topics: Mathematics, Human agency, Human–AI collaboration, Research taste
 - Other version · Proofs and Prompts (14 Sep 2026): https://proofsandprompts.com/2026/09/14/a-beginning-for-mathematics/
 

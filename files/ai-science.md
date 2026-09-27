@@ -31,7 +31,22 @@ An autonomous research pipeline combines experiments, ablations and simulated pe
 - Topics: Agents, Evaluation, Scientific discovery
 - Related: https://scientist-two.github.io/
 
-### Mathematics is effectively dead
+### A conversation: the future of mathematics
+
+Original essay followed by the response.
+
+#### A beginning for mathematics
+
+Distinguishes producing mathematical results from cultivating human understanding, and proposes rewarding research programs, learning and community-building as AI capabilities grow. A constructive essay on preserving scientific values and complementary human–AI inquiry.
+
+- Type: Essay
+- Published: 13 Sep 2026
+- Resource: [A beginning for mathematics](https://www.daniellitt.com/blog/2026/9/13/a-beginning-for-mathematics/)
+- OP: [Daniel Litt · X announcement thread](https://x.com/littmath/status/2099502187667673163)
+- Topics: Mathematics, Human agency, Human–AI collaboration, Research taste
+- Other version · Proofs and Prompts (14 Sep 2026): https://proofsandprompts.com/2026/09/14/a-beginning-for-mathematics/
+
+#### Mathematics is effectively dead
 
 A critical response to Litt focused on provenance, credit, accountable authorship and open mathematical discourse; its claims about private-data reuse and opaque proof workflows are conditional or speculative.
 
@@ -41,16 +56,6 @@ A critical response to Litt focused on provenance, credit, accountable authorshi
 - OP: [doomslide · author essay](https://doomslide.substack.com/p/mathematics-is-effectively-dead)
 - Topics: Mathematics, Governance, Scientific communication
 - doomslide · X discussion cited in essay: https://x.com/doomslide/status/2095440935505010726
-
-### AI in Science: Early Insights
-
-Combines model-use data, a specialist-model inventory and a researcher survey to examine adoption, time savings and verification demands.
-
-- Type: Report
-- Published: 15 Sep 2026
-- Resource: [AI in Science: Early Insights](https://ai.google/static/documents/AI-in-Science.pdf)
-- OP: [Arthur Turrell · author commentary](https://x.com/arthurturrell/status/2099877915844325780)
-- Topics: Human–AI collaboration, Evaluation, Scientific discovery
 
 ### AI Infrastructure at Periodic
 
@@ -62,16 +67,15 @@ Describes infrastructure for long scientific tool runs, specialized models and e
 - OP: [Liam Fedus · founder commentary](https://x.com/LiamFedus/status/2099896055030501702)
 - Topics: Infrastructure, Scientific discovery, Agents
 
-### A beginning for mathematics
+### AI in Science: Early Insights
 
-Distinguishes producing mathematical results from cultivating human understanding, and proposes rewarding research programs, learning and community-building as AI capabilities grow. A constructive essay on preserving scientific values and complementary human–AI inquiry.
+Combines model-use data, a specialist-model inventory and a researcher survey to examine adoption, time savings and verification demands.
 
-- Type: Essay
-- Published: 13 Sep 2026
-- Resource: [A beginning for mathematics](https://www.daniellitt.com/blog/2026/9/13/a-beginning-for-mathematics/)
-- OP: [Daniel Litt · X announcement thread](https://x.com/littmath/status/2099502187667673163)
-- Topics: Mathematics, Human agency, Human–AI collaboration, Research taste
-- Other version · Proofs and Prompts (14 Sep 2026): https://proofsandprompts.com/2026/09/14/a-beginning-for-mathematics/
+- Type: Report
+- Published: 15 Sep 2026
+- Resource: [AI in Science: Early Insights](https://ai.google/static/documents/AI-in-Science.pdf)
+- OP: [Arthur Turrell · author commentary](https://x.com/arthurturrell/status/2099877915844325780)
+- Topics: Human–AI collaboration, Evaluation, Scientific discovery
 
 ### Reflecting on 25 years of cancer research: transformative advances and unmet expectations
 
@@ -103,16 +107,6 @@ François Chollet highlights latent iterations alongside longer reasoning and pa
 - OP: [François Chollet · original post](https://x.com/fchollet/status/2096310217898356739)
 - Topics: Reasoning, Compute, Agents
 
-### Imagining a new future for science
-
-Eunice Jun explores representations and interfaces that make scientific reasoning more inspectable.
-
-- Type: Talk
-- Uploaded: 04 Sep 2026
-- Resource: [Imagining a new future for science](https://www.youtube.com/watch?v=hawgxIEpPqU)
-- OP: not yet verified
-- Topics: Human–AI collaboration, Scientific communication, Evidence
-
 ### Anthropic uses Claude to formalize proof of Fermat’s Last Theorem
 
 Reports on AI-assisted formalization of Fermat’s Last Theorem and the role of shared proof infrastructure.
@@ -123,15 +117,15 @@ Reports on AI-assisted formalization of Fermat’s Last Theorem and the role of 
 - OP: not yet verified
 - Topics: Mathematics, Formal verification, Agents
 
-### The paradox at the heart of AI and science
+### Imagining a new future for science
 
-Terence Tao discusses scientific understanding, human learning and the limits of accelerating answer production.
+Eunice Jun explores representations and interfaces that make scientific reasoning more inspectable.
 
 - Type: Talk
-- Uploaded: 03 Sep 2026
-- Resource: [The paradox at the heart of AI and science](https://www.youtube.com/watch?v=svl_1upFpQo)
+- Uploaded: 04 Sep 2026
+- Resource: [Imagining a new future for science](https://www.youtube.com/watch?v=hawgxIEpPqU)
 - OP: not yet verified
-- Topics: Mathematics, Human agency, Scientific discovery
+- Topics: Human–AI collaboration, Scientific communication, Evidence
 
 ### A Case Study on Emergent Cheating and Whistleblowing in Autonomous Research Swarms
 
@@ -142,6 +136,16 @@ A mathematical research swarm illustrates how shared infrastructure can spread b
 - Resource: [A Case Study on Emergent Cheating and Whistleblowing in Autonomous Research Swarms](https://arxiv.org/abs/2609.04170v1)
 - OP: not yet verified
 - Topics: Agents, Governance, Mathematics
+
+### The paradox at the heart of AI and science
+
+Terence Tao discusses scientific understanding, human learning and the limits of accelerating answer production.
+
+- Type: Talk
+- Uploaded: 03 Sep 2026
+- Resource: [The paradox at the heart of AI and science](https://www.youtube.com/watch?v=svl_1upFpQo)
+- OP: not yet verified
+- Topics: Mathematics, Human agency, Scientific discovery
 
 ### Accelerating Scientific Research with Gemini in the Real-World
 

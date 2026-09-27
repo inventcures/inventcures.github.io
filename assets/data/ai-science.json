@@ -357,7 +357,11 @@
       ],
       "related_labels": {
         "https://proofsandprompts.com/2026/09/14/a-beginning-for-mathematics/": "Other version · Proofs and Prompts (14 Sep 2026)"
-      }
+      },
+      "group_id": "future-of-mathematics",
+      "group_title": "A conversation: the future of mathematics",
+      "group_order": 0,
+      "group_role": "Daniel Litt’s essay"
     },
     {
       "id": "doomslide-mathematics",
@@ -379,7 +383,11 @@
       ],
       "related_labels": {
         "https://x.com/doomslide/status/2095440935505010726": "doomslide · X discussion cited in essay"
-      }
+      },
+      "group_id": "future-of-mathematics",
+      "group_title": "A conversation: the future of mathematics",
+      "group_order": 1,
+      "group_role": "doomslide’s response to Litt"
     }
   ]
 }

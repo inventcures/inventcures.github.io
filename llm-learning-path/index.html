@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LLM Learning Path | Medicine & AI for Science | InventCures</title>
+<meta name="description" content="A practical learning path from visual intuition to foundation-model training, inference and biomedical research. Three sequences, eight weekly modules and a six-page PDF.">
+<link rel="canonical" href="https://inventcures.github.io/llm-learning-path/">
+<meta property="og:title" content="Foundation models for medicine & AI for science"><meta property="og:description" content="See it. Code it. Reproduce it. A study guide with courses, weekly builds and open-source research routes."><meta property="og:type" content="website"><meta property="og:url" content="https://inventcures.github.io/llm-learning-path/">
+<link rel="stylesheet" href="style.css"><link rel="icon" href="data:,">
+</head><body><a class="skip" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="/">InventCures<span>Research & learning</span></a><a class="pdf-small" href="/files/llm-learning-path-short.pdf" download>Download study plan <span aria-hidden="true">↓</span></a></header>
+<div class="layout"><aside><nav aria-label="Guide contents"><p class="eyebrow">In this guide</p><a href="#section-1">How to use this plan</a><a href="#section-2">Sequence A: foundations</a><a href="#section-3">Sequence B: systems</a><a href="#section-4">Sequence C: biology</a><a href="#section-5">Week 1</a><a href="#section-6">Week 2</a><a href="#section-7">Week 3</a><a href="#section-8">Week 4</a><a href="#section-9">Week 5</a><a href="#section-10">Week 6</a><a href="#section-11">Week 7</a><a href="#section-12">Week 8</a><a href="#section-13">A sustainable 16-week schedule</a><a href="#section-14">Complete course and learning-material catalog</a><a href="#section-15">Open-model and AI-for-science laboratory</a><a href="#section-16">Medicine and oncology specialization</a><a href="#section-17">A four-week biomedical extension</a><a href="#section-18">Apprenticeship and research habits</a><a href="#section-19">Tutor use and competency checklist</a><a href="#section-20">Templates for repeatable progress</a><a href="#section-21">Source notes and resource index</a></nav></aside><main id="main">
+<div class="intro"><p class="eyebrow">THE LEARNING NOTEBOOK / 01</p><h1>Foundation models<br>for medicine &<br><em>AI for science.</em></h1><p class="dek">I researched this learning path for myself to understand the details of how LLMs work, with a focus on biomedicine and healthcare.</p><p>These are the courses, visual explanations and hands-on experiments I brought together: from forward passes and attention to training, inference, and contributing to an open research project.</p><div class="meta"><span>8 core modules</span><span>3 learning sequences</span><span>Updated 30 Sep 2026</span></div><div class="downloads" aria-label="Download study plans"><a class="download" href="/files/llm-learning-path-short.pdf" download><span>Quick reference<small>6-page PDF · 39 KB</small></span><span aria-hidden="true">↓</span></a><a class="download secondary" href="/files/llm-learning-path-detailed.pdf" download><span>Detailed study guide<small>26-page PDF · 90 KB</small></span><span aria-hidden="true">↓</span></a></div><p class="note">The short version keeps the sequences, weekly plan and complete resource list. The detailed guide adds exercises, checkpoints and research templates. Resource links on this page open in a new tab.</p><ol class="path"><li>See it</li><li>Code it</li><li>Engineer it</li><li>Reproduce it</li><li>Contribute it</li></ol></div>
+<section id="section-1"><h2>How to use this plan</h2><h3>Start with a realistic scope</h3>
+<p>Use Sequence A unless you already train models comfortably or have a specific host repository in mind. The eight-week plan is an intensive first pass through selected materials, not completion of every university course or mastery of foundation-model research.</p>
+<p>Planning assumption: 15-20 focused hours per week, about 120-160 hours for the core path. With 7-10 hours weekly, use the 16-week version. Add 2-4 preparatory weeks if Python, tensor operations or basic calculus are unfamiliar. These are estimates; advance by the checkpoints, not by the calendar.</p>
+<h3>Prerequisite diagnostic</h3>
+<ul>
+<li>Python: write functions, use classes, read a traceback, load a small dataset and run a script from a terminal.</li>
+<li>Math: explain the chain rule, matrix multiplication, log probabilities, an expectation and a train/validation/test split.</li>
+<li>PyTorch: create tensors, inspect shapes, backpropagate a scalar loss and update parameters.</li>
+<li>Research practice: identify a baseline, control one variable, record a seed and preserve an untouched test set.</li>
+</ul>
+<h3>A repeatable weekly rhythm</h3>
+<ul>
+<li>Session 1, 3 hours: watch the selected material and redraw its central mechanism from memory.</li>
+<li>Session 2, 3 hours: implement the smallest working version and check intermediate values.</li>
+<li>Session 3, 3 hours: run a controlled comparison and save the outputs.</li>
+<li>Session 4, 3 hours: inspect errors, explain a failure and revisit only the needed lecture sections.</li>
+<li>Session 5, 3-8 hours: finish the deliverable, write an experiment note and attempt the readiness checkpoint.</li>
+</ul>
+<h3>Keep a small evidence portfolio</h3>
+<p>Maintain one folder per module: notes, runnable code, configuration, data provenance, metrics, figures and a short README. A convincing portfolio contains eight small reproducible artifacts rather than a long list of watched videos.</p>
+<h3>Document map</h3>
+<p>Sections 2-4 compare three sequences. Section 5 gives eight weekly modules. Section 6 gives the slower schedule. Sections 7-8 contain the complete course and project catalog. Sections 9-11 cover biomedical specialization, apprenticeship and self-assessment. Section 12 records source and verification notes.</p></section>
+<section id="section-2"><h2>Sequence A - Visual learner / fundamentals first (recommended default)</h2><p><a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi" target="_blank" rel="noopener noreferrer">1. 3Blue1Brown neural networks/backprop visual intuition.</a></p>
+<p><a href="https://www.youtube.com/watch?v=VMj-3S1tku0" target="_blank" rel="noopener noreferrer">2. Karpathy micrograd: implement autograd and backprop.</a></p>
+<p><a href="https://www.youtube.com/watch?v=eMlx5fFNoYc" target="_blank" rel="noopener noreferrer">3. 3Blue1Brown attention.</a></p>
+<p><a href="https://www.youtube.com/watch?v=kCc8FmEb1nY" target="_blank" rel="noopener noreferrer">4. Karpathy Build GPT: implement self-attention and a transformer.</a></p>
+<p><a href="https://www.youtube.com/watch?v=l8pRSuU81PU" target="_blank" rel="noopener noreferrer">5. Karpathy Reproduce GPT-2: turn the toy implementation into a real training stack.</a></p>
+<p><a href="https://cs336.stanford.edu/" target="_blank" rel="noopener noreferrer">6. Stanford CS336 selected lectures + Assignments 1-2.</a></p>
+<p><a href="https://www.phontron.com/class/lminference-fall2025/" target="_blank" rel="noopener noreferrer">7. CMU inference course: KV cache, prefix sharing, speculative decoding, serving.</a></p>
+<p><a href="https://rlhfbook.com/course" target="_blank" rel="noopener noreferrer">8. Nathan Lambert: SFT &gt; preference data &gt; DPO/RL/RLVR.</a></p>
+<p><a href="https://github.com/allenai/OLMo-core" target="_blank" rel="noopener noreferrer">9. Ai2 OLMo or Marin: reproduce one small real experiment.</a></p>
+<p><a href="https://openathena.ai/projects/" target="_blank" rel="noopener noreferrer">10. Join a biomedical/biology project and contribute an evaluation, dataset, reproduction, or experiment report.</a></p>
+<p class="note">Study links: <a href="https://www.youtube.com/watch?v=JuoVZkPBiKk&amp;list=PLoROMvodv4rMqXOcazWaTUHhq-yembLCV" target="_blank" rel="noopener noreferrer">CS336 recordings</a> | <a href="https://github.com/marin-community/marin" target="_blank" rel="noopener noreferrer">Marin alternative</a></p>
+<h3>Best fit</h3>
+<p>Choose this route if you want intuition before systems detail. Spend the first two weeks building forward/backward and attention competence. Then follow the weekly modules in order. Use makemore as remediation when tensor operations or language-model losses remain unclear.</p>
+<h3>Exit condition</h3>
+<p>Explain every tensor in a small transformer, compare cached and uncached inference, and reproduce one small experiment.</p></section>
+<section id="section-3"><h2>Sequence B - Systems/inference first</h2><p><a href="https://www.youtube.com/watch?v=kCc8FmEb1nY" target="_blank" rel="noopener noreferrer">1. Karpathy Build GPT.</a></p>
+<p><a href="https://cs336.stanford.edu/" target="_blank" rel="noopener noreferrer">2. Stanford CS336 resource accounting + GPUs/kernels/parallelism.</a></p>
+<p><a href="https://www.phontron.com/class/lminference-fall2025/" target="_blank" rel="noopener noreferrer">3. CMU inference: prefill/decode, KV cache, batching, PagedAttention, speculative decoding.</a></p>
+<p><a href="https://www.phontron.com/class/lminference-fall2025/" target="_blank" rel="noopener noreferrer">4. Run a local/small vLLM or equivalent serving experiment and measure tokens/sec, time-to-first-token, and memory.</a></p>
+<p><a href="https://cs336.stanford.edu/" target="_blank" rel="noopener noreferrer">5. Return to CS336 pretraining/data/scaling.</a></p>
+<p><a href="https://github.com/allenai/OLMo-core" target="_blank" rel="noopener noreferrer">6. OLMo-core / Marin distributed training code.</a></p>
+<p><a href="https://rlhfbook.com/course" target="_blank" rel="noopener noreferrer">7. Lambert post-training.</a></p>
+<p><a href="https://openathena.ai/projects/" target="_blank" rel="noopener noreferrer">8. Biology/medicine project.</a></p>
+<p class="note">Study links: <a href="https://www.youtube.com/watch?v=EfM546A79aM" target="_blank" rel="noopener noreferrer">CS336 inference video</a> | <a href="https://github.com/marin-community/marin" target="_blank" rel="noopener noreferrer">Marin alternative</a></p>
+<h3>Best fit</h3>
+<p>Choose this route if you can already train a small model and your near-term work concerns serving, latency, memory or inference-time reasoning. Reorder the modules as 2, 3, 4, 5, 6, 7, 8; take module 1 whenever backpropagation is a gap. Do not infer correctness from a speedup: first compare outputs under matched settings.</p>
+<h3>Exit condition</h3>
+<p>Produce a reproducible benchmark with matched quality, documented hardware, latency distributions and memory measurements.</p></section>
+<section id="section-4"><h2>Sequence C - Biology/medicine apprenticeship first</h2><p><a href="https://www.youtube.com/watch?v=eMlx5fFNoYc" target="_blank" rel="noopener noreferrer">1. Learn just enough transformer mechanics: 3Blue1Brown attention + Karpathy Build GPT.</a></p>
+<p><a href="https://github.com/Open-Athena/MarinFold" target="_blank" rel="noopener noreferrer">2. Clone MarinFold, Helico, MarinDNA, or OLMo-core; run tests and one documented small example.</a></p>
+<p><a href="https://openathena.ai/projects/" target="_blank" rel="noopener noreferrer">3. Pick one experiment/report/issue in a biomedical/scientific domain.</a></p>
+<p><a href="https://github.com/marin-community/marin" target="_blank" rel="noopener noreferrer">4. Reproduce before proposing a new idea.</a></p>
+<p><a href="https://cs336.stanford.edu/" target="_blank" rel="noopener noreferrer">5. Use CS336/CMU/Lambert lectures on-demand to understand each subsystem you touch.</a></p>
+<p><a href="https://github.com/marin-community/marin" target="_blank" rel="noopener noreferrer">6. Submit an experiment note, evaluation/data contribution, documentation improvement grounded in a real reproduction, or a narrowly scoped PR.</a></p>
+<p><a href="https://openathena.ai/projects/" target="_blank" rel="noopener noreferrer">7. Graduate to a small oncology-focused extension after you understand the host project&#x27;s evaluation norms.</a></p>
+<p class="note">Study links: <a href="https://www.youtube.com/watch?v=kCc8FmEb1nY" target="_blank" rel="noopener noreferrer">Build GPT</a> | <a href="https://github.com/Open-Athena/helico" target="_blank" rel="noopener noreferrer">Helico</a> | <a href="https://github.com/Open-Athena/marin-dna" target="_blank" rel="noopener noreferrer">MarinDNA</a> | <a href="https://github.com/allenai/OLMo-core" target="_blank" rel="noopener noreferrer">OLMo-core</a> | <a href="https://www.phontron.com/class/lminference-fall2025/" target="_blank" rel="noopener noreferrer">CMU inference</a> | <a href="https://rlhfbook.com/course" target="_blank" rel="noopener noreferrer">Lambert course</a></p>
+<h3>Best fit</h3>
+<p>Choose this route if a concrete biology problem motivates your learning. Start with two weeks of transformer basics, then alternate a repository task with the relevant foundational module. Reserve four to eight weeks for one reproduction. Domain expertise helps most when paired with a runnable example and an explicit evaluation protocol.</p>
+<h3>Exit condition</h3>
+<p>Reproduce a host-project result or a clearly bounded component, then write a contribution proposal supported by evidence.</p></section>
+<section id="section-5" class="week"><details open><summary><span class="eyebrow">Week 1</span><h2>Forward pass, loss, backpropagation and optimization</h2><span class="expand" aria-hidden="true">+</span></summary><div class="detail-body"><p class="note">Study links: <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi" target="_blank" rel="noopener noreferrer">Neural-network visual series</a> | <a href="https://www.youtube.com/watch?v=VMj-3S1tku0" target="_blank" rel="noopener noreferrer">micrograd video</a> | <a href="https://karpathy.ai/zero-to-hero.html" target="_blank" rel="noopener noreferrer">Zero to Hero materials</a></p>
+<h3>Objective</h3>
+<p>Understand how a computation graph turns a prediction error into parameter updates.</p>
+<h3>Study and build</h3>
+<ul>
+<li>1. Draw a scalar graph and compute its forward values and local derivatives by hand. Watch the matching video sections after attempting the exercise.</li>
+<li>2. Implement a tiny automatic-differentiation engine or reconstruct micrograd while explaining each operation. Check gradients against finite differences on a smooth toy example.</li>
+<li>3. Train a tiny network on a toy dataset. Compare two learning rates with the same initialization; record loss and describe divergence or slow learning.</li>
+</ul>
+<h3>Deliverable</h3>
+<p>A one-page forward/loss/backward/update diagram, a working small network and a gradient-check notebook.</p>
+<h3>Readiness checkpoint</h3>
+<p>Without notes, explain gradient accumulation, zeroing gradients, chain rule and why the optimizer changes parameters after backward.</p>
+<h3>Scope and recovery</h3>
+<p>If gradients are wrong, reduce to one scalar operation. If Python is the bottleneck, spend a preparatory week on functions, classes and arrays.</p>
+<p class="note">Suggested allocation: 4-6 h study, 7-10 h implementation/experiments, 4 h evaluation and writing. Repeat or split the module if the checkpoint is not met.</p></div></details></section>
+<section id="section-6" class="week"><details><summary><span class="eyebrow">Week 2</span><h2>Attention and a tiny transformer</h2><span class="expand" aria-hidden="true">+</span></summary><div class="detail-body"><p class="note">Study links: <a href="https://www.youtube.com/watch?v=eMlx5fFNoYc" target="_blank" rel="noopener noreferrer">Attention visualization</a> | <a href="https://www.youtube.com/watch?v=kCc8FmEb1nY" target="_blank" rel="noopener noreferrer">Build GPT video</a> | <a href="https://karpathy.ai/zero-to-hero.html" target="_blank" rel="noopener noreferrer">makemore sequence</a></p>
+<h3>Objective</h3>
+<p>Trace token IDs through embeddings, causal attention, residual blocks, logits and cross-entropy.</p>
+<h3>Study and build</h3>
+<ul>
+<li>1. Write down B, T, C and head dimensions. Implement single-head attention and inspect Q, K, V, score matrix, mask and softmax rows.</li>
+<li>2. Extend to multiple heads and a small transformer block. Check that modifying future input tokens does not change earlier logits in evaluation mode.</li>
+<li>3. Train a tiny character model and sample with two temperatures. Explain why plausible text alone does not establish generalization.</li>
+</ul>
+<h3>Deliverable</h3>
+<p>An annotated tensor-shape diagram, causal attention code and a short generation comparison.</p>
+<h3>Readiness checkpoint</h3>
+<p>Explain scaling by the square root of head dimension, causal masking, residual connections and the difference between logits and probabilities.</p>
+<h3>Scope and recovery</h3>
+<p>If tensor shapes remain confusing, complete makemore bigram and MLP lessons before adding more layers.</p>
+<p class="note">Suggested allocation: 4-6 h study, 7-10 h implementation/experiments, 4 h evaluation and writing. Repeat or split the module if the checkpoint is not met.</p></div></details></section>
+<section id="section-7" class="week"><details><summary><span class="eyebrow">Week 3</span><h2>Pretraining as a reproducible experiment</h2><span class="expand" aria-hidden="true">+</span></summary><div class="detail-body"><p class="note">Study links: <a href="https://www.youtube.com/watch?v=l8pRSuU81PU" target="_blank" rel="noopener noreferrer">GPT-2 reproduction video</a> | <a href="https://cs336.stanford.edu/" target="_blank" rel="noopener noreferrer">CS336 course and assignments</a> | <a href="https://www.youtube.com/watch?v=JuoVZkPBiKk&amp;list=PLoROMvodv4rMqXOcazWaTUHhq-yembLCV" target="_blank" rel="noopener noreferrer">CS336 recordings</a></p>
+<h3>Objective</h3>
+<p>Turn an educational implementation into a measured, restartable small training run.</p>
+<h3>Study and build</h3>
+<ul>
+<li>1. Study the training-loop and resource-accounting material. Record model size, context length, effective batch size, tokenizer, optimizer and dataset split.</li>
+<li>2. Run a tiny baseline, then vary learning rate, batch size, context length or width one at a time. Keep the token budget fixed where the comparison requires it.</li>
+<li>3. Save and reload a checkpoint. Record validation loss, training loss, tokens/second and peak memory; explain the difference between optimization progress and generalization.</li>
+</ul>
+<h3>Deliverable</h3>
+<p>A baseline plus two controlled comparisons, learning curves and a checkpoint-resume note.</p>
+<h3>Readiness checkpoint</h3>
+<p>Explain effective batch size, gradient accumulation, validation leakage and which experimental comparisons are confounded.</p>
+<h3>Scope and recovery</h3>
+<p>The GPT-2 video is an engineering reference. You do not need to reproduce a full 124M-parameter training budget.</p>
+<p class="note">Suggested allocation: 4-6 h study, 7-10 h implementation/experiments, 4 h evaluation and writing. Repeat or split the module if the checkpoint is not met.</p></div></details></section>
+<section id="section-8" class="week"><details><summary><span class="eyebrow">Week 4</span><h2>GPU efficiency, kernels and parallelism</h2><span class="expand" aria-hidden="true">+</span></summary><div class="detail-body"><p class="note">Study links: <a href="https://cs336.stanford.edu/" target="_blank" rel="noopener noreferrer">CS336 systems material</a> | <a href="https://www.youtube.com/watch?v=JuoVZkPBiKk&amp;list=PLoROMvodv4rMqXOcazWaTUHhq-yembLCV" target="_blank" rel="noopener noreferrer">Lecture recordings</a></p>
+<h3>Objective</h3>
+<p>Connect memory and compute accounting to profiler measurements.</p>
+<h3>Study and build</h3>
+<ul>
+<li>1. Draw the memory budget: parameters, gradients, optimizer states, activations and temporary buffers. Distinguish storage precision from arithmetic settings.</li>
+<li>2. Profile attention and the MLP. Compare a reference attention implementation with an optimized supported path after checking numerical agreement.</li>
+<li>3. Study data, tensor and pipeline parallelism. Write how gradients and parameters move in each. Attempt a small distributed exercise only with suitable hardware.</li>
+</ul>
+<h3>Deliverable</h3>
+<p>A resource-accounting sheet and benchmark with hardware, shapes, dtype, warm-up, synchronization and measurement method.</p>
+<h3>Readiness checkpoint</h3>
+<p>Explain why lower precision, checkpointing and gradient accumulation solve different constraints, and why kernel speedups depend on shapes.</p>
+<h3>Scope and recovery</h3>
+<p>On CPU or unsupported hardware, finish correctness checks and accounting. Mark GPU/Triton experiments deferred rather than reporting them as completed.</p>
+<p class="note">Suggested allocation: 4-6 h study, 7-10 h implementation/experiments, 4 h evaluation and writing. Repeat or split the module if the checkpoint is not met.</p></div></details></section>
+<section id="section-9" class="week"><details><summary><span class="eyebrow">Week 5</span><h2>Inference, KV caches and serving</h2><span class="expand" aria-hidden="true">+</span></summary><div class="detail-body"><p class="note">Study links: <a href="https://www.youtube.com/watch?v=EfM546A79aM" target="_blank" rel="noopener noreferrer">CS336 inference video</a> | <a href="https://www.phontron.com/class/lminference-fall2025/" target="_blank" rel="noopener noreferrer">CMU inference course</a></p>
+<h3>Objective</h3>
+<p>Understand the separate costs of prompt processing and repeated token generation.</p>
+<h3>Study and build</h3>
+<ul>
+<li>1. Implement naive autoregressive generation, then cached generation. Under deterministic settings, compare token outputs and per-step logits within a stated tolerance.</li>
+<li>2. Benchmark a grid of prompt lengths and output lengths. Record prefill time, decode time, time to first token, output tokens/second and cache memory.</li>
+<li>3. Study MHA versus MQA/GQA, prefix sharing, continuous batching, PagedAttention, quantization and speculative decoding. Choose one for an additional conceptual or small practical comparison.</li>
+</ul>
+<h3>Deliverable</h3>
+<p>A request-to-prefill-to-cache-to-decode diagram, a correctness comparison and latency/memory plots.</p>
+<h3>Readiness checkpoint</h3>
+<p>Explain why KV caching avoids repeated work but grows memory, and why single-request latency differs from aggregate throughput.</p>
+<h3>Scope and recovery</h3>
+<p>Keep model, hardware, decoding settings and input lengths fixed when comparing implementations. CPU timing is not a GPU serving benchmark.</p>
+<p class="note">Suggested allocation: 4-6 h study, 7-10 h implementation/experiments, 4 h evaluation and writing. Repeat or split the module if the checkpoint is not met.</p></div></details></section>
+<section id="section-10" class="week"><details><summary><span class="eyebrow">Week 6</span><h2>Data, scaling and biomedical adaptation</h2><span class="expand" aria-hidden="true">+</span></summary><div class="detail-body"><p class="note">Study links: <a href="https://cs336.stanford.edu/" target="_blank" rel="noopener noreferrer">CS336 scaling/data assignments</a> | <a href="https://docs.allenai.org/in_depth/training" target="_blank" rel="noopener noreferrer">Ai2 training documentation</a></p>
+<h3>Objective</h3>
+<p>Design a clean experiment before increasing data or compute.</p>
+<h3>Study and build</h3>
+<ul>
+<li>1. Build a small data manifest with source, license, document ID, split and processing rules. Inspect duplicates and overlap before tokenization.</li>
+<li>2. Draft the source roadmap mixture sweep: general:biomedical ratios 100:0, 95:5, 80:20 and 50:50. Hold total tokens and training settings fixed. Run only the affordable subset.</li>
+<li>3. Define both biomedical and general-domain evaluations. Include an untouched test set and document uncertainty and likely benchmark contamination. Study scaling-law fitting on small data, with explicit limits on extrapolation.</li>
+</ul>
+<h3>Deliverable</h3>
+<p>A preregistered experiment sheet, data-quality report and baseline evaluation; optional small mixture results.</p>
+<h3>Readiness checkpoint</h3>
+<p>Explain the difference between continued pretraining and SFT, and why added biomedical text can improve some outcomes while worsening others.</p>
+<h3>Scope and recovery</h3>
+<p>Use public or appropriately licensed material. Do not treat public accessibility as permission to train. A pilot need not execute the full sweep.</p>
+<p class="note">Suggested allocation: 4-6 h study, 7-10 h implementation/experiments, 4 h evaluation and writing. Repeat or split the module if the checkpoint is not met.</p></div></details></section>
+<section id="section-11" class="week"><details><summary><span class="eyebrow">Week 7</span><h2>SFT, preference optimization and RL</h2><span class="expand" aria-hidden="true">+</span></summary><div class="detail-body"><p class="note">Study links: <a href="https://rlhfbook.com/course" target="_blank" rel="noopener noreferrer">Lambert course</a> | <a href="https://rlhfbook.com/" target="_blank" rel="noopener noreferrer">RLHF book</a> | <a href="https://cs336.stanford.edu/" target="_blank" rel="noopener noreferrer">CS336 alignment assignment</a> | <a href="https://allenai.org/tulu" target="_blank" rel="noopener noreferrer">Tulu reference</a></p>
+<h3>Objective</h3>
+<p>Connect post-training objectives to concrete data and failure modes.</p>
+<h3>Study and build</h3>
+<ul>
+<li>1. Study foundations, instruction tuning, reward modeling and rejection sampling. Build a small instruction dataset with documented provenance and a separate evaluation set.</li>
+<li>2. Run a small supervised fine-tuning experiment if hardware permits. Compare the same prompts before and after; inspect facts, omissions, unsupported claims and format adherence.</li>
+<li>3. Study DPO and policy gradients. Optionally compare a preference method after the SFT baseline is stable. For an RLVR exercise, use a genuinely verifiable toy task and inspect reward exploits.</li>
+</ul>
+<h3>Deliverable</h3>
+<p>A before/after evaluation table, annotated errors and a training/data provenance sheet.</p>
+<h3>Readiness checkpoint</h3>
+<p>Explain policy, reference model, reward, KL regularization and preference pairs; distinguish reward improvement from task improvement.</p>
+<h3>Scope and recovery</h3>
+<p>Clinical prose rarely has a fully reliable automatic verifier. Do not equate a model judge or preference score with demonstrated clinical correctness.</p>
+<p class="note">Suggested allocation: 4-6 h study, 7-10 h implementation/experiments, 4 h evaluation and writing. Repeat or split the module if the checkpoint is not met.</p></div></details></section>
+<section id="section-12" class="week"><details><summary><span class="eyebrow">Week 8</span><h2>Reproduction and open-source entry</h2><span class="expand" aria-hidden="true">+</span></summary><div class="detail-body"><p class="note">Study links: <a href="https://github.com/marin-community/marin" target="_blank" rel="noopener noreferrer">Marin</a> | <a href="https://github.com/allenai/OLMo-core" target="_blank" rel="noopener noreferrer">OLMo-core</a> | <a href="https://github.com/Open-Athena/MarinFold" target="_blank" rel="noopener noreferrer">MarinFold</a> | <a href="https://github.com/Open-Athena/helico" target="_blank" rel="noopener noreferrer">Helico</a> | <a href="https://github.com/Open-Athena/marin-dna" target="_blank" rel="noopener noreferrer">MarinDNA</a> | <a href="https://allenai.org/asta/bench" target="_blank" rel="noopener noreferrer">AstaBench</a></p>
+<h3>Objective</h3>
+<p>Use one host project to turn coursework into research practice.</p>
+<h3>Study and build</h3>
+<ul>
+<li>1. Choose one repository. Read its README, license, setup instructions and one complete issue or experiment discussion, including failed attempts.</li>
+<li>2. Pin a commit and reproduce a documented small example or a bounded component. Save commands, config, environment, metrics and differences from the reported setup.</li>
+<li>3. Write an experiment note: question, expected result, actual result, failure analysis and the next discriminating experiment. Prepare one narrowly scoped contribution.</li>
+</ul>
+<h3>Deliverable</h3>
+<p>A runnable reproduction package and a concise contribution proposal grounded in its results.</p>
+<h3>Readiness checkpoint</h3>
+<p>Another researcher can follow your instructions, find the same inputs and understand any mismatch without asking you to reconstruct the run.</p>
+<h3>Scope and recovery</h3>
+<p>When a full run is too expensive, reproduce data preprocessing, a metric, a unit-scale model behavior or an evaluation subset and state the scope honestly.</p>
+<p class="note">Suggested allocation: 4-6 h study, 7-10 h implementation/experiments, 4 h evaluation and writing. Repeat or split the module if the checkpoint is not met.</p></div></details></section>
+<section id="section-13"><h2>A sustainable 16-week schedule</h2><p>Use the same eight modules at roughly 7-10 hours per week. The first week of each pair develops the concept and implementation; the second produces evidence and the written deliverable. A 24-week version can spread each module over three weeks at roughly 5-7 hours weekly.</p>
+<h3>Weeks 1-2: Forward pass, loss, backpropagation and optimization</h3>
+<p>First week: selected lessons and the smallest runnable implementation. Second week: a one-page forward/loss/backward/update diagram, a working small network and a gradient-check notebook.</p>
+<h3>Weeks 3-4: Attention and a tiny transformer</h3>
+<p>First week: selected lessons and the smallest runnable implementation. Second week: an annotated tensor-shape diagram, causal attention code and a short generation comparison.</p>
+<h3>Weeks 5-6: Pretraining as a reproducible experiment</h3>
+<p>First week: selected lessons and the smallest runnable implementation. Second week: a baseline plus two controlled comparisons, learning curves and a checkpoint-resume note.</p>
+<h3>Weeks 7-8: GPU efficiency, kernels and parallelism</h3>
+<p>First week: selected lessons and the smallest runnable implementation. Second week: a resource-accounting sheet and benchmark with hardware, shapes, dtype, warm-up, synchronization and measurement method.</p>
+<h3>Weeks 9-10: Inference, KV caches and serving</h3>
+<p>First week: selected lessons and the smallest runnable implementation. Second week: a request-to-prefill-to-cache-to-decode diagram, a correctness comparison and latency/memory plots.</p>
+<h3>Weeks 11-12: Data, scaling and biomedical adaptation</h3>
+<p>First week: selected lessons and the smallest runnable implementation. Second week: a preregistered experiment sheet, data-quality report and baseline evaluation; optional small mixture results.</p>
+<h3>Weeks 13-14: SFT, preference optimization and RL</h3>
+<p>First week: selected lessons and the smallest runnable implementation. Second week: a before/after evaluation table, annotated errors and a training/data provenance sheet.</p>
+<h3>Weeks 15-16: Reproduction and open-source entry</h3>
+<p>First week: selected lessons and the smallest runnable implementation. Second week: a runnable reproduction package and a concise contribution proposal grounded in its results.</p>
+<h3>Keep the scope bounded</h3>
+<p>One primary course stream, one implementation and one experiment at a time. Defer optional Berkeley breadth and deeper RL until a real question requires them. If you miss a week, move the schedule rather than doubling the next workload.</p></section>
+<section id="section-14"><h2>Complete course and learning-material catalog</h2><p>Everything named in the source course stack is retained below. Core means selected material belongs in the main path; depth means consult it for a specific gap. Public availability of lessons does not imply enrollment, grading access, free compute or a certificate.</p>
+<p>The shortest high-quality path is: 3Blue1Brown for visual intuition; Andrej Karpathy for from-scratch code; Stanford CS336 for full-stack LM engineering; CMU/Graham Neubig for inference algorithms; Nathan Lambert/Ai2 for post-training; Ai2 OLMo and Open Athena/Marin for real open-model laboratory practice.</p>
+<h3>Visual intuition: 3Blue1Brown</h3>
+<ul>
+<li>Neural networks / gradient descent / backpropagation - use these to make forward pass, loss, gradients, and parameter updates visually concrete.</li>
+<li>Attention in Transformers, step by step - <a href="https://www.youtube.com/watch?v=eMlx5fFNoYc" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=eMlx5fFNoYc</a></li>
+<li>Goal: be able to draw token embeddings &gt; Q/K/V &gt; attention scores &gt; softmax &gt; weighted values &gt; output without looking anything up.</li>
+</ul>
+<h3>From-scratch coding: Andrej Karpathy</h3>
+<ul>
+<li>Neural Networks: Zero to Hero - the overarching series: <a href="https://karpathy.ai/zero-to-hero.html" target="_blank" rel="noopener noreferrer">https://karpathy.ai/zero-to-hero.html</a></li>
+<li>micrograd: build autograd/backprop and a neural net from scratch - <a href="https://www.youtube.com/watch?v=VMj-3S1tku0" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=VMj-3S1tku0</a></li>
+<li>makemore series: progressively build character language models and learn embeddings, MLPs, normalization, and training behavior.</li>
+<li>Let&#x27;s build GPT from scratch - <a href="https://www.youtube.com/watch?v=kCc8FmEb1nY" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=kCc8FmEb1nY</a></li>
+<li>Let&#x27;s reproduce GPT-2 (124M) - <a href="https://www.youtube.com/watch?v=l8pRSuU81PU" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=l8pRSuU81PU</a></li>
+<li>Learning objective: understand every tensor in a transformer forward pass, then understand the training loop, optimizer, mixed precision, gradient accumulation, FlashAttention, distributed training, data loading, validation, and checkpointing.</li>
+</ul>
+<h3>Foundation-model engineering spine: Stanford CS336</h3>
+<ul>
+<li>Stanford CS336 - Language Modeling from Scratch - <a href="https://cs336.stanford.edu/" target="_blank" rel="noopener noreferrer">https://cs336.stanford.edu/</a></li>
+<li>Lecture 1: overview and tokenization.</li>
+<li>Lecture 2: PyTorch/einops, FLOPs, memory, arithmetic intensity.</li>
+<li>Lecture 3: architectures and hyperparameters.</li>
+<li>Lecture 4: attention alternatives and mixture-of-experts.</li>
+<li>Lecture 5: GPUs and TPUs.</li>
+<li>Lecture 6: kernels and Triton.</li>
+<li>Lectures 7-8: parallelism and distributed training.</li>
+<li>Inference lecture: prefill vs decode, KV cache, memory, batching, and serving.</li>
+<li>Scaling lectures: how model size, token budget, learning rate, and compute interact.</li>
+<li>Data lectures: Common Crawl, filtering, deduplication, decontamination, and dataset mixtures.</li>
+<li>Post-training/alignment lectures: supervised fine-tuning and reasoning-oriented RL.</li>
+<li>Assignment 1: implement tokenizer, transformer, optimizer, and train a minimal LM.</li>
+<li>Assignment 2: profile/benchmark, implement FlashAttention2 in Triton, and build memory-efficient distributed training.</li>
+<li>Assignment 3: fit scaling laws.</li>
+<li>Assignment 4: turn raw web data into usable pretraining data with filtering and deduplication.</li>
+<li>Assignment 5: SFT + RL for reasoning; optional DPO/safety-alignment work.</li>
+</ul>
+<h3>Inference and serving: CMU / Graham Neubig</h3>
+<ul>
+<li>CMU 11-664/763 - Inference Algorithms for Language Modeling (Fall 2025) - <a href="https://www.phontron.com/class/lminference-fall2025/" target="_blank" rel="noopener noreferrer">https://www.phontron.com/class/lminference-fall2025/</a></li>
+<li>Treat this as the semester-long companion to CS336&#x27;s inference lecture.</li>
+<li>Topics to prioritize: sampling; beam/A* search; reasoning models; best-of-N; inference-time scaling; prefix sharing; KV-cache optimization; speculative decoding; sparse attention; batching; serving libraries.</li>
+<li>Do the programming homeworks if possible; inference becomes much clearer when you implement the decoder rather than only watch slides.</li>
+<li>CMU 11-711 Advanced NLP 2024 - broader model-building companion - <a href="https://www.phontron.com/class/anlp2024/" target="_blank" rel="noopener noreferrer">https://www.phontron.com/class/anlp2024/</a></li>
+<li>Assignment 1 from Advanced NLP: Build Your Own LLaMA. Later assignments include RAG, SOTA reimplementation, and a research project.</li>
+</ul>
+<h3>Post-training and RLHF: Nathan Lambert / Ai2</h3>
+<ul>
+<li>Nathan Lambert&#x27;s free RLHF &amp; Post-Training Course - <a href="https://rlhfbook.com/course" target="_blank" rel="noopener noreferrer">https://rlhfbook.com/course</a></li>
+<li>Free RLHF/Post-Training book - <a href="https://rlhfbook.com/" target="_blank" rel="noopener noreferrer">https://rlhfbook.com/</a></li>
+<li>Lecture 0: ML foundations refresher - LM probabilities, cross-entropy, KL, gradients, SFT.</li>
+<li>Lecture 1: RLHF/post-training overview.</li>
+<li>Lecture 2: instruction fine-tuning, reward models, rejection sampling.</li>
+<li>Lectures 3-4: RL motivation, math, implementation, loss aggregation, async training.</li>
+<li>Lecture 5: reasoning models and RLVR / inference-time scaling.</li>
+<li>Lecture 6: DPO and variants.</li>
+<li>Lecture 7: synthetic data, on-policy distillation, AI feedback, rubrics.</li>
+<li>Lectures 8-10: preference data, over-optimization/reward hacking, regularization/generalization.</li>
+<li>Use Lambert after you understand a basic transformer training loop; otherwise the optimization details float without an anchor.</li>
+</ul>
+<h3>Open model laboratory: Ai2 OLMo</h3>
+<ul>
+<li>Ai2 developer docs - <a href="https://docs.allenai.org/" target="_blank" rel="noopener noreferrer">https://docs.allenai.org/</a></li>
+<li>Training models / OLMo 3 - <a href="https://docs.allenai.org/in_depth/training" target="_blank" rel="noopener noreferrer">https://docs.allenai.org/in_depth/training</a></li>
+<li>OLMo-core GitHub - <a href="https://github.com/allenai/OLMo-core" target="_blank" rel="noopener noreferrer">https://github.com/allenai/OLMo-core</a></li>
+<li>Study the real stack: dataset/tokenization &gt; model config &gt; optimizer &gt; distributed training &gt; checkpointing &gt; evaluation &gt; post-training.</li>
+<li>Use OLMo recipes as a reference implementation after doing smaller educational code from Karpathy/CS336.</li>
+</ul>
+<h3>Berkeley courses worth adding</h3>
+<ul>
+<li>UC Berkeley CS 194/294-267 - Understanding Large Language Models: Foundations and Safety - <a href="https://rdi.berkeley.edu/understanding_llms/s24" target="_blank" rel="noopener noreferrer">https://rdi.berkeley.edu/understanding_llms/s24</a></li>
+<li>Best for foundations, scaling, interpretability, reasoning, evaluation, robustness, privacy, unlearning, and safety.</li>
+<li>UC Berkeley Advanced Large Language Model Agents (Spring 2025) - <a href="https://rdi.berkeley.edu/adv-llm-agents/sp25" target="_blank" rel="noopener noreferrer">https://rdi.berkeley.edu/adv-llm-agents/sp25</a></li>
+<li>Best for inference-time reasoning, post-training for reasoning, search/planning, tool use, code, mathematics, and agentic workflows.</li>
+<li>UC Berkeley CS285 / Deep Reinforcement Learning - use selected policy-gradient / actor-critic / RL lectures as background for post-training - <a href="https://rail.eecs.berkeley.edu/deeprlcourse/" target="_blank" rel="noopener noreferrer">https://rail.eecs.berkeley.edu/deeprlcourse/</a></li>
+<li>Don&#x27;t do all of Berkeley before touching models. Use it as targeted depth when a topic appears in your experiments.</li>
+</ul>
+<h3>Additional navigation and current-course notes</h3>
+<p class="note">Study links: <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi" target="_blank" rel="noopener noreferrer">3Blue1Brown neural-network playlist</a> | <a href="https://www.youtube.com/watch?v=JuoVZkPBiKk&amp;list=PLoROMvodv4rMqXOcazWaTUHhq-yembLCV" target="_blank" rel="noopener noreferrer">CS336 2026 recordings</a> | <a href="https://www.youtube.com/watch?v=EfM546A79aM" target="_blank" rel="noopener noreferrer">CS336 lecture 10: inference</a></p>
+<p>The CS336 home page is the Spring 2026 offering. Use its topic headings and assignment handouts to match the source roadmap. The inference video is a Stanford CS336 lecture; it is not a CMU lecture.</p>
+<p>Lambert now also lists lecture 11 on tools/agents, lecture 12 on evaluation and lecture 13 on character training. These are optional follow-ons after the source roadmap lectures 0-10. The same course hub provides recordings, slides and PDFs.</p>
+<p class="note">Study links: <a href="https://rlhfbook.com/course" target="_blank" rel="noopener noreferrer">Lambert current course</a></p>
+<p>Karpathy also lists a GPT tokenizer lesson. Use it alongside CS336 tokenization if text-to-token mechanics remain unclear. All five makemore lessons can be reached from the Zero to Hero syllabus.</p>
+<p class="note">Study links: <a href="https://karpathy.ai/zero-to-hero.html" target="_blank" rel="noopener noreferrer">Full Karpathy syllabus</a></p></section>
+<section id="section-15"><h2>Open-model and AI-for-science laboratory</h2><ul>
+<li>Marin repository - <a href="https://github.com/marin-community/marin" target="_blank" rel="noopener noreferrer">https://github.com/marin-community/marin</a></li>
+<li>Open Athena - <a href="https://openathena.ai/" target="_blank" rel="noopener noreferrer">https://openathena.ai/</a></li>
+<li>Start with Marin&#x27;s TinyStories first experiment, then the LM-training tutorial, then experiment reports and retrospectives.</li>
+<li>Read experiment reports as laboratory notebooks: data mixtures, optimizer choices, architecture changes, failed runs, loss spikes, scaling decisions, and efficiency work.</li>
+<li>Use mumwelt to search Marin&#x27;s code/issues/PRs/experiments/Discord/W&amp;B context - <a href="https://github.com/Open-Athena/mumwelt" target="_blank" rel="noopener noreferrer">https://github.com/Open-Athena/mumwelt</a></li>
+<li>Core habit: for each design choice ask: what hypothesis led to it, what experiment tested it, what failed, what metric changed, and can I reproduce it at 1/1000 scale?</li>
+</ul>
+<h3>Open Athena AI-for-science / biology projects</h3>
+<ul>
+<li>Open Athena projects page - <a href="https://openathena.ai/projects/" target="_blank" rel="noopener noreferrer">https://openathena.ai/projects/</a></li>
+<li>BoltzGen: target-specific protein generation / binder design; relevant to antibodies, mini-proteins, and drug-discovery workflows.</li>
+<li>MarinFold - <a href="https://github.com/Open-Athena/MarinFold" target="_blank" rel="noopener noreferrer">https://github.com/Open-Athena/MarinFold</a> - open protein-structure/modeling experiments and an especially attractive contributor entry point.</li>
+<li>Helico - <a href="https://github.com/Open-Athena/helico" target="_blank" rel="noopener noreferrer">https://github.com/Open-Athena/helico</a> - AF3-like architecture/training experimentation with preprocessing, single/multi-GPU training, W&amp;B, and benchmarking.</li>
+<li>MarinDNA - open genomic-language-model work; useful if you want to connect foundation-model engineering with variant-effect prediction and functional genomics.</li>
+<li>PlantCAD / GeneCAD: DNA foundation models for plant genomics; useful for seeing how domain data changes the modeling problem.</li>
+<li>For oncology, no single Open Athena project should be assumed to be a dedicated oncology model; the closest transferable routes are genomic variant modeling, binder/protein design, structure prediction, and biomedical/scientific evaluation.</li>
+</ul>
+<h3>Ai2 AI-for-science routes</h3>
+<ul>
+<li>OLMo / Tülu: fully open language-model and post-training pipelines.</li>
+<li>Asta / AstaBench: agents and evaluation for scientific research workflows such as literature research, coding/data analysis, and hypothesis-oriented tasks.</li>
+<li>CellOLMo-style biology direction: multimodal grounding of language models in cellular/molecular data is a particularly relevant conceptual template for future tumor single-cell and translational-oncology work.</li>
+<li>For a medical-AI apprenticeship, do not wait for a project literally labeled &#x27;oncology&#x27;. Join a technically adjacent open project where your biomedical evaluation/data expertise is useful.</li>
+</ul>
+<h3>Direct entry links added for named projects</h3>
+<p class="note">Study links: <a href="https://github.com/Open-Athena/marin-dna" target="_blank" rel="noopener noreferrer">MarinDNA repository</a> | <a href="https://allenai.org/tulu" target="_blank" rel="noopener noreferrer">Tulu overview</a> | <a href="https://allenai.org/asta/bench" target="_blank" rel="noopener noreferrer">AstaBench overview</a> | <a href="https://github.com/allenai/asta-bench" target="_blank" rel="noopener noreferrer">AstaBench code</a></p>
+<h3>Verification limits</h3>
+<p>MarinFold, Helico and MarinDNA have identifiable repositories; inspect their current setup, data access and compute requirements before choosing a task. Open Athena lists BoltzGen and PlantCAD/GeneCAD on its projects page. Their relevance to oncology is a possible transfer direction, not evidence of clinical utility.</p>
+<p>The source mentions a &quot;CellOLMo-style&quot; direction. A corresponding official Ai2 project was not verified in this check. Retain it as a conceptual interest in cellular/molecular grounding, not as a confirmed course, released model or apprenticeship target.</p></section>
+<section id="section-16"><h2>Medicine and oncology specialization</h2><ul>
+<li>Continued pretraining: compare small amounts of high-quality biomedical text with indiscriminate large domain mixtures.</li>
+<li>Clinical post-training: focus on tasks with clear provenance and evaluation, not vague &#x27;medical intelligence&#x27;.</li>
+<li>Evaluation dimensions: factuality, clinical relevance, omission rate, hallucination/unsupported-claim rate, terminology accuracy, structured-field accuracy, calibration, subgroup performance, and clinician review where appropriate.</li>
+<li>Contamination discipline: keep benchmark questions and close paraphrases out of training data.</li>
+<li>Privacy: use de-identified/public/licensed data; treat PHI and hospital data as a separate governance/security problem.</li>
+<li>Oncology project ideas after reproduction competence: somatic variant-effect prediction; tumor single-cell representation + language; oncology literature agents; trial eligibility extraction; radiotherapy workflow copilots; cancer-biology binder design; longitudinal clinical reasoning evaluation.</li>
+</ul>
+<h3>Choose one tractable first project</h3>
+<h3>Literature and trial eligibility</h3>
+<p>Start with a small public, license-compatible corpus and an explicit extraction schema. Compare prompting or retrieval against SFT only if a baseline shows a training need. Measure per-field precision/recall, omissions and evidence attribution. Keep document-level separation between train and test.</p>
+<h3>Genomics and variant modeling</h3>
+<p>Use MarinDNA as an engineering entry point. First reproduce its native task and metrics. A later cancer-relevant experiment should define the assay/label, split strategy and comparison baseline; avoid treating a representation score as validated pathogenicity.</p>
+<h3>Protein structure and binder design</h3>
+<p>Use MarinFold, Helico or the BoltzGen project entry point. Begin with input preparation, evaluation or a small documented inference/reproduction task. Computational structure or binding scores do not establish biological efficacy; experimental validation is a separate stage.</p>
+<h3>Scientific agents and virtual-patient evaluation</h3>
+<p>Use AstaBench for scientific workflow evaluation, or define a small offline simulated task. Score tool-call validity, evidence use, task completion, omissions and failure recovery. Virtual-patient performance does not establish performance with real patients.</p>
+<p class="note">Study links: <a href="https://github.com/Open-Athena/marin-dna" target="_blank" rel="noopener noreferrer">MarinDNA</a> | <a href="https://github.com/Open-Athena/MarinFold" target="_blank" rel="noopener noreferrer">MarinFold</a> | <a href="https://github.com/Open-Athena/helico" target="_blank" rel="noopener noreferrer">Helico</a> | <a href="https://openathena.ai/projects/" target="_blank" rel="noopener noreferrer">Open Athena projects</a> | <a href="https://allenai.org/asta/bench" target="_blank" rel="noopener noreferrer">AstaBench</a></p></section>
+<section id="section-17"><h2>A four-week biomedical extension</h2><h3>Week 9: Specify</h3>
+<p>Choose one task, primary outcome and realistic comparator. Write the data license/provenance record, exclusion rules, split strategy and annotation protocol. Define what would count as failure.</p>
+<h3>Week 10: Establish a baseline</h3>
+<p>Run a frozen baseline on development data. Inspect enough examples to form an error taxonomy. For scored human judgments, write a rubric and check agreement on a shared subset.</p>
+<h3>Week 11: Test one change</h3>
+<p>Change only one major factor: data mixture, retrieval method, training objective or inference strategy. Keep a compute and data log. Repeat affordable runs with different seeds when stochasticity could change the conclusion.</p>
+<h3>Week 12: Evaluate and report</h3>
+<p>Use the untouched test set only after choices are settled. Report denominators and uncertainty where appropriate, domain gains and general regressions, failure examples, limitations and reproduction instructions.</p>
+<h3>A minimal evaluation table</h3>
+<div class="table-wrap"><table>
+<tr><th>Dimension</th><th>What to record</th></tr>
+<tr><td>Task performance</td><td>Task-specific metric, sample count, baseline and uncertainty</td></tr>
+<tr><td>Unsupported claims</td><td>Rate under a defined annotation protocol and examples</td></tr>
+<tr><td>Omissions</td><td>Missing required facts or fields; specify the denominator</td></tr>
+<tr><td>Calibration / abstention</td><td>Confidence quality where measurable; coverage versus error</td></tr>
+<tr><td>Robustness</td><td>Performance by predefined subgroup, source or perturbation</td></tr>
+<tr><td>Efficiency</td><td>Latency, memory, compute and data volume</td></tr>
+<tr><td>Reproducibility</td><td>Commit, model/data versions, seeds, commands and environment</td></tr>
+</table></div>
+<p class="note">This is a research planning framework. Criteria should be selected for the particular use case; a benchmark score alone is not a clinical deployment decision.</p></section>
+<section id="section-18"><h2>Apprenticeship and research habits</h2><h3>Target 1 - Marin / Open Athena</h3>
+<ul>
+<li>Best if you want pretraining, JAX/Levanter-style systems work, transparent experiments, data mixtures, scaling, and AI-for-science adjacency.</li>
+<li>Good first contributions: reproduce a small experiment, add a well-scoped biomedical/scientific evaluation, improve documentation after verifying it yourself, or investigate a clearly bounded open issue.</li>
+</ul>
+<h3>Target 2 - MarinFold / Helico / MarinDNA</h3>
+<ul>
+<li>Best if you want foundation-model engineering embedded directly in structural biology or genomics.</li>
+<li>Bring domain value: biomedical evaluation design, clinically meaningful failure analysis, cancer-relevant datasets with clean licensing, variant interpretation tasks, or experiment documentation.</li>
+</ul>
+<h3>Target 3 - Ai2 OLMo / Tülu / Asta</h3>
+<ul>
+<li>Best if you want a mature fully open PyTorch ecosystem with released data, checkpoints, recipes, evaluation, and post-training work.</li>
+<li>OLMo-core teaches the training stack; Tülu teaches post-training; Asta connects models to scientific workflows.</li>
+</ul>
+<h3>A contribution ladder</h3>
+<ul>
+<li>Read one completed experiment discussion and write a one-page reconstruction of its hypothesis, controls and failure modes.</li>
+<li>Run a small example and identify a concrete mismatch, missing evaluation or documentation gap.</li>
+<li>Prepare a minimal artifact that lets a maintainer reproduce your observation.</li>
+<li>Propose one change and its success criterion. Wait for project guidance before expensive or broad work.</li>
+<li>Contribute a scoped evaluation, verified documentation improvement, data audit or experiment report.</li>
+</ul>
+<p class="note">Study links: <a href="https://github.com/marin-community/marin" target="_blank" rel="noopener noreferrer">Marin</a> | <a href="https://github.com/allenai/OLMo-core" target="_blank" rel="noopener noreferrer">OLMo-core</a> | <a href="https://github.com/Open-Athena/MarinFold" target="_blank" rel="noopener noreferrer">MarinFold</a> | <a href="https://github.com/Open-Athena/helico" target="_blank" rel="noopener noreferrer">Helico</a> | <a href="https://github.com/Open-Athena/marin-dna" target="_blank" rel="noopener noreferrer">MarinDNA</a> | <a href="https://allenai.org/tulu" target="_blank" rel="noopener noreferrer">Tulu</a> | <a href="https://allenai.org/asta/bench" target="_blank" rel="noopener noreferrer">AstaBench</a></p>
+<h3>A concise contribution note</h3>
+<p>I reproduced [experiment/component] at [commit] with [configuration]. I expected [result] and observed [result]. The attached commands and logs isolate [difference]. I propose [small next step], evaluated by [metric or check].</p></section>
+<section id="section-19"><h2>Tutor use and competency checklist</h2><ul>
+<li>Ask Codex to explain one function or tensor path, then predict the behavior yourself before running it.</li>
+<li>Ask it to trace one batch through data loader &gt; embeddings &gt; attention &gt; logits &gt; loss &gt; backward.</li>
+<li>Ask it to generate diagnostic questions, not the final assignment implementation.</li>
+<li>For Marin/OLMo, ask: locate the exact implementation of optimizer, attention, dataloader, checkpointing, distributed strategy, eval loop, and serving/export path.</li>
+<li>Maintain a learning log: concept; where it appears in code; experiment where it matters; failure mode; your reproduction.</li>
+</ul>
+<h3>Competency checklist</h3>
+<ul>
+<li>I can explain a forward pass and backward pass without hand-waving.</li>
+<li>I can write causal self-attention from scratch and explain every tensor dimension.</li>
+<li>I understand why KV caching speeds autoregressive decoding and why it creates a memory bottleneck.</li>
+<li>I can distinguish prefill from decode and latency from throughput.</li>
+<li>I can explain BF16, gradient accumulation, FlashAttention, and basic distributed-training strategies.</li>
+<li>I understand data filtering, deduplication, contamination, and mixture design.</li>
+<li>I can describe pretraining, continued pretraining, SFT, preference optimization, RLHF/RLVR, and inference-time scaling.</li>
+<li>I can read an OLMo/Marin experiment config and identify the major training decisions.</li>
+<li>I can reproduce a small experiment before proposing a new one.</li>
+<li>I can design medical evaluation beyond MedQA accuracy.</li>
+<li>I can enter an open-source research project with a concrete, testable contribution.</li>
+</ul>
+<h3>Final practical rule</h3>
+<p>For every 2-3 hours of video, spend at least 2 hours touching code or running an experiment. The goal is not to finish courses. The goal is to become able to open a Marin/OLMo/biology-model repository, trace a training run end-to-end, modify one assumption, predict what should happen, run it, and explain the result.</p>
+<p class="note">For assessed coursework, follow the course policy. CS336 allows conceptual and low-level programming help but prohibits directly using an LLM to solve assignment problems. Use predictions, explanations and diagnostic questions to keep the learning yours.</p>
+<p class="note">Study links: <a href="https://cs336.stanford.edu/" target="_blank" rel="noopener noreferrer">CS336 policy and course page</a></p></section>
+<section id="section-20"><h2>Templates for repeatable progress</h2><h3>Learning log</h3>
+<p>Date | concept | explanation in my words | exact code path | prediction | observation | remaining question | next experiment.</p>
+<h3>Experiment note</h3>
+<p>Question and hypothesis. Baseline. One changed factor. Dataset/splits and license. Model/config/commit. Hardware and precision. Seeds and budget. Metrics and figures. Expected versus observed result. Alternative explanations. Next discriminating experiment.</p>
+<h3>Course progress</h3>
+<p>Resource and lesson. Started/completed date. Exercise attempted. Evidence saved. Checkpoint passed. Topic to revisit. Do not count a watched lecture as a passed practical checkpoint.</p>
+<h3>Weekly review</h3>
+<p>What can I now implement or explain unaided? Which assumption did an experiment change? What failed? What is the smallest next step? What should I stop reading until I have a reason to return?</p>
+<h3>Compute and storage discipline</h3>
+<p>Start scalar and tensor exercises on the hardware already available. Use a small corpus and tiny model for correctness. Run GPU-specific experiments on supported hardware only after correctness is established. Estimate runtime from a short pilot; set a spending limit before a long run. Avoid downloading full datasets and checkpoints merely to browse a project.</p>
+<p>Stream lectures in a browser and keep compact notes/configs locally. Store large datasets and checkpoints on a suitable remote environment when needed. No additional app is required to read this PDF or follow its course links.</p></section>
+<section id="section-21"><h2>Source notes and resource index</h2><p class="note">Study links: <a href="https://docs.google.com/document/d/1xsfdduB-g0TglK4h7aCYw31WO0JEOqBWiYtzfTnVkFM/edit" target="_blank" rel="noopener noreferrer">Primary Google Doc</a> | <a href="https://chatgpt.com/c/6a9eb99d-afe4-83e9-aea9-58b42e90ab5b" target="_blank" rel="noopener noreferrer">Linked conversation</a></p>
+<p>The complete Google Doc was retrieved, including embedded hyperlink destinations. The guide preserves the source roadmap and adds practical schedules, exercises and readiness checkpoints.</p>
+<p>Checked 30 September 2026: Stanford CS336 course page and inference video; Karpathy Zero to Hero; Lambert course; Open Athena projects; MarinFold and Helico repositories; Berkeley Advanced LLM Agents and Deep RL; Ai2 training, Tulu and AstaBench entry points; and MarinDNA repository references.</p>
+<p>The CMU pages returned little readable text, so their detailed syllabus claims are retained from the Google Doc rather than independently reverified. The Berkeley Understanding LLMs page could not be retrieved during this check. Existing video and repository links are preserved; this document does not claim every video or lesson was watched or every repository executed.</p>
+<p>Updates from verification: CS336 currently identifies Spring 2026; the dedicated inference link is CS336 lecture 10; Lambert lists additional lectures 11-13; CellOLMo was not verified as a named official project. Schedules and effort estimates are editorial additions. No change has been made to the source Google Doc.</p>
+<h3>Pinned source links</h3>
+<ul>
+<li>Karpathy Zero to Hero - <a href="https://karpathy.ai/zero-to-hero.html" target="_blank" rel="noopener noreferrer">https://karpathy.ai/zero-to-hero.html</a></li>
+<li>3Blue1Brown Attention - <a href="https://www.youtube.com/watch?v=eMlx5fFNoYc" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=eMlx5fFNoYc</a></li>
+<li>Karpathy micrograd - <a href="https://www.youtube.com/watch?v=VMj-3S1tku0" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=VMj-3S1tku0</a></li>
+<li>Karpathy Build GPT - <a href="https://www.youtube.com/watch?v=kCc8FmEb1nY" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=kCc8FmEb1nY</a></li>
+<li>Karpathy GPT-2 reproduction - <a href="https://www.youtube.com/watch?v=l8pRSuU81PU" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=l8pRSuU81PU</a></li>
+<li>Stanford CS336 - <a href="https://cs336.stanford.edu/" target="_blank" rel="noopener noreferrer">https://cs336.stanford.edu/</a></li>
+<li>CMU Language Model Inference - <a href="https://www.phontron.com/class/lminference-fall2025/" target="_blank" rel="noopener noreferrer">https://www.phontron.com/class/lminference-fall2025/</a></li>
+<li>CMU Advanced NLP - <a href="https://www.phontron.com/class/anlp2024/" target="_blank" rel="noopener noreferrer">https://www.phontron.com/class/anlp2024/</a></li>
+<li>Nathan Lambert course - <a href="https://rlhfbook.com/course" target="_blank" rel="noopener noreferrer">https://rlhfbook.com/course</a></li>
+<li>Ai2 docs - <a href="https://docs.allenai.org/" target="_blank" rel="noopener noreferrer">https://docs.allenai.org/</a></li>
+<li>OLMo-core - <a href="https://github.com/allenai/OLMo-core" target="_blank" rel="noopener noreferrer">https://github.com/allenai/OLMo-core</a></li>
+<li>Berkeley Understanding LLMs - <a href="https://rdi.berkeley.edu/understanding_llms/s24" target="_blank" rel="noopener noreferrer">https://rdi.berkeley.edu/understanding_llms/s24</a></li>
+<li>Berkeley Advanced LLM Agents - <a href="https://rdi.berkeley.edu/adv-llm-agents/sp25" target="_blank" rel="noopener noreferrer">https://rdi.berkeley.edu/adv-llm-agents/sp25</a></li>
+<li>Berkeley Deep RL - <a href="https://rail.eecs.berkeley.edu/deeprlcourse/" target="_blank" rel="noopener noreferrer">https://rail.eecs.berkeley.edu/deeprlcourse/</a></li>
+<li>Marin - <a href="https://github.com/marin-community/marin" target="_blank" rel="noopener noreferrer">https://github.com/marin-community/marin</a></li>
+<li>Open Athena - <a href="https://openathena.ai/" target="_blank" rel="noopener noreferrer">https://openathena.ai/</a></li>
+<li>Open Athena projects - <a href="https://openathena.ai/projects/" target="_blank" rel="noopener noreferrer">https://openathena.ai/projects/</a></li>
+<li>MarinFold - <a href="https://github.com/Open-Athena/MarinFold" target="_blank" rel="noopener noreferrer">https://github.com/Open-Athena/MarinFold</a></li>
+<li>Helico - <a href="https://github.com/Open-Athena/helico" target="_blank" rel="noopener noreferrer">https://github.com/Open-Athena/helico</a></li>
+<li>mumwelt - <a href="https://github.com/Open-Athena/mumwelt" target="_blank" rel="noopener noreferrer">https://github.com/Open-Athena/mumwelt</a></li>
+</ul>
+<h3>Additional direct navigation</h3>
+<p class="note"><a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi" target="_blank" rel="noopener noreferrer">3Blue1Brown neural-network playlist</a><br/>https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi</p>
+<p class="note"><a href="https://www.youtube.com/watch?v=JuoVZkPBiKk&amp;list=PLoROMvodv4rMqXOcazWaTUHhq-yembLCV" target="_blank" rel="noopener noreferrer">CS336 2026 recordings</a><br/>https://www.youtube.com/watch?v=JuoVZkPBiKk&amp;list=PLoROMvodv4rMqXOcazWaTUHhq-yembLCV</p>
+<p class="note"><a href="https://www.youtube.com/watch?v=EfM546A79aM" target="_blank" rel="noopener noreferrer">CS336 inference video</a><br/>https://www.youtube.com/watch?v=EfM546A79aM</p>
+<p class="note"><a href="https://rlhfbook.com/" target="_blank" rel="noopener noreferrer">RLHF book</a><br/>https://rlhfbook.com/</p>
+<p class="note"><a href="https://github.com/Open-Athena/marin-dna" target="_blank" rel="noopener noreferrer">MarinDNA</a><br/>https://github.com/Open-Athena/marin-dna</p>
+<p class="note"><a href="https://allenai.org/tulu" target="_blank" rel="noopener noreferrer">Tulu</a><br/>https://allenai.org/tulu</p>
+<p class="note"><a href="https://allenai.org/asta/bench" target="_blank" rel="noopener noreferrer">AstaBench</a><br/>https://allenai.org/asta/bench</p>
+<p class="note"><a href="https://github.com/allenai/asta-bench" target="_blank" rel="noopener noreferrer">AstaBench code</a><br/>https://github.com/allenai/asta-bench</p>
+<p class="note">Companion web page: <a href="https://inventcures.github.io/llm-learning-path/" target="_blank" rel="noopener noreferrer">https://inventcures.github.io/llm-learning-path/</a></p></section><footer class="end"><p class="eyebrow">A useful finish line</p><p>Open a repository. Trace a run. Change one assumption.<br>Predict what will happen, then explain what did.</p><a href="/files/llm-learning-path-short.pdf" download>Six-page PDF</a> · <a href="/files/llm-learning-path-detailed.pdf" download>Detailed PDF</a> · <a href="#main">Back to top ↑</a></footer></main></div></body></html>

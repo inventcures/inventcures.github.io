@@ -24,6 +24,10 @@ My mission is to impact medicine and disease through technology:
 
 See my [projects](/projects/) for details on computational protein design, bio ML challenges, and regulatory analysis work.
 
+## Learning paths
+
+[Learning Path: Multi-Agent Systems for Science, Biomedicine & Healthcare](/multi-agent-learning-path/) is a beginner-friendly path through exactly three core courses, with biomedical mini-projects, an in-silico research-team capstone, and a roughly 24-week schedule. A separate future-depth catalog keeps additional courses optional.
+
 ## News
 
 <div style="margin: 1.5rem 0 2.5rem 0; display: flex; flex-direction: column; gap: 1rem;">

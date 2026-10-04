@@ -1,0 +1,11 @@
+{% assign hindi = false %}{% if page.lang == 'hi' %}{% assign hindi = true %}{% endif %}
+<figure class="lp-flow" aria-labelledby="path-caption">
+  <figcaption id="path-caption">{% if hindi %}एक नज़र में: 3 पाठ्यक्रम, फिर शोध परियोजना{% else %}At a glance: 3 courses, then a research project{% endif %}</figcaption>
+  <ol class="lp-steps">
+    <li><span class="lp-week">{% if hindi %}सप्ताह 1–6{% else %}Weeks 1–6{% endif %}</span><a href="https://davidstarsilver.wordpress.com/teaching/">David Silver RL</a><span>{% if hindi %}बायोमेडिकल निर्णयों का MDP मॉडल{% else %}Model biomedical decisions as an MDP{% endif %}</span></li>
+    <li><span class="lp-week">{% if hindi %}सप्ताह 7–14{% else %}Weeks 7–14{% endif %}</span><a href="https://www.marl-book.com/">Albrecht / Christianos / Schäfer MARL</a><span>{% if hindi %}एक छोटी टीम में समन्वय की तुलना{% else %}Compare coordination in a toy team{% endif %}</span></li>
+    <li><span class="lp-week">{% if hindi %}सप्ताह 15–20{% else %}Weeks 15–20{% endif %}</span><a href="https://huggingface.co/learn/agents-course">Hugging Face Agents</a><span>{% if hindi %}शोधकर्ता और आलोचक एजेंट{% else %}Build researcher and critic agents{% endif %}</span></li>
+  </ol>
+  <div class="lp-capstone"><span class="lp-week">{% if hindi %}सप्ताह 21–24+{% else %}Weeks 21–24+{% endif %}</span><strong>{% if hindi %}अंतिम परियोजना: कंप्यूटर में बायोमेडिकल शोध टीम{% else %}Capstone: an in-silico biomedical research team{% endif %}</strong><span>{% if hindi %}साहित्य → परिकल्पना → प्रयोग → साक्ष्य की जाँच{% else %}Literature → hypothesis → experiment → evidence check{% endif %}</span></div>
+  <div class="lp-optional"><strong><a href="#optional-depth">{% if hindi %}वैकल्पिक गहराई{% else %}Optional future depth{% endif %}</a></strong><span>{% if hindi %}अलग संसाधन सूची; मुख्य 3 पाठ्यक्रमों का हिस्सा नहीं। परियोजना की ज़रूरत होने पर चुनें।{% else %}A separate resource catalog, outside the 3-course path. Choose only when a project needs it.{% endif %}</span></div>
+</figure>

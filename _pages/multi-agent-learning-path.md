@@ -1,7 +1,9 @@
 ---
 permalink: /multi-agent-learning-path/
 title: "Learning Path: Multi-Agent Systems for Science, Biomedicine & Healthcare"
-layout: single
+layout: learning-path
+lang: en
+translation_url: /multi-agent-learning-path/hi/
 excerpt: "A beginner-friendly 24-week path with three core courses, biomedical mini-projects, and an in-silico research-team capstone."
 ---
 
@@ -108,6 +110,8 @@ Build along with the agent course. Replace generic demo tools with literature/da
 ### Weeks 21 to 24+: Capstone
 
 Start with two or three roles, establish a single-agent baseline, add evaluation, then add roles only when an ablation demonstrates a benefit. A smaller system with good evaluation is more scientifically useful than a large team with no measured benefit.
+
+<span id="optional-depth"></span>
 
 ## Future depth: optional resources outside the 3-course path
 

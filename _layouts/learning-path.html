@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="{{ page.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | escape }} | {{ site.name | escape }}</title>
+  <meta name="description" content="{{ page.excerpt | strip_html | escape }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="alternate" hreflang="{{ page.lang | default: 'en' }}" href="{{ page.url | absolute_url }}">
+  {% if page.translation_url %}<link rel="alternate" hreflang="{% if page.lang == 'hi' %}en{% else %}hi{% endif %}" href="{{ page.translation_url | absolute_url }}">{% endif %}
+  <link rel="stylesheet" href="{{ '/assets/css/learning-path.css' | relative_url }}">
+</head>
+<body class="learning-path">
+  <a class="lp-skip" href="#reading">{% if page.lang == 'hi' %}मुख्य सामग्री पर जाएँ{% else %}Skip to content{% endif %}</a>
+  <aside class="lp-sidebar">
+    <a href="{{ '/' | relative_url }}" class="lp-identity"><img src="{{ '/images/tp53.jpeg' | relative_url }}" alt="{{ site.author.name | escape }}" width="132" height="132"><span>{{ site.author.name }}</span></a>
+    <p class="lp-bio">{{ site.author.bio }}</p>
+    <nav aria-label="{% if page.lang == 'hi' %}मुख्य नेविगेशन{% else %}Main navigation{% endif %}">
+      <ul>{% for item in site.data.navigation.main %}<li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>{% endfor %}</ul>
+    </nav>
+  </aside>
+  <main id="reading" class="lp-main">
+    <div class="lp-topbar"><a href="{{ '/' | relative_url }}">{{ site.name }}</a><nav aria-label="Language"><a href="{% if page.lang == 'hi' %}{{ page.translation_url | relative_url }}{% else %}{{ page.url | relative_url }}{% endif %}" lang="en" {% unless page.lang == 'hi' %}aria-current="page"{% endunless %}>English</a><a href="{% if page.lang == 'hi' %}{{ page.url | relative_url }}{% else %}{{ page.translation_url | relative_url }}{% endif %}" lang="hi" {% if page.lang == 'hi' %}aria-current="page"{% endif %}>हिन्दी</a></nav></div>
+    <article class="lp-article">
+      <header><h1>{{ page.title }}</h1></header>
+      {% include learning-path-flow.html %}
+      <div class="lp-content">{{ content }}</div>
+      <footer class="lp-footer"><a href="{{ '/' | relative_url }}">{{ site.author.name }}</a></footer>
+    </article>
+  </main>
+</body>
+</html>

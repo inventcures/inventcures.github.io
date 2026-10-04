@@ -5,26 +5,35 @@ layout: compress
 {% include base_path %}
 
 <!doctype html>
-<html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
+<html lang="{{ page.lang | default: site.locale | slice: 0,2 }}" class="no-js">
   <head>
     {% include head.html %}
     {% include head/custom.html %}
+    <link rel="stylesheet" href="{{ "/assets/css/site-theme.css" | relative_url }}">
   </head>
 
-  <body class="minimalist-site">
+  <body class="site-theme">
+    <a class="st-skip" href="#site-reading">Skip to content</a>
 
     {% include browser-upgrade.html %}
-    {% include masthead.html %}
+    {% include site-theme-sidebar.html %}
+    <div class="st-main">
+      <div class="st-topbar"><a href="{{ "/" | relative_url }}">{{ site.name }}</a>{% if page.translation_url %}<nav aria-label="Language"><a href="{% if page.lang == 'hi' %}{{ page.translation_url | relative_url }}{% else %}{{ page.url | relative_url }}{% endif %}" lang="en">English</a><a href="{% if page.lang == 'hi' %}{{ page.url | relative_url }}{% else %}{{ page.translation_url | relative_url }}{% endif %}" lang="hi">हिन्दी</a></nav>{% endif %}</div>
+      <div id="site-reading" class="st-reading">
 
     {{ content }}
 
+      </div>
+    {% unless page.layout == "home" %}
     <div class="page__footer">
       <footer>
         {% include footer/custom.html %}
         {% include footer.html %}
       </footer>
     </div>
+    {% endunless %}
 
+    </div>
     {% include scripts.html %}
     
     <!-- Site-wide Visitor Tracker -->

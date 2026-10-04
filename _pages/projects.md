@@ -19,13 +19,13 @@ layout: default
 
 <!-- Toggle Navigation -->
 <div style="display: flex; gap: 0; margin: 2rem 0 2.5rem 0; border-radius: 8px; overflow: hidden; border: 2px solid #e5e7eb;">
-  <button onclick="showSection('medicine')" id="btn-medicine" style="flex: 1; padding: 1rem 1.5rem; border: none; background: #818cf8; color: white; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+  <button onclick="showSection('medicine')" id="btn-medicine" aria-pressed="true" style="flex: 1; padding: 1rem 1.5rem; border: none; background: #818cf8; color: white; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px;">
       <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
     </svg>
     ML + Medicine
   </button>
-  <button onclick="showSection('biotech')" id="btn-biotech" style="flex: 1; padding: 1rem 1.5rem; border: none; background: #f3f4f6; color: #1D3557; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+  <button onclick="showSection('biotech')" id="btn-biotech" aria-pressed="false" style="flex: 1; padding: 1rem 1.5rem; border: none; background: #f3f4f6; color: #1D3557; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px;">
       <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
     </svg>
@@ -481,6 +481,8 @@ function showSection(section) {
   var biotechSection = document.getElementById('section-biotech');
   var btnMedicine = document.getElementById('btn-medicine');
   var btnBiotech = document.getElementById('btn-biotech');
+  btnMedicine.setAttribute('aria-pressed', String(section === 'medicine'));
+  btnBiotech.setAttribute('aria-pressed', String(section === 'biotech'));
   
   if (section === 'medicine') {
     medicineSection.style.display = 'block';

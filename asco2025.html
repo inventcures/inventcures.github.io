@@ -1,3 +1,6 @@
+---
+layout: null
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1112,8 +1115,14 @@
             }
         }
     </style>
+<link rel="stylesheet" href="/assets/css/site-theme.css">
+<link rel="stylesheet" href="/assets/css/site-theme-standalone.css">
 </head>
-<body>
+<body class="site-theme">
+{% include site-theme-sidebar.html %}
+<div class="st-main st-standalone st-tool">
+<div class="st-tool-content">
+
     <div class="container">
         <header class="header">
             <a href="https://inventcures.github.io" class="homepage-link">Homepage</a>
@@ -3039,5 +3048,8 @@ window.addEventListener('resize', function() {
     }, 250);
 });
     </script>
+
+</div>
+</div>
 </body>
 </html>

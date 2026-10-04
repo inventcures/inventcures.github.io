@@ -1,0 +1,14 @@
+<aside class="st-sidebar">
+  <a href="{{ '/' | relative_url }}" class="st-identity"><img src="{{ '/images/tp53.jpeg' | relative_url }}" alt="{{ site.author.name | escape }}" width="132" height="132"><span>{{ site.author.name }}</span></a>
+  <p class="st-bio">{{ site.author.bio }}</p>
+  <nav aria-label="Main navigation"><ul>{% for item in site.data.navigation.main %}<li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>{% endfor %}</ul></nav>
+  <nav class="st-profile-links" aria-label="Author profiles"><ul>
+    {% if site.author.uri %}<li><a href="{{ site.author.uri }}">Website</a></li>{% endif %}
+    {% if site.author.github %}<li><a href="https://github.com/{{ site.author.github }}">GitHub</a></li>{% endif %}
+    {% if site.author.orcid %}<li><a href="{% if site.author.orcid contains '://' %}{{ site.author.orcid }}{% else %}https://orcid.org/{{ site.author.orcid }}{% endif %}">ORCID</a></li>{% endif %}
+    {% if site.author.googlescholar %}<li><a href="{{ site.author.googlescholar }}">Google Scholar</a></li>{% endif %}
+    {% if site.author.linkedin %}<li><a href="https://www.linkedin.com/in/{{ site.author.linkedin }}">LinkedIn</a></li>{% endif %}
+    {% if site.author.twitter %}<li><a href="https://twitter.com/{{ site.author.twitter }}">Twitter</a></li>{% endif %}
+    {% if site.author.bluesky %}<li><a href="https://bsky.app/profile/{{ site.author.bluesky }}">Bluesky</a></li>{% endif %}
+  </ul></nav>
+</aside>

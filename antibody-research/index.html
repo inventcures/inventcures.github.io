@@ -1,3 +1,6 @@
+---
+layout: null
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -334,8 +337,14 @@
             font-size: 0.85rem;
         }
     </style>
+<link rel="stylesheet" href="/assets/css/site-theme.css">
+<link rel="stylesheet" href="/assets/css/site-theme-standalone.css">
 </head>
-<body>
+<body class="site-theme">
+{% include site-theme-sidebar.html %}
+<div class="st-main st-standalone">
+<div class="st-reading">
+
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-content">
@@ -586,5 +595,8 @@
         </div>
         <p>Antibody Research Hub | inventcures.github.io | February 2026</p>
     </footer>
+
+</div>
+</div>
 </body>
 </html>

@@ -1,0 +1,92 @@
+/* Shared reading surfaces; visualization palettes remain owned by each tool. */
+body.site-theme {
+  display: block;
+  width: auto;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  background: var(--st-paper, #f5f1e8);
+  color: var(--st-ink, #2b2925);
+  font-family: "Segoe UI", "Noto Sans", Arial, sans-serif;
+}
+.site-theme .st-standalone { min-width: 0; }
+.site-theme .st-standalone.st-reading { max-width: 1100px; }
+.site-theme .st-standalone > .container,
+.site-theme .st-standalone > .shell,
+.site-theme .st-standalone > main,
+.site-theme .st-standalone > .content {
+  width: auto;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+.site-theme .st-standalone h1,
+.site-theme .st-standalone h2,
+.site-theme .st-standalone h3,
+.site-theme .st-standalone p,
+.site-theme .st-standalone li {
+  font-family: inherit;
+}
+.site-theme .st-reading h1,
+.site-theme .st-reading h2,
+.site-theme .st-reading h3 { color: var(--st-ink, #2b2925); }
+.site-theme .st-reading p,
+.site-theme .st-reading li { color: var(--st-ink, #2b2925); }
+.site-theme .st-reading a:not(.button):not(.btn) { color: var(--st-accent, #a84c2c); }
+.site-theme .st-reading > header,
+.site-theme .st-reading > .hero,
+.site-theme .st-reading > .container > header,
+.site-theme .st-reading .as-intro,
+.site-theme .st-reading .hero-copy {
+  background: transparent;
+  color: var(--st-ink, #2b2925);
+}
+.site-theme .st-reading > .nav-wrap { position: static; background: transparent; }
+.site-theme .st-reading > .nav-wrap .nav { padding: 0; }
+.site-theme .st-reading > .nav-wrap .home-navigation,
+.site-theme .st-reading > .nav-wrap .home-github { display: none; }
+.site-theme .st-reading .shell { width: auto; max-width: 100%; }
+.site-theme .st-reading pre { overflow-x: auto; }
+.site-theme .st-reading table { display: block; max-width: 100%; overflow-x: auto; }
+.site-theme .st-tool { max-width: none; overflow-x: auto; }
+.site-theme .st-tool > .container { padding: 0; }
+.site-theme .st-tool > .container > header,
+.site-theme .st-tool > header { background: transparent; color: var(--st-ink, #2b2925); }
+.site-theme .st-tool > .container > header h1,
+.site-theme .st-tool > .container > header p { color: inherit; }
+body.site-theme.st-embedded { background: var(--bg-dark, #1e293b) !important; color: var(--text-primary, #e2e8f0); }
+.site-theme.st-embedded .st-sidebar { display: none; }
+.site-theme.st-embedded .st-main { margin: 0; padding: 0; width: 100%; max-width: none; }
+@media (max-width: 760px) {
+  .site-theme .st-standalone { max-width: 100%; }
+  .site-theme .st-reading .nav { flex-wrap: wrap; gap: .75rem; }
+  .site-theme .st-reading .hero-grid { grid-template-columns: 1fr; }
+}
+
+.site-theme .st-reading h1,
+.site-theme .st-reading h2,
+.site-theme .st-reading h3 { -webkit-text-fill-color: currentColor; background-image: none; }
+.site-theme .st-reading .module-card,
+.site-theme .st-reading .architecture-card,
+.site-theme .st-reading .paper-card,
+.site-theme .st-reading .research-card,
+.site-theme .st-reading .card,
+.site-theme .st-reading .content-section { background: var(--st-paper, #faf8f5); color: var(--st-ink, #333); }
+.site-theme .st-reading th,
+.site-theme .st-reading td { color: var(--st-ink, #333); }
+
+.site-theme .st-main.st-standalone > .st-local-navigation { display: block; }
+.site-theme .st-local-navigation .nav-links { display: flex; flex-wrap: wrap; gap: 1rem; }
+.site-theme .st-local-navigation .home-link { display: none; }
+
+/* The reading column sits inside the sidebar-offset shell. */
+.site-theme .st-main.st-standalone { max-width: none; }
+.site-theme .st-standalone > .st-reading { max-width: 760px; margin: 18px auto 0; }
+.site-theme .st-tool-content { min-width: 0; max-width: 100%; }
+.site-theme .st-standalone > .st-reading > .st-legacy-site-nav { display: none; }
+.site-theme .st-reading .as-vision { grid-template-columns: 1fr; gap: 20px; }
+.site-theme .st-reading .as-vision h2 { margin-top: 0; }
+@media(max-width:900px) {
+  .site-theme .st-reading .hero-grid,
+  .site-theme .st-reading .as-vision { grid-template-columns: 1fr; }
+}

@@ -26,7 +26,8 @@ See my [projects](/projects/) for details on computational protein design, bio M
 
 ## Learning paths
 
-[Learning Path: Multi-Agent Systems for Science, Biomedicine & Healthcare](/multi-agent-learning-path/) is a beginner-friendly path through exactly three core courses, with biomedical mini-projects, an in-silico research-team capstone, and a roughly 24-week schedule. A separate future-depth catalog keeps additional courses optional.
+- [LLM learning path](/llm-learning-path/): foundation models for medicine and AI for science.
+- [Multi-agent learning path](/multi-agent-learning-path/): three core courses, biomedical projects, and a 24-week schedule.
 
 ## News
 

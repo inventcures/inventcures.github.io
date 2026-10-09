@@ -23,3 +23,9 @@ body.site-theme{--st-paper:#faf8f5;--st-ink:#333;--st-accent:#a94427;--st-line:#
 @media(max-width:640px){.site-theme .main-content #btn-medicine,.site-theme .main-content #btn-biotech{padding:12px 8px!important;font-size:14px!important;overflow-wrap:normal;word-break:normal;gap:6px!important}.site-theme .main-content #btn-medicine svg,.site-theme .main-content #btn-biotech svg{width:16px!important;height:16px!important;flex-shrink:0}}
 .site-theme .st-profile-links{border-top:1px solid #575757;padding-top:18px;margin-top:25px}.site-theme .st-profile-links ul{display:flex;flex-wrap:wrap;justify-content:center;gap:7px 15px}.site-theme .st-profile-links li{margin:0}.site-theme .st-profile-links a{font-size:13px!important;color:#ccc!important}
 @media(max-width:640px){.site-theme .st-profile-links{padding-top:12px;margin-top:15px}}
+
+/* Preserve the complete newspaper clipping with a restrained paper frame. */
+.site-theme .news-clipping{max-width:520px;margin:20px 0 4px;padding:12px;background:#faf8f5;border:1px solid #dedbd4}
+.site-theme .news-clipping>a{display:block}
+.site-theme .news-clipping img{display:block;width:100%;height:auto;margin:0}
+.site-theme .news-clipping figcaption{margin:12px 0 0;font-size:14px;line-height:1.55;color:#555}

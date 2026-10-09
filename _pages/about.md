@@ -36,6 +36,12 @@ See my [projects](/projects/) for details on computational protein design, bio M
   <div style="padding: 1rem 1.25rem; background: #f8f9fa; border-left: 3px solid #818cf8; border-radius: 4px;">
     <p style="margin: 0 0 0.1rem 0; font-size: 0.75rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em;">Feb 18, 2026</p>
     <p style="margin: 0; font-size: 0.92rem; line-height: 1.5;">The <a href="/ai-powered-virtual-mtb/">Virtual Tumor Board</a> was covered by the <strong>Times of India</strong> in their <a href="https://timesofindia.indiatimes.com/technology/times-techies/ai-for-social-impact/articleshow/128493830.cms" target="_blank" rel="noopener">Times Techies: AI for Social Impact</a> feature. Grateful for the coverage&mdash;it's encouraging to see interest in using AI for cancer care access.</p>
+    <figure class="news-clipping">
+      <a href="{{ '/images/news/agentic-tumour-board-newspaper.png' | relative_url }}" aria-label="View the full-size newspaper clipping">
+        <img src="{{ '/images/news/agentic-tumour-board-newspaper.png' | relative_url }}" alt="Newspaper clipping about the agentic tumour board, featuring Ashish Makani with Nandan Nilekani and Shankar Maruwada." width="960" height="1280" loading="lazy">
+      </a>
+      <figcaption>From a family cancer diagnosis to an agentic tumour board—now in print.</figcaption>
+    </figure>
   </div>
 
 </div>

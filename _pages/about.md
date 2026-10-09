@@ -49,6 +49,8 @@ Read my notes on [clinical reasoning and AI](/clinical-reasoning/), including Ha
 
 </div>
 
+Read my notes on [AI agent harnesses, context, memory and dreaming](/agents/), including Agent Memory Repo, multi-harness RL, Dream-RSI and wake-sleep for legal agents.
+
 ## Learning paths
 
 - [LLM learning path](/llm-learning-path/): foundation models for medicine and AI for science.

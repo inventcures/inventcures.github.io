@@ -1,0 +1,72 @@
+---
+permalink: /agents/
+title: "AI agents: harnesses, context, memory and dreaming"
+layout: default
+description: "Research notes on agent harnesses, context engineering, persistent memory, wake-sleep learning and Dream-RSI."
+---
+<main class="main-content">
+<div class="container-narrow">
+<h1>AI agents: harnesses, context, memory and dreaming</h1>
+<p>A model's behavior depends on the software around it, the information it receives, and what it retains between tasks. These notes compare several ways to improve that system, with links to the original articles, specification and technical report.</p>
+<p><small>Sources checked on 9 October 2026. Experimental numbers below are author-reported results, not independent reproductions.</small></p>
+<nav aria-label="On this page"><ul>
+<li><a href="#harnesses">Harnesses and context engineering</a></li>
+<li><a href="#memory">Devin memory and Agent Memory Repo</a></li>
+<li><a href="#dream-rsi">Dream-RSI</a></li>
+<li><a href="#wake-sleep">Wake-sleep for legal agents</a></li>
+<li><a href="#open-questions">Evidence limits and X threads</a></li>
+<li><a href="#reading">Original sources and further reading</a></li>
+</ul></nav>
+<section id="harnesses" aria-labelledby="harnesses-title">
+<h2 id="harnesses-title">Harnesses and context engineering</h2>
+<p>An agent harness runs the interaction loop around a model. It provides tools, constructs context, handles tool results and decides when to retry or stop. Context engineering determines what information reaches each model call, including instructions, retrieved documents, tool output and selected memories. Persistent memory stores information for later tasks; retrieval decides which parts belong in the current context.</p>
+<p><a href="https://huggingface.co/spaces/FineEnvs/multi-harness-rl">The ultimate guide to multi-harness RL</a>, by Adithya S Kolavi and colleagues, describes training inside existing harnesses with OpenEnv, Harbor and TRL. A capture proxy records generated tokens and their probabilities for reinforcement learning.</p>
+<p>The authors trained LFM2.5-2.6B on 1,000 tasks and evaluated 250 held-out tasks under OpenCode, Claude Code, Codex and Mini-SWE-Agent. Average pass@1 rose from about 42% to 54.2%, with 31% fewer tool calls on tasks already solved by the base model. OpenCode-only training reached 52.3%; the authors say the 1.9-point overall gap is within noise. Transfer across individual harnesses differed. These task results do not establish general improvement across all coding benchmarks.</p>
+<p><a href="https://x.com/ClementDelangue/status/2107120717980471638">Clement Delangue's announcement</a> describes the same training approach. Its full long-post text and outbound article link remain unverified. The independently retrieved guide is a web research article; its PDF export requires Pro access, and the authors identify the web version as canonical.</p>
+</section>
+<section id="memory" aria-labelledby="memory-title">
+<h2 id="memory-title">Devin memory and Agent Memory Repo</h2>
+<h3>Learning across sessions</h3>
+<p>Cognition's <a href="https://devin.ai/blog/memory-and-dreaming">Memory and dreaming: how Devin learns from working with you</a>, dated 5 October 2026, describes a personal Git repository of Markdown memories. A short <code>MEMORY.md</code> supplies general preferences and an index; sessions retrieve other notes as needed. Separate checkouts and revision checks protect concurrent updates.</p>
+<p>Daily background dreaming reviews conversations and existing notes, merges duplicates, removes transient or stale material, and discovers lessons across sessions. Source references connect memories to earlier work. Skills package repeatable procedures; memory records lessons accumulated while using them. This is a product description without a controlled performance benchmark. The <a href="https://x.com/cognition/status/2107165034463867001">Cognition announcement</a> links to the proposed format.</p>
+<h3>A proposed open memory format</h3>
+<p><a href="https://cognition.com/agent-memory-repo">Agent Memory Repo</a> specifies an entry-point file, notes with optional source and date metadata, and wiki-style links between files. Agents clone the repository, retrieve relevant information, edit notes and push updates. Periodic dreaming can consolidate records and resolve contradictions.</p>
+<p>Cognition describes it as an open standard. Here it is treated as Cognition's proposed open memory format, without assuming standards-body endorsement or broad adoption. The <a href="https://github.com/AgentMemoryRepo/agentmemoryrepo">specification and implementation repository</a> is open to contributions. Its local trial excludes automatic startup and scheduled dreaming. The website's agent-swarm and SQL examples illustrate intended use; they are not experimental evidence.</p>
+</section>
+<section id="dream-rsi" aria-labelledby="dream-rsi-title">
+<h2 id="dream-rsi-title">Dream-RSI: Recursive Self-Improvement through Evolving Worlds</h2>
+<p>Tong Zheng and colleagues, with affiliations at Google, the University of Maryland, Google DeepMind and the University of Virginia, describe Dream-RSI in a <a href="https://dream-rsi.com/">project page</a>, <a href="https://dream-rsi.com/assets/dream-rsi.pdf">technical report PDF</a> and <a href="https://github.com/zhengkid/Dream-RSI">code repository</a>.</p>
+<p>Dream-RSI holds the discovery agent fixed and improves executable exploration policies. Online work produces discovery trees with recorded execution outcomes. Offline replay tests alternative search decisions against those trees; the selected policy returns online and expands the history. Dreaming here changes exploration code, whereas Devin dreaming curates text memory.</p>
+<p>The project reports 2.43 times fewer generations on VGG16 at comparable performance, and 2.09 times higher performance on ConvDiv at comparable budgets. Its headline 162-fold reduction in Lasso discovery-agent calls compares 317 calls with SimpleTES's 51,200, using different models. That comparison does not isolate the exploration policy's contribution.</p>
+<p>Replay covers only branches already explored. Selecting the best candidate, including the incumbent, prevents a lower selection score on recorded history; it does not guarantee improvement on unseen tasks. The site's statement that an agent must dream to self-improve is the authors' framing, not a demonstrated universal requirement.</p>
+</section>
+<section id="wake-sleep" aria-labelledby="wake-sleep-title">
+<h2 id="wake-sleep-title">Wake-sleep for legal agents</h2>
+<p><a href="https://x.com/nikogrupen/status/2108226990792900876?s=20">Niko Grupen's post</a> links to <a href="https://x.com/i/article/2107322995048153088">The Return of Wake-Sleep</a>. Public post metadata verifies that title, link and opening preview. The following details come from the supplied <cite>Pasted text.txt</cite>, whose complete article body was not independently retrieved.</p>
+<p>The supplied account describes an agent working on legal tasks, then an offline review model deriving lessons from graded traces. It merges overlapping lessons, rejects client-specific or overly narrow entries through a Jev commit gate, and stores reusable checklists and practice notes for later tasks. This updates textual memory rather than model weights.</p>
+<p>The authors report ten cycles across 196 Legal Agent Benchmark tasks in Corporate M&amp;A and Capital Markets, with 110 training tasks and 86 validation tasks, using GPT-6 Luna as the agent. The all-pass rate rose from 2.9% to 15.7%, a 12.8 percentage-point increase. They report rubric-level gains on both familiar and new matters.</p>
+<p>Memory also prompted about 2.5 times more analysis, checking and drafting tool calls, increasing cost and latency. Retrieving relevant lessons instead of supplying the full memory reportedly halved per-task cost while preserving the rubric-criteria pass rate. That efficiency comparison is against full memory, not the no-memory baseline.</p>
+<p>These are rubric-judged benchmark results from the supplied account. They do not establish reliability on real client matters. Confidence intervals, independent replication and the full experimental artifacts remain unverified here.</p>
+</section>
+<section id="open-questions" aria-labelledby="open-title">
+<h2 id="open-title">Evidence limits and X threads</h2>
+<p>The sources improve different parts of an agent system. Multi-harness RL changes model weights; memory dreaming revises stored notes; legal wake-sleep curates task lessons; Dream-RSI revises exploration policies. Their results use different tasks, baselines and cost measures, so the numbers should not be ranked against one another.</p>
+<p>Engineering questions follow from those differences. Does a remembered lesson retain its source and scope? Can contradictory or stale notes be corrected? Does retrieval preserve quality while reducing cost? Does an improved policy transfer beyond the history used to select it? Answering these requires held-out evaluation and accounting for the offline work as well as online execution.</p>
+<h3>Highest-liked replies remain unresolved</h3>
+<p>The requested X threads did not expose a verifiable collection of reply bodies and like counts. No highest-liked reply summary is presented. A defensible ranking needs reply text, engagement counts and a collection timestamp; post popularity alone cannot establish which replies ranked highest.</p>
+<p>Cognition's announcement and Niko's article link were verified through public post metadata. Clement's accessible text is truncated. The guide above matches its topic and claims, but the exact outbound link in the complete post remains unknown.</p>
+</section>
+<section id="reading" aria-labelledby="reading-title">
+<h2 id="reading-title">Original sources and further reading</h2>
+<ul>
+<li><a href="https://devin.ai/blog/memory-and-dreaming">Devin memory and dreaming article</a> and <a href="https://x.com/cognition/status/2107165034463867001">Cognition's announcement</a>.</li>
+<li><a href="https://cognition.com/agent-memory-repo">Agent Memory Repo format</a> and <a href="https://github.com/AgentMemoryRepo/agentmemoryrepo">open repository</a>.</li>
+<li><a href="https://x.com/ClementDelangue/status/2107120717980471638">Clement Delangue's post</a> and <a href="https://huggingface.co/spaces/FineEnvs/multi-harness-rl">multi-harness RL web article</a>. The complete post-to-article link remains unconfirmed.</li>
+<li><a href="https://github.com/adithya-s-k/FineEnvs">FineEnvs article and training resources</a> and <a href="https://huggingface.co/docs/trl/en/openenv#training-on-harnesses-training-real-coding-agents-harbor">TRL's experimental harness-training documentation</a>.</li>
+<li><a href="https://dream-rsi.com/">Dream-RSI project</a>, <a href="https://dream-rsi.com/assets/dream-rsi.pdf">technical report</a> and <a href="https://github.com/zhengkid/Dream-RSI">code</a>. The site's arXiv identifier is a placeholder; the direct report is the verified paper link.</li>
+<li><a href="https://x.com/nikogrupen/status/2108226990792900876?s=20">Niko Grupen's post</a> and <a href="https://x.com/i/article/2107322995048153088">The Return of Wake-Sleep</a>, supported by the supplied text attachment.</li>
+</ul>
+<p>Related notes on this site: <a href="/multi-agent-learning-path/">multi-agent learning path</a>, <a href="/clinical-reasoning/">clinical reasoning and AI</a>, and <a href="/harness_for_rfantibody/">rfab-harness for antibody design campaigns</a>.</p>
+</section>
+</div>
+</main>

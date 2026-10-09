@@ -12,6 +12,9 @@ main:
   - title: "AI × Science"
     url: /ai+science/
 
+  - title: "AI Agents"
+    url: /agents/
+
   - title: "Clinical Reasoning"
     url: /clinical-reasoning/
 

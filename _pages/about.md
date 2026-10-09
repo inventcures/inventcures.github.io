@@ -39,6 +39,7 @@ See my [projects](/projects/) for details on computational protein design, bio M
     <figure class="news-clipping">
       <a href="{{ '/images/news/agentic-tumour-board-newspaper.png' | relative_url }}" aria-label="View the full-size newspaper clipping">
         <img src="{{ '/images/news/agentic-tumour-board-newspaper.png' | relative_url }}" alt="Newspaper clipping about the agentic tumour board, featuring Ashish Makani with Nandan Nilekani and Shankar Maruwada." width="960" height="1280" loading="lazy">
+        <svg class="news-clipping-highlight" viewBox="0 0 960 1280" aria-hidden="true" focusable="false"><polygon points="137,490 773,490 791,1235 109,1235" fill="none" stroke="#e47722" stroke-width="4" vector-effect="non-scaling-stroke"></polygon></svg>
       </a>
       <figcaption>From a family cancer diagnosis to an agentic tumour board—now in print.</figcaption>
     </figure>

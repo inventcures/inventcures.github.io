@@ -24,6 +24,8 @@ My mission is to impact medicine and disease through technology:
 
 See my [projects](/projects/) for details on computational protein design, bio ML challenges, and regulatory analysis work.
 
+Read my notes on [clinical reasoning and AI](/clinical-reasoning/), including Harlan Krumholz's essay on medical authority and expertise, available as a [PDF](/assets/papers/krumholz-2026-beyond-information-asymmetry-in-medicine.pdf).
+
 ## News
 
 <div style="margin: 1.5rem 0 2.5rem 0; display: flex; flex-direction: column; gap: 1rem;">

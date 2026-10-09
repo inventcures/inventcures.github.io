@@ -1,0 +1,56 @@
+[
+  {
+    "urls": ["https://arxiv.org/abs/2505.24040", "https://arxiv.org/html/2505.24040v1"],
+    "title": "MedPAIR: Measuring Physicians and AI Relevance Alignment in Medical Question Answering",
+    "label": "Abstract summary",
+    "summary": "MedPAIR compares physician trainees' sentence-level relevance judgments with those of language models answering medical questions. The original preprint annotates 1,300 questions with 36 trainees and finds frequent disagreement about relevant information. Filtering trainee-labeled irrelevant sentences improves accuracy in the reported evaluations, with variation across settings. Correct answers alone do not establish agreement about evidence. This preview describes the original preprint, not the later reading-group version."
+  },
+  {
+    "urls": ["https://arxiv.org/abs/2505.14963", "https://arxiv.org/html/2505.14963v1"],
+    "title": "MedBrowseComp: Benchmarking Medical Deep Research and Computer Use",
+    "label": "Abstract summary",
+    "summary": "MedBrowseComp tests retrieval and synthesis of medical facts across live, linked knowledge sources. It contains more than 1,000 human-curated questions involving clinical studies, trial registries, regulatory documents and other data. Evaluated agents show substantial accuracy gaps, especially as retrieval requires more hops. The benchmark studies medical information seeking; it does not validate clinical decision support or patient outcomes."
+  },
+  {
+    "urls": ["https://aclanthology.org/2025.bionlp-share.34/", "https://aclanthology.org/2025.bionlp-share.34.pdf"],
+    "title": "VeReaFine: Iterative Verification Reasoning Refinement RAG for Hallucination-Resistant on Open-Ended Clinical QA",
+    "label": "Abstract summary",
+    "summary": "VeReaFine combines retrieval, evidence verification and answer generation for open-ended clinical questions. A verifier filters passages for relevance, identifies missing evidence and issues focused follow-up queries over up to three iterations. It then checks the generated answer for unsupported claims. The authors report improvements on the ClinIQLink shared-task benchmark, including fewer errors in identifying faulty reasoning steps. These results do not establish reliability in patient care."
+  },
+  {
+    "urls": ["https://arxiv.org/abs/2505.02694"],
+    "title": "AI Standardized Patient Improves Human Conversations in Advanced Cancer Care",
+    "label": "Abstract summary",
+    "summary": "SOPHIE combines an AI standardized patient, a virtual avatar and personalized feedback to practise serious-illness communication. In a randomized study of healthcare students and professionals, participants using SOPHIE improved rated empathy, explicit communication and patient empowerment more than those using a reading module. The preprint evaluates communication practice and does not establish durable transfer to patient care."
+  },
+  {
+    "urls": ["https://doi.org/10.1001/jamanetworkopen.2024.40969", "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2825395"],
+    "title": "Large Language Model Influence on Diagnostic Reasoning: A Randomized Clinical Trial",
+    "label": "Abstract summary",
+    "summary": "Fifty physicians were randomized to diagnostic vignette tasks with conventional resources or with additional access to GPT-4. LLM availability did not significantly improve diagnostic reasoning scores compared with conventional resources alone. GPT-4 alone scored higher in an exploratory comparison. Model capability therefore does not by itself establish the effectiveness of physician-AI collaboration. The study evaluated written cases, not patient outcomes."
+  },
+  {
+    "urls": ["https://doi.org/10.1186/s12909-026-09305-5", "https://link.springer.com/article/10.1186/s12909-026-09305-5", "https://pubmed.ncbi.nlm.nih.gov/42063049/"],
+    "title": "Artificial intelligence-powered virtual standardized patients in teaching history-taking skills to medical students: a randomized controlled trial",
+    "label": "Abstract summary",
+    "summary": "A randomized trial compared AI virtual standardized patients with conventional standardized patients for history-taking training in 67 third-year Vietnamese medical students. Both groups improved. Between-group differences in knowledge gains, OSCE performance and satisfaction were not statistically significant. The findings do not establish superiority, equivalence or noninferiority of AI patient training."
+  },
+  {
+    "urls": ["https://doi.org/10.1016/S0140-6736(26)01535-7"],
+    "title": "Conversational diagnostic artificial intelligence in ambulatory primary care: a prospective feasibility study",
+    "label": "Abstract summary",
+    "summary": "This single-centre, single-arm study tested AMIE conversations before urgent primary-care appointments in English-speaking adults. Of 114 enrolled patients, 98 completed both the AI interaction and appointment. Physician safety supervisors monitored every conversation. There were no prespecified safety stops; supervisors recorded one hallucination and added clinical information in five interactions. The study provides initial feasibility evidence under supervision, not proof of improved patient outcomes or comprehensive safety."
+  },
+  {
+    "urls": ["https://www.jacc.org/doi/10.1016/j.jacc.2026.08.018", "/assets/papers/krumholz-2026-beyond-information-asymmetry-in-medicine.pdf"],
+    "title": "Beyond Information Asymmetry in Medicine: The Changing Nature of Medical Authority and Expertise",
+    "label": "Essay overview",
+    "summary": "Harlan Krumholz argues that patients increasingly arrive with AI-generated interpretations and plans, changing the information relationship with clinicians. He locates durable medical authority in accountable service to patients, while retaining the need for deep knowledge, independent judgment and honest discussion of uncertainty. This is an editorial about expertise and the patient relationship, not an experimental study."
+  },
+  {
+    "urls": ["https://www.nejm.org/doi/full/10.1056/NEJMp2607831", "https://www.nejm.org/doi/10.1056/NEJMp2607831"],
+    "title": "Artificial Intelligence and the Future of the Clinical Workforce",
+    "label": "Perspective overview",
+    "summary": "Dhruv Khullar examines why automating clinical tasks may not translate directly into fewer clinical jobs. Efficiency can expand demand, technology can change the amount of work, and a job combines tasks with coordination and responsibility. Roles may change and some jobs may disappear; these arguments do not guarantee workforce growth. This preview uses the publisher's abstract and Weill Cornell's account because the full NEJM text was inaccessible."
+  }
+]

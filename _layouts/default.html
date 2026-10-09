@@ -10,6 +10,7 @@ layout: compress
     {% include head.html %}
     {% include head/custom.html %}
     <link rel="stylesheet" href="{{ "/assets/css/site-theme.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/css/site-footer.css" | relative_url }}">
   </head>
 
   <body class="site-theme">
@@ -24,14 +25,10 @@ layout: compress
     {{ content }}
 
       </div>
-    {% unless page.layout == "home" %}
     <div class="page__footer">
-      <footer>
-        {% include footer/custom.html %}
-        {% include footer.html %}
-      </footer>
+      {% include footer/custom.html %}
+      {% include footer.html %}
     </div>
-    {% endunless %}
 
     </div>
     {% include scripts.html %}

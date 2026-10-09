@@ -1,57 +1,31 @@
 {% include base_path %}
-
 <footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <!-- Brand -->
-      <div class="footer-brand">
-        <div class="footer-logo">tp53</div>
-        <p class="footer-tagline">Building tools at the intersection of ML and medicine.</p>
-      </div>
-
-      <!-- Navigate -->
-      <div class="footer-column">
-        <h4>Navigate</h4>
-        <ul>
-          <li><a href="{{ base_path }}/">About</a></li>
-          <li><a href="{{ base_path }}/publications/">Publications</a></li>
-          <li><a href="{{ base_path }}/talks/">Talks</a></li>
-          <li><a href="{{ base_path }}/year-archive/">Blog</a></li>
-        </ul>
-      </div>
-
-      <!-- More -->
-      <div class="footer-column">
-        <h4>More</h4>
-        <ul>
-          <li><a href="{{ base_path }}/cv/">CV</a></li>
-          <li><a href="{{ base_path }}/teaching/">Teaching</a></li>
-          <li><a href="{{ base_path }}/resources/">Resources</a></li>
-        </ul>
-      </div>
-
-      <!-- Connect -->
-      <div class="footer-column">
-        <h4>Connect</h4>
-        <ul>
-          {% if site.author.github %}
-          <li><a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener">GitHub</a></li>
-          {% endif %}
-          {% if site.author.linkedin %}
-          <li><a href="https://linkedin.com/in/{{ site.author.linkedin }}" target="_blank" rel="noopener">LinkedIn</a></li>
-          {% endif %}
-          {% if site.author.twitter %}
-          <li><a href="https://twitter.com/{{ site.author.twitter }}" target="_blank" rel="noopener">Twitter</a></li>
-          {% endif %}
-          {% if site.author.bluesky %}
-          <li><a href="https://bsky.app/profile/{{ site.author.bluesky }}" target="_blank" rel="noopener">Bluesky</a></li>
-          {% endif %}
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p class="copyright">&copy; {{ site.time | date: '%Y' }} {{ site.author.name | default: "tp53" }}</p>
-    </div>
+  <nav aria-label="Footer navigation">
+    <ul class="footer-links">
+      <li><a href="{{ base_path }}/">About</a></li>
+      <li><a href="{{ base_path }}/publications/">Publications</a></li>
+      <li><a href="{{ base_path }}/talks/">Talks</a></li>
+      <li><a href="{{ base_path }}/year-archive/">Blog</a></li>
+      <li><a href="{{ base_path }}/cv/">CV</a></li>
+      <li><a href="{{ base_path }}/teaching/">Teaching</a></li>
+      <li><a href="{{ base_path }}/resources/">Resources</a></li>
+      <li><a href="{{ base_path }}/sitemap/">Sitemap</a></li>
+      {% if site.author.github %}
+      <li><a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener">GitHub</a></li>
+      {% endif %}
+      {% if site.author.linkedin %}
+      <li><a href="https://linkedin.com/in/{{ site.author.linkedin }}" target="_blank" rel="noopener">LinkedIn</a></li>
+      {% endif %}
+      {% if site.author.twitter %}
+      <li><a href="https://twitter.com/{{ site.author.twitter }}" target="_blank" rel="noopener">Twitter</a></li>
+      {% endif %}
+      {% if site.author.bluesky %}
+      <li><a href="https://bsky.app/profile/{{ site.author.bluesky }}" target="_blank" rel="noopener">Bluesky</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+  <div class="footer-meta">
+    <span><a class="footer-logo" href="{{ '/' | relative_url }}">tp53</a> · Building tools at the intersection of ML and medicine.</span>
+    <span>&copy; {{ site.time | date: '%Y' }} {{ site.author.name | default: "tp53" }}</span>
   </div>
 </footer>

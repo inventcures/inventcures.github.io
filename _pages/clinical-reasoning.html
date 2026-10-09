@@ -1,0 +1,84 @@
+---
+permalink: /clinical-reasoning/
+title: "Clinical reasoning and AI"
+layout: default
+description: "Evidence relevance, physician-AI collaboration, and virtual patient practice for medical education."
+---
+<main class="main-content">
+<div class="container-narrow">
+<h1>Clinical reasoning and AI</h1>
+<p>Clinical reasoning depends on what a clinician asks, which findings they consider relevant, and how they revise a working explanation as evidence arrives. A correct answer on a medical exam captures only part of that process.</p>
+<nav aria-label="On this page"><ul>
+<li><a href="#evidence-relevance">Evidence relevance and physician-AI collaboration</a></li>
+<li><a href="#medical-education">Use of AI for Medical Education</a></li>
+<li><a href="#medpair-recording">MedPAIR reading group recording</a></li>
+<li><a href="#references">Papers and further reading</a></li>
+</ul></nav>
+<section id="evidence-relevance" aria-labelledby="evidence-title">
+<h2 id="evidence-title">Evidence relevance and physician-AI collaboration</h2>
+<p><a href="https://arxiv.org/abs/2505.24040">MedPAIR, by Yuexing Hao and colleagues</a>, compares physician trainees' sentence-level relevance judgments with those of language models in medical question answering. The available arXiv preprint finds substantial disagreement. Filtering information according to trainee relevance labels improves accuracy in many settings, with exceptions for some model and dataset combinations. A correct final answer therefore does not establish that a model selected the same evidence as a physician trainee.</p>
+<p>Relevance labels are contextual judgments. Agreement with a trainee is not proof of safe clinical reasoning, and disagreement is not automatically a model error. MedPAIR studies written questions, not live consultations or learning outcomes. Its relevance findings motivate a question for educational design: can we inspect the evidence behind each decision while an encounter unfolds?</p>
+<p>Physician-AI collaboration also needs its own evaluation. In <a href="https://doi.org/10.1001/jamanetworkopen.2024.40969">Goh and colleagues' randomized trial of LLM assistance for diagnostic reasoning</a>, access to an LLM did not significantly improve physicians' diagnostic reasoning scores over conventional resources. Providing a capable model does not by itself establish an effective collaboration workflow.</p>
+</section>
+<hr>
+<section id="medical-education" aria-labelledby="education-title">
+<h2 id="education-title">Use of AI for Medical Education</h2>
+<p>Virtual patients offer a setting for low-stakes practice before high-stakes clinical encounters. A learner can elicit a history, explain a concern, make an incomplete decision, receive feedback and try again. AI can make patient dialogue more responsive, but the case facts, clinical expectations and feedback still need clinician review. A fluent simulated patient can give inconsistent answers or disclose information that a real patient would not volunteer.</p>
+<h3>Connect relevant evidence to the reasoning trajectory</h3>
+<p>MedPAIR suggests looking beyond answer accuracy to the information that supports a decision. Extending this idea to virtual patient practice is a proposed educational approach, not a method validated by MedPAIR. Each case can record the information available at a particular turn, what the learner requested, and which findings they cited when revising their plan.</p>
+<dl>
+<dt>History elicitation</dt><dd>Assess whether follow-up questions clarify the presenting concern and seek discriminating findings. Distinguish evidence the learner actively elicited from facts the simulator volunteered. Review missed safety-relevant questions as well as unnecessary questioning.</dd>
+<dt>Differential updates</dt><dd>Ask the learner to state a working differential before and after new evidence. Review which findings changed the ranking, whether contradictory evidence received attention, and whether the learner closed the differential prematurely.</dd>
+<dt>Test selection</dt><dd>Require a reason for each proposed test and an explanation of how its result could change the next decision. Assess unnecessary testing, omitted investigations and the consequences of waiting in the context of the authored case.</dd>
+<dt>Uncertainty</dt><dd>Compare expressed confidence with the available evidence. Ask what remains unknown and which finding would change the learner's mind. Confident wording alone should not earn a higher score.</dd>
+<dt>Escalation</dt><dd>Review recognition of urgency, limits of competence and the point at which the learner seeks senior help. Case-specific escalation criteria should come from clinician-authored expectations, with room for more than one defensible approach.</dd>
+<dt>Patient communication</dt><dd>Assess explanations, consent, understanding, response to concerns and safety-net advice. Review what the learner actually said and how the patient responded. Language fluency, accent or stylistic similarity to an AI answer should not substitute for clinical or communication quality.</dd>
+</dl>
+<p>A trajectory assessment should allow acceptable alternatives and preserve uncertainty about its own ratings. Sentence relevance, a written rationale and conversational behavior are observable evidence; none gives direct access to a learner's internal reasoning. Automated scores need comparison with clinician ratings before use in consequential assessment.</p>
+<h3>Feedback that a learner can act on</h3>
+<p>After an encounter, feedback should point to a specific question, decision or explanation, identify the supporting or missing evidence, and propose a next practice task. For example, an authored persistent-cough case might show where the learner offered reassurance before clarifying duration and associated symptoms. The learner can revisit that turn, explain the revised differential and then attempt a different case without hints.</p>
+<p>Keep supported practice and assessment distinct. Hints can help during practice; independent assessment should record unaided decisions before displaying AI suggestions. Faculty should review disputed feedback and audit the simulator for factual drift, answer leakage and inconsistent responses across languages or learner groups.</p>
+<h3>What virtual patient studies show</h3>
+<ul>
+<li><a href="https://arxiv.org/abs/2505.02694">SOPHIE: AI Standardized Patient Improves Human Conversations in Advanced Cancer Care</a> reports a randomized study of 51 healthcare students and practitioners. AI patient practice with personalized feedback produced greater short-term gains in rated empathy, explicit communication and empowerment than a reading module, assessed in conversations with human standardized patients. This is a preprint and does not establish durable transfer to patient care.</li>
+<li><a href="https://doi.org/10.1186/s12909-026-09305-5">Artificial intelligence-powered virtual standardized patients in teaching history-taking skills to medical students</a> reports a randomized trial involving 67 third-year Vietnamese medical students. Both the AI patient and conventional standardized-patient groups improved; between-group differences in knowledge gains, OSCE scores and satisfaction were not statistically significant. This result does not establish equivalence or noninferiority.</li>
+</ul>
+<p>These studies evaluate particular training systems and comparators. They support testing virtual patient practice, with mixed results across settings. They do not validate every AI simulator, establish improved patient outcomes, or demonstrate that AI should replace human standardized patients and supervised clinical teaching.</p>
+<h3>Practising physician-AI collaboration</h3>
+<p>A useful training encounter can ask the learner to commit to a provisional judgment, examine an AI suggestion, and explain why they accept, modify or reject it. Feedback can compare the evidence used by each and identify unsupported recommendations, missed contradictions and uncritical acceptance. The physician educator remains responsible for reviewing the case and assessment expectations.</p>
+<p>This workflow should be evaluated against both unaided practice and conventional teaching. Measure performance on new cases without AI, retention after a delay, disagreement with faulty suggestions, and whether feedback changes behavior. A better score during an assisted encounter is not sufficient evidence of independent competence.</p>
+<h3>Med Abhyaas as a research direction</h3>
+<p><a href="/medabhyaas/">Med Abhyaas</a> explores virtual patient encounters, clinical reasoning and patient communication in Indic languages. Its scripted previews illustrate how turn-level evidence and feedback could support repeated practice. The education approach here connects those encounters to MedPAIR's question about evidence relevance.</p>
+<p>Med Abhyaas is a research project. The current examples and ratings are illustrative and unvalidated. Clinical review, native-speaker review, assessment reliability and controlled learner studies remain necessary before claiming educational effectiveness. Neither MedPAIR nor the virtual patient trials above establish clinical benefits for Med Abhyaas.</p>
+<p><a href="/medabhyaas/">Explore the Med Abhyaas practice concept</a> or <a href="/iml-project-ideas/clinical-ai/">see the clinical AI open problems</a>.</p>
+</section>
+<hr>
+<section id="medpair-recording" aria-labelledby="recording-title">
+<h2 id="recording-title">MedPAIR reading group recording</h2>
+<p><a href="https://www.youtube.com/watch?v=3Grnrlsm4Qg">Watch Yuexing Hao present MedPAIR at the Snorkel AI reading group</a>. The recording discusses annotation, human-model relevance agreement and evaluation methodology. The talk and the linked arXiv preprint describe different study versions; their counts and results should not be combined.</p>
+<p>Editorial chapters below were derived from the recording's automatic English captions, retrieved with yt-dlp. They are approximate topic boundaries, not uploader-provided chapters. Captions contain transcription errors in names and technical terms.</p>
+<ol>
+<li><a href="https://www.youtube.com/watch?v=3Grnrlsm4Qg&amp;t=11s">00:11 · Introduction and open benchmark support</a></li>
+<li><a href="https://www.youtube.com/watch?v=3Grnrlsm4Qg&amp;t=219s">03:39 · Correct medical answers and evidence use</a></li>
+<li><a href="https://www.youtube.com/watch?v=3Grnrlsm4Qg&amp;t=505s">08:25 · Sentence relevance labels and study design</a></li>
+<li><a href="https://www.youtube.com/watch?v=3Grnrlsm4Qg&amp;t=945s">15:45 · Spurious rate and relevant context</a></li>
+<li><a href="https://www.youtube.com/watch?v=3Grnrlsm4Qg&amp;t=1260s">21:00 · Physician workload and human oversight</a></li>
+<li><a href="https://www.youtube.com/watch?v=3Grnrlsm4Qg&amp;t=1514s">25:14 · Relevance disagreement and filtering results</a></li>
+<li><a href="https://www.youtube.com/watch?v=3Grnrlsm4Qg&amp;t=1755s">29:15 · Sentence selection and next steps</a></li>
+<li><a href="https://www.youtube.com/watch?v=3Grnrlsm4Qg&amp;t=2010s">33:30 · Evaluation with simulated users and Matrix</a></li>
+<li><a href="https://www.youtube.com/watch?v=3Grnrlsm4Qg&amp;t=2503s">41:43 · Q&A on domain evaluation and clinical feedback</a></li>
+<li><a href="https://www.youtube.com/watch?v=3Grnrlsm4Qg&amp;t=3531s">58:51 · Implications for clinicians and trainees</a></li>
+</ol>
+</section>
+<section id="references" aria-labelledby="references-title">
+<h2 id="references-title">Papers and further reading</h2>
+<ul>
+<li>Hao et al. <a href="https://arxiv.org/abs/2505.24040">MedPAIR: Measuring Physicians and AI Relevance Alignment in Medical Question Answering</a>, 2025, arXiv preprint. <a href="http://medpair.csail.mit.edu/">Dataset and project website</a>.</li>
+<li>Goh et al. <a href="https://doi.org/10.1001/jamanetworkopen.2024.40969">Large Language Model Influence on Diagnostic Reasoning: A Randomized Clinical Trial</a>, 2024, JAMA Network Open.</li>
+<li><a href="https://arxiv.org/abs/2505.02694">AI Standardized Patient Improves Human Conversations in Advanced Cancer Care</a>, 2025, arXiv preprint.</li>
+<li><a href="https://doi.org/10.1186/s12909-026-09305-5">Artificial intelligence-powered virtual standardized patients in teaching history-taking skills to medical students: a randomized controlled trial</a>, 2026, BMC Medical Education.</li>
+</ul>
+<p>Updated 9 October 2026. This page describes research and educational design, not guidance for patient care.</p>
+</section>
+</div>
+</main>

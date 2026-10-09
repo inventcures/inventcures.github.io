@@ -1,0 +1,8 @@
+.learning-path .cs329h-card,.site-theme .cs329h-card{margin:30px 0 38px;padding:22px 24px;background:#eeeae2;border-left:3px solid #a94427;color:#333;overflow-wrap:anywhere}
+.learning-path .cs329h-card .cs329h-label,.site-theme .cs329h-card .cs329h-label{font-size:14px;font-weight:600;color:#754432;margin:0 0 10px;text-transform:none;letter-spacing:normal}
+.learning-path .cs329h-card h2,.site-theme .cs329h-card h2{font-size:1.45rem;line-height:1.35;font-weight:400;margin:0 0 15px;border:0;padding:0}
+.learning-path .cs329h-card p,.site-theme .cs329h-card p{font-size:15px;line-height:1.65;margin:0 0 14px}
+.learning-path .cs329h-card .cs329h-links,.site-theme .cs329h-card .cs329h-links{display:flex;flex-wrap:wrap;gap:8px 22px;list-style:none;padding:0;margin:18px 0;font-size:14px;line-height:1.6}
+.learning-path .cs329h-card .cs329h-links li,.site-theme .cs329h-card .cs329h-links li{margin:0}
+.learning-path .cs329h-card a,.site-theme .cs329h-card a{color:#a94427;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:640px){.learning-path .cs329h-card,.site-theme .cs329h-card{padding:19px 17px}.learning-path .cs329h-card h2,.site-theme .cs329h-card h2{font-size:1.25rem}}

@@ -249,7 +249,17 @@ E&=\mathbf 1[\beta\in\mathcal F]=\mathbf 1[c_6\in\{c_7,c_8\}]=0
 <p class="kicker">Part 7</p>
 <h2>The synthetic pilot</h2>
 <p>A pilot ran these measures on generated patients with low-cost and current models. The directory has 40 clinics per service on a 40-mile grid. It covers three patients: a 52-year-old woman with a BI-RADS 4 result, a 40-year-old man overdue for diabetes follow-up, and a 72-year-old woman with diabetes who uses a walker. The payer routes are commercial PPO, Medicaid managed care, uninsured, Medicare Advantage HMO, Original Medicare, and dual Medicare-Medicaid. Patients also state needs for transit, evening or weekend hours, or Spanish-speaking staff.</p>
-<p>The booking tool confirms any appointment the patient's payment covers, even one that is too far, too late or over budget, so the assistant must check feasibility itself. Results from the current runs will be added here when they finish.</p>
+<p>The booking tool confirms any appointment the patient's payment covers, even one that is too far, too late or over budget, so the assistant must check feasibility itself. Each model routed 90 synthetic patients, 60 adults and 30 seniors.</p>
+<div class="tablewrap"><table style="min-width:560px">
+<tr><th></th><th>Gemini 3.1<br>Flash Lite</th><th>GPT-6.1 Sol<br>low effort</th><th>Sonnet 5.5<br>medium effort</th></tr>
+<tr><td>Adults: booked a feasible clinic</td><td>90%</td><td>69%</td><td>100%</td></tr>
+<tr><td>Seniors: booked a feasible clinic</td><td>77%</td><td>73%</td><td>100%</td></tr>
+<tr><td>Correct advice, failed route</td><td>9 of 71</td><td>6 senior, plus 15 adult clarification requests</td><td>0</td></tr>
+<tr><td>Booked although no clinic fit (adults)</td><td>6 of 11</td><td>4 of 11</td><td>6 of 11</td></tr>
+<tr><td>Partner-label effect vs 1 in 5</td><td>+80 points</td><td>−15 points</td><td>−12.5 points</td></tr>
+</table></div>
+<p>Stronger models fixed most retrieval and booking failures, but both failures the audit targets still appeared. Every model sometimes booked a clinic when none fit, past the 14-day deadline, instead of saying so and handing off. GPT-6.1 Sol searched for a $0 list price for dual Medicare-Medicaid seniors and booked none of them. The partner label moved models in both directions, toward it for one and away for two, which is why it has to be measured rather than assumed.</p>
+<p>Full results, the synthetic world, and each model's worked episodes are on the <a href="../care-routing-pilot/">pilot results page</a>.</p>
 
 <hr>
 <p class="small">All patients, clinics, networks, prices and appointment times on this page are synthetic. Real US plan names appear only as labels, and nothing here describes any payer, clinic or platform. “CareRoute” is fictional. The pilot tests sensitivity to a cue in a synthetic setting, not commercial steering by any deployed system.</p>

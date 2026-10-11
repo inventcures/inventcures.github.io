@@ -1,0 +1,513 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><style>[hidden]{display:none!important}</style>
+<title>Encounter Practice Progress</title>
+</head><body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one console. Header with track ring, specialty rail, then case card + case ladder, then feedback triage, then the time axis. */
+:root{
+  --bg:#070b16; --panel:#0f1526; --panel-2:#151d33; --line:#222c47; --fg:#e8ecf6; --muted:#8e98b3; --faint:#5d6886;
+  --accent:#4f5dff; --accent-soft:#4f5dff33;
+  --good:#2fc26b; --good-soft:#2fc26b22; --mid:#f2b636; --mid-soft:#f2b63622; --bad:#ef5a5a; --bad-soft:#ef5a5a22; --gray:#4a5370;
+  --display:"Outfit","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.5 var(--body);margin:0}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:20px;padding-block:24px 56px;display:grid;grid-template-columns:minmax(0,1fr);gap:22px}
+.note{font:12px/1.4 var(--mono);color:var(--mid);border:1px dashed #f2b63655;border-radius:8px;padding:8px 12px;letter-spacing:.02em}
+header{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+h1{font:600 clamp(26px,3.4vw,38px)/1.1 var(--display);margin:0;letter-spacing:-.01em;text-wrap:balance}
+.who{color:var(--muted);margin-top:6px}
+.ring{display:flex;align-items:center;gap:14px}
+.ring svg{width:92px;height:92px}
+.ring small{display:block;color:var(--muted);font-size:12px;max-width:150px;line-height:1.35}
+.tabs{display:flex;gap:6px;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:5px;width:max-content;max-width:100%;overflow-x:auto}
+.tab{font:500 14px var(--body);color:var(--muted);background:none;border:0;border-radius:999px;padding:8px 16px;cursor:pointer;display:flex;gap:8px;align-items:center;white-space:nowrap}
+.tab .n{font:500 12px var(--mono);background:#ffffff14;border-radius:999px;padding:2px 7px}
+.tab[aria-selected="true"]{background:var(--accent);color:#fff;box-shadow:0 0 24px var(--accent-soft)}
+.tab:focus-visible,.chip:focus-visible,.case:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:500 13px var(--body);color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:7px 13px;cursor:pointer;display:flex;gap:8px;align-items:center}
+.chip .c{font:12px var(--mono);color:var(--muted)}
+.chip[aria-pressed="true"]{border-color:var(--accent);background:#4f5dff22}
+.chip[disabled]{opacity:.45;cursor:not-allowed}
+hr{border:0;border-top:1px solid var(--line);margin:0}
+.grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:22px}
+@media (max-width:860px){.grid{grid-template-columns:minmax(0,1fr)}}
+.card{background:linear-gradient(160deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:22px;display:grid;gap:16px;min-width:0}
+.eyebrow{font:500 12px var(--mono);color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.card h2{font:600 24px/1.2 var(--display);margin:0}
+.card p{margin:0;color:#c4cbe0}
+.stats{display:flex;gap:28px;flex-wrap:wrap}
+.stat .k{font:12px var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.stat .v{font:600 28px var(--display);font-variant-numeric:tabular-nums}
+.reps{display:flex;gap:6px;flex-wrap:wrap}
+.rep{width:26px;height:26px;border-radius:7px;border:1px solid var(--line);display:grid;place-items:center;font:11px var(--mono);color:var(--muted)}
+.rep.pass{background:var(--good-soft);border-color:var(--good);color:var(--good)}
+.rep.near{background:var(--mid-soft);border-color:var(--mid);color:var(--mid)}
+.rep.low{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
+.rep.hint{border-style:dashed}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.ladder h3{font:600 17px var(--display);margin:0}
+.ladder .sub{color:var(--muted);font-size:13px;margin-bottom:12px}
+.cases{list-style:none;margin:0;padding:0;display:grid;gap:4px;align-content:start}
+.ladder{align-content:start}
+.case{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:12px;align-items:center;padding:9px 12px;border-radius:10px;cursor:pointer;border:1px solid transparent;background:none;color:inherit;font:inherit;text-align:left;width:100%}
+.case:hover{background:#ffffff08}
+.case[aria-current="true"]{background:var(--accent);box-shadow:0 0 28px var(--accent-soft)}
+.badge{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font:500 12px var(--mono);background:#ffffff12;color:var(--fg)}
+.badge.done{background:var(--good);color:#04130a}
+.case[aria-current="true"] .badge.done{background:#fff;color:var(--accent)}
+.case .t{font-weight:500;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.case .r{font:12px var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.case[aria-current="true"] .r{color:#dfe3ff}
+.triage{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:860px){.triage{grid-template-columns:minmax(0,1fr)}}
+.lane{border-radius:12px;padding:16px;border:1px solid var(--line);background:var(--panel);display:grid;gap:10px;align-content:start;min-width:0}
+.lane h4{margin:0;font:600 15px var(--display);display:flex;gap:8px;align-items:center}
+.lane h4 .dot{width:10px;height:10px;border-radius:50%}
+.lane.g{border-top:3px solid var(--good)} .lane.g .dot{background:var(--good)}
+.lane.y{border-top:3px solid var(--mid)} .lane.y .dot{background:var(--mid)}
+.lane.r{border-top:3px solid var(--bad)} .lane.r .dot{background:var(--bad)}
+.item{display:grid;gap:3px;padding:10px 0;border-top:1px solid var(--line)}
+.item b{font-weight:600}
+.item .ev{font:12px/1.45 var(--mono);color:var(--muted)}
+.item .trend{font:12px var(--mono)}
+.up{color:var(--good)} .flat{color:var(--muted)} .down{color:var(--bad)}
+.chart{overflow-x:auto}
+.chart svg{display:block;width:100%;min-width:640px;height:auto}
+#hillChart svg{min-width:0}
+.axis{font:11px var(--mono);fill:var(--muted)}
+.lbl{font:12px var(--body);fill:var(--fg)}
+.heat{overflow-x:auto}
+.heat table{border-collapse:separate;border-spacing:3px;font:12px var(--mono);min-width:640px}
+.heat th{font-weight:400;color:var(--muted);text-align:left;padding-right:10px;white-space:nowrap}
+.heat table{width:100%}
+.heat td{min-width:18px;height:20px;border-radius:4px}
+.heat td.e{background:var(--good)} .heat td.p{background:var(--mid)} .heat td.n{background:var(--bad)} .heat td.s{background:var(--gray)} .heat td.x{background:transparent;border:1px solid var(--bad)}
+.heat thead th{text-align:center;padding:0;font-size:10px}
+.sec-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.sec-h h3{font:600 20px var(--display);margin:0}
+.sec-h span{color:var(--muted);font-size:13px}
+[hidden]{display:none!important}
+.view{display:grid;gap:22px}
+.card{align-content:start}
+.big{font:600 clamp(22px,2.8vw,30px)/1.15 var(--display);margin:4px 0 0;text-wrap:balance}
+.station-top{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.timer{min-width:160px;display:grid;gap:4px;text-align:right}
+.t-now{font:600 34px var(--display);font-variant-numeric:tabular-nums}.t-of{font:12px var(--mono);color:var(--muted)}
+.t-bar{height:6px;border-radius:9px;background:var(--line);overflow:hidden}.t-bar i{display:block;height:100%;background:var(--mid)}
+.hud{display:flex;align-items:center;gap:12px;justify-content:center;flex-wrap:wrap;background:#0b1020e6;border:1px solid var(--line);border-radius:16px;padding:12px 18px}
+.hud-l{font:600 17px var(--display)}
+.pill{font:600 17px var(--display);min-width:54px;text-align:center;border-radius:999px;padding:3px 14px;color:#fff}
+.pill.g{background:#1f9d4f}.pill.r{background:#d64242}
+.ticks{display:flex;gap:4px}.ticks i{width:9px;height:26px;border-radius:2px;background:var(--line)}
+.ticks i.g{background:var(--good)}.ticks i.r{background:var(--bad)}.ticks i.o{background:#2a3352}
+.stage{position:relative}
+.toast{justify-self:center;display:flex;gap:10px;align-items:center;background:#d64242;color:#fff;font:600 15px var(--body);border-radius:999px;padding:9px 18px 9px 10px;box-shadow:0 8px 30px #d6424255}
+.bang{width:24px;height:24px;border-radius:50%;border:2px solid #fff;display:grid;place-items:center;font:700 13px var(--body)}
+.talk{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.talk li{display:grid;gap:3px;max-width:88%;padding:10px 14px;border-radius:12px;background:var(--panel);border:1px solid var(--line)}
+.talk li b{font:500 11px var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.talk li.mt{justify-self:end;background:#4f5dff1f;border-color:#4f5dff55}
+.talk .hi{font-size:15px}.talk .gl{color:var(--muted);font-size:13px}.talk .quiet .gl{font-style:italic}
+.tag{justify-self:start;font:500 11px var(--mono);border-radius:6px;padding:2px 7px;margin-top:4px}
+.tag.g{background:var(--good-soft);color:var(--good)}.tag.r{background:var(--bad-soft);color:var(--bad)}
+.composer{display:flex;align-items:center;gap:10px;color:var(--muted);border:1px dashed var(--line);border-radius:12px;padding:10px 14px;font-size:13px}
+.mic{width:12px;height:12px;border-radius:50%;background:var(--bad);box-shadow:0 0 0 4px var(--bad-soft)}
+.h3,.ladder h3{font:600 17px var(--display);margin:0}.sub{color:var(--muted);font-size:13px}
+.check{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.check li{display:flex;gap:10px;align-items:flex-start;font-size:14px}
+.check li::before{content:"";flex:0 0 12px;height:12px;border-radius:50%;margin-top:4px;background:#2a3352}
+.check li.g::before{background:var(--good)}.check li.y::before{background:var(--mid)}.check li.r::before{background:var(--bad)}.check li.o{color:var(--muted)}
+.modes{display:flex;gap:6px;flex-wrap:wrap;font:12px var(--mono)}.modes span{border:1px solid var(--line);border-radius:999px;padding:4px 10px;color:var(--muted)}.modes .on{border-color:var(--accent);color:var(--fg)}
+.speed{gap:10px}
+.lane-row{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr) minmax(0,150px);gap:12px;align-items:center;font-size:13px}
+.lane-row .k{color:var(--fg)}.lane-row .v{font:12px var(--mono);color:var(--muted)}
+.lane-row .bar{height:10px;background:var(--line);border-radius:9px;overflow:hidden}.lane-row .bar i{display:block;height:100%;background:var(--good);min-width:6px}.lane-row .bar.muted i{background:var(--gray)}
+@media (max-width:640px){.lane-row{grid-template-columns:minmax(0,1fr)}}
+.try{font-size:13px;color:#c4cbe0;border-left:2px solid var(--accent);padding-left:8px;margin-top:4px}
+.cnt{color:var(--muted);font:12px var(--mono)}
+.cta{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.cta .sub{display:block}
+.go{font:600 15px var(--body);color:#fff;background:var(--accent);border:0;border-radius:999px;padding:11px 20px;cursor:pointer;box-shadow:0 0 24px var(--accent-soft)}
+.go:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.steps{list-style:none;margin:0 0 6px;padding:0;display:grid;gap:14px;position:relative}
+.steps li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;align-items:center;padding:6px 10px;border-radius:10px}
+.steps li span:last-child{display:grid;font-weight:500}.steps em{font:normal 12px var(--mono);color:var(--muted)}
+.steps li.now{background:#4f5dff33;border:1px solid #4f5dff88;box-shadow:0 0 24px var(--accent-soft)}
+.steps li.end{color:#a9b4ff}.badge.cap{background:none;color:#a9b4ff;font-size:16px}
+.arena{position:relative;border-radius:22px;border:1px solid var(--line);overflow:hidden;background:radial-gradient(120% 90% at 50% 0%,#18224a,var(--bg) 70%);min-height:520px;display:grid}
+.ghost{grid-area:1/1;padding:22px;display:grid;gap:16px;align-content:start;filter:blur(2.5px);opacity:.18}
+.win{grid-area:1/1;align-self:center;justify-self:center;width:min(640px,100%);display:grid;gap:18px;justify-items:center;text-align:center;padding:32px 20px;position:relative;background:radial-gradient(closest-side,#070b16d9,transparent)}
+.passed{font:700 clamp(40px,7vw,64px)/1 var(--display);display:flex;align-items:center;gap:16px}
+.tick{width:58px;height:58px;border-radius:50%;background:var(--good);color:#fff;display:grid;place-items:center;font-size:32px;box-shadow:0 0 40px #2fc26b88}
+.burst{position:absolute;top:8%;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,#2fc26b33,transparent 65%)}
+.why{max-width:52ch;color:#d5dbef;margin:0;font-size:16px}
+.win-stats{display:flex;gap:40px;flex-wrap:wrap;justify-content:center}
+.win-stats div{display:grid;gap:2px}
+.win-stats .k{font:600 17px var(--display)}
+.win-stats .v{font:600 30px var(--display);font-variant-numeric:tabular-nums}
+.win-stats em{font-style:normal;color:var(--good)} .win-stats small{font:12px var(--mono);color:var(--muted)}
+.rewards{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.rw{font:500 13px var(--body);border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:6px 12px}
+.rw.gold{border-color:var(--mid);color:var(--mid);background:var(--mid-soft)}
+.next{display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap;color:var(--muted)}
+.next b{color:var(--fg)}
+.dim{opacity:.9}
+.principles ul{margin:0;padding-left:18px;display:grid;gap:6px;color:#c4cbe0}
+@media (prefers-reduced-motion:no-preference){.tick{animation:pop .6s cubic-bezier(.2,1.6,.4,1) both}.burst{animation:glow 1.2s ease-out both}}
+@keyframes pop{from{transform:scale(.4)}to{transform:scale(1)}}
+@keyframes glow{from{transform:scale(.3);opacity:0}to{transform:scale(1);opacity:1}}
+@media (prefers-reduced-motion:no-preference){.case,.chip,.tab{transition:background .15s,border-color .15s}}
+</style>
+
+<div class="wrap">
+  <div class="note">Design mock-up with synthetic example data for one invented learner. Case titles and the nine feedback domains come from the system; the attempts, scores and dates are made up. No learner outcomes are reported.</div>
+
+  <header>
+    <div>
+      <h1>Clinical Encounter Practice</h1>
+      <div class="who">Example learner · Intern · practice copilot</div>
+    </div>
+    <div class="ring" aria-label="Track progress">
+      <svg viewBox="0 0 100 100" id="ring"></svg>
+      <small id="ringNote"></small>
+    </div>
+  </header>
+
+  <div class="tabs" role="tablist" aria-label="Views">
+    <button class="tab" role="tab" data-v="station" aria-selected="true">Station</button>
+    <button class="tab" role="tab" data-v="debrief" aria-selected="false">Debrief</button>
+    <button class="tab" role="tab" data-v="result" aria-selected="false">Passed</button>
+    <button class="tab" role="tab" data-v="hill" aria-selected="false"><span class="n">2</span>Hill climb</button>
+    <button class="tab" role="tab" data-v="progress" aria-selected="false"><span class="n">22</span>Progress</button>
+  </div>
+  <section class="view" id="v-station" aria-label="Live station">
+    <div class="station-top">
+      <div>
+        <div class="eyebrow">OSCE circuit · Station 3 of 4 · Practice mode</div>
+        <h2 class="big">What the report says, and who should hear it</h2>
+        <div class="who">Goals-of-care conversation · 62-year-old retired teacher, Kolkata · daughter present</div>
+      </div>
+      <div class="timer"><span class="t-now">06:12</span><span class="t-of">of 08:00</span><div class="t-bar"><i style="width:77%"></i></div></div>
+    </div>
+
+    <div class="hud" aria-label="Cue tracker">
+      <span class="hud-l">Followed up</span><span class="pill g">7</span>
+      <span class="ticks" aria-hidden="true"><i class="g"></i><i class="g"></i><i class="g"></i><i class="r"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="r"></i><i class="g"></i><i class="o"></i><i class="o"></i><i class="o"></i></span>
+      <span class="pill r">2</span><span class="hud-l">Missed</span>
+    </div>
+
+    <div class="grid">
+      <div class="card stage">
+        <div class="toast" role="status"><span class="bang">!</span>Cue not followed up: he said his daughter tells him everything is fine</div>
+        <ol class="talk">
+          <li class="vp"><b>Patient</b><span class="hi">डॉक्टर बाबू, report आ गई है ना? मेरी बेटी कह रही है सब ठीक है... पर मुझे सच जानना है।</span><span class="gl">Doctor, the report has come, hasn't it? My daughter says everything is fine... but I want to know the truth.</span></li>
+          <li class="mt"><b>You · 05:31</b>Yes, the CT report is here. Before we look at it, what is your understanding of how things have been going?<span class="tag g">Asked what he understands</span></li>
+          <li class="vp"><b>Patient</b><span class="hi">मुझे लगता है बीमारी बढ़ गई है शायद।</span><span class="gl">I think the illness may have grown.</span></li>
+          <li class="mt"><b>You · 05:58</b>The scan does show the cancer has spread to the liver and the bones.<span class="tag r">News given before asking how much he wants to know</span></li>
+          <li class="vp quiet"><b>Patient</b><span class="gl">(long pause, looks at his daughter)</span></li>
+        </ol>
+        <div class="composer"><span class="mic"></span>Listening… speak your next line</div>
+      </div>
+
+      <div class="card">
+        <h3 class="h3">Station checklist</h3>
+        <div class="sub">Updates as you speak. Items stay grey until there is evidence.</div>
+        <ul class="check">
+          <li class="g">Set up privacy and who is present</li>
+          <li class="g">Asked what he already understands</li>
+          <li class="y">Asked how much he wants to know</li>
+          <li class="g">Shared the CT result in plain words</li>
+          <li class="r">Responded to emotion before moving on</li>
+          <li class="o">Explored what matters most to him now</li>
+          <li class="o">Agreed a plan and who else is told</li>
+          <li class="o">Checked understanding and safety-netted</li>
+        </ul>
+        <div class="modes"><span class="on">Practice: cues shown live</span><span>Exam: cues held for debrief</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="view" id="v-debrief" aria-label="Debrief" hidden>
+    <div class="station-top">
+      <div>
+        <div class="eyebrow">Debrief · Station 3 · ended 08:00</div>
+        <h2 class="big">Ready 41 seconds after you finished</h2>
+        <div class="who">Feedback is built from the encounter record as the station runs, so most of it is ready when you stop talking.</div>
+      </div>
+      <div class="ring"><svg viewBox="0 0 100 100" id="dbRing"></svg><small>Station score 68<br>Pass 75 · not yet</small></div>
+    </div>
+
+    <div class="speed card">
+      <div class="lane-row"><span class="k">Live cues</span><span class="bar"><i style="width:2%"></i></span><span class="v">during the station</span></div>
+      <div class="lane-row"><span class="k">Checklist and cue counts</span><span class="bar"><i style="width:4%"></i></span><span class="v">0–5 s after</span></div>
+      <div class="lane-row"><span class="k">Domain triage with turn citations</span><span class="bar"><i style="width:14%"></i></span><span class="v">41 s after</span></div>
+      <div class="lane-row"><span class="k">Faculty review of flagged moments</span><span class="bar muted"><i style="width:70%"></i></span><span class="v">queued, asynchronous</span></div>
+    </div>
+
+    <div class="triage">
+      <div class="lane g"><h4><span class="dot"></span>Already strong <span class="cnt">3</span></h4>
+        <div class="item"><b>Asked what he understands</b><span class="ev">05:31 "what is your understanding of how things have been going?"</span></div>
+        <div class="item"><b>Plain language</b><span class="ev">05:58 named liver and bones, no jargon</span></div>
+        <div class="item"><b>Set-up</b><span class="ev">00:20 asked if he wanted his daughter in the room</span></div>
+      </div>
+      <div class="lane y"><h4><span class="dot"></span>Getting there <span class="cnt">2</span></h4>
+        <div class="item"><b>Asking permission</b><span class="ev">05:58 shared the result before asking how much he wanted to know</span><span class="try">Try: "Would you like me to go through the details, or start with the main point?"</span></div>
+        <div class="item"><b>Involving family with consent</b><span class="ev">06:40 spoke to the daughter about him while he was present</span></div>
+      </div>
+      <div class="lane r"><h4><span class="dot"></span>Work on next <span class="cnt">2</span></h4>
+        <div class="item"><b>Responding to emotion</b><span class="ev">06:05 long pause, then you moved to treatment options</span><span class="try">Try naming it: "This is a lot to take in. What is going through your mind?"</span></div>
+        <div class="item"><b>Following up cues</b><span class="ev">00:04 "my daughter says everything is fine" was not explored</span></div>
+      </div>
+    </div>
+    <div class="card cta"><div><b>2 skills added to your hill climb</b><span class="sub">Short drills start now and come back at increasing gaps.</span></div><button class="go" data-go="hill">Start first drill · 3 min</button></div>
+  </section>
+
+  <section class="view" id="v-result" aria-label="Station result" hidden>
+    <div class="eyebrow">Re-test · Station 3 · day 15 · Exam mode, no live cues</div>
+    <div class="arena">
+      <div class="ghost" aria-hidden="true">
+        <div class="hud dim"><span class="hud-l">Followed up</span><span class="pill g">11</span><span class="ticks"><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="r"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i></span><span class="pill r">1</span><span class="hud-l">Missed</span></div>
+        <ol class="talk dim">
+          <li class="vp"><b>Patient</b><span class="gl">(long pause, looks at his daughter)</span></li>
+          <li class="mt"><b>You · 05:40</b>That is a lot to take in. What is going through your mind right now?</li>
+          <li class="vp"><b>Patient</b><span class="gl">I am worried about her, more than about me.</span></li>
+        </ol>
+      </div>
+      <div class="win" role="status">
+        <div class="burst" aria-hidden="true"></div>
+        <div class="passed"><span class="tick">✓</span>Passed</div>
+        <p class="why">You stayed with his worry before talking about treatment. That is the skill you drilled twice this week, and today it held without any cues.</p>
+        <div class="win-stats">
+          <div><span class="k">Cues followed up</span><span class="v">11 <em>✓</em></span></div>
+          <div><span class="k">Station score</span><span class="v">81 <small>pass 75</small></span></div>
+          <div><span class="k">Your time</span><span class="v">7:42</span></div>
+        </div>
+        <div class="rewards">
+          <span class="rw gold"><b>+13</b> on your last attempt at this station</span>
+          <span class="rw">Climb complete: Responding to emotion</span>
+          <span class="rw">First unassisted pass in Palliative care</span>
+          <span class="rw">5-day practice streak</span>
+        </div>
+        <div class="next"><span>Next on your climb: <b>Ask about family dynamics</b>, due in 3 days</span><button class="go" data-go="debrief">See full debrief</button></div>
+      </div>
+    </div>
+    <div class="card principles">
+      <h3 class="h3">What earns a reward</h3>
+      <ul>
+        <li>Rewards follow what you did: cues followed up, questions asked, safety-netting, and passing without hints.</li>
+        <li>Nothing rewards the patient agreeing, calming down or accepting a plan. A hard conversation can go well and still end in tears.</li>
+        <li>Streaks count days you practised, not days you scored well, so a bad day never breaks one.</li>
+        <li>Personal bests compare you with your own earlier attempts. There is no leaderboard.</li>
+      </ul>
+    </div>
+  </section>
+  <section class="view" id="v-hill" aria-label="Hill climb" hidden>
+    <div class="station-top">
+      <div>
+        <div class="eyebrow">Hill climb · built from your last 4 stations</div>
+        <h2 class="big">Responding to emotion</h2>
+        <div class="who">Short drills on one skill, spaced out so it sticks. The full station comes back once the drills pass.</div>
+      </div>
+      <div class="ring"><svg viewBox="0 0 100 100" id="hillRing"></svg><small>3 of 7 steps<br>on this climb</small></div>
+    </div>
+    <div class="grid">
+      <div class="card"><div class="sec-h"><h3>Drill score by spaced rep</h3><span>Example data</span></div><div class="chart" id="hillChart"></div>
+        <div class="legend"><span><i style="background:var(--accent)"></i>Drill rep</span><span><i style="background:var(--mid)"></i>Full station, no cues</span><span><i style="border:2px dashed var(--muted)"></i>Scheduled</span><span><i style="background:var(--good)"></i>Pass line</span></div>
+      </div>
+      <div class="card ladder">
+        <div><h3>Responding to emotion</h3><div class="sub">3 drills</div></div>
+        <ul class="steps">
+          <li class="done"><span class="badge done">✓</span><span>Notice the pause<em>Day 0 · 82</em></span></li>
+          <li class="done"><span class="badge done">✓</span><span>Name the emotion<em>Day 2 · 78</em></span></li>
+          <li class="now"><span class="badge">3</span><span>Stay with it before facts<em>Due today</em></span></li>
+        </ul>
+        <div><h3>Following up cues</h3><div class="sub">2 drills</div></div>
+        <ul class="steps">
+          <li class="done"><span class="badge done">✓</span><span>Catch the hidden worry<em>Day 1 · 76</em></span></li>
+          <li><span class="badge">5</span><span>Ask about family dynamics<em>Due in 3 days</em></span></li>
+        </ul>
+        <div><h3>Re-test</h3><div class="sub">1 station, no live cues</div></div>
+        <ul class="steps">
+          <li><span class="badge">6</span><span>Full station, new surface details<em>Due in 9 days</em></span></li>
+          <li class="end"><span class="badge cap">◆</span><span>Climb complete<em>Then a check-in at 30 days</em></span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="view" id="v-progress" aria-label="Progress" hidden>
+  <div class="chips" id="chips" aria-label="Specialty"></div>
+  <hr>
+
+  <div class="grid">
+    <section class="card" id="caseCard" aria-live="polite"></section>
+    <section class="card ladder">
+      <div><h3 id="trackName"></h3><div class="sub" id="trackSub"></div></div>
+      <ul class="cases" id="cases"></ul>
+    </section>
+  </div>
+
+  <section class="card">
+    <div class="sec-h"><h3>Where you stand on this case</h3><span id="triageSub"></span></div>
+    <div class="triage" id="triage"></div>
+  </section>
+
+  <section class="card">
+    <div class="sec-h"><h3>Practice score over time</h3><span id="chartSub"></span></div>
+    <div class="chart" id="chart"></div>
+    <div class="legend">
+      <span><i style="background:var(--accent)"></i>Unassisted attempt</span>
+      <span><i style="border:2px solid var(--accent);background:transparent"></i>Attempt with hints</span>
+      <span><i style="background:var(--mid)"></i>Delayed re-test, no hints</span>
+      <span><i style="background:var(--good)"></i>Passing line (faculty-set, draft)</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="sec-h"><h3>Nine domains, attempt by attempt</h3><span>Each column is one attempt in this track, oldest on the left</span></div>
+    <div class="heat" id="heat"></div>
+    <div class="legend">
+      <span><i style="background:var(--good)"></i>Evidenced</span>
+      <span><i style="background:var(--mid)"></i>Partly evidenced</span>
+      <span><i style="background:var(--bad)"></i>Not yet evidenced</span>
+      <span><i style="border:1px solid var(--bad)"></i>Safety concern</span>
+      <span><i style="background:var(--gray)"></i>Suspended (audio degraded)</span>
+    </div>
+  </section>
+  </section>
+</div>
+
+<script>
+const DOMAINS=[['history','History taking'],['problem_representation','Problem representation'],['differential_revision','Differential and revision'],['examination_planning','Examination planning'],['investigations','Investigations'],['management','Management'],['communication','Communication'],['documentation','Documentation'],['closure','Closure']];
+const TRACKS=[
+ {id:'id',name:'Infectious disease',cases:['Fever before an important meeting','Fever is lower, but the patient feels worse','Chills after travel','A month of fever without an answer',"An older patient's new fever and cough"]},
+ {id:'im',name:'Internal medicine',cases:['Loose stools during a working day','Acidity, weakness and a missed medication','Sugar out of control in Kundli']},
+ {id:'pulm',name:'Pulmonology',cases:['Usual breathlessness has changed','Persistent cough at the brick kiln']},
+ {id:'onc',name:'Oncology',cases:['A cough that has not settled','A breast lump before a busy year','Tiredness, bowel change and liver report','A mouth sore that is changing eating','Bone pain despite ongoing treatment','Food feels heavy and weight is falling','Swallowing has become a daily worry','A child with headaches and new changes']},
+ {id:'obg',name:'OB-GYN',cases:['Bleeding that became hard to ignore','Abdominal swelling with an unclear next step']},
+ {id:'pall',name:'Palliative care',cases:['What the report says, and who should hear it','End of life at home']},
+ {id:'fm',name:'Family medicine',cases:[]},
+];
+const PASS=75, TARGET=6;
+const EVIDENCE={
+ history:['Turn 6: asked when the cough began and what changed','Turn 9: missed the follow-up on night sweats'],
+ problem_representation:['Turn 21: summary named duration, exposure and weight loss','No working summary stated before ordering tests'],
+ differential_revision:['Turn 24: added TB after the sputum answer','Kept one diagnosis after the X-ray result'],
+ examination_planning:['Turn 15: asked for chest and lymph-node examination','Requested a full examination without a target'],
+ investigations:['Turn 27: ordered sputum CBNAAT by name','Asked for "all blood tests"'],
+ management:['Turn 31: plan included isolation advice and follow-up','Started treatment before confirming the diagnosis'],
+ communication:['Turn 11: asked what "saans phoolna" means to her','Did not respond when she mentioned her daughter\'s wedding'],
+ documentation:['Note separates what she said from what you inferred','Note records a finding that was never asked about'],
+ closure:['Turn 34: checked understanding and gave return signs','Ended without safety-netting'],
+};
+function rng(seed){let s=seed>>>0;return()=>{s=(s*1664525+1013904223)>>>0;return s/4294967296}}
+function hash(str){let h=2166136261;for(const c of str){h^=c.charCodeAt(0);h=Math.imul(h,16777619)}return h>>>0}
+function simulate(track){
+  const r=rng(hash(track.id)); const out=[]; const n=Math.max(0,Math.min(24,track.cases.length*3+6)); if(!track.cases.length)return out;
+  let skill=.22+r()*.06; const start=new Date('2026-07-06');
+  for(let i=0;i<n;i++){
+    const delayed=i>3&&i%5===4; const hints=!delayed&&i<n*0.4&&r()<.7;
+    skill=Math.min(.6,skill+.016+r()*.016);
+    const level=skill+(hints?.08:0)-(delayed?.09:0)+(r()-.5)*.08;
+    const states=DOMAINS.map(([k],j)=>{const d=level+[.12,.0,-.08,.1,.04,-.04,-.12,.06,-.1][j]+(r()-.5)*.22;
+      if((k==='communication'||k==='closure')&&r()<.06)return 's'; if(k==='management'&&d<.3&&r()<.5)return 'x';
+      return d>.55?'e':d>.33?'p':'n'});
+    const scored=states.filter(s=>s!=='s'); const score=Math.round(100*scored.reduce((a,s)=>a+(s==='e'?1:s==='p'?.5:0),0)/scored.length);
+    const day=new Date(start.getTime()+(i*6+Math.floor(r()*4))*864e5);
+    out.push({i,caseIdx:Math.floor(r()*track.cases.length),hints,delayed,states,score,day});
+  }
+  return out;
+}
+const DATA=Object.fromEntries(TRACKS.map(t=>[t.id,simulate(t)]));
+let cur='id', curCase=0;
+const $=id=>document.getElementById(id);
+function caseAttempts(tid,ci){return DATA[tid].filter(a=>a.caseIdx===ci)}
+function passed(a){return !a.hints&&a.score>=PASS&&!a.states.includes('x')}
+function renderChips(){
+  $('chips').innerHTML=TRACKS.map(t=>`<button class="chip" aria-pressed="${t.id===cur}" ${t.cases.length?'':'disabled title="No cases authored yet"'} data-t="${t.id}">${t.name}<span class="c">${t.cases.length||'none yet'}</span></button>`).join('');
+  $('chips').querySelectorAll('.chip:not([disabled])').forEach(b=>b.onclick=()=>{cur=b.dataset.t;curCase=busiest();render()});
+}
+function renderRing(){
+  const t=TRACKS.find(x=>x.id===cur); const done=t.cases.filter((_,ci)=>caseAttempts(cur,ci).some(passed)).length; const f=t.cases.length?done/t.cases.length:0;
+  const C=2*Math.PI*42;
+  $('ring').innerHTML=`<circle cx="50" cy="50" r="42" fill="none" stroke="var(--line)" stroke-width="8"/><circle cx="50" cy="50" r="42" fill="none" stroke="var(--good)" stroke-width="8" stroke-linecap="round" stroke-dasharray="${C*f} ${C}" transform="rotate(-90 50 50)"/><text x="50" y="55" text-anchor="middle" style="font:600 20px var(--display);fill:var(--fg)">${done}/${t.cases.length}</text>`;
+  $('ringNote').textContent=`${t.name} cases passed unassisted`;
+}
+function renderLadder(){
+  const t=TRACKS.find(x=>x.id===cur);
+  $('trackName').textContent=t.name; $('trackSub').textContent=`${t.cases.length} synthetic cases · pass each once without hints`;
+  $('cases').innerHTML=t.cases.map((c,ci)=>{const at=caseAttempts(cur,ci);const ok=at.some(passed);
+    return `<li><button class="case" data-c="${ci}" aria-current="${ci===curCase}"><span class="badge ${ok?'done':''}">${ok?'✓':ci+1}</span><span class="t">${c}</span><span class="r">${at.length} reps</span></button></li>`}).join('');
+  $('cases').querySelectorAll('.case').forEach(b=>b.onclick=()=>{curCase=+b.dataset.c;render()});
+}
+function cls(a){return a.score>=PASS?'pass':a.score>=PASS-15?'near':'low'}
+function renderCard(){
+  const t=TRACKS.find(x=>x.id===cur); const at=caseAttempts(cur,curCase); const best=at.reduce((m,a)=>Math.max(m,a.hints?0:a.score),0);
+  $('caseCard').innerHTML=`<div class="eyebrow">${t.name} · Case ${curCase+1}</div><h2>${t.cases[curCase]}</h2>
+  <p>Interview the patient, ask for examinations and tests, then commit to a plan. The patient only tells you what you ask about.</p>
+  <p><b>How to pass:</b> one attempt without hints that reaches the passing score with no safety concern.</p>
+  <div class="stats"><div class="stat"><div class="k">Passing score</div><div class="v">${PASS}</div></div><div class="stat"><div class="k">Reps</div><div class="v">${at.length}<span style="color:var(--muted);font-size:18px"> / ${TARGET}</span></div></div><div class="stat"><div class="k">Best unassisted</div><div class="v">${best||'–'}</div></div></div>
+  <div class="reps">${at.map((a,k)=>`<span class="rep ${cls(a)} ${a.hints?'hint':''}" title="${a.day.toDateString()} · ${a.score}${a.hints?' · with hints':''}">${k+1}</span>`).join('')}${Array.from({length:Math.max(0,TARGET-at.length)},()=>'<span class="rep"></span>').join('')}</div>
+  <div class="legend"><span><i style="background:var(--good)"></i>At or above ${PASS}</span><span><i style="background:var(--mid)"></i>Within 15</span><span><i style="background:var(--bad)"></i>Below</span><span><i style="border:1px dashed var(--muted)"></i>Used hints</span></div>`;
+}
+function renderTriage(){
+  const at=caseAttempts(cur,curCase); if(!at.length){$('triageSub').textContent='';$('triage').innerHTML='<div class="lane"><span class="ev">No attempts on this case yet. Feedback appears after the first rep.</span></div>';return}
+  const last=at[at.length-1], prev=at[at.length-2];
+  const rank={e:2,p:1,n:0,x:-1,s:null}; const lanes={g:[],y:[],r:[]};
+  DOMAINS.forEach(([k,label],j)=>{const s=last.states[j]; if(s==='s')return; const lane=s==='e'?'g':s==='p'?'y':'r';
+    const before=prev?rank[prev.states[j]]:null, now=rank[s]; const tr=before==null?'<span class="flat">first attempt</span>':now>before?'<span class="up">▲ improved since last rep</span>':now<before?'<span class="down">▼ slipped since last rep</span>':'<span class="flat">same as last rep</span>';
+    lanes[lane].push(`<div class="item"><b>${label}${s==='x'?' · safety concern':''}</b><span class="ev">${EVIDENCE[k][lane==='g'?0:1]}</span><span class="trend">${tr}</span></div>`)});
+  $('triageSub').textContent=`From rep ${at.length}, ${last.day.toDateString().slice(4)}. Every line cites the turn it comes from.`;
+  $('triage').innerHTML=[['g','Already strong'],['y','Getting there'],['r','Work on next']].map(([c,h])=>`<div class="lane ${c}"><h4><span class="dot"></span>${h} <span style="color:var(--muted);font:12px var(--mono)">${lanes[c].length}</span></h4>${lanes[c].join('')||'<div class="item"><span class="ev">Nothing here on this rep</span></div>'}</div>`).join('');
+}
+function renderChart(){
+  const at=DATA[cur]; const W=1000,H=300,L=46,R=16,T=16,B=40; const t0=at[0].day.getTime(),t1=at[at.length-1].day.getTime();
+  const x=d=>L+(W-L-R)*(d.getTime()-t0)/Math.max(1,t1-t0), y=v=>T+(H-T-B)*(1-v/100);
+  let g=''; for(const v of [0,25,50,75,100])g+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/><text class="axis" x="${L-8}" y="${y(v)+4}" text-anchor="end">${v}</text>`;
+  const months=[]; for(let m=new Date(at[0].day.getFullYear(),at[0].day.getMonth()+1,1);m.getTime()<=t1;m=new Date(m.getFullYear(),m.getMonth()+1,1))months.push(m);
+  months.forEach(m=>g+=`<text class="axis" x="${x(m)}" y="${H-14}" text-anchor="middle">${m.toLocaleString('en',{month:'short'})}</text><line x1="${x(m)}" x2="${x(m)}" y1="${H-B}" y2="${H-B+5}" stroke="var(--faint)"/>`);
+  const k=4, smooth=at.map((a,i)=>{const w=at.slice(Math.max(0,i-k+1),i+1);return [x(a.day),y(w.reduce((s,b)=>s+b.score,0)/w.length)]});
+  const area=`M${smooth[0][0]},${y(0)} `+smooth.map(p=>`L${p[0]},${p[1]}`).join(' ')+` L${smooth[smooth.length-1][0]},${y(0)} Z`;
+  g+=`<path d="${area}" fill="var(--accent)" opacity=".12"/><path d="${smooth.map((p,i)=>(i?'L':'M')+p[0]+','+p[1]).join(' ')}" fill="none" stroke="var(--accent)" stroke-width="2.5"/>`;
+  g+=`<line x1="${L}" x2="${W-R}" y1="${y(PASS)}" y2="${y(PASS)}" stroke="var(--good)" stroke-dasharray="6 5" stroke-width="1.5"/><text class="axis" x="${L+6}" y="${y(PASS)-6}" style="fill:var(--good)">pass ${PASS}</text>`;
+  at.forEach(a=>{const cx=x(a.day),cy=y(a.score); g+=a.delayed?`<circle cx="${cx}" cy="${cy}" r="6" fill="var(--mid)" stroke="var(--bg)" stroke-width="2"/>`:a.hints?`<circle cx="${cx}" cy="${cy}" r="5" fill="var(--bg)" stroke="var(--accent)" stroke-width="2"/>`:`<circle cx="${cx}" cy="${cy}" r="5" fill="var(--accent)" stroke="var(--bg)" stroke-width="2"/>`});
+  const e=smooth[smooth.length-1]; g+=`<circle cx="${e[0]}" cy="${e[1]}" r="7" fill="none" stroke="var(--fg)" stroke-width="1.5"/>`;
+  g+=`<text class="axis" x="${L}" y="${H-2}">Practice date (example)</text>`;
+  $('chart').innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Practice score per attempt over time with a rolling average">${g}</svg>`;
+  const first=at.slice(0,3).reduce((s,a)=>s+a.score,0)/3, lastm=at.slice(-3).reduce((s,a)=>s+a.score,0)/3;
+  $('chartSub').textContent=`${TRACKS.find(t=>t.id===cur).name} · ${at.length} attempts · rolling mean ${Math.round(first)} → ${Math.round(lastm)} in this example`;
+}
+function renderHeat(){
+  const at=DATA[cur];
+  $('heat').innerHTML=`<table><thead><tr><th></th>${at.map((a,i)=>`<th>${a.delayed?'R':i+1}</th>`).join('')}</tr></thead><tbody>${DOMAINS.map(([k,l],j)=>`<tr><th>${l}</th>${at.map(a=>`<td class="${a.states[j]}" title="${l}: ${({e:'evidenced',p:'partly evidenced',n:'not yet evidenced',x:'safety concern',s:'suspended'})[a.states[j]]}"></td>`).join('')}</tr>`).join('')}</tbody></table>`;
+}
+function render(){renderChips();renderRing();renderLadder();renderCard();renderTriage();renderChart();renderHeat()}
+function busiest(){const t=TRACKS.find(x=>x.id===cur);let b=0;t.cases.forEach((_,ci)=>{if(caseAttempts(cur,ci).length>caseAttempts(cur,b).length)b=ci});return b}
+curCase=busiest();
+render();
+
+function ring(id,f,col){const C=2*Math.PI*42;document.getElementById(id).innerHTML=`<circle cx="50" cy="50" r="42" fill="none" stroke="var(--line)" stroke-width="8"/><circle cx="50" cy="50" r="42" fill="none" stroke="${col}" stroke-width="8" stroke-linecap="round" stroke-dasharray="${C*f} ${C}" transform="rotate(-90 50 50)"/><text x="50" y="56" text-anchor="middle" style="font:600 20px var(--display);fill:var(--fg)">${Math.round(f*100)}%</text>`}
+ring('dbRing',.68,'var(--mid)');ring('hillRing',3/7,'var(--good)');
+(function hill(){const pts=[[0,41,1],[0,55],[0,63],[1,60],[2,68],[2,74],[6,71],[6,79],[15,77,1]];const plan=[[15,'next'],[30,'check-in']];
+ const n=pts.length+plan.length,W=640,H=240,L=40,R=40,T=14,B=40,x=i=>L+(W-L-R)*i/(n-1),y=v=>T+(H-T-B)*(1-v/100);let g='';
+ for(const v of [0,25,50,75,100])g+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/><text class="axis" x="${L-8}" y="${y(v)+4}" text-anchor="end">${v}</text>`;
+ let lastDay=-1;pts.concat(plan.map(p=>[p[0]])).forEach((p,i)=>{if(p[0]!==lastDay){g+=`<text class="axis" x="${x(i)}" y="${H-18}" text-anchor="middle">day ${p[0]}</text>`;lastDay=p[0]}});
+ g+=`<text class="axis" x="${L}" y="${H-2}">Spaced reps (gaps grow: same day, 1, 2, 6, 15, 30 days)</text>`;
+ g+=`<rect x="${x(pts.length)-14}" y="${T}" width="${x(n-1)-x(pts.length)+28}" height="${H-T-B}" fill="var(--panel-2)" opacity=".7" rx="6"/><text class="axis" x="${(x(pts.length)+x(n-1))/2}" y="${T+14}" text-anchor="middle">scheduled</text>`;
+ g+=`<line x1="${L}" x2="${W-R}" y1="${y(75)}" y2="${y(75)}" stroke="var(--good)" stroke-dasharray="6 5" stroke-width="1.5"/><text class="axis" x="${L+6}" y="${y(75)-6}" style="fill:var(--good)">pass 75</text>`;
+ g+=`<path d="${pts.map((p,i)=>(i?'L':'M')+x(i)+','+y(p[1])).join(' ')}" fill="none" stroke="var(--accent)" stroke-width="2.5"/>`;
+ pts.forEach((p,i)=>g+=`<circle cx="${x(i)}" cy="${y(p[1])}" r="${p[2]?7:5}" fill="${p[2]?'var(--mid)':'var(--accent)'}" stroke="var(--bg)" stroke-width="2"/>`);
+ plan.forEach((p,j)=>g+=`<circle cx="${x(pts.length+j)}" cy="${y(78)}" r="6" fill="none" stroke="var(--muted)" stroke-dasharray="3 3" stroke-width="2"/>`);
+ document.getElementById('hillChart').innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Drill scores rising across spaced reps toward the pass line">${g}</svg>`})();
+function show(v){document.querySelector('header .ring').hidden=v!=='progress';document.querySelectorAll('.view').forEach(e=>e.hidden=e.id!=='v-'+v);document.querySelectorAll('.tab').forEach(t=>t.setAttribute('aria-selected',t.dataset.v===v));try{localStorage.setItem('view',v)}catch(e){}}
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>show(t.dataset.v));
+document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>show(b.dataset.go));
+{let v=(location.hash||'').slice(1);if(!['station','debrief','result','hill','progress'].includes(v)){try{v=localStorage.getItem('view')}catch(e){}}show(v||'station')}
+</script>
+</body></html>

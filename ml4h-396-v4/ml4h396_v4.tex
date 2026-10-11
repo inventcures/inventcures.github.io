@@ -1,0 +1,142 @@
+\documentclass[pmlr,twocolumn,10pt]{jmlr}
+\mlhtrack{proceedings}
+\newif\iffinal\finalfalse
+\jmlrproceedings{}{Submitted to ML4H 2026: Proceedings Track}
+\jmlrworkshop{Machine Learning for Health (ML4H) 2026}
+\jmlryear{2026}
+\usepackage{booktabs,array,lmodern,microtype,amsmath}
+\usepackage{tikz,graphicx}
+\usetikzlibrary{arrows.meta,positioning}
+\usepackage[switch]{lineno}
+\hypersetup{hidelinks,pdfauthor={}}
+\title[A Practice Copilot for Medical Education]{A Practice Copilot for Medical Education\\Developing Clinical Reasoning, Patient Communication, and Empathy through Virtual Patient Encounters}
+\author{Anonymous Author(s)}
+\jmlrauthors{Anonymous Author(s)}
+\linenumbers\raggedbottom
+\begin{document}
+\maketitle
+\begin{abstract}
+Medical trainees need practice eliciting information, interpreting ambiguous patient language, and making management decisions. Expressive virtual patients could broaden that practice, but uncontrolled disclosure and unreliable scoring can make an encounter educationally misleading. We present a practice copilot for medical trainees, including a design and evaluation framework for controlled virtual patient encounters in Indian medical education. A versioned case state separates clinical truth, patient knowledge, disclosure, and speech realization. An evidence record links each presented cue to learner follow-up, patient clarification, and subsequent action. Independent services retrieve examination findings and investigation results; asynchronous observers support reviewable formative feedback. The learning design connects supported rehearsal to independent practice, spaced reassessment, and transfer. We specify matched comparisons for clinical consistency, cue availability, scoring agreement, and delayed learning. Live platform testing is reported as ongoing; this paper reports no participant outcomes or validated competency estimates. Indic-language and expressive-speech capabilities remain evaluation targets.
+\end{abstract}
+\begin{keywords}virtual patients, clinical reasoning, medical education, Indic languages, formative assessment\end{keywords}
+\paragraph*{Data and Code Availability}
+This design paper uses published literature and constructed examples. The source package contains manuscript sources and a proposed evaluation protocol. No participant dataset or speech benchmark is supplied. A local deterministic demonstrator informed feasibility boundaries; it is not evidence of expressive speech or educational effectiveness.
+\paragraph*{Institutional Review Board (IRB)}
+No human-participant analysis is reported here. The project team reports ongoing live testing, but its protocol, consent and ethics determination are outside this v0 report. No approval or exemption for that activity is asserted. Any participant study reported in a revision requires its actual institutional determination and methods.
+
+\section{Educational problem and contribution}
+An encounter requires a trainee to decide what to ask, what to examine, what information changes the differential, and what to do next. Clinical reasoning instruction connects representations of a problem with organized clinical knowledge \citep{bowen2006}. Management also involves choices under uncertainty and patient-specific tradeoffs \citep{haimovich2026}. Correctly naming a diagnosis cannot by itself establish either skill.
+
+The practice copilot targets repeated low-stakes rehearsal of consequential skills. Initial live testing is reported for medical students in India; the intended curriculum spans students, interns, residents and fellows. The present contribution is a specified simulation and evidence contract, with a falsifiable evaluation plan. We do not report results from the ongoing activity. A local two-case demonstrator uses fixed facts and surface forms, which illustrates a narrow control approach but does not establish natural conversation.
+
+The proposed distinction is between an authored opportunity and a demonstrated learner response. A patient might say ``pet mein gola ho raha hai,'' an author-supplied example of colloquial gastrointestinal concern. Its meaning must be clarified, rather than mapped directly to diarrhea or a diagnosis. Similarly, ``I am feeling okay'' can warrant different exploration depending on context and delivery. The intended educational target is sensitive clarification, not guessing a concealed emotion. Hindi, Bengali, Odia and mixed registers are intended coverage, not a claim of completed multilingual validation.
+
+\section{Evidence informing the design}
+Prior virtual-patient research already includes empathic communication training \citep{foster2016}. EQClinic studied automated nonverbal feedback in telehealth education \citep{liu2016}. These precedents rule out a novelty claim based only on adding a patient avatar or communication feedback. A recent voice-VP agreement study found communication scoring less concordant with faculty ratings than information gathering \citep{gao2026}. We therefore separate evidence extraction, scoring and learner feedback.
+
+In broader education, structured AI tutoring has produced positive learning results in a college physics trial \citep{kestin2025}, while a mathematics study distinguishes supported performance from learning after assistance is removed \citep{bastani2025}. Neither establishes transfer to clinical encounters. A diagnostic-reasoning trial coauthored by Rodman found no significant benefit from giving physicians LLM access, despite stronger standalone model performance \citep{goh2024}. Model competence and learner development need separate endpoints.
+
+Onco-Shikshak describes a related educational architecture combining illness scripts, adaptive practice, spaced retrieval and feedback \citep{makani2026}. We adopt its question of how an encounter informs later practice, while retaining its stated limitation that learner efficacy was not evaluated. Retrieval research with residents supports delayed knowledge assessment \citep{larsen2009}; it does not establish that flashcard scheduling alone improves clinical communication. Our proposal pairs knowledge review with new encounters and reduced assistance.
+
+\section{Controlled encounter architecture}
+Let $C$ be the approved case version, $K_t$ the patient's knowledge, $D_t$ disclosure state, and $H_t$ encounter history. An interpreter proposes a typed learner action $a_t$. A policy returns permitted content $F_t=\pi(C,K_t,D_t,H_t,a_t)$. The realizer receives $F_t$ and persona constraints, rather than an unrestricted case or rubric. Clinical truth is not writable through conversation. A clinician reviews the case before curricular use; synthetic examples remain marked as requiring approval.
+
+The coordinator commits one finalized action at a time. Examination and order services return only available case findings, with explicit unavailable or clarification responses. Asking for an examination does not demonstrate physical execution. Ambiguous compound requests are confirmed before results appear. A statement about past medication is distinguished from a proposed prescription. Management scoring permits faculty-approved alternatives and treats unsupported interpretation as uncertainty.
+
+Patient speech proceeds independently of assessment. Observers consume finalized events and propose evidence claims; a later scoring stage reconciles them. An observer failure leaves the event stream available for later review. A speech failure can fall back to text, but audio-dependent criteria become unassessable. Barge-in cancels queued speech, and the record distinguishes planned from delivered content. A fact in unplayed audio cannot be counted as heard.
+
+\begin{table}[t]
+\caption{Proposed component boundaries. All assessment is formative pending validation.}
+\label{tab:components}
+\small
+\begin{tabular}{@{}p{.24\linewidth}p{.68\linewidth}@{}}
+\toprule
+Component & Access and output \\
+\midrule
+Case compiler & Faculty-approved truth, disclosure and rubric; emits immutable version. \\
+Disclosure policy & Case and encounter state; emits permitted facts, not new facts. \\
+Speech realizer & Permitted content and persona; emits speech with delivery record. \\
+Exam/orders & Typed request and approved findings; emits retrieval or clarification. \\
+Observers & Case, rubric and evidence; emit attributed claims, not patient speech. \\
+Feedback & Reviewed evidence and assistance history; emits practice suggestions. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Cue and evidence contract}
+For every assessable opportunity, record
+\[
+o=(c,v,m,d,w,r,u),
+\]
+where $c$ identifies the authored cue, $v$ its case version, $m$ modality, $d$ delivered event, $w$ response window, $r$ rubric criterion and $u$ availability uncertainty. A learner response is linked to $o$ and its source utterance; patient clarification and later management remain separate events. An acoustic intention is insufficient evidence that a cue was perceptible. Native-speaker review and playback checks must establish that boundary before a missed opportunity receives a score.
+
+A diagnostic kernel is a small clue with plausible follow-up families and deeper information available after clarification. The rubric can distinguish noticing, characterization and use in management. A learner who asks about weight change but disregards the answer has demonstrated a different behaviour from one who updates the problem representation. Rojas and colleagues' expert/student comparison motivates examining information use, but its questionnaire case does not validate our conversational measure \citep{rojas2024}.
+
+\section{Learning, scoring and clinical scope}
+Implementation details and constructed persona examples appear in Section~\ref{sec:implementation}. The inspected browser/Python demonstrator uses seeded text, JSON case lookups and logical event time; it does not establish expressive regional speech or measured latency.
+Faculty define anchors for history, problem representation, differential revision, examination planning, investigations, management, communication, documentation and closure. Observers cite events and abstain when evidence is insufficient. Deterministic rules check approved critical actions; semantic judgments require review against expert labels. No overall LLM grade is treated as a competency estimate. Score validity concerns interpretations and use, not a property conferred by a working interface \citep{cook2006}.
+
+In teaching mode, the learner may request a broad prompt, a specific hint or a worked example. Assistance is logged and is not equivalent to independent performance. Feedback highlights a small number of consequential moments and supplies a next exercise. A subsequent case changes surface features and removes the hint. Spaced factual retrieval and encounter practice have separate histories. Repeated attempts do not increase the count of independent cases.
+
+Figure~\ref{fig:feedback} shows a design mock-up of the learner-facing loop for an OSCE-style station. In practice mode, cues the learner has not followed up appear during the encounter; in exam mode they are held for the debrief. The debrief sorts skills into strong, developing and next-to-work-on, and every item cites the turn it comes from. Weak skills become short drills that return at growing intervals until a full station without cues is passed. Appendix~\ref{app:feedback} shows the remaining screens. The mock-up uses synthetic data; it is not a measurement of learners, and its score and pass line are placeholders that would need faculty setting and validation.
+
+Advanced learners receive greater clinical ambiguity and management tradeoffs; beginners receive structure without arbitrary patient obstruction. Palliative-care and end-of-life communication are curriculum targets for later faculty-approved cases. A patient's agreement, emotional relief or compliance is not a required outcome for credit. Appropriate uncertainty, respecting preferences, and seeking supervision can be competent actions.
+
+\input{oncology_education}
+\input{implementation}
+\begin{figure*}[!t]
+\input{figures/personas}
+\caption{Constructed Indic-language persona examples interacting with the practice copilot. The first two reflect demonstration themes; the third is proposed. Profiles are illustrative, not population estimates or stereotypes. Medical content and language require clinician and native-speaker approval.}
+\label{fig:personas}
+\end{figure*}
+\begin{figure*}[p]
+\centering
+\includegraphics[width=.8\linewidth]{figures/mockup/station.jpg}\\[4pt]
+\includegraphics[width=.8\linewidth]{figures/mockup/debrief.jpg}
+\caption{Design mock-up of the learner-facing feedback loop, with synthetic data for one invented learner. Top: a live goals-of-care station in practice mode, with a cue tracker, a prompt for an unexplored cue and a checklist that fills as evidence appears. Bottom: the debrief, with the timing of each feedback layer and skills sorted by evidence, each citing its turn. Timings, scores and the pass line are illustrative. No learner outcomes are reported.}
+\label{fig:feedback}
+\end{figure*}
+
+\section{Evaluation protocol and failure criteria}\label{sec:evaluation}
+Evaluation separates simulation consistency, clinical correctness, measurement quality and learning. First, test paraphrased questions, withheld information, incompatible orders and injection attempts against approved cases. Count fact contradictions, unauthorized disclosure and unsupported findings. A boundary violation blocks use of the affected case/version. Such tests establish behaviour only for tested inputs, not universal security.
+
+Second, compare matched expressive audio, neutral audio and text conditions. Preserve relevant clinical facts, while reviewing whether a wording or voice change alters diagnostic cueing. Include neutral controls to measure false emotional attribution. Use human recordings as a reference when consent and resources permit. Clinical-concept transcription errors and delivery failures are reported separately from learner mistakes. TTS naturalness does not establish cultural fidelity.
+
+Third, clinicians and native speakers annotate opportunities and acceptable response families before observing automated scores. Independently trained raters assess held-out encounters with patient/caregiver perspectives included in rubric development. Report evidence precision and recall, false credit, missed credit, and safety-flag sensitivity. Use absolute-agreement ICC for continuous domain ratings when assumptions fit, weighted kappa for ordinal judgments, and intervals with the learner/case clustering preserved. Agreement with one examiner does not establish validity.
+
+Fourth, compare the controlled system with a strong patient-prompt baseline and a deterministic scripted baseline under matched cases and resource budgets. A proposed learning study compares usual case practice with practice using the copilot, matched for time and feedback access. The primary endpoint is blinded rating of a novel, unassisted encounter after a prespecified delay; immediate supported scores and perceived realism are secondary. Sample size must follow a meaningful effect and pilot variance, not an arbitrary convenience number. Two cases can test mechanisms but cannot support general competency claims.
+
+Failure criteria include unavailable cues being scored as missed, hallucinated evidence producing remediation, systematic language-specific penalties, or improvement confined to rehearsed cases. Preserve a successful control design even if expressive audio fails to add benefit. Remove an automated scoring dimension if expert agreement or evidence attribution is inadequate.
+
+\section{Limitations and conclusion}
+The design draws on a targeted narrative review, not systematic screening. No new learner outcomes, provider benchmark, native-speaker validation or calibrated mastery threshold is reported. Ongoing live testing must be documented before empirical claims are added. Authenticity, regional coverage and transfer remain open. Student audio and performance require consent, restricted access, retention limits and an appeal path; practice records should not silently become summative records.
+
+The proposed practice copilot uses controlled clinical facts and reviewable evidence as the basis for formative practice. Its testable claim is that preserving the link between presented opportunity, learner action and feedback makes simulation more interpretable and assessable. Whether that structure improves independent clinical reasoning and communication requires prospective evidence.
+
+\paragraph*{AI assistance}
+OpenAI Codex assisted source discovery, synthesis, drafting and document preparation. No participant observations or educational outcomes were generated as research data. Authors remain responsible for checking citations, claims and the final submission.
+\bibliography{references}
+
+\appendix
+\section{Feedback interface mock-up}\label{app:feedback}
+This appendix shows the full set of screens from the mock-up in Figure~\ref{fig:feedback}. All learner data are synthetic. The case titles and the nine feedback domains come from the implemented system; the attempts, scores, dates and timings do not. The interface itself is a design proposal, not the current implementation.
+
+Three design rules shape the screens. First, feedback arrives in layers: cue prompts during practice-mode encounters, checklist counts at the end of the station, a domain-level debrief shortly after, and faculty review of flagged moments asynchronously. Second, rewards follow what the learner did, such as cues followed up, safety-netting and passing without hints. They never follow whether the simulated patient or family agreed, calmed down or accepted a plan. There is no leaderboard, and streaks count days of practice rather than days of high scores. Third, each weak skill becomes a short drill that returns at growing intervals, and the climb ends with a full station without cues. Whether this loop improves unassisted performance is a hypothesis for the delayed-transfer study in Section~\ref{sec:evaluation}, not a result.
+
+\begin{figure*}[p]
+\centering
+\includegraphics[width=.85\linewidth]{figures/mockup/result.jpg}\\[4pt]
+\includegraphics[width=.85\linewidth]{figures/mockup/hill.jpg}
+\caption{Top: the result screen after a passed re-test in exam mode, with feedback naming the behaviour that changed and rewards tied to learner actions. Bottom: a hill climb on one weak skill, with drill scores across spaced repetitions and the remaining schedule. Synthetic data.}
+\label{fig:mockup-result}
+\end{figure*}
+
+\begin{figure*}[p]
+\centering
+\includegraphics[width=.62\linewidth]{figures/mockup/progress_track.jpg}\\[4pt]
+\includegraphics[width=.75\linewidth]{figures/mockup/progress_trend.jpg}
+\caption{Top: a specialty track with reps per case against a placeholder pass score and the latest debrief for the selected case. Bottom: practice score over time with hinted, unassisted and delayed re-test attempts marked, and the nine feedback domains attempt by attempt. Specialty case counts come from the case library; all attempts are synthetic.}
+\label{fig:mockup-progress}
+\end{figure*}
+
+\end{document}

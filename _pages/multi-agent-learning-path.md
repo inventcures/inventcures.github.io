@@ -199,6 +199,10 @@ How an open RL training stack was extended from single agents to interacting one
 
 A useful domain-specific reference point: the tutorial explicitly addresses moving from LLM chatbots toward AI agents that work with biomedical data and tools.
 
+[Fork-and-Flush: Escaping Idea Basins in Autoresearch Agents (Cai et al., 2026)](https://arxiv.org/abs/2610.07447)
+
+Independent runs of the same research agent often plateau at very different scores, and the gaps persist with more compute: each run gets stuck in an "idea basin". Fork-and-flush forks the agent into parallel copies that keep the shared workspace but start with a fresh chat context, runs each for a fixed horizon, then continues from the best. On 13 long-horizon research and engineering tasks it beats single-run and best-of-N baselines at equal compute. Read it with the swarm post above when deciding how many copies to fork and when to reset their context.
+
 [Prime Intellect: Measuring Autonomous AI Research](https://primeintellect.ai/blog/measuring-autonomous-research)
 
 153 autonomous optimization runs across 18 frontier models on the nanoGPT speedrun. Models differed at every stage, from choosing experiments to interpreting noisy results, and none produced a fundamentally new method. Useful as a template for evaluating research agents.

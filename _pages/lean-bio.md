@@ -15,7 +15,7 @@ A tiny biochemical modelling language (BSL) that compiles models into theorems t
   <a href="https://github.com/inventcures/lean-bio" class="btn btn--primary">View on GitHub</a>
 </p>
 
-> **Credit:** thanks to **Nilesh Trivedi**, through whom I found out about Kim Branson's "Lean for biology" effort at GSK ([LinkedIn post](https://www.linkedin.com/feed/update/urn:li:activity:7474193699577425920/), via [lnkd.in/p/dXBPfYCJ](https://lnkd.in/p/dXBPfYCJ)).
+> **Credit:** thanks to **[Nilesh Trivedi](https://x.com/nileshtrivedi)**, through whom I found out about Kim Branson's "Lean for biology" effort at GSK ([LinkedIn post](https://www.linkedin.com/feed/update/urn:li:activity:7474193699577425920/), via [lnkd.in/p/dXBPfYCJ](https://lnkd.in/p/dXBPfYCJ)).
 
 ## 🧭 Why this exists
 
@@ -111,5 +111,5 @@ python -m bsl certify examples/E-reversible/model.bsl --lean-out lean/BslLean/Ge
 
 *   Repository: [inventcures/lean-bio](https://github.com/inventcures/lean-bio)
 *   Upstream: [BigBirdReturns/GSK-LeanBio](https://github.com/BigBirdReturns/GSK-LeanBio)
-*   Kim Branson's post, found via Nilesh Trivedi: [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7474193699577425920/) (via [lnkd.in/p/dXBPfYCJ](https://lnkd.in/p/dXBPfYCJ))
+*   Kim Branson's post, found via [Nilesh Trivedi](https://x.com/nileshtrivedi): [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7474193699577425920/) (via [lnkd.in/p/dXBPfYCJ](https://lnkd.in/p/dXBPfYCJ))
 *   Lean docs on `sorry`: [Lean.Meta.Sorry](https://lean-lang.org/doc/api/Lean/Meta/Sorry.html)

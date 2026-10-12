@@ -167,6 +167,18 @@ An advanced follow-on after the beginner path. Covers verifiers, test-time compu
 
 Advanced material on reasoning, inference-time methods, post-training, search/planning, tool use, code, verification and mathematical agents.
 
+[Konstantin Dunas (hallerite): On the Nature of the Swarm](https://hallerite.com/posts/on-the-nature-of-the-swarm/)
+
+Blog post (Oct 2026) on why forking persistent sub-agents helps once a single agent hits its context window: compaction is a lossy guess about what will matter later, while peers in a mesh (rather than a tree) let total context grow with the number of agents, until communication cost catches up. A good intuition pump for "how many copies should I fork?"
+
+[Assemble Your Crew: Automatic Multi-agent Communication Topology Design via Autoregressive Graph Generation (ARG-Designer, AAAI)](https://arxiv.org/abs/2507.18224)
+
+Treats designing a multi-agent system as generating its collaboration graph node by node: which roles to include and who talks to whom, conditioned on the task. Read it alongside the swarm post when deciding agent count and topology instead of fixing them by hand.
+
+[Prime Intellect: Prime Agent, a self-improving RLM agent](https://primeintellect.ai/blog/prime-agent)
+
+An open-source coding harness combining Recursive Language Models (sub-agent calls and context management through a persistent REPL) with a harness that rewrites its own prompts, skills, memory and sub-agents during a task. A concrete example of recursive self-improvement at the harness level.
+
 ### If you want to specialize specifically in MARL
 
 [MARL book code/slides ecosystem](https://www.marl-book.com/)
@@ -177,11 +189,27 @@ Return for the chapters you initially skipped: deep MARL in practice, multi-agen
 
 Useful as a reading map for modern MARL after you have completed the foundations; it explicitly assumes prior deep-learning and RL coursework.
 
+[Prime Intellect: Multi-Agent Systems in PRIME-RL](https://primeintellect.ai/blog/multi-agent-systems)
+
+How an open RL training stack was extended from single agents to interacting ones, with `Agent` and `Env` abstractions, a choice of which roles get trained, and credit assignment across the whole episode. A practical bridge from MARL concepts to training LLM agent teams.
+
 ### If you want scientific and biomedical agentic AI
 
 [ISMB 2026 tutorial: Biomedical Agentic AI](https://www.iscb.org/ismb2026/whats-happening/tutorials)
 
 A useful domain-specific reference point: the tutorial explicitly addresses moving from LLM chatbots toward AI agents that work with biomedical data and tools.
+
+[Fork-and-Flush: Escaping Idea Basins in Autoresearch Agents (Cai et al., 2026)](https://arxiv.org/abs/2610.07447)
+
+Independent runs of the same research agent often plateau at very different scores, and the gaps persist with more compute: each run gets stuck in an "idea basin". Fork-and-flush forks the agent into parallel copies that keep the shared workspace but start with a fresh chat context, runs each for a fixed horizon, then continues from the best. On 13 long-horizon research and engineering tasks it beats single-run and best-of-N baselines at equal compute. Read it with the swarm post above when deciding how many copies to fork and when to reset their context.
+
+[Prime Intellect: Measuring Autonomous AI Research](https://primeintellect.ai/blog/measuring-autonomous-research)
+
+153 autonomous optimization runs across 18 frontier models on the nanoGPT speedrun. Models differed at every stage, from choosing experiments to interpreting noisy results, and none produced a fundamentally new method. Useful as a template for evaluating research agents.
+
+[Prime Intellect: Autonomous AI research for the nanoGPT speedrun](https://primeintellect.ai/auto-nanogpt)
+
+Coding agents ran roughly 10,000 experiments on the speedrun's optimizer track and set a new record, but were strongest at search and recombination of known methods and weak at generating new ideas without human input. A sober case study of what "AI scientist" agents do well today.
 
 Also track papers and tutorials from AAMAS, NeurIPS/ICML/ICLR agent workshops, ML for Health, CHIL, AMIA, ISMB, RECOMB, and domain venues relevant to your scientific application. For this fast-moving layer, papers and benchmarks age faster than foundational courses.
 

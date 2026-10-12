@@ -58,6 +58,19 @@ Read my notes on [AI agent harnesses, context, memory and dreaming](/agents/), i
 
 
 <div style="margin: 2rem 0;">
+  <a href="/lean-bio/" style="display: block; background: linear-gradient(135deg, #1a1033 0%, #2e1065 100%); border: 2px solid #a78bfa; border-radius: 12px; overflow: hidden; text-decoration: none; position: relative;">
+    <div style="position: absolute; top: -8px; right: 20px; background: linear-gradient(135deg, #a78bfa, #6d28d9); color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.3rem 0.6rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 12px rgba(109, 40, 217, 0.4);">New &mdash; Oct 2026</div>
+    <div style="padding: 1.5rem 2rem;">
+      <div style="display: inline-block; background: #6d28d9; color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Formal Methods + Biology</div>
+      <h3 style="color: #fff; font-size: 1.5rem; margin: 0 0 0.4rem 0; font-weight: 700;">Lean-Bio</h3>
+      <p style="color: #c4b5fd; font-size: 0.9rem; margin: 0 0 0.75rem 0; font-weight: 500;">The Smallest Honest "Lean for Biology"</p>
+      <p style="color: #ddd; font-size: 0.85rem; line-height: 1.5; margin: 0 0 1rem 0;">A tiny biochemical modelling language that compiles kinetic models into Lean 4 theorems, kernel-checked in CI with no <code>sorry</code>. Proves parameter-bounded steady states, and shows where formal certainty stops: at the model, not biological truth.</p>
+      <span style="color: #c4b5fd; font-weight: 600; font-size: 0.9rem;">View Project →</span>
+    </div>
+  </a>
+</div>
+
+<div style="margin: 2rem 0;">
   <a href="/de-novo-binder-design_rfantibody-vs-biohub-esmfold2/" style="display: block; background: linear-gradient(135deg, #0a1628 0%, #13294b 100%); border: 2px solid #0072B2; border-radius: 12px; overflow: hidden; text-decoration: none; position: relative;">
     <div style="position: absolute; top: -8px; right: 20px; background: linear-gradient(135deg, #0072B2, #00b4d8); color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.3rem 0.6rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 12px rgba(0, 114, 178, 0.4);">New &mdash; Jun 2026</div>
     <div style="padding: 2rem 2rem 1rem;">

@@ -19,7 +19,13 @@ A tiny biochemical modelling language (BSL) that compiles models into theorems t
 
 ## 🧭 Why this exists
 
-Kim Branson (Chief AI Officer, GSK) posted that GSK needed a "Lean for biology", that it didn't exist, so they built it, with details to come. He added that the data is the competitive moat, not the methods for verifying correctness.
+Kim Branson (Chief AI Officer, GSK) [posted on LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7474193699577425920/) on 21 June 2026:
+
+> I've often thought we need a "lean for biology". It didn't exist so we built it. [...] Details to come.
+>
+> And no, it's not just marking everything Sorry. Although some days it feels like that.
+
+He later added that the data is the competitive moat, not the methods for verifying correctness.
 
 If the method isn't the moat, it can be published, and borrowing the word *Lean* means it should be. Lean's authority comes from proof terms that anyone can inspect, replay and check outside the institution that produced them. A "Lean for biology" therefore owes: a formal specification language, a proof checker, runnable examples, explicit assumptions, parameter bounds, evidence grades, machine-checkable proof artifacts, and **zero dependency on proprietary infrastructure**.
 
@@ -70,7 +76,7 @@ The real finding: **formal certainty attaches to the model statement, not to bio
 
 ## 🚫 Why "no `sorry`" matters
 
-In Lean, [`sorry`](https://lean-lang.org/doc/api/Lean/Meta/Sorry.html) is a placeholder that lets an unfinished proof typecheck: it stands in for any missing term via the `sorryAx` axiom. A file full of `sorry` compiles, so "it builds" proves nothing on its own.
+Kim's joke has a sharp point. In Lean, [`sorry`](https://lean-lang.org/doc/api/Lean/Meta/Sorry.html) is a placeholder that lets an unfinished proof typecheck: it stands in for any missing term via the `sorryAx` axiom. A file full of `sorry` compiles, so "it builds" proves nothing on its own.
 
 That's why every CI run ends with a `#print axioms` audit: the flagship may use only Lean's standard axioms, with no `sorry`, no custom `axiom`, and no `native_decide`. `bsl certify` prints `certified` only when Lean accepts the file *and* that audit passes.
 

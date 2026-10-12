@@ -8,12 +8,13 @@ description: "Research notes on agent harnesses, context engineering, persistent
 <div class="container-narrow">
 <h1>AI agents: harnesses, context, memory and dreaming</h1>
 <p>A model's behavior depends on the software around it, the information it receives, and what it retains between tasks. These notes compare several ways to improve that system, with links to the original articles, specification and technical report.</p>
-<p><small>Sources checked on 9 October 2026. Experimental numbers below are author-reported results, not independent reproductions.</small></p>
+<p><small>Sources checked on 9 October 2026; the forking and autonomous research section on 12 October 2026. Experimental numbers below are author-reported results, not independent reproductions.</small></p>
 <nav aria-label="On this page"><ul>
 <li><a href="#harnesses">Harnesses and context engineering</a></li>
 <li><a href="#memory">Devin memory and Agent Memory Repo</a></li>
 <li><a href="#dream-rsi">Dream-RSI</a></li>
 <li><a href="#wake-sleep">Wake-sleep for legal agents</a></li>
+<li><a href="#forking">Forking, swarms and autonomous research</a></li>
 <li><a href="#open-questions">Evidence limits and X threads</a></li>
 <li><a href="#reading">Original sources and further reading</a></li>
 </ul></nav>
@@ -53,9 +54,24 @@ description: "Research notes on agent harnesses, context engineering, persistent
 <p>Memory also prompted about 2.5 times more analysis, checking and drafting tool calls, increasing cost and latency. Retrieving relevant lessons instead of supplying the full memory reportedly halved per-task cost while preserving the rubric-criteria pass rate. That efficiency comparison is against full memory, not the no-memory baseline.</p>
 <p>These are rubric-judged benchmark results from the supplied account. They do not establish reliability on real client matters. Confidence intervals, independent replication and the full experimental artifacts remain unverified here.</p>
 </section>
+<section id="forking" aria-labelledby="forking-title">
+<h2 id="forking-title">Forking, swarms and autonomous research</h2>
+<h3>Why fork an agent at all</h3>
+<p>Konstantin Dunas's <a href="https://hallerite.com/posts/on-the-nature-of-the-swarm/">On the Nature of the Swarm</a>, dated 6 October 2026, starts from a limit of inference scaling: one agent's context window is fixed. Compaction helps only partly, because each summary is a lossy guess about what will matter later. Persistent sub-agents arranged as peers in a mesh, rather than as a tree under one coordinator, let total context grow with the number of agents. Communication cost sets the ceiling. This is an argument, not an experiment.</p>
+<p>Ziyang Cai, Dimitris Papailiopoulos and colleagues study a related effect empirically in <a href="https://arxiv.org/abs/2610.07447">Fork-and-Flush: Escaping Idea Basins in Autoresearch Agents</a>. Independent runs of the same research agent often plateau at very different scores, and the gaps persist with more compute. The authors call the regions where runs stall "idea basins". Fork-and-flush forks the agent into parallel copies that keep the accumulated workspace but start with a fresh chat context, runs each for a fixed horizon, then continues from the best. Across 13 long-horizon research and engineering tasks, the authors report higher normalized scores than single runs and best-of-N at equal compute.</p>
+<p>The two sources pull in different directions. The swarm post keeps context in persistent agents; fork-and-flush deliberately discards chat context and keeps only the workspace. Neither settles how many copies to fork: that depends on the task horizon, the compute budget and how much a fresh context costs to rebuild.</p>
+<h3>Choosing the team's shape</h3>
+<p><a href="https://arxiv.org/abs/2507.18224">Assemble Your Crew</a> (ARG-Designer, AAAI) treats a multi-agent system's communication topology as something to generate rather than hand-design. It builds the collaboration graph node by node, choosing roles and who talks to whom, conditioned on the task. It addresses agent count and topology together, which the forking work above leaves open.</p>
+<h3>Training and self-improving harnesses</h3>
+<p>Prime Intellect's <a href="https://primeintellect.ai/blog/multi-agent-systems">Multi-Agent Systems in PRIME-RL</a>, dated 7 August 2026, extends an open RL training stack from single agents to interacting ones. <code>Agent</code> and <code>Env</code> abstractions define the interaction, a configuration chooses which roles are trained, and credit is assigned across the whole episode. This changes model weights, like the multi-harness RL guide above.</p>
+<p><a href="https://primeintellect.ai/blog/prime-agent">Prime Agent</a>, dated 5 August 2026, is an open-source coding harness combining Recursive Language Models, which call sub-agents and manage context through a persistent REPL, with a harness that updates its own prompts, skills, memory and sub-agents during a task. Paired with Opus 5, the authors report 95.5% RHAE Best@1 on ARC-AGI-3, against a reported human expert baseline of 95.4%. That is a single author-reported result; the contribution of the self-updating harness, as distinct from the model, is not isolated here.</p>
+<h3>What autonomous research agents achieved</h3>
+<p>In <a href="https://primeintellect.ai/auto-nanogpt">Autonomous AI research for the nanoGPT speedrun</a>, dated 14 May 2026, Codex and Claude Code ran roughly 10,000 experiments on the speedrun's optimizer track over about two weeks and set a new record of 2,930 steps. The authors found the agents strong at optimizer search and at combining known methods, but weak at generating new ideas without upstream human results.</p>
+<p><a href="https://primeintellect.ai/blog/measuring-autonomous-research">Measuring Autonomous AI Research</a>, dated 15 August 2026, follows up with 153 autonomous optimization runs across 18 models on the same speedrun. Models differed at every stage, from choosing experiments to interpreting noisy results. Fable 5 and Opus 5 performed best, and no model produced a fundamentally new method. The wide spread between runs is consistent with the idea basins that fork-and-flush targets.</p>
+</section>
 <section id="open-questions" aria-labelledby="open-title">
 <h2 id="open-title">Evidence limits and X threads</h2>
-<p>The sources improve different parts of an agent system. Multi-harness RL changes model weights; memory dreaming revises stored notes; legal wake-sleep curates task lessons; Dream-RSI revises exploration policies. Their results use different tasks, baselines and cost measures, so the numbers should not be ranked against one another.</p>
+<p>The sources improve different parts of an agent system. Multi-harness RL and PRIME-RL change model weights; memory dreaming revises stored notes; legal wake-sleep curates task lessons; Dream-RSI revises exploration policies. Their results use different tasks, baselines and cost measures, so the numbers should not be ranked against one another.</p>
 <p>Engineering questions follow from those differences. Does a remembered lesson retain its source and scope? Can contradictory or stale notes be corrected? Does retrieval preserve quality while reducing cost? Does an improved policy transfer beyond the history used to select it? Answering these requires held-out evaluation and accounting for the offline work as well as online execution.</p>
 <h3>Highest-liked replies remain unresolved</h3>
 <p>The requested X threads did not expose a verifiable collection of reply bodies and like counts. No highest-liked reply summary is presented. A defensible ranking needs reply text, engagement counts and a collection timestamp; post popularity alone cannot establish which replies ranked highest.</p>
@@ -71,6 +87,10 @@ description: "Research notes on agent harnesses, context engineering, persistent
 <li><a href="https://github.com/adithya-s-k/FineEnvs">FineEnvs article and training resources</a> and <a href="https://huggingface.co/docs/trl/en/openenv#training-on-harnesses-training-real-coding-agents-harbor">TRL's experimental harness-training documentation</a>.</li>
 <li><a href="https://dream-rsi.com/">Dream-RSI project</a>, <a href="https://dream-rsi.com/assets/dream-rsi.pdf">technical report</a> and <a href="https://github.com/zhengkid/Dream-RSI">code</a>. The site's arXiv identifier is a placeholder; the direct report is the verified paper link.</li>
 <li><a href="https://x.com/nikogrupen/status/2108226990792900876?s=20">Niko Grupen's post</a> and <a href="https://x.com/i/article/2107322995048153088">The Return of Wake-Sleep</a>, supported by the supplied text attachment.</li>
+<li><a href="https://hallerite.com/posts/on-the-nature-of-the-swarm/">On the Nature of the Swarm</a> by Konstantin Dunas (hallerite).</li>
+<li><a href="https://arxiv.org/abs/2610.07447">Fork-and-Flush: Escaping Idea Basins in Autoresearch Agents</a> (arXiv 2610.07447).</li>
+<li><a href="https://arxiv.org/abs/2507.18224">Assemble Your Crew: Automatic Multi-agent Communication Topology Design via Autoregressive Graph Generation</a> (ARG-Designer, arXiv 2507.18224).</li>
+<li>Prime Intellect: <a href="https://primeintellect.ai/blog/multi-agent-systems">Multi-Agent Systems in PRIME-RL</a>, <a href="https://primeintellect.ai/blog/prime-agent">Prime Agent</a>, <a href="https://primeintellect.ai/auto-nanogpt">Autonomous AI research for the nanoGPT speedrun</a> and <a href="https://primeintellect.ai/blog/measuring-autonomous-research">Measuring Autonomous AI Research</a>.</li>
 </ul>
 <p>Related notes on this site: <a href="/multi-agent-learning-path/">multi-agent learning path</a>, <a href="/clinical-reasoning/">clinical reasoning and AI</a>, and <a href="/harness_for_rfantibody/">rfab-harness for antibody design campaigns</a>.</p>
 </section>

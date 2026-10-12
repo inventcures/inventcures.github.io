@@ -117,6 +117,8 @@ Start with two or three roles, establish a single-agent baseline, add evaluation
 
 These are intentionally outside the three-course path. Return to them only when you know what gap you are trying to fill.
 
+The recent papers and posts below are also discussed together, with notes on their evidence, in [AI agents: forking, swarms and autonomous research](/agents/#forking).
+
 ### If you want stronger general RL foundations
 
 [Stanford CS234: Reinforcement Learning with Emma Brunskill](https://web.stanford.edu/class/cs234/)

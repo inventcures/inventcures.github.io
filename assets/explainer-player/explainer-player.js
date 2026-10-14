@@ -70,6 +70,33 @@
     trackEl.addEventListener('load', function () { done(track); }, { once: true });
   }
 
+  function seconds(stamp) {
+    return stamp.trim().split(':').reduce(function (total, part) { return total * 60 + Number(part); }, 0);
+  }
+
+  function parseVtt(text) {
+    var cues = [];
+    text.replace(/\r/g, '').split(/\n{2,}/).forEach(function (block) {
+      var lines = block.split('\n');
+      for (var i = 0; i < lines.length; i++) {
+        var times = lines[i].split('-->');
+        if (times.length !== 2) continue;
+        cues.push({ start: seconds(times[0]), end: seconds(times[1].trim().split(/\s/)[0]), text: lines.slice(i + 1).join('\n') });
+        return;
+      }
+    });
+    return cues;
+  }
+
+  // Sandboxed hosts (an opaque-origin page) cannot fetch <track> files, so a page
+  // can register the WebVTT text in a script: window.xpTracks[name] = {captions, chapters}.
+  function inlineTrack(video, kind, text, done) {
+    var track = video.addTextTrack(kind, kind === 'captions' ? 'English' : 'Chapters', 'en');
+    track.mode = 'hidden';
+    parseVtt(text).forEach(function (c) { track.addCue(new VTTCue(c.start, c.end, c.text)); });
+    done(track);
+  }
+
   function Player(root) {
     var video = root.querySelector('video');
     if (!video || root.xpReady) return;
@@ -77,6 +104,13 @@
 
     var captionEl = root.querySelector('track[kind="captions"],track[kind="subtitles"]');
     var chapterEl = root.querySelector('track[kind="chapters"]');
+    var inline = (window.xpTracks || {})[root.getAttribute('data-tracks')];
+    if (inline) {
+      root.querySelectorAll('track').forEach(function (t) { t.remove(); });
+    }
+    var hasCaptions = Boolean(inline ? inline.captions : captionEl);
+    var hasChapters = Boolean(inline ? inline.chapters : chapterEl);
+    var captionTrack = null;
     var captionsOn = readPref(CAPTIONS_KEY, true);
     var chapters = [];
     var idleTimer = 0;
@@ -137,7 +171,7 @@
     var fsBtn = button('xp-fs', 'Full screen (f)', 'fullscreen');
 
     bar.append(playBtn, skipBtn, vol, time, spacer);
-    if (captionEl) bar.append(transcriptBtn, ccBtn);
+    if (hasCaptions) bar.append(transcriptBtn, ccBtn);
     bar.append(speedBtn);
     if (pipSupported) bar.append(pipBtn);
     if (fullscreenApi || nativeFullscreenOnly) bar.append(fsBtn);
@@ -145,7 +179,7 @@
     root.append(cues, big, chrome);
 
     var panel = null;
-    if (captionEl) {
+    if (hasCaptions) {
       panel = el('div', 'xp-transcript');
       panel.hidden = true;
       panel.setAttribute('aria-label', 'Transcript');
@@ -201,16 +235,16 @@
     }
 
     function showActiveCue() {
-      if (!captionsOn || !captionEl) return;
-      var active = captionEl.track.activeCues;
+      if (!captionsOn || !captionTrack) return;
+      var active = captionTrack.activeCues;
       cues.textContent = '';
-      if (!active) return;
-      for (var i = 0; i < active.length; i++) {
-        var span = el('span');
-        span.textContent = active[i].text.replace(/<[^>]+>/g, '');
-        cues.append(span);
-        if (i < active.length - 1) cues.append(document.createElement('br'));
-      }
+      if (!active || !active.length) return;
+      // Back-to-back cues may overlap by a few frames; show only the newest so lines do not stack.
+      var latest = active[0];
+      for (var i = 1; i < active.length; i++) if (active[i].startTime > latest.startTime) latest = active[i];
+      var span = el('span');
+      span.textContent = latest.text.replace(/<[^>]+>/g, '');
+      cues.append(span);
       if (panel && !panel.hidden) highlightTranscript();
     }
 
@@ -266,7 +300,7 @@
 
     function toggleFullscreen() {
       if (nativeFullscreenOnly) {
-        if (captionEl) captionEl.track.mode = captionsOn ? 'showing' : 'hidden';
+        if (captionTrack) captionTrack.mode = captionsOn ? 'showing' : 'hidden';
         video.webkitEnterFullscreen();
         return;
       }
@@ -338,20 +372,25 @@
       });
     }
 
-    var pendingTracks = (chapterEl ? 1 : 0) + (captionEl ? 1 : 0);
+    function loadTrack(kind, el, done) {
+      if (inline) inlineTrack(video, kind, inline[kind], done);
+      else trackCues(el, done);
+    }
+    var pendingTracks = (hasChapters ? 1 : 0) + (hasCaptions ? 1 : 0);
     function trackLoaded() {
       pendingTracks--;
-      if (pendingTracks === 0 && panel) buildTranscript(captionEl.track);
+      if (pendingTracks === 0 && panel) buildTranscript(captionTrack);
     }
-    if (chapterEl) {
-      trackCues(chapterEl, function (track) {
+    if (hasChapters) {
+      loadTrack('chapters', chapterEl, function (track) {
         chapters = Array.prototype.slice.call(track.cues || []);
         drawChapterMarks();
         trackLoaded();
       });
     }
-    if (captionEl) {
-      trackCues(captionEl, function (track) {
+    if (hasCaptions) {
+      loadTrack('captions', captionEl, function (track) {
+        captionTrack = track;
         track.addEventListener('cuechange', showActiveCue);
         renderCaptions();
         trackLoaded();
@@ -445,7 +484,7 @@
         case 'ArrowUp': if (onButton) return; e.preventDefault(); video.muted = false; video.volume = Math.min(1, video.volume + 0.1); break;
         case 'ArrowDown': if (onButton) return; e.preventDefault(); video.volume = Math.max(0, video.volume - 0.1); break;
         case 'm': case 'M': muteBtn.click(); break;
-        case 'c': case 'C': if (captionEl) setCaptions(!captionsOn); break;
+        case 'c': case 'C': if (hasCaptions) setCaptions(!captionsOn); break;
         case 'f': case 'F': toggleFullscreen(); break;
         default: return;
       }
@@ -466,7 +505,7 @@
     video.addEventListener('loadedmetadata', function () { renderTime(); drawChapterMarks(); });
     video.addEventListener('durationchange', renderTime);
     video.addEventListener('volumechange', renderVolume);
-    video.addEventListener('webkitendfullscreen', function () { if (captionEl) captionEl.track.mode = 'hidden'; });
+    video.addEventListener('webkitendfullscreen', function () { if (captionTrack) captionTrack.mode = 'hidden'; });
     document.addEventListener('fullscreenchange', onFullscreenChange);
     document.addEventListener('webkitfullscreenchange', onFullscreenChange);
     function onFullscreenChange() {
@@ -481,7 +520,7 @@
     renderPlay();
     renderVolume();
     renderTime();
-    if (captionEl) renderCaptions();
+    if (hasCaptions) renderCaptions();
   }
 
   function init() {

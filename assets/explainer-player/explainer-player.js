@@ -8,7 +8,6 @@
     volume: 'M4 9v6h4l5 4V5L8 9zm12.5 3A4.5 4.5 0 0 0 14 8v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z',
     muted: 'M4 9v6h4l5 4V5L8 9zm12.6 3 2.2-2.2-1.1-1.1-2.2 2.2-2.2-2.2-1.1 1.1 2.2 2.2-2.2 2.2 1.1 1.1 2.2-2.2 2.2 2.2 1.1-1.1z',
     transcript: 'M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1.5V8h4.5zM7 11v1.6h10V11zm0 3.5v1.6h10v-1.6zm0 3.5v1.6h7V18z',
-    cc: 'M19 4H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm-8 6.5H9.5V10h-2v4h2v-.5H11v1a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1zm7 0h-1.5V10h-2v4h2v-.5H18v1a1 1 0 0 1-1 1h-3a1 1 0 0 1-1-1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1z',
     pip: 'M19 11h-8v6h8zm4 8V5a2 2 0 0 0-2-2H3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2zm-2 0H3V5h18z',
     fullscreen: 'M7 14H5v5h5v-2H7zm-2-4h2V7h3V5H5zm12 7h-3v2h5v-5h-2zM14 5v2h3v3h2V5z',
     exitFullscreen: 'M5 16h3v3h2v-5H5zm3-8H5v2h5V5H8zm6 11h2v-3h3v-2h-5zm2-11V5h-2v5h5V8z'
@@ -164,7 +163,8 @@
     var time = el('span', 'xp-time', '0:00 / 0:00');
     var spacer = el('span', 'xp-spacer');
     var transcriptBtn = button('xp-transcript-btn', 'Transcript', 'transcript');
-    var ccBtn = button('xp-cc', 'Captions (c)', 'cc');
+    var ccBtn = button('xp-cc', 'Captions (c)');
+    ccBtn.innerHTML = '<span class="xp-cc-label">CC</span>';
     var speedBtn = button('xp-speed', 'Playback speed');
     speedBtn.textContent = '1×';
     var pipBtn = button('xp-pip', 'Picture in picture', 'pip');
@@ -229,6 +229,7 @@
 
     function renderCaptions() {
       ccBtn.setAttribute('aria-pressed', String(captionsOn));
+      ccBtn.title = captionsOn ? 'Turn captions off (c)' : 'Turn captions on (c)';
       cues.hidden = !captionsOn;
       if (!captionsOn) cues.textContent = '';
       else showActiveCue();

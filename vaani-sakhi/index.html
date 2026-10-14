@@ -313,9 +313,11 @@ details.src pre{white-space:pre-wrap;font-family:var(--mono);font-size:12px;back
 .notes li:target{background:var(--accent-soft);border-radius:8px}
 footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}
 </style>
+<link rel="stylesheet" href="/assets/sidenotes/sidenotes.css">
+<script src="/assets/sidenotes/sidenotes.js" defer></script>
 </head>
 <body>
-<main>
+<main data-sidenotes data-sidenotes-toc>
 
 <header>
 <p class="eyebrow">Women's health · Voice AI</p>
@@ -602,7 +604,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
   <li><a href="/care-routing/">When Consumer AI Routes Patients to Care<span>An essay on evaluating health AI as a pathway, not only an answer</span></a></li>
 </ul>
 
-<section class="notes" aria-labelledby="notes-h">
+<section class="notes" aria-labelledby="notes-h" data-sidenotes-list>
 <h2 id="notes-h">Selected references</h2>
 <ol>
   <li id="ref-gemini"><a href="https://ai.google.dev/gemini-api/docs/live">Gemini Live API</a>; <a href="https://ai.google.dev/gemini-api/docs/function-calling">Gemini function calling</a>.</li>

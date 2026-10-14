@@ -13,6 +13,8 @@ layout: null
 <meta property="og:description" content="Should the AI hand off to a doctor, and if so, which one? An essay on evaluating consumer health AI as a pathway and an operator, not only an answer.">
 <link rel="stylesheet" href="/assets/explainer-player/explainer-player.css">
 <script src="/assets/explainer-player/explainer-player.js" defer></script>
+<link rel="stylesheet" href="/assets/sidenotes/sidenotes.css">
+<script src="/assets/sidenotes/sidenotes.js" defer></script>
 <style>
 :root{
   --bg:#faf9f5;--card:#fffdf9;--fg:#29261b;--muted:#7a7466;--line:#e8e1d3;--soft:#f3ece0;
@@ -100,17 +102,29 @@ sup.fn a:hover,sup.fn a:focus-visible{background:var(--accent-soft)}
 .related a{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 16px;text-decoration:none;color:var(--fg)}
 .related a:hover,.related a:focus-visible{border-color:var(--accent)}
 .related span{display:block;font-size:14px;color:var(--muted)}
+
 </style>
 </head>
 <body>
-<main>
+<main data-sidenotes data-sidenotes-toc>
+<nav class="sn-toc" aria-label="On this page">
+  <p class="sn-toc-title">On this page</p>
+  <ol>
+    <li><a href="#video">Explainer video</a></li>
+    <li><a href="#essay">Essay</a></li>
+    <li><a href="#figure-1">Figure 1</a></li>
+    <li><a href="#further-reading">Further reading</a></li>
+    <li><a href="#related">Go deeper</a></li>
+    <li><a href="#notes-heading">References</a></li>
+  </ol>
+</nav>
 
 <header>
 <h1>When Consumer AI Routes Patients to Care</h1>
 <p class="lede">Should the AI hand off to a doctor, and if so, which one?</p>
 </header>
 
-<figure class="xp-figure">
+<figure class="xp-figure" id="video">
   <div class="xp">
     <video controls preload="metadata" playsinline poster="media/care-routing-explainer.jpg">
       <source src="media/care-routing-explainer.mp4" type="video/mp4">
@@ -121,7 +135,7 @@ sup.fn a:hover,sup.fn a:focus-visible{background:var(--accent-soft)}
   <figcaption class="xp-credit">A 3Blue1Brown-style explainer video, inspired by Grant Sanderson (<a href="https://www.youtube.com/@3blue1brown">3Blue1Brown on YouTube</a>). 16 minutes, captions on by default. <a class="xp-yt" href="https://www.youtube.com/watch?v=NUm1gtCvpic">Also on YouTube</a></figcaption>
 </figure>
 
-<article class="essay">
+<article class="essay" id="essay">
 
 <p>A person has felt pressure in the centre of their chest for two hours. They ask a health assistant what to do. The assistant recognises the risk and recommends urgent care. Most medical AI evaluations would stop there.</p>
 
@@ -228,8 +242,8 @@ sup.fn a:hover,sup.fn a:focus-visible{background:var(--accent-soft)}
   <li><a href="/care-routing-pilot/" target="_blank" rel="noopener">Synthetic pilot<span>Every calculation worked through</span></a></li>
 </ul>
 
-<section class="notes" aria-labelledby="notes-heading">
-<h2 id="notes-heading">Notes</h2>
+<section class="notes" aria-labelledby="notes-heading" data-sidenotes-list>
+<h2 id="notes-heading">References</h2>
 <ol>
   <li id="fn1">Wu Y, Liu TYA, Topol EJ, Keane PA. Integration of consumer AI into healthcare pathways. Nature Health. 2026. doi:10.1038/s44360-026-00195-x. <a class="backref" href="#fnref1" aria-label="Back to text for note 1">↩</a></li>
   <li id="fn2">McQuade CN, et al. Characteristics differentiating problem representation synthesis between novices and experts. J Hosp Med. 2024;19:468-474. doi:10.1002/jhm.13335; Bean AM, et al. Reliability of LLMs as medical assistants for the general public. Nat Med. 2026;32:609-615. doi:10.1038/s41591-025-04074-y. <a class="backref" href="#fnref2" aria-label="Back to text for note 2">↩</a></li>

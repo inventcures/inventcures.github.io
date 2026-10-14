@@ -1,136 +1,254 @@
 WEBVTT
 
 1
-00:00:00.120 --> 00:00:03.261
-Picture a night in
-a small town in Tamil Nadu.
+00:00:00.120 --> 00:00:03.482
+Picture a night in a village
+in Uttar Pradesh.
 
 2
-00:00:03.261 --> 00:00:08.451
-A woman is in pain, and her daughter turns
-to the local health worker with a
+00:00:03.482 --> 00:00:09.256
+An old man is in pain, and his daughter-in-law
+turns to the local health worker
 
 3
-00:00:08.451 --> 00:00:09.680
-question in Tamil.
+00:00:09.256 --> 00:00:11.083
+with a question in Hindi.
 
 4
-00:00:10.320 --> 00:00:14.086
-Her pain is worse
-at night. What should we do?
+00:00:11.720 --> 00:00:16.163
+Family caregiver: His pain
+is worse at night… What should we do?
 
 5
-00:00:15.520 --> 00:00:20.833
-Palli Sahayak is a voice assistant
-for palliative care, and it's open source.
+00:00:16.887 --> 00:00:20.648
+His pain is worse
+at night. What should we do?
 
 6
-00:00:20.833 --> 00:00:25.386
-You ask out loud, in your own
-language, by an ordinary phone call,
+00:00:22.087 --> 00:00:26.757
+Palli Sahayak is an open-source voice
+assistant for palliative care. Patients,
 
 7
-00:00:25.386 --> 00:00:28.284
-WhatsApp, or the web. No new app to learn.
+00:00:26.757 --> 00:00:28.912
+family caregivers, and ASHA workers,
 
 8
-00:00:29.520 --> 00:00:34.390
-It works like an open-book exam:
-it first looks the question up in a small,
+00:00:28.912 --> 00:00:33.642
+India's community health workers under the
+National Health Mission, can ask out
 
 9
-00:00:34.390 --> 00:00:39.456
-curated library of palliative care guidance,
-then gives a short spoken answer,
+00:00:33.642 --> 00:00:36.216
+loud, in their own
+language, by phone call,
 
 10
-00:00:39.456 --> 00:00:41.079
-built from what it found.
+00:00:36.216 --> 00:00:37.474
+WhatsApp, or the web.
 
 11
-00:00:42.387 --> 00:00:46.807
+00:00:38.687 --> 00:00:40.344
+Why look things up first?
+
+12
+00:00:40.344 --> 00:00:45.448
+A model answering from memory can
+sound sure and still be wrong. In medicine,
+
+13
+00:00:45.448 --> 00:00:46.575
+that's dangerous.
+
+14
+00:00:46.987 --> 00:00:51.829
+It searches trusted care guidelines for the
+passages closest in meaning to the
+
+15
+00:00:51.829 --> 00:00:53.754
+question, and keeps only those.
+
+16
+00:00:54.287 --> 00:00:59.851
+Then a language model turns them into
+a short, warm reply, in the caller's language.
+
+17
+00:00:59.851 --> 00:01:04.489
+The facts come from the guidelines; the
+model makes them easy to hear.
+
+18
+00:01:05.520 --> 00:01:09.941
 Here's a short excerpt from a completely
 fictional conversation: made up,
 
-12
-00:00:46.807 --> 00:00:48.019
+19
+00:01:09.941 --> 00:01:11.152
 with no real people.
 
-13
-00:00:50.854 --> 00:00:52.931
-A daughter, in Tamil.
-
-14
-00:00:53.454 --> 00:00:55.694
-Caregiver (daughter): Yes, they have.
-
-15
-00:00:55.694 --> 00:01:00.718
-But… we only give it when the pain comes, the
-lady next door said she'd get used to
-
-16
-00:01:00.718 --> 00:01:00.900
-it.
-
-17
-00:01:02.087 --> 00:01:06.931
-Palli Sahayak: Give it just
-as the doctor said. If times are set,
-
-18
-00:01:06.931 --> 00:01:11.254
-don't wait for the pain.
-Don't change the amount yourself;
-
-19
-00:01:11.254 --> 00:01:13.714
-if you're unsure, ask the doctor.
-
 20
-00:01:14.687 --> 00:01:18.156
-Palli Sahayak: Talk
-to your nurse or doctor today.
+00:01:13.987 --> 00:01:17.933
+Here, a family caregiver
+in rural Uttar Pradesh, in Hindi.
 
 21
-00:01:18.156 --> 00:01:20.724
-If the pain suddenly gets much worse,
+00:01:18.453 --> 00:01:21.025
+Family caregiver: Hello… namaste.
 
 22
-00:01:20.724 --> 00:01:26.414
-call 108 for emergency help right away, and
-tell your nurse too. You're not alone.
+00:01:21.025 --> 00:01:26.324
+My father-in-law has cancer…
+At night he groans a lot with the pain.
 
 23
-00:01:29.253 --> 00:01:33.410
+00:01:26.324 --> 00:01:30.454
+I just sent the kids
+to school, so I thought I'd ask.
+
+24
+00:01:30.920 --> 00:01:36.887
+Palli Sahayak: Namaste, good that you called.
+Has the doctor given pain medicine?
+
+25
+00:01:37.420 --> 00:01:40.720
+Family caregiver: Yes… there's medicine.
+
+26
+00:01:40.720 --> 00:01:47.567
+But… people in the village say too much
+becomes an addiction, so we give only half.
+
+27
+00:01:48.387 --> 00:01:52.338
+Palli Sahayak: Give the medicine
+just as the doctor wrote it;
+
+28
+00:01:52.338 --> 00:01:56.743
+don't change the amount yourself. If
+you're worried about addiction,
+
+29
+00:01:56.743 --> 00:01:57.974
+talk to the doctor.
+
+30
+00:01:58.220 --> 00:02:03.061
+Family caregiver: Okay…
+alright. And food— he hardly eats,
+
+31
+00:02:03.061 --> 00:02:07.485
+just a few spoons of
+porridge… should I make him eat?
+
+32
+00:02:08.453 --> 00:02:13.416
+Palli Sahayak: No forcing,
+just a little of whatever he likes.
+
+33
+00:02:13.416 --> 00:02:19.899
+Talk to your ASHA didi or doctor today, and
+if the pain suddenly gets much worse,
+
+34
+00:02:19.899 --> 00:02:21.500
+call 108 right away.
+
+35
+00:02:24.487 --> 00:02:28.643
 Notice the guard rails. It
 never gives specific medicine doses.
 
-24
-00:01:33.410 --> 00:01:38.688
+36
+00:02:28.643 --> 00:02:33.922
 If it hears danger signs, it tells
 the caller to call one zero eight right away,
 
-25
-00:01:38.688 --> 00:01:42.251
+37
+00:02:33.922 --> 00:02:37.485
 and flags the call as
 urgent for clinicians to review.
 
-26
-00:01:43.587 --> 00:01:49.013
-Palli Sahayak is an ongoing project,
-supported by the Gates Foundation and BIRAC.
+38
+00:02:38.820 --> 00:02:43.064
+We're now running a much more rigorous study
+with oncology and palliative care
 
-27
-00:01:49.013 --> 00:01:52.094
-It has not yet been
-tested with real patients.
+39
+00:02:43.064 --> 00:02:46.928
+clinical partners across India,
+to generate evidence on its benefit and
 
-28
-00:01:52.094 --> 00:01:57.386
-The code is open for anyone to read and use,
-and the full video tells the whole
+40
+00:02:46.928 --> 00:02:47.690
+effectiveness.
 
-29
-00:01:57.386 --> 00:01:57.788
-story.
+41
+00:02:47.690 --> 00:02:50.628
+Given the positive, encouraging
+response to phase one,
+
+42
+00:02:50.628 --> 00:02:52.696
+we're also considering women's health,
+
+43
+00:02:52.696 --> 00:02:55.689
+starting with personalised care
+advice after menopause.
+
+44
+00:02:56.320 --> 00:02:59.404
+Palli Sahayak is modular by
+design. A new country,
+
+45
+00:02:59.404 --> 00:03:03.907
+language or specialty needs its
+evidence-based clinical guidelines, a few
+
+46
+00:03:03.907 --> 00:03:07.361
+configuration changes,
+and a vocabulary of safety words,
+
+47
+00:03:07.361 --> 00:03:12.049
+which act as escalation triggers
+to a human clinician or licensed healthcare
+
+48
+00:03:12.049 --> 00:03:12.604
+provider.
+
+49
+00:03:12.604 --> 00:03:14.331
+No new code, and no new app.
+
+50
+00:03:15.753 --> 00:03:20.730
+Palli Sahayak is an ongoing project, and it
+has not yet been tested with real
+
+51
+00:03:20.730 --> 00:03:21.311
+patients.
+
+52
+00:03:21.920 --> 00:03:24.582
+The code is open
+for anyone to read and use.
+
+53
+00:03:24.582 --> 00:03:29.603
+And we're very grateful to the Gates
+Foundation and BIRAC for supporting us through
+
+54
+00:03:29.603 --> 00:03:31.841
+the Grand Challenges India programme.

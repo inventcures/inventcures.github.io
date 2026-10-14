@@ -1,0 +1,728 @@
+---
+layout: null
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vaani Sakhi</title>
+<meta name="description" content="Vaani Sakhi: a clinically grounded voice-AI agent for women's health, starting with postmenopausal care in India. Architecture, call workflow and how we test it.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vaani Sakhi: a voice sakhi for midlife women's health">
+<meta property="og:description" content="A clinically grounded voice-AI agent that a midlife woman or her ASHA can phone in Hindi or English. Architecture, call workflow and how we test it.">
+<link rel="stylesheet" href="/assets/explainer-player/explainer-player.css">
+<script src="/assets/explainer-player/explainer-player.js" defer></script>
+<style>
+:root{
+  --bg:#faf9f5;--card:#fffdf9;--fg:#29261b;--muted:#7a7466;--line:#e8e1d3;--soft:#f3ece0;
+  --accent:#c15f3c;--accent-soft:#f9e3dc;--blue:#2f6f8f;--blue-soft:#e3eef3;
+  --green:#3f6212;--green-soft:#e6efdc;--bad:#9a3412;--bad-soft:#fbeee8;
+  --amber:#8a5a12;--amber-soft:#fbf1d9;--slate:#4b5563;--slate-soft:#eef0f2;
+  --plum:#7a3b69;--plum-soft:#f4e6ef;
+  --serif:ui-serif,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#262624;--card:#2c2b28;--fg:#ece9e1;--muted:#a9a395;--line:#3d3a34;--soft:#34322e;
+  --accent:#e08a66;--accent-soft:#46271f;--blue:#7fb3cc;--blue-soft:#24343c;
+  --green:#b5d48c;--green-soft:#2e3a24;--bad:#f4ab93;--bad-soft:#3d2620;
+  --amber:#ecc77d;--amber-soft:#3a3120;--slate:#c3c8d0;--slate-soft:#30333a;
+  --plum:#e0a6cf;--plum-soft:#3a2634}}
+:root[data-theme="dark"]{
+  --bg:#262624;--card:#2c2b28;--fg:#ece9e1;--muted:#a9a395;--line:#3d3a34;--soft:#34322e;
+  --accent:#e08a66;--accent-soft:#46271f;--blue:#7fb3cc;--blue-soft:#24343c;
+  --green:#b5d48c;--green-soft:#2e3a24;--bad:#f4ab93;--bad-soft:#3d2620;
+  --amber:#ecc77d;--amber-soft:#3a3120;--slate:#c3c8d0;--slate-soft:#30333a;
+  --plum:#e0a6cf;--plum-soft:#3a2634}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 var(--sans)}
+main{max-width:860px;margin:0 auto;padding:56px 20px 72px}
+header{margin:0 0 22px}
+.eyebrow{font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,6vw,50px);line-height:1.1;letter-spacing:-.01em;margin:0 0 6px}
+h1 .dev{font-weight:500;color:var(--muted);font-size:.62em;margin-left:.25em;white-space:nowrap}
+.lede{font-size:19px;color:var(--muted);margin:0}
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(24px,4vw,29px);margin:0 0 10px;letter-spacing:-.005em}
+h3{font-size:17px;font-weight:650;margin:22px 0 6px}
+.kicker{font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);margin:64px 0 6px}
+p{margin:12px 0}
+a{color:var(--accent)}
+.prose p{font-family:var(--serif);font-size:18.5px;line-height:1.7}
+.small{font-size:14px;color:var(--muted)}
+code,.tool{font-family:var(--mono);font-size:.86em;background:var(--soft);border:1px solid var(--line);border-radius:5px;padding:.05em .35em;white-space:nowrap}
+sup.r{font-size:.7em;line-height:0}
+sup.r a{text-decoration:none;font-family:var(--sans);font-weight:600;padding:0 .1em}
+:target{scroll-margin-top:24px}
+
+/* facts strip */
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none}
+.facts li{font-size:13.5px;line-height:1.35;padding:6px 11px;border-radius:999px;background:var(--card);border:1px solid var(--line)}
+.facts b{font-weight:650}
+.facts .tbd{border-style:dashed}
+
+/* toc */
+.toc{display:flex;flex-wrap:wrap;gap:6px 14px;margin:26px 0 0;padding:12px 0 0;border-top:1px solid var(--line);font-size:14px}
+.toc a{text-decoration:none;color:var(--muted)}
+.toc a:hover,.toc a:focus-visible{color:var(--accent)}
+
+/* video slot */
+.video-slot{margin:30px 0 8px;aspect-ratio:16/9;border:1.5px dashed var(--line);border-radius:12px;background:repeating-linear-gradient(135deg,var(--card) 0 14px,var(--soft) 14px 15px);display:grid;place-items:center;text-align:center;padding:20px}
+.video-slot .play{width:58px;height:58px;border-radius:50%;background:var(--card);border:1px solid var(--line);display:grid;place-items:center;margin:0 auto 10px}
+.video-slot .play svg{width:22px;height:22px;margin-left:3px;fill:var(--muted)}
+.video-slot p{margin:2px 0;font-size:15px;color:var(--muted)}
+.video-slot p b{color:var(--fg);font-weight:650}
+
+/* summary card */
+.summary{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:16px 20px;margin:26px 0 0}
+.summary p{margin:8px 0;font-size:16.5px}
+
+/* stat tiles */
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:22px 0 0}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 14px 12px}
+.tile .num{font-family:var(--serif);font-size:34px;line-height:1.05;font-weight:600;color:var(--fg)}
+.tile .num small{font-size:.5em;color:var(--muted);font-weight:500}
+.tile .what{font-size:13.5px;line-height:1.4;margin-top:6px}
+.tile .src{font-size:12px;color:var(--muted);margin-top:6px}
+@media (max-width:720px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* figures */
+.fig{margin:22px 0 10px}
+.fig-body{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px 20px}
+.fig-title{font-family:var(--serif);font-weight:600;font-size:19px;text-align:center;margin:0 0 14px;color:var(--blue)}
+.fig figcaption{font-size:15px;color:var(--muted);padding:12px 2px 0;line-height:1.55}
+.fig figcaption b{color:var(--fg)}
+.mm{display:flex;justify-content:center;min-height:120px}
+.mm svg{max-width:100%;height:auto}
+.mm .loading{align-self:center;font-size:14px;color:var(--muted)}
+.swipe{display:none;font-size:12.5px;color:var(--muted);text-align:center;margin:8px 0 0}
+.steps{display:none;list-style:none;margin:0;padding:0;counter-reset:st}
+.steps li{position:relative;counter-increment:st;padding:8px 10px 8px 40px;margin:0 0 6px;border-radius:10px;font-size:14.5px;line-height:1.45;border:1px solid var(--line);background:var(--bg)}
+.steps li::before{content:counter(st);position:absolute;left:10px;top:8px;width:21px;height:21px;border-radius:50%;background:var(--fg);color:var(--bg);font-size:11.5px;font-weight:700;display:grid;place-items:center}
+.steps li.her{background:var(--plum-soft);border-color:var(--plum)}
+.steps li.tl{background:var(--amber-soft);border-color:var(--amber)}
+.steps li.hu{background:var(--blue-soft);border-color:var(--blue)}
+.steps li small{display:block;font-size:11.5px;font-weight:650;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:640px){
+  .mm.scroll{overflow-x:auto;justify-content:flex-start;-webkit-overflow-scrolling:touch}
+  .mm.scroll svg{min-width:560px}
+  .swipe{display:block}
+  .mm.seq{display:none}
+  .steps{display:block}
+}
+.mm-fallback{font-size:14.5px;color:var(--muted);margin:0}
+details.src{margin:10px 0 0;font-size:13.5px;color:var(--muted)}
+details.src summary{cursor:pointer}
+details.src pre{white-space:pre-wrap;font-family:var(--mono);font-size:12px;background:var(--soft);border-radius:8px;padding:10px;overflow-wrap:anywhere}
+
+
+/* architecture */
+.arch{display:flex;flex-direction:column;align-items:center;gap:0}
+.a-row{display:flex;justify-content:center;width:100%}
+.a-pair{display:grid;grid-template-columns:minmax(0,1fr) 120px minmax(0,1fr);align-items:center;gap:6px;max-width:680px}
+.a-node{position:relative;border:1px solid;border-radius:10px;padding:9px 12px;text-align:center;font-size:14.5px;font-weight:600;line-height:1.3}
+.a-node small{display:block;font-weight:400;font-size:12.5px;color:var(--muted);margin-top:2px}
+.a-node.person{background:var(--plum-soft);border-color:var(--plum);border-radius:999px;padding:9px 22px}
+.a-node.infra{background:var(--green-soft);border-color:var(--green)}
+.a-node.model{background:var(--blue-soft);border-color:var(--blue)}
+.a-node.store{background:var(--slate-soft);border-color:var(--slate)}
+.a-node.stretch{background:transparent;border:1.5px dashed var(--muted);color:var(--muted);font-weight:500;font-size:13.5px;max-width:560px}
+.a-log{max-width:680px;font-weight:500;font-size:14px}
+.loc{position:absolute;top:-9px;right:8px;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:0 6px;border-radius:4px;line-height:16px}
+.loc.in{background:var(--green);color:var(--bg)}
+.loc.cl{background:var(--blue);color:var(--bg)}
+.a-down{font-size:20px;line-height:1;color:var(--muted);padding:5px 0}
+.a-right{text-align:center;color:var(--muted);font-size:20px;line-height:1}
+.a-fb small{display:block;font-size:12px;line-height:1.3;margin-top:3px}
+.a-tools{width:100%;background:var(--amber-soft);border:1px solid var(--amber);border-radius:14px;padding:10px 12px 14px}
+.a-tools-h{margin:0 0 10px;text-align:center;font-size:13px;font-weight:650;color:var(--amber);letter-spacing:.02em}
+.a-cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.a-col{display:flex;flex-direction:column;align-items:center;text-align:center}
+.a-col .tool{background:var(--card);font-size:12.5px;font-weight:600;white-space:normal}
+.a-arrow{color:var(--muted);line-height:1;padding:4px 0}
+.a-store{width:100%;flex:1;border:1px solid var(--slate);background:var(--card);border-radius:10px;padding:8px;font-size:13.5px;font-weight:600;line-height:1.3}
+.a-store small{display:block;font-weight:400;font-size:12px;color:var(--muted);margin-top:2px}
+.a-store.person{border-color:var(--plum);background:var(--plum-soft)}
+@media (max-width:640px){
+  .a-pair{grid-template-columns:1fr;gap:4px}
+  .a-pair>.a-right:not(.a-fb){transform:rotate(90deg);padding:2px 0}
+  .a-fb>span{display:inline-block;transform:rotate(90deg)}
+  .a-cols{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* organ systems */
+.organs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.organ{border:1px solid;border-radius:10px;padding:10px 11px;font-size:13.5px;line-height:1.4}
+.organ .o-name{font-weight:650;font-size:14.5px;display:block;margin-bottom:4px}
+.organ .o-tool{display:block;margin-top:8px;padding-top:6px;border-top:1px dashed currentColor;font-size:12.5px;opacity:.95}
+.organ.heart{background:var(--bad-soft);border-color:var(--bad)}
+.organ.bone{background:var(--slate-soft);border-color:var(--slate)}
+.organ.gu{background:var(--blue-soft);border-color:var(--blue)}
+.organ.breast{background:var(--plum-soft);border-color:var(--plum)}
+.organ.mind{background:var(--amber-soft);border-color:var(--amber)}
+.converge{display:flex;flex-direction:column;align-items:center;margin:12px 0 0}
+.converge .arrow{font-size:22px;color:var(--muted);line-height:1}
+.plan{background:var(--green-soft);border:1.5px solid var(--green);border-radius:12px;padding:12px 16px;text-align:center;max-width:560px;margin-top:6px}
+.plan b{display:block;font-size:16px}
+.plan span{font-size:14px}
+.sdoh{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:10px 0 0;padding:0;list-style:none}
+.sdoh li{font-size:12.5px;padding:3px 9px;border-radius:999px;border:1px solid var(--green);background:var(--card)}
+.tensions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:18px 0 0}
+.tension{border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:14px;line-height:1.45;background:var(--bg)}
+.tension b{display:block;margin-bottom:2px}
+@media (max-width:720px){.organs{grid-template-columns:repeat(2,minmax(0,1fr))}.organs .organ:last-child{grid-column:1/-1}.tensions{grid-template-columns:1fr}}
+
+/* phase I -> II */
+.lessons{display:grid;gap:10px}
+.lesson{display:grid;grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr);align-items:stretch;gap:6px}
+.lesson .was,.lesson .now{border-radius:10px;padding:10px 12px;font-size:14px;line-height:1.45;border:1px solid}
+.lesson .was{background:var(--bad-soft);border-color:var(--bad)}
+.lesson .now{background:var(--green-soft);border-color:var(--green)}
+.lesson .to{display:grid;place-items:center;color:var(--muted);font-weight:700}
+.lesson-head{display:grid;grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr);gap:6px;font-size:12.5px;font-weight:650;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:560px){.lesson,.lesson-head{grid-template-columns:1fr}.lesson .to{transform:rotate(90deg);height:18px}.lesson-head span:nth-child(2),.lesson-head span:nth-child(3){display:none}}
+
+/* tools */
+.tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.toolcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.toolcard .t-name{font-family:var(--mono);font-size:14.5px;font-weight:600;color:var(--blue)}
+.toolcard p{margin:6px 0 0;font-size:14.5px;line-height:1.5}
+.toolcard ul{margin:6px 0 0;padding-left:1.1em;font-size:14px;line-height:1.5}
+.toolcard .never{margin-top:8px;font-size:13px;color:var(--bad)}
+@media (max-width:640px){.tools{grid-template-columns:1fr}}
+
+/* modes */
+.modes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.mode{border-radius:14px;padding:14px 16px;border:1px solid}
+.mode.woman{background:var(--plum-soft);border-color:var(--plum)}
+.mode.asha{background:var(--blue-soft);border-color:var(--blue)}
+.mode h3{margin:0 0 2px}
+.mode .who{font-size:13.5px;color:var(--muted);margin:0 0 8px}
+.mode ol{margin:0;padding-left:1.3em;font-size:14.5px;line-height:1.5}
+.mode ol li{margin:0 0 5px}
+.shared{margin:10px 0 0;text-align:center;font-size:14px;padding:8px 12px;border:1px dashed var(--line);border-radius:10px;background:var(--card)}
+@media (max-width:640px){.modes{grid-template-columns:1fr}}
+
+/* data boundary */
+.zones{display:grid;grid-template-columns:minmax(0,1.25fr) 70px minmax(0,1fr);gap:8px;align-items:center}
+.zone{border-radius:14px;padding:12px 14px;border:1.5px solid}
+.zone.india{background:var(--green-soft);border-color:var(--green)}
+.zone.cloud{background:var(--blue-soft);border-color:var(--blue)}
+.zone h3{margin:0 0 6px;font-size:15px}
+.zone ul{margin:0;padding-left:1.1em;font-size:14px;line-height:1.5}
+.pipe{text-align:center;font-size:12.5px;line-height:1.3;color:var(--muted)}
+.pipe span{display:block;font-size:22px;color:var(--fg)}
+@media (max-width:640px){.zones{grid-template-columns:1fr}.pipe span{transform:rotate(90deg)}}
+
+/* validation */
+.pipeline{list-style:none;margin:0 0 6px;padding:0;display:flex;align-items:stretch;gap:18px}
+.pipeline li{flex:1 1 0;position:relative;text-align:center;font-size:13.5px;line-height:1.35;padding:10px 8px;background:var(--blue-soft);border:1px solid var(--blue);border-radius:10px}
+.pipeline li b{display:block;font-size:14.5px}
+.pipeline li .m{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+.pipeline li.gate{background:var(--amber-soft);border-color:var(--amber)}
+.pipeline li.end{background:var(--green-soft);border-color:var(--green)}
+.pipeline li+li::before{content:"→";position:absolute;left:-16px;top:50%;transform:translateY(-50%);color:var(--blue);font-weight:700;font-size:15px}
+@media (max-width:640px){
+  .pipeline{flex-direction:column;gap:20px}
+  .pipeline li+li::before{content:"↓";left:50%;top:-19px;transform:translateX(-50%)}
+}
+.targets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:16px}
+.target{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--bg)}
+.target .v{font-family:var(--serif);font-size:26px;font-weight:600;line-height:1.1}
+.target .l{font-size:13.5px;line-height:1.4;margin-top:4px}
+.target.head{grid-column:1/-1;display:flex;align-items:center;gap:16px;background:var(--green-soft);border-color:var(--green);padding:16px 18px 26px}
+.target.head .v{font-size:40px}
+.compare{display:flex;align-items:flex-end;gap:16px;height:72px;margin-left:auto}
+.compare div{width:44px;border-radius:4px 4px 0 0;position:relative;background:var(--green)}
+.compare div.was{background:var(--muted);opacity:.55}
+.compare span{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);font-size:12px;white-space:nowrap;padding-bottom:2px}
+.compare em{position:absolute;top:100%;left:50%;transform:translateX(-50%);font-style:normal;font-size:11.5px;color:var(--muted);white-space:nowrap;padding-top:2px}
+@media (max-width:640px){.targets{grid-template-columns:repeat(2,minmax(0,1fr))}.target.head{flex-wrap:wrap}.target.head .compare{margin:10px auto 18px}}
+
+/* timeline */
+.gantt{display:grid;gap:9px}
+.g-axis,.g-track{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:2px}
+.g-axis{font-size:11.5px;color:var(--muted);text-align:center;margin-bottom:-2px}
+.g-row .g-label{font-size:13.5px;line-height:1.3;margin:0 0 3px}
+.g-row .g-label span{color:var(--muted);font-size:12.5px}
+.g-track{height:16px;background:repeating-linear-gradient(90deg,var(--soft) 0 calc(100%/12 - 2px),transparent calc(100%/12 - 2px) calc(100%/12));border-radius:3px}
+.g-bar{border-radius:4px;background:var(--blue);height:16px}
+.g-bar.study{background:var(--accent)}
+.g-bar.pilot{background:var(--green)}
+.g-bar.ms{background:var(--amber);border-radius:50%;width:16px;justify-self:center}
+.g-legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--muted);margin-top:12px}
+.g-legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+
+/* scope */
+.scope{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.scope .col{border-radius:14px;padding:14px 16px;border:1.5px solid}
+.scope .commit{background:var(--card);border-color:var(--fg)}
+.scope .stretch{background:var(--bg);border-color:var(--muted);border-style:dashed}
+.scope h3{margin:0 0 8px}
+.scope ul{margin:0;padding-left:1.1em;font-size:14.5px;line-height:1.5}
+.scope li{margin:0 0 6px}
+.scope .tag{display:inline-block;font-size:11.5px;font-weight:650;letter-spacing:.05em;text-transform:uppercase;border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:2px}
+.scope .commit .tag{background:var(--fg);color:var(--bg)}
+.scope .stretch .tag{border:1px solid var(--muted);color:var(--muted)}
+@media (max-width:640px){.scope{grid-template-columns:1fr}}
+
+/* profile */
+.profile{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.profile div{border:1px dashed var(--plum);border-radius:10px;padding:10px 12px;font-size:14px;line-height:1.45;background:var(--plum-soft)}
+.profile b{display:block}
+.guard{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px}
+.guard span{font-size:13px;padding:4px 10px;border-radius:999px;border:1px solid var(--green);background:var(--green-soft)}
+@media (max-width:640px){.profile{grid-template-columns:1fr}}
+
+/* budget */
+.bars{display:grid;gap:8px}
+.bar-row{display:grid;grid-template-columns:minmax(0,210px) minmax(0,1fr);gap:12px;align-items:center}
+.bar-row .bl{font-size:14px;line-height:1.3}
+.bar-row .bl span{display:block;font-size:12px;color:var(--muted)}
+.bar-track{position:relative;height:22px}
+.bar{height:22px;border-radius:0 4px 4px 0;background:var(--accent);min-width:4px}
+.bar-track .bv{position:absolute;top:50%;transform:translateY(-50%);font-size:13px;font-weight:600;padding-left:8px;white-space:nowrap}
+.bar-row:hover .bar,.bar-row:focus-within .bar{filter:brightness(1.12)}
+.stack{display:flex;height:34px;border-radius:6px;overflow:hidden;gap:2px;background:var(--card)}
+.stack div{height:100%;display:grid;place-items:center;font-size:12px;font-weight:600;color:var(--bg);white-space:nowrap;overflow:hidden}
+.stack-key{display:flex;flex-wrap:wrap;gap:6px 16px;margin:10px 0 0;padding:0;list-style:none;font-size:13.5px}
+.stack-key i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+@media (max-width:560px){.bar-row{grid-template-columns:1fr;gap:3px}}
+
+/* safety list */
+.checks{list-style:none;padding:0;margin:12px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 18px}
+.checks li{position:relative;padding-left:26px;font-size:15px;line-height:1.5}
+.checks li::before{content:"✓";position:absolute;left:0;top:0;color:var(--green);font-weight:700}
+@media (max-width:640px){.checks{grid-template-columns:1fr}}
+
+.team{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.team div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14.5px;line-height:1.45}
+.team b{display:block;font-size:15px}
+.team .tbd{border-style:dashed}
+@media (max-width:640px){.team{grid-template-columns:1fr}}
+
+.related{list-style:none;padding:0;margin:14px 0;display:grid;gap:10px}
+.related a{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 16px;text-decoration:none;color:var(--fg)}
+.related a:hover,.related a:focus-visible{border-color:var(--accent)}
+.related span{display:block;font-size:14px;color:var(--muted)}
+
+.notes ol{padding-left:1.8em;margin:14px 0}
+.notes li{font-size:14.5px;line-height:1.55;margin:0 0 6px;overflow-wrap:anywhere}
+.notes li:target{background:var(--accent-soft);border-radius:8px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+
+<header>
+<p class="eyebrow">Women's health · Voice AI</p>
+<h1>Vaani Sakhi <span class="dev" lang="hi">वाणी सखी</span></h1>
+<p class="lede">A clinically grounded voice-AI agent for women's health, starting with postmenopausal care. A woman, or her ASHA worker, phones it and talks in Hindi or English.</p>
+<nav class="toc" aria-label="On this page">
+  <a href="#why">Why</a><a href="#architecture">Architecture</a><a href="#call">A call, step by step</a><a href="#modes">Two modes</a><a href="#tools">Four tools</a><a href="#data">Safety and data</a><a href="#validation">Testing</a><a href="#aspiration">Where it's going</a>
+</nav>
+</header>
+
+<!--
+  VIDEO SLOT. The explainer video is still being made. Once it has been reviewed,
+  replace the .video-slot div below with the same player markup used on /care-routing/:
+
+  <figure class="xp-figure">
+    <div class="xp">
+      <video controls preload="metadata" playsinline poster="media/vaani-sakhi-explainer.jpg">
+        <source src="media/vaani-sakhi-explainer.mp4" type="video/mp4">
+        <track kind="captions" src="media/vaani-sakhi-explainer.vtt" srclang="en" label="English" default>
+        <track kind="chapters" src="media/vaani-sakhi-explainer.chapters.vtt" srclang="en" label="Chapters">
+      </video>
+    </div>
+    <figcaption class="xp-credit">...</figcaption>
+  </figure>
+-->
+<div class="video-slot" role="img" aria-label="Placeholder for the explainer video">
+  <div>
+    <div class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.14v13.72a1 1 0 0 0 1.52.85l10.6-6.86a1 1 0 0 0 0-1.7L9.52 4.29A1 1 0 0 0 8 5.14z"/></svg></div>
+    <p><b>Explainer video coming soon</b></p>
+    <p>It will play here with captions.</p>
+  </div>
+</div>
+
+<section class="summary" aria-labelledby="summary-h">
+<h2 id="summary-h" style="font-size:21px;margin:0">In brief</h2>
+<p>Indian women reach menopause around 46, about five years earlier than women in the West. Heart, bone, urinary and breast risks all rise in the years that follow, yet most women never talk to anyone about it. Vaani Sakhi is a phone voice agent that answers their questions. It never answers from the AI model's memory. Clinical statements come only from guidelines that clinicians have signed off, risk numbers come only from validated calculators the agent calls as tools, and every warning sign goes to a human.</p>
+<p>It builds on Palli Sahayak, our earlier voice helpline for palliative care, and reuses its engine. It works in two modes: a woman can call it herself, or an ASHA worker can call it during a home visit. The longer-term aspiration is a <em>sakhi</em>, a trusted friend, that gets to know each woman over many calls.</p>
+</section>
+
+<div class="tiles" role="list">
+  <div class="tile" role="listitem"><div class="num">~46 <small>yrs</small></div><div class="what">Average age at menopause in India, about five years earlier than in Western women</div><div class="src">IMS survey 2016<sup class="r"><a href="#ref-ims16">3</a></sup></div></div>
+  <div class="tile" role="listitem"><div class="num">~2%</div><div class="what">Breast-cancer screening coverage among Indian women</div><div class="src">South Asian J Cancer 2017<sup class="r"><a href="#ref-sajc">6</a></sup></div></div>
+  <div class="tile" role="listitem"><div class="num">7.8<small>/10</small></div><div class="what">Palli Sahayak expert score over 160 reviews. 59% endorsed it without reservation</div><div class="src">Earlier helpline evaluation</div></div>
+  <div class="tile" role="listitem"><div class="num">≥85%</div><div class="what">Target: answers to test cases that clinicians judge safe</div><div class="src">Vaani Sakhi safety bar</div></div>
+</div>
+
+<p class="kicker" id="why">The problem</p>
+<h2>Five organ systems change at once</h2>
+<div class="prose">
+<p>During the menopause transition, LDL ("bad") cholesterol and arterial stiffness rise, bone loss speeds up, and genitourinary symptoms such as vaginal dryness and urinary urgency begin. Women also face decisions about hormone therapy and breast cancer. Each of these has its own guideline, written by a different specialist society.</p>
+</div>
+
+<figure class="fig" id="fig-organs" aria-labelledby="fig-organs-cap">
+  <div class="fig-body">
+    <p class="fig-title">Separate guidelines, one woman</p>
+    <div class="organs">
+      <div class="organ heart"><span class="o-name">Heart</span>LDL cholesterol and arterial stiffness rise<span class="o-tool">WHO South-Asia CVD risk chart</span></div>
+      <div class="organ bone"><span class="o-name">Bone</span>Bone loss speeds up, fracture risk climbs<span class="o-tool">FRAX-India, IOF guidance</span></div>
+      <div class="organ gu"><span class="o-name">Genitourinary</span>Dryness, pain, urinary urgency<span class="o-tool">AUA/SUFU/AUGS 2025</span></div>
+      <div class="organ breast"><span class="o-name">Breast and cervix</span>Screening is rare, decisions are hard<span class="o-tool">ICMR screening, family-history rule</span></div>
+      <div class="organ mind"><span class="o-name">Symptoms and mind</span>Hot flushes, sleep, mood<span class="o-tool">Menopause Rating Scale, crisis flags</span></div>
+    </div>
+    <div class="converge" aria-hidden="true"><span class="arrow">↓ ↓ ↓ ↓ ↓</span></div>
+    <div class="converge">
+      <div class="plan"><b>One plan she can actually follow</b><span>combining the advice, and fitting it to the conditions she lives and works in</span>
+        <ul class="sdoh" aria-label="Her circumstances"><li>work</li><li>diet</li><li>family decision-making</li><li>money</li><li>language and literacy</li><li>privacy</li></ul>
+      </div>
+    </div>
+    <div class="tensions">
+      <div class="tension"><b>Hormone therapy</b>It eases hot flushes and protects bone, but breast and blood-clot risk limit who should take it. Vaani Sakhi explains the options and always refers the decision to a clinician.</div>
+      <div class="tension"><b>Exercise</b>Weight-bearing exercise helps bone, but painful knees or a heart condition change which exercise is safe for her.</div>
+    </div>
+  </div>
+  <figcaption id="fig-organs-cap"><b>The core challenge is whole-body advice.</b> Each organ system's guideline can recommend things that conflict with another's. The two tensions shown are illustrations. Combining guideline-backed advice into one personal plan is the hard problem we are working on. We do not claim to have solved it.</figcaption>
+</figure>
+
+<h3>What Palli Sahayak taught us</h3>
+<p style="margin-top:0">Palli Sahayak, our earlier helpline for palliative care, has the engine Vaani Sakhi reuses: hybrid search over guidelines, speech recognition in all 22 scheduled Indian languages, a five-pillar safety framework and a warm handoff to a human. Its expert evaluation showed where it failed, and Vaani Sakhi is designed around those failures.</p>
+<figure class="fig" style="margin-top:12px">
+  <div class="fig-body">
+    <div class="lesson-head" aria-hidden="true"><span>Palli Sahayak finding</span><span></span><span>Vaani Sakhi response</span></div>
+    <div class="lessons">
+      <div class="lesson"><div class="was">Most failures came in difficult escalation cases</div><div class="to" aria-hidden="true">→</div><div class="now">Escalation rules and thresholds co-written and signed off by clinicians</div></div>
+      <div class="lesson"><div class="was">Built for palliative care</div><div class="to" aria-hidden="true">→</div><div class="now">The same engine taken into midlife women's health, with fixed, validated risk calculators</div></div>
+      <div class="lesson"><div class="was">Experts who had not been calibrated disagreed sharply</div><div class="to" aria-hidden="true">→</div><div class="now">Calibrated raters, two ratings per answer, a senior adjudicator</div></div>
+      <div class="lesson"><div class="was">Evaluated by experts on written cases</div><div class="to" aria-hidden="true">→</div><div class="now">Also tested with real users, under clinician supervision</div></div>
+    </div>
+  </div>
+</figure>
+
+<p class="kicker" id="architecture">Architecture</p>
+<h2>How a call flows through the system</h2>
+<div class="prose">
+<p>The caller uses an ordinary phone line, so a basic feature phone without internet works. Personal identifiers are stripped in India before anything reaches a cloud model. Google's Gemini Live API handles real-time speech to speech for the proof of concept. If it is down, slow or weak in a dialect, the call switches to the Palli Sahayak speech pipeline from Sarvam AI and an open-weight model hosted in India. Whichever model answers, it must go through the same four tools.</p>
+</div>
+<figure class="fig" aria-labelledby="fig-arch-cap">
+  <div class="fig-body">
+    <p class="fig-title">System architecture</p>
+    <div class="arch">
+      <div class="a-row"><div class="a-node person">Woman or ASHA<small>any phone, Hindi or English</small></div></div>
+      <div class="a-down" aria-hidden="true">↓</div>
+      <div class="a-row a-pair">
+        <div class="a-node infra">Phone line and IVR<small>no internet needed</small></div>
+        <div class="a-right" aria-hidden="true">→</div>
+        <div class="a-node infra">De-identification<small>names and numbers stripped</small><span class="loc in">India</span></div>
+      </div>
+      <div class="a-down" aria-hidden="true">↓</div>
+      <div class="a-row a-pair">
+        <div class="a-node model">Gemini Live API<small>primary: real-time speech to speech</small><span class="loc cl">cloud</span></div>
+        <div class="a-right a-fb"><span aria-hidden="true">→</span><small>if down, slow or weak in a dialect</small></div>
+        <div class="a-node model">Sarvam speech + open-weight model<small>fallback</small><span class="loc in">India</span></div>
+      </div>
+      <div class="a-down" aria-hidden="true">↓</div>
+      <div class="a-node stretch">Future: her health profile, kept with consent, gives the tools context<span class="loc in">India</span></div>
+      <div class="a-down a-dash" aria-hidden="true">⇣</div>
+      <div class="a-tools">
+        <p class="a-tools-h">Same four tools, whichever model answers</p>
+        <div class="a-cols">
+          <div class="a-col"><span class="tool">retrieve_<wbr>guideline</span><span class="a-arrow" aria-hidden="true">↓</span><div class="a-store">Knowledge base<small>signed-off guidelines + knowledge graph</small></div></div>
+          <div class="a-col"><span class="tool">compute_<wbr>risk</span><span class="a-arrow" aria-hidden="true">↓</span><div class="a-store">Validated calculators<small>WHO CVD · FRAX-India · MRS</small></div></div>
+          <div class="a-col"><span class="tool">check_<wbr>red_<wbr>flags</span><span class="a-arrow" aria-hidden="true">↓</span><div class="a-store">Red-flag rules<small>CBAC + crisis signs</small></div></div>
+          <div class="a-col"><span class="tool">handoff</span><span class="a-arrow" aria-hidden="true">↓</span><div class="a-store person">Clinician or ASHA<small>call-back + SMS summary</small></div></div>
+        </div>
+      </div>
+      <div class="a-down" aria-hidden="true">↓</div>
+      <div class="a-node store a-log">Audit log: every answer stored with the model, knowledge-base and pathway versions that produced it<span class="loc in">India</span></div>
+    </div>
+  </div>
+  <figcaption id="fig-arch-cap"><b>One engine, two providers, four tools.</b> The model is a conversational layer. Knowledge, numbers and escalation all live in parts we control and can test. Every answer is logged with the versions of the model, knowledge base and pathways that produced it. The dashed profile store is a future aspiration.</figcaption>
+</figure>
+
+<h3>The rule the agent follows on every turn</h3>
+<figure class="fig" aria-labelledby="fig-turn-cap">
+  <div class="fig-body">
+    <div class="mm scroll" data-diagram="turn"><span class="loading">Drawing diagram…</span></div>
+    <p class="swipe">Swipe sideways to see the whole flowchart.</p>
+  </div>
+  <figcaption id="fig-turn-cap"><b>Safety checks come first, then numbers, then guideline text.</b> A simplified view of the decision logic. Red flags short-circuit everything else. Questions about hormone therapy or prescriptions always end in a referral, and the agent never prescribes. A family history of breast cancer triggers referral for risk assessment rather than a numeric score, because no breast-cancer score is validated in Indian women.</figcaption>
+</figure>
+
+<p class="kicker" id="call">Usage workflow</p>
+<h2>A call, step by step</h2>
+<div class="prose">
+<p>Here is a made-up example in woman mode. A 51-year-old woman calls from a feature phone. She has night sweats, her knees hurt, and her mother broke a hip.</p>
+</div>
+<figure class="fig" aria-labelledby="fig-seq-cap">
+  <div class="fig-body">
+    <div class="mm seq" data-diagram="seq"><span class="loading">Drawing diagram…</span></div>
+    <ol class="steps" aria-label="The example call, step by step">
+      <li class="her"><small>She says</small>"I wake up drenched at night, my knees hurt, and my mother broke her hip."</li>
+      <li class="tl"><small>Tool</small><code>check_red_flags</code>: none found.</li>
+      <li><small>Agent</small>Asks the Menopause Rating Scale questions, then <code>compute_risk</code> (MRS) returns her symptom score and severity band.</li>
+      <li><small>Agent</small>Asks her age, weight, height and past fractures, then <code>compute_risk</code> (FRAX-India) returns her 10-year fracture risk.</li>
+      <li class="tl"><small>Tool</small><code>retrieve_guideline</code> on hot flushes and bone health returns signed-off passages with source and date.</li>
+      <li><small>Agent</small>Gives self-care advice in her language, with sources.</li>
+      <li class="her"><small>She asks</small>"Should I take hormone tablets?"</li>
+      <li><small>Agent</small>Explains the options and never prescribes.</li>
+      <li class="hu"><small>Handoff</small>A clinician or ASHA is asked to call her back, and she gets an SMS summary to take to the doctor.</li>
+    </ol>
+    <p class="small" style="margin:10px 0 0">If she had mentioned bleeding after menopause, <code>check_red_flags</code> would fire and the call would go straight to handoff.</p>
+  </div>
+  <figcaption id="fig-seq-cap"><b>The model talks, the tools decide.</b> Every number she hears comes from a calculator, every clinical statement from a signed-off guideline passage with its source, and the hormone-therapy question goes to a clinician with an SMS summary she can take along.</figcaption>
+</figure>
+
+<p class="kicker" id="modes">Who it serves</p>
+<h2>Two modes, one engine</h2>
+<div class="modes">
+  <div class="mode woman">
+    <h3>Woman mode</h3>
+    <p class="who">For a midlife woman, on her own phone</p>
+    <ol>
+      <li>She calls and describes what is bothering her, in her own words.</li>
+      <li>The agent screens for red flags, then scores her symptoms and risks with the calculators.</li>
+      <li>It explains self-care from signed-off guidelines, in plain language.</li>
+      <li>It helps her prepare for a doctor's visit: what to mention, what to ask.</li>
+      <li>Anything that needs a clinician becomes a call-back request and an SMS summary.</li>
+    </ol>
+  </div>
+  <div class="mode asha">
+    <h3>ASHA assist mode</h3>
+    <p class="who">For an ASHA worker, during a home visit</p>
+    <ol>
+      <li>The ASHA fills in the CBAC checklist with the woman, as she already does.</li>
+      <li>She calls the agent for follow-up on the items the checklist raised.</li>
+      <li>The agent checks the answers against CBAC red flags, such as bleeding after menopause or a breast lump.</li>
+      <li>It suggests what the ASHA can explain on the spot, and what needs a referral.</li>
+      <li>Red flags go to a clinician, with an SMS summary to the ASHA.</li>
+    </ol>
+  </div>
+</div>
+<p class="shared">Both modes share the same knowledge base, tools, red-flag rules and audit log.</p>
+
+<p class="kicker" id="tools">Tools instead of recall</p>
+<h2>The four tools</h2>
+<p>Gemini Live can call functions: the model runs a piece of our own software and uses its result. That is how the agent stays grounded.</p>
+<div class="tools">
+  <div class="toolcard"><div class="t-name">retrieve_guideline</div><p>Hybrid search, combining keywords and meaning, over the curated guidelines. Returns passages with source, date and evidence grade.</p><ul><li>IMS 2020 and 2026, The Menopause Society 2022 and 2023, NICE NG23</li><li>AUA/SUFU/AUGS 2025, IOF, ICMR screening, NP-NCD and CBAC</li><li>Rewritten as structured text and a knowledge graph</li></ul></div>
+  <div class="toolcard"><div class="t-name">compute_risk</div><p>Three simple, validated calculators, nothing else.</p><ul><li>WHO South-Asia non-lab CVD chart: 10-year heart attack or stroke risk</li><li>FRAX-India: 10-year major fracture risk</li><li>Menopause Rating Scale: 11-question symptom score</li></ul><p class="never">No numeric breast-cancer score. Family history triggers a referral instead.</p></div>
+  <div class="toolcard"><div class="t-name">check_red_flags</div><p>Looks for warning signs that need prompt medical attention.</p><ul><li>CBAC items, such as postmenopausal bleeding or a breast lump</li><li>Warning signs of heart disease in women</li><li>Signs of a mental-health crisis</li></ul></div>
+  <div class="toolcard"><div class="t-name">handoff</div><p>Asks a clinician or the woman's ASHA to call her back, and sends her an SMS summary.</p><ul><li>Every red flag</li><li>Every hormone-therapy or prescription question</li><li>Anything the guidelines do not cover</li></ul></div>
+</div>
+
+<p class="kicker" id="data">Safety and data</p>
+<h2>What stays in India, what reaches the cloud</h2>
+<figure class="fig" aria-labelledby="fig-data-cap">
+  <div class="fig-body">
+    <div class="zones">
+      <div class="zone india">
+        <h3>Stays in India</h3>
+        <ul>
+          <li>Name, phone number and other identifiers</li>
+          <li>De-identification step</li>
+          <li>Fallback speech pipeline and open-weight model</li>
+          <li>Audit log with model, knowledge-base and pathway versions</li>
+          <li>Her health profile, in future, with consent</li>
+        </ul>
+      </div>
+      <div class="pipe"><span aria-hidden="true">→</span>de-identified turns only</div>
+      <div class="zone cloud">
+        <h3>Cloud model</h3>
+        <ul>
+          <li>Gemini Live, for the proof of concept</li>
+          <li>Sees conversation turns with identifiers removed</li>
+          <li>Nothing she shares is used to train models</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <figcaption id="fig-data-cap"><b>A provider-agnostic design.</b> To scale up and keep costs down, we will also test open models that can be hosted in India, such as MedGemma, on the same vignettes and safety checks as Gemini. We will switch to a locally hosted model only if it does well in that testing.</figcaption>
+</figure>
+<ul class="checks">
+  <li>The agent never prescribes</li>
+  <li>A clinician reviews every call during testing</li>
+  <li>Flagged calls get a regular safety review</li>
+  <li>Results reported separately for each subgroup</li>
+  <li>Indian calculators used where they exist, limits stated where they don't</li>
+  <li>Follows ICMR 2023 AI ethics guidelines and WHO 2024 guidance</li>
+  <li>Complies with the Digital Personal Data Protection Act, 2023</li>
+</ul>
+
+<p class="kicker" id="validation">Testing</p>
+<h2>How we test it before real users</h2>
+<figure class="fig" aria-labelledby="fig-val-cap">
+  <div class="fig-body">
+    <ol class="pipeline" aria-label="Testing sequence">
+      <li><b>1. Tool checks</b><span class="m">Every calculator must match its official version on hundreds of made-up patients, and the speech layer must pick out the right values.</span></li>
+      <li><b>2. Test cases</b><span class="m">Bilingual written cases rated by calibrated clinicians, two ratings each, with a senior clinician settling disagreements.</span></li>
+      <li class="gate"><b>3. Safety gate</b><span class="m">Real users only if the agent clears the safety bar.</span></li>
+      <li class="end"><b>4. Supervised use</b><span class="m">Women and ASHAs use it alongside usual care, never instead of it, with a clinician reviewing calls.</span></li>
+    </ol>
+    <div class="targets">
+      <div class="target head">
+        <div><div class="v">≥85%</div><div class="l">of test-case answers judged safe by clinicians: the headline target</div></div>
+        <div class="compare" aria-label="Palli Sahayak 59 percent endorsed, Vaani Sakhi target 85 percent safe">
+          <div class="was" style="height:59%"><span>59%</span><em>Earlier</em></div>
+          <div style="height:85%"><span>≥85%</span><em>Target</em></div>
+        </div>
+      </div>
+      <div class="target"><div class="v">&lt;1%</div><div class="l">critical-error rate</div></div>
+      <div class="target"><div class="v">≥95%</div><div class="l">red-flag sensitivity, and no emergency left without escalation</div></div>
+      <div class="target"><div class="v">κ ≥ 0.7</div><div class="l">agreement with clinicians on risk tier (Cohen's kappa)</div></div>
+      <div class="target"><div class="v">≥95%</div><div class="l">of clinical claims traceable to a source</div></div>
+      <div class="target"><div class="v">SUS ≥ 70</div><div class="l">System Usability Scale score with real users</div></div>
+      <div class="target"><div class="v">Per language</div><div class="l">word error rate and response delay, reported separately</div></div>
+    </div>
+  </div>
+  <figcaption id="fig-val-cap"><b>Benchmarks.</b> The agent is compared with the Palli Sahayak engine, the same Gemini model without tools or retrieval, and a leading general-purpose LLM. Off-the-shelf LLMs answer only 30–70% of menopause questions fully correctly<sup class="r"><a href="#ref-meno25">10</a></sup>, while tool-calling agents reach about 88% on clinical calculations<sup class="r"><a href="#ref-agentmd">11</a></sup>. Health outcomes such as screening uptake need a larger trial, and we do not claim them.</figcaption>
+</figure>
+
+<p class="kicker" id="aspiration">Where it's going</p>
+<h2>A sakhi that gets to know her</h2>
+<p style="margin-top:0"><em>Sakhi</em> is the Hindi word for a woman's trusted friend. Menopause shows up differently in every woman, so generic advice often misses. With her consent, the agent could keep a profile of what she chooses to share across calls and start each call from it. We are designing this profile and its privacy rules with women, ASHAs and clinicians, and it is an aspiration rather than a finished feature.</p>
+<div class="profile">
+  <div><b>Her body</b>Age at menopause or hysterectomy, conditions, medicines, risk-tool results</div>
+  <div><b>Her symptoms over time</b>Menopause Rating Scale scores from call to call</div>
+  <div><b>Her life</b>Language, literacy, diet, work, family decision-making, privacy needs</div>
+</div>
+<div class="guard" aria-label="Profile safeguards"><span>Changes how advice is explained, never what guidelines allow</span><span>Stored in India</span><span>She can hear or delete it anytime</span><span>Never used to train models</span></div>
+
+<p class="kicker">Related</p>
+<h2>Go deeper</h2>
+<ul class="related">
+  <li><a href="/palli-sahayak/">Palli Sahayak<span>The earlier voice helpline that Vaani Sakhi builds on</span></a></li>
+  <li><a href="/care-routing/">When Consumer AI Routes Patients to Care<span>An essay on evaluating health AI as a pathway, not only an answer</span></a></li>
+</ul>
+
+<section class="notes" aria-labelledby="notes-h">
+<h2 id="notes-h">Selected references</h2>
+<ol>
+  <li id="ref-gemini"><a href="https://ai.google.dev/gemini-api/docs/live">Gemini Live API</a>; <a href="https://ai.google.dev/gemini-api/docs/function-calling">Gemini function calling</a>.</li>
+  <li id="ref-asha"><a href="https://nhm.gov.in/index1.php?lang=1&amp;level=1&amp;sublinkid=150&amp;lid=226">National Health Mission: ASHA</a>.</li>
+  <li id="ref-ims16"><a href="https://doaj.org/article/2505290e8dbd4246b7c86240a31ad0d8">Indian Menopause Society survey, 2016</a>; <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11303560/">Babbar et al., Sci Rep 2024</a>.</li>
+  <li id="ref-elk"><a href="https://doi.org/10.1161/CIR.0000000000000912">El Khoudary et al. Menopause transition and cardiovascular disease risk. Circulation 2020</a>.</li>
+  <li id="ref-gsm"><a href="https://doi.org/10.1097/GME.0000000000000329">Portman and Gass. Genitourinary syndrome of menopause. Menopause 2014</a>; <a href="https://pubmed.ncbi.nlm.nih.gov/40298120/">AUA/SUFU/AUGS guideline, 2025</a>.</li>
+  <li id="ref-sajc"><a href="https://www.thieme-connect.de/products/all/doi/10.4103/2278-330X.208859">Breast-screening coverage in India. South Asian J Cancer 2017</a>.</li>
+  <li id="ref-guidelines"><a href="https://doi.org/10.4103/jmh.JMH_137_20">IMS 2020</a>; <a href="https://doi.org/10.4103/jmh.jmh_302_25">IMS 2026</a>; <a href="https://doi.org/10.1097/GME.0000000000002028">The Menopause Society 2022</a>; <a href="https://doi.org/10.1097/GME.0000000000002200">2023</a>; <a href="https://www.nice.org.uk/guidance/ng23">NICE NG23</a>; <a href="https://www.mohfw.gov.in/sites/default/files/NP-NCD%20Operational%20Guidelines_0.pdf">NP-NCD operational guidelines and CBAC, 2023</a>.</li>
+  <li id="ref-tools"><a href="https://doi.org/10.1016/S2214-109X%2819%2930318-3">Kaptoge et al. WHO CVD risk charts. Lancet Glob Health 2019</a>; <a href="https://frax.shef.ac.uk/FRAX/">FRAX</a>; <a href="https://doi.org/10.1186/1477-7525-2-45">Heinemann et al. Menopause Rating Scale. 2004</a>.</li>
+  <li id="ref-models"><a href="https://docs.sarvam.ai/api/getting-started/models/saarika">Sarvam AI speech models</a>; <a href="https://developers.google.com/health-ai-developer-foundations/medgemma">MedGemma</a>.</li>
+  <li id="ref-meno25"><a href="https://pubmed.ncbi.nlm.nih.gov/41329562">Accuracy of large language models on menopause questions. Menopause 2025</a>.</li>
+  <li id="ref-agentmd"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12549800/">AgentMD. Nat Commun 2025</a>.</li>
+  <li id="ref-ethics"><a href="https://www.icmr.gov.in/icmrobject/custom_data/pdf/Ethical-guidelines/Ethical_Guidelines_AI_Healthcare_2023.pdf">ICMR ethical guidelines for AI in healthcare, 2023</a>; <a href="https://www.who.int/news/item/18-01-2024-who-releases-ai-ethics-and-governance-guidance-for-large-multi-modal-models">WHO guidance on large multimodal models, 2024</a>; <a href="https://www.indiacode.nic.in/bitstream/123456789/22037/2/a2023-22.pdf">DPDP Act, 2023</a>.</li>
+</ol>
+</section>
+
+<footer>Vaani Sakhi is a research project in development, not a medical service.</footer>
+
+</main>
+
+<script>
+setTimeout(function(){document.querySelectorAll('.mm .loading').forEach(function(n){n.textContent='The diagram library did not load. Reload the page to try again.';});},12000);
+</script>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.esm.min.mjs";
+
+const DIAGRAMS = {
+turn: `flowchart TD
+  A(["She says something"]) --> B{"check_red_flags<br/>warning sign?"}
+  B -->|yes| H(["handoff<br/>call-back + SMS"])
+  B -->|no| C{"Hormone therapy or<br/>prescription question?"}
+  C -->|yes| R["Explain what the guideline says,<br/>then refer to a clinician"]
+  R --> H
+  C -->|no| E{"Needs a<br/>risk number?"}
+  E -->|yes| F["compute_risk<br/>WHO CVD · FRAX-India · MRS"]
+  E -->|no| G["retrieve_guideline<br/>passages with source, date, grade"]
+  F --> G
+  G --> I{"Is every clinical claim<br/>backed by a passage?"}
+  I -->|yes| J(["Answer in plain Hindi or English"])
+  I -->|no| K(["Don't answer from memory<br/>suggest a clinician"])
+  class H,K warn
+  class J person
+  class F,G,B tool`,
+
+seq: `sequenceDiagram
+  autonumber
+  actor W as Woman, 51
+  participant V as Vaani Sakhi
+  participant T as Tools
+  participant C as Clinician or ASHA
+  W->>V: "I wake up drenched at night, my knees hurt, and my mother broke her hip"
+  V->>T: check_red_flags
+  T-->>V: none found
+  V->>W: Asks the Menopause Rating Scale questions
+  V->>T: compute_risk (MRS)
+  T-->>V: symptom score and severity band
+  V->>W: Asks age, weight, height, past fractures
+  V->>T: compute_risk (FRAX-India)
+  T-->>V: 10-year fracture risk
+  V->>T: retrieve_guideline (hot flushes, bone health)
+  T-->>V: signed-off passages with source and date
+  V->>W: Self-care advice in her language, with sources
+  W->>V: "Should I take hormone tablets?"
+  V->>W: Explains the options, never prescribes
+  V->>T: handoff (hormone-therapy discussion)
+  T->>C: Call-back request
+  T-->>W: SMS summary to take to the doctor`
+};
+
+function v(name){return getComputedStyle(document.documentElement).getPropertyValue(name).trim();}
+
+function classDefs(){
+  return `
+  classDef person fill:${v('--plum-soft')},stroke:${v('--plum')},color:${v('--fg')}
+  classDef model fill:${v('--blue-soft')},stroke:${v('--blue')},color:${v('--fg')}
+  classDef tool fill:${v('--amber-soft')},stroke:${v('--amber')},color:${v('--fg')}
+  classDef store fill:${v('--slate-soft')},stroke:${v('--slate')},color:${v('--fg')}
+  classDef stretch fill:${v('--card')},stroke:${v('--muted')},color:${v('--muted')},stroke-dasharray:5 4
+  classDef infra fill:${v('--green-soft')},stroke:${v('--green')},color:${v('--fg')}
+  classDef warn fill:${v('--bad-soft')},stroke:${v('--bad')},color:${v('--fg')}`;
+}
+
+let renderCount = 0;
+async function renderAll(){
+  mermaid.initialize({
+    startOnLoad:false, theme:'base', securityLevel:'strict',
+    fontFamily:'Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+    flowchart:{htmlLabels:true, curve:'basis', useMaxWidth:true, padding:10, nodeSpacing:40, rankSpacing:36},
+    sequence:{useMaxWidth:true, mirrorActors:false, wrap:true, width:150, actorMargin:110, boxTextMargin:6, messageFontSize:14, noteFontSize:13},
+    themeVariables:{
+      fontSize:'14.5px',
+      background:v('--card'), mainBkg:v('--blue-soft'),
+      primaryColor:v('--blue-soft'), primaryBorderColor:v('--blue'), primaryTextColor:v('--fg'),
+      secondaryColor:v('--soft'), tertiaryColor:v('--soft'),
+      lineColor:v('--muted'), textColor:v('--fg'),
+      clusterBkg:v('--soft'), clusterBorder:v('--line'), titleColor:v('--fg'),
+      edgeLabelBackground:v('--card'),
+      actorBkg:v('--blue-soft'), actorBorder:v('--blue'), actorTextColor:v('--fg'), actorLineColor:v('--line'),
+      signalColor:v('--fg'), signalTextColor:v('--fg'),
+      noteBkgColor:v('--amber-soft'), noteBorderColor:v('--amber'), noteTextColor:v('--fg'),
+      sequenceNumberColor:v('--card'), labelBoxBkgColor:v('--soft'), labelTextColor:v('--fg'), loopTextColor:v('--fg')
+    }
+  });
+  for (const el of document.querySelectorAll('.mm[data-diagram]')){
+    let src = DIAGRAMS[el.dataset.diagram];
+    if (src.startsWith('flowchart')) src += classDefs();
+    try{
+      const {svg} = await mermaid.render('mm' + (renderCount++), src);
+      el.innerHTML = svg;
+    }catch(e){
+      el.innerHTML = '<p class="mm-fallback">This diagram could not be drawn in your browser.</p>';
+      console.error(e);
+    }
+  }
+}
+renderAll();
+const mq = matchMedia('(prefers-color-scheme: dark)');
+mq.addEventListener && mq.addEventListener('change', renderAll);
+new MutationObserver(renderAll).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+</script>
+</body>
+</html>

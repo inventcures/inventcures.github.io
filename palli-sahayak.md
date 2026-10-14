@@ -2,504 +2,209 @@
 permalink: /palli-sahayak/
 title: "Palli Sahayak"
 layout: default
+description: "An open-source voice assistant for palliative care: ask out loud, in your own language, from an ordinary phone, and hear a short answer drawn from curated care guidance."
 ---
 
-<style>
-  /* Palli Sahayak Landing Page Styles */
-  .ps-landing {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-  }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Gurmukhi:wght@400;600&family=Noto+Sans+Tamil:wght@400;600&display=swap">
+<link rel="stylesheet" href="/assets/explainer-player/explainer-player.css">
+<link rel="stylesheet" href="/palli-sahayak/ps.css">
+<script src="/assets/explainer-player/explainer-player.js" defer></script>
+<script src="/palli-sahayak/ps.js" defer></script>
 
-  .ps-hero {
-    text-align: center;
-    padding: 4rem 1rem;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    border-radius: 16px;
-    margin-bottom: 3rem;
-  }
+<div class="ps">
 
-  .ps-hero h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin: 0 0 1rem 0;
-    color: #1a1a1a;
-  }
-
-  .ps-hero .hindi {
-    font-size: 1.5rem;
-    color: #6b7280;
-    margin-bottom: 1.5rem;
-  }
-
-  .ps-hero .tagline {
-    font-size: 1.25rem;
-    color: #4b5563;
-    max-width: 600px;
-    margin: 0 auto 2rem;
-    line-height: 1.7;
-  }
-
-  .ps-hero .badge {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background: #22c55e;
-    color: white;
-    border-radius: 50px;
-    font-size: 0.875rem;
-    font-weight: 600;
-    margin: 0.25rem;
-  }
-
-  .ps-hero .links {
-    margin-top: 2rem;
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .ps-hero .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.2s;
-  }
-
-  .ps-hero .btn-primary {
-    background: #1a1a1a;
-    color: white;
-  }
-
-  .ps-hero .btn-primary:hover {
-    background: #333;
-    transform: translateY(-2px);
-  }
-
-  .ps-hero .btn-secondary {
-    background: white;
-    color: #1a1a1a;
-    border: 2px solid #e5e7eb;
-  }
-
-  .ps-hero .btn-secondary:hover {
-    border-color: #1a1a1a;
-  }
-
-  .ps-section {
-    margin-bottom: 4rem;
-  }
-
-  .ps-section h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #1a1a1a;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .ps-section h2::before {
-    content: '';
-    width: 4px;
-    height: 2rem;
-    background: #22c55e;
-    border-radius: 2px;
-  }
-
-  .ps-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .ps-card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 12px;
-    border: 1px solid #e5e7eb;
-    transition: all 0.2s;
-  }
-
-  .ps-card:hover {
-    border-color: #22c55e;
-    box-shadow: 0 4px 20px rgba(34, 197, 94, 0.1);
-  }
-
-  .ps-card-icon {
-    width: 48px;
-    height: 48px;
-    background: #f0fdf4;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-    color: #22c55e;
-  }
-
-  .ps-card h3 {
-    font-size: 1.125rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-  }
-
-  .ps-card p {
-    color: #6b7280;
-    font-size: 0.9375rem;
-    line-height: 1.6;
-  }
-
-  .ps-metric {
-    text-align: center;
-    padding: 2rem;
-    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-    border-radius: 12px;
-  }
-
-  .ps-metric-value {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #16a34a;
-  }
-
-  .ps-metric-label {
-    color: #6b7280;
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .ps-language-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 0.75rem;
-  }
-
-  .ps-language {
-    text-align: center;
-    padding: 1rem;
-    background: #f9fafb;
-    border-radius: 8px;
-    font-size: 0.875rem;
-  }
-
-  .ps-language .native {
-    display: block;
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-  }
-
-  .ps-arch-diagram {
-    background: #1a1a1a;
-    color: white;
-    padding: 2rem;
-    border-radius: 12px;
-    font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
-    font-size: 0.8125rem;
-    overflow-x: auto;
-    line-height: 1.6;
-  }
-
-  .ps-partners {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 2rem;
-  }
-
-  .ps-partner {
-    text-align: center;
-    padding: 1rem 1.5rem;
-    background: white;
-    border-radius: 8px;
-    border: 1px solid #e5e7eb;
-  }
-
-  .ps-partner-name {
-    font-weight: 600;
-    color: #1a1a1a;
-  }
-
-  .ps-partner-role {
-    font-size: 0.8125rem;
-    color: #6b7280;
-  }
-
-  .ps-validation-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    background: #eff6ff;
-    color: #1e40af;
-    border-radius: 6px;
-    font-size: 0.8125rem;
-    margin: 0.25rem;
-  }
-
-  @media (max-width: 640px) {
-    .ps-hero h1 {
-      font-size: 2rem;
-    }
-    .ps-hero .hindi {
-      font-size: 1.125rem;
-    }
-    .ps-hero .tagline {
-      font-size: 1rem;
-    }
-    .ps-section h2 {
-      font-size: 1.5rem;
-    }
-  }
-</style>
-
-<div class="ps-landing">
-
-  <!-- Hero Section -->
-  <section class="ps-hero">
-    <span class="badge">Digital Public Good</span>
-    <span class="badge">Open Source</span>
-    <h1>Palli Sahayak</h1>
-    <p class="hindi">पल्ली सहायक • பல்லி சகாயக்</p>
-    <p class="tagline">
-      A voice AI assistant democratizing access to palliative care information across India.<br>
-      Supporting patients, caregivers, and community health workers in 15+ languages.
-    </p>
-    <div class="links">
-      <a href="https://github.com/inventcures/rag_gci" target="_blank" rel="noopener" class="btn btn-primary">
-        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-        </svg>
-        GitHub
-      </a>
-      <a href="https://deepwiki.com/inventcures/rag_gci" target="_blank" rel="noopener" class="btn btn-secondary">
-        Documentation
-      </a>
-      <a href="#demo" class="btn btn-secondary">
-        Try Demo
-      </a>
+<section class="ps-hero" aria-labelledby="ps-title">
+  <p class="ps-eyebrow">Open source · voice first · palliative care</p>
+  <h1 id="ps-title">Palli Sahayak <span class="ps-native" lang="hi">पल्ली सहायक</span></h1>
+  <p class="ps-pitch">Ask a palliative-care question out loud, in your own language, from an ordinary phone, and hear a short, careful answer drawn from curated care guidance.</p>
+  <figure class="ps-video">
+    <div class="xp">
+      <video controls preload="none" playsinline poster="/palli-sahayak/media/ps-small.jpg">
+        <source src="/palli-sahayak/media/ps-small-720p.mp4" type="video/mp4">
+        <track kind="captions" src="/palli-sahayak/media/ps-small.vtt" srclang="en" label="English" default>
+      </video>
     </div>
-  </section>
+    <figcaption>Palli Sahayak in two minutes. Narration is a synthetic voice; the conversation excerpt is fictional.</figcaption>
+  </figure>
+  <div class="ps-actions">
+    <a class="ps-btn ps-btn-primary" href="#film">Watch the full film · 19 min</a>
+    <a class="ps-btn" href="https://github.com/inventcures/rag_gci">Read the code on GitHub</a>
+  </div>
+  <p class="ps-status"><span class="ps-pulse" aria-hidden="true"></span>An ongoing project. Phase-one expert review on synthetic cases; not yet tested with real patients.</p>
+</section>
 
-  <!-- Problem Section -->
-  <section class="ps-section">
-    <h2>The Challenge</h2>
-    <p style="color: #6b7280; max-width: 700px; line-height: 1.7; font-size: 1.0625rem;">
-      Only <strong>1-2% of the 10+ million patients</strong> needing palliative care in India have access to it. WHO projects a <strong>shortfall of 10 million health workers</strong> by 2030, predominantly in low- and middle-income countries. Language barriers, literacy gaps, and geographic isolation prevent millions from accessing essential symptom management and caregiving information.
-    </p>
-  </section>
+<section class="ps-section" id="why" aria-labelledby="why-h">
+  <p class="ps-kicker">Why it matters</p>
+  <h2 id="why-h">The care exists. The answers don't reach the bedside.</h2>
+  <p class="ps-lede">Palliative care eases pain, breathlessness and fear for people living with serious illness. Much of it can happen at home, with family and the community health workers who visit, if the people in the room can get a clear answer in a language they speak.</p>
+  <div class="ps-stats">
+    <div class="ps-stat"><span class="ps-stat-n">&lt;2 in 100</span><span class="ps-stat-t">of the more than ten million people in India who need palliative care receive it<sup><a href="#ref-1">1</a></sup></span></div>
+    <div class="ps-stat"><span class="ps-stat-n">1M+</span><span class="ps-stat-t">ASHA workers are the first link to care in rural India, with no standard training in palliative care</span></div>
+    <div class="ps-stat"><span class="ps-stat-n">22</span><span class="ps-stat-t">scheduled languages, while most palliative-care guidance is written in English</span></div>
+  </div>
+</section>
 
-  <!-- Solution Section -->
-  <section class="ps-section">
-    <h2>The Solution</h2>
-    <div class="ps-grid">
-      <div class="ps-card">
-        <div class="ps-card-icon">
-          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-          </svg>
-        </div>
-        <h3>Voice-First Design</h3>
-        <p>Users can call a toll-free number or use web voice to ask questions in their own language—no reading required.</p>
-      </div>
-      <div class="ps-card">
-        <div class="ps-card-icon">
-          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-          </svg>
-        </div>
-        <h3>Clinically Validated</h3>
-        <p>Built on Indian palliative care case vignettes curated by <strong>Pallium India</strong> and <strong>Max Healthcare</strong>.</p>
-      </div>
-      <div class="ps-card">
-        <div class="ps-card-icon">
-          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/>
-          </svg>
-        </div>
-        <h3>15+ Indian Languages</h3>
-        <p>Hindi, Bengali, Tamil, Marathi, Punjabi, Malayalam, and more—responding in the user's preferred language.</p>
-      </div>
-      <div class="ps-card">
-        <div class="ps-card-icon">
-          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-          </svg>
-        </div>
-        <h3>Privacy-First</h3>
-        <p>No personal health information stored. Session data expires after 24 hours. HIPAA-aligned practices.</p>
+<section class="ps-section" id="what" aria-labelledby="what-h">
+  <p class="ps-kicker">What it does</p>
+  <h2 id="what-h">A knowledgeable colleague on the phone</h2>
+  <div class="ps-cards">
+    <article class="ps-card ps-c-teal">
+      <h3>Ask by voice</h3>
+      <p>Call a phone number from any phone, send a WhatsApp text or voice note, or talk in the browser. No app to install, no screen to read.</p>
+    </article>
+    <article class="ps-card ps-c-blue">
+      <h3>Answers from a curated library</h3>
+      <p>It looks the question up in a small, local library of palliative-care guidance, searched by meaning, and replies in two or three spoken sentences built from what it found. Not the open internet.</p>
+    </article>
+    <article class="ps-card ps-c-green">
+      <h3>Guard rails built in</h3>
+      <p>It never gives specific medicine doses. Danger signs get one answer: call 108 now. When a person is needed, it records a request for a clinician.</p>
+    </article>
+  </div>
+  <p class="ps-not"><strong>What it doesn't do:</strong> examine anyone, replace a nurse's or doctor's judgement, or send an ambulance. The person at the bedside stays the decision-maker.</p>
+</section>
+
+<section class="ps-section" id="how" aria-labelledby="how-h">
+  <p class="ps-kicker">How it works</p>
+  <h2 id="how-h">From a spoken question to a spoken answer</h2>
+  <p class="ps-lede">These diagrams describe the code as it stands today in the open-source repository, including the parts that are built but switched off.</p>
+
+  <figure class="ps-fig" id="architecture" aria-labelledby="arch-cap">
+    <div class="ps-arch">
+      <ol class="ps-pipe">
+        <li class="ps-node ps-n-teal"><b>Ways in</b><span>Phone call (no app or mobile data needed) · WhatsApp text or voice note · browser voice</span></li>
+        <li class="ps-node"><b>Speech to text</b><span>Indian-language speech recognition; in the browser, a live voice model</span></li>
+        <li class="ps-node ps-n-warm"><b>Safety screen</b><span>Red-flag words, in five languages · a request to talk to a person</span></li>
+        <li class="ps-node ps-n-blue"><b>Search the library</b><span>Local, curated palliative-care documents, searched by meaning, across languages</span></li>
+        <li class="ps-node ps-n-blue"><b>Write the answer</b><span>A language model drafts two or three short sentences from the passages it found</span></li>
+        <li class="ps-node ps-n-warm"><b>Check the answer</b><span>A dose guard removes medicine doses · an evidence badge grades confidence A–E</span></li>
+        <li class="ps-node ps-n-teal"><b>Speak</b><span>The answer is spoken back in the caller's language</span></li>
+      </ol>
+      <div class="ps-side" aria-label="Around the pipeline">
+        <p class="ps-side-h">Around it</p>
+        <div class="ps-node ps-n-green"><b>Clinician review</b><span>All critical answers, half of the flagged ones and 5% of the rest are queued for clinicians to review; a separate console lets doctors grade answers to test cases</span></div>
+        <div class="ps-node"><b>Handoff requests</b><span>Recorded for a supervising clinician to follow up</span></div>
+        <div class="ps-node"><b>Medication reminders</b><span>Outbound voice calls, confirmed with a key press</span></div>
+        <div class="ps-node ps-n-config"><b>Language layer</b><span>Which languages each part hears and speaks is set in configuration</span></div>
+        <div class="ps-node ps-n-off"><b>Knowledge-graph check</b><span>Cross-checks drafted answers against a map of symptoms, medicines and side effects. Built, switched off by default</span></div>
       </div>
     </div>
-  </section>
+    <figcaption id="arch-cap"><b>System architecture.</b> One pipeline serves every way in. Dashed: built, but off by default.</figcaption>
+  </figure>
 
-  <!-- Impact Metrics -->
-  <section class="ps-section">
-    <h2>Impact Potential</h2>
-    <div class="ps-grid" style="grid-template-columns: repeat(3, 1fr);">
-      <div class="ps-metric">
-        <div class="ps-metric-value">10M+</div>
-        <div class="ps-metric-label">Patients Needing Care</div>
+  <figure class="ps-fig" id="one-call" aria-labelledby="call-cap">
+    <div class="ps-call">
+      <div class="ps-call-main">
+        <div class="ps-node ps-n-teal"><b>1 · The caller asks</b><span>out loud, in their language</span></div>
+        <div class="ps-node"><b>2 · Speech to text</b></div>
+        <div class="ps-decision"><span class="ps-diamond"><b>Red-flag words?</b></span><em class="ps-edge ps-edge-yes">yes →</em><em class="ps-edge ps-edge-no">no ↓</em></div>
+        <div class="ps-node"><b>3 · Asked for a person?</b><span>if yes, a handoff request is recorded for a clinician</span></div>
+        <div class="ps-node ps-n-blue"><b>4 · Search the library</b></div>
+        <div class="ps-node ps-n-blue"><b>5 · Draft a short answer</b><span>only from the passages found</span></div>
+        <div class="ps-node ps-n-warm"><b>6 · Remove any doses · add an evidence badge</b></div>
+        <div class="ps-node ps-n-teal"><b>7 · Speak the answer</b></div>
       </div>
-      <div class="ps-metric">
-        <div class="ps-metric-value">1M+</div>
-        <div class="ps-metric-label">ASHA Workers to Empower</div>
-      </div>
-      <div class="ps-metric">
-        <div class="ps-metric-value">15+</div>
-        <div class="ps-metric-label">Languages Supported</div>
+      <div class="ps-call-branch" aria-label="If red-flag words are heard">
+        <p class="ps-branch-h">Red-flag words heard</p>
+        <div class="ps-node ps-n-red"><b>Skip the AI answer</b></div>
+        <div class="ps-node ps-n-red"><b>Tell the caller to call 108 now</b><span>with what to do in the meantime</span></div>
+        <div class="ps-node ps-n-red"><b>Flag the call as urgent</b><span>for clinicians to review</span></div>
       </div>
     </div>
-  </section>
+    <figcaption id="call-cap"><b>One call, including the emergency path.</b> Red-flag words are listed today for English, Hindi, Bengali, Tamil and Gujarati. Palli Sahayak does not dispatch an ambulance.</figcaption>
+  </figure>
 
-  <!-- Architecture -->
-  <section class="ps-section">
-    <h2>System Architecture</h2>
-    <div class="ps-arch-diagram">
-<pre style="margin: 0; padding: 0;">
-┌─────────────────────────────────────────────────────────────┐
-│                    PALLI SAHAYAK                             │
-├─────────────────────────────────────────────────────────────┤
-│                                                              │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐                  │
-│  │  Phone   │  │ WhatsApp │  │   Web    │                  │
-│  │  Calls   │  │   Bot    │  │   Voice  │                  │
-│  └────┬─────┘  └────┬─────┘  └────┬─────┘                  │
-│       │             │              │                        │
-│       ▼             ▼              ▼                        │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐                  │
-│  │  Bolna   │  │  Twilio  │  │ Gemini   │                  │
-│  │   AI     │  │   STT    │  │  Live    │                  │
-│  └────┬─────┘  └────┬─────┘  └────┬─────┘                  │
-│       └─────────────┴─────────────┘                        │
-│                     │                                       │
-│                     ▼                                       │
-│         ┌───────────────────────┐                          │
-│         │   HYBRID RAG PIPELINE  │                          │
-│         │  ┌─────────┐ ┌──────┐  │                          │
-│         │  │ Vector  │ │  KG  │  │                          │
-│         │  │  Store  │ │Neo4j│  │                          │
-│         │  └─────────┘ └──────┘  │                          │
-│         └───────────────────────┘                          │
-│                     │                                       │
-│                     ▼                                       │
-│         ┌───────────────────────┐                          │
-│         │   RESPONSE GUARDS     │                          │
-│         │  • Dosage Check       │                          │
-│         │  • Safety Validation  │                          │
-│         │  • Source Citation    │                          │
-│         └───────────────────────┘                          │
-└─────────────────────────────────────────────────────────────┘
-</pre>
+  <figure class="ps-fig" id="add-language" aria-labelledby="lang-cap">
+    <ol class="ps-steps">
+      <li><b>Check speech support</b><span>Recognition for the language (a speech service or the live voice model), and a voice to answer in. Without one, answers fall back to Hindi speech.</span></li>
+      <li><b>Switch it on in configuration</b><span>Add the language code to the speech, live-voice, phone-line and enabled-language lists. No new app, no new code path.</span></li>
+      <li><b>Localise the safety layer</b><span>Red-flag words, emergency messages and dose-guard wording in the new language.</span></li>
+      <li><b>Clinicians test and approve</b><span>Before anyone relies on it.</span></li>
+    </ol>
+    <div class="ps-punjabi">
+      <p><b>Punjabi today</b></p>
+      <ul>
+        <li class="ok">Speech recognition and a voice, through the speech service</li>
+        <li class="no">Not yet in the live voice model; phone calls answer in Hindi</li>
+        <li class="no">No red-flag words yet</li>
+      </ul>
+      <p class="ps-small">So it isn't ready for use. The library itself needs no translation: search works across languages, and local care guidelines can be added.</p>
     </div>
-  </section>
+    <figcaption id="lang-cap"><b>How a new language is added.</b> Mostly configuration and clinical review, not new software.</figcaption>
+  </figure>
+</section>
 
-  <!-- Clinical Validation -->
-  <section class="ps-section">
-    <h2>Clinical Validation</h2>
-    <p style="color: #6b7280; margin-bottom: 1.5rem; line-height: 1.7;">
-      The knowledge base is built on <strong>Indian palliative care case vignettes</strong> developed and curated by:
-    </p>
-    <div class="ps-partners">
-      <div class="ps-partner">
-        <div class="ps-partner-name">Pallium India</div>
-        <div class="ps-partner-role">Clinical Content Partner</div>
-      </div>
-      <div class="ps-partner">
-        <div class="ps-partner-name">Max Healthcare</div>
-        <div class="ps-partner-role">Clinical Validation Partner</div>
-      </div>
-    </div>
-    <div style="margin-top: 2rem;">
-      <span class="ps-validation-badge">✓ Dosage Validation</span>
-      <span class="ps-validation-badge">✓ Safety Checks</span>
-      <span class="ps-validation-badge">✓ Hallucination Detection</span>
-      <span class="ps-validation-badge">✓ Source Citation</span>
-      <span class="ps-validation-badge">✓ Emergency Referral</span>
-    </div>
-  </section>
+<section class="ps-section" id="conversations" aria-labelledby="conv-h">
+  <p class="ps-kicker">Hear it</p>
+  <h2 id="conv-h">Three conversations</h2>
+  <p class="ps-fiction"><b>Fictional · synthetic demo.</b> These conversations are made up, with no real patients, families or health workers. They are realistic illustrations of how the tool is meant to respond, not clinical advice.</p>
+  <!-- conversations:start -->
+<div class="ps-convs"><div class="ps-tabs" role="tablist" aria-label="Fictional conversations"><button class="ps-tab" role="tab" type="button" id="tab-c1" aria-controls="conv-c1" aria-selected="true" tabindex="0">Tamil · daughter</button><button class="ps-tab" role="tab" type="button" id="tab-c2" aria-controls="conv-c2" aria-selected="false" tabindex="-1">Hindi · ASHA worker</button><button class="ps-tab" role="tab" type="button" id="tab-c3" aria-controls="conv-c3" aria-selected="false" tabindex="-1">Punjabi · patient</button></div><div class="ps-conv" id="conv-c1" role="tabpanel" aria-labelledby="tab-c1"><div class="ps-conv-head"><p class="ps-conv-title">Tamil · a daughter, about her mother · cancer pain and weight loss</p><audio controls preload="none" src="/palli-sahayak/media/conv-c1.m4a"></audio></div><ol class="ps-turns"><li class="ps-turn ps-human" tabindex="0" data-start="0.0" data-end="11.087"><span class="ps-who">Daughter</span><span class="ps-nat" lang="ta"><span class="ps-w" data-s="0.36" data-e="0.66" data-c="0">ஹலோ…</span> <span class="ps-w" data-s="1.321" data-e="1.841" data-c="0">அம்மாவுக்கு…</span> <span class="ps-w" data-s="2.542" data-e="2.682" data-c="0">அது</span> <span class="ps-w" data-s="2.702" data-e="2.942" data-c="0">வந்து,</span> <span class="ps-w" data-s="3.902" data-e="4.403" data-c="0">கேன்சர்.</span> <span class="ps-w" data-s="5.303" data-e="5.664" data-c="1">கீமோ</span> <span class="ps-w" data-s="5.724" data-e="5.924" data-c="1">எல்லாம்</span> <span class="ps-w" data-s="6.004" data-e="6.184" data-c="1">ஆறு</span> <span class="ps-w" data-s="6.224" data-e="6.444" data-c="1">மாசம்</span> <span class="ps-w" data-s="6.464" data-e="6.824" data-c="1">முன்னாடியே</span> <span class="ps-w" data-s="6.824" data-e="7.325" data-c="1">முடிஞ்சிடுச்சு,</span> <span class="ps-w" data-s="7.745" data-e="7.965" data-c="2">ஆனா</span> <span class="ps-w" data-s="8.025" data-e="8.265" data-c="2">இப்போ</span> <span class="ps-w" data-s="8.665" data-e="9.346" data-c="2">ராத்திரியானா</span> <span class="ps-w" data-s="9.686" data-e="10.106" data-c="2">வலியில</span> <span class="ps-w" data-s="10.146" data-e="10.627" data-c="2">அழுறாங்க…</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">Hello… my mother… um, she has cancer.</span> <span class="ps-ch" data-c="1">Chemo and all finished six months back,</span> <span class="ps-ch" data-c="2">but now, every night, she cries with pain…</span>)</span></li><li class="ps-turn ps-bot" tabindex="0" data-start="11.537" data-end="19.254"><span class="ps-who">Palli Sahayak</span><span class="ps-nat" lang="ta"><span class="ps-w" data-s="12.499" data-e="12.9" data-c="0">வணக்கம்.</span> <span class="ps-w" data-s="13.662" data-e="14.063" data-c="0">சொல்லுங்க,</span> <span class="ps-w" data-s="14.704" data-e="15.105" data-c="0">கேக்குறேன்.</span> <span class="ps-w" data-s="16.047" data-e="16.268" data-c="1">இந்த</span> <span class="ps-w" data-s="16.849" data-e="17.25" data-c="1">ராத்திரி</span> <span class="ps-w" data-s="17.29" data-e="17.511" data-c="1">வலி</span> <span class="ps-w" data-s="17.932" data-e="18.232" data-c="1">எத்தனை</span> <span class="ps-w" data-s="18.232" data-e="18.513" data-c="1">நாளா</span> <span class="ps-w" data-s="18.533" data-e="18.713" data-c="1">இருக்கு?</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">Hello. Go on, I&#x27;m listening.</span> <span class="ps-ch" data-c="1">How many days has this night pain been there?</span>)</span></li><li class="ps-turn ps-human" tabindex="0" data-start="19.604" data-end="30.89"><span class="ps-who">Daughter</span><span class="ps-nat" lang="ta"><span class="ps-w" data-s="19.964" data-e="20.144" data-c="0">ஒரு</span> <span class="ps-w" data-s="20.184" data-e="20.544" data-c="0">வாரம்…</span> <span class="ps-w" data-s="21.305" data-e="21.485" data-c="0">இல்ல,</span> <span class="ps-w" data-s="21.985" data-e="22.325" data-c="0">பத்து</span> <span class="ps-w" data-s="22.385" data-e="22.586" data-c="0">நாள்.</span> <span class="ps-w" data-s="23.206" data-e="23.586" data-c="1">முன்னாடி</span> <span class="ps-w" data-s="23.846" data-e="24.226" data-c="1">முறுக்கு</span> <span class="ps-w" data-s="24.266" data-e="24.527" data-c="1">சுட்டு</span> <span class="ps-w" data-s="24.627" data-e="25.087" data-c="1">எல்லாருக்கும்</span> <span class="ps-w" data-s="25.127" data-e="25.587" data-c="1">குடுப்பாங்க…</span> <span class="ps-w" data-s="26.588" data-e="26.788" data-c="2">இப்போ</span> <span class="ps-w" data-s="26.828" data-e="26.968" data-c="2">ஒரு</span> <span class="ps-w" data-s="27.608" data-e="27.868" data-c="2">இட்லி</span> <span class="ps-w" data-s="27.968" data-e="28.229" data-c="2">கூட</span> <span class="ps-w" data-s="28.229" data-e="28.869" data-c="2">வேணாங்கறாங்க,</span> <span class="ps-w" data-s="29.709" data-e="30.43" data-c="2">மெலிஞ்சுட்டாங்க.</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">A week… no, ten days.</span> <span class="ps-ch" data-c="1">She used to make murukku for everyone…</span> <span class="ps-ch" data-c="2">now she won&#x27;t even have one idli; she&#x27;s got so thin.</span>)</span></li><li class="ps-turn ps-bot" tabindex="0" data-start="31.29" data-end="37.658"><span class="ps-who">Palli Sahayak</span><span class="ps-nat" lang="ta"><span class="ps-w" data-s="31.69" data-e="31.991" data-c="0">முறுக்கு</span> <span class="ps-w" data-s="32.051" data-e="32.271" data-c="0">செஞ்சு</span> <span class="ps-w" data-s="32.291" data-e="32.912" data-c="0">குடுப்பாங்களா…</span> <span class="ps-w" data-s="33.733" data-e="34.013" data-c="1">இப்போ</span> <span class="ps-w" data-s="34.334" data-e="34.574" data-c="1">தண்ணி</span> <span class="ps-w" data-s="34.594" data-e="35.195" data-c="1">குடிக்கறாங்களா?</span> <span class="ps-w" data-s="35.855" data-e="36.136" data-c="1">ராத்திரி</span> <span class="ps-w" data-s="36.216" data-e="36.857" data-c="1">தூங்கறாங்களா?</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">She used to make murukku…</span> <span class="ps-ch" data-c="1">Is she drinking water now? Does she sleep at night?</span>)</span></li><li class="ps-turn ps-human" tabindex="0" data-start="37.908" data-end="46.905"><span class="ps-who">Daughter</span><span class="ps-nat" lang="ta"><span class="ps-w" data-s="38.249" data-e="38.75" data-c="0">தண்ணி</span> <span class="ps-w" data-s="39.751" data-e="40.333" data-c="0">கொஞ்சம்</span> <span class="ps-w" data-s="40.393" data-e="40.934" data-c="0">குடிக்கறாங்க.</span> <span class="ps-w" data-s="41.475" data-e="42.036" data-c="0">தூக்கம்—</span> <span class="ps-w" data-s="42.417" data-e="42.597" data-c="0">இல்ல,</span> <span class="ps-w" data-s="42.837" data-e="43.519" data-c="0">தூக்கமே</span> <span class="ps-w" data-s="43.559" data-e="43.739" data-c="0">இல்ல.</span> <span class="ps-w" data-s="44.42" data-e="44.741" data-c="1">தம்பி</span> <span class="ps-w" data-s="45.001" data-e="45.603" data-c="1">துபாய்லேர்ந்து</span> <span class="ps-w" data-s="45.643" data-e="45.863" data-c="1">டெய்லி</span> <span class="ps-w" data-s="45.923" data-e="46.083" data-c="1">போன்</span> <span class="ps-w" data-s="46.144" data-e="46.464" data-c="1">பண்றான்…</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">She drinks a little water. Sleep— no, no sleep at all.</span> <span class="ps-ch" data-c="1">My brother keeps calling from Dubai every day…</span>)</span></li><li class="ps-turn ps-bot" tabindex="0" data-start="47.205" data-end="54.532"><span class="ps-who">Palli Sahayak</span><span class="ps-nat" lang="ta"><span class="ps-w" data-s="47.625" data-e="47.806" data-c="0">இது</span> <span class="ps-w" data-s="48.106" data-e="48.666" data-c="0">கஷ்டமான</span> <span class="ps-w" data-s="48.747" data-e="49.087" data-c="0">நேரம்.</span> <span class="ps-w" data-s="49.547" data-e="49.748" data-c="0">நீங்க</span> <span class="ps-w" data-s="49.808" data-e="50.108" data-c="0">நல்லா</span> <span class="ps-w" data-s="50.148" data-e="50.689" data-c="0">பாத்துக்கறீங்க.</span> <span class="ps-w" data-s="51.469" data-e="51.83" data-c="1">டாக்டர்</span> <span class="ps-w" data-s="52.23" data-e="52.55" data-c="1">வலிக்கு</span> <span class="ps-w" data-s="52.631" data-e="52.971" data-c="1">மருந்து</span> <span class="ps-w" data-s="53.091" data-e="53.311" data-c="1">எழுதிக்</span> <span class="ps-w" data-s="53.331" data-e="53.952" data-c="1">குடுத்திருக்காங்களா?</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">This is a hard time. You&#x27;re looking after her well.</span> <span class="ps-ch" data-c="1">Has the doctor prescribed medicine for the pain?</span>)</span></li><li class="ps-turn ps-human" tabindex="0" data-start="55.132" data-end="62.818"><span class="ps-who">Daughter</span><span class="ps-nat" lang="ta"><span class="ps-w" data-s="55.512" data-e="56.033" data-c="0">ஆமா,</span> <span class="ps-w" data-s="56.353" data-e="56.973" data-c="0">குடுத்திருக்காங்க.</span> <span class="ps-w" data-s="57.033" data-e="57.434" data-c="1">ஆனா…</span> <span class="ps-w" data-s="58.655" data-e="58.995" data-c="1">வலி</span> <span class="ps-w" data-s="59.075" data-e="59.415" data-c="1">வந்தா</span> <span class="ps-w" data-s="59.455" data-e="59.896" data-c="1">மட்டும்தான்</span> <span class="ps-w" data-s="59.916" data-e="60.316" data-c="1">குடுக்கறோம்,</span> <span class="ps-w" data-s="60.796" data-e="61.377" data-c="2">பழகிடும்னு</span> <span class="ps-w" data-s="61.397" data-e="61.597" data-c="2">பக்கத்து</span> <span class="ps-w" data-s="61.597" data-e="61.777" data-c="2">வீட்டு</span> <span class="ps-w" data-s="61.777" data-e="61.937" data-c="2">அக்கா</span> <span class="ps-w" data-s="61.957" data-e="62.358" data-c="2">சொன்னாங்க.</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">Yes, they have.</span> <span class="ps-ch" data-c="1">But… we only give it when the pain comes,</span> <span class="ps-ch" data-c="2">the lady next door said she&#x27;d get used to it.</span>)</span></li><li class="ps-turn ps-bot" tabindex="0" data-start="63.768" data-end="75.636"><span class="ps-who">Palli Sahayak</span><span class="ps-nat" lang="ta"><span class="ps-w" data-s="64.749" data-e="65.149" data-c="0">டாக்டர்</span> <span class="ps-w" data-s="65.209" data-e="65.849" data-c="0">சொன்னபடியே</span> <span class="ps-w" data-s="65.889" data-e="66.21" data-c="0">குடுங்க.</span> <span class="ps-w" data-s="66.79" data-e="67.11" data-c="1">நேரம்</span> <span class="ps-w" data-s="67.15" data-e="67.771" data-c="1">குறிச்சிருந்தா,</span> <span class="ps-w" data-s="68.131" data-e="68.351" data-c="1">வலி</span> <span class="ps-w" data-s="68.391" data-e="68.611" data-c="1">வரும்</span> <span class="ps-w" data-s="68.631" data-e="68.831" data-c="1">வரை</span> <span class="ps-w" data-s="68.871" data-e="69.632" data-c="1">காத்திருக்காதீங்க.</span> <span class="ps-w" data-s="70.352" data-e="70.993" data-c="2">அளவை</span> <span class="ps-w" data-s="70.993" data-e="71.393" data-c="2">நீங்களே</span> <span class="ps-w" data-s="71.413" data-e="71.993" data-c="2">மாத்தாதீங்க;</span> <span class="ps-w" data-s="72.574" data-e="73.074" data-c="2">சந்தேகம்</span> <span class="ps-w" data-s="73.094" data-e="73.414" data-c="2">இருந்தா</span> <span class="ps-w" data-s="73.774" data-e="74.355" data-c="2">டாக்டர்கிட்ட</span> <span class="ps-w" data-s="74.415" data-e="74.775" data-c="2">கேளுங்க.</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">Give it just as the doctor said.</span> <span class="ps-ch" data-c="1">If times are set, don&#x27;t wait for the pain.</span> <span class="ps-ch" data-c="2">Don&#x27;t change the amount yourself; if you&#x27;re unsure, ask the doctor.</span>)</span></li><li class="ps-turn ps-human" tabindex="0" data-start="75.636" data-end="82.047"><span class="ps-who">Daughter</span><span class="ps-nat" lang="ta"><span class="ps-w" data-s="75.636" data-e="75.636" data-c="0">சரி…</span> <span class="ps-w" data-s="76.075" data-e="76.355" data-c="0">சரி.</span> <span class="ps-w" data-s="77.738" data-e="78.48" data-c="1">சாப்பாடு—</span> <span class="ps-w" data-s="79.742" data-e="80.644" data-c="1">கொஞ்சமாவது</span> <span class="ps-w" data-s="80.744" data-e="81.606" data-c="1">வற்புறுத்தணுமா?</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">Okay… okay.</span> <span class="ps-ch" data-c="1">Food— should I push her to eat at least a little?</span>)</span></li><li class="ps-turn ps-bot" tabindex="0" data-start="82.597" data-end="92.085"><span class="ps-who">Palli Sahayak</span><span class="ps-nat" lang="ta"><span class="ps-w" data-s="83.418" data-e="84.478" data-c="0">கட்டாயப்படுத்தாதீங்க.</span> <span class="ps-w" data-s="85.039" data-e="85.439" data-c="1">அவங்களுக்கு</span> <span class="ps-w" data-s="85.519" data-e="86.08" data-c="1">பிடிச்சதை</span> <span class="ps-w" data-s="86.46" data-e="86.8" data-c="1">கொஞ்சம்</span> <span class="ps-w" data-s="86.82" data-e="87.161" data-c="1">கொஞ்சமா</span> <span class="ps-w" data-s="87.221" data-e="87.501" data-c="1">குடுங்க.</span> <span class="ps-w" data-s="88.261" data-e="88.502" data-c="2">வாய்</span> <span class="ps-w" data-s="88.602" data-e="89.082" data-c="2">வறண்டா,</span> <span class="ps-w" data-s="89.502" data-e="89.983" data-c="2">அடிக்கடி</span> <span class="ps-w" data-s="90.363" data-e="90.683" data-c="2">கொஞ்சம்</span> <span class="ps-w" data-s="90.723" data-e="90.944" data-c="2">தண்ணி</span> <span class="ps-w" data-s="90.984" data-e="91.264" data-c="2">குடுங்க.</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">Don&#x27;t force her.</span> <span class="ps-ch" data-c="1">Give small amounts of what she likes.</span> <span class="ps-ch" data-c="2">If her mouth gets dry, give little sips of water often.</span>)</span></li><li class="ps-turn ps-human" tabindex="0" data-start="92.535" data-end="98.697"><span class="ps-who">Daughter</span><span class="ps-nat" lang="ta"><span class="ps-w" data-s="92.896" data-e="92.957" data-c="0">ம்ம்…</span> <span class="ps-w" data-s="93.418" data-e="93.599" data-c="0">ஒரு</span> <span class="ps-w" data-s="93.659" data-e="94.101" data-c="0">நிமிஷம்,</span> <span class="ps-w" data-s="95.405" data-e="95.847" data-c="0">இன்னொண்ணு…</span> <span class="ps-w" data-s="96.77" data-e="97.051" data-c="1">எப்போ</span> <span class="ps-w" data-s="97.071" data-e="97.653" data-c="1">ஹாஸ்பிடலுக்கு</span> <span class="ps-w" data-s="97.653" data-e="97.954" data-c="1">கூட்டிட்டுப்</span> <span class="ps-w" data-s="97.974" data-e="98.255" data-c="1">போகணும்?</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">Mm… wait, one more thing…</span> <span class="ps-ch" data-c="1">when should I take her to the hospital?</span>)</span></li><li class="ps-turn ps-bot" tabindex="0" data-start="99.047" data-end="111.014"><span class="ps-who">Palli Sahayak</span><span class="ps-nat" lang="ta"><span class="ps-w" data-s="99.447" data-e="99.908" data-c="0">இன்னைக்கே</span> <span class="ps-w" data-s="100.008" data-e="100.188" data-c="0">உங்க</span> <span class="ps-w" data-s="100.268" data-e="100.568" data-c="0">நர்ஸ்</span> <span class="ps-w" data-s="100.748" data-e="101.008" data-c="0">அல்லது</span> <span class="ps-w" data-s="101.108" data-e="101.649" data-c="0">டாக்டர்கிட்ட</span> <span class="ps-w" data-s="101.709" data-e="102.089" data-c="0">பேசுங்க.</span> <span class="ps-w" data-s="102.769" data-e="103.05" data-c="1">வலி</span> <span class="ps-w" data-s="103.17" data-e="103.71" data-c="1">திடீர்னு</span> <span class="ps-w" data-s="103.79" data-e="104.05" data-c="1">ரொம்ப</span> <span class="ps-w" data-s="104.13" data-e="104.751" data-c="1">அதிகமானா,</span> <span class="ps-w" data-s="105.251" data-e="106.151" data-c="1">உடனே</span> <span class="ps-w" data-s="106.332" data-e="106.432" data-c="1">108-க்கு</span> <span class="ps-w" data-s="106.492" data-e="106.672" data-c="1">போன்</span> <span class="ps-w" data-s="106.732" data-e="107.052" data-c="1">பண்ணுங்க,</span> <span class="ps-w" data-s="107.632" data-e="108.153" data-c="1">நர்ஸுக்கும்</span> <span class="ps-w" data-s="108.193" data-e="108.533" data-c="1">சொல்லுங்க.</span> <span class="ps-w" data-s="109.293" data-e="109.514" data-c="2">நீங்க</span> <span class="ps-w" data-s="109.594" data-e="109.974" data-c="2">தனியா</span> <span class="ps-w" data-s="110.034" data-e="110.214" data-c="2">இல்ல.</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">Talk to your nurse or doctor today.</span> <span class="ps-ch" data-c="1">If the pain suddenly gets much worse, call 108 for emergency help right away, and tell your nurse too.</span> <span class="ps-ch" data-c="2">You&#x27;re not alone.</span>)</span></li></ol></div><div class="ps-conv" id="conv-c2" role="tabpanel" aria-labelledby="tab-c2" hidden><div class="ps-conv-head"><p class="ps-conv-title">Hindi · an ASHA worker in Uttar Pradesh · two households: cancer pain, then breathlessness</p><audio controls preload="none" src="/palli-sahayak/media/conv-c2.m4a"></audio></div><ol class="ps-turns"><li class="ps-turn ps-human" tabindex="0" data-start="0.0" data-end="9.786"><span class="ps-who">ASHA worker</span><span class="ps-nat" lang="hi"><span class="ps-w" data-s="0.36" data-e="0.72" data-c="0">नमस्ते…</span> <span class="ps-w" data-s="1.541" data-e="1.761" data-c="0">मैं</span> <span class="ps-w" data-s="2.061" data-e="2.341" data-c="0">आशा</span> <span class="ps-w" data-s="2.341" data-e="2.582" data-c="0">दीदी</span> <span class="ps-w" data-s="2.602" data-e="2.722" data-c="0">बोल</span> <span class="ps-w" data-s="2.802" data-e="2.922" data-c="0">रही</span> <span class="ps-w" data-s="2.922" data-e="3.022" data-c="0">हूँ।</span> <span class="ps-w" data-s="3.882" data-e="3.962" data-c="1">वो…</span> <span class="ps-w" data-s="5.123" data-e="5.303" data-c="1">क्या</span> <span class="ps-w" data-s="5.323" data-e="5.423" data-c="1">है</span> <span class="ps-w" data-s="5.443" data-e="5.563" data-c="1">ना,</span> <span class="ps-w" data-s="5.663" data-e="5.884" data-c="1">गाँव</span> <span class="ps-w" data-s="5.964" data-e="6.064" data-c="1">में</span> <span class="ps-w" data-s="6.104" data-e="6.184" data-c="1">एक</span> <span class="ps-w" data-s="6.264" data-e="6.604" data-c="1">कैंसर</span> <span class="ps-w" data-s="6.644" data-e="6.704" data-c="1">के</span> <span class="ps-w" data-s="6.764" data-e="7.044" data-c="1">मरीज़</span> <span class="ps-w" data-s="7.104" data-e="7.224" data-c="1">हैं,</span> <span class="ps-w" data-s="7.965" data-e="8.205" data-c="2">दर्द</span> <span class="ps-w" data-s="8.245" data-e="8.365" data-c="2">की</span> <span class="ps-w" data-s="8.425" data-e="8.765" data-c="2">बहुत</span> <span class="ps-w" data-s="8.825" data-e="9.166" data-c="2">तकलीफ़</span> <span class="ps-w" data-s="9.166" data-e="9.326" data-c="2">है।</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">Hello… this is the ASHA didi speaking.</span> <span class="ps-ch" data-c="1">Um… it&#x27;s like this, there&#x27;s a cancer patient in the village,</span> <span class="ps-ch" data-c="2">he&#x27;s really suffering with pain.</span>)</span></li><li class="ps-turn ps-bot" tabindex="0" data-start="10.086" data-end="15.893"><span class="ps-who">Palli Sahayak</span><span class="ps-nat" lang="hi"><span class="ps-w" data-s="10.527" data-e="10.907" data-c="0">नमस्ते</span> <span class="ps-w" data-s="10.967" data-e="11.268" data-c="0">दीदी।</span> <span class="ps-w" data-s="12.329" data-e="12.589" data-c="1">दर्द</span> <span class="ps-w" data-s="12.589" data-e="12.729" data-c="1">कब</span> <span class="ps-w" data-s="12.789" data-e="12.89" data-c="1">से</span> <span class="ps-w" data-s="12.95" data-e="13.05" data-c="1">है?</span> <span class="ps-w" data-s="14.211" data-e="14.392" data-c="1">रात</span> <span class="ps-w" data-s="14.452" data-e="14.492" data-c="1">को</span> <span class="ps-w" data-s="14.572" data-e="14.672" data-c="1">सो</span> <span class="ps-w" data-s="14.752" data-e="15.032" data-c="1">पाते</span> <span class="ps-w" data-s="15.072" data-e="15.173" data-c="1">हैं?</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">Hello, didi.</span> <span class="ps-ch" data-c="1">Since when has the pain been there? Can he sleep at night?</span>)</span></li><li class="ps-turn ps-human" tabindex="0" data-start="16.493" data-end="27.78"><span class="ps-who">ASHA worker</span><span class="ps-nat" lang="hi"><span class="ps-w" data-s="16.853" data-e="16.953" data-c="0">दो</span> <span class="ps-w" data-s="17.133" data-e="17.534" data-c="0">हफ़्ते…</span> <span class="ps-w" data-s="18.534" data-e="18.814" data-c="0">नहीं,</span> <span class="ps-w" data-s="19.355" data-e="19.615" data-c="0">बीस</span> <span class="ps-w" data-s="19.675" data-e="19.815" data-c="0">दिन</span> <span class="ps-w" data-s="19.875" data-e="19.935" data-c="0">हो</span> <span class="ps-w" data-s="19.995" data-e="20.135" data-c="0">गए।</span> <span class="ps-w" data-s="20.916" data-e="21.156" data-c="1">रात</span> <span class="ps-w" data-s="21.216" data-e="21.396" data-c="1">भर</span> <span class="ps-w" data-s="21.456" data-e="21.856" data-c="1">कराहते</span> <span class="ps-w" data-s="21.896" data-e="22.056" data-c="1">हैं,</span> <span class="ps-w" data-s="22.737" data-e="23.057" data-c="1">खाना</span> <span class="ps-w" data-s="23.077" data-e="23.197" data-c="1">भी</span> <span class="ps-w" data-s="23.217" data-e="23.417" data-c="1">छोड़</span> <span class="ps-w" data-s="23.477" data-e="23.657" data-c="1">दिया</span> <span class="ps-w" data-s="23.657" data-e="23.717" data-c="1">है।</span> <span class="ps-w" data-s="24.478" data-e="24.618" data-c="2">आज</span> <span class="ps-w" data-s="24.698" data-e="24.758" data-c="2">तो</span> <span class="ps-w" data-s="24.798" data-e="25.058" data-c="2">रास्ते</span> <span class="ps-w" data-s="25.118" data-e="25.218" data-c="2">में</span> <span class="ps-w" data-s="25.238" data-e="25.519" data-c="2">पानी</span> <span class="ps-w" data-s="25.539" data-e="25.799" data-c="2">भरा</span> <span class="ps-w" data-s="25.819" data-e="25.939" data-c="2">था,</span> <span class="ps-w" data-s="26.299" data-e="26.499" data-c="2">बड़ी</span> <span class="ps-w" data-s="26.539" data-e="26.839" data-c="2">मुश्किल</span> <span class="ps-w" data-s="26.879" data-e="26.939" data-c="2">से</span> <span class="ps-w" data-s="26.98" data-e="27.32" data-c="2">पहुँची।</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">Two weeks… no, twenty days now.</span> <span class="ps-ch" data-c="1">He groans all night, and he&#x27;s stopped eating.</span> <span class="ps-ch" data-c="2">The road was flooded today, I barely made it there.</span>)</span></li><li class="ps-turn ps-bot" tabindex="0" data-start="28.73" data-end="36.538"><span class="ps-who">Palli Sahayak</span><span class="ps-nat" lang="hi"><span class="ps-w" data-s="29.13" data-e="29.431" data-c="0">पानी</span> <span class="ps-w" data-s="29.471" data-e="29.571" data-c="0">में</span> <span class="ps-w" data-s="29.611" data-e="29.731" data-c="0">भी</span> <span class="ps-w" data-s="29.771" data-e="30.191" data-c="0">पहुँचीं,</span> <span class="ps-w" data-s="30.652" data-e="31.052" data-c="0">बहुत</span> <span class="ps-w" data-s="31.092" data-e="31.353" data-c="0">अच्छा</span> <span class="ps-w" data-s="31.373" data-e="31.613" data-c="0">किया।</span> <span class="ps-w" data-s="32.213" data-e="32.574" data-c="1">डॉक्टर</span> <span class="ps-w" data-s="32.634" data-e="32.694" data-c="1">ने</span> <span class="ps-w" data-s="32.754" data-e="32.994" data-c="1">दर्द</span> <span class="ps-w" data-s="32.994" data-e="33.114" data-c="1">की</span> <span class="ps-w" data-s="33.114" data-e="33.354" data-c="1">दवा</span> <span class="ps-w" data-s="33.374" data-e="33.655" data-c="1">लिखी</span> <span class="ps-w" data-s="33.675" data-e="33.755" data-c="1">है?</span> <span class="ps-w" data-s="34.576" data-e="34.976" data-c="1">घरवाले</span> <span class="ps-w" data-s="35.036" data-e="35.316" data-c="1">कैसे</span> <span class="ps-w" data-s="35.376" data-e="35.456" data-c="1">दे</span> <span class="ps-w" data-s="35.517" data-e="35.657" data-c="1">रहे</span> <span class="ps-w" data-s="35.717" data-e="35.837" data-c="1">हैं?</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">You made it through the water, that was good of you.</span> <span class="ps-ch" data-c="1">Has a doctor prescribed pain medicine? How is the family giving it?</span>)</span></li><li class="ps-turn ps-human" tabindex="0" data-start="37.288" data-end="46.165"><span class="ps-who">ASHA worker</span><span class="ps-nat" lang="hi"><span class="ps-w" data-s="37.649" data-e="37.989" data-c="0">लिखी</span> <span class="ps-w" data-s="38.07" data-e="38.17" data-c="0">तो</span> <span class="ps-w" data-s="38.35" data-e="38.631" data-c="0">है…</span> <span class="ps-w" data-s="39.332" data-e="40.374" data-c="0">हम्म,</span> <span class="ps-w" data-s="40.414" data-e="40.514" data-c="0">पर</span> <span class="ps-w" data-s="40.615" data-e="41.015" data-c="0">घरवाले</span> <span class="ps-w" data-s="41.075" data-e="41.516" data-c="0">कभी-कभी</span> <span class="ps-w" data-s="41.516" data-e="41.617" data-c="0">ही</span> <span class="ps-w" data-s="41.617" data-e="41.857" data-c="0">देते</span> <span class="ps-w" data-s="41.857" data-e="41.957" data-c="0">हैं,</span> <span class="ps-w" data-s="42.278" data-e="42.538" data-c="1">कहते</span> <span class="ps-w" data-s="42.558" data-e="42.659" data-c="1">हैं</span> <span class="ps-w" data-s="42.659" data-e="42.899" data-c="1">आदत</span> <span class="ps-w" data-s="42.959" data-e="43.079" data-c="1">पड़</span> <span class="ps-w" data-s="43.119" data-e="43.5" data-c="1">जाएगी।</span> <span class="ps-w" data-s="44.162" data-e="44.262" data-c="2">और</span> <span class="ps-w" data-s="44.322" data-e="44.602" data-c="2">खाना</span> <span class="ps-w" data-s="44.683" data-e="45.244" data-c="2">ज़बरदस्ती</span> <span class="ps-w" data-s="45.264" data-e="45.624" data-c="2">खिलाते</span> <span class="ps-w" data-s="45.624" data-e="45.725" data-c="2">हैं।</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">It&#x27;s prescribed… hmm, but the family gives it only now and then,</span> <span class="ps-ch" data-c="1">they say he&#x27;ll get hooked.</span> <span class="ps-ch" data-c="2">And they force him to eat.</span>)</span></li><li class="ps-turn ps-bot" tabindex="0" data-start="46.715" data-end="59.963"><span class="ps-who">Palli Sahayak</span><span class="ps-nat" lang="hi"><span class="ps-w" data-s="47.175" data-e="47.435" data-c="0">दवा</span> <span class="ps-w" data-s="47.475" data-e="47.816" data-c="0">ठीक</span> <span class="ps-w" data-s="47.876" data-e="48.176" data-c="0">वैसे</span> <span class="ps-w" data-s="48.256" data-e="48.496" data-c="0">दें</span> <span class="ps-w" data-s="48.556" data-e="48.816" data-c="0">जैसे</span> <span class="ps-w" data-s="48.856" data-e="49.236" data-c="0">डॉक्टर</span> <span class="ps-w" data-s="49.276" data-e="49.336" data-c="0">ने</span> <span class="ps-w" data-s="49.397" data-e="49.717" data-c="0">लिखी</span> <span class="ps-w" data-s="49.757" data-e="49.857" data-c="0">है,</span> <span class="ps-w" data-s="50.457" data-e="50.837" data-c="0">मात्रा</span> <span class="ps-w" data-s="50.897" data-e="51.057" data-c="0">खुद</span> <span class="ps-w" data-s="51.138" data-e="51.178" data-c="0">न</span> <span class="ps-w" data-s="51.278" data-e="51.618" data-c="0">बदलें।</span> <span class="ps-w" data-s="52.398" data-e="52.658" data-c="1">आदत</span> <span class="ps-w" data-s="52.698" data-e="52.818" data-c="1">की</span> <span class="ps-w" data-s="52.838" data-e="53.199" data-c="1">चिंता</span> <span class="ps-w" data-s="53.239" data-e="53.339" data-c="1">हो,</span> <span class="ps-w" data-s="53.519" data-e="53.599" data-c="1">तो</span> <span class="ps-w" data-s="53.959" data-e="54.319" data-c="1">डॉक्टर</span> <span class="ps-w" data-s="54.359" data-e="54.419" data-c="1">से</span> <span class="ps-w" data-s="54.479" data-e="54.659" data-c="1">बात</span> <span class="ps-w" data-s="54.74" data-e="54.96" data-c="1">करें।</span> <span class="ps-w" data-s="55.76" data-e="56.1" data-c="2">खाना</span> <span class="ps-w" data-s="56.16" data-e="56.741" data-c="2">ज़बरदस्ती</span> <span class="ps-w" data-s="56.761" data-e="56.981" data-c="2">नहीं,</span> <span class="ps-w" data-s="57.481" data-e="57.581" data-c="2">जो</span> <span class="ps-w" data-s="57.681" data-e="58.021" data-c="2">पसंद</span> <span class="ps-w" data-s="58.081" data-e="58.141" data-c="2">हो,</span> <span class="ps-w" data-s="58.502" data-e="59.162" data-c="2">थोड़ा-थोड़ा।</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">Give the medicine exactly as the doctor wrote it, and don&#x27;t change the amount.</span> <span class="ps-ch" data-c="1">If they worry about getting hooked, talk to the doctor.</span> <span class="ps-ch" data-c="2">No forcing food, just a little of what he likes.</span>)</span></li><li class="ps-turn ps-human" tabindex="0" data-start="59.963" data-end="66.851"><span class="ps-who">ASHA worker</span><span class="ps-nat" lang="hi"><span class="ps-w" data-s="59.963" data-e="59.963" data-c="0">हाँ</span> <span class="ps-w" data-s="59.963" data-e="59.963" data-c="0">हाँ…</span> <span class="ps-w" data-s="60.237" data-e="60.498" data-c="0">समझ</span> <span class="ps-w" data-s="60.538" data-e="60.698" data-c="0">गई।</span> <span class="ps-w" data-s="61.38" data-e="61.6" data-c="1">अच्छा,</span> <span class="ps-w" data-s="61.62" data-e="61.921" data-c="1">दूसरे</span> <span class="ps-w" data-s="61.961" data-e="62.101" data-c="1">घर</span> <span class="ps-w" data-s="62.162" data-e="62.262" data-c="1">में</span> <span class="ps-w" data-s="62.302" data-e="62.723" data-c="1">दादाजी</span> <span class="ps-w" data-s="62.763" data-e="62.923" data-c="1">हैं,</span> <span class="ps-w" data-s="63.364" data-e="63.665" data-c="1">साँस</span> <span class="ps-w" data-s="63.705" data-e="63.805" data-c="1">की</span> <span class="ps-w" data-s="63.825" data-e="64.166" data-c="1">पुरानी</span> <span class="ps-w" data-s="64.186" data-e="64.567" data-c="1">बीमारी,</span> <span class="ps-w" data-s="64.948" data-e="65.028" data-c="2">दो</span> <span class="ps-w" data-s="65.128" data-e="65.369" data-c="2">कदम</span> <span class="ps-w" data-s="65.409" data-e="65.509" data-c="2">में</span> <span class="ps-w" data-s="65.529" data-e="65.77" data-c="2">साँस</span> <span class="ps-w" data-s="65.81" data-e="65.99" data-c="2">फूल</span> <span class="ps-w" data-s="66.03" data-e="66.311" data-c="2">जाती</span> <span class="ps-w" data-s="66.311" data-e="66.411" data-c="2">है।</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">Yes, yes… got it.</span> <span class="ps-ch" data-c="1">Okay, in the other house there&#x27;s a grandfather, an old breathing illness,</span> <span class="ps-ch" data-c="2">two steps and he&#x27;s out of breath.</span>)</span></li><li class="ps-turn ps-bot" tabindex="0" data-start="67.201" data-end="72.979"><span class="ps-who">Palli Sahayak</span><span class="ps-nat" lang="hi"><span class="ps-w" data-s="68.304" data-e="68.605" data-c="0">अभी</span> <span class="ps-w" data-s="69.067" data-e="69.348" data-c="0">आराम</span> <span class="ps-w" data-s="69.408" data-e="69.488" data-c="0">से</span> <span class="ps-w" data-s="69.528" data-e="69.709" data-c="0">बात</span> <span class="ps-w" data-s="69.769" data-e="69.869" data-c="0">कर</span> <span class="ps-w" data-s="69.929" data-e="70.07" data-c="0">पा</span> <span class="ps-w" data-s="70.07" data-e="70.15" data-c="0">रहे</span> <span class="ps-w" data-s="70.15" data-e="70.25" data-c="0">हैं?</span> <span class="ps-w" data-s="71.213" data-e="71.474" data-c="1">होंठ</span> <span class="ps-w" data-s="71.534" data-e="71.775" data-c="1">नीले</span> <span class="ps-w" data-s="71.835" data-e="71.895" data-c="1">तो</span> <span class="ps-w" data-s="71.955" data-e="72.176" data-c="1">नहीं</span> <span class="ps-w" data-s="72.196" data-e="72.296" data-c="1">हैं?</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">Can he talk comfortably right now?</span> <span class="ps-ch" data-c="1">His lips aren&#x27;t blue?</span>)</span></li><li class="ps-turn ps-human" tabindex="0" data-start="73.379" data-end="83.003"><span class="ps-who">ASHA worker</span><span class="ps-nat" lang="hi"><span class="ps-w" data-s="73.72" data-e="73.92" data-c="0">बात</span> <span class="ps-w" data-s="73.981" data-e="74.061" data-c="0">तो</span> <span class="ps-w" data-s="74.121" data-e="74.281" data-c="0">कर</span> <span class="ps-w" data-s="74.341" data-e="74.482" data-c="0">रहे</span> <span class="ps-w" data-s="74.482" data-e="74.642" data-c="0">हैं…</span> <span class="ps-w" data-s="75.885" data-e="76.607" data-c="0">होंठ—</span> <span class="ps-w" data-s="77.83" data-e="78.051" data-c="0">रुकिए,</span> <span class="ps-w" data-s="78.071" data-e="78.351" data-c="0">देखती</span> <span class="ps-w" data-s="78.351" data-e="78.512" data-c="0">हूँ…</span> <span class="ps-w" data-s="79.735" data-e="80.036" data-c="1">नहीं,</span> <span class="ps-w" data-s="80.156" data-e="80.457" data-c="1">ठीक</span> <span class="ps-w" data-s="80.537" data-e="80.677" data-c="1">हैं।</span> <span class="ps-w" data-s="81.499" data-e="81.62" data-c="1">बस</span> <span class="ps-w" data-s="81.7" data-e="82.061" data-c="1">घबरा</span> <span class="ps-w" data-s="82.101" data-e="82.402" data-c="1">जाते</span> <span class="ps-w" data-s="82.442" data-e="82.562" data-c="1">हैं।</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">He&#x27;s talking… his lips— wait, let me look…</span> <span class="ps-ch" data-c="1">no, they&#x27;re fine. He just panics.</span>)</span></li><li class="ps-turn ps-bot" tabindex="0" data-start="83.253" data-end="94.9"><span class="ps-who">Palli Sahayak</span><span class="ps-nat" lang="hi"><span class="ps-w" data-s="83.673" data-e="83.933" data-c="0">उन्हें</span> <span class="ps-w" data-s="84.013" data-e="84.394" data-c="0">सीधा,</span> <span class="ps-w" data-s="84.814" data-e="85.114" data-c="0">थोड़ा</span> <span class="ps-w" data-s="85.174" data-e="85.354" data-c="0">आगे</span> <span class="ps-w" data-s="85.434" data-e="85.755" data-c="0">झुककर</span> <span class="ps-w" data-s="85.795" data-e="86.235" data-c="0">बिठाइए।</span> <span class="ps-w" data-s="86.915" data-e="87.236" data-c="1">चेहरे</span> <span class="ps-w" data-s="87.296" data-e="87.416" data-c="1">की</span> <span class="ps-w" data-s="87.436" data-e="87.616" data-c="1">तरफ़</span> <span class="ps-w" data-s="87.696" data-e="87.996" data-c="1">पंखा</span> <span class="ps-w" data-s="88.016" data-e="88.316" data-c="1">रखिए।</span> <span class="ps-w" data-s="89.097" data-e="89.377" data-c="2">होंठ</span> <span class="ps-w" data-s="89.417" data-e="89.957" data-c="2">सिकोड़कर</span> <span class="ps-w" data-s="90.217" data-e="90.778" data-c="2">धीरे-धीरे</span> <span class="ps-w" data-s="90.858" data-e="91.078" data-c="2">साँस</span> <span class="ps-w" data-s="91.158" data-e="91.458" data-c="2">छोड़ें,</span> <span class="ps-w" data-s="92.179" data-e="92.299" data-c="2">और</span> <span class="ps-w" data-s="92.359" data-e="92.719" data-c="2">दवाएँ</span> <span class="ps-w" data-s="92.719" data-e="93.019" data-c="2">वैसे</span> <span class="ps-w" data-s="93.079" data-e="93.199" data-c="2">ही</span> <span class="ps-w" data-s="93.219" data-e="93.36" data-c="2">लें</span> <span class="ps-w" data-s="93.6" data-e="93.88" data-c="2">जैसे</span> <span class="ps-w" data-s="93.94" data-e="94.24" data-c="2">लिखी</span> <span class="ps-w" data-s="94.28" data-e="94.38" data-c="2">हैं।</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">Sit him upright, leaning slightly forward.</span> <span class="ps-ch" data-c="1">Keep a fan towards his face.</span> <span class="ps-ch" data-c="2">Breathe out slowly through pursed lips, and take medicines just as prescribed.</span>)</span></li><li class="ps-turn ps-human" tabindex="0" data-start="95.2" data-end="102.666"><span class="ps-who">ASHA worker</span><span class="ps-nat" lang="hi"><span class="ps-w" data-s="95.54" data-e="95.941" data-c="0">ठीक</span> <span class="ps-w" data-s="96.001" data-e="96.161" data-c="0">है…</span> <span class="ps-w" data-s="97.262" data-e="97.482" data-c="1">अच्छा</span> <span class="ps-w" data-s="97.502" data-e="97.822" data-c="1">सुनिए,</span> <span class="ps-w" data-s="98.703" data-e="99.143" data-c="1">डॉक्टर</span> <span class="ps-w" data-s="99.203" data-e="99.283" data-c="1">को</span> <span class="ps-w" data-s="99.784" data-e="99.964" data-c="1">कब</span> <span class="ps-w" data-s="100.044" data-e="100.464" data-c="1">बुलाऊँ?</span> <span class="ps-w" data-s="100.504" data-e="100.805" data-c="1">मतलब—</span> <span class="ps-w" data-s="101.505" data-e="101.625" data-c="1">कब</span> <span class="ps-w" data-s="101.705" data-e="101.825" data-c="1">तक</span> <span class="ps-w" data-s="101.885" data-e="102.206" data-c="1">रुकूँ?</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">Okay…</span> <span class="ps-ch" data-c="1">Listen, when should I call the doctor? I mean— how long should I wait?</span>)</span></li><li class="ps-turn ps-bot" tabindex="0" data-start="103.266" data-end="118.274"><span class="ps-who">Palli Sahayak</span><span class="ps-nat" lang="hi"><span class="ps-w" data-s="103.726" data-e="103.986" data-c="0">दोनों</span> <span class="ps-w" data-s="104.026" data-e="104.547" data-c="0">परिवार</span> <span class="ps-w" data-s="105.047" data-e="105.247" data-c="0">आज</span> <span class="ps-w" data-s="105.287" data-e="105.407" data-c="0">ही</span> <span class="ps-w" data-s="105.427" data-e="105.687" data-c="0">अपनी</span> <span class="ps-w" data-s="105.707" data-e="106.147" data-c="0">नर्स</span> <span class="ps-w" data-s="106.328" data-e="106.428" data-c="0">या</span> <span class="ps-w" data-s="106.448" data-e="106.788" data-c="0">डॉक्टर</span> <span class="ps-w" data-s="106.828" data-e="106.908" data-c="0">से</span> <span class="ps-w" data-s="106.968" data-e="107.128" data-c="0">बात</span> <span class="ps-w" data-s="107.208" data-e="107.428" data-c="0">करें।</span> <span class="ps-w" data-s="108.088" data-e="108.329" data-c="1">होंठ</span> <span class="ps-w" data-s="108.389" data-e="108.649" data-c="1">नीले</span> <span class="ps-w" data-s="108.709" data-e="109.009" data-c="1">पड़ें,</span> <span class="ps-w" data-s="109.429" data-e="109.769" data-c="1">उलझन</span> <span class="ps-w" data-s="109.849" data-e="109.929" data-c="1">हो,</span> <span class="ps-w" data-s="110.47" data-e="110.67" data-c="1">बोल</span> <span class="ps-w" data-s="110.75" data-e="110.81" data-c="1">न</span> <span class="ps-w" data-s="110.91" data-e="111.15" data-c="1">पाएँ,</span> <span class="ps-w" data-s="111.61" data-e="111.79" data-c="1">या</span> <span class="ps-w" data-s="112.07" data-e="112.351" data-c="1">दर्द</span> <span class="ps-w" data-s="112.431" data-e="112.851" data-c="1">अचानक</span> <span class="ps-w" data-s="112.911" data-e="113.111" data-c="1">बहुत</span> <span class="ps-w" data-s="113.151" data-e="113.351" data-c="1">बढ़े,</span> <span class="ps-w" data-s="113.911" data-e="113.991" data-c="2">तो</span> <span class="ps-w" data-s="114.111" data-e="114.432" data-c="2">तुरंत</span> <span class="ps-w" data-s="114.912" data-e="114.952" data-c="2">108</span> <span class="ps-w" data-s="115.092" data-e="115.192" data-c="2">पर</span> <span class="ps-w" data-s="115.212" data-e="115.392" data-c="2">फ़ोन</span> <span class="ps-w" data-s="115.452" data-e="115.672" data-c="2">कीजिए,</span> <span class="ps-w" data-s="116.293" data-e="116.413" data-c="2">और</span> <span class="ps-w" data-s="116.473" data-e="116.733" data-c="2">नर्स</span> <span class="ps-w" data-s="116.753" data-e="116.813" data-c="2">को</span> <span class="ps-w" data-s="116.853" data-e="116.953" data-c="2">भी</span> <span class="ps-w" data-s="116.973" data-e="117.333" data-c="2">बताइए।</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">Both families should talk to their nurse or doctor today.</span> <span class="ps-ch" data-c="1">If lips turn blue, there&#x27;s confusion, he can&#x27;t speak, or the pain suddenly gets much worse,</span> <span class="ps-ch" data-c="2">call 108 for emergency help right away, and tell the nurse too.</span>)</span></li></ol></div><div class="ps-conv" id="conv-c3" role="tabpanel" aria-labelledby="tab-c3" hidden><div class="ps-conv-head"><p class="ps-conv-title">Punjabi · a patient · breathlessness · a language not yet ready for use</p><audio controls preload="none" src="/palli-sahayak/media/conv-c3.m4a"></audio></div><ol class="ps-turns"><li class="ps-turn ps-human" tabindex="0" data-start="0.0" data-end="10.747"><span class="ps-who">Patient</span><span class="ps-nat" lang="pa"><span class="ps-w" data-s="0.34" data-e="0.54" data-c="0">ਸਤ</span> <span class="ps-w" data-s="0.6" data-e="0.821" data-c="0">ਸ੍ਰੀ</span> <span class="ps-w" data-s="0.821" data-e="1.121" data-c="0">ਅਕਾਲ</span> <span class="ps-w" data-s="1.181" data-e="1.341" data-c="0">ਜੀ…</span> <span class="ps-w" data-s="2.682" data-e="2.902" data-c="1">ਉਹ…</span> <span class="ps-w" data-s="3.762" data-e="4.123" data-c="1">ਮੈਨੂੰ</span> <span class="ps-w" data-s="4.743" data-e="5.003" data-c="1">ਸਾਹ</span> <span class="ps-w" data-s="5.043" data-e="5.223" data-c="1">ਦੀ</span> <span class="ps-w" data-s="6.264" data-e="6.664" data-c="1">ਪੁਰਾਣੀ</span> <span class="ps-w" data-s="6.684" data-e="7.085" data-c="1">ਬਿਮਾਰੀ</span> <span class="ps-w" data-s="7.165" data-e="7.265" data-c="1">ਆ,</span> <span class="ps-w" data-s="8.065" data-e="8.385" data-c="2">ਥੋੜ੍ਹਾ</span> <span class="ps-w" data-s="8.425" data-e="8.686" data-c="2">ਤੁਰਾਂ</span> <span class="ps-w" data-s="8.706" data-e="8.906" data-c="2">ਤਾਂ</span> <span class="ps-w" data-s="9.526" data-e="9.726" data-c="2">ਸਾਹ</span> <span class="ps-w" data-s="9.766" data-e="9.987" data-c="2">ਚੜ੍ਹ</span> <span class="ps-w" data-s="9.987" data-e="10.287" data-c="2">ਜਾਂਦਾ।</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">Sat Sri Akal ji…</span> <span class="ps-ch" data-c="1">um… I&#x27;ve got this old breathing illness,</span> <span class="ps-ch" data-c="2">I walk a little and I get breathless.</span>)</span></li><li class="ps-turn ps-bot" tabindex="0" data-start="11.297" data-end="15.824"><span class="ps-who">Palli Sahayak</span><span class="ps-nat" lang="pa"><span class="ps-w" data-s="11.718" data-e="11.858" data-c="0">ਸਤ</span> <span class="ps-w" data-s="11.858" data-e="12.078" data-c="0">ਸ੍ਰੀ</span> <span class="ps-w" data-s="12.078" data-e="12.279" data-c="0">ਅਕਾਲ</span> <span class="ps-w" data-s="12.339" data-e="12.479" data-c="0">ਜੀ।</span> <span class="ps-w" data-s="13.24" data-e="13.4" data-c="1">ਇਸ</span> <span class="ps-w" data-s="13.481" data-e="13.841" data-c="1">ਵੇਲੇ</span> <span class="ps-w" data-s="14.022" data-e="14.302" data-c="1">ਆਰਾਮ</span> <span class="ps-w" data-s="14.382" data-e="14.562" data-c="1">ਨਾਲ</span> <span class="ps-w" data-s="14.602" data-e="14.803" data-c="1">ਗੱਲ</span> <span class="ps-w" data-s="14.803" data-e="14.943" data-c="1">ਕਰ</span> <span class="ps-w" data-s="15.003" data-e="15.143" data-c="1">ਪਾ</span> <span class="ps-w" data-s="15.163" data-e="15.284" data-c="1">ਰਹੇ</span> <span class="ps-w" data-s="15.284" data-e="15.824" data-c="1">ਹੋ?</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">Sat Sri Akal ji.</span> <span class="ps-ch" data-c="1">Can you talk comfortably right now?</span>)</span></li><li class="ps-turn ps-human" tabindex="0" data-start="16.274" data-end="26.5"><span class="ps-who">Patient</span><span class="ps-nat" lang="pa"><span class="ps-w" data-s="16.634" data-e="17.014" data-c="0">ਬੈਠਾ</span> <span class="ps-w" data-s="17.034" data-e="17.215" data-c="0">ਹਾਂ</span> <span class="ps-w" data-s="17.255" data-e="17.495" data-c="0">ਤਾਂ</span> <span class="ps-w" data-s="17.755" data-e="18.135" data-c="0">ਠੀਕ</span> <span class="ps-w" data-s="18.215" data-e="18.355" data-c="0">ਆ।</span> <span class="ps-w" data-s="18.936" data-e="19.096" data-c="1">ਪਰ</span> <span class="ps-w" data-s="19.196" data-e="19.476" data-c="1">ਰਾਤ</span> <span class="ps-w" data-s="19.556" data-e="19.716" data-c="1">ਨੂੰ…</span> <span class="ps-w" data-s="21.017" data-e="21.437" data-c="1">ਘਬਰਾਹਟ</span> <span class="ps-w" data-s="21.497" data-e="21.757" data-c="1">ਜਿਹੀ</span> <span class="ps-w" data-s="21.797" data-e="22.057" data-c="1">ਹੁੰਦੀ</span> <span class="ps-w" data-s="22.097" data-e="22.177" data-c="1">ਆ,</span> <span class="ps-w" data-s="23.158" data-e="23.518" data-c="2">ਪੋਤੇ</span> <span class="ps-w" data-s="23.538" data-e="23.658" data-c="2">ਦੇ</span> <span class="ps-w" data-s="23.678" data-e="23.979" data-c="2">ਪੇਪਰ</span> <span class="ps-w" data-s="24.039" data-e="24.159" data-c="2">ਨੇ,</span> <span class="ps-w" data-s="24.959" data-e="25.219" data-c="2">ਉਹਨੂੰ</span> <span class="ps-w" data-s="25.219" data-e="25.579" data-c="2">ਜਗਾਉਣਾ</span> <span class="ps-w" data-s="25.579" data-e="25.74" data-c="2">ਨਹੀਂ</span> <span class="ps-w" data-s="25.74" data-e="26.04" data-c="2">ਚਾਹੁੰਦਾ।</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">Sitting down it&#x27;s fine.</span> <span class="ps-ch" data-c="1">But at night… a sort of panic comes,</span> <span class="ps-ch" data-c="2">my grandson has exams, I don&#x27;t want to wake him.</span>)</span></li><li class="ps-turn ps-bot" tabindex="0" data-start="26.85" data-end="36.418"><span class="ps-who">Palli Sahayak</span><span class="ps-nat" lang="pa"><span class="ps-w" data-s="27.19" data-e="27.651" data-c="0">ਪੋਤੇ</span> <span class="ps-w" data-s="27.691" data-e="27.851" data-c="0">ਦਾ</span> <span class="ps-w" data-s="27.971" data-e="28.271" data-c="0">ਇੰਨਾ</span> <span class="ps-w" data-s="28.351" data-e="28.711" data-c="0">ਖ਼ਿਆਲ,</span> <span class="ps-w" data-s="29.372" data-e="29.752" data-c="0">ਚੰਗੀ</span> <span class="ps-w" data-s="29.812" data-e="30.073" data-c="0">ਗੱਲ</span> <span class="ps-w" data-s="30.093" data-e="30.193" data-c="0">ਹੈ।</span> <span class="ps-w" data-s="31.394" data-e="31.714" data-c="1">ਕਿੰਨੇ</span> <span class="ps-w" data-s="31.754" data-e="32.014" data-c="1">ਦਿਨਾਂ</span> <span class="ps-w" data-s="32.034" data-e="32.154" data-c="1">ਤੋਂ</span> <span class="ps-w" data-s="32.194" data-e="32.514" data-c="1">ਵਧਿਆ</span> <span class="ps-w" data-s="32.534" data-e="32.615" data-c="1">ਹੈ?</span> <span class="ps-w" data-s="33.535" data-e="34.236" data-c="1">ਬੁਖ਼ਾਰ</span> <span class="ps-w" data-s="34.316" data-e="34.436" data-c="1">ਜਾਂ</span> <span class="ps-w" data-s="34.496" data-e="34.896" data-c="1">ਛਾਤੀ</span> <span class="ps-w" data-s="34.916" data-e="35.116" data-c="1">ਵਿੱਚ</span> <span class="ps-w" data-s="35.157" data-e="35.357" data-c="1">ਦਰਦ</span> <span class="ps-w" data-s="35.397" data-e="35.557" data-c="1">ਤਾਂ</span> <span class="ps-w" data-s="35.577" data-e="35.797" data-c="1">ਨਹੀਂ?</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">You think of your grandson, that&#x27;s kind.</span> <span class="ps-ch" data-c="1">For how many days has it been worse? Any fever or chest pain?</span>)</span></li><li class="ps-turn ps-human" tabindex="0" data-start="36.818" data-end="46.744"><span class="ps-who">Patient</span><span class="ps-nat" lang="pa"><span class="ps-w" data-s="37.158" data-e="37.378" data-c="0">ਤਿੰਨ…</span> <span class="ps-w" data-s="38.499" data-e="38.799" data-c="0">ਨਹੀਂ,</span> <span class="ps-w" data-s="39.199" data-e="39.48" data-c="0">ਚਾਰ</span> <span class="ps-w" data-s="39.56" data-e="39.7" data-c="0">ਦਿਨ।</span> <span class="ps-w" data-s="40.8" data-e="41.141" data-c="0">ਬੁਖ਼ਾਰ</span> <span class="ps-w" data-s="41.201" data-e="41.401" data-c="0">ਨਹੀਂ,</span> <span class="ps-w" data-s="41.661" data-e="41.861" data-c="0">ਦਰਦ</span> <span class="ps-w" data-s="41.941" data-e="42.141" data-c="0">ਨਹੀਂ।</span> <span class="ps-w" data-s="42.622" data-e="42.902" data-c="1">ਬੱਸ</span> <span class="ps-w" data-s="43.622" data-e="43.862" data-c="1">ਮੱਝ</span> <span class="ps-w" data-s="43.902" data-e="44.022" data-c="1">ਨੂੰ</span> <span class="ps-w" data-s="44.042" data-e="44.323" data-c="1">ਪੱਠੇ</span> <span class="ps-w" data-s="44.343" data-e="44.563" data-c="1">ਪਾਉਣ</span> <span class="ps-w" data-s="44.603" data-e="44.803" data-c="1">ਗਿਆ,</span> <span class="ps-w" data-s="45.323" data-e="45.623" data-c="1">ਓਥੇ</span> <span class="ps-w" data-s="45.623" data-e="45.703" data-c="1">ਹੀ</span> <span class="ps-w" data-s="45.743" data-e="45.883" data-c="1">ਸਾਹ</span> <span class="ps-w" data-s="45.903" data-e="46.104" data-c="1">ਚੜ੍ਹ</span> <span class="ps-w" data-s="46.104" data-e="46.284" data-c="1">ਗਿਆ।</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">Three… no, four days. No fever, no pain.</span> <span class="ps-ch" data-c="1">I just went to feed the buffalo, and got breathless right there.</span>)</span></li><li class="ps-turn ps-bot" tabindex="0" data-start="46.994" data-end="50.581"><span class="ps-who">Palli Sahayak</span><span class="ps-nat" lang="pa"><span class="ps-w" data-s="47.956" data-e="48.377" data-c="0">ਡਾਕਟਰ</span> <span class="ps-w" data-s="48.417" data-e="48.617" data-c="0">ਦੀਆਂ</span> <span class="ps-w" data-s="48.637" data-e="49.038" data-c="0">ਦਿੱਤੀਆਂ</span> <span class="ps-w" data-s="49.058" data-e="49.499" data-c="0">ਦਵਾਈਆਂ</span> <span class="ps-w" data-s="49.519" data-e="49.68" data-c="0">ਲੈ</span> <span class="ps-w" data-s="49.72" data-e="49.88" data-c="0">ਰਹੇ</span> <span class="ps-w" data-s="49.88" data-e="50.02" data-c="0">ਹੋ?</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">Are you taking the medicines the doctor gave you?</span>)</span></li><li class="ps-turn ps-human" tabindex="0" data-start="50.881" data-end="59.267"><span class="ps-who">Patient</span><span class="ps-nat" lang="pa"><span class="ps-w" data-s="51.241" data-e="51.421" data-c="0">ਹਾਂ</span> <span class="ps-w" data-s="51.481" data-e="51.662" data-c="0">ਜੀ,</span> <span class="ps-w" data-s="52.762" data-e="53.143" data-c="0">ਲੈਂਦਾ</span> <span class="ps-w" data-s="53.203" data-e="53.343" data-c="0">ਹਾਂ…</span> <span class="ps-w" data-s="53.763" data-e="53.943" data-c="1">ਪਰ</span> <span class="ps-w" data-s="54.544" data-e="55.104" data-c="1">ਕਦੇ-ਕਦੇ—</span> <span class="ps-w" data-s="56.445" data-e="56.685" data-c="1">ਸੱਚ</span> <span class="ps-w" data-s="56.725" data-e="57.025" data-c="1">ਦੱਸਾਂ</span> <span class="ps-w" data-s="57.045" data-e="57.246" data-c="1">ਤਾਂ</span> <span class="ps-w" data-s="58.186" data-e="58.406" data-c="1">ਭੁੱਲ</span> <span class="ps-w" data-s="58.446" data-e="58.707" data-c="1">ਜਾਂਦਾ</span> <span class="ps-w" data-s="58.707" data-e="58.807" data-c="1">ਹਾਂ।</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">Yes ji, I take them…</span> <span class="ps-ch" data-c="1">but sometimes— to tell the truth, I forget.</span>)</span></li><li class="ps-turn ps-bot" tabindex="0" data-start="59.867" data-end="67.093"><span class="ps-who">Palli Sahayak</span><span class="ps-nat" lang="pa"><span class="ps-w" data-s="60.327" data-e="60.908" data-c="0">ਦਵਾਈਆਂ</span> <span class="ps-w" data-s="61.188" data-e="61.469" data-c="0">ਉਸੇ</span> <span class="ps-w" data-s="61.469" data-e="61.729" data-c="0">ਤਰ੍ਹਾਂ</span> <span class="ps-w" data-s="61.769" data-e="61.949" data-c="0">ਲਓ</span> <span class="ps-w" data-s="62.31" data-e="62.53" data-c="0">ਜਿਵੇਂ</span> <span class="ps-w" data-s="62.53" data-e="62.89" data-c="0">ਡਾਕਟਰ</span> <span class="ps-w" data-s="62.95" data-e="63.05" data-c="0">ਨੇ</span> <span class="ps-w" data-s="63.05" data-e="63.391" data-c="0">ਦੱਸਿਆ</span> <span class="ps-w" data-s="63.411" data-e="63.511" data-c="0">ਹੈ।</span> <span class="ps-w" data-s="64.172" data-e="64.312" data-c="1">ਮੈਂ</span> <span class="ps-w" data-s="64.352" data-e="64.572" data-c="1">ਯਾਦ</span> <span class="ps-w" data-s="64.632" data-e="64.992" data-c="1">ਕਰਵਾਉਣ</span> <span class="ps-w" data-s="65.033" data-e="65.193" data-c="1">ਲਈ</span> <span class="ps-w" data-s="65.233" data-e="65.453" data-c="1">ਫ਼ੋਨ</span> <span class="ps-w" data-s="65.493" data-e="65.653" data-c="1">ਕਰ</span> <span class="ps-w" data-s="65.693" data-e="66.014" data-c="1">ਸਕਦੀ</span> <span class="ps-w" data-s="66.014" data-e="66.154" data-c="1">ਹਾਂ।</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">Take the medicines just as the doctor said.</span> <span class="ps-ch" data-c="1">I can call you to remind you.</span>)</span></li><li class="ps-turn ps-human" tabindex="0" data-start="67.093" data-end="73.379"><span class="ps-who">Patient</span><span class="ps-nat" lang="pa"><span class="ps-w" data-s="67.093" data-e="67.093" data-c="0">ਹਾਂ</span> <span class="ps-w" data-s="67.093" data-e="67.093" data-c="0">ਹਾਂ…</span> <span class="ps-w" data-s="67.256" data-e="67.376" data-c="0">ਇਹ</span> <span class="ps-w" data-s="67.656" data-e="67.977" data-c="0">ਠੀਕ</span> <span class="ps-w" data-s="68.117" data-e="68.197" data-c="0">ਆ।</span> <span class="ps-w" data-s="69.378" data-e="69.578" data-c="1">ਤੇ</span> <span class="ps-w" data-s="70.238" data-e="70.478" data-c="1">ਰਾਤ</span> <span class="ps-w" data-s="70.558" data-e="70.678" data-c="1">ਨੂੰ</span> <span class="ps-w" data-s="70.718" data-e="71.079" data-c="1">ਘਬਰਾਹਟ</span> <span class="ps-w" data-s="71.139" data-e="71.399" data-c="1">ਹੋਵੇ,</span> <span class="ps-w" data-s="72.279" data-e="72.519" data-c="1">ਉਦੋਂ</span> <span class="ps-w" data-s="72.539" data-e="72.66" data-c="1">ਕੀ</span> <span class="ps-w" data-s="72.68" data-e="72.92" data-c="1">ਕਰਾਂ?</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">Yes, yes… that&#x27;s good.</span> <span class="ps-ch" data-c="1">And at night, when the panic comes, what do I do?</span>)</span></li><li class="ps-turn ps-bot" tabindex="0" data-start="74.129" data-end="83.017"><span class="ps-who">Palli Sahayak</span><span class="ps-nat" lang="pa"><span class="ps-w" data-s="74.589" data-e="74.97" data-c="0">ਸਿੱਧੇ,</span> <span class="ps-w" data-s="75.09" data-e="75.49" data-c="0">ਥੋੜ੍ਹਾ</span> <span class="ps-w" data-s="75.55" data-e="75.83" data-c="0">ਅੱਗੇ</span> <span class="ps-w" data-s="75.87" data-e="76.031" data-c="0">ਝੁਕ</span> <span class="ps-w" data-s="76.091" data-e="76.211" data-c="0">ਕੇ</span> <span class="ps-w" data-s="76.231" data-e="76.571" data-c="0">ਬੈਠੋ।</span> <span class="ps-w" data-s="77.332" data-e="77.552" data-c="1">ਮੂੰਹ</span> <span class="ps-w" data-s="77.592" data-e="77.792" data-c="1">ਵੱਲ</span> <span class="ps-w" data-s="77.832" data-e="78.192" data-c="1">ਪੱਖਾ</span> <span class="ps-w" data-s="78.212" data-e="78.533" data-c="1">ਰੱਖੋ,</span> <span class="ps-w" data-s="79.193" data-e="79.333" data-c="2">ਤੇ</span> <span class="ps-w" data-s="79.393" data-e="79.654" data-c="2">ਬੁੱਲ੍ਹ</span> <span class="ps-w" data-s="79.734" data-e="80.114" data-c="2">ਸਿਕੋੜ</span> <span class="ps-w" data-s="80.194" data-e="80.374" data-c="2">ਕੇ</span> <span class="ps-w" data-s="80.634" data-e="81.455" data-c="2">ਹੌਲੀ-ਹੌਲੀ</span> <span class="ps-w" data-s="81.555" data-e="81.755" data-c="2">ਸਾਹ</span> <span class="ps-w" data-s="81.815" data-e="82.156" data-c="2">ਛੱਡੋ।</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">Sit upright, leaning slightly forward.</span> <span class="ps-ch" data-c="1">Keep a fan towards your face,</span> <span class="ps-ch" data-c="2">and breathe out slowly through pursed lips.</span>)</span></li><li class="ps-turn ps-human" tabindex="0" data-start="83.567" data-end="91.244"><span class="ps-who">Patient</span><span class="ps-nat" lang="pa"><span class="ps-w" data-s="83.828" data-e="84.108" data-c="0">ਠੀਕ</span> <span class="ps-w" data-s="84.168" data-e="84.249" data-c="0">ਆ</span> <span class="ps-w" data-s="84.269" data-e="84.409" data-c="0">ਜੀ…</span> <span class="ps-w" data-s="85.712" data-e="85.852" data-c="0">ਇੱਕ</span> <span class="ps-w" data-s="85.872" data-e="86.053" data-c="0">ਮਿੰਟ,</span> <span class="ps-w" data-s="86.714" data-e="86.894" data-c="0">ਹੋਰ</span> <span class="ps-w" data-s="86.934" data-e="87.115" data-c="0">ਕੁਝ</span> <span class="ps-w" data-s="87.115" data-e="87.436" data-c="0">ਪੁੱਛਣਾ</span> <span class="ps-w" data-s="87.456" data-e="87.576" data-c="0">ਸੀ…</span> <span class="ps-w" data-s="88.137" data-e="88.338" data-c="1">ਹਾਂ,</span> <span class="ps-w" data-s="89.179" data-e="89.42" data-c="1">ਹੋਰ</span> <span class="ps-w" data-s="90.081" data-e="90.242" data-c="1">ਕੀ</span> <span class="ps-w" data-s="90.282" data-e="90.482" data-c="1">ਧਿਆਨ</span> <span class="ps-w" data-s="90.522" data-e="90.803" data-c="1">ਰੱਖਾਂ?</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">Alright ji… one minute, there was something else…</span> <span class="ps-ch" data-c="1">yes, what else should I watch for?</span>)</span></li><li class="ps-turn ps-bot" tabindex="0" data-start="91.694" data-end="103.541"><span class="ps-who">Palli Sahayak</span><span class="ps-nat" lang="pa"><span class="ps-w" data-s="92.134" data-e="92.354" data-c="0">ਅੱਜ</span> <span class="ps-w" data-s="92.354" data-e="92.454" data-c="0">ਹੀ</span> <span class="ps-w" data-s="92.515" data-e="92.835" data-c="0">ਆਪਣੀ</span> <span class="ps-w" data-s="92.895" data-e="93.255" data-c="0">ਨਰਸ</span> <span class="ps-w" data-s="93.355" data-e="93.535" data-c="0">ਜਾਂ</span> <span class="ps-w" data-s="93.555" data-e="93.895" data-c="0">ਡਾਕਟਰ</span> <span class="ps-w" data-s="93.955" data-e="94.116" data-c="0">ਨਾਲ</span> <span class="ps-w" data-s="94.176" data-e="94.396" data-c="0">ਗੱਲ</span> <span class="ps-w" data-s="94.436" data-e="94.616" data-c="0">ਕਰੋ।</span> <span class="ps-w" data-s="95.396" data-e="95.657" data-c="1">ਬੁੱਲ੍ਹ</span> <span class="ps-w" data-s="95.757" data-e="96.157" data-c="1">ਨੀਲੇ</span> <span class="ps-w" data-s="96.177" data-e="96.437" data-c="1">ਹੋਣ,</span> <span class="ps-w" data-s="96.877" data-e="97.238" data-c="1">ਉਲਝਣ</span> <span class="ps-w" data-s="97.298" data-e="97.938" data-c="1">ਹੋਵੇ</span> <span class="ps-w" data-s="97.938" data-e="98.098" data-c="1">ਜਾਂ</span> <span class="ps-w" data-s="98.178" data-e="98.378" data-c="1">ਬੋਲ</span> <span class="ps-w" data-s="98.458" data-e="98.558" data-c="1">ਨਾ</span> <span class="ps-w" data-s="98.618" data-e="98.899" data-c="1">ਸਕੋ,</span> <span class="ps-w" data-s="99.319" data-e="99.479" data-c="2">ਤਾਂ</span> <span class="ps-w" data-s="99.559" data-e="99.939" data-c="2">ਤੁਰੰਤ</span> <span class="ps-w" data-s="99.959" data-e="99.979" data-c="2">108</span> <span class="ps-w" data-s="100.66" data-e="100.76" data-c="2">ਤੇ</span> <span class="ps-w" data-s="100.82" data-e="101.04" data-c="2">ਫ਼ੋਨ</span> <span class="ps-w" data-s="101.1" data-e="101.28" data-c="2">ਕਰੋ,</span> <span class="ps-w" data-s="101.82" data-e="101.94" data-c="2">ਤੇ</span> <span class="ps-w" data-s="101.981" data-e="102.241" data-c="2">ਨਰਸ</span> <span class="ps-w" data-s="102.301" data-e="102.421" data-c="2">ਨੂੰ</span> <span class="ps-w" data-s="102.421" data-e="102.521" data-c="2">ਵੀ</span> <span class="ps-w" data-s="102.521" data-e="102.821" data-c="2">ਦੱਸੋ।</span></span><span class="ps-en">(<span class="ps-ch" data-c="0">Talk to your nurse or doctor today.</span> <span class="ps-ch" data-c="1">If your lips turn blue, you feel confused or can&#x27;t speak,</span> <span class="ps-ch" data-c="2">call 108 for emergency help right away, and tell your nurse too.</span>)</span></li></ol></div></div>
+<!-- conversations:end -->
+</section>
 
-  <!-- Languages -->
-  <section class="ps-section">
-    <h2>Language Support</h2>
-    <p style="color: #6b7280; margin-bottom: 1.5rem;">Speak naturally—our AI understands and responds in your language.</p>
-    <div class="ps-language-grid">
-      <div class="ps-language"><span class="native">हिंदी</span>Hindi</div>
-      <div class="ps-language"><span class="native">বাংলা</span>Bengali</div>
-      <div class="ps-language"><span class="native">தமிழ்</span>Tamil</div>
-      <div class="ps-language"><span class="native">मराठी</span>Marathi</div>
-      <div class="ps-language"><span class="native">ગુજરાતી</span>Gujarati</div>
-      <div class="ps-language"><span class="native">ਪੰਜਾਬੀ</span>Punjabi</div>
-      <div class="ps-language"><span class="native">മലയാളം</span>Malayalam</div>
-      <div class="ps-language"><span class="native">తెలుగు</span>Telugu</div>
-      <div class="ps-language"><span class="native">ಕನ್ನಡ</span>Kannada</div>
-      <div class="ps-language"><span class="native">English</span>(India)</div>
+<section class="ps-section" id="review" aria-labelledby="review-h">
+  <p class="ps-kicker">Phase one</p>
+  <h2 id="review-h">What doctors said</h2>
+  <p class="ps-lede">In the project's first phase, four palliative-care doctors, two from Max Healthcare and two from Pallium India, each reviewed the same 40 made-up cases: 20 of advanced lung cancer and 20 of COPD. Each read one written English answer per case, not the voice and not the other languages: 160 reviews in all.</p>
+  <div class="ps-results">
+    <div class="ps-result">
+      <p class="ps-result-h">Mean overall score</p>
+      <div class="ps-bar" role="img" aria-label="Mean overall score 7.8 out of 10"><span style="width:78%"></span></div>
+      <p class="ps-result-n">7.8 <small>/ 10</small></p>
     </div>
-  </section>
+    <div class="ps-result">
+      <p class="ps-result-h">Would the doctor use the answer? (160 reviews)</p>
+      <div class="ps-stack" role="img" aria-label="Use as is 95, with revisions 44, no 21">
+        <span class="s-yes" style="flex:95">95</span><span class="s-rev" style="flex:44">44</span><span class="s-no" style="flex:21">21</span>
+      </div>
+      <p class="ps-legend"><span class="k s-yes"></span>use as is <span class="k s-rev"></span>with revisions <span class="k s-no"></span>no</p>
+    </div>
+  </div>
+  <ul class="ps-findings">
+    <li>All four doctors said yes together for only <b>3 of 40</b> cases, and they often disagreed with one another.</li>
+    <li>In <b>12 of 40</b> cases, at least one doctor rated safety 2 out of 5 or lower. Their comments raised concerns about <b>emergency escalation</b> and <b>medication advice</b>.</li>
+    <li>Good scores on average, with real safety worries in the details. The work continues: flagged answers will be revised.</li>
+  </ul>
+  <p class="ps-banner">Phase-one expert review on synthetic cases; not yet tested with real patients.</p>
+</section>
 
-  <!-- Supported By -->
-  <section class="ps-section">
-    <h2>Supported By</h2>
-    <div style="display: flex; gap: 2rem; align-items: center; justify-content: center; flex-wrap: wrap;">
-      <div style="text-align: center;">
-        <a href="https://www.gatesfoundation.org/" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">
-          <img src="/images/gates-foundation-logo.png" alt="Gates Foundation" style="height: 50px; width: auto; opacity: 0.8;">
-          <div style="font-size: 0.75rem; color: #6b7280; margin-top: 0.5rem;">Bill & Melinda Gates Foundation</div>
-        </a>
-      </div>
-      <div style="text-align: center;">
-        <a href="https://birac.nic.in/" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">
-          <img src="/images/birac-dbt-logo.png" alt="BIRAC / DBT" style="height: 60px; width: auto; opacity: 0.8;">
-          <div style="font-size: 0.75rem; color: #6b7280; margin-top: 0.5rem;">BIRAC / DBT India</div>
-        </a>
-      </div>
+<section class="ps-section" id="film" aria-labelledby="film-h">
+  <p class="ps-kicker">The full film</p>
+  <h2 id="film-h">Palli Sahayak: a voice in your phone for palliative care</h2>
+  <figure class="ps-video">
+    <div class="xp">
+      <video controls preload="none" playsinline poster="/palli-sahayak/media/ps-film.jpg">
+        <source src="/palli-sahayak/media/ps-film-720p.mp4" type="video/mp4">
+        <track kind="captions" src="/palli-sahayak/media/ps-film.vtt" srclang="en" label="English" default>
+        <track kind="chapters" src="/palli-sahayak/media/ps-film.chapters.vtt" srclang="en" label="Chapters">
+      </video>
     </div>
-    <p style="text-align: center; margin-top: 2rem; color: #6b7280; font-size: 0.875rem;">
-      Grant awarded under <strong>Grand Challenges India</strong> (November 2024)<br>
-      <span style="font-size: 0.8125rem;">PI: Dr. Anurag Agrawal • Co-investigator: Ashish Makani</span>
-    </p>
-  </section>
+    <figcaption>19 minutes: the access gap, how the tool finds an answer, its guard rails, three fictional conversations and the phase-one review. Narration is a synthetic voice.<!-- youtube: add the 1080p link here once it is uploaded --></figcaption>
+  </figure>
+</section>
 
-  <!-- Demo Section -->
-  <section class="ps-section" id="demo">
-    <h2>Try It Now</h2>
-    <div style="background: #1a1a1a; color: white; padding: 2rem; border-radius: 12px; text-align: center;">
-      <p style="margin: 0 0 1.5rem; color: #9ca3af;">Voice demo available in Hindi, Marathi, Tamil, and English</p>
-      <a href="https://github.com/inventcures/rag_gci#quick-start" target="_blank" rel="noopener" class="btn btn-primary" style="background: #22c55e;">
-        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M8 5v14l11-7z"/>
-        </svg>
-        Launch Voice Demo
-      </a>
-      <p style="margin: 1.5rem 0 0; font-size: 0.75rem; color: #6b7280;">
-        Requires a modern browser with microphone access
-      </p>
-    </div>
-  </section>
+<section class="ps-section" id="involved" aria-labelledby="inv-h">
+  <p class="ps-kicker">Open source</p>
+  <h2 id="inv-h">Use it, adapt it, help improve it</h2>
+  <p class="ps-lede">Palli Sahayak is released under the MIT licence. Anyone can read the code, run it and adapt it for another language, region or care setting.</p>
+  <div class="ps-links">
+    <a class="ps-link" href="https://github.com/inventcures/rag_gci"><b>Read the code</b><span>github.com/inventcures/rag_gci</span></a>
+    <a class="ps-link" href="https://github.com/inventcures/rag_gci#quick-start"><b>Run it yourself</b><span>Quick start in the repository</span></a>
+    <a class="ps-link" href="#add-language"><b>Add a language</b><span>What it takes, step by step</span></a>
+    <a class="ps-link" href="https://github.com/inventcures/rag_gci/issues"><b>Report an issue or suggest a fix</b><span>GitHub issues</span></a>
+  </div>
+</section>
 
-  <!-- Open Source -->
-  <section class="ps-section">
-    <h2>Open Source & Digital Public Good</h2>
-    <p style="color: #6b7280; line-height: 1.7; margin-bottom: 2rem;">
-      Palli Sahayak is a <strong>Digital Public Good</strong>—open source, adaptable, and designed for global health equity. The architecture can be adapted for any country, language, or medical domain.
-    </p>
-    <div class="ps-grid" style="grid-template-columns: repeat(2, 1fr);">
-      <div class="ps-card">
-        <h3>🔓 MIT License</h3>
-        <p>Freely usable, modifiable, and distributable for any purpose.</p>
-      </div>
-      <div class="ps-card">
-        <h3>🌍 SDG Aligned</h3>
-        <p>Contributing to UN Sustainable Development Goals 3 (Good Health) and 10 (Reduced Inequalities).</p>
-      </div>
-    </div>
-  </section>
+<section class="ps-section ps-thanks" id="acknowledgements" aria-labelledby="ack-h">
+  <h2 id="ack-h">Acknowledgements</h2>
+  <p class="ps-thanks-main">We thank the <a href="https://www.gatesfoundation.org/">Gates Foundation</a> and <a href="https://birac.nic.in/">BIRAC</a> (Biotechnology Industry Research Assistance Council, Government of India) for supporting this work under Grand Challenges India.</p>
+  <p>Clinical partners: Pallium India and Max Healthcare. Team: Dr Anurag Agrawal and Ashish Makani, Ashoka University.</p>
+  <ol class="ps-refs">
+    <li id="ref-1">Knaul FM et al. Alleviating the access abyss in palliative care and pain relief. <i>Lancet</i> 2018;391:1391–1454. <a href="https://doi.org/10.1016/S0140-6736(17)32513-8">doi:10.1016/S0140-6736(17)32513-8</a></li>
+  </ol>
+</section>
 
 </div>

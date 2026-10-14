@@ -135,75 +135,82 @@ and flags the call as
 urgent for clinicians to review.
 
 30
-00:01:57.553 --> 00:01:59.590
-Palli Sahayak is modular by design:
+00:01:57.553 --> 00:02:00.740
+We're now running a much
+more rigorous and detailed study,
 
 31
-00:01:59.590 --> 00:02:03.373
-a new disease area or specialty
-mainly needs its care guidelines.
+00:02:00.740 --> 00:02:05.299
+with oncology and palliative care clinical
+partners across India, to evaluate Palli
 
 32
-00:02:03.373 --> 00:02:07.155
-Encouraged by the response
-to phase one's palliative care advice,
+00:02:05.299 --> 00:02:08.760
+Sahayak and generate evidence on its
+benefit and effectiveness.
 
 33
-00:02:07.155 --> 00:02:10.240
-we're now considering extending
-it to women's health,
+00:02:08.760 --> 00:02:13.320
+And given the positive, encouraging
+response to phase one's palliative care advice,
 
 34
-00:02:10.240 --> 00:02:13.440
+00:02:13.320 --> 00:02:16.287
+we're also considering extending
+it to women's health,
+
+35
+00:02:16.287 --> 00:02:19.308
 starting with personalised care
 advice after menopause.
 
-35
-00:02:14.053 --> 00:02:18.764
+36
+00:02:19.920 --> 00:02:22.230
+Palli Sahayak is modular by design.
+
+37
+00:02:22.230 --> 00:02:25.463
+A new specialty mainly needs
+its care guidelines.
+
+38
+00:02:25.463 --> 00:02:30.082
 A new language mainly needs speech-to-text
 and text-to-speech support,
 
-36
-00:02:18.764 --> 00:02:22.667
-from a speech model. And
-a new country works the same way.
-
-37
-00:02:22.667 --> 00:02:27.849
-For Kenya or Zambia, add their palliative
-care guidelines to the library, and
-
-38
-00:02:27.849 --> 00:02:29.800
-change the language settings.
-
 39
-00:02:31.220 --> 00:02:33.423
-Palli Sahayak is an ongoing project.
+00:02:30.082 --> 00:02:33.910
+from a speech model. And
+a new country works the same way:
 
 40
-00:02:33.423 --> 00:02:38.258
-It has not yet been tested with real
-patients, and we're now undertaking a more
+00:02:33.910 --> 00:02:38.991
+for Kenya or Zambia, add their palliative
+care guidelines to the library, and
 
 41
-00:02:38.258 --> 00:02:40.278
-rigorous and detailed evaluation,
+00:02:38.991 --> 00:02:40.904
+change the language settings.
 
 42
-00:02:40.278 --> 00:02:42.481
-with clinical partners across India.
+00:02:42.320 --> 00:02:47.296
+Palli Sahayak is an ongoing project, and it
+has not yet been tested with real
 
 43
-00:02:43.120 --> 00:02:45.782
+00:02:47.296 --> 00:02:47.878
+patients.
+
+44
+00:02:48.487 --> 00:02:51.149
 The code is open
 for anyone to read and use.
 
-44
-00:02:45.782 --> 00:02:50.803
+45
+00:02:51.149 --> 00:02:56.170
 And we're very grateful to the Gates
 Foundation and BIRAC for supporting us through
 
-45
-00:02:50.803 --> 00:02:53.041
+46
+00:02:56.170 --> 00:02:58.408
 the Grand Challenges India programme.

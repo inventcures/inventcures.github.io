@@ -135,78 +135,75 @@ and flags the call as
 urgent for clinicians to review.
 
 30
-00:01:57.553 --> 00:01:59.733
-Palli Sahayak is modular by design.
+00:01:57.553 --> 00:01:59.590
+Palli Sahayak is modular by design:
 
 31
-00:01:59.733 --> 00:02:04.778
-To cover a new disease area or specialty, it
-mainly needs the care guidelines for
+00:01:59.590 --> 00:02:03.373
+a new disease area or specialty
+mainly needs its care guidelines.
 
 32
-00:02:04.778 --> 00:02:04.965
-it.
+00:02:03.373 --> 00:02:07.155
+Encouraged by the response
+to phase one's palliative care advice,
 
 33
-00:02:04.965 --> 00:02:07.954
-We're already experimenting
-with women's health,
+00:02:07.155 --> 00:02:10.240
+we're now considering extending
+it to women's health,
 
 34
-00:02:07.954 --> 00:02:12.688
-starting with care and advice after
-menopause, for women in India, in Indian
+00:02:10.240 --> 00:02:13.440
+starting with personalised care
+advice after menopause.
 
 35
-00:02:12.688 --> 00:02:13.310
-languages.
-
-36
-00:02:13.920 --> 00:02:18.631
+00:02:14.053 --> 00:02:18.764
 A new language mainly needs speech-to-text
 and text-to-speech support,
 
-37
-00:02:18.631 --> 00:02:22.534
+36
+00:02:18.764 --> 00:02:22.667
 from a speech model. And
 a new country works the same way.
 
-38
-00:02:22.534 --> 00:02:27.716
+37
+00:02:22.667 --> 00:02:27.849
 For Kenya or Zambia, add their palliative
 care guidelines to the library, and
 
-39
-00:02:27.716 --> 00:02:29.667
+38
+00:02:27.849 --> 00:02:29.800
 change the language settings.
 
-40
-00:02:31.087 --> 00:02:33.290
+39
+00:02:31.220 --> 00:02:33.423
 Palli Sahayak is an ongoing project.
 
-41
-00:02:33.290 --> 00:02:38.125
+40
+00:02:33.423 --> 00:02:38.258
 It has not yet been tested with real
 patients, and we're now undertaking a more
 
-42
-00:02:38.125 --> 00:02:40.144
+41
+00:02:38.258 --> 00:02:40.278
 rigorous and detailed evaluation,
 
-43
-00:02:40.144 --> 00:02:42.348
+42
+00:02:40.278 --> 00:02:42.481
 with clinical partners across India.
 
-44
-00:02:42.987 --> 00:02:45.648
+43
+00:02:43.120 --> 00:02:45.782
 The code is open
 for anyone to read and use.
 
-45
-00:02:45.648 --> 00:02:50.669
+44
+00:02:45.782 --> 00:02:50.803
 And we're very grateful to the Gates
 Foundation and BIRAC for supporting us through
 
-46
-00:02:50.669 --> 00:02:52.908
+45
+00:02:50.803 --> 00:02:53.041
 the Grand Challenges India programme.

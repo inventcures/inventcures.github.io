@@ -152,6 +152,27 @@ details.src pre{white-space:pre-wrap;font-family:var(--mono);font-size:12px;back
   .a-cols{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 
+
+/* sidenotes: margin notes on wide screens, tap-to-open inline notes on narrow ones */
+.sn-ref{font-size:.68em;line-height:0;vertical-align:super;font-family:var(--sans)}
+.sn-ref a{text-decoration:none;font-weight:600;padding:.3em .2em;border-radius:5px}
+.sn-ref a:hover,.sn-ref a:focus-visible,.sn-ref a.hot{background:var(--accent-soft)}
+.sn{display:none;font:400 13.5px/1.5 var(--sans);color:var(--muted);font-style:normal;text-align:left;letter-spacing:0}
+.sn .sn-num{font-weight:650;text-decoration:none;margin-right:4px;font-size:12px;vertical-align:1px}
+.sn a{color:var(--accent)}
+.sn .sn-down{text-decoration:none;margin-left:2px;padding:0 3px;border-radius:4px}
+.sn .sn-down:hover{background:var(--accent-soft)}
+.sn.open{display:block;margin:8px 0 10px;padding:8px 12px;border-left:2px solid var(--accent);background:var(--card);border-radius:0 8px 8px 0}
+.sn.hot{color:var(--fg)}
+.notes li .backref{text-decoration:none;margin-left:4px;padding:0 4px;border-radius:4px}
+.notes li .backref:hover{background:var(--accent-soft)}
+@media (min-width:1240px){
+  main{max-width:1180px;padding-right:320px}
+  .sn,.sn.open{display:block;float:right;clear:right;width:250px;margin:.25em -300px .9em 0;padding:0;border:0;background:none;border-radius:0;position:relative;transition:color .15s}
+  .summary .sn{margin-right:-321px}
+  .fig figcaption .sn{margin-right:-302px}
+}
+
 /* organ systems */
 .organs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
 .organ{border:1px solid;border-radius:10px;padding:10px 11px;font-size:13.5px;line-height:1.4}
@@ -351,13 +372,13 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 
 <section class="summary" aria-labelledby="summary-h">
 <h2 id="summary-h" style="font-size:21px;margin:0">In brief</h2>
-<p>Indian women reach menopause around 46, about five years earlier than women in the West. Heart, bone, urinary and breast risks all rise in the years that follow, yet most women never talk to anyone about it. Vaani Sakhi is a phone voice agent that answers their questions. It never answers from the AI model's memory. Clinical statements come only from guidelines that clinicians have signed off, risk numbers come only from validated calculators the agent calls as tools, and every warning sign goes to a human.</p>
-<p>It builds on Palli Sahayak, our earlier voice helpline for palliative care, and reuses its engine. It works in two modes: a woman can call it herself, or an ASHA worker can call it during a home visit. The longer-term aspiration is a <em>sakhi</em>, a trusted friend, that gets to know each woman over many calls.</p>
+<p>Indian women reach menopause around 46,<sup class="sn-ref"><a href="#ref-ims16" id="cite-1" data-sn="1" aria-describedby="sn-1">1</a></sup><span class="sn" id="sn-1" role="note"><a class="sn-num" href="#ref-ims16" aria-label="Reference 1 in the list below">1</a> Indian Menopause Society survey, 2016, and <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11303560/">Babbar et al., <i>Sci Rep</i> 2024</a>, using national survey data. <a class="sn-down" href="#ref-ims16" aria-label="Full reference 1">↓</a></span> about five years earlier than women in the West. Heart, bone, urinary and breast risks all rise in the years that follow, yet most women never talk to anyone about it. Vaani Sakhi is a phone voice agent that answers their questions. It never answers from the AI model's memory. Clinical statements come only from guidelines that clinicians have signed off,<sup class="sn-ref"><a href="#ref-guidelines" id="cite-2" data-sn="2" aria-describedby="sn-2">2</a></sup><span class="sn" id="sn-2" role="note"><a class="sn-num" href="#ref-guidelines" aria-label="Reference 2 in the list below">2</a> <a href="https://doi.org/10.4103/jmh.jmh_302_25">Indian Menopause Society 2026</a>, The Menopause Society, <a href="https://www.nice.org.uk/guidance/ng23">NICE NG23</a> and India's programme guidelines for non-communicable diseases. <a class="sn-down" href="#ref-guidelines" aria-label="Full reference 2">↓</a></span> risk numbers come only from validated calculators the agent calls as tools,<sup class="sn-ref"><a href="#ref-tools" id="cite-3" data-sn="3" aria-describedby="sn-3">3</a></sup><span class="sn" id="sn-3" role="note"><a class="sn-num" href="#ref-tools" aria-label="Reference 3 in the list below">3</a> The WHO South-Asia heart risk chart, <a href="https://frax.shef.ac.uk/FRAX/">FRAX</a> for fracture risk, and the Menopause Rating Scale. <a class="sn-down" href="#ref-tools" aria-label="Full reference 3">↓</a></span> and every warning sign goes to a human.</p>
+<p>It builds on Palli Sahayak, our earlier voice helpline for palliative care, and reuses its engine. It works in two modes: a woman can call it herself, or an ASHA worker<sup class="sn-ref"><a href="#ref-asha" id="cite-4" data-sn="4" aria-describedby="sn-4">4</a></sup><span class="sn" id="sn-4" role="note"><a class="sn-num" href="#ref-asha" aria-label="Reference 4 in the list below">4</a> Accredited Social Health Activists: <a href="https://nhm.gov.in/index1.php?lang=1&amp;level=1&amp;sublinkid=150&amp;lid=226">community health workers</a> under India's National Health Mission, about one for every 1,000 rural people. <a class="sn-down" href="#ref-asha" aria-label="Full reference 4">↓</a></span> can call it during a home visit. The longer-term aspiration is a <em>sakhi</em>, a trusted friend, that gets to know each woman over many calls.</p>
 </section>
 
 <div class="tiles" role="list">
-  <div class="tile" role="listitem"><div class="num">~46 <small>yrs</small></div><div class="what">Average age at menopause in India, about five years earlier than in Western women</div><div class="src">IMS survey 2016<sup class="r"><a href="#ref-ims16">3</a></sup></div></div>
-  <div class="tile" role="listitem"><div class="num">~2%</div><div class="what">Breast-cancer screening coverage among Indian women</div><div class="src">South Asian J Cancer 2017<sup class="r"><a href="#ref-sajc">6</a></sup></div></div>
+  <div class="tile" role="listitem"><div class="num">~46 <small>yrs</small></div><div class="what">Average age at menopause in India, about five years earlier than in Western women</div><div class="src">IMS survey 2016<sup class="r"><a href="#ref-ims16">1</a></sup></div></div>
+  <div class="tile" role="listitem"><div class="num">~2%</div><div class="what">Breast-cancer screening coverage among Indian women</div><div class="src">South Asian J Cancer 2017<sup class="r"><a href="#ref-sajc" id="cite-5">5</a></sup></div></div>
   <div class="tile" role="listitem"><div class="num">7.8<small>/10</small></div><div class="what">Palli Sahayak expert score over 160 reviews. 59% endorsed it without reservation</div><div class="src">Earlier helpline evaluation</div></div>
   <div class="tile" role="listitem"><div class="num">≥85%</div><div class="what">Target: answers to test cases that clinicians judge safe</div><div class="src">Vaani Sakhi safety bar</div></div>
 </div>
@@ -365,7 +386,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 <p class="kicker" id="why">The problem</p>
 <h2>Five organ systems change at once</h2>
 <div class="prose">
-<p>During the menopause transition, LDL ("bad") cholesterol and arterial stiffness rise, bone loss speeds up, and genitourinary symptoms such as vaginal dryness and urinary urgency begin. Women also face decisions about hormone therapy and breast cancer. Each of these has its own guideline, written by a different specialist society.</p>
+<p>During the menopause transition, LDL ("bad") cholesterol and arterial stiffness rise,<sup class="sn-ref"><a href="#ref-elk" id="cite-6" data-sn="6" aria-describedby="sn-6">6</a></sup><span class="sn" id="sn-6" role="note"><a class="sn-num" href="#ref-elk" aria-label="Reference 6 in the list below">6</a> <a href="https://doi.org/10.1161/CIR.0000000000000912">El Khoudary et al., <i>Circulation</i> 2020</a>: the menopause transition and heart disease risk in women. <a class="sn-down" href="#ref-elk" aria-label="Full reference 6">↓</a></span> bone loss speeds up, and genitourinary symptoms such as vaginal dryness and urinary urgency begin.<sup class="sn-ref"><a href="#ref-gsm" id="cite-7" data-sn="7" aria-describedby="sn-7">7</a></sup><span class="sn" id="sn-7" role="note"><a class="sn-num" href="#ref-gsm" aria-label="Reference 7 in the list below">7</a> Together called the genitourinary syndrome of menopause. <a href="https://doi.org/10.1097/GME.0000000000000329">Portman and Gass, 2014</a>; <a href="https://pubmed.ncbi.nlm.nih.gov/40298120/">AUA/SUFU/AUGS guideline, 2025</a>. <a class="sn-down" href="#ref-gsm" aria-label="Full reference 7">↓</a></span> Women also face decisions about hormone therapy and breast cancer. Each of these has its own guideline, written by a different specialist society.</p>
 </div>
 
 <figure class="fig" id="fig-organs" aria-labelledby="fig-organs-cap">
@@ -409,7 +430,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 <p class="kicker" id="architecture">Architecture</p>
 <h2>How a call flows through the system</h2>
 <div class="prose">
-<p>The caller uses an ordinary phone line, so a basic feature phone without internet works. Personal identifiers are stripped in India before anything reaches a cloud model. Google's Gemini Live API handles real-time speech to speech for the proof of concept. If it is down, slow or weak in a dialect, the call switches to the Palli Sahayak speech pipeline from Sarvam AI and an open-weight model hosted in India. Whichever model answers, it must go through the same four tools.</p>
+<p>The caller uses an ordinary phone line, so a basic feature phone without internet works. Personal identifiers are stripped in India before anything reaches a cloud model. Google's Gemini Live API handles real-time speech to speech for the proof of concept.<sup class="sn-ref"><a href="#ref-gemini" id="cite-8" data-sn="8" aria-describedby="sn-8">8</a></sup><span class="sn" id="sn-8" role="note"><a class="sn-num" href="#ref-gemini" aria-label="Reference 8 in the list below">8</a> <a href="https://ai.google.dev/gemini-api/docs/live">Gemini Live</a> streams audio both ways and can <a href="https://ai.google.dev/gemini-api/docs/function-calling">call functions</a>, which is how the four tools plug in. <a class="sn-down" href="#ref-gemini" aria-label="Full reference 8">↓</a></span> If it is down, slow or weak in a dialect, the call switches to the Palli Sahayak speech pipeline from Sarvam AI and an open-weight model hosted in India.<sup class="sn-ref"><a href="#ref-models" id="cite-9" data-sn="9" aria-describedby="sn-9">9</a></sup><span class="sn" id="sn-9" role="note"><a class="sn-num" href="#ref-models" aria-label="Reference 9 in the list below">9</a> <a href="https://docs.sarvam.ai/api/getting-started/models/saarika">Sarvam AI</a> builds Indian-language speech models. An open-weight model publishes its parameters, so it can run on our own servers. <a class="sn-down" href="#ref-models" aria-label="Full reference 9">↓</a></span> Whichever model answers, it must go through the same four tools.</p>
 </div>
 <figure class="fig" aria-labelledby="fig-arch-cap">
   <div class="fig-body">
@@ -544,7 +565,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
       </div>
     </div>
   </div>
-  <figcaption id="fig-data-cap"><b>A provider-agnostic design.</b> To scale up and keep costs down, we will also test open models that can be hosted in India, such as MedGemma, on the same vignettes and safety checks as Gemini. We will switch to a locally hosted model only if it does well in that testing.</figcaption>
+  <figcaption id="fig-data-cap"><b>A provider-agnostic design.</b> To scale up and keep costs down, we will also test open models that can be hosted in India, such as MedGemma, on the same vignettes and safety checks as Gemini. We will switch to a locally hosted model only if it does well in that testing. The design follows Indian and WHO guidance on AI in health, and India's data protection law.<sup class="sn-ref"><a href="#ref-ethics" id="cite-10" data-sn="10" aria-describedby="sn-10">10</a></sup><span class="sn" id="sn-10" role="note"><a class="sn-num" href="#ref-ethics" aria-label="Reference 10 in the list below">10</a> <a href="https://www.icmr.gov.in/icmrobject/custom_data/pdf/Ethical-guidelines/Ethical_Guidelines_AI_Healthcare_2023.pdf">ICMR ethical guidelines for AI in healthcare, 2023</a>; WHO guidance on large multimodal models, 2024; Digital Personal Data Protection Act, 2023. <a class="sn-down" href="#ref-ethics" aria-label="Full reference 10">↓</a></span></figcaption>
 </figure>
 <ul class="checks">
   <li>The agent never prescribes</li>
@@ -582,7 +603,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
       <div class="target"><div class="v">Per language</div><div class="l">word error rate and response delay, reported separately</div></div>
     </div>
   </div>
-  <figcaption id="fig-val-cap"><b>Benchmarks.</b> The agent is compared with the Palli Sahayak engine, the same Gemini model without tools or retrieval, and a leading general-purpose LLM. Off-the-shelf LLMs answer only 30–70% of menopause questions fully correctly<sup class="r"><a href="#ref-meno25">10</a></sup>, while tool-calling agents reach about 88% on clinical calculations<sup class="r"><a href="#ref-agentmd">11</a></sup>. Health outcomes such as screening uptake need a larger trial, and we do not claim them.</figcaption>
+  <figcaption id="fig-val-cap"><b>Benchmarks.</b> The agent is compared with the Palli Sahayak engine, the same Gemini model without tools or retrieval, and a leading general-purpose LLM. Off-the-shelf LLMs answer only 30–70% of menopause questions fully correctly<sup class="sn-ref"><a href="#ref-meno25" id="cite-11" data-sn="11" aria-describedby="sn-11">11</a></sup><span class="sn" id="sn-11" role="note"><a class="sn-num" href="#ref-meno25" aria-label="Reference 11 in the list below">11</a> A 2025 study in <a href="https://pubmed.ncbi.nlm.nih.gov/41329562"><i>Menopause</i></a> testing general chatbots on menopause questions. <a class="sn-down" href="#ref-meno25" aria-label="Full reference 11">↓</a></span>, while tool-calling agents reach about 88% on clinical calculations<sup class="sn-ref"><a href="#ref-agentmd" id="cite-12" data-sn="12" aria-describedby="sn-12">12</a></sup><span class="sn" id="sn-12" role="note"><a class="sn-num" href="#ref-agentmd" aria-label="Reference 12 in the list below">12</a> <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12549800/">AgentMD</a>, <i>Nature Communications</i> 2025: an agent that picks and runs clinical calculators. <a class="sn-down" href="#ref-agentmd" aria-label="Full reference 12">↓</a></span>. Health outcomes such as screening uptake need a larger trial, and we do not claim them.</figcaption>
 </figure>
 
 <p class="kicker" id="aspiration">Where it's going</p>
@@ -603,20 +624,20 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 </ul>
 
 <section class="notes" aria-labelledby="notes-h">
-<h2 id="notes-h">Selected references</h2>
+<h2 id="notes-h">References</h2>
 <ol>
-  <li id="ref-gemini"><a href="https://ai.google.dev/gemini-api/docs/live">Gemini Live API</a>; <a href="https://ai.google.dev/gemini-api/docs/function-calling">Gemini function calling</a>.</li>
-  <li id="ref-asha"><a href="https://nhm.gov.in/index1.php?lang=1&amp;level=1&amp;sublinkid=150&amp;lid=226">National Health Mission: ASHA</a>.</li>
-  <li id="ref-ims16"><a href="https://doaj.org/article/2505290e8dbd4246b7c86240a31ad0d8">Indian Menopause Society survey, 2016</a>; <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11303560/">Babbar et al., Sci Rep 2024</a>.</li>
-  <li id="ref-elk"><a href="https://doi.org/10.1161/CIR.0000000000000912">El Khoudary et al. Menopause transition and cardiovascular disease risk. Circulation 2020</a>.</li>
-  <li id="ref-gsm"><a href="https://doi.org/10.1097/GME.0000000000000329">Portman and Gass. Genitourinary syndrome of menopause. Menopause 2014</a>; <a href="https://pubmed.ncbi.nlm.nih.gov/40298120/">AUA/SUFU/AUGS guideline, 2025</a>.</li>
-  <li id="ref-sajc"><a href="https://www.thieme-connect.de/products/all/doi/10.4103/2278-330X.208859">Breast-screening coverage in India. South Asian J Cancer 2017</a>.</li>
-  <li id="ref-guidelines"><a href="https://doi.org/10.4103/jmh.JMH_137_20">IMS 2020</a>; <a href="https://doi.org/10.4103/jmh.jmh_302_25">IMS 2026</a>; <a href="https://doi.org/10.1097/GME.0000000000002028">The Menopause Society 2022</a>; <a href="https://doi.org/10.1097/GME.0000000000002200">2023</a>; <a href="https://www.nice.org.uk/guidance/ng23">NICE NG23</a>; <a href="https://www.mohfw.gov.in/sites/default/files/NP-NCD%20Operational%20Guidelines_0.pdf">NP-NCD operational guidelines and CBAC, 2023</a>.</li>
-  <li id="ref-tools"><a href="https://doi.org/10.1016/S2214-109X%2819%2930318-3">Kaptoge et al. WHO CVD risk charts. Lancet Glob Health 2019</a>; <a href="https://frax.shef.ac.uk/FRAX/">FRAX</a>; <a href="https://doi.org/10.1186/1477-7525-2-45">Heinemann et al. Menopause Rating Scale. 2004</a>.</li>
-  <li id="ref-models"><a href="https://docs.sarvam.ai/api/getting-started/models/saarika">Sarvam AI speech models</a>; <a href="https://developers.google.com/health-ai-developer-foundations/medgemma">MedGemma</a>.</li>
-  <li id="ref-meno25"><a href="https://pubmed.ncbi.nlm.nih.gov/41329562">Accuracy of large language models on menopause questions. Menopause 2025</a>.</li>
-  <li id="ref-agentmd"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12549800/">AgentMD. Nat Commun 2025</a>.</li>
-  <li id="ref-ethics"><a href="https://www.icmr.gov.in/icmrobject/custom_data/pdf/Ethical-guidelines/Ethical_Guidelines_AI_Healthcare_2023.pdf">ICMR ethical guidelines for AI in healthcare, 2023</a>; <a href="https://www.who.int/news/item/18-01-2024-who-releases-ai-ethics-and-governance-guidance-for-large-multi-modal-models">WHO guidance on large multimodal models, 2024</a>; <a href="https://www.indiacode.nic.in/bitstream/123456789/22037/2/a2023-22.pdf">DPDP Act, 2023</a>.</li>
+  <li id="ref-ims16"><a href="https://doaj.org/article/2505290e8dbd4246b7c86240a31ad0d8">Indian Menopause Society survey, 2016</a>; <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11303560/">Babbar et al., Sci Rep 2024</a>. <a class="backref" href="#cite-1" aria-label="Back to the text for reference 1">↩</a></li>
+  <li id="ref-guidelines"><a href="https://doi.org/10.4103/jmh.JMH_137_20">IMS 2020</a>; <a href="https://doi.org/10.4103/jmh.jmh_302_25">IMS 2026</a>; <a href="https://doi.org/10.1097/GME.0000000000002028">The Menopause Society 2022</a>; <a href="https://doi.org/10.1097/GME.0000000000002200">2023</a>; <a href="https://www.nice.org.uk/guidance/ng23">NICE NG23</a>; <a href="https://www.mohfw.gov.in/sites/default/files/NP-NCD%20Operational%20Guidelines_0.pdf">NP-NCD operational guidelines and CBAC, 2023</a>. <a class="backref" href="#cite-2" aria-label="Back to the text for reference 2">↩</a></li>
+  <li id="ref-tools"><a href="https://doi.org/10.1016/S2214-109X%2819%2930318-3">Kaptoge et al. WHO CVD risk charts. Lancet Glob Health 2019</a>; <a href="https://frax.shef.ac.uk/FRAX/">FRAX</a>; <a href="https://doi.org/10.1186/1477-7525-2-45">Heinemann et al. Menopause Rating Scale. 2004</a>. <a class="backref" href="#cite-3" aria-label="Back to the text for reference 3">↩</a></li>
+  <li id="ref-asha"><a href="https://nhm.gov.in/index1.php?lang=1&amp;level=1&amp;sublinkid=150&amp;lid=226">National Health Mission: ASHA</a>. <a class="backref" href="#cite-4" aria-label="Back to the text for reference 4">↩</a></li>
+  <li id="ref-sajc"><a href="https://www.thieme-connect.de/products/all/doi/10.4103/2278-330X.208859">Breast-screening coverage in India. South Asian J Cancer 2017</a>. <a class="backref" href="#cite-5" aria-label="Back to the text for reference 5">↩</a></li>
+  <li id="ref-elk"><a href="https://doi.org/10.1161/CIR.0000000000000912">El Khoudary et al. Menopause transition and cardiovascular disease risk. Circulation 2020</a>. <a class="backref" href="#cite-6" aria-label="Back to the text for reference 6">↩</a></li>
+  <li id="ref-gsm"><a href="https://doi.org/10.1097/GME.0000000000000329">Portman and Gass. Genitourinary syndrome of menopause. Menopause 2014</a>; <a href="https://pubmed.ncbi.nlm.nih.gov/40298120/">AUA/SUFU/AUGS guideline, 2025</a>. <a class="backref" href="#cite-7" aria-label="Back to the text for reference 7">↩</a></li>
+  <li id="ref-gemini"><a href="https://ai.google.dev/gemini-api/docs/live">Gemini Live API</a>; <a href="https://ai.google.dev/gemini-api/docs/function-calling">Gemini function calling</a>. <a class="backref" href="#cite-8" aria-label="Back to the text for reference 8">↩</a></li>
+  <li id="ref-models"><a href="https://docs.sarvam.ai/api/getting-started/models/saarika">Sarvam AI speech models</a>; <a href="https://developers.google.com/health-ai-developer-foundations/medgemma">MedGemma</a>. <a class="backref" href="#cite-9" aria-label="Back to the text for reference 9">↩</a></li>
+  <li id="ref-ethics"><a href="https://www.icmr.gov.in/icmrobject/custom_data/pdf/Ethical-guidelines/Ethical_Guidelines_AI_Healthcare_2023.pdf">ICMR ethical guidelines for AI in healthcare, 2023</a>; <a href="https://www.who.int/news/item/18-01-2024-who-releases-ai-ethics-and-governance-guidance-for-large-multi-modal-models">WHO guidance on large multimodal models, 2024</a>; <a href="https://www.indiacode.nic.in/bitstream/123456789/22037/2/a2023-22.pdf">DPDP Act, 2023</a>. <a class="backref" href="#cite-10" aria-label="Back to the text for reference 10">↩</a></li>
+  <li id="ref-meno25"><a href="https://pubmed.ncbi.nlm.nih.gov/41329562">Accuracy of large language models on menopause questions. Menopause 2025</a>. <a class="backref" href="#cite-11" aria-label="Back to the text for reference 11">↩</a></li>
+  <li id="ref-agentmd"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12549800/">AgentMD. Nat Commun 2025</a>. <a class="backref" href="#cite-12" aria-label="Back to the text for reference 12">↩</a></li>
 </ol>
 </section>
 
@@ -626,6 +647,26 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 
 <script>
 setTimeout(function(){document.querySelectorAll('.mm .loading').forEach(function(n){n.textContent='The diagram library did not load. Reload the page to try again.';});},12000);
+</script>
+<script>
+(function(){
+  var wide=matchMedia('(min-width:1240px)');
+  document.querySelectorAll('.sn-ref a').forEach(function(a){
+    var note=document.getElementById('sn-'+a.dataset.sn);
+    if(!note)return;
+    a.addEventListener('click',function(e){
+      if(wide.matches)return;
+      e.preventDefault();
+      var open=note.classList.toggle('open');
+      a.setAttribute('aria-expanded',open?'true':'false');
+    });
+    function hot(on){a.classList.toggle('hot',on);note.classList.toggle('hot',on);}
+    [a,note].forEach(function(el){
+      el.addEventListener('mouseenter',function(){hot(true);});
+      el.addEventListener('mouseleave',function(){hot(false);});
+    });
+  });
+})();
 </script>
 <script type="module">
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.esm.min.mjs";

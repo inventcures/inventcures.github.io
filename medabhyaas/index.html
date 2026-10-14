@@ -16,6 +16,8 @@ layout: null
   <title>Med Abhyaas — A practice copilot for medical education</title>
   <link rel="icon" href="mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/assets/explainer-player/explainer-player.css">
+  <script src="/assets/explainer-player/explainer-player.js" defer></script>
   <script src="app.js" defer></script>
 <link rel="stylesheet" href="/assets/css/site-theme.css">
 <link rel="stylesheet" href="/assets/css/site-theme-standalone.css">
@@ -53,6 +55,21 @@ layout: null
       </div>
     </div>
     <div class="hero-bottom"><span>Clinical reasoning</span><span>Indic-language encounters</span><span>Evidence-linked feedback</span><span>Progressive practice</span></div>
+  </section>
+
+  <section id="explainer" class="shell section explainer" aria-labelledby="explainer-title">
+    <div class="section-label">Explainer / 12 min</div>
+    <div class="section-heading"><h2 id="explainer-title">The idea,<br><span class="serif">in twelve minutes.</span></h2><p>Why naming the diagnosis is not enough, how a controlled encounter keeps the patient's clinical truth fixed, and how the approach would be tested. Captions are on by default.</p></div>
+    <figure class="xp-figure">
+      <div class="xp" aria-label="Explainer video: A Practice Copilot for Medical Education">
+        <video controls preload="metadata" playsinline poster="media/practice-copilot-explainer.jpg">
+          <source src="media/practice-copilot-explainer.mp4" type="video/mp4">
+          <track kind="captions" src="media/practice-copilot-explainer.vtt" srclang="en" label="English" default>
+          <track kind="chapters" src="media/practice-copilot-explainer.chapters.vtt" srclang="en" label="Chapters">
+        </video>
+      </div>
+      <figcaption class="xp-credit">A 3Blue1Brown-style explainer video, inspired by Grant Sanderson (<a href="https://www.youtube.com/@3blue1brown">3Blue1Brown on YouTube</a>). <a class="xp-yt" href="https://www.youtube.com/watch?v=APrS9xAkjcw">Also on YouTube</a></figcaption>
+    </figure>
   </section>
 
   <section class="intro shell section" aria-labelledby="intro-title">

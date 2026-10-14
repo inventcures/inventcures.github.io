@@ -347,28 +347,16 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 </nav>
 </header>
 
-<!--
-  VIDEO SLOT. The explainer video is still being made. Once it has been reviewed,
-  replace the .video-slot div below with the same player markup used on /care-routing/:
-
-  <figure class="xp-figure">
-    <div class="xp">
-      <video controls preload="metadata" playsinline poster="media/vaani-sakhi-explainer.jpg">
-        <source src="media/vaani-sakhi-explainer.mp4" type="video/mp4">
-        <track kind="captions" src="media/vaani-sakhi-explainer.vtt" srclang="en" label="English" default>
-        <track kind="chapters" src="media/vaani-sakhi-explainer.chapters.vtt" srclang="en" label="Chapters">
-      </video>
-    </div>
-    <figcaption class="xp-credit">...</figcaption>
-  </figure>
--->
-<div class="video-slot" role="img" aria-label="Placeholder for the explainer video">
-  <div>
-    <div class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.14v13.72a1 1 0 0 0 1.52.85l10.6-6.86a1 1 0 0 0 0-1.7L9.52 4.29A1 1 0 0 0 8 5.14z"/></svg></div>
-    <p><b>Explainer video coming soon</b></p>
-    <p>It will play here with captions.</p>
+<figure class="xp-figure" id="video">
+  <div class="xp">
+    <video controls preload="metadata" playsinline poster="media/vaani-sakhi-explainer.jpg">
+      <source src="media/vaani-sakhi-explainer.mp4" type="video/mp4">
+      <track kind="captions" src="media/vaani-sakhi-explainer.vtt" srclang="en" label="English" default>
+      <track kind="chapters" src="media/vaani-sakhi-explainer.chapters.vtt" srclang="en" label="Chapters">
+    </video>
   </div>
-</div>
+  <figcaption class="xp-credit">A 3Blue1Brown-style explainer video, inspired by Grant Sanderson (<a href="https://www.youtube.com/@3blue1brown">3Blue1Brown on YouTube</a>). 14 minutes, captions on by default. Kamla and her call are fictional illustrations.</figcaption>
+</figure>
 
 <section class="summary" aria-labelledby="summary-h">
 <h2 id="summary-h" style="font-size:21px;margin:0">In brief</h2>

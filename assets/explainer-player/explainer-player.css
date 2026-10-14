@@ -67,3 +67,4 @@
 }
 @media (hover:none){.xp-vol input{display:none}}
 @media (prefers-reduced-motion:reduce){.xp *,.xp{transition:none!important}}
+.xp-yt{margin-left:4px;font-size:12px;opacity:.75}

@@ -5,6 +5,7 @@ layout: default
 description: "Evidence relevance, physician-AI collaboration, and virtual patient practice for medical education."
 ---
 <link rel="stylesheet" href="{{ '/assets/css/clinical-paper-previews.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/problem-representation.css' | relative_url }}">
 <script defer src="{{ '/assets/js/clinical-paper-previews.js' | relative_url }}" data-paper-previews="{{ '/assets/data/clinical-paper-previews.json' | relative_url }}"></script>
 <main class="main-content" data-paper-preview-scope>
 <div class="container-narrow">
@@ -12,6 +13,7 @@ description: "Evidence relevance, physician-AI collaboration, and virtual patien
 <p>Clinical reasoning depends on what a clinician asks, which findings they consider relevant, and how they revise a working explanation as evidence arrives. A correct answer on a medical exam captures only part of that process.</p>
 <nav aria-label="On this page"><ul>
 <li><a href="#evidence-relevance">Evidence relevance and physician-AI collaboration</a></li>
+<li><a href="#problem-representation">Problem representation: from 200 facts to one line</a></li>
 <li><a href="#medical-education">Use of AI for Medical Education</a></li>
 <li><a href="#medical-authority">Medical authority and learner agency</a></li>
 <li><a href="#medpair-recording">MedPAIR reading group recording</a></li>
@@ -32,6 +34,72 @@ description: "Evidence relevance, physician-AI collaboration, and virtual patien
 <p>MedPAIR asks which evidence a model treats as relevant within a supplied case. MedBrowseComp asks whether an agent can find needed evidence across sources. Together they motivate practice in identifying missing information, choosing a source, checking what it supports and revising a decision. For <a href="/medabhyaas/">Med Abhyaas</a>, recording these searches alongside the encounter is an educational design proposal that needs evaluation.</p>
 <p>MedBrowseComp chiefly evaluates oncology fact retrieval. Guideline concordance is proposed future work. Its benchmark scores do not demonstrate faithful internal reasoning, improved learning or patient benefit. Read the <a href="https://arxiv.org/html/2505.14963v1">paper and examples</a> or explore the <a href="https://huggingface.co/datasets/AIM-Harvard/MedBrowseComp">dataset</a>.</p>
 </section>
+<hr>
+<section id="problem-representation" class="pr" aria-labelledby="problem-representation-title">
+<h2 id="problem-representation-title">Problem representation: from 200 facts to one line</h2>
+<p>Before a clinician can reason about a case, they compress it. The one-line summary of the salient facts is called the <em>problem representation</em>. It shapes the differential and the next question. Increasingly, it is also what gets typed into an AI tool. Robert Wachter calls this distillation “at the heart of medicine”.</p>
+
+<figure class="pr-fig" aria-labelledby="pr-fig1-cap">
+  <div class="pr-panel">
+    <p class="pr-kicker">What the clinician starts with</p>
+    <ul class="pr-chips" aria-label="Kinds of facts about a patient">
+      <li>current symptoms</li><li>medications</li><li>medical history</li><li>surgical history</li><li>family history</li><li>travel history</li><li>pets</li><li>etc., etc.</li>
+    </ul>
+    <div class="pr-funnel" aria-hidden="true"><span>~200 facts → keep the salient ones, in general terms</span></div>
+    <p class="pr-kicker">What comes out</p>
+    <p class="pr-oneliner"><span class="pr-who">A 35-year-old woman</span> who presents with <span class="pr-when">2 days</span> of <span class="pr-what">shortness of breath, pleuritic chest pain, and a swollen left leg</span>. <span class="pr-who">She smokes, takes oral contraceptives, and had a traumatic tibial fracture 2 months ago that left her immobilized until last week.</span></p>
+    <ul class="pr-legend"><li class="pr-k-who">Who: the patient and risk factors</li><li class="pr-k-when">When: duration and tempo</li><li class="pr-k-what">What: the syndrome</li></ul>
+  </div>
+  <figcaption id="pr-fig1-cap">One example problem representation, quoted from <a href="https://robertwachter.substack.com/p/on-straw-men-and-doormen">Wachter's “On Straw Men and Doormen”</a>. The colour coding follows the Clinical Problem Solvers' Who / When / What questions.</figcaption>
+</figure>
+
+<figure class="pr-fig" aria-labelledby="pr-fig2-cap">
+  <div class="pr-www">
+    <div class="pr-c-who"><h4>Who?</h4><p>Demographics, epidemiology, risk factors</p><ul><li>35-year-old woman</li><li>smokes</li><li>oral contraceptives</li><li>recent fracture and immobility</li></ul></div>
+    <div class="pr-c-when"><h4>When?</h4><p>Duration (hyperacute → chronic) and tempo (stable, progressive, fluctuating)</p><ul><li>2 days: acute</li></ul></div>
+    <div class="pr-c-what"><h4>What?</h4><p>Key and differentiating features of the syndrome</p><ul><li>shortness of breath</li><li>pleuritic chest pain</li><li>swollen left leg</li></ul></div>
+  </div>
+  <div class="pr-qualifiers"><b>Semantic qualifiers</b><span>acute / subacute / chronic</span><span>localized / diffuse</span><span>mild / moderate / severe</span><span>constant / recurrent</span><span>young / old</span></div>
+  <figcaption id="pr-fig2-cap">Three questions a problem representation should answer, and the general terms that link a case to illness scripts. Adapted from <a href="https://clinicalproblemsolving.com/2022/06/12/problem-representation/">the Clinical Problem Solvers' guide to problem representation</a>.</figcaption>
+</figure>
+
+<p>Leave out what does not help frame the syndrome. Keep some facts in the background, though, because they can become central later. A problem representation is not right or wrong, just more or less useful, and it should change as new data arrive.</p>
+
+<figure class="pr-fig" aria-labelledby="pr-fig3-cap">
+  <ol class="pr-flow">
+    <li><div><h4>First problem representation</h4><p>Emergency department, day 1.</p><q>A middle-aged male presenting with acute fever associated with headache and myalgia.</q><div class="pr-tags"><span class="pr-schema">schema: fever</span></div></div></li>
+    <li><div><h4>New data arrive</h4><div class="pr-tags"><span class="pr-new">rash the next day</span><span class="pr-new">hypertension, diabetes</span><span class="pr-new">travel to Brazil last week</span><span class="pr-new">leukopenia, lymphopenia, thrombocytopenia</span><span>lives with 2 cats (kept in the background)</span></div></div></li>
+    <li><div><h4>Updated problem representation</h4><p>The one-liner grows, and it now points to two schemas.</p><div class="pr-tags"><span class="pr-schema">fever + rash</span><span class="pr-schema">fever in a returning traveler</span></div></div></li>
+    <li><div><h4>Compare with illness scripts</h4><p>Dengue appears in both schemas, and its script matches the case.</p><div class="pr-tags"><span class="pr-match">dengue</span></div></div></li>
+    <li><div><h4>Confirm</h4><p>A positive NS1 test confirms the diagnosis.</p></div></li>
+  </ol>
+  <figcaption id="pr-fig3-cap">The problem representation evolves as the case unfolds. Worked example from <a href="https://clinicalproblemsolving.com/2022/06/12/problem-representation/">the Clinical Problem Solvers</a>.</figcaption>
+</figure>
+
+<h3 id="problem-representation-ai">Why this matters for AI</h3>
+<p>Most patients describe their problem as a stream of consciousness, not a one-liner. A medical AI should be able to turn that into a working problem representation and check it with the patient. The patient should not have to learn to prompt like a doctor. My essay <a href="/care-routing/">When Consumer AI Routes Patients to Care</a> makes this argument.</p>
+
+<figure class="pr-fig" aria-labelledby="pr-fig4-cap">
+  <ol class="pr-route">
+    <li><b>Patient's own words</b><span>messy, partial, in their language</span></li>
+    <li class="pr-ai"><b>Working problem representation</b><span>drafted by the AI: who, when, what</span></li>
+    <li class="pr-loop"><b>Patient confirms or corrects</b><span>goals, constraints, consequential details</span></li>
+    <li><b>Next step</b><span>advice, a clinician, or a route to care</span></li>
+  </ol>
+  <figcaption id="pr-fig4-cap">Where a problem representation sits in a consumer health AI. This is a proposal: current models cannot reliably do this yet.</figcaption>
+</figure>
+
+<p>For <a href="/medabhyaas/">Med Abhyaas</a>, the same skill is a teaching target. A virtual patient encounter can ask the learner to state a problem representation before seeing an AI suggestion, and again after new findings, and then review what changed.</p>
+
+<figure class="pr-fig" aria-labelledby="pr-fig5-cap">
+  <div class="pr-shots">
+    <img src="{{ '/assets/images/clinical-reasoning/wachter_problem_representation_clean.png' | relative_url }}" width="1552" height="460" loading="lazy" alt="Excerpt from Robert Wachter's essay: a huge part of the art of medicine is distilling what might be 200 facts about a patient into the salient ones; these salient facts are the problem representation, used to organize thinking, discuss cases with colleagues and load into AI tools.">
+    <img src="{{ '/assets/images/clinical-reasoning/wachter_problem_representation_example.png' | relative_url }}" width="1552" height="300" loading="lazy" alt="Excerpt from Robert Wachter's essay giving his example problem representation of a 35-year-old woman with 2 days of shortness of breath, pleuritic chest pain and a swollen left leg.">
+  </div>
+  <figcaption id="pr-fig5-cap">Screenshots from Robert Wachter, <a href="https://robertwachter.substack.com/p/on-straw-men-and-doormen">“On Straw Men and Doormen”</a>, <em>Ground Truths</em>, 27 August 2026.</figcaption>
+</figure>
+</section>
+
 <hr>
 <section id="medical-education" aria-labelledby="education-title">
 <h2 id="education-title">Use of AI for Medical Education</h2>

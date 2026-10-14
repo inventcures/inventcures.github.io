@@ -117,20 +117,66 @@ and flags the call as
 urgent for clinicians to review.
 
 26
-00:01:43.587 --> 00:01:49.013
+00:01:43.587 --> 00:01:45.766
+Palli Sahayak is modular by design.
+
+27
+00:01:45.766 --> 00:01:50.811
+To cover a new disease area or specialty, it
+mainly needs the care guidelines for
+
+28
+00:01:50.811 --> 00:01:50.998
+it.
+
+29
+00:01:50.998 --> 00:01:53.988
+We're already experimenting
+with women's health,
+
+30
+00:01:53.988 --> 00:01:58.721
+starting with care and advice after
+menopause, for women in India, in Indian
+
+31
+00:01:58.721 --> 00:01:59.344
+languages.
+
+32
+00:01:59.954 --> 00:02:04.664
+A new language mainly needs speech-to-text
+and text-to-speech support,
+
+33
+00:02:04.664 --> 00:02:08.567
+from a speech model. And
+a new country works the same way.
+
+34
+00:02:08.567 --> 00:02:13.749
+For Kenya or Zambia, add their palliative
+care guidelines to the library, and
+
+35
+00:02:13.749 --> 00:02:15.701
+change the language settings.
+
+36
+00:02:17.120 --> 00:02:22.546
 Palli Sahayak is an ongoing project,
 supported by the Gates Foundation and BIRAC.
 
-27
-00:01:49.013 --> 00:01:52.094
+37
+00:02:22.546 --> 00:02:25.627
 It has not yet been
 tested with real patients.
 
-28
-00:01:52.094 --> 00:01:57.386
+38
+00:02:25.627 --> 00:02:30.919
 The code is open for anyone to read and use,
 and the full video tells the whole
 
-29
-00:01:57.386 --> 00:01:57.788
+39
+00:02:30.919 --> 00:02:31.321
 story.

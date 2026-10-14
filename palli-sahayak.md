@@ -26,7 +26,7 @@ description: "An open-source voice assistant for palliative care: ask out loud, 
         <track kind="captions" src="/palli-sahayak/media/ps-small.vtt" srclang="en" label="English" default>
       </video>
     </div>
-    <figcaption>Palli Sahayak in two minutes. Narration is a synthetic voice; the conversation excerpt is fictional.</figcaption>
+    <figcaption>Palli Sahayak in brief: what it does, how it answers, its guard rails and how it extends. Narration is a synthetic voice; the conversation excerpt is fictional.</figcaption>
   </figure>
   <div class="ps-actions">
     <a class="ps-btn ps-btn-primary" href="#film">Watch the full film · 19 min</a>

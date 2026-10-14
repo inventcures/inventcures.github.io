@@ -1,0 +1,734 @@
+WEBVTT
+
+00:00.517 --> 00:05.844
+Picture this. Kamla is fifty. She lives in a
+village in Haryana, and most mornings
+
+00:05.844 --> 00:08.572
+she is out working in her family's fields.
+
+00:08.960 --> 00:13.562
+For a few months now, she has been waking in
+the night, drenched in sweat.
+
+00:13.562 --> 00:17.790
+And lately she keeps thinking of her mother,
+who had a bone disease.
+
+00:18.178 --> 00:22.915
+She hasn't mentioned it to anyone. It
+doesn't feel like something you talk about,
+
+00:22.915 --> 00:25.663
+and the nearest doctor is a long bus ride
+away.
+
+00:26.050 --> 00:31.685
+Kamla is made up. But women like her are
+not, and one of them may be closer to you
+
+00:31.685 --> 00:32.716
+than you think.
+
+00:34.467 --> 00:40.012
+Think of an older woman in your family. Your
+mother, an aunt, a grandmother.
+
+00:40.012 --> 00:42.419
+At what age did her periods stop?
+
+00:43.884 --> 00:45.104
+Most of us don't know.
+
+00:45.491 --> 00:50.101
+And here is a harder question. Did anyone
+ever ask her?
+
+00:50.101 --> 00:52.783
+Her doctor? Her own mother? You?
+
+00:54.248 --> 00:57.961
+Around that age, a lot was changing inside
+her body.
+
+00:57.961 --> 00:59.746
+Most of it made no sound.
+
+01:01.497 --> 01:04.476
+Across India, there are millions of women
+like her.
+
+01:04.864 --> 01:07.673
+Indian women reach menopause at about
+forty-six.
+
+01:07.673 --> 01:11.593
+That is roughly five years earlier than
+women in Western countries.
+
+01:11.981 --> 01:16.767
+And many have a hysterectomy, an operation
+to remove the womb, in their late
+
+01:16.767 --> 01:17.334
+thirties.
+
+01:17.723 --> 01:23.671
+Now, the changes that made no sound. As her
+hormones fall, LDL, low-density
+
+01:23.671 --> 01:29.063
+lipoprotein or the bad cholesterol, rises,
+and her arteries stiffen.
+
+01:29.450 --> 01:31.092
+Bone loss speeds up.
+
+01:31.480 --> 01:37.181
+Genitourinary symptoms begin, such as
+vaginal dryness and urinary urgency.
+
+01:37.570 --> 01:42.391
+And she faces decisions about hormone
+therapy, which replaces the hormones the
+
+01:42.391 --> 01:45.173
+ovaries stop making, and about breast
+cancer.
+
+01:46.927 --> 01:52.212
+How much help does she get? Breast-screening
+coverage in India is about two percent:
+
+01:52.212 --> 01:53.407
+one woman in fifty.
+
+01:53.795 --> 01:57.716
+Most midlife women never discuss these
+changes with anyone.
+
+01:58.102 --> 02:03.793
+So who is nearby? Often an ASHA, an
+Accredited Social Health Activist: a
+community
+
+02:03.793 --> 02:07.402
+health worker under India's National Health
+Mission.
+
+02:07.791 --> 02:12.409
+In rural areas, there is roughly one ASHA
+for every thousand people.
+
+02:12.796 --> 02:18.214
+These are the women in our own families, and
+many of these changes can be managed if
+
+02:18.214 --> 02:19.762
+someone notices in time.
+
+02:21.527 --> 02:27.006
+This idea did not start with menopause. In
+Phase One, the team built Palli Sahayak,
+
+02:27.006 --> 02:30.306
+an open-source voice helpline for palliative
+care.
+
+02:30.694 --> 02:35.011
+People phone in and talk in their own
+language, in any of the twenty-two languages
+
+02:35.011 --> 02:37.485
+of the Eighth Schedule of India's
+Constitution.
+
+02:37.873 --> 02:44.142
+Voice matters. It needs no reading, no
+typing, no smartphone and no internet.
+
+02:44.529 --> 02:49.696
+Experts reviewed it one hundred and sixty
+times: an average of seven point eight out
+
+02:49.696 --> 02:53.572
+of ten, and fifty-nine percent endorsed it
+without reservation.
+
+02:53.959 --> 03:00.000
+Most failures came in difficult escalation
+cases: the moments when a caller needed a
+
+03:00.000 --> 03:00.432
+human.
+
+03:00.819 --> 03:04.781
+And experts who had not been calibrated
+disagreed sharply.
+
+03:04.781 --> 03:08.812
+If two experts agreed, their scores would
+sit on this line.
+
+03:08.812 --> 03:09.632
+They didn't.
+
+03:11.397 --> 03:16.721
+That is why we chose this problem. Midlife
+women's health is large and neglected,
+
+03:16.721 --> 03:21.980
+and the same voice engine could reach women
+like Kamla, on the phone she already
+
+03:21.980 --> 03:22.243
+has.
+
+03:22.630 --> 03:28.429
+So here is the question. Could a voice like
+this, one she can simply call, help a
+
+03:28.429 --> 03:30.004
+woman through midlife?
+
+03:31.469 --> 03:36.199
+And could it do that safely, knowing what it
+must never get wrong?
+
+03:37.665 --> 03:43.591
+This is Vaani Sakhi. Vaani means voice.
+Sakhi is the Hindi word for a woman's
+
+03:43.591 --> 03:44.746
+trusted friend.
+
+03:45.133 --> 03:50.351
+It is deliberately narrow, and we will be
+clear about what it promises and what it
+
+03:50.351 --> 03:51.305
+only hopes for.
+
+03:53.067 --> 03:59.201
+Why not just ask a chatbot? Chatbots run on
+a large language model, or LLM, which
+
+03:59.201 --> 04:00.715
+answers from memory.
+
+04:01.103 --> 04:07.086
+On menopause questions, off-the-shelf LLMs
+answer only thirty to seventy percent
+
+04:07.086 --> 04:08.283
+fully correctly.
+
+04:08.672 --> 04:13.913
+Fix one: look it up first. In
+retrieval-augmented generation, or RAG, the
+model
+
+04:13.913 --> 04:18.158
+fetches passages from trusted documents,
+then answers from them.
+
+04:18.545 --> 04:23.825
+Hybrid RAG searches two ways at once: by
+keyword, and by meaning.
+
+04:24.213 --> 04:29.661
+Fix two: use a calculator, don't guess. With
+tool calling, the model runs our own
+
+04:29.661 --> 04:35.176
+software and uses the result. Tool-calling
+agents reach about eighty-eight percent
+
+04:35.176 --> 04:36.857
+on clinical calculations.
+
+04:37.244 --> 04:43.052
+Fix three: know when to stop. A warning sign
+sends the call to a human, exactly
+
+04:43.052 --> 04:44.963
+where Phase One struggled.
+
+04:46.717 --> 04:51.342
+Let's build Vaani Sakhi piece by piece,
+starting with a call.
+
+04:51.342 --> 04:52.555
+Say it is Kamla.
+
+04:52.943 --> 04:59.212
+[Kamla, in Haryanvi] I sweat a lot at night,
+and my mother had a bone disease.
+
+04:59.212 --> 05:00.418
+Should I worry?
+
+05:00.935 --> 05:06.589
+She calls from a basic feature phone over an
+ordinary line, in Hindi or English.
+
+05:06.589 --> 05:07.932
+No internet needed.
+
+05:08.320 --> 05:14.018
+Her voice reaches the core: Google's Gemini
+Live API, or application programming
+
+05:14.018 --> 05:18.790
+interface, a real-time speech-to-speech AI
+model she can interrupt.
+
+05:19.178 --> 05:25.154
+And here is the rule that matters most. It
+never answers clinical questions from the
+
+05:25.154 --> 05:26.506
+model's own memory.
+
+05:26.894 --> 05:31.353
+Clinical statements come only from
+guidelines that clinicians have signed off.
+
+05:31.353 --> 05:34.212
+Risk numbers come only from validated
+calculators.
+
+05:35.967 --> 05:39.465
+To keep that rule, the core calls four
+tools.
+
+05:39.853 --> 05:45.755
+The first, retrieve guideline, searches a
+knowledge base of Indian and international
+
+05:45.755 --> 05:46.528
+guidelines.
+
+05:46.916 --> 05:52.130
+The guidelines become a knowledge graph,
+linking each condition, symptom and rule,
+
+05:52.130 --> 05:55.310
+so night sweats lead to the rules that cover
+them.
+
+05:55.698 --> 06:00.986
+Every passage carries its source, date and
+evidence grade: how strong the research
+
+06:00.986 --> 06:01.824
+behind it is.
+
+06:02.211 --> 06:06.619
+The second, compute risk, uses exactly three
+validated calculators.
+
+06:06.619 --> 06:11.949
+The World Health Organization's South-Asia
+chart gives the ten-year risk of heart
+
+06:11.949 --> 06:14.515
+attack or stroke, without a blood test.
+
+06:14.903 --> 06:20.084
+FRAX-India, the Fracture Risk Assessment
+Tool set to Indian fracture rates, gives
+
+06:20.084 --> 06:22.963
+the ten-year chance of a major bone
+fracture.
+
+06:23.351 --> 06:27.963
+And the Menopause Rating Scale scores her
+symptoms with eleven questions.
+
+06:28.350 --> 06:31.568
+Notice what is missing: a breast-cancer risk
+score.
+
+06:31.568 --> 06:36.238
+None is validated in Indian women, so a
+family-history rule refers her for
+
+06:36.238 --> 06:37.437
+assessment instead.
+
+06:37.826 --> 06:43.154
+The third, check red flags, looks for
+warning signs: bleeding after menopause, a
+
+06:43.154 --> 06:48.283
+breast lump, heart-disease warning signs in
+women, or a mental-health crisis.
+
+06:48.671 --> 06:52.322
+When a red flag appears, the path turns red.
+
+06:52.710 --> 06:58.161
+And the fourth, handoff, asks the site
+clinician or her ASHA to call her back, and
+
+06:58.161 --> 06:59.490
+texts her a summary.
+
+07:01.247 --> 07:06.213
+Two modes share one engine. In woman mode,
+it helps her with self-care and with
+
+07:06.213 --> 07:08.161
+preparing for a doctor's visit.
+
+07:08.549 --> 07:12.643
+In ASHA assist mode, it supports an ASHA
+during home visits.
+
+07:12.643 --> 07:14.417
+The engine stays the same.
+
+07:14.805 --> 07:20.189
+Clinicians stay in the loop. At partner
+sites, still to be decided, they co-write
+
+07:20.189 --> 07:22.250
+and sign off the care pathways.
+
+07:22.637 --> 07:28.436
+They do it in Delphi rounds: experts rate
+statements anonymously and revise, round
+
+07:28.436 --> 07:30.557
+after round, until they agree.
+
+07:30.946 --> 07:36.325
+If Gemini Live is down, slow or weak in a
+dialect, calls switch to Phase One's
+
+07:36.325 --> 07:41.498
+Sarvam AI speech pipeline and a model hosted
+in India, with the same tools.
+
+07:41.885 --> 07:46.927
+Privacy: personal details stay in India.
+Names and phone numbers are removed before
+
+07:46.927 --> 07:48.931
+anything reaches the cloud model.
+
+07:49.319 --> 07:54.043
+Every answer is logged with the versions of
+the model, knowledge base and pathways
+
+07:54.043 --> 07:55.022
+that produced it.
+
+07:55.410 --> 08:00.651
+The proof of concept uses the Gemini API;
+open models hosted in India, such as
+
+08:00.651 --> 08:04.347
+MedGemma, will be tested and used only if
+they do well.
+
+08:06.117 --> 08:11.491
+Now a new rule for the pictures: anything
+with a dashed outline is something the
+
+08:11.491 --> 08:14.312
+team hopes for, not something it promises.
+
+08:14.700 --> 08:19.839
+Menopause shows up differently in every
+woman, so generic advice often misses.
+
+08:20.226 --> 08:25.424
+The hope is a sakhi that gets to know her:
+with her consent, a profile of what she
+
+08:25.424 --> 08:27.769
+chooses to share, built across calls.
+
+08:28.158 --> 08:33.838
+Her age at menopause, symptom scores over
+time, conditions and medicines, and her
+
+08:33.838 --> 08:36.923
+context, such as language, work and privacy.
+
+08:37.310 --> 08:42.347
+Each call would start from that profile:
+fewer repeat questions, and a follow-up on
+
+08:42.347 --> 08:42.954
+last time.
+
+08:43.342 --> 08:47.923
+The profile would change how the agent
+explains, never what the guidelines allow.
+
+08:47.923 --> 08:52.335
+It would stay in India, she could delete it
+any time, and it would never train
+
+08:52.335 --> 08:52.731
+models.
+
+08:53.117 --> 08:58.682
+For now, the profile would be designed with
+users and tried only on written test
+
+08:58.682 --> 08:59.099
+cases.
+
+08:59.487 --> 09:05.241
+Underneath sits the hardest problem. Heart,
+bone and genitourinary guidelines each
+
+09:05.241 --> 09:08.960
+give advice, and it can pull in different
+directions.
+
+09:09.348 --> 09:14.964
+It has to become one plan she can follow,
+fitted to her work, her daily life, and
+
+09:14.964 --> 09:16.905
+the conditions she lives in.
+
+09:17.293 --> 09:22.731
+How do we combine advice from several organ
+systems into one plan that is personal
+
+09:22.731 --> 09:25.119
+to her? That question is still open.
+
+09:27.947 --> 09:31.598
+So how will the team know it is safe? Three
+studies.
+
+09:31.986 --> 09:37.476
+Study A checks each calculator against its
+official version on at least five hundred
+
+09:37.476 --> 09:42.181
+made-up patients, and speech on two hundred
+scripted calls per language.
+
+09:42.569 --> 09:48.153
+Study B uses one hundred and twenty written
+patient cases, called vignettes, in
+
+09:48.153 --> 09:49.425
+Hindi and English.
+
+09:49.813 --> 09:55.606
+Calibrated clinicians rate the answers, two
+ratings for each, and a senior clinician
+
+09:55.606 --> 09:59.882
+settles any disagreement: safe, needs a
+minor edit, or unsafe.
+
+10:00.269 --> 10:05.361
+It is compared with the Phase One engine,
+the same Gemini model without tools or
+
+10:05.361 --> 10:08.225
+retrieval, and a leading general-purpose
+LLM.
+
+10:08.613 --> 10:14.315
+Study C is a small supervised pilot with
+midlife women and ASHAs, at partner sites
+
+10:14.315 --> 10:19.738
+still to be decided. It runs alongside usual
+care, never instead of it, with a
+
+10:19.738 --> 10:21.894
+clinician reviewing every call.
+
+10:22.283 --> 10:27.644
+And the raters are calibrated first: they
+score practice cases together until they
+
+10:27.644 --> 10:28.428
+score alike.
+
+10:30.177 --> 10:35.430
+Two numbers carry much of the safety case.
+First, sensitivity: of all real red
+
+10:35.430 --> 10:38.057
+flags, what share does the agent catch?
+
+10:38.747 --> 10:43.866
+Say there are one hundred real red flags,
+and the agent catches ninety-five.
+
+10:43.866 --> 10:46.223
+Sensitivity is ninety-five percent.
+
+10:46.912 --> 10:51.522
+The target is at least ninety-five percent,
+with no emergency left without
+
+10:51.522 --> 10:52.207
+escalation.
+
+10:52.595 --> 10:58.866
+The second is Cohen's kappa: how much better
+than luck the agent and clinicians
+
+10:58.866 --> 11:00.374
+agree on risk tier.
+
+11:00.762 --> 11:07.489
+Call p o how often they actually agree, and
+p e how often they would agree by luck
+
+11:07.489 --> 11:07.981
+alone.
+
+11:08.670 --> 11:13.233
+Kappa divides the agreement above luck by
+the most agreement above luck there could
+
+11:13.233 --> 11:13.398
+be.
+
+11:14.087 --> 11:19.626
+Say they agree ninety percent of the time,
+and luck alone would give fifty.
+
+11:19.626 --> 11:24.721
+Then kappa is zero point four over zero
+point five: zero point eight.
+
+11:25.410 --> 11:29.379
+The target is a kappa of at least zero point
+seven.
+
+11:31.147 --> 11:36.518
+Other targets: a critical-error rate below
+one percent, and at least ninety-five
+
+11:36.518 --> 11:39.808
+percent of clinical claims traceable to a
+source.
+
+11:40.196 --> 11:44.285
+A usability score of at least seventy out of
+one hundred.
+
+11:44.285 --> 11:48.733
+And speech errors, delay and cost per call,
+for each language.
+
+11:49.121 --> 11:54.710
+And the headline. In Phase One, fifty-nine
+percent of reviews endorsed the answers.
+
+11:54.710 --> 12:00.165
+The target now: clinicians judge at least
+eighty-five percent of vignette answers
+
+12:00.165 --> 12:00.502
+safe.
+
+12:00.891 --> 12:04.940
+That eighty-five is a target, not a result.
+
+12:05.328 --> 12:09.989
+Health outcomes, such as more women getting
+screened, need a larger trial.
+
+12:09.989 --> 12:12.068
+This project does not claim them.
+
+12:12.455 --> 12:18.194
+A question for you. If you had to pick one
+red flag the agent must never miss, which
+
+12:18.194 --> 12:19.629
+would it be, and why?
+
+12:22.467 --> 12:27.560
+So what does the project promise? On the
+left, drawn solid, is what it commits to.
+
+12:27.948 --> 12:31.409
+A clinician-signed knowledge base and
+pathways.
+
+12:31.409 --> 12:37.080
+The voice agent and its four tools.
+Failover, and an India-hosted data layer.
+
+12:37.080 --> 12:38.479
+Studies A, B and C.
+
+12:38.866 --> 12:42.200
+Open-source code, knowledge base and test
+sets.
+
+12:42.200 --> 12:47.662
+A costed plan for scale. And a regulatory
+gap analysis toward approval by the
+
+12:47.662 --> 12:52.627
+Central Drugs Standard Control Organisation,
+India's device regulator.
+
+12:52.627 --> 12:55.181
+Filing for approval is not promised.
+
+12:55.569 --> 13:01.002
+On the right, dashed, are stretch goals: a
+fully personalised sakhi, a caregiver
+
+13:01.002 --> 13:06.638
+mode, another regional language, WhatsApp
+voice, links to national health services,
+
+13:06.638 --> 13:07.928
+and a larger study.
+
+13:08.316 --> 13:12.180
+Any of these is a bonus. Success does not
+depend on them.
+
+13:13.937 --> 13:17.684
+Back to Kamla, with her night sweats, and
+her mother's bone disease.
+
+13:18.072 --> 13:23.006
+The agent retrieves the guideline on night
+sweats and calls FRAX-India for her
+
+13:23.006 --> 13:28.193
+fracture risk. Her family history prompts a
+clinician callback, and a text summary
+
+13:28.193 --> 13:28.699
+arrives.
+
+13:29.087 --> 13:32.459
+At the start, I asked whether anyone had
+ever asked her.
+
+13:32.846 --> 13:36.875
+For many women like Kamla, that conversation
+never happens.
+
+13:36.875 --> 13:41.996
+Vaani Sakhi is an attempt to make sure there
+is always someone she can ask.
+
+13:42.384 --> 13:45.727
+And the first person to ask her could still
+be you.

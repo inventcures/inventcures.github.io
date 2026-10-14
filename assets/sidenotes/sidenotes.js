@@ -4,7 +4,8 @@
 // in that list becomes a note in the right margin when there is room, and a tap-to-open
 // note under its paragraph when there is not. Add data-sidenotes-toc to also get a
 // sticky contents list in the left margin, built from a nav.sn-toc inside the container
-// or, failing that, from the container's h2 headings.
+// or, failing that, from the container's h2 headings. A page that places its own notes
+// can leave out data-sidenotes-list and still get the contents list.
 (function () {
   'use strict';
 
@@ -21,9 +22,9 @@
 
   function init(root) {
     var list = document.querySelector('[data-sidenotes-list]');
-    if (!list) return;
+    if (!list && !root.hasAttribute('data-sidenotes-toc')) return;
 
-    var refs = Array.prototype.slice.call(root.querySelectorAll('sup a[href^="#"]')).filter(function (a) {
+    var refs = !list ? [] : Array.prototype.slice.call(root.querySelectorAll('sup a[href^="#"]')).filter(function (a) {
       var target = document.getElementById(a.getAttribute('href').slice(1));
       return target && target.tagName === 'LI' && list.contains(target) && !list.contains(a);
     });

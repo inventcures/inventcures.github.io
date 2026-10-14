@@ -1,676 +1,831 @@
 WEBVTT
 
-00:00:00.467 --> 00:00:03.875
-A patient sits down across from
-a medical student and says:
+00:00:00.467 --> 00:00:03.397
+Picture a small clinic,
+late in the morning.
 
-00:00:03.875 --> 00:00:05.377
+00:00:03.397 --> 00:00:06.396
+A medical student sits down
+across from a patient.
+
+00:00:06.864 --> 00:00:11.444
+The patient is worried, and not quite
+sure how to describe what is wrong.
+
+00:00:11.444 --> 00:00:14.956
+The clinic is busy. And
+the student gets one try.
+
+00:00:15.423 --> 00:00:18.643
+Moments like this are where
+much of medicine is learned:
+
+00:00:18.643 --> 00:00:22.913
+deciding what to ask, noticing what a patient
+only half says, and explaining a plan
+
+00:00:22.913 --> 00:00:25.659
+in words they can use.
+
+00:00:26.126 --> 00:00:29.876
+Why should that matter to you? Because
+sooner or later, each of us is the person on
+
+00:00:29.876 --> 00:00:34.371
+the other side of that desk,
+hoping to be understood.
+
+00:00:34.839 --> 00:00:39.799
+And as software gets better at producing
+medical answers, these human parts of care,
+
+00:00:39.799 --> 00:00:45.689
+the reasoning, the empathy, the conversation
+that finds the right question, arguably
+
+00:00:45.689 --> 00:00:46.332
+matter more, not less.
+
+00:00:46.798 --> 00:00:52.598
+Those skills take practice. And much
+of that practice still happens on real
+
+00:00:52.598 --> 00:00:53.740
+patients, with real stakes.
+
+00:00:54.209 --> 00:00:58.969
+So imagine rehearsing those moments
+the way pilots use a simulator:
+
+00:00:58.969 --> 00:01:03.339
+again and again, with nothing at stake,
+so that when it counts, the student is
+
+00:01:03.339 --> 00:01:04.557
+ready.
+
+00:01:05.024 --> 00:01:09.857
+That is the idea behind this work. It grew
+out of demonstrations and conversations
+
+00:01:09.857 --> 00:01:14.572
+with oncology doctors and trainees, and
+it became a broader practice copilot for
+
+00:01:14.572 --> 00:01:15.633
+medical education.
+
+00:01:16.100 --> 00:01:21.460
+Here is one such moment. A patient sits down
+across from a medical student and says:
+
+00:01:21.460 --> 00:01:23.161
 pet mein gola ho raha hai.
 
-00:00:05.844 --> 00:00:09.856
+00:01:23.628 --> 00:01:27.998
 Word for word, something like "a
 ball is forming in my stomach".
 
-00:00:09.856 --> 00:00:14.870
+00:01:27.998 --> 00:01:31.808
 It is an everyday way of voicing a
 gastrointestinal concern, and it does not map
 
-00:00:14.870 --> 00:00:16.939
+00:01:31.808 --> 00:01:35.343
 neatly onto any one medical term.
 
-00:00:17.406 --> 00:00:21.901
+00:01:35.810 --> 00:01:40.820
 Picture three students hearing it.
 The first writes down "diarrhea".
 
-00:00:21.901 --> 00:00:25.669
+00:01:40.820 --> 00:01:45.350
 The second jumps straight to
 a diagnosis. The third asks:
 
-00:00:25.669 --> 00:00:28.247
+00:01:45.350 --> 00:01:47.840
 what do you mean by that? Tell me more.
 
-00:00:28.714 --> 00:00:32.645
+00:01:48.308 --> 00:01:51.608
 Only the third has practised
 the skill this paper is about.
 
-00:00:32.645 --> 00:00:37.976
+00:01:51.608 --> 00:01:56.169
 The phrase has to be clarified, not mapped
 straight to a symptom or a diagnosis.
 
-00:00:38.443 --> 00:00:43.849
+00:01:56.635 --> 00:02:01.655
 The paper proposes a practice copilot:
 virtual patients that let trainees in Indian
 
-00:00:43.849 --> 00:00:48.799
+00:02:01.655 --> 00:02:04.545
 medical education rehearse moments like
 this, and a way to tell whether they
 
-00:00:48.799 --> 00:00:49.646
+00:02:04.545 --> 00:02:07.037
 actually did.
 
-00:00:50.113 --> 00:00:56.722
+00:02:07.505 --> 00:02:12.925
 It is a design paper. It specifies an
 architecture and an evaluation plan, and it
 
-00:00:56.722 --> 00:00:59.007
+00:02:12.925 --> 00:02:14.841
 reports no learner outcomes.
 
-00:01:00.476 --> 00:01:03.281
+00:02:15.309 --> 00:02:18.209
+Before we go on, two
+characters to keep track of.
+
+00:02:18.209 --> 00:02:22.959
+On the left, the VP: the virtual
+patient. On the right, the MT:
+
+00:02:22.959 --> 00:02:26.268
+the medical trainee. They will
+stay with us from here on.
+
+00:02:27.737 --> 00:02:30.397
 A clinical encounter is
 a chain of decisions:
 
-00:01:03.281 --> 00:01:08.391
+00:02:30.397 --> 00:02:35.654
 what to ask, what to examine, which
 information changes the differential, and what
 
-00:01:08.391 --> 00:01:09.077
+00:02:35.654 --> 00:02:36.340
 to do next.
 
-00:01:09.544 --> 00:01:14.625
+00:02:36.807 --> 00:02:42.667
 Clinical reasoning connects a representation
 of the problem with organized clinical
 
-00:01:14.625 --> 00:01:19.646
+00:02:42.667 --> 00:02:45.397
 knowledge. And management adds choices
 under uncertainty, with trade-offs specific
 
-00:01:19.646 --> 00:01:20.564
+00:02:45.397 --> 00:02:47.830
 to the patient.
 
-00:01:21.031 --> 00:01:25.567
+00:02:48.298 --> 00:02:51.358
+Problem representation
+deserves a quick detour.
+
+00:02:51.358 --> 00:02:57.708
+Robert Wachter calls distilling maybe two
+hundred facts about a patient into the
+
+00:02:57.708 --> 00:03:00.158
+salient few a huge part
+of the art of medicine.
+
+00:03:00.158 --> 00:03:03.602
+Those salient facts are the
+problem representation.
+
+00:03:04.068 --> 00:03:09.218
+His example reads: "a 35-year-old woman
+who presents with 2 days of shortness of
+
+00:03:09.218 --> 00:03:13.208
+breath, pleuritic chest pain, and a swollen
+left leg." One sentence, and the shape
+
+00:03:13.208 --> 00:03:15.375
+of the problem is already visible.
+
+00:03:15.843 --> 00:03:22.033
+Teachers split it into who, when and what,
+using qualifiers like acute or chronic,
+
+00:03:22.033 --> 00:03:24.539
+and revise it as new facts arrive.
+
+00:03:25.006 --> 00:03:31.006
+Patients don't arrive with one. They arrive
+with a story, like pet mein gola ho raha
+
+00:03:31.006 --> 00:03:36.776
+hai. As Wachter notes, patients are novices
+at this, and they shouldn't have to talk
+
+00:03:36.776 --> 00:03:39.306
+like doctors. Building the summary is the
+listener's job, and software can't yet do
+
+00:03:39.306 --> 00:03:41.603
+it reliably.
+
+00:03:42.070 --> 00:03:45.230
+Which makes it exactly the kind
+of skill worth rehearsing.
+
+00:03:45.230 --> 00:03:46.538
+Back to the encounter.
+
+00:03:47.006 --> 00:03:51.236
 Now imagine two students who both
 arrive at the right diagnosis.
 
-00:01:25.567 --> 00:01:28.968
+00:03:51.236 --> 00:03:54.826
 One got there by asking,
 examining and revising.
 
-00:01:28.968 --> 00:01:30.669
+00:03:54.826 --> 00:03:56.214
 The other guessed early.
 
-00:01:31.137 --> 00:01:35.523
+00:03:56.682 --> 00:04:01.642
 The label at the end is identical.
 The reasoning behind it is not.
 
-00:01:35.523 --> 00:01:40.241
+00:04:01.642 --> 00:04:06.305
 Correctly naming a diagnosis cannot,
 by itself, establish either skill.
 
-00:01:41.709 --> 00:01:46.852
+00:04:07.773 --> 00:04:12.973
 Virtual patients promise repeated, low-stakes
 rehearsal of consequential skills, as
 
-00:01:46.852 --> 00:01:48.587
+00:04:12.973 --> 00:04:14.651
 often as a trainee needs it.
 
-00:01:49.055 --> 00:01:54.926
+00:04:15.119 --> 00:04:21.639
 And an expressive patient, one that speaks,
 hesitates and uses everyday language,
 
-00:01:54.926 --> 00:01:56.955
+00:04:21.639 --> 00:04:23.019
 could broaden that practice.
 
-00:01:57.422 --> 00:02:02.111
+00:04:23.486 --> 00:04:28.546
 But two things can go wrong. The
 first is uncontrolled disclosure:
 
-00:02:02.111 --> 00:02:08.008
+00:04:28.546 --> 00:04:32.596
 a model playing the patient can volunteer
 facts nobody asked for, or contradict the
 
-00:02:08.008 --> 00:02:08.363
+00:04:32.596 --> 00:04:34.427
 case.
 
-00:02:08.830 --> 00:02:13.923
+00:04:34.894 --> 00:04:40.564
 The second is unreliable scoring. A recent
 study of a voice-based virtual patient
 
-00:02:13.923 --> 00:02:19.016
+00:04:40.564 --> 00:04:45.080
 found automated communication scores agreed
 less with faculty ratings than scores
 
-00:02:19.016 --> 00:02:20.651
+00:04:45.080 --> 00:04:46.715
 for information gathering.
 
-00:02:21.118 --> 00:02:25.093
+00:04:47.182 --> 00:04:51.157
 Either failure can make an
 encounter educationally misleading.
 
-00:02:25.560 --> 00:02:31.240
+00:04:51.624 --> 00:04:56.374
 Nor are virtual patients new. Earlier work
 used them to teach empathy, and EQClinic
 
-00:02:31.240 --> 00:02:35.140
+00:04:56.374 --> 00:05:01.434
 gave automated nonverbal
 feedback in telehealth training.
 
-00:02:35.140 --> 00:02:40.410
+00:05:01.434 --> 00:05:06.474
 So the contribution cannot be "we added
 an avatar" or "we added communication
 
-00:02:40.410 --> 00:02:41.094
+00:05:06.474 --> 00:05:07.158
 feedback".
 
-00:02:41.561 --> 00:02:46.424
+00:05:07.625 --> 00:05:11.955
 The contribution is a contract: control
 what the patient may say, and keep a record
 
-00:02:46.424 --> 00:02:48.826
+00:05:11.955 --> 00:05:14.890
 of what the learner actually did with it.
 
-00:02:50.296 --> 00:02:54.907
+00:05:16.360 --> 00:05:20.971
 The central move is to split the
 simulated patient into four layers.
 
-00:02:55.375 --> 00:03:01.288
+00:05:21.439 --> 00:05:27.352
 At the bottom is clinical truth: what is
 actually going on, as approved by faculty.
 
-00:03:01.754 --> 00:03:06.867
+00:05:27.818 --> 00:05:31.968
 Above it is patient knowledge: what this
 patient understands, remembers and worries
 
-00:03:06.867 --> 00:03:10.193
+00:05:31.968 --> 00:05:36.257
 about, which can be much less
 than the clinical truth.
 
-00:03:10.661 --> 00:03:15.917
+00:05:36.725 --> 00:05:41.035
 Then disclosure: which of those facts are
 allowed out right now, given what has been
 
-00:03:15.917 --> 00:03:16.730
+00:05:41.035 --> 00:05:42.794
 asked so far.
 
-00:03:17.196 --> 00:03:22.648
+00:05:43.260 --> 00:05:48.200
 And last, speech realization: how the
 permitted facts are actually spoken, in a
 
-00:03:22.648 --> 00:03:24.926
+00:05:48.200 --> 00:05:50.990
 voice, a register and a language.
 
-00:03:25.393 --> 00:03:30.805
+00:05:51.457 --> 00:05:56.957
 The bottom layer is locked. Clinical truth
 is not writable through conversation.
 
-00:03:30.805 --> 00:03:35.406
+00:05:56.957 --> 00:06:01.470
 By design, nothing a learner says
 should be able to change the case.
 
-00:03:35.874 --> 00:03:40.796
+00:06:01.938 --> 00:06:06.860
 Each case is an immutable version, and a
 clinician reviews it before it is used in a
 
-00:03:40.796 --> 00:03:41.440
+00:06:06.860 --> 00:06:07.504
 curriculum.
 
-00:03:42.908 --> 00:03:44.550
+00:06:08.972 --> 00:06:10.614
 Let us make that precise.
 
-00:03:45.017 --> 00:03:49.077
+00:06:11.081 --> 00:06:15.141
 C is the approved case version,
 the locked clinical truth.
 
-00:03:49.825 --> 00:03:53.349
+00:06:15.889 --> 00:06:19.569
 K sub t is what the
 patient knows at time t.
 
-00:03:53.349 --> 00:03:58.395
+00:06:19.569 --> 00:06:24.389
 D sub t is the disclosure state:
 what has been revealed so far.
 
-00:03:58.395 --> 00:04:01.359
+00:06:24.389 --> 00:06:27.423
 And H sub t is the encounter history.
 
-00:04:02.106 --> 00:04:07.349
+00:06:28.170 --> 00:06:33.290
 On the learner's side, an interpreter
 turns what the student said into a typed
 
-00:04:07.349 --> 00:04:11.852
+00:06:33.290 --> 00:06:37.916
 action, a sub t. For example: ask
 what the patient means by "gola".
 
-00:04:12.599 --> 00:04:19.705
+00:06:38.663 --> 00:06:45.753
 A policy, pi, takes all five and returns
 F sub t, the content the patient is
 
-00:04:19.705 --> 00:04:27.278
+00:06:45.753 --> 00:06:53.342
 permitted to say. F sub t equals pi of C,
 K sub t, D sub t, H sub t, and a sub t.
 
-00:04:28.026 --> 00:04:32.823
+00:06:54.090 --> 00:06:59.330
 Here is the boundary that matters. The
 speech realizer, the part that actually
 
-00:04:32.823 --> 00:04:36.328
+00:06:59.330 --> 00:07:02.700
 talks, receives only F sub t
 and the persona constraints.
 
-00:04:36.328 --> 00:04:38.665
+00:07:02.700 --> 00:07:04.729
 Not the full case, and not the rubric.
 
-00:04:39.132 --> 00:04:44.551
+00:07:05.196 --> 00:07:10.615
 So the voice can be expressive, but it is
 never handed the diagnosis to give away.
 
-00:04:45.019 --> 00:04:49.034
+00:07:11.083 --> 00:07:15.733
 One turn, end to end. The student
 asks a clarifying question.
 
-00:04:49.034 --> 00:04:54.365
+00:07:15.733 --> 00:07:20.963
 The interpreter types it. The policy checks
 the case and what has been disclosed,
 
-00:04:54.365 --> 00:04:59.762
+00:07:20.963 --> 00:07:24.833
 and releases a permitted fact. The realizer
 speaks it, and the history updates for
 
-00:04:59.762 --> 00:05:00.683
+00:07:24.833 --> 00:07:26.747
 the next turn.
 
-00:05:01.150 --> 00:05:04.405
+00:07:27.214 --> 00:07:30.794
 Examinations and tests
 follow the same discipline.
 
-00:05:04.405 --> 00:05:09.873
+00:07:30.794 --> 00:07:34.864
 Separate services return only findings that
 exist in the case, or say plainly that a
 
-00:05:09.873 --> 00:05:12.803
+00:07:34.864 --> 00:07:39.104
 result is unavailable
 or needs clarification.
 
-00:05:12.803 --> 00:05:18.271
+00:07:39.104 --> 00:07:43.034
 And asking for an examination is recorded
 as a request, not as proof the student can
 
-00:05:18.271 --> 00:05:18.987
+00:07:43.034 --> 00:07:45.051
 perform it.
 
-00:05:20.456 --> 00:05:26.077
+00:07:46.520 --> 00:07:52.970
 Now the assessment side. The paper's
 key distinction is between an authored
 
-00:05:26.077 --> 00:05:29.675
+00:07:52.970 --> 00:07:55.739
 opportunity and a demonstrated
 learner response.
 
-00:05:30.142 --> 00:05:35.286
+00:07:56.206 --> 00:08:01.350
 For every opportunity that can be
 assessed, the system records a tuple, o.
 
-00:05:36.034 --> 00:05:40.489
+00:08:02.098 --> 00:08:07.318
 c identifies the authored
 cue. v is its case version.
 
-00:05:40.489 --> 00:05:46.121
+00:08:07.318 --> 00:08:13.018
 m is the modality, such as text or
 audio. d is the delivered event.
 
-00:05:46.121 --> 00:05:50.493
+00:08:13.018 --> 00:08:15.818
 w is the response window.
 r is the rubric criterion.
 
-00:05:50.493 --> 00:05:56.209
+00:08:15.818 --> 00:08:22.273
 And u is the uncertainty about
 whether the cue was really available.
 
-00:05:56.957 --> 00:05:59.706
+00:08:23.021 --> 00:08:26.361
 Why so much bookkeeping?
 Consider barge-in.
 
-00:05:59.706 --> 00:06:03.287
+00:08:26.361 --> 00:08:29.751
 The patient is mid-sentence,
 and the student interrupts.
 
-00:06:03.287 --> 00:06:06.036
+00:08:29.751 --> 00:08:32.100
 The rest of the queued
 speech is cancelled.
 
-00:06:06.503 --> 00:06:11.417
+00:08:32.567 --> 00:08:37.817
 Suppose a cue sat in that cancelled
 audio. It was planned, but never played.
 
-00:06:11.417 --> 00:06:16.718
+00:08:37.817 --> 00:08:41.687
 The record separates planned from delivered
 content, so that cue cannot be counted
 
-00:06:16.718 --> 00:06:21.567
+00:08:41.687 --> 00:08:47.631
 as heard, and a missed opportunity there
 is not scored against the student.
 
-00:06:22.034 --> 00:06:25.084
+00:08:48.098 --> 00:08:51.198
 Even delivered audio is
 not automatically enough.
 
-00:06:25.084 --> 00:06:28.569
+00:08:51.198 --> 00:08:54.788
 An intended tone does not
 prove the cue was perceptible.
 
-00:06:28.569 --> 00:06:33.424
+00:08:54.788 --> 00:08:59.488
 Native-speaker review and playback checks
 must establish that before a miss is
 
-00:06:33.424 --> 00:06:33.860
+00:08:59.488 --> 00:08:59.924
 scored.
 
-00:06:34.326 --> 00:06:37.410
+00:09:00.390 --> 00:09:03.700
 Once a cue is delivered,
 the record follows a chain:
 
-00:06:37.410 --> 00:06:42.154
+00:09:03.700 --> 00:09:09.030
 the student's follow-up, the patient's
 clarification, and what the student later
 
-00:06:42.154 --> 00:06:44.941
+00:09:09.030 --> 00:09:11.005
 does with it. Each is
 kept as a separate event.
 
-00:06:45.408 --> 00:06:50.540
+00:09:11.472 --> 00:09:16.302
 The paper calls a small clue with this
 kind of depth a diagnostic kernel.
 
-00:06:50.540 --> 00:06:55.672
+00:09:16.302 --> 00:09:20.142
 The rubric can tell apart noticing it,
 characterizing it, and using it in
 
-00:06:55.672 --> 00:06:56.445
+00:09:20.142 --> 00:09:22.509
 management.
 
-00:06:56.913 --> 00:07:02.102
+00:09:22.977 --> 00:09:27.817
 Take weight change. A student who asks about
 it and then ignores the answer has done
 
-00:07:02.102 --> 00:07:06.859
+00:09:27.817 --> 00:09:32.797
 something different from one who asks
 and updates the problem representation.
 
-00:07:06.859 --> 00:07:09.515
+00:09:32.797 --> 00:09:35.579
 A keyword count would
 credit both the same.
 
-00:07:10.983 --> 00:07:15.168
+00:09:37.047 --> 00:09:41.232
 Patient speech runs on its own
 lane, independent of assessment.
 
-00:07:15.635 --> 00:07:20.720
+00:09:41.699 --> 00:09:46.519
 Beside it, asynchronous observers watch
 finalized events and propose evidence
 
-00:07:20.720 --> 00:07:26.069
+00:09:46.519 --> 00:09:51.919
 claims, each citing the events behind it.
 When the evidence is insufficient, they
 
-00:07:26.069 --> 00:07:26.597
+00:09:51.919 --> 00:09:52.661
 abstain.
 
-00:07:27.063 --> 00:07:30.012
+00:09:53.127 --> 00:09:56.287
 A later scoring stage
 reconciles those claims.
 
-00:07:30.012 --> 00:07:35.332
+00:09:56.287 --> 00:10:02.977
 Deterministic rules check approved critical
 actions, semantic judgments need review
 
-00:07:35.332 --> 00:07:40.204
+00:10:02.977 --> 00:10:06.268
 against expert labels, and no overall
 model grade is treated as a competency
 
-00:07:40.204 --> 00:07:40.781
+00:10:06.268 --> 00:10:06.845
 estimate.
 
-00:07:41.248 --> 00:07:44.139
+00:10:07.312 --> 00:10:10.282
 And failures degrade
 instead of corrupting.
 
-00:07:44.139 --> 00:07:48.912
+00:10:10.282 --> 00:10:14.522
 If an observer fails, the event stream
 is still there for later review.
 
-00:07:48.912 --> 00:07:54.357
+00:10:14.522 --> 00:10:20.682
 If speech fails, the encounter can fall
 back to text, but criteria that depend on
 
-00:07:54.357 --> 00:07:56.105
+00:10:20.682 --> 00:10:22.169
 audio become unassessable.
 
-00:07:57.574 --> 00:08:01.721
+00:10:23.638 --> 00:10:27.848
 Now the learning design. It
 starts with supported rehearsal.
 
-00:08:01.721 --> 00:08:07.180
+00:10:27.848 --> 00:10:32.908
 In teaching mode, the learner can ask for
 a broad prompt, a specific hint, or a
 
-00:08:07.180 --> 00:08:08.217
+00:10:32.908 --> 00:10:34.281
 worked example.
 
-00:08:08.685 --> 00:08:13.191
+00:10:34.749 --> 00:10:39.255
 Every bit of help is logged, because
 assisted performance is not independent
 
-00:08:13.191 --> 00:08:13.903
+00:10:39.255 --> 00:10:39.967
 performance.
 
-00:08:14.371 --> 00:08:19.915
+00:10:40.435 --> 00:10:45.875
 Feedback then highlights a few consequential
 moments and supplies a next exercise.
 
-00:08:19.915 --> 00:08:24.310
+00:10:45.875 --> 00:10:50.155
 The next case changes the surface
 features and removes the hints.
 
-00:08:24.310 --> 00:08:28.907
+00:10:50.155 --> 00:10:54.971
 Spaced reassessment comes back later,
 and the real test is transfer.
 
-00:08:29.374 --> 00:08:33.868
+00:10:55.438 --> 00:10:59.438
 Here is how that might look. These
 screens are a design mock-up filled with
 
-00:08:33.868 --> 00:08:36.924
+00:10:59.438 --> 00:11:02.988
 synthetic data. No learner
 has used this interface.
 
-00:08:37.391 --> 00:08:42.682
+00:11:03.455 --> 00:11:08.305
 During a station, a cue bar shows which
 authored cues were explored, partly explored
 
-00:08:42.682 --> 00:08:47.847
+00:11:08.305 --> 00:11:13.911
 or missed, quoting the patient's words
 without revealing facts nobody asked about.
 
-00:08:48.315 --> 00:08:53.638
+00:11:14.379 --> 00:11:19.809
 After the station, a debrief bands each
 rubric domain as strong, developing or
 
-00:08:53.638 --> 00:08:57.391
+00:11:19.809 --> 00:11:23.455
 needing work, each linked to
 the turn that supports it.
 
-00:08:57.858 --> 00:09:02.583
+00:11:23.922 --> 00:11:28.902
 Domains that need work become short
 drills scheduled at expanding intervals.
 
-00:09:02.583 --> 00:09:07.184
+00:11:28.902 --> 00:11:33.248
 A passing repetition lengthens the
 interval, and a failed one shortens it.
 
-00:09:07.651 --> 00:09:13.150
+00:11:33.715 --> 00:11:39.435
 Badges reward practice habits such as
 safety-netting, and there is no leaderboard.
 
-00:09:13.150 --> 00:09:18.380
+00:11:39.435 --> 00:11:44.605
 Whether faster feedback and spaced drills
 improve independent performance is a
 
-00:09:18.380 --> 00:09:21.599
+00:11:44.605 --> 00:11:47.663
 hypothesis for the learning
 study, not a result.
 
-00:09:22.067 --> 00:09:27.237
+00:11:48.131 --> 00:11:53.371
 One more rule: credit follows the learner's
 actions, not the patient's reaction.
 
-00:09:27.237 --> 00:09:32.473
+00:11:53.371 --> 00:11:58.711
 A patient's agreement, emotional relief
 or compliance is not required for credit.
 
-00:09:32.473 --> 00:09:37.902
+00:11:58.711 --> 00:12:03.966
 Acknowledging uncertainty, respecting
 preferences and seeking supervision can all be
 
-00:09:37.902 --> 00:09:39.065
+00:12:03.966 --> 00:12:05.129
 competent actions.
 
-00:09:39.532 --> 00:09:42.406
+00:12:05.596 --> 00:12:09.236
 Why separate help from
 learning so carefully?
 
-00:09:42.406 --> 00:09:47.196
+00:12:09.236 --> 00:12:13.116
 A mathematics study distinguishes
 supported performance from learning after
 
-00:09:47.196 --> 00:09:52.241
+00:12:13.116 --> 00:12:18.316
 assistance is removed. And in a
 diagnostic-reasoning trial, giving physicians a
 
-00:09:52.241 --> 00:09:57.031
+00:12:18.316 --> 00:12:21.936
 language model brought no significant
 benefit, despite the model's stronger
 
-00:09:57.031 --> 00:10:02.012
+00:12:21.936 --> 00:12:27.406
 standalone performance. Model competence
 and learner development need separate
 
-00:10:02.012 --> 00:10:02.651
+00:12:27.406 --> 00:12:28.715
 endpoints.
 
-00:10:04.120 --> 00:10:09.401
+00:12:30.184 --> 00:12:35.465
 How would anyone know whether this works?
 The paper specifies four kinds of test.
 
-00:10:09.869 --> 00:10:15.229
+00:12:35.933 --> 00:12:43.123
 First, simulation consistency. Probe
 approved cases with paraphrased questions,
 
-00:10:15.229 --> 00:10:20.317
+00:12:43.123 --> 00:12:46.273
 withheld information, incompatible
 orders and injection attempts, and count
 
-00:10:20.317 --> 00:10:24.794
+00:12:46.273 --> 00:12:51.073
 contradictions, unauthorized
 disclosures and unsupported findings.
 
-00:10:24.794 --> 00:10:27.915
+00:12:51.073 --> 00:12:53.979
 A boundary violation
 blocks that case version.
 
-00:10:28.382 --> 00:10:34.721
+00:12:54.446 --> 00:13:00.496
 Second, matched conditions: expressive
 audio, neutral audio and text, with the same
 
-00:10:34.721 --> 00:10:39.990
+00:13:00.496 --> 00:13:06.054
 clinical facts. Neutral controls
 measure false emotional attribution.
 
-00:10:40.457 --> 00:10:45.813
+00:13:06.521 --> 00:13:12.171
 Third, scoring agreement. Clinicians and
 native speakers annotate opportunities
 
-00:10:45.813 --> 00:10:51.305
+00:13:12.171 --> 00:13:17.091
 before seeing automated scores, and agreement
 is reported with absolute-agreement
 
-00:10:51.305 --> 00:10:55.576
+00:13:17.091 --> 00:13:21.640
 ICC for continuous ratings and
 weighted kappa for ordinal ones.
 
-00:10:56.043 --> 00:11:01.760
+00:13:22.107 --> 00:13:27.824
 Fourth, learning. Usual case practice is
 compared with copilot practice, matched for
 
-00:11:01.760 --> 00:11:06.933
+00:13:27.824 --> 00:13:33.427
 time and feedback access. The primary
 endpoint is a blinded rating of a new,
 
-00:11:06.933 --> 00:11:10.200
+00:13:33.427 --> 00:13:36.264
 unassisted encounter after
 a prespecified delay.
 
-00:11:10.668 --> 00:11:14.448
+00:13:36.732 --> 00:13:40.262
 The paper also names its
 failure criteria in advance:
 
-00:11:14.448 --> 00:11:20.083
+00:13:40.262 --> 00:13:46.122
 unavailable cues scored as missed,
 hallucinated evidence producing remediation,
 
-00:11:20.083 --> 00:11:26.074
+00:13:46.122 --> 00:13:52.138
 systematic penalties tied to a language, or
 improvement confined to rehearsed cases.
 
-00:11:26.541 --> 00:11:31.971
+00:13:52.605 --> 00:13:58.025
 If expert agreement or evidence attribution
 is inadequate for a scoring dimension,
 
-00:11:31.971 --> 00:11:37.268
+00:13:58.025 --> 00:14:02.635
 that dimension is removed. And if expressive
 audio adds no benefit, a successful
 
-00:11:37.268 --> 00:11:39.255
+00:14:02.635 --> 00:14:05.319
 control design is kept anyway.
 
-00:11:40.722 --> 00:11:42.932
+00:14:06.786 --> 00:14:08.997
 So, what this paper does not claim.
 
-00:11:43.400 --> 00:11:48.468
+00:14:09.464 --> 00:14:15.664
 It reports no learner outcomes, no
 validated scores and no calibrated mastery
 
-00:11:48.468 --> 00:11:53.405
+00:14:15.664 --> 00:14:18.324
 threshold. Live testing is described
 as ongoing, and no results from it are
 
-00:11:53.405 --> 00:11:53.997
+00:14:18.324 --> 00:14:20.062
 reported.
 
-00:11:54.464 --> 00:12:00.569
+00:14:20.529 --> 00:14:27.399
 Hindi, Haryanvi, Bengali, Odia and code-mixed
 speech are evaluation targets, not
 
-00:12:00.569 --> 00:12:06.444
+00:14:27.399 --> 00:14:31.929
 validated capabilities. The personas are
 constructed examples, not population
 
-00:12:06.444 --> 00:12:10.870
+00:14:31.929 --> 00:14:36.936
 estimates. And every interface
 screen uses synthetic data.
 
-00:12:11.337 --> 00:12:16.517
+00:14:37.403 --> 00:14:43.343
 What it does offer is a testable claim:
 preserving the link between a presented
 
-00:12:16.517 --> 00:12:21.238
+00:14:43.343 --> 00:14:46.203
 opportunity, the learner's action and
 the feedback makes simulation more
 
-00:12:21.238 --> 00:12:23.140
+00:14:46.203 --> 00:14:49.206
 interpretable and assessable.
 
-00:12:23.607 --> 00:12:27.631
+00:14:49.674 --> 00:14:53.699
 Whether that structure improves independent
 clinical reasoning and communication
 
-00:12:27.631 --> 00:12:29.190
+00:14:53.699 --> 00:14:55.258
 will need prospective evidence.
 
-00:12:29.657 --> 00:12:33.218
+00:14:55.724 --> 00:14:59.284
 So, back to our patient.
 Pet mein gola ho raha hai.
 
-00:12:33.218 --> 00:12:36.570
+00:14:59.284 --> 00:15:02.764
 The response worth practising
 was never a guess.
 
-00:12:36.570 --> 00:12:37.827
+00:15:02.764 --> 00:15:03.895
 It was a question.
+
+00:15:04.363 --> 00:15:09.433
+Somewhere, a student will still sit down
+with a real patient and get one try.
+
+00:15:09.433 --> 00:15:14.746
+The aim of all this practice is that it
+won't be the first time they have had to
+
+00:15:14.746 --> 00:15:15.011
+ask.
+

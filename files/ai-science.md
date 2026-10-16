@@ -23,6 +23,39 @@ Wraps off-the-shelf coding agents in an explicit research loop, with pre-registe
 - Blog post: https://pub.sakana.ai/agentic-scientist/
 - Code (AI-Scientist-v3): https://github.com/SakanaAI/AI-Scientist-v3
 
+### Context graphs for document-heavy legal agents
+
+Niko Grupen reports that giving Harvey’s legal agents prebuilt context graphs over their documents improved results on legal tasks. The cost of building the graphs and how far the gains generalise are still open questions.
+
+- Type: Post
+- Published: 15 Oct 2026
+- Resource: [Context graphs for document-heavy legal agents](https://x.com/nikogrupen/status/2110773803592937733)
+- OP: [Niko Grupen · original post](https://x.com/nikogrupen/status/2110773803592937733)
+- Topics: Agents, Evaluation, Infrastructure
+- Margin note: This page’s knowledge graph is a small context graph: entities, typed relations and sources pre-linked, so a reader or an agent starts from structure instead of a pile of documents. The post itself couldn’t be fetched here, so this summary relies on a newsletter description.
+
+### The Labs Have the Best Models With Infinite Tokens, So Why Aren’t Their Products Better?
+
+Ben Davis defines taste as “the ability to make good decisions in places where there isn’t a programmatic verification function”. Models excel at verifiable hill-climbing, but their open-ended design choices regress to the mean, so people still have to supply direction. He calls taste “the only real stop” to recursive self-improvement.
+
+- Type: Essay
+- Published: 14 Oct 2026
+- Resource: [The Labs Have the Best Models With Infinite Tokens, So Why Aren’t Their Products Better?](https://davis7.substack.com/p/the-labs-have-the-best-models-with)
+- OP: not yet verified
+- Topics: Research taste, Verification, Agents, Human agency
+- Margin note: The real question: can a harness and a model together make good decisions where no programmatic verifier exists? “Make this function fast” is hill-climbing. Which direction to pursue, which design to ship and which claim to trust are taste.
+
+### Benchmarking biopharma knowledge work
+
+Convoke benchmarks models on six biopharma work products outside R&D: target safety assessment, tumor landscape, shelved assets, catalyst calendar, clinical benchmark and commercial forecast. Domain experts wrote penalty-based rubrics (major, moderate, minor errors), and an LLM grader with research tools scored each criterion against a citation. They report that frontier OpenAI models lead and that models handle structured spreadsheet compilation well but struggle with narrative synthesis and judgment-heavy forecasts. Frontier models cost more than 3x as much per work product. The grader has not yet been validated against expert grading.
+
+- Type: Blog post
+- Published: 29 Sep 2026
+- Resource: [Benchmarking biopharma knowledge work](https://www.convoke.bio/blog/benchmarking-biopharma-knowledge-work)
+- OP: not yet verified
+- Topics: Biopharma, Evaluation, Agents, Medicine, Research taste
+- Margin note: Compiling a catalyst calendar is checkable. A commercial forecast needs design judgment, and that is where models slip: the taste gap again, in a pharma setting. The rubric grader is itself unvalidated, so treat the rankings as provisional.
+
 ### A conversation: the future of mathematics
 
 Litt’s essay and doomslide’s response, followed by Gowers and Hairer on mathematical values and institutional engagement.
@@ -84,6 +117,17 @@ Frozen teams learn reusable coordination strategies, with gains depending partly
 - OP: [Aneesh Pappu · author post](https://x.com/aneeshpappu/status/2102428585986498609)
 - Topics: Agents, Collaboration, Evaluation
 - Margin note: Three frozen models learn a teamwork protocol and reach 66.7%, beating even an oracle that picks the best member (59.0%). The organisation is learned, not the weights.
+
+### AgentRun: a harness for repetitive knowledge work
+
+Miguel Rios (Grep.ai) describes a harness in which a frontier agent first does a job from a written procedure, keeps notes and traces, then writes a typed workflow and “fires itself”. The workflow mixes agent steps, plain code and typed questions answered by a small calibrated model (Jev), under the rule “Jev decides what a thing is; code decides what follows.” A verify clause checks each claim against the evidence the agent cited. On an anti-money-laundering alert review, the author reports cost per alert falling from $2.89 to $0.25 and judged accuracy rising from 90% to 95%, scored on a held-out set they never looked at.
+
+- Type: Article
+- Published: 18 Sep 2026
+- Resource: [AgentRun: a harness for repetitive knowledge work](https://x.com/MiguelriosEN/status/2101029313906987422)
+- OP: not yet verified
+- Topics: Agents, Verification, Evaluation, Research taste, Infrastructure
+- Margin note: A practical answer to the taste question. Closed decisions (“is this a match?”) become typed questions that a cheap calibrated model answers and code routes. Open judgment stays with the agent or a human. A held-out set guards against grading your own homework.
 
 ### ScientistTwo: Pioneering the Human Knowledge Frontier with Autonomous AI
 
@@ -241,6 +285,17 @@ Calls for evaluating AI by its contribution to better drug-development decisions
 - OP: not yet verified
 - Topics: Biology, Medicine, Evaluation
 - Margin note: Clinically relevant impact so far is “disappointingly limited”. Judge AI by whether it improves decisions, especially at Phase II.
+
+### Jeff Dean in conversation with Dawn Song: from answering questions to making discoveries
+
+Dean's first public talk after leaving Google, at the AASF Frontier & Pioneer Symposium at Stanford, moderated by Dawn Song. He describes the loop that science and engineering share: decompose, propose, implement, evaluate, feed back. Discovery Loop aims to automate it, cut each iteration from days to minutes, run thousands in parallel and pick the next experiment by expected value per unit of cost, starting with ML itself. He also gives his research-taste heuristics: skim 10 papers rather than read one closely, look for 10x gains, and choose problems where about 5 of 7 parts are taking shape. The summary is built from auto-generated captions.
+
+- Type: Talk
+- Uploaded: 07 Aug 2026
+- Resource: [Jeff Dean in conversation with Dawn Song: from answering questions to making discoveries](https://www.youtube.com/watch?v=0kC3xOZChdA)
+- OP: not yet verified
+- Topics: Scientific discovery, Agents, Research taste, Governance
+- Margin note: Experiment A has a 10% chance of +5 and costs 1 GPU-day (EV/cost 0.5). B has a 50% chance of +2 and costs 4 GPU-days (0.25). Dean's rule runs A first. What pure EV/cost misses is what a cheap failure teaches you.
 
 ### Drug Discovery Has No Magic Wands
 

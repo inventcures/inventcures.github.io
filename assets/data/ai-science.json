@@ -538,6 +538,97 @@
         "https://www.youtube.com/watch?v=0kC3xOZChdA": "Dean with Dawn Song (talk)"
       },
       "margin_note": "The same “automate the experimental loop” bet as Sakana and Google’s Co-Scientist, framed around scale and latency. A FutureSearch forecast argues it should start where loops close fastest and verification is cheap, such as chip design."
+    },
+    {
+      "id": "grupen-context-graphs",
+      "title": "Context graphs for document-heavy legal agents",
+      "type": "Post",
+      "date": "2026-10-15",
+      "date_precision": "day",
+      "url": "https://x.com/nikogrupen/status/2110773803592937733",
+      "op_url": "https://x.com/nikogrupen/status/2110773803592937733",
+      "op_label": "Niko Grupen · original post",
+      "summary": "Niko Grupen reports that giving Harvey’s legal agents prebuilt context graphs over their documents improved results on legal tasks. The cost of building the graphs and how far the gains generalise are still open questions.",
+      "tags": [
+        "Agents",
+        "Evaluation",
+        "Infrastructure"
+      ],
+      "margin_note": "This page’s knowledge graph is a small context graph: entities, typed relations and sources pre-linked, so a reader or an agent starts from structure instead of a pile of documents. The post itself couldn’t be fetched here, so this summary relies on a newsletter description."
+    },
+    {
+      "id": "davis-labs-taste",
+      "title": "The Labs Have the Best Models With Infinite Tokens, So Why Aren’t Their Products Better?",
+      "type": "Essay",
+      "date": "2026-10-14",
+      "date_precision": "day",
+      "url": "https://davis7.substack.com/p/the-labs-have-the-best-models-with",
+      "op_url": null,
+      "op_label": null,
+      "summary": "Ben Davis defines taste as “the ability to make good decisions in places where there isn’t a programmatic verification function”. Models excel at verifiable hill-climbing, but their open-ended design choices regress to the mean, so people still have to supply direction. He calls taste “the only real stop” to recursive self-improvement.",
+      "tags": [
+        "Research taste",
+        "Verification",
+        "Agents",
+        "Human agency"
+      ],
+      "margin_note": "The real question: can a harness and a model together make good decisions where no programmatic verifier exists? “Make this function fast” is hill-climbing. Which direction to pursue, which design to ship and which claim to trust are taste."
+    },
+    {
+      "id": "agentrun-grep",
+      "title": "AgentRun: a harness for repetitive knowledge work",
+      "type": "Article",
+      "date": "2026-09-18",
+      "date_precision": "day",
+      "url": "https://x.com/MiguelriosEN/status/2101029313906987422",
+      "op_url": null,
+      "op_label": null,
+      "summary": "Miguel Rios (Grep.ai) describes a harness in which a frontier agent first does a job from a written procedure, keeps notes and traces, then writes a typed workflow and “fires itself”. The workflow mixes agent steps, plain code and typed questions answered by a small calibrated model (Jev), under the rule “Jev decides what a thing is; code decides what follows.” A verify clause checks each claim against the evidence the agent cited. On an anti-money-laundering alert review, the author reports cost per alert falling from $2.89 to $0.25 and judged accuracy rising from 90% to 95%, scored on a held-out set they never looked at.",
+      "tags": [
+        "Agents",
+        "Verification",
+        "Evaluation",
+        "Research taste",
+        "Infrastructure"
+      ],
+      "margin_note": "A practical answer to the taste question. Closed decisions (“is this a match?”) become typed questions that a cheap calibrated model answers and code routes. Open judgment stays with the agent or a human. A held-out set guards against grading your own homework."
+    },
+    {
+      "id": "convoke-biopharma-benchmark",
+      "title": "Benchmarking biopharma knowledge work",
+      "type": "Blog post",
+      "date": "2026-09-29",
+      "date_precision": "day",
+      "url": "https://www.convoke.bio/blog/benchmarking-biopharma-knowledge-work",
+      "op_url": null,
+      "op_label": null,
+      "summary": "Convoke benchmarks models on six biopharma work products outside R&D: target safety assessment, tumor landscape, shelved assets, catalyst calendar, clinical benchmark and commercial forecast. Domain experts wrote penalty-based rubrics (major, moderate, minor errors), and an LLM grader with research tools scored each criterion against a citation. They report that frontier OpenAI models lead and that models handle structured spreadsheet compilation well but struggle with narrative synthesis and judgment-heavy forecasts. Frontier models cost more than 3x as much per work product. The grader has not yet been validated against expert grading.",
+      "tags": [
+        "Biopharma",
+        "Evaluation",
+        "Agents",
+        "Medicine",
+        "Research taste"
+      ],
+      "margin_note": "Compiling a catalyst calendar is checkable. A commercial forecast needs design judgment, and that is where models slip: the taste gap again, in a pharma setting. The rubric grader is itself unvalidated, so treat the rankings as provisional."
+    },
+    {
+      "id": "dean-dawnsong-fireside",
+      "title": "Jeff Dean in conversation with Dawn Song: from answering questions to making discoveries",
+      "type": "Talk",
+      "date": "2026-08-07",
+      "date_precision": "day",
+      "url": "https://www.youtube.com/watch?v=0kC3xOZChdA",
+      "op_url": null,
+      "op_label": null,
+      "summary": "Dean's first public talk after leaving Google, at the AASF Frontier & Pioneer Symposium at Stanford, moderated by Dawn Song. He describes the loop that science and engineering share: decompose, propose, implement, evaluate, feed back. Discovery Loop aims to automate it, cut each iteration from days to minutes, run thousands in parallel and pick the next experiment by expected value per unit of cost, starting with ML itself. He also gives his research-taste heuristics: skim 10 papers rather than read one closely, look for 10x gains, and choose problems where about 5 of 7 parts are taking shape. The summary is built from auto-generated captions.",
+      "tags": [
+        "Scientific discovery",
+        "Agents",
+        "Research taste",
+        "Governance"
+      ],
+      "margin_note": "Experiment A has a 10% chance of +5 and costs 1 GPU-day (EV/cost 0.5). B has a 50% chance of +2 and costs 4 GPU-days (0.25). Dean's rule runs A first. What pure EV/cost misses is what a cheap failure teaches you."
     }
   ]
 }

@@ -529,6 +529,14 @@
     ["sys-autoresearch", "related_to", "c-verifiable-hill-climbing", "works where a score is cheap to compute"],
     ["sys-autoresearch", "related_to", "c-autonomous-research"],
     ["scaling-discovery-forgetting", "related_to", "davis-labs-taste", "agents choosing safe, incremental moves"],
-    ["fork-and-flush", "related_to", "dean-dawnsong-fireside", "thousands of parallel experiments in the research loop"]
+    ["fork-and-flush", "related_to", "dean-dawnsong-fireside", "thousands of parallel experiments in the research loop"],
+    ["larus-stone-foundries-post", "authored_by", "p-nicholas-larus-stone"],
+    ["larus-stone-foundries-post", "about_system", "sys-science-foundries"],
+    ["larus-stone-foundries-post", "related_to", "benchling-science-foundries", "launch post for the blog"],
+    ["larus-stone-foundries-post", "discusses", "c-multi-agent-coordination", "“natively multiplayer agents” and agent swarms"],
+    ["larus-stone-foundries-post", "discusses", "c-drug-discovery", "target ID through medical writing"],
+    ["larus-stone-foundries-post", "related_to", "agentrun-grep", "harness engineering as the product work"],
+    ["larus-stone-foundries-post", "related_to", "convoke-biopharma-benchmark", "judgement-heavy tasks are where models are weakest"],
+    ["larus-stone-foundries-post", "discusses", "c-human-oversight", "comments ask about evaluation, traceability and governance"]
   ]
 }

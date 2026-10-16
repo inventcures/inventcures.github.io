@@ -169,7 +169,12 @@
     {"id": "c-selective-contagion", "type": "concept", "label": "Selective contagion of ideas", "description": "Treat claims like infections: keep R below 1 for bad claims and well above 1 for validated ones. Heuristic: detection, adjudication and intervention must be faster than a harmful claim spreads."},
     {"id": "c-evidence-chain", "type": "concept", "label": "Separated evidence chain", "description": "Prediction quality, specification fidelity, decision utility and clinical translation are kept apart. In biology, association, intervention, mechanism and translation are separate stages, and evidence for one does not validate the next."},
     {"id": "c-integrity-channels", "type": "concept", "label": "Integrity reporting channels", "description": "Separate channels for negative results, uncertainty reports, confessions, pre-action alerts and peer challenges, each with its own response, so that reporting disappointing science is not punished."},
-    {"id": "c-distinct-bets", "type": "concept", "label": "Protected distinct bets", "description": "Give cohorts of agents protected budgets to pursue different hypotheses. Compare diversity on complete proposals against repeated sampling from one strong model at the same budget."}
+    {"id": "c-distinct-bets", "type": "concept", "label": "Protected distinct bets", "description": "Give cohorts of agents protected budgets to pursue different hypotheses. Compare diversity on complete proposals against repeated sampling from one strong model at the same budget."},
+    {"id": "o-benchling", "type": "org", "label": "Benchling"},
+    {"id": "p-nicholas-larus-stone", "type": "person", "label": "Nicholas Larus-Stone"},
+    {"id": "o-parabilis", "type": "org", "label": "Parabilis Medicines", "url": "https://parabilismed.com/"},
+    {"id": "sys-science-foundries", "type": "system", "label": "Benchling Science Foundries", "description": "Agent teams that run a lab process end to end on shared data, with scientist approval steps chosen by the team."},
+    {"id": "m-approval-gates", "type": "method", "label": "Scientist approval gates", "description": "Assign each workflow step to an agent or a person, and require a scientist's sign-off at chosen decision points."}
   ],
   "edges": [
     ["litt-beginning-mathematics", "authored_by", "p-daniel-litt"],
@@ -471,6 +476,20 @@
     ["c-integrity-channels", "related_to", "c-verifier-exploits", "make cheating reportable instead of hidden"],
     ["cheating-whistleblowing", "discusses", "c-integrity-channels", "agents reporting misconduct in a research swarm"],
     ["c-distinct-bets", "related_to", "c-research-taste", "choosing directions without a scorecard"],
-    ["c-distinct-bets", "related_to", "c-regression-to-mean", "protected bets resist drift to the average"]
+    ["c-distinct-bets", "related_to", "c-regression-to-mean", "protected bets resist drift to the average"],
+    ["benchling-science-foundries", "authored_by", "p-nicholas-larus-stone"],
+    ["p-nicholas-larus-stone", "affiliated_with", "o-benchling", "Head of AI"],
+    ["benchling-science-foundries", "releases", "sys-science-foundries"],
+    ["sys-science-foundries", "made_by", "o-benchling"],
+    ["benchling-science-foundries", "discusses", "o-parabilis", "named customer"],
+    ["benchling-science-foundries", "proposes", "m-approval-gates"],
+    ["m-approval-gates", "related_to", "c-human-oversight"],
+    ["benchling-science-foundries", "discusses", "c-drug-discovery", "antibody design, production and lead optimization"],
+    ["benchling-science-foundries", "uses_method", "m-closed-loop-lab", "agents dispatch to workcells and update training data"],
+    ["benchling-science-foundries", "discusses", "c-loop-latency", "compressing the gaps between experiments"],
+    ["benchling-science-foundries", "discusses", "c-multi-agent-coordination", "design, cloning, lab and analysis agents hand off"],
+    ["benchling-science-foundries", "related_to", "convoke-biopharma-benchmark", "agents for biopharma work beyond pure discovery"],
+    ["benchling-science-foundries", "related_to", "dean-dawnsong-fireside", "automating the experiment loop"],
+    ["benchling-science-foundries", "related_to", "periodic-infrastructure", "AI-for-science built on lab infrastructure"]
   ]
 }

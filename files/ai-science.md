@@ -34,6 +34,17 @@ Niko Grupen reports that giving Harvey’s legal agents prebuilt context graphs 
 - Topics: Agents, Evaluation, Infrastructure
 - Margin note: This page’s knowledge graph is a small context graph: entities, typed relations and sources pre-linked, so a reader or an agent starts from structure instead of a pile of documents. The post itself couldn’t be fetched here, so this summary relies on a newsletter description.
 
+### Introducing Science Foundries, a new way for scientists and agents to work together
+
+Benchling's Head of AI, Nicholas Larus-Stone, launches Science Foundries: you pick a process such as protein production or lead optimization, then assign which steps agents run and where scientists must approve. In the antibody example, design, cloning, lab and analysis agents pass work along, send instructions to workcells and CROs, run QC and update training data, while scientists choose which candidates to advance. Parabilis Medicines is the named customer. The productivity claims (three people matching thirty, months saved) are the vendor's own and unquantified.
+
+- Type: Blog post
+- Published: 15 Oct 2026
+- Resource: [Introducing Science Foundries, a new way for scientists and agents to work together](https://www.benchling.com/blog/introducing-science-foundries)
+- OP: not yet verified
+- Topics: Biopharma, Agents, Human–AI collaboration, Biology, Infrastructure
+- Margin note: The design choice that matters is the role assignment: agents run the steps and scientists hold the approval gates. That is the human actuation gate, sold as a product. What is missing is any independent check beyond QC and sign-off.
+
 ### The Labs Have the Best Models With Infinite Tokens, So Why Aren’t Their Products Better?
 
 Ben Davis defines taste as “the ability to make good decisions in places where there isn’t a programmatic verification function”. Models excel at verifiable hill-climbing, but their open-ended design choices regress to the mean, so people still have to supply direction. He calls taste “the only real stop” to recursive self-improvement.

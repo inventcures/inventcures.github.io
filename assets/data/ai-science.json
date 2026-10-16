@@ -610,7 +610,10 @@
         "Medicine",
         "Research taste"
       ],
-      "margin_note": "Compiling a catalyst calendar is checkable. A commercial forecast needs design judgment, and that is where models slip: the taste gap again, in a pharma setting. The rubric grader is itself unvalidated, so treat the rankings as provisional."
+      "margin_note": "Compiling a catalyst calendar is checkable. A commercial forecast needs design judgment, and that is where models slip: the taste gap again, in a pharma setting. The rubric grader is itself unvalidated, so treat the rankings as provisional.",
+      "group_id": "biopharma",
+      "group_title": "Biopharma",
+      "group_order": 1
     },
     {
       "id": "dean-dawnsong-fireside",
@@ -647,7 +650,11 @@
         "Biology",
         "Infrastructure"
       ],
-      "margin_note": "The design choice that matters is the role assignment: agents run the steps and scientists hold the approval gates. That is the human actuation gate, sold as a product. What is missing is any independent check beyond QC and sign-off."
+      "margin_note": "The design choice that matters is the role assignment: agents run the steps and scientists hold the approval gates. That is the human actuation gate, sold as a product. What is missing is any independent check beyond QC and sign-off.",
+      "group_id": "biopharma",
+      "group_title": "Biopharma",
+      "group_order": 0,
+      "group_note": "AI agents and benchmarks for drug development, biopharma operations and lab work beyond early discovery. Each entry retains its publication date."
     }
   ]
 }

@@ -34,7 +34,11 @@ Niko Grupen reports that giving Harvey’s legal agents prebuilt context graphs 
 - Topics: Agents, Evaluation, Infrastructure
 - Margin note: This page’s knowledge graph is a small context graph: entities, typed relations and sources pre-linked, so a reader or an agent starts from structure instead of a pile of documents. The post itself couldn’t be fetched here, so this summary relies on a newsletter description.
 
-### Introducing Science Foundries, a new way for scientists and agents to work together
+### Biopharma
+
+AI agents and benchmarks for drug development, biopharma operations and lab work beyond early discovery. Each entry retains its publication date.
+
+#### Introducing Science Foundries, a new way for scientists and agents to work together
 
 Benchling's Head of AI, Nicholas Larus-Stone, launches Science Foundries: you pick a process such as protein production or lead optimization, then assign which steps agents run and where scientists must approve. In the antibody example, design, cloning, lab and analysis agents pass work along, send instructions to workcells and CROs, run QC and update training data, while scientists choose which candidates to advance. Parabilis Medicines is the named customer. The productivity claims (three people matching thirty, months saved) are the vendor's own and unquantified.
 
@@ -44,6 +48,17 @@ Benchling's Head of AI, Nicholas Larus-Stone, launches Science Foundries: you pi
 - OP: not yet verified
 - Topics: Biopharma, Agents, Human–AI collaboration, Biology, Infrastructure
 - Margin note: The design choice that matters is the role assignment: agents run the steps and scientists hold the approval gates. That is the human actuation gate, sold as a product. What is missing is any independent check beyond QC and sign-off.
+
+#### Benchmarking biopharma knowledge work
+
+Convoke benchmarks models on six biopharma work products outside R&D: target safety assessment, tumor landscape, shelved assets, catalyst calendar, clinical benchmark and commercial forecast. Domain experts wrote penalty-based rubrics (major, moderate, minor errors), and an LLM grader with research tools scored each criterion against a citation. They report that frontier OpenAI models lead and that models handle structured spreadsheet compilation well but struggle with narrative synthesis and judgment-heavy forecasts. Frontier models cost more than 3x as much per work product. The grader has not yet been validated against expert grading.
+
+- Type: Blog post
+- Published: 29 Sep 2026
+- Resource: [Benchmarking biopharma knowledge work](https://www.convoke.bio/blog/benchmarking-biopharma-knowledge-work)
+- OP: not yet verified
+- Topics: Biopharma, Evaluation, Agents, Medicine, Research taste
+- Margin note: Compiling a catalyst calendar is checkable. A commercial forecast needs design judgment, and that is where models slip: the taste gap again, in a pharma setting. The rubric grader is itself unvalidated, so treat the rankings as provisional.
 
 ### The Labs Have the Best Models With Infinite Tokens, So Why Aren’t Their Products Better?
 
@@ -55,17 +70,6 @@ Ben Davis defines taste as “the ability to make good decisions in places where
 - OP: not yet verified
 - Topics: Research taste, Verification, Agents, Human agency
 - Margin note: The real question: can a harness and a model together make good decisions where no programmatic verifier exists? “Make this function fast” is hill-climbing. Which direction to pursue, which design to ship and which claim to trust are taste.
-
-### Benchmarking biopharma knowledge work
-
-Convoke benchmarks models on six biopharma work products outside R&D: target safety assessment, tumor landscape, shelved assets, catalyst calendar, clinical benchmark and commercial forecast. Domain experts wrote penalty-based rubrics (major, moderate, minor errors), and an LLM grader with research tools scored each criterion against a citation. They report that frontier OpenAI models lead and that models handle structured spreadsheet compilation well but struggle with narrative synthesis and judgment-heavy forecasts. Frontier models cost more than 3x as much per work product. The grader has not yet been validated against expert grading.
-
-- Type: Blog post
-- Published: 29 Sep 2026
-- Resource: [Benchmarking biopharma knowledge work](https://www.convoke.bio/blog/benchmarking-biopharma-knowledge-work)
-- OP: not yet verified
-- Topics: Biopharma, Evaluation, Agents, Medicine, Research taste
-- Margin note: Compiling a catalyst calendar is checkable. A commercial forecast needs design judgment, and that is where models slip: the taste gap again, in a pharma setting. The rubric grader is itself unvalidated, so treat the rankings as provisional.
 
 ### A conversation: the future of mathematics
 

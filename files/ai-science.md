@@ -218,6 +218,19 @@ Proposes attaching reusable qualifications and uncertainty records to scientific
 - Topics: Evidence, Verification, Scientific communication
 - Margin note: Caveats get lost each time a claim is reused. The hedges should travel with the claim, not stay behind in the paper.
 
+### Jeff Dean on Launching Discovery Loop
+
+Dean’s thesis for Discovery Loop, the public benefit corporation he co-founded with Ghemawat, Le and Vinyals: science is bottlenecked by slow experimental loops, so automate them, run thousands in parallel and cut each iteration’s latency. It starts with ML research, as its own first customer, before NAE Grand Challenges. No technical papers have been published yet.
+
+- Type: Interview
+- Published: 09 Aug 2026
+- Resource: [Jeff Dean on Launching Discovery Loop](https://radical.vc/articles/radical-reads-jeff-dean-on-launching-discovery-loop/)
+- OP: [Jeff Dean · launch thread](https://x.com/JeffDean/status/2085034604172603724)
+- Topics: Agents, Scientific discovery, Infrastructure, Compute
+- Margin note: The same “automate the experimental loop” bet as Sakana and Google’s Co-Scientist, framed around scale and latency. A FutureSearch forecast argues it should start where loops close fastest and verification is cheap, such as chip design.
+- Company site: https://www.discoveryloop.com/
+- Dean with Dawn Song (talk): https://www.youtube.com/watch?v=0kC3xOZChdA
+
 ### Artificial intelligence in drug discovery—what it is, where we stand and the path forward
 
 Calls for evaluating AI by its contribution to better drug-development decisions and patient-relevant outcomes.

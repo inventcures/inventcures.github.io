@@ -133,7 +133,15 @@
     {"id": "m-deterministic-claim-check", "type": "method", "label": "Deterministic claim-to-log checks", "description": "Every number in a write-up is checked against execution logs."},
     {"id": "m-step-audit", "type": "method", "label": "Step audits and divergence reconciliation", "description": "Teammates flag the specific step where they disagree, and the step is re-checked by agents that did not write it."},
     {"id": "m-closed-loop-lab", "type": "method", "label": "Closed-loop autonomous lab"},
-    {"id": "m-economic-model", "type": "method", "label": "Formal economic model"}
+    {"id": "m-economic-model", "type": "method", "label": "Formal economic model"},
+    {"id": "o-discovery-loop", "type": "org", "label": "Discovery Loop", "description": "A Palo Alto public benefit corporation launched on 5 Aug 2026 to automate ML, science and engineering experiments.", "url": "https://www.discoveryloop.com/"},
+    {"id": "p-jeff-dean", "type": "person", "label": "Jeff Dean"},
+    {"id": "p-sanjay-ghemawat", "type": "person", "label": "Sanjay Ghemawat"},
+    {"id": "p-quoc-le", "type": "person", "label": "Quoc V. Le"},
+    {"id": "p-oriol-vinyals", "type": "person", "label": "Oriol Vinyals"},
+    {"id": "c-loop-latency", "type": "concept", "label": "Experimental loop latency", "description": "Cutting the time per propose, implement, run and evaluate cycle to minutes or hours, and running thousands of cycles in parallel."},
+    {"id": "c-recursive-self-improvement", "type": "concept", "label": "Recursive self-improvement", "description": "Using AI research tools to improve the stack that builds them."},
+    {"id": "c-nae-grand-challenges", "type": "concept", "label": "NAE Grand Challenges", "description": "The US National Academy of Engineering’s 14 grand challenges, such as medicines, clean water and solar."}
   ],
   "edges": [
     ["litt-beginning-mathematics", "authored_by", "p-daniel-litt"],
@@ -337,6 +345,23 @@
     ["no-magic-wands", "discusses", "c-fast-cheap-feedback"],
     ["jun-future-science", "related_to", "uncertainty-layer", "reasoning records versus claim records"],
     ["chollet-third-axis", "related_to", "gemini-real-world", "Agent_H scales breadth and depth"],
-    ["chollet-third-axis", "critiques", "c-inspectable-reasoning", "latent reasoning gives up inspectability"]
+    ["chollet-third-axis", "critiques", "c-inspectable-reasoning", "latent reasoning gives up inspectability"],
+    ["discovery-loop-launch", "authored_by", "p-jeff-dean", "interviewed"],
+    ["discovery-loop-launch", "commented_by", "p-jeff-dean"],
+    ["discovery-loop-launch", "discusses", "o-discovery-loop"],
+    ["p-jeff-dean", "affiliated_with", "o-discovery-loop", "CEO and co-founder"],
+    ["p-sanjay-ghemawat", "affiliated_with", "o-discovery-loop", "co-founder"],
+    ["p-quoc-le", "affiliated_with", "o-discovery-loop", "co-founder"],
+    ["p-oriol-vinyals", "affiliated_with", "o-discovery-loop", "co-founder"],
+    ["gemini-real-world", "authored_by", "p-quoc-le", "senior author"],
+    ["o-discovery-loop", "related_to", "o-google", "founding investor and compute partner"],
+    ["discovery-loop-launch", "proposes", "c-loop-latency"],
+    ["discovery-loop-launch", "discusses", "c-recursive-self-improvement", "the company is its own first customer"],
+    ["discovery-loop-launch", "discusses", "c-nae-grand-challenges"],
+    ["discovery-loop-launch", "discusses", "c-autonomous-research"],
+    ["discovery-loop-launch", "related_to", "agentic-scientist", "same bet on automating the research loop"],
+    ["discovery-loop-launch", "related_to", "periodic-infrastructure", "AI-for-science startups built on large-scale infrastructure"],
+    ["c-loop-latency", "related_to", "c-fast-cheap-feedback", "loops close fastest where checking is cheap"],
+    ["c-recursive-self-improvement", "related_to", "c-solipsistic-ai"]
   ]
 }

@@ -512,6 +512,32 @@
         "https://arxiv.org/abs/2504.08066": "AI Scientist-v2 preprint"
       },
       "margin_note": "The withdrawn ICBINB paper averaged 6.33, above the workshop’s human acceptance bar. The authors still list naive ideas and hallucinated citations as limits. Read with the Agentic Scientist, its successor."
+    },
+    {
+      "id": "discovery-loop-launch",
+      "title": "Jeff Dean on Launching Discovery Loop",
+      "type": "Interview",
+      "date": "2026-08-09",
+      "date_precision": "day",
+      "url": "https://radical.vc/articles/radical-reads-jeff-dean-on-launching-discovery-loop/",
+      "op_url": "https://x.com/JeffDean/status/2085034604172603724",
+      "op_label": "Jeff Dean · launch thread",
+      "summary": "Dean’s thesis for Discovery Loop, the public benefit corporation he co-founded with Ghemawat, Le and Vinyals: science is bottlenecked by slow experimental loops, so automate them, run thousands in parallel and cut each iteration’s latency. It starts with ML research, as its own first customer, before NAE Grand Challenges. No technical papers have been published yet.",
+      "tags": [
+        "Agents",
+        "Scientific discovery",
+        "Infrastructure",
+        "Compute"
+      ],
+      "related_urls": [
+        "https://www.discoveryloop.com/",
+        "https://www.youtube.com/watch?v=0kC3xOZChdA"
+      ],
+      "related_labels": {
+        "https://www.discoveryloop.com/": "Company site",
+        "https://www.youtube.com/watch?v=0kC3xOZChdA": "Dean with Dawn Song (talk)"
+      },
+      "margin_note": "The same “automate the experimental loop” bet as Sakana and Google’s Co-Scientist, framed around scale and latency. A FutureSearch forecast argues it should start where loops close fastest and verification is cheap, such as chip design."
     }
   ]
 }

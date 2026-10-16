@@ -162,7 +162,14 @@
     {"id": "m-ev-cost-experiment-portfolio", "type": "method", "label": "Experiment portfolio by expected value per cost", "description": "Score each queued experiment by expected value divided by its compute and other costs, and run the best first."},
     {"id": "c-ten-x-signal", "type": "concept", "label": "The 10x signal", "description": "A 10x gain in compute-to-quality marks an idea as important, as with mixture of experts."},
     {"id": "c-five-of-seven", "type": "concept", "label": "The 5-of-7 problem shape", "description": "Good research problems have most parts starting to take shape and a few hard but imaginable, on about a 5-year horizon."},
-    {"id": "c-shared-discovery-loop", "type": "concept", "label": "The shared science–engineering loop", "description": "Decompose, propose, implement, evaluate, feed back, repeat."}
+    {"id": "c-shared-discovery-loop", "type": "concept", "label": "The shared science–engineering loop", "description": "Decompose, propose, implement, evaluate, feed back, repeat."},
+    {"id": "c-institutional-alignment", "type": "concept", "label": "Reliability as institutional design", "description": "When AI systems become many communicating agents, reliability may depend as much on the rules of the collective as on aligning each model."},
+    {"id": "c-governed-claim-ledger", "type": "concept", "label": "Governed claim ledger", "description": "Shared claims are reviewed, promoted, challenged and corrected under explicit rules. Detecting a problem is kept separate from the authority to change the record, and repairs are scoped: narrow, downgrade, reassess or revoke."},
+    {"id": "c-typed-knowledge-objects", "type": "concept", "label": "Typed scientific knowledge objects", "description": "Shared memory as claims, hypotheses, evidence, contradictions, negative results, replications, retractions and uncertainty, like PubMed plus Git plus peer review, not a chat log."},
+    {"id": "c-selective-contagion", "type": "concept", "label": "Selective contagion of ideas", "description": "Treat claims like infections: keep R below 1 for bad claims and well above 1 for validated ones. Heuristic: detection, adjudication and intervention must be faster than a harmful claim spreads."},
+    {"id": "c-evidence-chain", "type": "concept", "label": "Separated evidence chain", "description": "Prediction quality, specification fidelity, decision utility and clinical translation are kept apart. In biology, association, intervention, mechanism and translation are separate stages, and evidence for one does not validate the next."},
+    {"id": "c-integrity-channels", "type": "concept", "label": "Integrity reporting channels", "description": "Separate channels for negative results, uncertainty reports, confessions, pre-action alerts and peer challenges, each with its own response, so that reporting disappointing science is not punished."},
+    {"id": "c-distinct-bets", "type": "concept", "label": "Protected distinct bets", "description": "Give cohorts of agents protected budgets to pursue different hypotheses. Compare diversity on complete proposals against repeated sampling from one strong model at the same budget."}
   ],
   "edges": [
     ["litt-beginning-mathematics", "authored_by", "p-daniel-litt"],
@@ -446,6 +453,24 @@
     ["dean-dawnsong-fireside", "related_to", "research-taste", "first-hand heuristics for choosing problems"],
     ["dean-dawnsong-fireside", "related_to", "agentic-scientist", "the same loop automated end to end"],
     ["dean-dawnsong-fireside", "related_to", "self-organizing-teams", "orchestrating agent teams on sub-problems"],
-    ["dean-dawnsong-fireside", "related_to", "cheating-whistleblowing", "agents behaving outside their brief"]
+    ["dean-dawnsong-fireside", "related_to", "cheating-whistleblowing", "agents behaving outside their brief"],
+    ["c-institutional-alignment", "related_to", "c-governed-claim-ledger", "the ledger is one concrete institution"],
+    ["c-institutional-alignment", "related_to", "c-human-oversight", "humans hold the final actuation gate"],
+    ["c-governed-claim-ledger", "related_to", "m-shared-memory", "governs what enters shared memory"],
+    ["c-governed-claim-ledger", "related_to", "c-context-graphs"],
+    ["c-governed-claim-ledger", "related_to", "c-verification", "promotion requires review and checking"],
+    ["c-typed-knowledge-objects", "related_to", "c-governed-claim-ledger"],
+    ["c-typed-knowledge-objects", "related_to", "c-uncertainty-records"],
+    ["c-typed-knowledge-objects", "related_to", "c-context-graphs"],
+    ["c-selective-contagion", "related_to", "c-governed-claim-ledger", "the ledger is where spread is checked"],
+    ["c-selective-contagion", "related_to", "c-loop-latency", "intervention must beat the speed of spread"],
+    ["c-evidence-chain", "related_to", "c-causal-biology"],
+    ["c-evidence-chain", "related_to", "c-drug-discovery", "translation is the last link"],
+    ["c-integrity-channels", "related_to", "c-uncertainty-records"],
+    ["c-integrity-channels", "related_to", "c-human-oversight"],
+    ["c-integrity-channels", "related_to", "c-verifier-exploits", "make cheating reportable instead of hidden"],
+    ["cheating-whistleblowing", "discusses", "c-integrity-channels", "agents reporting misconduct in a research swarm"],
+    ["c-distinct-bets", "related_to", "c-research-taste", "choosing directions without a scorecard"],
+    ["c-distinct-bets", "related_to", "c-regression-to-mean", "protected bets resist drift to the average"]
   ]
 }

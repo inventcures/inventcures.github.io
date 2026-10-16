@@ -49,6 +49,17 @@ Benchling's Head of AI, Nicholas Larus-Stone, launches Science Foundries: you pi
 - Topics: Biopharma, Agents, Human–AI collaboration, Biology, Infrastructure
 - Margin note: The design choice that matters is the role assignment: agents run the steps and scientists hold the approval gates. That is the human actuation gate, sold as a product. What is missing is any independent check beyond QC and sign-off.
 
+#### “We just launched Science Foundries at Benchtalk!”
+
+Nicholas Larus-Stone's launch post says Science Foundries let “anyone … orchestrate a team of agents to accomplish real scientific work”, from target ID and screening through assay development to medical writing. He credits “vibe coding, natively multiplayer agents (!!!), agent swarms, and of course good old fashioned harness engineering”, and says a Foundry is set up by chatting with Benchling AI. The post has no data or evaluation; the first comment asks about evaluation, reliability, traceability and governance.
+
+- Type: Post
+- Published: 15 Oct 2026
+- Resource: [“We just launched Science Foundries at Benchtalk!”](https://www.linkedin.com/feed/update/urn:li:activity:7516501677785624576/)
+- OP: not yet verified
+- Topics: Biopharma, Agents, Human–AI collaboration
+- Margin note: The use cases span very different levels of checkability. An assay readout can be checked against a plate; target ID and medical writing are judgement calls, the tasks Convoke found models weakest on. “Multiplayer” raises a new question: when two scientists give the agents conflicting instructions, who decides, and is it recorded?
+
 #### Benchmarking biopharma knowledge work
 
 Convoke benchmarks models on six biopharma work products outside R&D: target safety assessment, tumor landscape, shelved assets, catalyst calendar, clinical benchmark and commercial forecast. Domain experts wrote penalty-based rubrics (major, moderate, minor errors), and an LLM grader with research tools scored each criterion against a citation. They report that frontier OpenAI models lead and that models handle structured spreadsheet compilation well but struggle with narrative synthesis and judgment-heavy forecasts. Frontier models cost more than 3x as much per work product. The grader has not yet been validated against expert grading.
@@ -180,7 +191,7 @@ An autonomous research pipeline combines experiments, ablations and simulated pe
 - Resource: [ScientistTwo: Pioneering the Human Knowledge Frontier with Autonomous AI](https://arxiv.org/abs/2609.19644v1)
 - OP: not yet verified
 - Topics: Agents, Evaluation, Scientific discovery
-- Margin note: A closed loop on 107 problems from ICLR, ICML and NeurIPS papers. Simulated review is AI checking AI, so ask who verifies its 86 generated papers.
+- Margin note: A closed loop on 107 problems from ICLR, ICML and NeurIPS papers. Over its 86 successes the mean gain over the human state of the art is 25.2%, but the median is 7.7%: a few big wins pull the average up, and the 21 failures are left out. Simulated review is AI checking AI, so ask who verifies the papers.
 - Related: https://scientist-two.github.io/
 
 ### AI Infrastructure at Periodic

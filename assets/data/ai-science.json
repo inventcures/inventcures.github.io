@@ -25,7 +25,7 @@
       "related_urls": [
         "https://scientist-two.github.io/"
       ],
-      "margin_note": "A closed loop on 107 problems from ICLR, ICML and NeurIPS papers. Simulated review is AI checking AI, so ask who verifies its 86 generated papers."
+      "margin_note": "A closed loop on 107 problems from ICLR, ICML and NeurIPS papers. Over its 86 successes the mean gain over the human state of the art is 25.2%, but the median is 7.7%: a few big wins pull the average up, and the 21 failures are left out. Simulated review is AI checking AI, so ask who verifies the papers."
     },
     {
       "id": "self-organizing-teams",
@@ -613,7 +613,7 @@
       "margin_note": "Compiling a catalyst calendar is checkable. A commercial forecast needs design judgment, and that is where models slip: the taste gap again, in a pharma setting. The rubric grader is itself unvalidated, so treat the rankings as provisional.",
       "group_id": "biopharma",
       "group_title": "Biopharma",
-      "group_order": 1
+      "group_order": 2
     },
     {
       "id": "dean-dawnsong-fireside",
@@ -704,6 +704,27 @@
       "group_order": 1,
       "group_role": "The forgetting paper",
       "margin_note": "Fork-and-Flush keeps the workspace and clears the chat. This paper clears both and keeps only the best answer. Shrinking edit sizes are a measurable symptom of an agent getting stuck."
+    },
+    {
+      "id": "larus-stone-foundries-post",
+      "title": "“We just launched Science Foundries at Benchtalk!”",
+      "type": "Post",
+      "date": "2026-10-15",
+      "date_precision": "day",
+      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7516501677785624576/",
+      "op_url": null,
+      "op_label": null,
+      "summary": "Nicholas Larus-Stone's launch post says Science Foundries let “anyone … orchestrate a team of agents to accomplish real scientific work”, from target ID and screening through assay development to medical writing. He credits “vibe coding, natively multiplayer agents (!!!), agent swarms, and of course good old fashioned harness engineering”, and says a Foundry is set up by chatting with Benchling AI. The post has no data or evaluation; the first comment asks about evaluation, reliability, traceability and governance.",
+      "tags": [
+        "Biopharma",
+        "Agents",
+        "Human–AI collaboration"
+      ],
+      "group_id": "biopharma",
+      "group_title": "Biopharma",
+      "group_order": 1,
+      "group_role": "The launch post",
+      "margin_note": "The use cases span very different levels of checkability. An assay readout can be checked against a plate; target ID and medical writing are judgement calls, the tasks Convoke found models weakest on. “Multiplayer” raises a new question: when two scientists give the agents conflicting instructions, who decides, and is it recorded?"
     }
   ]
 }

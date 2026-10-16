@@ -34,6 +34,17 @@ Niko Grupen reports that giving Harvey’s legal agents prebuilt context graphs 
 - Topics: Agents, Evaluation, Infrastructure
 - Margin note: This page’s knowledge graph is a small context graph: entities, typed relations and sources pre-linked, so a reader or an agent starts from structure instead of a pile of documents. The post itself couldn’t be fetched here, so this summary relies on a newsletter description.
 
+### The Labs Have the Best Models With Infinite Tokens, So Why Aren’t Their Products Better?
+
+Ben Davis defines taste as “the ability to make good decisions in places where there isn’t a programmatic verification function”. Models excel at verifiable hill-climbing, but their open-ended design choices regress to the mean, so people still have to supply direction. He calls taste “the only real stop” to recursive self-improvement.
+
+- Type: Essay
+- Published: 14 Oct 2026
+- Resource: [The Labs Have the Best Models With Infinite Tokens, So Why Aren’t Their Products Better?](https://davis7.substack.com/p/the-labs-have-the-best-models-with)
+- OP: not yet verified
+- Topics: Research taste, Verification, Agents, Human agency
+- Margin note: The real question: can a harness and a model together make good decisions where no programmatic verifier exists? “Make this function fast” is hill-climbing. Which direction to pursue, which design to ship and which claim to trust are taste.
+
 ### A conversation: the future of mathematics
 
 Litt’s essay and doomslide’s response, followed by Gowers and Hairer on mathematical values and institutional engagement.

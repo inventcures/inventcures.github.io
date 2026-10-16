@@ -144,7 +144,10 @@
     {"id": "c-nae-grand-challenges", "type": "concept", "label": "NAE Grand Challenges", "description": "The US National Academy of Engineering’s 14 grand challenges, such as medicines, clean water and solar."},
     {"id": "p-niko-grupen", "type": "person", "label": "Niko Grupen"},
     {"id": "o-harvey", "type": "org", "label": "Harvey", "url": "https://www.harvey.ai/"},
-    {"id": "c-context-graphs", "type": "concept", "label": "Context graphs", "description": "Prebuilt graphs of the entities and relations in a document collection, handed to agents as structured context instead of raw text."}
+    {"id": "c-context-graphs", "type": "concept", "label": "Context graphs", "description": "Prebuilt graphs of the entities and relations in a document collection, handed to agents as structured context instead of raw text."},
+    {"id": "p-ben-davis", "type": "person", "label": "Ben Davis"},
+    {"id": "c-verifiable-hill-climbing", "type": "concept", "label": "Verifiable hill-climbing", "description": "Change, test, repeat until a programmatic goal is met. Models already excel at this."},
+    {"id": "c-regression-to-mean", "type": "concept", "label": "Regression to the mean in open-ended choices", "description": "Without a verifier, model choices drift toward the familiar and average, so they are functional but generic."}
   ],
   "edges": [
     ["litt-beginning-mathematics", "authored_by", "p-daniel-litt"],
@@ -371,6 +374,17 @@
     ["grupen-context-graphs", "made_by", "o-harvey"],
     ["grupen-context-graphs", "proposes", "c-context-graphs"],
     ["c-context-graphs", "related_to", "m-shared-memory", "structured memory for agents"],
-    ["c-context-graphs", "related_to", "c-uncertainty-records", "machine-readable structure around claims"]
+    ["c-context-graphs", "related_to", "c-uncertainty-records", "machine-readable structure around claims"],
+    ["davis-labs-taste", "authored_by", "p-ben-davis"],
+    ["davis-labs-taste", "proposes", "c-research-taste", "good decisions where no programmatic verifier exists"],
+    ["davis-labs-taste", "discusses", "c-verification", "taste starts where the verifier ends"],
+    ["davis-labs-taste", "discusses", "c-verifiable-hill-climbing"],
+    ["davis-labs-taste", "critiques", "c-regression-to-mean"],
+    ["davis-labs-taste", "discusses", "c-recursive-self-improvement", "taste as the only real stop to RSI"],
+    ["c-verifiable-hill-climbing", "related_to", "c-optimizer-not-scientist"],
+    ["c-research-taste", "related_to", "c-verification", "judgment is what remains when checking is impossible"],
+    ["davis-labs-taste", "related_to", "research-taste", "both treat taste as choosing directions without a scorecard"],
+    ["davis-labs-taste", "related_to", "economics-agi", "the measurability gap between what agents do and what humans can check"],
+    ["davis-labs-taste", "related_to", "agentic-scientist", "humans set questions and standards; agents expand experiments"]
   ]
 }

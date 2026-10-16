@@ -555,6 +555,24 @@
         "Infrastructure"
       ],
       "margin_note": "This page’s knowledge graph is a small context graph: entities, typed relations and sources pre-linked, so a reader or an agent starts from structure instead of a pile of documents. The post itself couldn’t be fetched here, so this summary relies on a newsletter description."
+    },
+    {
+      "id": "davis-labs-taste",
+      "title": "The Labs Have the Best Models With Infinite Tokens, So Why Aren’t Their Products Better?",
+      "type": "Essay",
+      "date": "2026-10-14",
+      "date_precision": "day",
+      "url": "https://davis7.substack.com/p/the-labs-have-the-best-models-with",
+      "op_url": null,
+      "op_label": null,
+      "summary": "Ben Davis defines taste as “the ability to make good decisions in places where there isn’t a programmatic verification function”. Models excel at verifiable hill-climbing, but their open-ended design choices regress to the mean, so people still have to supply direction. He calls taste “the only real stop” to recursive self-improvement.",
+      "tags": [
+        "Research taste",
+        "Verification",
+        "Agents",
+        "Human agency"
+      ],
+      "margin_note": "The real question: can a harness and a model together make good decisions where no programmatic verifier exists? “Make this function fast” is hill-climbing. Which direction to pursue, which design to ship and which claim to trust are taste."
     }
   ]
 }

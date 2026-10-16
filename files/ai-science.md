@@ -45,6 +45,17 @@ Ben Davis defines taste as “the ability to make good decisions in places where
 - Topics: Research taste, Verification, Agents, Human agency
 - Margin note: The real question: can a harness and a model together make good decisions where no programmatic verifier exists? “Make this function fast” is hill-climbing. Which direction to pursue, which design to ship and which claim to trust are taste.
 
+### Benchmarking biopharma knowledge work
+
+Convoke benchmarks models on six biopharma work products outside R&D: target safety assessment, tumor landscape, shelved assets, catalyst calendar, clinical benchmark and commercial forecast. Domain experts wrote penalty-based rubrics (major, moderate, minor errors), and an LLM grader with research tools scored each criterion against a citation. They report that frontier OpenAI models lead and that models handle structured spreadsheet compilation well but struggle with narrative synthesis and judgment-heavy forecasts. Frontier models cost more than 3x as much per work product. The grader has not yet been validated against expert grading.
+
+- Type: Blog post
+- Published: 29 Sep 2026
+- Resource: [Benchmarking biopharma knowledge work](https://www.convoke.bio/blog/benchmarking-biopharma-knowledge-work)
+- OP: not yet verified
+- Topics: Biopharma, Evaluation, Agents, Medicine, Research taste
+- Margin note: Compiling a catalyst calendar is checkable. A commercial forecast needs design judgment, and that is where models slip: the taste gap again, in a pharma setting. The rubric grader is itself unvalidated, so treat the rankings as provisional.
+
 ### A conversation: the future of mathematics
 
 Litt’s essay and doomslide’s response, followed by Gowers and Hairer on mathematical values and institutional engagement.
@@ -106,6 +117,17 @@ Frozen teams learn reusable coordination strategies, with gains depending partly
 - OP: [Aneesh Pappu · author post](https://x.com/aneeshpappu/status/2102428585986498609)
 - Topics: Agents, Collaboration, Evaluation
 - Margin note: Three frozen models learn a teamwork protocol and reach 66.7%, beating even an oracle that picks the best member (59.0%). The organisation is learned, not the weights.
+
+### AgentRun: a harness for repetitive knowledge work
+
+Miguel Rios (Grep.ai) describes a harness in which a frontier agent first does a job from a written procedure, keeps notes and traces, then writes a typed workflow and “fires itself”. The workflow mixes agent steps, plain code and typed questions answered by a small calibrated model (Jev), under the rule “Jev decides what a thing is; code decides what follows.” A verify clause checks each claim against the evidence the agent cited. On an anti-money-laundering alert review, the author reports cost per alert falling from $2.89 to $0.25 and judged accuracy rising from 90% to 95%, scored on a held-out set they never looked at.
+
+- Type: Article
+- Published: 18 Sep 2026
+- Resource: [AgentRun: a harness for repetitive knowledge work](https://x.com/MiguelriosEN/status/2101029313906987422)
+- OP: not yet verified
+- Topics: Agents, Verification, Evaluation, Research taste, Infrastructure
+- Margin note: A practical answer to the taste question. Closed decisions (“is this a match?”) become typed questions that a cheap calibrated model answers and code routes. Open judgment stays with the agent or a human. A held-out set guards against grading your own homework.
 
 ### ScientistTwo: Pioneering the Human Knowledge Frontier with Autonomous AI
 

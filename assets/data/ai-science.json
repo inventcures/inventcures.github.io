@@ -573,6 +573,44 @@
         "Human agency"
       ],
       "margin_note": "The real question: can a harness and a model together make good decisions where no programmatic verifier exists? “Make this function fast” is hill-climbing. Which direction to pursue, which design to ship and which claim to trust are taste."
+    },
+    {
+      "id": "agentrun-grep",
+      "title": "AgentRun: a harness for repetitive knowledge work",
+      "type": "Article",
+      "date": "2026-09-18",
+      "date_precision": "day",
+      "url": "https://x.com/MiguelriosEN/status/2101029313906987422",
+      "op_url": null,
+      "op_label": null,
+      "summary": "Miguel Rios (Grep.ai) describes a harness in which a frontier agent first does a job from a written procedure, keeps notes and traces, then writes a typed workflow and “fires itself”. The workflow mixes agent steps, plain code and typed questions answered by a small calibrated model (Jev), under the rule “Jev decides what a thing is; code decides what follows.” A verify clause checks each claim against the evidence the agent cited. On an anti-money-laundering alert review, the author reports cost per alert falling from $2.89 to $0.25 and judged accuracy rising from 90% to 95%, scored on a held-out set they never looked at.",
+      "tags": [
+        "Agents",
+        "Verification",
+        "Evaluation",
+        "Research taste",
+        "Infrastructure"
+      ],
+      "margin_note": "A practical answer to the taste question. Closed decisions (“is this a match?”) become typed questions that a cheap calibrated model answers and code routes. Open judgment stays with the agent or a human. A held-out set guards against grading your own homework."
+    },
+    {
+      "id": "convoke-biopharma-benchmark",
+      "title": "Benchmarking biopharma knowledge work",
+      "type": "Blog post",
+      "date": "2026-09-29",
+      "date_precision": "day",
+      "url": "https://www.convoke.bio/blog/benchmarking-biopharma-knowledge-work",
+      "op_url": null,
+      "op_label": null,
+      "summary": "Convoke benchmarks models on six biopharma work products outside R&D: target safety assessment, tumor landscape, shelved assets, catalyst calendar, clinical benchmark and commercial forecast. Domain experts wrote penalty-based rubrics (major, moderate, minor errors), and an LLM grader with research tools scored each criterion against a citation. They report that frontier OpenAI models lead and that models handle structured spreadsheet compilation well but struggle with narrative synthesis and judgment-heavy forecasts. Frontier models cost more than 3x as much per work product. The grader has not yet been validated against expert grading.",
+      "tags": [
+        "Biopharma",
+        "Evaluation",
+        "Agents",
+        "Medicine",
+        "Research taste"
+      ],
+      "margin_note": "Compiling a catalyst calendar is checkable. A commercial forecast needs design judgment, and that is where models slip: the taste gap again, in a pharma setting. The rubric grader is itself unvalidated, so treat the rankings as provisional."
     }
   ]
 }

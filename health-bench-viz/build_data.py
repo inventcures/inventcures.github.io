@@ -1,4 +1,4 @@
-"""Build health-bench-viz/data.js from the HealthBench JSONL files.
+"""Build health-bench-viz/data.js (stats over all conversations + the 482 longest in full) from the HealthBench JSONL files.
 usage: python3 build_data.py <dir with oss_eval.jsonl hard.jsonl consensus.jsonl> <out data.js>"""
 import json, sys, random, collections, os
 
@@ -51,38 +51,32 @@ for r in rows:
                 cluster_n[t[8:]] += 1
     by_theme[th].append(r)
 
-rnd = random.Random(53)
-PER = 12
-sample = []
-for th, lst in sorted(by_theme.items()):
-    lst = sorted(lst, key=lambda r: r["prompt_id"])
-    rnd.shuffle(lst)
-    # deliberately mix: some hard, some multi-turn, rest random
-    pick, seen = [], set()
-    def take(cond, k):
-        for r in lst:
-            if len([x for x in pick if cond(x)]) >= k: break
-            if r["prompt_id"] not in seen and cond(r):
-                pick.append(r); seen.add(r["prompt_id"])
-    take(lambda r: r["prompt_id"] in hard_ids, 3)
-    take(lambda r: len(r["prompt"]) >= 3, 3)
-    for r in lst:
-        if len(pick) >= PER: break
-        if r["prompt_id"] not in seen:
-            pick.append(r); seen.add(r["prompt_id"])
-    sample += pick
+# Every conversation with 7+ messages before the reply (the longest in the set),
+# sorted by id so the order matches embeddings.bin (see build_embeddings.mjs).
+labels = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "labels.json")))
+sample = sorted([r for r in rows if len(r["prompt"]) >= 7], key=lambda r: r["prompt_id"])
+# Cluster-level criteria repeat the same long text across many conversations,
+# so store each once and point to it by cluster tag.
+cluster_text = {}
+def crit(it):
+    tag = next((t for t in it.get("tags", []) if t.startswith("cluster:")), None)
+    if tag is None:
+        return it["criterion"]
+    cluster_text.setdefault(tag, it["criterion"])
+    return None
 
 def slim(r):
     icd = r.get("ideal_completions_data") or {}
     return {
         "id": r["prompt_id"],
         "prompt": [{"role": m["role"], "content": m["content"]} for m in r["prompt"]],
-        "rubrics": [{"c": it["criterion"], "p": it["points"], "t": it.get("tags", [])} for it in r["rubrics"]],
+        "rubrics": [{"c": crit(it), "p": it["points"], "t": it.get("tags", [])} for it in r["rubrics"]],
         "tags": r.get("example_tags", []),
         "hard": r["prompt_id"] in hard_ids,
         "consensus": r["prompt_id"] in cons_ids,
         "ideal": icd.get("ideal_completion"),
         "idealGroup": icd.get("ideal_completions_group"),
+        **labels[r["prompt_id"]],
     }
 
 stats = {
@@ -100,7 +94,8 @@ stats = {
     "nTurns": sorted(n_turns.items()),
     "idealCount": sum(1 for r in rows if (r.get("ideal_completions_data") or {}).get("ideal_completion")),
 }
-payload = json.dumps({"stats": stats, "convos": [slim(r) for r in sample]}, ensure_ascii=False, separators=(",", ":"))
+convos = [slim(r) for r in sample]
+payload = json.dumps({"stats": stats, "clusterText": cluster_text, "convos": convos}, ensure_ascii=False, separators=(",", ":"))
 payload = payload.replace("</", "<\\/")
 with open(out, "w") as f:
     f.write("window.HB=" + payload + ";\n")

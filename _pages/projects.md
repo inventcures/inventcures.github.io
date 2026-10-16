@@ -61,6 +61,26 @@ layout: default
 </section>
 -->
 
+<!-- HealthBench explorer - NEW -->
+<section class="featured-section">
+  <a href="/health-bench-viz/" style="display: block; background: linear-gradient(135deg, #062028 0%, #0e3a47 100%); border: 2px solid #22d3ee; border-radius: 12px; overflow: hidden; text-decoration: none; position: relative; margin-bottom: 2rem;">
+    <div style="position: absolute; top: -8px; right: 20px; background: linear-gradient(135deg, #22d3ee, #0e7490); color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.3rem 0.6rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 12px rgba(14, 116, 144, 0.4);">New</div>
+    <div style="padding: 1.5rem 2rem;">
+      <div style="display: inline-block; background: #0e7490; color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">AI Evals + Medicine</div>
+      <h3 style="color: #fff; font-size: 1.5rem; margin: 0 0 0.4rem 0; font-weight: 700;">HealthBench, Up Close</h3>
+      <p style="color: #a5f3fc; font-size: 0.9rem; margin: 0 0 0.75rem 0; font-weight: 500;">Explore OpenAI's HealthBench Conversations and Rubrics</p>
+      <p style="color: #ddd; font-size: 0.85rem; line-height: 1.5; margin: 0 0 1rem 0;">An interactive explorer for the 482 longest multi-turn conversations in OpenAI's HealthBench. Filter by medical specialty, language and theme, search with hybrid BM25 + semantic retrieval running in the browser, grade a reply against its physician-written rubric, and download any subset as JSONL.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem;">
+        <span style="background: rgba(34,211,238,0.15); color: #67e8f9; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">482 Conversations</span>
+        <span style="background: rgba(34,211,238,0.15); color: #67e8f9; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">Physician Rubrics</span>
+        <span style="background: rgba(34,211,238,0.15); color: #67e8f9; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">Hybrid Search</span>
+        <span style="background: rgba(34,211,238,0.15); color: #67e8f9; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">25 Specialties</span>
+      </div>
+      <span style="color: #a5f3fc; font-weight: 600; font-size: 0.9rem;">Explore HealthBench →</span>
+    </div>
+  </a>
+</section>
+
 <!-- Cardio-Sahayak India - NEW -->
 <section class="featured-section">
   <a href="/cardio-sahayak/" style="display: block; background: linear-gradient(135deg, #1f0510 0%, #4c0519 100%); border: 2px solid #be123c; border-radius: 12px; overflow: hidden; text-decoration: none; position: relative; margin-bottom: 2rem;">

@@ -32,6 +32,9 @@
       if (unit.classList.contains('as-conversation')) unit.hidden = !Array.from(unit.querySelectorAll('.as-entry')).some(row => !row.hidden);
       host.append(unit);
     });
+    // Keep margin-note numbers sequential in the current order.
+    let n = 0;
+    host.querySelectorAll('.as-entry:not([hidden]) .as-sn-ref').forEach(ref => { n++; ref.textContent = n; ref.setAttribute('aria-label', 'Margin note ' + n); ref.nextElementSibling.nextElementSibling.firstElementChild.textContent = n; });
     document.querySelector('#as-count').textContent = `${count} of ${rows.length} resources`;
     document.querySelector('#as-empty').hidden = count !== 0;
     reset.hidden = !search.value && !topic.value && !type.value && order.value === 'new';

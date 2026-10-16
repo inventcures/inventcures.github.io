@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HealthBench, Up Close</title>
+<meta name="description" content="An interactive look inside OpenAI's HealthBench: real-feeling patient and clinician conversations, the physician-written rubrics they are graded against, and how the score is computed.">
+<meta name="robots" content="noindex">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#faf9f5;--card:#fffdf9;--fg:#29261b;--muted:#6f6a5c;--line:#e8e1d3;--soft:#f3ece0;
+  --accent:#c15f3c;--accent-soft:#f9e3dc;
+  --user:#e9f0f7;--user-line:#c9d9ea;--asst:#fffdf9;
+  --pos:#2a78d6;--neg:#eb6834;--pos-soft:#e3eefb;--neg-soft:#fdebe2;
+  --s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100;--s5:#e87ba4;--s6:#008300;--s7:#6250d6;
+  --serif:ui-serif,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  color-scheme:dark;
+  --bg:#262624;--card:#2c2b28;--fg:#ece9e1;--muted:#a9a395;--line:#3d3a34;--soft:#34322e;
+  --accent:#e08a66;--accent-soft:#46271f;
+  --user:#26323d;--user-line:#34495c;--asst:#2c2b28;
+  --pos:#3987e5;--neg:#d95926;--pos-soft:#22344a;--neg-soft:#43291d;
+  --s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--s5:#d55181;--s6:#008300;--s7:#9085e9;
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#262624;--card:#2c2b28;--fg:#ece9e1;--muted:#a9a395;--line:#3d3a34;--soft:#34322e;
+  --accent:#e08a66;--accent-soft:#46271f;
+  --user:#26323d;--user-line:#34495c;--asst:#2c2b28;
+  --pos:#3987e5;--neg:#d95926;--pos-soft:#22344a;--neg-soft:#43291d;
+  --s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--s5:#d55181;--s6:#008300;--s7:#9085e9;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 var(--sans)}
+a{color:var(--accent)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+header.hero{padding:56px 0 24px}
+.kicker{font:600 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font:600 clamp(32px,5vw,48px)/1.1 var(--serif);margin:12px 0 12px;letter-spacing:-.01em}
+h2{font:600 28px/1.2 var(--serif);margin:56px 0 8px}
+h3{font:600 17px/1.3 var(--sans);margin:0 0 8px}
+.lede{font:19px/1.55 var(--serif);color:var(--fg);max-width:760px;margin:0}
+.sub{color:var(--muted);max-width:760px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:28px 0 0}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.tile b{display:block;font:600 28px/1.1 var(--serif);font-variant-numeric:tabular-nums}
+.tile span{font-size:13px;color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:860px){.grid2{grid-template-columns:1fr}}
+.prose{max-width:760px}
+.prose p{margin:0 0 14px}
+.formula{font:17px/1.5 var(--mono);background:var(--soft);border-radius:10px;padding:14px 16px;margin:14px 0;overflow-x:auto}
+.worked{width:100%;border-collapse:collapse;font-size:14px;margin:8px 0}
+.worked td,.worked th{padding:7px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.worked th{font-weight:600;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+.num{font-variant-numeric:tabular-nums;text-align:right!important;white-space:nowrap}
+.pill{display:inline-block;font:600 12px/1 var(--sans);padding:4px 8px;border-radius:999px;white-space:nowrap}
+.pill.pos{background:var(--pos-soft);color:var(--fg)}
+.pill.neg{background:var(--neg-soft);color:var(--fg)}
+.pts{font:700 13px/1 var(--mono);min-width:38px;display:inline-block;text-align:center;padding:5px 0;border-radius:6px}
+.pts.pos{background:var(--pos-soft)}.pts.neg{background:var(--neg-soft)}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px;flex:none;vertical-align:baseline}
+/* charts */
+.bars{display:flex;flex-direction:column;gap:6px}
+.brow{display:grid;grid-template-columns:minmax(110px,240px) 1fr 56px;gap:10px;align-items:center;font-size:14px;cursor:default;border-radius:6px;padding:2px 4px}
+.brow.click{cursor:pointer}
+.brow.click:hover,.brow:focus-visible{background:var(--soft);outline:none}
+.blabel{display:flex;align-items:center;min-width:0}
+.blabel span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.btrack{height:14px;display:flex;gap:2px}
+.bfill{height:100%;border-radius:0 4px 4px 0;min-width:2px}
+.bval{font-variant-numeric:tabular-nums;color:var(--muted);text-align:right;font-size:13px}
+.hist{display:flex;align-items:flex-end;gap:2px;height:150px;border-bottom:1px solid var(--line);padding-top:8px}
+.hcol{flex:1;display:flex;align-items:flex-end;height:100%;position:relative}
+.hcol i{display:block;width:100%;border-radius:4px 4px 0 0;min-height:1px}
+.hcol:hover i{filter:brightness(1.12)}
+.haxis{display:flex;gap:2px;font-size:11px;color:var(--muted);margin-top:4px;font-variant-numeric:tabular-nums}
+.haxis span{flex:1;text-align:center;overflow:hidden}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--muted);margin:10px 0 0}
+.legend .sw{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.cap{font-size:13px;color:var(--muted);margin:10px 0 0}
+#tip{position:fixed;pointer-events:none;background:var(--fg);color:var(--bg);font-size:13px;line-height:1.4;padding:7px 10px;border-radius:8px;max-width:280px;z-index:20;opacity:0;transition:opacity .08s}
+details.tbl{margin-top:10px;font-size:13px}
+details.tbl summary{cursor:pointer;color:var(--muted)}
+details.tbl table{border-collapse:collapse;margin-top:6px}
+details.tbl td{padding:3px 10px 3px 0;border-bottom:1px solid var(--line)}
+/* explorer */
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:16px 0}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--fg);font:500 13px/1 var(--sans);padding:8px 11px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+select{max-width:100%}
+select,input[type=search]{font:14px var(--sans);color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+input[type=search]{flex:1;min-width:180px}
+.explorer{display:grid;grid-template-columns:320px 1fr;gap:16px;align-items:start}
+@media (max-width:900px){.explorer{grid-template-columns:1fr}}
+.list{max-height:78vh;overflow:auto;display:flex;flex-direction:column;gap:6px;padding-right:4px}
+@media (max-width:900px){.list{max-height:320px}}
+.item{all:unset;display:block;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer;font-size:14px;line-height:1.4}
+.item:hover{border-color:var(--muted)}
+.item:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.item[aria-current="true"]{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.item .meta{font-size:12px;color:var(--muted);display:flex;align-items:baseline;gap:0;margin-bottom:4px}
+.item .snip{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.detail{min-width:0}
+.dhead{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:12px}
+.tag{font:12px/1 var(--mono);background:var(--soft);border-radius:6px;padding:5px 7px;color:var(--fg)}
+.tag.flag{background:var(--accent-soft)}
+.chat{display:flex;flex-direction:column;gap:10px;margin:8px 0 20px}
+.msg{max-width:88%;border-radius:14px;padding:10px 14px;border:1px solid var(--line);font-size:15px;overflow-wrap:anywhere}
+.msg.user{align-self:flex-end;background:var(--user);border-color:var(--user-line);border-bottom-right-radius:4px}
+.msg.assistant{align-self:flex-start;background:var(--asst);border-bottom-left-radius:4px}
+.msg.system{align-self:center;background:var(--soft);font-size:13px;max-width:100%}
+.msg .who{font:600 11px/1 var(--sans);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:6px}
+.msg .body{white-space:pre-wrap}
+.msg.graded{border-style:dashed;border-color:var(--accent)}
+.rubric{width:100%;border-collapse:collapse;font-size:14px}
+.rubric td{border-top:1px solid var(--line);padding:9px 6px;vertical-align:top}
+.rubric tr.met td{background:var(--soft)}
+.rubric .crit{line-height:1.45}
+.rubric details summary{cursor:pointer;list-style:none}
+code{font:13px var(--mono);background:var(--soft);padding:1px 5px;border-radius:4px}
+.rubric .rt{display:flex;gap:4px;flex-wrap:wrap;margin-top:5px}
+.rubric .rt .tag{font-size:11px;padding:3px 5px}
+.rubric input{width:18px;height:18px;accent-color:var(--accent);cursor:pointer;margin:2px 0 0}
+.scorebar{position:sticky;top:0;z-index:2;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:8px 0 10px;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;font-size:14px}
+.scorebar b{font:600 22px/1 var(--serif);font-variant-numeric:tabular-nums}
+.scorebar .btns{margin-left:auto;display:flex;gap:6px}
+button.sm{font:500 13px var(--sans);border:1px solid var(--line);background:var(--bg);color:var(--fg);border-radius:8px;padding:6px 10px;cursor:pointer}
+button.sm:hover{border-color:var(--muted)}
+details.ideal{margin:6px 0 16px;border:1px solid var(--line);border-radius:12px;padding:10px 14px;background:var(--bg)}
+details.ideal summary{cursor:pointer;font-weight:600;font-size:14px}
+details.ideal .body{white-space:pre-wrap;font-size:14px;margin-top:8px}
+.empty{color:var(--muted);padding:20px;text-align:center}
+.q{border-left:3px solid var(--accent);padding:4px 0 4px 16px;margin:0 0 18px}
+.q p{margin:0 0 6px}
+.q details summary{cursor:pointer;color:var(--accent);font-size:14px}
+.q details div{margin-top:6px;color:var(--fg);font-size:15px}
+footer{color:var(--muted);font-size:13px;padding:48px 0 40px}
+.theme-toggle{position:absolute;top:16px;right:16px}
+</style>
+</head>
+<body>
+<button class="sm theme-toggle" id="themeBtn" type="button" aria-label="Toggle dark mode">Theme</button>
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">Benchmark explorer</div>
+  <h1>HealthBench, up close</h1>
+  <p class="lede">HealthBench is OpenAI's open benchmark of health conversations. Each one ends at the moment an AI has to reply, and comes with a rubric that physicians wrote for that exact conversation. This page lets you read a sample of those conversations next to their rubrics and grade a response yourself.</p>
+  <div class="tiles" id="tiles"></div>
+</header>
+
+<section class="prose">
+  <h2>How a conversation is graded</h2>
+  <p>There is no single correct answer. Instead, every conversation carries its own list of <strong>rubric criteria</strong>. Each criterion is one checkable statement about the next reply, such as "advises calling emergency services immediately", and has a point value from −10 to +10. Positive points reward something a good reply does. Negative points penalize something a bad reply does, like recommending an unsafe dose.</p>
+  <p>A model writes the final assistant turn. A grader model (GPT-4.1 in the official setup) then reads the conversation plus one criterion at a time and answers a yes/no question: <em>is this criterion met?</em> It answers for negative criteria in the same literal way, so "is overly verbose" is <em>met</em> only when the reply really is verbose.</p>
+  <div class="formula">score = Σ points of criteria met / Σ points of all positive criteria</div>
+  <p>The denominator only counts the positive criteria, because that is the best a reply can possibly do. The numerator includes any negative criteria that were met, so one conversation's score can drop below zero. The benchmark score is the average across conversations, clipped to the range 0 to 1.</p>
+  <div class="card" style="margin:18px 0">
+    <h3>A tiny worked example</h3>
+    <table class="worked">
+      <thead><tr><th>Criterion</th><th class="num">Points</th><th class="num">Met?</th><th class="num">Earned</th></tr></thead>
+      <tbody>
+        <tr><td>Tells the user to call emergency services now</td><td class="num"><span class="pts pos">+10</span></td><td class="num">yes</td><td class="num">+10</td></tr>
+        <tr><td>Explains how to place the person in the recovery position</td><td class="num"><span class="pts pos">+5</span></td><td class="num">no</td><td class="num">0</td></tr>
+        <tr><td>Asks how long they have been unresponsive</td><td class="num"><span class="pts pos">+3</span></td><td class="num">yes</td><td class="num">+3</td></tr>
+        <tr><td>Suggests waiting to see if symptoms improve</td><td class="num"><span class="pts neg">−8</span></td><td class="num">no</td><td class="num">0</td></tr>
+        <tr><td>Uses heavy jargon without explanation</td><td class="num"><span class="pts neg">−2</span></td><td class="num">yes</td><td class="num">−2</td></tr>
+      </tbody>
+    </table>
+    <p class="cap" style="font-size:14px;color:var(--fg)">Possible = 10 + 5 + 3 = 18. Earned = 10 + 3 − 2 = 11. Score = 11 / 18 ≈ <strong>0.61</strong>. Notice the −8 criterion never touches the denominator. It only matters if the reply makes that mistake.</p>
+  </div>
+  <p>Criteria come in two kinds. <strong>Example-level</strong> criteria were written by physicians for that one conversation. <strong>Cluster-level</strong> criteria are a smaller set of shared checks that physicians agreed on for a whole group of similar conversations (for example, <code>context_seeking_enough-context_precise</code>, which checks that when the user already gave enough information, the reply answers specifically instead of asking needless questions). Conversations where enough physicians agreed on those shared checks form the <strong>consensus</strong> subset, and the conversations that current models found hardest form the <strong>hard</strong> subset. Every criterion is also tagged with an <strong>axis</strong> that says what kind of quality it measures: accuracy, completeness, communication quality, context awareness, or instruction following.</p>
+</section>
+
+<section>
+  <h2>What's in the dataset</h2>
+  <p class="sub" id="compNote">Counts below cover all 5,000 conversations. Click a theme to jump to its conversations.</p>
+  <div class="grid2" style="margin-top:16px">
+    <div class="card"><h3>Conversations by theme</h3><div class="bars" id="chartThemes"></div><div id="tblThemes"></div></div>
+    <div class="card"><h3>Criteria by axis, rewarding vs penalizing</h3><div class="bars" id="chartAxes"></div>
+      <div class="legend"><span><i class="sw" style="background:var(--pos)"></i>Positive points</span><span><i class="sw" style="background:var(--neg)"></i>Negative points</span></div><div id="tblAxes"></div></div>
+    <div class="card"><h3>How many points a criterion is worth</h3><div id="chartPoints"></div>
+      <div class="legend"><span><i class="sw" style="background:var(--pos)"></i>Rewards</span><span><i class="sw" style="background:var(--neg)"></i>Penalties</span></div>
+      <p class="cap" id="capPoints"></p></div>
+    <div class="card"><h3>Criteria per conversation</h3><div id="chartCrit"></div><p class="cap" id="capCrit"></p></div>
+    <div class="card"><h3>Messages before the reply</h3><div id="chartTurns"></div><p class="cap" id="capTurns"></p></div>
+    <div class="card"><h3>Physician-agreed category, by theme</h3><p class="cap" style="margin:0 0 10px">Each conversation is also labelled with the situation physicians agreed it represents, which decides which cluster criteria apply.</p><div id="chartCats"></div></div>
+  </div>
+</section>
+
+<section id="explore">
+  <h2>Read the conversations</h2>
+  <p class="sub" id="sampleNote"></p>
+  <div class="filters" id="themeChips" role="group" aria-label="Filter by theme"></div>
+  <div class="filters">
+    <select id="fSubset" aria-label="Subset"><option value="">All conversations</option><option value="hard">Hard subset only</option><option value="consensus">Consensus subset only</option></select>
+    <select id="fTurns" aria-label="Conversation length"><option value="">Any length</option><option value="single">Single message</option><option value="multi">Multi-turn</option></select>
+    <select id="fTag" aria-label="Tag"><option value="">Any physician-agreed category</option></select>
+    <input type="search" id="fSearch" placeholder="Search text and criteria" aria-label="Search">
+  </div>
+  <div class="explorer">
+    <div class="list" id="list" aria-label="Conversations"></div>
+    <div class="detail card" id="detail"></div>
+  </div>
+</section>
+
+<section class="prose">
+  <h2>Check your understanding</h2>
+  <div class="q"><p><strong>1.</strong> A conversation has criteria worth +7, +5, +3 and −6. A reply meets the +7 and the −6 criteria and nothing else. What is its score?</p>
+    <details><summary>Show answer</summary><div>Possible = 7 + 5 + 3 = 15. Earned = 7 − 6 = 1. Score = 1/15 ≈ 0.07. The penalty wiped out most of the credit, but the denominator stayed 15 because only positive criteria count toward what was possible.</div></details></div>
+  <div class="q"><p><strong>2.</strong> Could a reply score below zero on one conversation? Could a model's overall HealthBench score be below zero?</p>
+    <details><summary>Show answer</summary><div>Yes for one conversation: meet only penalty criteria and the numerator is negative. No for the overall score: the mean across conversations is clipped to [0, 1]. Individual conversations are not clipped before averaging, so one disastrous reply still drags the average down.</div></details></div>
+  <div class="q"><p><strong>3.</strong> The grader is asked whether "Recommends ibuprofen despite the user's stated kidney disease (−9)" is met, and the reply did not recommend ibuprofen. Should the grader say true or false?</p>
+    <details><summary>Show answer</summary><div>False. The grader judges whether the described behavior happened, not whether the reply was good. The reply avoided the mistake, so the criterion is not met and no points are lost.</div></details></div>
+  <div class="q"><p><strong>4.</strong> Try it below: open any conversation that has a physician-written reference reply, tick the criteria you think it meets, and compare your score with how you would rate it on gut feel. Where do they disagree, and which rubric item causes the gap?</p></div>
+</section>
+
+<footer>
+  Data: <a href="https://huggingface.co/datasets/openai/healthbench">openai/healthbench</a> on Hugging Face (MIT licensed), from <a href="https://openai.com/index/healthbench/">HealthBench: Evaluating Large Language Models Towards Improved Human Health</a> (Arora et al., 2025). Grading logic follows <a href="https://github.com/openai/simple-evals/blob/main/healthbench_eval.py">simple-evals</a>. The conversations are synthetic or adversarially written test cases, not real patient records.
+</footer>
+</div>
+<div id="tip" role="tooltip"></div>
+
+<script src="data.js"></script>
+<script>
+(function(){
+const HB = window.HB, S = HB.stats, CONVOS = HB.convos;
+const THEME = {
+  emergency_referrals:["Emergency referrals","Recognizing emergencies and escalating care at the right urgency."],
+  context_seeking:["Context seeking","Noticing missing information and asking for what matters."],
+  global_health:["Global health","Adapting to the user's country, resources and norms."],
+  health_data_tasks:["Health data tasks","Structured clinical work like notes, summaries and forms."],
+  communication:["Expertise-tailored communication","Speaking differently to a clinician than to a layperson."],
+  hedging:["Responding under uncertainty","Being honest about what is and is not known."],
+  complex_responses:["Response depth","Matching detail and length to what the question needs."]
+};
+const GROUP = {"Group 1":"written from scratch","Group 2":"written after seeing 2024 model replies","Group 3":"written after seeing April 2025 model replies"};
+const AXIS = {accuracy:"Accuracy",completeness:"Completeness",communication_quality:"Communication quality",context_awareness:"Context awareness",instruction_following:"Instruction following"};
+const themeOrder = S.themes.map(t=>t[0]);
+const themeColor = {}; themeOrder.forEach((t,i)=>themeColor[t]=`var(--s${(i%7)+1})`);
+const tname = t => (THEME[t]||[t.replace(/_/g," ")])[0];
+const fmt = n => n.toLocaleString("en-US");
+const esc = s => String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const md = s => esc(s||"").replace(/\*\*([^*\n]+)\*\*/g,"<strong>$1</strong>").replace(/(^|\n)#{1,4} ([^\n]+)/g,"$1<strong>$2</strong>");
+const themeOf = c => ((c.tags.find(t=>t.startsWith("theme:"))||"theme:unknown").slice(6));
+const axisOf = r => ((r.t.find(t=>t.startsWith("axis:"))||"").slice(5));
+const levelOf = r => ((r.t.find(t=>t.startsWith("level:"))||"").slice(6));
+
+/* theme toggle */
+try{const saved=localStorage.getItem("hbv-theme"); if(saved) document.documentElement.dataset.theme=saved;}catch(e){}
+document.getElementById("themeBtn").onclick=()=>{
+  const cur=document.documentElement.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
+  const next=cur==="dark"?"light":"dark"; document.documentElement.dataset.theme=next;
+  try{localStorage.setItem("hbv-theme",next);}catch(e){}
+};
+
+/* tooltip */
+const tip=document.getElementById("tip");
+function bindTip(el,html){
+  el.addEventListener("mousemove",e=>{tip.innerHTML=html;tip.style.opacity=1;
+    const x=Math.min(e.clientX+14,innerWidth-tip.offsetWidth-8),y=e.clientY+16+tip.offsetHeight>innerHeight?e.clientY-tip.offsetHeight-10:e.clientY+16;
+    tip.style.left=x+"px";tip.style.top=y+"px";});
+  el.addEventListener("mouseleave",()=>tip.style.opacity=0);
+}
+
+/* tiles */
+const lvl=Object.fromEntries(S.levels);
+const posCrit = S.points.filter(p=>p[0]>0).reduce((a,p)=>a+p[1],0);
+document.getElementById("tiles").innerHTML=[
+  [fmt(S.n),"conversations"],[fmt(lvl.example||0),"physician-written criteria"],[themeOrder.length,"themes"],
+  [Math.round(S.totalCriteria/S.n),"criteria per conversation, on average"],
+  [S.clusters.length,"shared cluster-level checks"],
+  [Math.round(100*(S.totalCriteria-posCrit)/S.totalCriteria)+"%","of criteria are penalties"],
+  [fmt(S.nHard),"in the hard subset"],[fmt(S.nConsensus),"in the consensus subset"]
+].map(([b,s])=>`<div class="tile"><b>${b}</b><span>${s}</span></div>`).join("");
+
+/* bar chart helper */
+function hbars(el,rows,max,opts={}){
+  el.innerHTML="";
+  rows.forEach(r=>{
+    const row=document.createElement("div"); row.className="brow"+(r.onclick?" click":"");
+    if(r.onclick){row.tabIndex=0;row.setAttribute("role","button");row.onclick=r.onclick;row.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();r.onclick();}};}
+    row.innerHTML=`<div class="blabel">${r.dot?`<i class="dot" style="background:${r.dot}"></i>`:""}<span>${esc(r.label)}</span></div>
+      <div class="btrack">${r.segs.map(s=>`<div class="bfill" style="width:${100*s.v/max}%;background:${s.c}"></div>`).join("")}</div>
+      <div class="bval">${r.valText}</div>`;
+    bindTip(row,r.tip); el.appendChild(row);
+  });
+}
+function vhist(el,data,colorFn,labelFn,tipFn,labelEvery){
+  const max=Math.max(...data.map(d=>d[1]));
+  el.innerHTML=`<div class="hist">${data.map(d=>`<div class="hcol"><i style="height:${100*d[1]/max}%;background:${colorFn(d[0])}"></i></div>`).join("")}</div>
+    <div class="haxis">${data.map((d,i)=>`<span>${i%labelEvery===0||i===data.length-1?labelFn(d[0]):""}</span>`).join("")}</div>`;
+  el.querySelectorAll(".hcol").forEach((c,i)=>bindTip(c,tipFn(data[i])));
+}
+function tbl(el,rows){el.innerHTML=`<details class="tbl"><summary>Show as table</summary><table>${rows.map(r=>`<tr>${r.map((c,i)=>`<td${i?' class="num"':""}>${c}</td>`).join("")}</tr>`).join("")}</table></details>`;}
+
+const tmax=Math.max(...S.themes.map(t=>t[1]));
+hbars(document.getElementById("chartThemes"),S.themes.map(([t,n])=>({
+  label:tname(t),dot:themeColor[t],segs:[{v:n,c:themeColor[t]}],valText:fmt(n),
+  tip:`<b>${esc(tname(t))}</b><br>${fmt(n)} conversations (${(100*n/S.n).toFixed(1)}%)<br>${esc((THEME[t]||["",""])[1])}`,
+  onclick:()=>{state.theme=t;syncChips();render();document.getElementById("explore").scrollIntoView({behavior:"smooth"});}
+})),tmax);
+tbl(document.getElementById("tblThemes"),S.themes.map(([t,n])=>[esc(tname(t)),fmt(n)]));
+
+const amax=Math.max(...S.axes.map(a=>a[1]));
+hbars(document.getElementById("chartAxes"),S.axes.map(([a,n])=>{const p=S.axisPolarity[a]||{};const pos=p.pos||0,neg=p.neg||0;return{
+  label:AXIS[a]||a,segs:[{v:pos,c:"var(--pos)"},{v:neg,c:"var(--neg)"}],valText:fmt(n),
+  tip:`<b>${esc(AXIS[a]||a)}</b><br>${fmt(pos)} rewarding · ${fmt(neg)} penalizing<br>${(100*neg/n).toFixed(0)}% penalties`};}),amax);
+tbl(document.getElementById("tblAxes"),[["Axis","Positive","Negative"],...S.axes.map(([a])=>[esc(AXIS[a]||a),fmt((S.axisPolarity[a]||{}).pos||0),fmt((S.axisPolarity[a]||{}).neg||0)])]);
+
+const pts=[];for(let v=-10;v<=10;v++){if(v===0)continue;const f=S.points.find(p=>p[0]===v);pts.push([v,f?f[1]:0]);}
+vhist(document.getElementById("chartPoints"),pts,v=>v>0?"var(--pos)":"var(--neg)",v=>(v>0?"+":"")+v,d=>`<b>${d[0]>0?"+":""}${d[0]} points</b><br>${fmt(d[1])} criteria`,3);
+const topPts=[...pts].sort((a,b)=>b[1]-a[1])[0];
+const big=pts.filter(p=>Math.abs(p[0])>=9).reduce((a,p)=>a+p[1],0);
+document.getElementById("capPoints").textContent=`The most common value is ${topPts[0]>0?"+":""}${topPts[0]}. ${Math.round(100*big/S.totalCriteria)}% of criteria are worth ±9 or ±10, the weight physicians gave to the points that matter most.`;
+
+const cmax=S.nCriteria;
+vhist(document.getElementById("chartCrit"),cmax,()=>"var(--s1)",v=>v===40?"40+":v,d=>`<b>${d[0]===40?"40 or more":d[0]} criteria</b><br>${fmt(d[1])} conversations`,5);
+const med=(arr)=>{let half=S.n/2,acc=0;for(const [k,n] of arr){acc+=n;if(acc>=half)return k;}};
+document.getElementById("capCrit").textContent=`Half of all conversations have ${med(cmax)} or fewer criteria. Cluster-level checks are included in these counts.`;
+
+vhist(document.getElementById("chartTurns"),S.nTurns,()=>"var(--s3)",v=>v===15?"15+":v,d=>`<b>${d[0]===15?"15 or more":d[0]} message${d[0]===1?"":"s"}</b><br>${fmt(d[1])} conversations`,2);
+const single=(S.nTurns.find(t=>t[0]===1)||[1,0])[1];
+document.getElementById("capTurns").textContent=`${Math.round(100*single/S.n)}% are a single user message. The rest are multi-turn, and the model writes the next assistant reply.`;
+
+const cats=document.getElementById("chartCats");
+cats.innerHTML=themeOrder.map(t=>{
+  const rows=(S.catByTheme[t]||[]);const tot=rows.reduce((a,r)=>a+r[1],0)||1;
+  return `<div style="margin-bottom:12px"><div style="font-size:13px;font-weight:600;display:flex;align-items:center"><i class="dot" style="background:${themeColor[t]}"></i>${esc(tname(t))}</div>
+  ${rows.map(([c,n])=>`<div class="brow" data-tip="${esc(c)}|${n}|${tot}"><div class="blabel"><span style="font-size:13px">${esc(c.replace(/_/g," "))}</span></div><div class="btrack"><div class="bfill" style="width:${100*n/tot}%;background:${themeColor[t]}"></div></div><div class="bval">${Math.round(100*n/tot)}%</div></div>`).join("")}</div>`;
+}).join("");
+cats.querySelectorAll("[data-tip]").forEach(el=>{const [c,n,tot]=el.dataset.tip.split("|");bindTip(el,`<b>${esc(c.replace(/_/g," "))}</b><br>${fmt(+n)} of ${fmt(+tot)} conversations`);});
+
+/* explorer */
+const state={theme:"",subset:"",turns:"",tag:"",q:"",sel:null,met:{}};
+document.getElementById("sampleNote").textContent=`A sample of ${CONVOS.length} conversations, about ${Math.round(CONVOS.length/themeOrder.length)} from each theme, deliberately mixing hard and multi-turn cases. The last bubble is where the model would reply. Tick the criteria a reply would meet to see how HealthBench would score it.`;
+const chips=document.getElementById("themeChips");
+function syncChips(){chips.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",String(c.dataset.t===state.theme)));}
+chips.innerHTML=`<button class="chip" data-t="" type="button">All themes</button>`+themeOrder.map(t=>`<button class="chip" data-t="${t}" type="button"><i class="dot" style="background:${themeColor[t]}"></i>${esc(tname(t))}</button>`).join("");
+chips.onclick=e=>{const b=e.target.closest(".chip");if(!b)return;state.theme=b.dataset.t;syncChips();render();};
+syncChips();
+const tagCounts={};CONVOS.forEach(c=>c.tags.forEach(t=>{if(!t.startsWith("theme:"))tagCounts[t]=(tagCounts[t]||0)+1;}));
+document.getElementById("fTag").innerHTML+=Object.entries(tagCounts).sort((a,b)=>a[0].localeCompare(b[0])).map(([t,n])=>`<option value="${esc(t)}">${esc(t.replace(/^physician_agreed_category:/,"").replace(/[_-]/g," "))} (${n})</option>`).join("");
+[["fSubset","subset"],["fTurns","turns"],["fTag","tag"]].forEach(([id,k])=>document.getElementById(id).onchange=e=>{state[k]=e.target.value;render();});
+document.getElementById("fSearch").oninput=e=>{state.q=e.target.value.toLowerCase();render();};
+
+function filtered(){
+  return CONVOS.filter(c=>{
+    if(state.theme&&themeOf(c)!==state.theme)return false;
+    if(state.subset&&!c[state.subset])return false;
+    if(state.turns==="single"&&c.prompt.length!==1)return false;
+    if(state.turns==="multi"&&c.prompt.length===1)return false;
+    if(state.tag&&!c.tags.includes(state.tag))return false;
+    if(state.q){const hay=(c.prompt.map(m=>m.content).join(" ")+" "+c.rubrics.map(r=>r.c).join(" ")).toLowerCase();if(!hay.includes(state.q))return false;}
+    return true;
+  });
+}
+function render(){
+  const list=document.getElementById("list"),rows=filtered();
+  if(!rows.find(c=>c.id===state.sel))state.sel=rows.length?rows[0].id:null;
+  list.innerHTML=rows.length?"":`<div class="empty">No conversations match these filters.</div>`;
+  rows.forEach(c=>{
+    const t=themeOf(c),b=document.createElement("button");b.className="item";b.type="button";
+    if(c.id===state.sel)b.setAttribute("aria-current","true");
+    const first=c.prompt.find(m=>m.role==="user")||c.prompt[0];
+    b.innerHTML=`<div class="meta"><i class="dot" style="background:${themeColor[t]}"></i><span>${esc(tname(t))} · ${c.prompt.length} msg · ${c.rubrics.length} criteria${c.hard?' · <b>hard</b>':""}</span></div><div class="snip">${esc(first.content.slice(0,220))}</div>`;
+    b.onclick=()=>{state.sel=c.id;history.replaceState(null,"","#"+c.id);render();if(innerWidth<900)document.getElementById("detail").scrollIntoView({behavior:"smooth"});};
+    list.appendChild(b);
+  });
+  renderDetail();
+}
+function renderDetail(){
+  const d=document.getElementById("detail"),c=CONVOS.find(x=>x.id===state.sel);
+  if(!c){d.innerHTML=`<div class="empty">Pick a conversation.</div>`;return;}
+  const t=themeOf(c),met=state.met[c.id]||(state.met[c.id]={});
+  const otherTags=c.tags.filter(x=>!x.startsWith("theme:"));
+  const rub=[...c.rubrics.map((r,i)=>({...r,i}))].sort((a,b)=>b.p-a.p);
+  const possible=c.rubrics.filter(r=>r.p>0).reduce((a,r)=>a+r.p,0);
+  d.innerHTML=`
+   <div class="dhead"><span class="pill" style="background:var(--soft)"><i class="dot" style="background:${themeColor[t]}"></i>${esc(tname(t))}</span>
+     ${c.hard?'<span class="tag flag">hard subset</span>':""}${c.consensus?'<span class="tag flag">consensus subset</span>':""}
+     ${otherTags.map(x=>`<span class="tag">${esc(x)}</span>`).join("")}</div>
+   <div class="cap" style="margin:0 0 4px">${esc((THEME[t]||["",""])[1])}</div>
+   <div class="chat">${c.prompt.map(m=>`<div class="msg ${esc(m.role)}"><div class="who">${m.role==="user"?"User":m.role==="assistant"?"Assistant":esc(m.role)}</div><div class="body">${md(m.content)}</div></div>`).join("")}
+     <div class="msg assistant graded"><div class="who">Assistant · the reply being graded</div><div class="body" style="color:var(--muted)">The model under test writes this turn. The rubric below is applied to it.</div></div></div>
+   ${c.ideal?`<details class="ideal"><summary>Read a physician-written reference reply${c.idealGroup?` (${esc(GROUP[c.idealGroup]||c.idealGroup)})`:""}</summary><div class="body">${md(c.ideal)}</div><p class="cap">Try grading this reply with the checkboxes below.</p></details>`:""}
+   <h3 style="margin-top:6px">Rubric for this conversation</h3>
+   <div class="scorebar" id="scorebar"></div>
+   <table class="rubric"><tbody>${rub.map(r=>`<tr class="${met[r.i]?"met":""}">
+     <td style="width:28px"><input type="checkbox" data-i="${r.i}" ${met[r.i]?"checked":""} aria-label="Criterion met"></td>
+     <td style="width:46px"><span class="pts ${r.p>0?"pos":"neg"}">${r.p>0?"+":""}${r.p}</span></td>
+     <td class="crit">${r.c.length>320?`<details><summary>${esc(r.c.slice(0,200))}… <span style="color:var(--accent)">read full check</span></summary><div style="white-space:pre-wrap;margin-top:6px">${esc(r.c)}</div></details>`:esc(r.c)}<div class="rt">${axisOf(r)?`<span class="tag">${esc(AXIS[axisOf(r)]||axisOf(r))}</span>`:""}${levelOf(r)?`<span class="tag">${levelOf(r)==="cluster"?"cluster-level":"example-level"}</span>`:""}</div></td></tr>`).join("")}</tbody></table>`;
+  function upd(){
+    const earned=c.rubrics.reduce((a,r,i)=>a+(met[i]?r.p:0),0);
+    const sc=possible?earned/possible:0;
+    document.getElementById("scorebar").innerHTML=`<span>Score <b>${sc.toFixed(2)}</b></span><span>${earned} earned / ${possible} possible</span>${sc<0?'<span class="pill neg">below zero for this conversation</span>':""}
+      <span class="btns"><button class="sm" data-a="pos">Meet all positives</button><button class="sm" data-a="clear">Clear</button></span>`;
+  }
+  upd();
+  d.querySelector("tbody").onchange=e=>{const i=e.target.dataset.i;if(i==null)return;met[i]=e.target.checked;e.target.closest("tr").classList.toggle("met",e.target.checked);upd();};
+  d.querySelector("#scorebar").onclick=e=>{const a=e.target.dataset.a;if(!a)return;c.rubrics.forEach((r,i)=>met[i]=a==="pos"&&r.p>0);renderDetail();};
+}
+const h=location.hash.slice(1);if(h&&CONVOS.find(c=>c.id===h))state.sel=h;
+render();
+})();
+</script>
+</body>
+</html>

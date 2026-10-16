@@ -230,6 +230,19 @@ Argues that cooperative AI must account for adaptive counterparts, institutions 
 - OP: not yet verified
 - Topics: Governance, Human agency, Collaboration
 
+### The AI Scientist: Towards Fully Automated AI Research, Now Published in Nature
+
+Sakana, UBC, Vector and Oxford report in Nature on the AI Scientist, whose v2 wrote a paper that passed blind review at an ICLR 2025 workshop before being withdrawn. Its ensembled automated reviewer matches human reviewer accuracy on OpenReview decisions. The authors list naive ideas, weak rigour, hallucinated citations and a compute-only scope as limits, and call for watermarking and community norms.
+
+- Type: Research announcement
+- Published: 26 Mar 2026
+- Resource: [The AI Scientist: Towards Fully Automated AI Research, Now Published in Nature](https://sakana.ai/ai-scientist-nature/)
+- OP: [Sakana AI · announcement post](https://sakana.ai/ai-scientist-nature/)
+- Topics: Agents, Scientific discovery, Evaluation, Governance
+- Nature paper: https://www.nature.com/articles/s41586-026-10265-5
+- Code (AI-Scientist-v2): https://github.com/SakanaAI/AI-Scientist-v2
+- AI Scientist-v2 preprint: https://arxiv.org/abs/2504.08066
+
 ### Some Simple Economics of AGI
 
 Develops an economic argument that verification capacity and responsibility become scarce as automated execution becomes cheaper.

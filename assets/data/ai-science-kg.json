@@ -84,7 +84,17 @@
     {"id": "c-optimizer-not-scientist", "type": "concept", "label": "Optimizer, not scientist", "description": "Coding agents given a research problem tend to push scores up with narrow ideas, without examining why the gains happen."},
     {"id": "c-error-diffusion", "type": "concept", "label": "Error Diffusion", "description": "A biologically motivated alternative to backpropagation."},
     {"id": "m-preregistered-rubrics", "type": "method", "label": "Pre-registered rubrics", "description": "Evaluation criteria fixed before any experiment runs."},
-    {"id": "m-shared-memory", "type": "method", "label": "Parallel workers with shared memory", "description": "Workers test hypotheses in parallel and pool successes and failures."}
+    {"id": "m-shared-memory", "type": "method", "label": "Parallel workers with shared memory", "description": "Workers test hypotheses in parallel and pool successes and failures."},
+    {"id": "v-nature", "type": "venue", "label": "Nature"},
+    {"id": "v-iclr-icbinb", "type": "venue", "label": "ICLR 2025 ICBINB workshop", "description": "The “I Can’t Believe It’s Not Better” workshop, where an AI Scientist-v2 paper averaged 6.33 in blind review."},
+    {"id": "o-ubc", "type": "org", "label": "University of British Columbia"},
+    {"id": "o-vector", "type": "org", "label": "Vector Institute"},
+    {"id": "o-oxford", "type": "org", "label": "University of Oxford"},
+    {"id": "p-jeff-clune", "type": "person", "label": "Jeff Clune"},
+    {"id": "p-jakob-foerster", "type": "person", "label": "Jakob Foerster"},
+    {"id": "m-automated-reviewer", "type": "method", "label": "Automated Reviewer", "description": "An ensemble of five LLM reviews following NeurIPS guidelines, reported at 69% balanced accuracy on OpenReview decisions."},
+    {"id": "c-ai-paper-norms", "type": "concept", "label": "Norms for AI-generated papers", "description": "Watermarking, disclosure, withdrawal and IRB review for research written by AI."},
+    {"id": "a-ai-scientist-v2-code", "type": "artifact", "label": "AI-Scientist-v2", "url": "https://github.com/SakanaAI/AI-Scientist-v2"}
   ],
   "edges": [
     ["litt-beginning-mathematics", "authored_by", "p-daniel-litt"],
@@ -199,6 +209,24 @@
     ["agentic-scientist", "discusses", "c-human-oversight", "researchers verified results, references and claims"],
     ["agentic-scientist", "related_to", "four-autonomous-attempts", "failure modes of autonomous ML research"],
     ["agentic-scientist", "related_to", "scientisttwo", "autonomous research pipelines"],
-    ["c-co-discovery", "related_to", "c-verification"]
+    ["c-co-discovery", "related_to", "c-verification"],
+    ["ai-scientist-nature", "made_by", "o-sakana"],
+    ["ai-scientist-nature", "published_in", "v-nature"],
+    ["ai-scientist-nature", "about_system", "sys-ai-scientist"],
+    ["ai-scientist-nature", "releases", "a-ai-scientist-v2-code"],
+    ["ai-scientist-nature", "discusses", "v-iclr-icbinb", "a fully AI-written paper passed review, then was withdrawn"],
+    ["ai-scientist-nature", "uses_method", "m-automated-reviewer"],
+    ["m-automated-reviewer", "related_to", "m-simulated-peer-review"],
+    ["ai-scientist-nature", "proposes", "c-ai-paper-norms"],
+    ["ai-scientist-nature", "discusses", "c-autonomous-research"],
+    ["ai-scientist-nature", "critiques", "c-selection-effects", "naive ideas and hallucinated citations remain"],
+    ["ai-scientist-nature", "related_to", "agentic-scientist", "the Agentic Scientist is the next step in this line"],
+    ["ai-scientist-nature", "related_to", "four-autonomous-attempts", "also published AI-first-author work at a workshop"],
+    ["p-jeff-clune", "affiliated_with", "o-ubc"],
+    ["p-jeff-clune", "affiliated_with", "o-vector"],
+    ["p-jakob-foerster", "affiliated_with", "o-oxford"],
+    ["ai-scientist-nature", "authored_by", "p-jeff-clune", "named collaborator"],
+    ["ai-scientist-nature", "authored_by", "p-jakob-foerster", "named collaborator"],
+    ["c-ai-paper-norms", "related_to", "c-credit-provenance"]
   ]
 }

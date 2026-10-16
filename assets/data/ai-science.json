@@ -460,6 +460,33 @@
         "https://pub.sakana.ai/agentic-scientist/": "Blog post",
         "https://github.com/SakanaAI/AI-Scientist-v3": "Code (AI-Scientist-v3)"
       }
+    },
+    {
+      "id": "ai-scientist-nature",
+      "title": "The AI Scientist: Towards Fully Automated AI Research, Now Published in Nature",
+      "type": "Research announcement",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "url": "https://sakana.ai/ai-scientist-nature/",
+      "op_url": "https://sakana.ai/ai-scientist-nature/",
+      "op_label": "Sakana AI · announcement post",
+      "summary": "Sakana, UBC, Vector and Oxford report in Nature on the AI Scientist, whose v2 wrote a paper that passed blind review at an ICLR 2025 workshop before being withdrawn. Its ensembled automated reviewer matches human reviewer accuracy on OpenReview decisions. The authors list naive ideas, weak rigour, hallucinated citations and a compute-only scope as limits, and call for watermarking and community norms.",
+      "tags": [
+        "Agents",
+        "Scientific discovery",
+        "Evaluation",
+        "Governance"
+      ],
+      "related_urls": [
+        "https://www.nature.com/articles/s41586-026-10265-5",
+        "https://github.com/SakanaAI/AI-Scientist-v2",
+        "https://arxiv.org/abs/2504.08066"
+      ],
+      "related_labels": {
+        "https://www.nature.com/articles/s41586-026-10265-5": "Nature paper",
+        "https://github.com/SakanaAI/AI-Scientist-v2": "Code (AI-Scientist-v2)",
+        "https://arxiv.org/abs/2504.08066": "AI Scientist-v2 preprint"
+      }
     }
   ]
 }

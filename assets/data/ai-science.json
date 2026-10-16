@@ -1,6 +1,6 @@
 {
   "title": "AI × Science",
-  "updated": "2026-09-27",
+  "updated": "2026-10-16",
   "vision": [
     "I want a future in which AI agents help people ask better questions, explore more possibilities and turn reliable discoveries into benefits that reach more people. Science and mathematics offer extraordinary opportunities for this kind of collaboration, especially in medicine and biology, where better understanding can ultimately mean less suffering and more healthy life. I am interested in human–AI teams and collaborations across laboratories around the world, with each contributing strengths the others lack.",
     "Progress should deepen human agency and meaning: the freedom to choose what matters, understand the work, challenge an answer and share in discovery. That means evaluating evidence rather than just fluent output, preserving uncertainty and giving people real authority over consequential decisions. It also means designing against accidental harm and deliberate misuse, taking dual-use risks seriously, and making the benefits of scientific capability broadly accessible."
@@ -435,6 +435,58 @@
       "group_title": "A conversation: the future of mathematics",
       "group_order": 3,
       "group_role": "Martin Hairer · engaging through AGMAI"
+    },
+    {
+      "id": "agentic-scientist",
+      "title": "The Agentic Scientist: Orchestrating Coding Agents for Automated Scientific (Co-)Discovery",
+      "type": "Preprint",
+      "date": "2026-10-15",
+      "date_precision": "day",
+      "url": "https://arxiv.org/abs/2610.18933",
+      "op_url": "https://x.com/SakanaAILabs/status/2110738746304061491",
+      "op_label": "Sakana AI · announcement thread",
+      "summary": "Wraps off-the-shelf coding agents in an explicit research loop, with pre-registered rubrics, parallel workers sharing a memory and ablations of the winning program, so they behave less like hyperparameter optimizers. Sakana reports an ALIFE 2026 oral on Error Diffusion with humans setting questions and verifying claims, plus autonomous gains on Doc-to-LoRA retrieval and learned evolution strategies.",
+      "tags": [
+        "Agents",
+        "Scientific discovery",
+        "Human–AI collaboration",
+        "Evaluation"
+      ],
+      "related_urls": [
+        "https://pub.sakana.ai/agentic-scientist/",
+        "https://github.com/SakanaAI/AI-Scientist-v3"
+      ],
+      "related_labels": {
+        "https://pub.sakana.ai/agentic-scientist/": "Blog post",
+        "https://github.com/SakanaAI/AI-Scientist-v3": "Code (AI-Scientist-v3)"
+      }
+    },
+    {
+      "id": "ai-scientist-nature",
+      "title": "The AI Scientist: Towards Fully Automated AI Research, Now Published in Nature",
+      "type": "Research announcement",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "url": "https://sakana.ai/ai-scientist-nature/",
+      "op_url": "https://sakana.ai/ai-scientist-nature/",
+      "op_label": "Sakana AI · announcement post",
+      "summary": "Sakana, UBC, Vector and Oxford report in Nature on the AI Scientist, whose v2 wrote a paper that passed blind review at an ICLR 2025 workshop before being withdrawn. Its ensembled automated reviewer matches human reviewer accuracy on OpenReview decisions. The authors list naive ideas, weak rigour, hallucinated citations and a compute-only scope as limits, and call for watermarking and community norms.",
+      "tags": [
+        "Agents",
+        "Scientific discovery",
+        "Evaluation",
+        "Governance"
+      ],
+      "related_urls": [
+        "https://www.nature.com/articles/s41586-026-10265-5",
+        "https://github.com/SakanaAI/AI-Scientist-v2",
+        "https://arxiv.org/abs/2504.08066"
+      ],
+      "related_labels": {
+        "https://www.nature.com/articles/s41586-026-10265-5": "Nature paper",
+        "https://github.com/SakanaAI/AI-Scientist-v2": "Code (AI-Scientist-v2)",
+        "https://arxiv.org/abs/2504.08066": "AI Scientist-v2 preprint"
+      }
     }
   ]
 }

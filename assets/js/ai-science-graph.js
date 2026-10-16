@@ -179,6 +179,8 @@
       if (hit) select(hit.id);
     });
 
+    // Label only the best-connected nodes so the default view stays readable as the graph grows.
+    const hubMin = [...nodes].map(n => n.deg).sort((a, b) => b - a)[W < 600 ? 7 : 13] + 1;
     function paint() {
       const near = new Set();
       if (selected) { near.add(selected); selected.links.forEach(e => { near.add(e.a); near.add(e.b); }); }
@@ -190,7 +192,7 @@
         n.g.classList.toggle('kg-dim', dim);
         n.g.classList.toggle('kg-on', !dim && (selected ? near.has(n) : query.length > 0));
         n.g.classList.toggle('kg-selected', n === selected);
-        n.g.classList.toggle('kg-hub', n.deg >= (W < 600 ? 10 : 7));
+        n.g.classList.toggle('kg-hub', n.deg >= hubMin);
       });
       edges.forEach(e => {
         const off = hidden.has(e.a.type) || hidden.has(e.b.type);

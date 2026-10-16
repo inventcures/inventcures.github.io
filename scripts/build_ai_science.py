@@ -21,6 +21,12 @@ def prettydate(e):
  if not d:return 'Date unverified'
  if e.get('date_precision')=='day':return datetime.date.fromisoformat(d).strftime('%d %b %Y')
  return d+' · exact date unverified'
+note_no=0
+def sidenote(e):
+ global note_no
+ if not e.get('margin_note'):return ''
+ note_no+=1;sid='sn-'+esc(e['id'])
+ return f'<label class="as-sn-ref" for="{sid}" aria-label="Margin note {note_no}">{note_no}</label><input type="checkbox" id="{sid}" class="as-sn-toggle"><span class="as-sidenote" role="note"><span class="as-sn-num">{note_no}</span> {esc(e["margin_note"])}</span>'
 cards=[];md=['# AI × Science','',*sum(([p,''] for p in data['vision']),[]),'Updated: '+data['updated'],'',data['date_policy'],'','## Reading list','']
 active_group=None
 for e in entries:
@@ -36,8 +42,8 @@ for e in entries:
  dateprefix='Uploaded' if e['type']=='Talk' else 'Published'
  datehtml=('<time datetime="'+esc(e['date'])+'">'+esc(date)+'</time>') if e.get('date_precision')=='day' else '<span>'+esc(date)+'</span>'
  cards.append(f'''<article class="as-entry" id="{esc(e['id'])}" data-title="{esc(e['title'])}" data-type="{esc(e['type'])}" data-tags="{esc('|'.join(e['tags']))}" data-date="{esc(e.get('date') or '')}" data-precision="{esc(e.get('date_precision') or '')}">
-<div class="as-entry-type">{esc(e['type'])}{('<br><span class="as-role">'+esc(e['group_role'])+'</span>') if e.get('group_role') else ''}</div><div class="as-entry-body"><h3><a href="{esc(e['url'])}" target="_blank" rel="noopener noreferrer">{esc(e['title'])}<span aria-hidden="true"> ↗</span></a></h3><p>{esc(e['summary'])}</p><div class="as-chips"><span class="as-chip">{dateprefix} · {datehtml}</span>{op}</div><div class="as-tags">{tags}{related}<a class="as-graph-link" href="#knowledge-graph" data-kg-node="{esc(e['id'])}">See connections in the graph</a></div></div></article>''')
- md += [('#### ' if group else '### ')+e['title'],'',e['summary'],'',f'- Type: {e["type"]}',f'- {dateprefix}: {date}',f'- Resource: [{e["title"]}]({e["url"]})',f'- OP: [{e["op_label"]}]({e["op_url"]})' if e.get('op_url') else '- OP: not yet verified','- Topics: '+', '.join(e['tags'])]+['- '+e.get('related_labels',{}).get(u,'Related')+': '+u for u in e.get('related_urls',[])]+['']
+<div class="as-entry-type">{esc(e['type'])}{('<br><span class="as-role">'+esc(e['group_role'])+'</span>') if e.get('group_role') else ''}</div><div class="as-entry-body"><h3><a href="{esc(e['url'])}" target="_blank" rel="noopener noreferrer">{esc(e['title'])}<span aria-hidden="true"> ↗</span></a></h3><p>{esc(e['summary'])}{sidenote(e)}</p><div class="as-chips"><span class="as-chip">{dateprefix} · {datehtml}</span>{op}</div><div class="as-tags">{tags}{related}<a class="as-graph-link" href="#knowledge-graph" data-kg-node="{esc(e['id'])}">See connections in the graph</a></div></div></article>''')
+ md += [('#### ' if group else '### ')+e['title'],'',e['summary'],'',f'- Type: {e["type"]}',f'- {dateprefix}: {date}',f'- Resource: [{e["title"]}]({e["url"]})',f'- OP: [{e["op_label"]}]({e["op_url"]})' if e.get('op_url') else '- OP: not yet verified','- Topics: '+', '.join(e['tags'])]+(['- Margin note: '+e['margin_note']] if e.get('margin_note') else [])+['- '+e.get('related_labels',{}).get(u,'Related')+': '+u for u in e.get('related_urls',[])]+['']
 if active_group:cards.append('</section>')
 graph=build_graph()
 gcount={}

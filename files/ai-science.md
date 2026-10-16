@@ -19,6 +19,7 @@ Wraps off-the-shelf coding agents in an explicit research loop, with pre-registe
 - Resource: [The Agentic Scientist: Orchestrating Coding Agents for Automated Scientific (Co-)Discovery](https://arxiv.org/abs/2610.18933)
 - OP: [Sakana AI · announcement thread](https://x.com/SakanaAILabs/status/2110738746304061491)
 - Topics: Agents, Scientific discovery, Human–AI collaboration, Evaluation
+- Margin note: The useful part is evaluator integrity: sealed search and final splits, and claims tied to evidence hashes. Even so, an agent quietly changed the evaluation protocol in 2 of 3 runs, and no gate caught it. Read with “Why LLMs Aren’t Scientists Yet”.
 - Blog post: https://pub.sakana.ai/agentic-scientist/
 - Code (AI-Scientist-v3): https://github.com/SakanaAI/AI-Scientist-v3
 
@@ -35,6 +36,7 @@ Distinguishes producing mathematical results from cultivating human understandin
 - Resource: [A beginning for mathematics](https://www.daniellitt.com/blog/2026/9/13/a-beginning-for-mathematics/)
 - OP: [Daniel Litt · X announcement thread](https://x.com/littmath/status/2099502187667673163)
 - Topics: Mathematics, Human agency, Human–AI collaboration, Research taste
+- Margin note: Protect mathematics’ values, not its institutions. One concrete proposal: award PhDs on an oral defence of deep understanding, whatever the provenance of the thesis.
 - Other version · Proofs and Prompts (14 Sep 2026): https://proofsandprompts.com/2026/09/14/a-beginning-for-mathematics/
 
 #### Mathematics is effectively dead
@@ -46,6 +48,7 @@ A critical response to Litt focused on provenance, credit, accountable authorshi
 - Resource: [Mathematics is effectively dead](https://doomslide.substack.com/p/mathematics-is-effectively-dead)
 - OP: [doomslide · author essay](https://doomslide.substack.com/p/mathematics-is-effectively-dead)
 - Topics: Mathematics, Governance, Scientific communication
+- Margin note: Accepts Litt’s goals but says credit breaks first. If proofs are laundered through undisclosed pipelines, the community can no longer say who knows what.
 - doomslide · X discussion cited in essay: https://x.com/doomslide/status/2095440935505010726
 
 #### Why I didn’t sign the Fields medallists’ letter
@@ -57,6 +60,7 @@ Timothy Gowers defends a plurality of mathematical motivations, including proble
 - Resource: [Why I didn’t sign the Fields medallists’ letter](https://gowers.wordpress.com/2026/09/17/why-i-didnt-sign-the-fields-medallists-letter/)
 - OP: [Timothy Gowers · X author announcement](https://x.com/wtgowers/status/2100480035614343340)
 - Topics: Mathematics, Human agency, Governance
+- Margin note: Gowers treats credit problems as serious but temporary. The lasting danger is erosion of PhD training, funding and custodianship of the tradition.
 
 #### Why I agreed to join AGMAI
 
@@ -67,6 +71,7 @@ Martin Hairer explains his decision to join the Advisory Group on Mathematics an
 - Resource: [Why I agreed to join AGMAI](https://proofsandprompts.com/2026/09/22/why-i-agreed-to-join-agmai/)
 - OP: [Timothy Gowers · commentary on Hairer’s essay](https://x.com/wtgowers/status/2102510624219533693)
 - Topics: Mathematics, Governance, Scientific communication
+- Margin note: Hairer signed the Fields medallists’ statement and joined AGMAI: nine unpaid mathematicians in a purely advisory role. Complaining while refusing a channel would be hypocritical, he argues.
 - Same essay · guest post on Terence Tao’s blog: https://terrytao.wordpress.com/2026/09/22/why-i-agreed-to-join-agmai/
 
 ### Self-Organizing Agent Teams Learn to Reason Together
@@ -78,6 +83,7 @@ Frozen teams learn reusable coordination strategies, with gains depending partly
 - Resource: [Self-Organizing Agent Teams Learn to Reason Together](https://arxiv.org/abs/2609.22682v1)
 - OP: [Aneesh Pappu · author post](https://x.com/aneeshpappu/status/2102428585986498609)
 - Topics: Agents, Collaboration, Evaluation
+- Margin note: Three frozen models learn a teamwork protocol and reach 66.7%, beating even an oracle that picks the best member (59.0%). The organisation is learned, not the weights.
 
 ### ScientistTwo: Pioneering the Human Knowledge Frontier with Autonomous AI
 
@@ -88,6 +94,7 @@ An autonomous research pipeline combines experiments, ablations and simulated pe
 - Resource: [ScientistTwo: Pioneering the Human Knowledge Frontier with Autonomous AI](https://arxiv.org/abs/2609.19644v1)
 - OP: not yet verified
 - Topics: Agents, Evaluation, Scientific discovery
+- Margin note: A closed loop on 107 problems from ICLR, ICML and NeurIPS papers. Simulated review is AI checking AI, so ask who verifies its 86 generated papers.
 - Related: https://scientist-two.github.io/
 
 ### AI Infrastructure at Periodic
@@ -99,6 +106,7 @@ Describes infrastructure for long scientific tool runs, specialized models and e
 - Resource: [AI Infrastructure at Periodic](https://periodic.com/news/ai-infrastructure-at-periodic)
 - OP: [Liam Fedus · founder commentary](https://x.com/LiamFedus/status/2099896055030501702)
 - Topics: Infrastructure, Scientific discovery, Agents
+- Margin note: Scientific RL rollouts last hours, with tool calls such as XRD analysis, while training steps take minutes. That gap forces asynchronous RL.
 
 ### AI in Science: Early Insights
 
@@ -109,6 +117,7 @@ Combines model-use data, a specialist-model inventory and a researcher survey to
 - Resource: [AI in Science: Early Insights](https://ai.google/static/documents/AI-in-Science.pdf)
 - OP: [Arthur Turrell · author commentary](https://x.com/arthurturrell/status/2099877915844325780)
 - Topics: Human–AI collaboration, Evaluation, Scientific discovery
+- Margin note: Scientists report about 6.9 hours a week saved, and much of it goes back into verifying AI output. Early empirical support for verification as the bottleneck.
 
 ### Reflecting on 25 years of cancer research: transformative advances and unmet expectations
 
@@ -119,6 +128,7 @@ Six researchers reflect on cancer biology, translational disappointments and opp
 - Resource: [Reflecting on 25 years of cancer research: transformative advances and unmet expectations](https://doi.org/10.1038/s41568-026-00974-4)
 - OP: not yet verified
 - Topics: Biology, Medicine, Human–AI collaboration
+- Margin note: A canonical lost qualifier: BRAF inhibitors work in BRAF-mutant melanoma but not in colorectal cancer, because of EGFR feedback.
 
 ### Medical school lab scientists get a new partner: AI
 
@@ -129,6 +139,7 @@ Describes medical researchers integrating specialized AI agents with vetted data
 - Resource: [Medical school lab scientists get a new partner: AI](https://www.aamc.org/news/medical-school-lab-scientists-get-new-partner-ai)
 - OP: not yet verified
 - Topics: Medicine, Biology, Human–AI collaboration
+- Margin note: The shift is from chatbots on the open web to agents with a restricted library card: FDA records, guidelines and de-identified patient data. Humans still choose the questions.
 
 ### Latent-space reasoning as a third axis of test-time scaling
 
@@ -139,6 +150,7 @@ François Chollet highlights latent iterations alongside longer reasoning and pa
 - Resource: [Latent-space reasoning as a third axis of test-time scaling](https://x.com/fchollet/status/2096310217898356739)
 - OP: [François Chollet · original post](https://x.com/fchollet/status/2096310217898356739)
 - Topics: Reasoning, Compute, Agents
+- Margin note: Depth, breadth and latent iteration. The third axis is token-cheap but gives up the inspectable reasoning that verification relies on.
 
 ### Anthropic uses Claude to formalize proof of Fermat’s Last Theorem
 
@@ -149,6 +161,7 @@ Reports on AI-assisted formalization of Fermat’s Last Theorem and the role of 
 - Resource: [Anthropic uses Claude to formalize proof of Fermat’s Last Theorem](https://siliconangle.com/2026/09/04/anthropic-uses-claude-to-formalize-proof-of-fermats-last-theorem/)
 - OP: not yet verified
 - Topics: Mathematics, Formal verification, Agents
+- Margin note: About 13 million lines of Lean in about 11 days, using only the standard axioms. That is certainty without new human understanding, and the readable rewrite is still undone.
 
 ### Imagining a new future for science
 
@@ -159,6 +172,7 @@ Eunice Jun explores representations and interfaces that make scientific reasonin
 - Resource: [Imagining a new future for science](https://www.youtube.com/watch?v=hawgxIEpPqU)
 - OP: not yet verified
 - Topics: Human–AI collaboration, Scientific communication, Evidence
+- Margin note: Much of what makes science valid is implicit. Making reasoning about validity, feasibility and priority explicit turns it into something people can check.
 
 ### A Case Study on Emergent Cheating and Whistleblowing in Autonomous Research Swarms
 
@@ -169,6 +183,7 @@ A mathematical research swarm illustrates how shared infrastructure can spread b
 - Resource: [A Case Study on Emergent Cheating and Whistleblowing in Autonomous Research Swarms](https://arxiv.org/abs/2609.04170v1)
 - OP: not yet verified
 - Topics: Agents, Governance, Mathematics
+- Margin note: A Lean notation trick spread through the shared library, and the swarm “solved” every remaining problem within 27 minutes. A quarter of agents protested but had no power to enforce anything.
 
 ### The paradox at the heart of AI and science
 
@@ -179,6 +194,7 @@ Terence Tao discusses scientific understanding, human learning and the limits of
 - Resource: [The paradox at the heart of AI and science](https://www.youtube.com/watch?v=svl_1upFpQo)
 - OP: not yet verified
 - Topics: Mathematics, Human agency, Scientific discovery
+- Margin note: AI is a cheap, slightly drunk idea generator: useful when paired with verification. The bottlenecks move to verification, curation and communication (“proof indigestion”).
 
 ### Accelerating Scientific Research with Gemini in the Real-World
 
@@ -189,6 +205,7 @@ Reports multi-agent research workflows across materials, biology and computing, 
 - Resource: [Accelerating Scientific Research with Gemini in the Real-World](https://arxiv.org/abs/2608.26701v1)
 - OP: not yet verified
 - Topics: Agents, Biology, Materials
+- Margin note: Optimising against an LLM reviewer teaches agents to fabricate. Deterministic checks of every number against execution logs cut severe hallucination from 46% to 4%.
 
 ### The scientific paper needs an uncertainty layer
 
@@ -199,6 +216,7 @@ Proposes attaching reusable qualifications and uncertainty records to scientific
 - Resource: [The scientific paper needs an uncertainty layer](https://doi.org/10.31222/osf.io/duymx_v1)
 - OP: [Richard Sever · author commentary](https://www.linkedin.com/posts/richardsever_the-scientific-paper-needs-an-uncertainty-activity-7497694294678339584-u68R)
 - Topics: Evidence, Verification, Scientific communication
+- Margin note: Caveats get lost each time a claim is reused. The hedges should travel with the claim, not stay behind in the paper.
 
 ### Artificial intelligence in drug discovery—what it is, where we stand and the path forward
 
@@ -209,6 +227,7 @@ Calls for evaluating AI by its contribution to better drug-development decisions
 - Resource: [Artificial intelligence in drug discovery—what it is, where we stand and the path forward](https://doi.org/10.1038/s41573-026-01496-2)
 - OP: not yet verified
 - Topics: Biology, Medicine, Evaluation
+- Margin note: Clinically relevant impact so far is “disappointingly limited”. Judge AI by whether it improves decisions, especially at Phase II.
 
 ### Drug Discovery Has No Magic Wands
 
@@ -219,6 +238,7 @@ Daphne Koller argues that useful AI drug discovery depends on better measurement
 - Resource: [Drug Discovery Has No Magic Wands](https://deepphenotype.substack.com/p/drug-discovery-has-no-magic-wands)
 - OP: not yet verified
 - Topics: Biology, Medicine, Scientific discovery
+- Margin note: Most AI effort designs keys (molecules), while the bottleneck is choosing the lock (the mechanism). The only true ground truth is a slow human trial.
 
 ### Solipsistic Superintelligence is Unlikely to be Cooperative
 
@@ -229,6 +249,7 @@ Argues that cooperative AI must account for adaptive counterparts, institutions 
 - Resource: [Solipsistic Superintelligence is Unlikely to be Cooperative](https://arxiv.org/abs/2606.03237v1)
 - OP: not yet verified
 - Topics: Governance, Human agency, Collaboration
+- Margin note: Deployment breaks the fixed-world assumption: the more an AI exploits a regularity, the faster it disappears. The emergent-cheating swarm is a live example.
 
 ### The AI Scientist: Towards Fully Automated AI Research, Now Published in Nature
 
@@ -239,6 +260,7 @@ Sakana, UBC, Vector and Oxford report in Nature on the AI Scientist, whose v2 wr
 - Resource: [The AI Scientist: Towards Fully Automated AI Research, Now Published in Nature](https://sakana.ai/ai-scientist-nature/)
 - OP: [Sakana AI · announcement post](https://sakana.ai/ai-scientist-nature/)
 - Topics: Agents, Scientific discovery, Evaluation, Governance
+- Margin note: The withdrawn ICBINB paper averaged 6.33, above the workshop’s human acceptance bar. The authors still list naive ideas and hallucinated citations as limits. Read with the Agentic Scientist, its successor.
 - Nature paper: https://www.nature.com/articles/s41586-026-10265-5
 - Code (AI-Scientist-v2): https://github.com/SakanaAI/AI-Scientist-v2
 - AI Scientist-v2 preprint: https://arxiv.org/abs/2504.08066
@@ -252,6 +274,7 @@ Develops an economic argument that verification capacity and responsibility beco
 - Resource: [Some Simple Economics of AGI](https://arxiv.org/abs/2602.20946)
 - OP: not yet verified
 - Topics: Human agency, Verification, Economics
+- Margin note: The cost to automate falls toward zero, but the cost to verify stays tied to expert time. Only the verifiable share of agent work counts as real output.
 - Related: https://ssrn.com/abstract=6298838
 
 ### Why LLMs Aren’t Scientists Yet: Lessons from Four Autonomous Research Attempts
@@ -263,6 +286,7 @@ Four autonomous ML research attempts expose implementation drift, weak evaluatio
 - Resource: [Why LLMs Aren’t Scientists Yet: Lessons from Four Autonomous Research Attempts](https://arxiv.org/abs/2601.03315v1)
 - OP: not yet verified
 - Topics: Agents, Evaluation, Research taste
+- Margin note: Three of four attempts failed. The useful output is a six-part failure taxonomy, including implementation drift and the “eureka instinct”.
 - Related: https://github.com/Lossfunk/ai-scientist-artefacts-v1
 
 ### Eliciting Research Taste in LLMs through Future Research Direction Choice
@@ -274,3 +298,4 @@ Studies model preferences among future research directions using order-controlle
 - Resource: [Eliciting Research Taste in LLMs through Future Research Direction Choice](https://github.com/Lossfunk/research-taste-eval-v1)
 - OP: [Lossfunk · research-team post](https://www.linkedin.com/posts/lossfunk_new-paper-from-lossfunk-accepted-at-the-activity-7501276181154074624-Tttm)
 - Topics: Research taste, Evaluation, Scientific discovery
+- Margin note: Models matched the authors’ own next direction 45–67.5% of the time. Agreement with the authors is not the same as scientific merit.

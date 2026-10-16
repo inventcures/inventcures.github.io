@@ -23,6 +23,17 @@ Wraps off-the-shelf coding agents in an explicit research loop, with pre-registe
 - Blog post: https://pub.sakana.ai/agentic-scientist/
 - Code (AI-Scientist-v3): https://github.com/SakanaAI/AI-Scientist-v3
 
+### Context graphs for document-heavy legal agents
+
+Niko Grupen reports that giving Harvey’s legal agents prebuilt context graphs over their documents improved results on legal tasks. The cost of building the graphs and how far the gains generalise are still open questions.
+
+- Type: Post
+- Published: 15 Oct 2026
+- Resource: [Context graphs for document-heavy legal agents](https://x.com/nikogrupen/status/2110773803592937733)
+- OP: [Niko Grupen · original post](https://x.com/nikogrupen/status/2110773803592937733)
+- Topics: Agents, Evaluation, Infrastructure
+- Margin note: This page’s knowledge graph is a small context graph: entities, typed relations and sources pre-linked, so a reader or an agent starts from structure instead of a pile of documents. The post itself couldn’t be fetched here, so this summary relies on a newsletter description.
+
 ### A conversation: the future of mathematics
 
 Litt’s essay and doomslide’s response, followed by Gowers and Hairer on mathematical values and institutional engagement.

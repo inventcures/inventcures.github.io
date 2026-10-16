@@ -538,6 +538,23 @@
         "https://www.youtube.com/watch?v=0kC3xOZChdA": "Dean with Dawn Song (talk)"
       },
       "margin_note": "The same “automate the experimental loop” bet as Sakana and Google’s Co-Scientist, framed around scale and latency. A FutureSearch forecast argues it should start where loops close fastest and verification is cheap, such as chip design."
+    },
+    {
+      "id": "grupen-context-graphs",
+      "title": "Context graphs for document-heavy legal agents",
+      "type": "Post",
+      "date": "2026-10-15",
+      "date_precision": "day",
+      "url": "https://x.com/nikogrupen/status/2110773803592937733",
+      "op_url": "https://x.com/nikogrupen/status/2110773803592937733",
+      "op_label": "Niko Grupen · original post",
+      "summary": "Niko Grupen reports that giving Harvey’s legal agents prebuilt context graphs over their documents improved results on legal tasks. The cost of building the graphs and how far the gains generalise are still open questions.",
+      "tags": [
+        "Agents",
+        "Evaluation",
+        "Infrastructure"
+      ],
+      "margin_note": "This page’s knowledge graph is a small context graph: entities, typed relations and sources pre-linked, so a reader or an agent starts from structure instead of a pile of documents. The post itself couldn’t be fetched here, so this summary relies on a newsletter description."
     }
   ]
 }

@@ -141,7 +141,10 @@
     {"id": "p-oriol-vinyals", "type": "person", "label": "Oriol Vinyals"},
     {"id": "c-loop-latency", "type": "concept", "label": "Experimental loop latency", "description": "Cutting the time per propose, implement, run and evaluate cycle to minutes or hours, and running thousands of cycles in parallel."},
     {"id": "c-recursive-self-improvement", "type": "concept", "label": "Recursive self-improvement", "description": "Using AI research tools to improve the stack that builds them."},
-    {"id": "c-nae-grand-challenges", "type": "concept", "label": "NAE Grand Challenges", "description": "The US National Academy of Engineering’s 14 grand challenges, such as medicines, clean water and solar."}
+    {"id": "c-nae-grand-challenges", "type": "concept", "label": "NAE Grand Challenges", "description": "The US National Academy of Engineering’s 14 grand challenges, such as medicines, clean water and solar."},
+    {"id": "p-niko-grupen", "type": "person", "label": "Niko Grupen"},
+    {"id": "o-harvey", "type": "org", "label": "Harvey", "url": "https://www.harvey.ai/"},
+    {"id": "c-context-graphs", "type": "concept", "label": "Context graphs", "description": "Prebuilt graphs of the entities and relations in a document collection, handed to agents as structured context instead of raw text."}
   ],
   "edges": [
     ["litt-beginning-mathematics", "authored_by", "p-daniel-litt"],
@@ -362,6 +365,12 @@
     ["discovery-loop-launch", "related_to", "agentic-scientist", "same bet on automating the research loop"],
     ["discovery-loop-launch", "related_to", "periodic-infrastructure", "AI-for-science startups built on large-scale infrastructure"],
     ["c-loop-latency", "related_to", "c-fast-cheap-feedback", "loops close fastest where checking is cheap"],
-    ["c-recursive-self-improvement", "related_to", "c-solipsistic-ai"]
+    ["c-recursive-self-improvement", "related_to", "c-solipsistic-ai"],
+    ["grupen-context-graphs", "authored_by", "p-niko-grupen"],
+    ["p-niko-grupen", "affiliated_with", "o-harvey"],
+    ["grupen-context-graphs", "made_by", "o-harvey"],
+    ["grupen-context-graphs", "proposes", "c-context-graphs"],
+    ["c-context-graphs", "related_to", "m-shared-memory", "structured memory for agents"],
+    ["c-context-graphs", "related_to", "c-uncertainty-records", "machine-readable structure around claims"]
   ]
 }

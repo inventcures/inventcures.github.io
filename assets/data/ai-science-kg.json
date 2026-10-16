@@ -157,7 +157,12 @@
     {"id": "o-convoke", "type": "org", "label": "Convoke"},
     {"id": "c-drug-discovery", "type": "concept", "label": "Drug discovery and biopharma", "description": "Using AI across the drug pipeline, from target biology and R&D to clinical, regulatory and commercial work."},
     {"id": "m-penalty-rubric-grading", "type": "method", "label": "Penalty-based rubric grading", "description": "Experts list the errors a work product must avoid, weighted major, moderate or minor; an LLM grader applies the checklist with citations."},
-    {"id": "c-synthesis-vs-compilation", "type": "concept", "label": "Synthesis vs compilation gap", "description": "Models compile structured trackers well but do worse at integrating evidence into narrative judgments."}
+    {"id": "c-synthesis-vs-compilation", "type": "concept", "label": "Synthesis vs compilation gap", "description": "Models compile structured trackers well but do worse at integrating evidence into narrative judgments."},
+    {"id": "p-dawn-song", "type": "person", "label": "Dawn Song"},
+    {"id": "m-ev-cost-experiment-portfolio", "type": "method", "label": "Experiment portfolio by expected value per cost", "description": "Score each queued experiment by expected value divided by its compute and other costs, and run the best first."},
+    {"id": "c-ten-x-signal", "type": "concept", "label": "The 10x signal", "description": "A 10x gain in compute-to-quality marks an idea as important, as with mixture of experts."},
+    {"id": "c-five-of-seven", "type": "concept", "label": "The 5-of-7 problem shape", "description": "Good research problems have most parts starting to take shape and a few hard but imaginable, on about a 5-year horizon."},
+    {"id": "c-shared-discovery-loop", "type": "concept", "label": "The shared science–engineering loop", "description": "Decompose, propose, implement, evaluate, feed back, repeat."}
   ],
   "edges": [
     ["litt-beginning-mathematics", "authored_by", "p-daniel-litt"],
@@ -421,6 +426,26 @@
     ["c-causal-biology", "related_to", "c-drug-discovery"],
     ["convoke-biopharma-benchmark", "related_to", "drug-discovery-path", "pipeline work beyond discovery"],
     ["convoke-biopharma-benchmark", "related_to", "agentrun-grep", "both find the harness, not just the model, decides results on knowledge work"],
-    ["convoke-biopharma-benchmark", "related_to", "davis-labs-taste", "judgment-heavy tasks are where models fall short"]
+    ["convoke-biopharma-benchmark", "related_to", "davis-labs-taste", "judgment-heavy tasks are where models fall short"],
+    ["dean-dawnsong-fireside", "authored_by", "p-jeff-dean", "speaker"],
+    ["dean-dawnsong-fireside", "commented_by", "p-dawn-song", "moderator"],
+    ["dean-dawnsong-fireside", "made_by", "o-stanford", "held at Stanford's Memorial Auditorium"],
+    ["dean-dawnsong-fireside", "discusses", "o-discovery-loop"],
+    ["dean-dawnsong-fireside", "proposes", "c-shared-discovery-loop"],
+    ["dean-dawnsong-fireside", "proposes", "m-ev-cost-experiment-portfolio"],
+    ["dean-dawnsong-fireside", "discusses", "c-loop-latency", "days to minutes, thousands in parallel"],
+    ["dean-dawnsong-fireside", "discusses", "c-recursive-self-improvement", "automate data, evals and architecture; no timeline given"],
+    ["dean-dawnsong-fireside", "discusses", "c-research-taste", "skim widely, 10x signal, 5-of-7 shape"],
+    ["dean-dawnsong-fireside", "discusses", "c-ten-x-signal"],
+    ["dean-dawnsong-fireside", "discusses", "c-five-of-seven"],
+    ["dean-dawnsong-fireside", "discusses", "c-autonomous-research"],
+    ["dean-dawnsong-fireside", "discusses", "c-human-oversight", "Song's account of an agent escaping its sandbox; security as double-edged"],
+    ["c-five-of-seven", "related_to", "c-research-taste"],
+    ["m-ev-cost-experiment-portfolio", "related_to", "c-loop-latency"],
+    ["dean-dawnsong-fireside", "related_to", "discovery-loop-launch", "the founder's own account two days later"],
+    ["dean-dawnsong-fireside", "related_to", "research-taste", "first-hand heuristics for choosing problems"],
+    ["dean-dawnsong-fireside", "related_to", "agentic-scientist", "the same loop automated end to end"],
+    ["dean-dawnsong-fireside", "related_to", "self-organizing-teams", "orchestrating agent teams on sub-problems"],
+    ["dean-dawnsong-fireside", "related_to", "cheating-whistleblowing", "agents behaving outside their brief"]
   ]
 }

@@ -286,6 +286,17 @@ Calls for evaluating AI by its contribution to better drug-development decisions
 - Topics: Biology, Medicine, Evaluation
 - Margin note: Clinically relevant impact so far is “disappointingly limited”. Judge AI by whether it improves decisions, especially at Phase II.
 
+### Jeff Dean in conversation with Dawn Song: from answering questions to making discoveries
+
+Dean's first public talk after leaving Google, at the AASF Frontier & Pioneer Symposium at Stanford, moderated by Dawn Song. He describes the loop that science and engineering share: decompose, propose, implement, evaluate, feed back. Discovery Loop aims to automate it, cut each iteration from days to minutes, run thousands in parallel and pick the next experiment by expected value per unit of cost, starting with ML itself. He also gives his research-taste heuristics: skim 10 papers rather than read one closely, look for 10x gains, and choose problems where about 5 of 7 parts are taking shape. The summary is built from auto-generated captions.
+
+- Type: Talk
+- Uploaded: 07 Aug 2026
+- Resource: [Jeff Dean in conversation with Dawn Song: from answering questions to making discoveries](https://www.youtube.com/watch?v=0kC3xOZChdA)
+- OP: not yet verified
+- Topics: Scientific discovery, Agents, Research taste, Governance
+- Margin note: Experiment A has a 10% chance of +5 and costs 1 GPU-day (EV/cost 0.5). B has a 50% chance of +2 and costs 4 GPU-days (0.25). Dean's rule runs A first. What pure EV/cost misses is what a cheap failure teaches you.
+
 ### Drug Discovery Has No Magic Wands
 
 Daphne Koller argues that useful AI drug discovery depends on better measurements and causal understanding of human biology.

@@ -4,11 +4,23 @@ I want a future in which AI agents help people ask better questions, explore mor
 
 Progress should deepen human agency and meaning: the freedom to choose what matters, understand the work, challenge an answer and share in discovery. That means evaluating evidence rather than just fluent output, preserving uncertainty and giving people real authority over consequential decisions. It also means designing against accidental harm and deliberate misuse, taking dual-use risks seriously, and making the benefits of scientific capability broadly accessible.
 
-Updated: 2026-09-27
+Updated: 2026-10-16
 
 Dates are first public posting/publication where verified; talks use upload dates. Year-only dates retain their original precision. OP means an original author/team post or identified commentary. Missing posts are marked as unverified.
 
 ## Reading list
+
+### The Agentic Scientist: Orchestrating Coding Agents for Automated Scientific (Co-)Discovery
+
+Wraps off-the-shelf coding agents in an explicit research loop, with pre-registered rubrics, parallel workers sharing a memory and ablations of the winning program, so they behave less like hyperparameter optimizers. Sakana reports an ALIFE 2026 oral on Error Diffusion with humans setting questions and verifying claims, plus autonomous gains on Doc-to-LoRA retrieval and learned evolution strategies.
+
+- Type: Preprint
+- Published: 15 Oct 2026
+- Resource: [The Agentic Scientist: Orchestrating Coding Agents for Automated Scientific (Co-)Discovery](https://arxiv.org/abs/2610.18933)
+- OP: [Sakana AI · announcement thread](https://x.com/SakanaAILabs/status/2110738746304061491)
+- Topics: Agents, Scientific discovery, Human–AI collaboration, Evaluation
+- Blog post: https://pub.sakana.ai/agentic-scientist/
+- Code (AI-Scientist-v3): https://github.com/SakanaAI/AI-Scientist-v3
 
 ### A conversation: the future of mathematics
 

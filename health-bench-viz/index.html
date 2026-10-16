@@ -101,9 +101,7 @@ input[type=search]{flex:1;min-width:180px}
 @media (max-width:900px){.explorer{grid-template-columns:1fr}}
 .list{max-height:78vh;overflow:auto;display:flex;flex-direction:column;gap:6px;padding-right:4px}
 @media (max-width:900px){.list{max-height:320px}}
-.item{all:unset;display:block;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer;font-size:14px;line-height:1.4}
 .item:hover{border-color:var(--muted)}
-.item:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
 .item[aria-current="true"]{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
 .item .meta{font-size:12px;color:var(--muted);display:flex;align-items:baseline;gap:0;margin-bottom:4px}
 .item .snip{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
@@ -136,6 +134,24 @@ button.sm:hover{border-color:var(--muted)}
 details.ideal{margin:6px 0 16px;border:1px solid var(--line);border-radius:12px;padding:10px 14px;background:var(--bg)}
 details.ideal summary{cursor:pointer;font-weight:600;font-size:14px}
 details.ideal .body{white-space:pre-wrap;font-size:14px;margin-top:8px}
+.searchrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.searchrow input{flex:1;min-width:220px;font-size:16px;padding:11px 14px;border-radius:10px}
+.selbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:4px 0 14px;font-size:14px;color:var(--muted)}
+.selcount{margin-left:auto;color:var(--fg);font-weight:600}
+button.sm.primary{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+button.sm:disabled{opacity:.45;cursor:not-allowed}
+.item{display:flex;gap:10px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.item .pick{margin-top:3px;width:17px;height:17px;accent-color:var(--accent);flex:none;cursor:pointer}
+.item .open{all:unset;display:block;flex:1;min-width:0;cursor:pointer;font-size:14px;line-height:1.4}
+.item .open:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.why{color:var(--accent)}
+.strip{display:flex;gap:2px;align-items:stretch}
+.strip i{display:block;border-radius:2px;min-width:3px}
+.strip i.user{background:var(--s1)}.strip i.assistant{background:var(--line)}
+.strip i.reply{flex:0 0 14px;border:1.5px dashed var(--accent);background:transparent}
+.strip.mini{height:6px;margin-top:8px}
+.strip.big{height:22px;margin:0 0 14px}.strip.big i[data-j]{cursor:pointer}.strip.big i[data-j]:hover{filter:brightness(1.15)}
+.msg.hit{outline:2px solid var(--accent);outline-offset:2px}
 .empty{color:var(--muted);padding:20px;text-align:center}
 .q{border-left:3px solid var(--accent);padding:4px 0 4px 16px;margin:0 0 18px}
 .q p{margin:0 0 6px}
@@ -152,7 +168,7 @@ footer{color:var(--muted);font-size:13px;padding:48px 0 40px}
 <header class="hero">
   <div class="kicker">Benchmark explorer</div>
   <h1>HealthBench, up close</h1>
-  <p class="lede">HealthBench is OpenAI's open benchmark of health conversations. Each one ends at the moment an AI has to reply, and comes with a rubric that physicians wrote for that exact conversation. This page lets you read a sample of those conversations next to their rubrics and grade a response yourself.</p>
+  <p class="lede">HealthBench is OpenAI's open benchmark of health conversations. Each one ends at the moment an AI has to reply, and comes with a rubric that physicians wrote for that exact conversation. This page lets you read the 482 longest conversations next to their rubrics, search them by meaning, grade a response yourself, and download any of them.</p>
   <div class="tiles" id="tiles"></div>
 </header>
 
@@ -196,14 +212,26 @@ footer{color:var(--muted);font-size:13px;padding:48px 0 40px}
 </section>
 
 <section id="explore">
-  <h2>Read the conversations</h2>
+  <h2>Read the longest conversations</h2>
   <p class="sub" id="sampleNote"></p>
-  <div class="filters" id="themeChips" role="group" aria-label="Filter by theme"></div>
-  <div class="filters">
-    <select id="fSubset" aria-label="Subset"><option value="">All conversations</option><option value="hard">Hard subset only</option><option value="consensus">Consensus subset only</option></select>
-    <select id="fTurns" aria-label="Conversation length"><option value="">Any length</option><option value="single">Single message</option><option value="multi">Multi-turn</option></select>
-    <select id="fTag" aria-label="Tag"><option value="">Any physician-agreed category</option></select>
-    <input type="search" id="fSearch" placeholder="Search text and criteria" aria-label="Search">
+  <div class="grid2" style="margin:16px 0 8px">
+    <div class="card"><h3>These conversations by medical specialty</h3><p class="cap" style="margin:0 0 10px">HealthBench has no specialty field. Claude read each conversation's user messages and assigned one specialty, language and user type (<a href="labels.json">labels.json</a>). Click a bar to filter.</p><div class="bars" id="chartSpec"></div></div>
+    <div class="card"><h3>Messages before the reply</h3><div id="chartLongTurns"></div><p class="cap" id="capLong"></p>
+      <h3 style="margin-top:22px">Language</h3><div class="bars" id="chartLang"></div></div>
+  </div>
+  <div class="searchrow">
+    <input type="search" id="fSearch" placeholder="Search by meaning or words, e.g. “toddler with fever at night”" aria-label="Search conversations">
+    <select id="fMode" aria-label="Search mode"><option value="hybrid">Hybrid (BM25 + semantic)</option><option value="bm25">Keyword only (BM25)</option><option value="semantic">Semantic only</option></select>
+  </div>
+  <p class="cap" id="semStatus" style="margin:6px 0 0"></p>
+  <div class="filters" id="filters"></div>
+  <div class="selbar">
+    <span id="countShown"></span>
+    <button class="sm" type="button" id="selShown">Select all shown</button>
+    <button class="sm" type="button" id="selNone">Clear selection</button>
+    <span class="selcount" id="selCount">0 selected</span>
+    <button class="sm primary" type="button" id="dlJsonl" disabled>Download JSONL</button>
+    <button class="sm" type="button" id="dlJson" disabled>Download JSON</button>
   </div>
   <div class="explorer">
     <div class="list" id="list" aria-label="Conversations"></div>
@@ -223,7 +251,7 @@ footer{color:var(--muted);font-size:13px;padding:48px 0 40px}
 </section>
 
 <footer>
-  Data: <a href="https://huggingface.co/datasets/openai/healthbench">openai/healthbench</a> on Hugging Face (MIT licensed), from <a href="https://openai.com/index/healthbench/">HealthBench: Evaluating Large Language Models Towards Improved Human Health</a> (Arora et al., 2025). Grading logic follows <a href="https://github.com/openai/simple-evals/blob/main/healthbench_eval.py">simple-evals</a>. The conversations are synthetic or adversarially written test cases, not real patient records.
+  Data: <a href="https://huggingface.co/datasets/openai/healthbench">openai/healthbench</a> on Hugging Face (MIT licensed), from <a href="https://openai.com/index/healthbench/">HealthBench: Evaluating Large Language Models Towards Improved Human Health</a> (Arora et al., 2025). Grading logic follows <a href="https://github.com/openai/simple-evals/blob/main/healthbench_eval.py">simple-evals</a>. The conversations are synthetic or adversarially written test cases, not real patient records. Specialty, language and user type are labels Claude assigned, not part of HealthBench. Search blends BM25 keyword ranking with semantic similarity from <a href="https://huggingface.co/Xenova/all-MiniLM-L6-v2">all-MiniLM-L6-v2</a>, run in your browser through transformers.js, fused by reciprocal rank. Message embeddings are precomputed by <a href="build_embeddings.mjs">build_embeddings.mjs</a>. Downloads keep the HealthBench JSONL fields and add a <code>derived_labels</code> object.
 </footer>
 </div>
 <div id="tip" role="tooltip"></div>
@@ -305,7 +333,7 @@ const tmax=Math.max(...S.themes.map(t=>t[1]));
 hbars(document.getElementById("chartThemes"),S.themes.map(([t,n])=>({
   label:tname(t),dot:themeColor[t],segs:[{v:n,c:themeColor[t]}],valText:fmt(n),
   tip:`<b>${esc(tname(t))}</b><br>${fmt(n)} conversations (${(100*n/S.n).toFixed(1)}%)<br>${esc((THEME[t]||["",""])[1])}`,
-  onclick:()=>{state.theme=t;syncChips();render();document.getElementById("explore").scrollIntoView({behavior:"smooth"});}
+  onclick:()=>setFilter("theme",t)
 })),tmax);
 tbl(document.getElementById("tblThemes"),S.themes.map(([t,n])=>[esc(tname(t)),fmt(n)]));
 
@@ -339,56 +367,164 @@ cats.innerHTML=themeOrder.map(t=>{
 cats.querySelectorAll("[data-tip]").forEach(el=>{const [c,n,tot]=el.dataset.tip.split("|");bindTip(el,`<b>${esc(c.replace(/_/g," "))}</b><br>${fmt(+n)} of ${fmt(+tot)} conversations`);});
 
 /* explorer */
-const state={theme:"",subset:"",turns:"",tag:"",q:"",sel:null,met:{}};
-document.getElementById("sampleNote").textContent=`A sample of ${CONVOS.length} conversations, about ${Math.round(CONVOS.length/themeOrder.length)} from each theme, deliberately mixing hard and multi-turn cases. The last bubble is where the model would reply. Tick the criteria a reply would meet to see how HealthBench would score it.`;
-const chips=document.getElementById("themeChips");
-function syncChips(){chips.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",String(c.dataset.t===state.theme)));}
-chips.innerHTML=`<button class="chip" data-t="" type="button">All themes</button>`+themeOrder.map(t=>`<button class="chip" data-t="${t}" type="button"><i class="dot" style="background:${themeColor[t]}"></i>${esc(tname(t))}</button>`).join("");
-chips.onclick=e=>{const b=e.target.closest(".chip");if(!b)return;state.theme=b.dataset.t;syncChips();render();};
-syncChips();
-const tagCounts={};CONVOS.forEach(c=>c.tags.forEach(t=>{if(!t.startsWith("theme:"))tagCounts[t]=(tagCounts[t]||0)+1;}));
-document.getElementById("fTag").innerHTML+=Object.entries(tagCounts).sort((a,b)=>a[0].localeCompare(b[0])).map(([t,n])=>`<option value="${esc(t)}">${esc(t.replace(/^physician_agreed_category:/,"").replace(/[_-]/g," "))} (${n})</option>`).join("");
-[["fSubset","subset"],["fTurns","turns"],["fTag","tag"]].forEach(([id,k])=>document.getElementById(id).onchange=e=>{state[k]=e.target.value;render();});
-document.getElementById("fSearch").oninput=e=>{state.q=e.target.value.toLowerCase();render();};
+const CT = HB.clusterText || {};
+const clusterOf = r => r.t.find(t=>t.startsWith("cluster:"));
+CONVOS.forEach(c=>c.rubrics.forEach(r=>{if(r.c==null)r.c=CT[clusterOf(r)]||"";}));
+const catOf = c => ((c.tags.find(t=>t.startsWith("physician_agreed_category:"))||"").split(":")[1]||"");
+const prettyCat = s => s.replace(/[_-]/g," ");
+const lenBucket = n => n>=13?"13+":n>=9?"9-12":"7-8";
+const state={theme:"",specialty:"",language:"",user:"",len:"",cat:"",subset:"",ideal:"",q:"",mode:"hybrid",sel:null,met:{}};
+const selected=new Set();
 
-function filtered(){
-  return CONVOS.filter(c=>{
-    if(state.theme&&themeOf(c)!==state.theme)return false;
-    if(state.subset&&!c[state.subset])return false;
-    if(state.turns==="single"&&c.prompt.length!==1)return false;
-    if(state.turns==="multi"&&c.prompt.length===1)return false;
-    if(state.tag&&!c.tags.includes(state.tag))return false;
-    if(state.q){const hay=(c.prompt.map(m=>m.content).join(" ")+" "+c.rubrics.map(r=>r.c).join(" ")).toLowerCase();if(!hay.includes(state.q))return false;}
-    return true;
-  });
+/* charts for this sample */
+const countBy=f=>{const m=new Map();CONVOS.forEach(c=>{const k=f(c);m.set(k,(m.get(k)||0)+1);});return [...m.entries()].sort((a,b)=>b[1]-a[1]);};
+const specCounts=countBy(c=>c.specialty);
+hbars(document.getElementById("chartSpec"),specCounts.map(([s,n])=>({label:s,segs:[{v:n,c:"var(--s1)"}],valText:fmt(n),
+  tip:`<b>${esc(s)}</b><br>${fmt(n)} of ${CONVOS.length} conversations`,onclick:()=>setFilter("specialty",s)})),specCounts[0][1]);
+const langCounts=countBy(c=>c.language);const langTop=langCounts.slice(0,6),langRest=langCounts.slice(6).reduce((a,x)=>a+x[1],0);
+hbars(document.getElementById("chartLang"),[...langTop,...(langRest?[["Other",langRest]]:[])].map(([s,n])=>({label:s,segs:[{v:n,c:"var(--s3)"}],valText:fmt(n),
+  tip:`<b>${esc(s)}</b><br>${fmt(n)} conversations`,onclick:s==="Other"?null:()=>setFilter("language",s)})),langCounts[0][1]);
+const lt=countBy(c=>c.prompt.length).sort((a,b)=>a[0]-b[0]);
+vhist(document.getElementById("chartLongTurns"),lt,()=>"var(--s1)",v=>v,d=>`<b>${d[0]} messages</b> (${(d[0]+1)/2} user turns)<br>${fmt(d[1])} conversations`,1);
+document.getElementById("capLong").textContent=`No HealthBench conversation reaches 20 turns. The longest has ${lt[lt.length-1][0]} messages before the reply, and these ${CONVOS.length} are every conversation with 7 or more.`;
+document.getElementById("sampleNote").textContent=`All ${CONVOS.length} conversations with at least 7 messages (4 or more user turns) before the reply, the longest in HealthBench. The strip under each one shows its shape: blue for user turns, grey for assistant turns, width by length. Tick the checkboxes to download a subset.`;
+
+/* filters */
+const FILTERS=[
+  ["specialty","Any specialty",countBy(c=>c.specialty).sort((a,b)=>a[0].localeCompare(b[0])).map(([v,n])=>[v,`${v} (${n})`])],
+  ["theme","Any theme",themeOrder.map(t=>[t,`${tname(t)} (${CONVOS.filter(c=>themeOf(c)===t).length})`])],
+  ["language","Any language",langCounts.map(([v,n])=>[v,`${v} (${n})`])],
+  ["user","Any user",countBy(c=>c.user).map(([v,n])=>[v,`${v} (${n})`])],
+  ["len","Any length",[["7-8","7 to 8 messages"],["9-12","9 to 12 messages"],["13+","13 or more messages"]]],
+  ["cat","Any physician category",countBy(catOf).sort((a,b)=>a[0].localeCompare(b[0])).map(([v,n])=>[v,`${prettyCat(v)} (${n})`])],
+  ["subset","Any subset",[["hard","Hard subset"],["consensus","Consensus subset"]]],
+  ["ideal","With or without reference",[["yes","Has a physician reference reply"],["no","No reference reply"]]],
+];
+const fwrap=document.getElementById("filters");
+fwrap.innerHTML=FILTERS.map(([k,lab,opts])=>`<select data-k="${k}" aria-label="${esc(lab)}"><option value="">${esc(lab)}</option>${opts.map(([v,t])=>`<option value="${esc(v)}">${esc(t)}</option>`).join("")}</select>`).join("")+`<button class="sm" type="button" id="fReset">Reset filters</button>`;
+fwrap.onchange=e=>{const k=e.target.dataset.k;if(k){state[k]=e.target.value;render();}};
+document.getElementById("fReset").onclick=()=>{FILTERS.forEach(([k])=>state[k]="");syncFilters();render();};
+function syncFilters(){fwrap.querySelectorAll("select").forEach(s=>s.value=state[s.dataset.k]);}
+function setFilter(k,v){state[k]=v;syncFilters();render();document.getElementById("explore").scrollIntoView({behavior:"smooth"});}
+
+/* BM25 over every message of each conversation */
+const STOPW=new Set("a an and are as at be but by can do does for from has have how i if in is it its me my no not of on or our so that the their them then there they this to was we what when which who will with you your".split(" "));
+const tok=s=>(s.toLowerCase().match(/[\p{L}\p{N}]+/gu)||[]).filter(w=>w.length>1&&!STOPW.has(w));
+const docTf=[],df=new Map();let avgdl=0;
+CONVOS.forEach(c=>{const toks=tok(c.prompt.map(m=>m.content).join(" ")+" "+c.specialty);const tf=new Map();toks.forEach(w=>tf.set(w,(tf.get(w)||0)+1));
+  docTf.push({tf,len:toks.length});tf.forEach((_,w)=>df.set(w,(df.get(w)||0)+1));avgdl+=toks.length;});
+avgdl/=CONVOS.length;
+function bm25(q){const qs=[...new Set(tok(q))],N=CONVOS.length,k1=1.2,b=.75;
+  return docTf.map(({tf,len})=>qs.reduce((s,w)=>{const f=tf.get(w);if(!f)return s;const n=df.get(w);return s+Math.log(1+(N-n+.5)/(n+.5))*f*(k1+1)/(f+k1*(1-b+b*len/avgdl));},0));}
+
+/* semantic: per-message MiniLM embeddings precomputed at build time; the query is embedded in the browser */
+let EMB=null,embedder=null,semLoading=null;const offs=[];{let o=0;CONVOS.forEach(c=>{offs.push(o);o+=c.prompt.length;});}
+const semStatus=document.getElementById("semStatus");
+function loadSemantic(){
+  if(semLoading)return semLoading;
+  semStatus.textContent="Loading the semantic model in your browser (about 23 MB, once)…";
+  semLoading=Promise.all([
+    fetch("embeddings.bin").then(r=>{if(!r.ok)throw new Error("embeddings "+r.status);return r.arrayBuffer();}).then(b=>EMB=new Int8Array(b)),
+    import("https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.5.1").then(T=>T.pipeline("feature-extraction","Xenova/all-MiniLM-L6-v2",{dtype:"q8"})).then(p=>embedder=p)
+  ]).then(()=>{semStatus.textContent="Semantic model ready. Results blend BM25 keyword ranking with meaning-based ranking.";render();})
+   .catch(e=>{semStatus.textContent="The semantic model could not load ("+e.message+"), so results use keyword search only.";semLoading=Promise.reject(e);semLoading.catch(()=>{});});
+  return semLoading;
 }
-function render(){
-  const list=document.getElementById("list"),rows=filtered();
-  if(!rows.find(c=>c.id===state.sel))state.sel=rows.length?rows[0].id:null;
-  list.innerHTML=rows.length?"":`<div class="empty">No conversations match these filters.</div>`;
-  rows.forEach(c=>{
-    const t=themeOf(c),b=document.createElement("button");b.className="item";b.type="button";
-    if(c.id===state.sel)b.setAttribute("aria-current","true");
+const semCache=new Map();
+async function semantic(q){
+  if(semCache.has(q))return semCache.get(q);
+  const t=await embedder([q],{pooling:"mean",normalize:true});const v=t.data;
+  const res=CONVOS.map((c,i)=>{let best=-1,bi=0;for(let j=0;j<c.prompt.length;j++){const o=(offs[i]+j)*384;let s=0;for(let k=0;k<384;k++)s+=v[k]*EMB[o+k];if(s>best){best=s;bi=j;}}return{s:best/127,m:bi};});
+  semCache.set(q,res);return res;
+}
+let lastRank=null;
+async function rank(){
+  const q=state.q.trim();if(!q){lastRank=null;return;}
+  const kw=bm25(q);let sem=null;
+  if(state.mode!=="bm25"){loadSemantic();if(embedder&&EMB){try{sem=await semantic(q);}catch(e){sem=null;}}}
+  if(q!==state.q.trim())return;
+  const ids=CONVOS.map((_,i)=>i),score=new Map(),why=new Map();
+  const kwRank=ids.filter(i=>kw[i]>0).sort((a,b)=>kw[b]-kw[a]);
+  const semRank=sem?ids.slice().sort((a,b)=>sem[b].s-sem[a].s).slice(0,60):[];
+  const K=60;
+  if(state.mode!=="semantic")kwRank.forEach((i,r)=>{score.set(i,(score.get(i)||0)+1/(K+r));why.set(i,["words"]);});
+  if(state.mode!=="bm25")semRank.forEach((i,r)=>{score.set(i,(score.get(i)||0)+1/(K+r));why.set(i,[...(why.get(i)||[]),"meaning"]);});
+  lastRank={order:[...score.keys()].sort((a,b)=>score.get(b)-score.get(a)),why,best:sem?sem.map(x=>x.m):null,semOn:!!sem};
+}
+
+function passes(c){
+  if(state.theme&&themeOf(c)!==state.theme)return false;
+  if(state.specialty&&c.specialty!==state.specialty)return false;
+  if(state.language&&c.language!==state.language)return false;
+  if(state.user&&c.user!==state.user)return false;
+  if(state.len&&lenBucket(c.prompt.length)!==state.len)return false;
+  if(state.cat&&catOf(c)!==state.cat)return false;
+  if(state.subset&&!c[state.subset])return false;
+  if(state.ideal==="yes"&&!c.ideal)return false;
+  if(state.ideal==="no"&&c.ideal)return false;
+  return true;
+}
+let shown=[];
+function strip(c,cls){const ls=c.prompt.map(m=>Math.sqrt(m.content.length));const tot=ls.reduce((a,b)=>a+b,0);
+  return `<div class="${cls}">${c.prompt.map((m,j)=>`<i class="${m.role}" data-j="${j}" style="flex:${(ls[j]/tot*100).toFixed(2)}"></i>`).join("")}<i class="reply"></i></div>`;}
+let renderSeq=0;
+async function render(){
+  const seq=++renderSeq;await rank();if(seq!==renderSeq)return;
+  const base=lastRank?lastRank.order.map(i=>CONVOS[i]):CONVOS;
+  shown=base.filter(passes);
+  if(!shown.find(c=>c.id===state.sel))state.sel=shown.length?shown[0].id:null;
+  document.getElementById("countShown").textContent=`${shown.length} of ${CONVOS.length} shown`;
+  const list=document.getElementById("list");
+  list.innerHTML=shown.length?"":`<div class="empty">No conversations match. Try clearing a filter or rewording the search.</div>`;
+  const frag=document.createDocumentFragment();
+  shown.forEach(c=>{
+    const i=CONVOS.indexOf(c),t=themeOf(c),el=document.createElement("div");el.className="item";
+    if(c.id===state.sel)el.setAttribute("aria-current","true");
     const first=c.prompt.find(m=>m.role==="user")||c.prompt[0];
-    b.innerHTML=`<div class="meta"><i class="dot" style="background:${themeColor[t]}"></i><span>${esc(tname(t))} · ${c.prompt.length} msg · ${c.rubrics.length} criteria${c.hard?' · <b>hard</b>':""}</span></div><div class="snip">${esc(first.content.slice(0,220))}</div>`;
-    b.onclick=()=>{state.sel=c.id;history.replaceState(null,"","#"+c.id);render();if(innerWidth<900)document.getElementById("detail").scrollIntoView({behavior:"smooth"});};
-    list.appendChild(b);
+    const why=lastRank&&lastRank.why.get(i);
+    el.innerHTML=`<input type="checkbox" class="pick" ${selected.has(c.id)?"checked":""} aria-label="Select for download">
+      <button type="button" class="open"><div class="meta"><i class="dot" style="background:${themeColor[t]}"></i><span>${esc(c.specialty)} · ${(c.prompt.length+1)/2} user turns${c.language!=="English"?" · "+esc(c.language):""}${c.hard?' · <b>hard</b>':""}${why?` · <span class="why">${why.join(" + ")}</span>`:""}</span></div>
+      <div class="snip">${esc(first.content.slice(0,200))}</div>${strip(c,"strip mini")}</button>`;
+    el.querySelector(".pick").onchange=e=>{e.target.checked?selected.add(c.id):selected.delete(c.id);syncSel();};
+    el.querySelector(".open").onclick=()=>{state.sel=c.id;try{history.replaceState(null,"","#"+c.id);}catch(e){}list.querySelectorAll(".item").forEach(x=>x.removeAttribute("aria-current"));el.setAttribute("aria-current","true");renderDetail();if(innerWidth<900)document.getElementById("detail").scrollIntoView({behavior:"smooth"});};
+    frag.appendChild(el);
   });
-  renderDetail();
+  list.appendChild(frag);syncSel();renderDetail();
 }
+function syncSel(){
+  const n=selected.size;document.getElementById("selCount").textContent=`${n} selected`;
+  document.getElementById("dlJsonl").disabled=!n;document.getElementById("dlJson").disabled=!n;
+}
+document.getElementById("selShown").onclick=()=>{shown.forEach(c=>selected.add(c.id));document.querySelectorAll("#list .pick").forEach(x=>x.checked=true);syncSel();};
+document.getElementById("selNone").onclick=()=>{selected.clear();document.querySelectorAll("#list .pick").forEach(x=>x.checked=false);syncSel();};
+const original=c=>({prompt_id:c.id,prompt:c.prompt,rubrics:c.rubrics.map(r=>({criterion:r.c,points:r.p,tags:r.t})),example_tags:c.tags,
+  ideal_completions_data:c.ideal?{ideal_completion:c.ideal,ideal_completions_group:c.idealGroup}:null,
+  derived_labels:{specialty:c.specialty,language:c.language,user:c.user,in_hard_subset:c.hard,in_consensus_subset:c.consensus}});
+function save(name,text,type){const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([text],{type}));a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},500);}
+const pickedRows=()=>CONVOS.filter(c=>selected.has(c.id)).map(original);
+document.getElementById("dlJsonl").onclick=()=>save(`healthbench_long_${selected.size}.jsonl`,pickedRows().map(r=>JSON.stringify(r)).join("\n")+"\n","application/x-ndjson");
+document.getElementById("dlJson").onclick=()=>save(`healthbench_long_${selected.size}.json`,JSON.stringify(pickedRows(),null,2),"application/json");
+
+let qTimer;document.getElementById("fSearch").oninput=e=>{clearTimeout(qTimer);qTimer=setTimeout(()=>{state.q=e.target.value;render();},250);};
+document.getElementById("fSearch").onfocus=()=>{if(state.mode!=="bm25")loadSemantic();};
+document.getElementById("fMode").onchange=e=>{state.mode=e.target.value;render();};
+
 function renderDetail(){
   const d=document.getElementById("detail"),c=CONVOS.find(x=>x.id===state.sel);
   if(!c){d.innerHTML=`<div class="empty">Pick a conversation.</div>`;return;}
-  const t=themeOf(c),met=state.met[c.id]||(state.met[c.id]={});
-  const otherTags=c.tags.filter(x=>!x.startsWith("theme:"));
-  const rub=[...c.rubrics.map((r,i)=>({...r,i}))].sort((a,b)=>b.p-a.p);
+  const i=CONVOS.indexOf(c),t=themeOf(c),met=state.met[c.id]||(state.met[c.id]={});
+  const hit=lastRank&&lastRank.best&&lastRank.why.get(i)&&lastRank.why.get(i).includes("meaning")?lastRank.best[i]:-1;
+  const rub=c.rubrics.map((r,k)=>({...r,i:k})).sort((a,b)=>b.p-a.p);
   const possible=c.rubrics.filter(r=>r.p>0).reduce((a,r)=>a+r.p,0);
   d.innerHTML=`
    <div class="dhead"><span class="pill" style="background:var(--soft)"><i class="dot" style="background:${themeColor[t]}"></i>${esc(tname(t))}</span>
+     <span class="tag flag">${esc(c.specialty)}</span><span class="tag">${esc(c.language)}</span><span class="tag">${esc(c.user)}</span>
      ${c.hard?'<span class="tag flag">hard subset</span>':""}${c.consensus?'<span class="tag flag">consensus subset</span>':""}
-     ${otherTags.map(x=>`<span class="tag">${esc(x)}</span>`).join("")}</div>
-   <div class="cap" style="margin:0 0 4px">${esc((THEME[t]||["",""])[1])}</div>
-   <div class="chat">${c.prompt.map(m=>`<div class="msg ${esc(m.role)}"><div class="who">${m.role==="user"?"User":m.role==="assistant"?"Assistant":esc(m.role)}</div><div class="body">${md(m.content)}</div></div>`).join("")}
+     ${catOf(c)?`<span class="tag">${esc(prettyCat(catOf(c)))}</span>`:""}
+     <button class="sm" type="button" id="dlOne" style="margin-left:auto">Download this one</button></div>
+   <div class="cap" style="margin:0 0 6px">${c.prompt.length} messages, ${(c.prompt.length+1)/2} from the user. Click a block to jump to that message.${hit>=0?" The outlined block best matches your search.":""}</div>
+   ${strip(c,"strip big")}
+   <div class="chat">${c.prompt.map((m,j)=>`<div class="msg ${esc(m.role)}${j===hit?" hit":""}" id="m${j}"><div class="who">${m.role==="user"?"User":m.role==="assistant"?"Assistant":esc(m.role)} · ${j+1}</div><div class="body">${md(m.content)}</div></div>`).join("")}
      <div class="msg assistant graded"><div class="who">Assistant · the reply being graded</div><div class="body" style="color:var(--muted)">The model under test writes this turn. The rubric below is applied to it.</div></div></div>
    ${c.ideal?`<details class="ideal"><summary>Read a physician-written reference reply${c.idealGroup?` (${esc(GROUP[c.idealGroup]||c.idealGroup)})`:""}</summary><div class="body">${md(c.ideal)}</div><p class="cap">Try grading this reply with the checkboxes below.</p></details>`:""}
    <h3 style="margin-top:6px">Rubric for this conversation</h3>
@@ -397,15 +533,17 @@ function renderDetail(){
      <td style="width:28px"><input type="checkbox" data-i="${r.i}" ${met[r.i]?"checked":""} aria-label="Criterion met"></td>
      <td style="width:46px"><span class="pts ${r.p>0?"pos":"neg"}">${r.p>0?"+":""}${r.p}</span></td>
      <td class="crit">${r.c.length>320?`<details><summary>${esc(r.c.slice(0,200))}… <span style="color:var(--accent)">read full check</span></summary><div style="white-space:pre-wrap;margin-top:6px">${esc(r.c)}</div></details>`:esc(r.c)}<div class="rt">${axisOf(r)?`<span class="tag">${esc(AXIS[axisOf(r)]||axisOf(r))}</span>`:""}${levelOf(r)?`<span class="tag">${levelOf(r)==="cluster"?"cluster-level":"example-level"}</span>`:""}</div></td></tr>`).join("")}</tbody></table>`;
+  d.querySelectorAll(".strip.big i[data-j]").forEach(b=>{const j=+b.dataset.j;bindTip(b,`<b>${c.prompt[j].role==="user"?"User":"Assistant"} · message ${j+1}</b><br>${fmt(c.prompt[j].content.length)} characters`);
+    b.onclick=()=>d.querySelector("#m"+j).scrollIntoView({behavior:"smooth",block:"center"});});
+  d.querySelector("#dlOne").onclick=()=>save(`healthbench_${c.id}.json`,JSON.stringify(original(c),null,2),"application/json");
   function upd(){
-    const earned=c.rubrics.reduce((a,r,i)=>a+(met[i]?r.p:0),0);
-    const sc=possible?earned/possible:0;
+    const earned=c.rubrics.reduce((a,r,k)=>a+(met[k]?r.p:0),0),sc=possible?earned/possible:0;
     document.getElementById("scorebar").innerHTML=`<span>Score <b>${sc.toFixed(2)}</b></span><span>${earned} earned / ${possible} possible</span>${sc<0?'<span class="pill neg">below zero for this conversation</span>':""}
       <span class="btns"><button class="sm" data-a="pos">Meet all positives</button><button class="sm" data-a="clear">Clear</button></span>`;
   }
   upd();
-  d.querySelector("tbody").onchange=e=>{const i=e.target.dataset.i;if(i==null)return;met[i]=e.target.checked;e.target.closest("tr").classList.toggle("met",e.target.checked);upd();};
-  d.querySelector("#scorebar").onclick=e=>{const a=e.target.dataset.a;if(!a)return;c.rubrics.forEach((r,i)=>met[i]=a==="pos"&&r.p>0);renderDetail();};
+  d.querySelector("tbody").onchange=e=>{const k=e.target.dataset.i;if(k==null)return;met[k]=e.target.checked;e.target.closest("tr").classList.toggle("met",e.target.checked);upd();};
+  d.querySelector("#scorebar").onclick=e=>{const a=e.target.dataset.a;if(!a)return;c.rubrics.forEach((r,k)=>met[k]=a==="pos"&&r.p>0);renderDetail();};
 }
 const h=location.hash.slice(1);if(h&&CONVOS.find(c=>c.id===h))state.sel=h;
 render();

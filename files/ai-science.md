@@ -71,6 +71,33 @@ Ben Davis defines taste as “the ability to make good decisions in places where
 - Topics: Research taste, Verification, Agents, Human agency
 - Margin note: The real question: can a harness and a model together make good decisions where no programmatic verifier exists? “Make this function fast” is hill-climbing. Which direction to pursue, which design to ship and which claim to trust are taste.
 
+### A thread: forgetting to escape idea basins
+
+Two papers ten days apart reach the same answer: long-running research agents get stuck refining their own past ideas, and the cure is to forget. Read Fork-and-Flush first, then the more aggressive version.
+
+#### Fork-and-Flush: Escaping Idea Basins in Autoresearch Agents
+
+Cai, Papailiopoulos and colleagues find that independent runs of the same autoresearch agent on the same task end at very different scores, and that extra compute does not close the gap. Comparing solutions by what they do suggests each run stays inside a local “idea basin”. Their fix periodically forks the agent into parallel trajectories that keep the workspace but start with a fresh chat context, then continues from the best one. Across 13 long-horizon tasks at equal compute, they report a 66% relative gain over a single run and 44% over best-of-N.
+
+- Type: Preprint
+- Published: 05 Oct 2026
+- Resource: [Fork-and-Flush: Escaping Idea Basins in Autoresearch Agents](https://arxiv.org/abs/2610.07447)
+- OP: not yet verified
+- Topics: Agents, Scientific discovery, Research taste
+- Margin note: Think of a hiker who only ever steps uphill from where they stand: they reach the top of the nearest hill, not the highest one. A fresh context is a new starting point on the map.
+
+#### Scaling Discovery Requires Forgetting
+
+Tan, Dimakis, Zaharia and colleagues at Berkeley show that running an autoresearch agent longer, running agents in parallel, or letting them talk all plateau, because agents anchor on their growing history. On AHC014, edits shrink from about 150 lines to 30 per proposal and thinking tokens from about 28k to 7k per turn. Their fix is to make the whole team periodically forget everything except the best candidate so far. Across four tasks (AHC014, Frontier-CS, Anthropic's VLIW kernel challenge and nanochat autoresearch), they report averages about 10% above parallel agents and 22% above a single agent.
+
+- Type: Preprint
+- Published: 14 Oct 2026
+- Resource: [Scaling Discovery Requires Forgetting](https://arxiv.org/abs/2610.20563)
+- OP: [Shangyin Tan on X](https://x.com/ShangyinT/status/2110771398209863821)
+- Topics: Agents, Scientific discovery, Research taste
+- Margin note: Fork-and-Flush keeps the workspace and clears the chat. This paper clears both and keeps only the best answer. Shrinking edit sizes are a measurable symptom of an agent getting stuck.
+- Alex Dimakis on X: https://x.com/AlexGDimakis/status/2110808302796108249
+
 ### A conversation: the future of mathematics
 
 Litt’s essay and doomslide’s response, followed by Gowers and Hairer on mathematical values and institutional engagement.

@@ -39,7 +39,8 @@ html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 var(--sans)}
 a{color:var(--accent)}
 .wrap{max-width:1180px;margin:0 auto;padding:0 16px}
-header.hero{padding:56px 0 24px}
+header.hero{padding:40px 0 4px}
+header.hero .sub{margin:10px 0 0}
 .kicker{font:600 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
 h1{font:600 clamp(32px,5vw,48px)/1.1 var(--serif);margin:12px 0 12px;letter-spacing:-.01em}
 h2{font:600 28px/1.2 var(--serif);margin:56px 0 8px}
@@ -134,6 +135,7 @@ button.sm:hover{border-color:var(--muted)}
 details.ideal{margin:6px 0 16px;border:1px solid var(--line);border-radius:12px;padding:10px 14px;background:var(--bg)}
 details.ideal summary{cursor:pointer;font-weight:600;font-size:14px}
 details.ideal .body{white-space:pre-wrap;font-size:14px;margin-top:8px}
+@media (max-width:600px){#filters{display:grid;grid-template-columns:1fr 1fr}#filters select,#filters button{width:100%;min-width:0}}
 .searchrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
 .searchrow input{flex:1;min-width:220px;font-size:16px;padding:11px 14px;border-radius:10px}
 .selbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:4px 0 14px;font-size:14px;color:var(--muted)}
@@ -168,11 +170,42 @@ footer{color:var(--muted);font-size:13px;padding:48px 0 40px}
 <header class="hero">
   <div class="kicker">Benchmark explorer</div>
   <h1>HealthBench, up close</h1>
-  <p class="lede">HealthBench is OpenAI's open benchmark of health conversations. Each one ends at the moment an AI has to reply, and comes with a rubric that physicians wrote for that exact conversation. This page lets you read the 482 longest conversations next to their rubrics, search them by meaning, grade a response yourself, and download any of them.</p>
-  <div class="tiles" id="tiles"></div>
+  <p class="lede">OpenAI's benchmark of health conversations. Each one stops where an AI has to reply and is graded against a rubric physicians wrote for it. Search and filter the 482 longest below, grade a reply yourself, or download any of them. <a href="#grading">How grading works</a> is further down.</p>
+  <p class="sub" id="sampleNote" style="font-size:14px"></p>
 </header>
 
-<section class="prose">
+<section id="explore" style="scroll-margin-top:12px">
+  <div class="searchrow">
+    <input type="search" id="fSearch" placeholder="Search by meaning or words, e.g. “toddler with fever at night”" aria-label="Search conversations">
+    <select id="fMode" aria-label="Search mode"><option value="hybrid">Hybrid (BM25 + semantic)</option><option value="bm25">Keyword only (BM25)</option><option value="semantic">Semantic only</option></select>
+  </div>
+  <p class="cap" id="semStatus" style="margin:6px 0 0"></p>
+  <div class="filters" id="filters"></div>
+  <div class="selbar">
+    <span id="countShown"></span>
+    <button class="sm" type="button" id="selShown">Select all shown</button>
+    <button class="sm" type="button" id="selNone">Clear selection</button>
+    <span class="selcount" id="selCount">0 selected</span>
+    <button class="sm primary" type="button" id="dlJsonl" disabled>Download JSONL</button>
+    <button class="sm" type="button" id="dlJson" disabled>Download JSON</button>
+  </div>
+  <div class="explorer">
+    <div class="list" id="list" aria-label="Conversations"></div>
+    <div class="detail card" id="detail"></div>
+  </div>
+</section>
+
+<section>
+  <h2>About these conversations</h2>
+  <div class="tiles" id="tiles"></div>
+  <div class="grid2" style="margin:20px 0 8px">
+    <div class="card"><h3>These conversations by medical specialty</h3><p class="cap" style="margin:0 0 10px">HealthBench has no specialty field. Claude read each conversation's user messages and assigned one specialty, language and user type (<a href="labels.json">labels.json</a>). Click a bar to filter.</p><div class="bars" id="chartSpec"></div></div>
+    <div class="card"><h3>Messages before the reply</h3><div id="chartLongTurns"></div><p class="cap" id="capLong"></p>
+      <h3 style="margin-top:22px">Language</h3><div class="bars" id="chartLang"></div></div>
+  </div>
+</section>
+
+<section class="prose" id="grading">
   <h2>How a conversation is graded</h2>
   <p>There is no single correct answer. Instead, every conversation carries its own list of <strong>rubric criteria</strong>. Each criterion is one checkable statement about the next reply, such as "advises calling emergency services immediately", and has a point value from −10 to +10. Positive points reward something a good reply does. Negative points penalize something a bad reply does, like recommending an unsafe dose.</p>
   <p>A model writes the final assistant turn. A grader model (GPT-4.1 in the official setup) then reads the conversation plus one criterion at a time and answers a yes/no question: <em>is this criterion met?</em> It answers for negative criteria in the same literal way, so "is overly verbose" is <em>met</em> only when the reply really is verbose.</p>
@@ -211,33 +244,6 @@ footer{color:var(--muted);font-size:13px;padding:48px 0 40px}
   </div>
 </section>
 
-<section id="explore">
-  <h2>Read the longest conversations</h2>
-  <p class="sub" id="sampleNote"></p>
-  <div class="grid2" style="margin:16px 0 8px">
-    <div class="card"><h3>These conversations by medical specialty</h3><p class="cap" style="margin:0 0 10px">HealthBench has no specialty field. Claude read each conversation's user messages and assigned one specialty, language and user type (<a href="labels.json">labels.json</a>). Click a bar to filter.</p><div class="bars" id="chartSpec"></div></div>
-    <div class="card"><h3>Messages before the reply</h3><div id="chartLongTurns"></div><p class="cap" id="capLong"></p>
-      <h3 style="margin-top:22px">Language</h3><div class="bars" id="chartLang"></div></div>
-  </div>
-  <div class="searchrow">
-    <input type="search" id="fSearch" placeholder="Search by meaning or words, e.g. “toddler with fever at night”" aria-label="Search conversations">
-    <select id="fMode" aria-label="Search mode"><option value="hybrid">Hybrid (BM25 + semantic)</option><option value="bm25">Keyword only (BM25)</option><option value="semantic">Semantic only</option></select>
-  </div>
-  <p class="cap" id="semStatus" style="margin:6px 0 0"></p>
-  <div class="filters" id="filters"></div>
-  <div class="selbar">
-    <span id="countShown"></span>
-    <button class="sm" type="button" id="selShown">Select all shown</button>
-    <button class="sm" type="button" id="selNone">Clear selection</button>
-    <span class="selcount" id="selCount">0 selected</span>
-    <button class="sm primary" type="button" id="dlJsonl" disabled>Download JSONL</button>
-    <button class="sm" type="button" id="dlJson" disabled>Download JSON</button>
-  </div>
-  <div class="explorer">
-    <div class="list" id="list" aria-label="Conversations"></div>
-    <div class="detail card" id="detail"></div>
-  </div>
-</section>
 
 <section class="prose">
   <h2>Check your understanding</h2>

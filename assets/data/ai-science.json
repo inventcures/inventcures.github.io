@@ -655,6 +655,55 @@
       "group_title": "Biopharma",
       "group_order": 0,
       "group_note": "AI agents and benchmarks for drug development, biopharma operations and lab work beyond early discovery. Each entry retains its publication date."
+    },
+    {
+      "id": "fork-and-flush",
+      "title": "Fork-and-Flush: Escaping Idea Basins in Autoresearch Agents",
+      "type": "Preprint",
+      "date": "2026-10-05",
+      "date_precision": "day",
+      "url": "https://arxiv.org/abs/2610.07447",
+      "op_url": null,
+      "op_label": null,
+      "summary": "Cai, Papailiopoulos and colleagues find that independent runs of the same autoresearch agent on the same task end at very different scores, and that extra compute does not close the gap. Comparing solutions by what they do suggests each run stays inside a local “idea basin”. Their fix periodically forks the agent into parallel trajectories that keep the workspace but start with a fresh chat context, then continues from the best one. Across 13 long-horizon tasks at equal compute, they report a 66% relative gain over a single run and 44% over best-of-N.",
+      "tags": [
+        "Agents",
+        "Scientific discovery",
+        "Research taste"
+      ],
+      "group_id": "forgetting-autoresearch",
+      "group_title": "A thread: forgetting to escape idea basins",
+      "group_order": 0,
+      "group_role": "The idea-basins paper",
+      "group_note": "Two papers ten days apart reach the same answer: long-running research agents get stuck refining their own past ideas, and the cure is to forget. Read Fork-and-Flush first, then the more aggressive version.",
+      "margin_note": "Think of a hiker who only ever steps uphill from where they stand: they reach the top of the nearest hill, not the highest one. A fresh context is a new starting point on the map."
+    },
+    {
+      "id": "scaling-discovery-forgetting",
+      "title": "Scaling Discovery Requires Forgetting",
+      "type": "Preprint",
+      "date": "2026-10-14",
+      "date_precision": "day",
+      "url": "https://arxiv.org/abs/2610.20563",
+      "op_url": "https://x.com/ShangyinT/status/2110771398209863821",
+      "op_label": "Shangyin Tan on X",
+      "related_urls": [
+        "https://x.com/AlexGDimakis/status/2110808302796108249"
+      ],
+      "related_labels": {
+        "https://x.com/AlexGDimakis/status/2110808302796108249": "Alex Dimakis on X"
+      },
+      "summary": "Tan, Dimakis, Zaharia and colleagues at Berkeley show that running an autoresearch agent longer, running agents in parallel, or letting them talk all plateau, because agents anchor on their growing history. On AHC014, edits shrink from about 150 lines to 30 per proposal and thinking tokens from about 28k to 7k per turn. Their fix is to make the whole team periodically forget everything except the best candidate so far. Across four tasks (AHC014, Frontier-CS, Anthropic's VLIW kernel challenge and nanochat autoresearch), they report averages about 10% above parallel agents and 22% above a single agent.",
+      "tags": [
+        "Agents",
+        "Scientific discovery",
+        "Research taste"
+      ],
+      "group_id": "forgetting-autoresearch",
+      "group_title": "A thread: forgetting to escape idea basins",
+      "group_order": 1,
+      "group_role": "The forgetting paper",
+      "margin_note": "Fork-and-Flush keeps the workspace and clears the chat. This paper clears both and keeps only the best answer. Shrinking edit sizes are a measurable symptom of an agent getting stuck."
     }
   ]
 }

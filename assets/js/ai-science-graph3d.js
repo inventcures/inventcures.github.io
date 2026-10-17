@@ -109,7 +109,7 @@ function build(data) {
   edges.forEach(e => { e.a.deg++; e.b.deg++; e.a.out.push(e); e.b.inc.push(e); });
   const P = layout(nodes.map(n => n.type), edges.map(e => [e.a.i, e.b.i, e.r === 'tagged' ? 1 : 0]));
   let radius = 0;
-  nodes.forEach(n => { n.pos = new THREE.Vector3(P[n.i * 3], P[n.i * 3 + 1], P[n.i * 3 + 2]); radius = Math.max(radius, n.pos.length()); });
+  nodes.forEach(n => { n.base = new THREE.Vector3(P[n.i * 3], P[n.i * 3 + 1], P[n.i * 3 + 2]); n.pos = n.base.clone(); n.phase = n.i * 2.399963; radius = Math.max(radius, n.base.length()); });
   const hubs = [...nodes].sort((a, b) => b.deg - a.deg);
   const neighbours = n => [...new Set([...n.out.map(e => e.b), ...n.inc.map(e => e.a)])].sort((a, b) => b.deg - a.deg);
 
@@ -119,12 +119,12 @@ function build(data) {
   renderer.setClearColor(0x000000, 0);
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(50, 1, 1, radius * 20);
-  const overviewDist = radius * 1.9;
+  const overviewDist = radius * 1.5;
   camera.position.set(0, radius * 0.35, overviewDist);
   const controls = new OrbitControls(camera, canvas);
   controls.enableDamping = true; controls.dampingFactor = 0.08;
   controls.minDistance = 30; controls.maxDistance = radius * 4;
-  controls.autoRotate = !reduceMotion; controls.autoRotateSpeed = 0.1; // about 0.6° a second
+  controls.autoRotate = !reduceMotion; controls.autoRotateSpeed = 0.35; // about 2° a second, enough to show the parallax
   canvas.style.touchAction = 'pan-y'; // a vertical swipe still scrolls the page; sideways swipes orbit
 
   // Nodes as additive sprites with fake depth of field
@@ -147,6 +147,15 @@ function build(data) {
   }
   const dustGeo = new THREE.BufferGeometry(); dustGeo.setAttribute('position', new THREE.BufferAttribute(dust, 3));
   scene.add(new THREE.Points(dustGeo, new THREE.PointsMaterial({ color: 0xc8d0ff, size: 1.6, sizeAttenuation: false, transparent: true, opacity: 0.3, depthWrite: false })));
+
+  // Ambient bokeh: large, very soft discs that drift slowly through the space, in front of and behind the graph
+  const palette = ['#ff8a6b', '#f06f8f', '#8fa6ff', '#b79cff', '#a9a3c4'];
+  const ambient = Array.from({ length: small ? 22 : 44 }, (_, i) => {
+    const mat = new THREE.SpriteMaterial({ map: tex[3], color: new THREE.Color(palette[i % palette.length]), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0.05 + rand() * 0.08 });
+    const sp = new THREE.Sprite(mat), s = radius * (0.12 + rand() * 0.3);
+    sp.scale.set(s, s, 1); scene.add(sp);
+    return { sp, r: radius * (0.5 + rand() * 1.3), th: rand() * Math.PI * 2, y: (rand() * 2 - 1) * radius * 0.9, w: (rand() < 0.5 ? -1 : 1) * (0.01 + rand() * 0.03), bob: rand() * 6 };
+  });
 
   // Focus ring, hover ring, link lines
   const ringTex = ringTexture();
@@ -180,6 +189,16 @@ function build(data) {
     renderer.setSize(W, H, false);
     camera.aspect = W / H; camera.updateProjectionMatrix();
   }
+  // On wide screens the space breaks out of the reading column to fill the main area
+  function fitWidth() {
+    host.style.marginLeft = host.style.width = '';
+    const main = root.closest('.st-main');
+    if (!main || innerWidth < 900 || host.hidden) return;
+    const m = main.getBoundingClientRect(), p = host.parentElement.getBoundingClientRect(), gutter = 24;
+    host.style.marginLeft = (m.left + gutter - p.left) + 'px';
+    host.style.width = (m.width - 2 * gutter) + 'px';
+  }
+  addEventListener('resize', fitWidth);
   new ResizeObserver(resize).observe(host);
   resize();
 
@@ -215,7 +234,7 @@ function build(data) {
       n.inc.forEach(e => { if (!hidden.has(e.a.type)) linkList.push({ to: e.a, col: IN_COLOR }); });
       linkT = reduceMotion ? 1 : 0;
       const near = new Set(neighbours(n)); near.add(n);
-      nodes.forEach(m => { m.lit = near.has(m) ? 1 : 0.32; });
+      nodes.forEach(m => { m.lit = near.has(m) ? 1 : 0.2; });
       if (fly) flyToNode(n);
     } else {
       nodes.forEach(m => { m.lit = 1; });
@@ -328,7 +347,8 @@ function build(data) {
     if (touring) { tourNext(); }
   }
   function tourNext() {
-    const list = hubs.filter(n => !hidden.has(n.type)).slice(0, 12);
+    // the tour visits the best-connected readings, whose links mostly point outwards
+    const list = hubs.filter(n => n.type === 'resource' && !hidden.has(n.type)).slice(0, 12);
     if (!list.length) return;
     const n = list[tourIdx++ % list.length];
     setFocus(n); // the tour does not rewrite the URL or the panel below
@@ -360,7 +380,7 @@ function build(data) {
     }
     controls.update(dt);
 
-    if (!interacted && !reduceMotion) { idle += dt; if (idle > 4 && !touring && !focus) setTour(true); }
+    if (!interacted && !reduceMotion) { idle += dt; if (idle > 2.5 && !touring && !focus) setTour(true); }
     if (touring) { tourTimer += dt; if (tourTimer > 7) { tourTimer = 0; tourNext(); } }
 
     if (hoverXY) { const n = pick(hoverXY[0], hoverXY[1], 6); hover = n; canvas.style.cursor = n ? 'pointer' : ''; }
@@ -368,8 +388,16 @@ function build(data) {
     // Depth of field: blur by distance from the focal plane, which sits at the focus node or the orbit centre
     camera.getWorldDirection(camDir);
     const focalDepth = (focus ? v.subVectors(focus.pos, camera.position).dot(camDir) : v.subVectors(controls.target, camera.position).dot(camDir));
-    const range = radius * 0.9;
+    const range = radius * 0.75;
+    const drift = reduceMotion ? 0 : 2.5, ts = now / 1000;
+    for (const a of ambient) {
+      if (!reduceMotion) a.th += a.w * dt;
+      a.sp.position.set(a.r * Math.cos(a.th), a.y + 8 * Math.sin(ts * 0.3 + a.bob), a.r * Math.sin(a.th));
+    }
     for (const n of nodes) {
+      // each node floats gently around its place in the layout
+      n.pos.set(n.base.x + drift * Math.sin(ts * 0.5 + n.phase), n.base.y + drift * Math.sin(ts * 0.37 + n.phase * 1.3), n.base.z + drift * Math.cos(ts * 0.43 + n.phase));
+      n.sprite.position.copy(n.pos);
       n.vis += (n.visTarget - n.vis) * Math.min(1, dt * 8);
       const depth = v.subVectors(n.pos, camera.position).dot(camDir);
       const blur = Math.min(1, Math.abs(depth - focalDepth) / range);
@@ -379,7 +407,7 @@ function build(data) {
       // fade anything that drifts right up to the lens so it does not swamp the frame
       const nearFade = Math.min(1, Math.max(0, (depth - 25) / 90));
       n.mat.opacity = (0.95 - 0.67 * blur) * lit * n.vis * nearFade;
-      const s = n.size * 2.6 * (1 + 0.8 * blur);
+      const s = n.size * 1.9 * (1 + 0.7 * blur);
       n.sprite.scale.set(s, s, 1);
       n.sprite.visible = n.vis > 0.02;
     }
@@ -387,7 +415,7 @@ function build(data) {
     if (focus) {
       ring.visible = true; ring.position.copy(focus.pos);
       const pulse = reduceMotion ? 1 : 1 + 0.08 * Math.sin(now / 1000 * Math.PI * 2 / 2.4);
-      const s = focus.size * 2.6 * pulse; ring.scale.set(s, s, 1);
+      const s = focus.size * 1.9 * pulse; ring.scale.set(s, s, 1);
       linkT = Math.min(1, linkT + dt / 0.6);
       const e = ease(linkT);
       linkList.forEach((l, i) => {
@@ -397,7 +425,7 @@ function build(data) {
       });
       linkGeo.attributes.position.needsUpdate = true; linkGeo.attributes.color.needsUpdate = true;
     } else ring.visible = false;
-    if (hover && hover !== focus) { hoverRing.visible = true; hoverRing.position.copy(hover.pos); const s = hover.size * 2.6 * 0.95; hoverRing.scale.set(s, s, 1); } else hoverRing.visible = false;
+    if (hover && hover !== focus) { hoverRing.visible = true; hoverRing.position.copy(hover.pos); const s = hover.size * 1.9 * 0.95; hoverRing.scale.set(s, s, 1); } else hoverRing.visible = false;
 
     renderer.render(scene, camera);
     placeLabels();
@@ -449,7 +477,7 @@ function build(data) {
     root.querySelector('.kg-stage').hidden = mode === '3d';
     modeBtns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mode === mode)));
     if (mode === '3d') {
-      resize();
+      fitWidth(); resize();
       const b = bus(), id = pendingId ?? (b && b.selected && b.selected());
       pendingId = null;
       if (id && byId.has(id) && byId.get(id) !== focus) { setFocus(byId.get(id), { fly: false }); flyToNode(focus, 0); }

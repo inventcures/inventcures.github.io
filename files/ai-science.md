@@ -10,6 +10,54 @@ Dates are first public posting/publication where verified; talks use upload date
 
 ## Reading list
 
+### Google Research: building blocks for autonomous wet labs
+
+One blog post and three papers released together. Start with the overview, then read how the lab is made checkable (VERID), how a fast loop exposes agent shortcuts (aptamers), and how a human–agent split cuts design cost (epitope excision).
+
+#### Grounding AI agents in biological reality: Building blocks for autonomous wet labs
+
+Pooja Rao, Petar Sirkovic and Annalisa Pawlosky argue that agents should run wet-lab experiments, learn from the results and improve, with humans directing. Two things block this: models reason poorly about 3D geometry and physical state, and wet-lab validation lags far behind in-silico design. The post introduces three building blocks: a verified digital twin of the lab (VERID), DNA aptamers as a fast closed-loop sandbox, and agent-guided epitope excision for cheaper protein binder design. Safety measures include non-infectious testbeds, biosecurity screening of every sequence, simulated dry runs before any robot command, and human sign-off.
+
+- Type: Blog post
+- Published: 16 Oct 2026
+- Resource: [Grounding AI agents in biological reality: Building blocks for autonomous wet labs](https://research.google/blog/grounding-ai-agents-in-biological-reality-building-blocks-for-autonomous-wet-labs/)
+- OP: not yet verified
+- Topics: Biology, Agents, Biopharma, Human–AI collaboration, Verification
+- Margin note: The theme is grounding: agents may not act on the world until a simulator, a sequencer or a binding assay can say whether they were right. Full autonomy is called an open problem; humans set strategy and authorize runs.
+
+#### VERID: VERified Infrastructure for Discovery Laboratories
+
+A semantic digital twin of a robotic workcell, built on PyLabRobot, that tracks arm geometry, well volumes, reagents and tip inventory as a live 3D state tree. Agents dry-run protocols in seconds, and safety checks block invalid commands before they reach the robot; synchronized video and action logs support debugging. In the case studies reported in the blog, the simulator rejected an aspiration that would not fit a trough, the agent recovered from a plate-reader failure without re-pipetting, and a self-play campaign improved dye-mixture reconstruction more than fivefold. Summary from the Google blog; the PDF has not yet been read here.
+
+- Type: Paper
+- Published: 16 Oct 2026
+- Resource: [VERID: VERified Infrastructure for Discovery Laboratories](https://www.gstatic.com/science-ai/verid_semantic_lab.pdf)
+- OP: not yet verified
+- Topics: Biology, Agents, Verification, Infrastructure
+- Margin note: A digital twin is a verifier for physical actions: it can say “this will collide” or “that well is empty” before reagents are spent. It turns part of lab work from judgement into checking.
+
+#### Aptamers as a sandbox for lab-in-the-loop agentic molecular discovery
+
+DNA aptamers can be synthesized in pools and read out by sequencing, so a design–test–analyze cycle takes about 7–10 days. Over three rounds against α-thrombin, the agents' hit rate went from 0% (primer overhangs broke folding) to 42.1% at 98.5% specificity. Against myoglobin, agents chasing raw affinity filled round 2 with sticky G-quadruplex designs and specificity fell from 75.0% to 19.1%; they spotted the artifact, capped those motifs and recovered to 72.4% specificity with a 33.5% on-target hit rate. Figures as reported in the Google blog; the PDF has not yet been read here.
+
+- Type: Paper
+- Published: 16 Oct 2026
+- Resource: [Aptamers as a sandbox for lab-in-the-loop agentic molecular discovery](https://www.gstatic.com/science-ai/agentic_aptamer_sandbox.pdf)
+- OP: not yet verified
+- Topics: Biology, Agents, Biopharma, Verification
+- Margin note: Myoglobin round 2 is Goodhart in a test tube: told to maximize binding, the agents found molecules that stick to everything. The wet lab caught it, because specificity was measured alongside affinity.
+
+#### Agent-guided epitope excision enables economical de novo binder design
+
+Designing binders to FAP, a large receptor overexpressed in solid tumors, the team re-folds only the local binding pocket instead of the whole target, speeding structure prediction 8.6x without losing accuracy. At equal compute, a scientist setting strategy with an agent executing tactics nearly doubled the in-silico hit rate of the scientist alone, across more target sites. Yeast display with FACS then gave single-digit nanomolar binders in a few experimental runs. Figures as reported in the Google blog; the PDF has not yet been read here.
+
+- Type: Paper
+- Published: 16 Oct 2026
+- Resource: [Agent-guided epitope excision enables economical de novo binder design](https://www.gstatic.com/science-ai/epitope_excision.pdf)
+- OP: not yet verified
+- Topics: Biology, Agents, Biopharma, Human–AI collaboration
+- Margin note: Folding cost grows with the square of target length, so trimming a target to a pocket one-seventh its size cuts that term about 49-fold (the reported end-to-end speedup is 8.6x). The human sets strategy and the agent executes tactics: a division of labor, not full autonomy.
+
 ### The Agentic Scientist: Orchestrating Coding Agents for Automated Scientific (Co-)Discovery
 
 Wraps off-the-shelf coding agents in an explicit research loop, with pre-registered rubrics, parallel workers sharing a memory and ablations of the winning program, so they behave less like hyperparameter optimizers. Sakana reports an ALIFE 2026 oral on Error Diffusion with humans setting questions and verifying claims, plus autonomous gains on Doc-to-LoRA retrieval and learned evolution strategies.

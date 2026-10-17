@@ -25,7 +25,7 @@
     const edges = data.edges.map(e => ({ ...e, a: byId.get(e.s), b: byId.get(e.t) }));
     edges.forEach(e => { e.a.deg++; e.b.deg++; e.a.links.push(e); e.b.links.push(e); });
     // The viewBox matches the rendered size so labels stay at real pixel sizes; forces scale with the area.
-    const W = Math.max(320, Math.round(svg.clientWidth || 760)), H = Math.round(Math.min(680, Math.max(440, W * 0.72)));
+    const W = Math.max(320, Math.round(svg.clientWidth || root.clientWidth || 760)), H = Math.round(Math.min(680, Math.max(440, W * 0.72)));
     const S = Math.sqrt(W * H / (900 * 640));
     const hidden = new Set();
     let selected = null, query = [];
@@ -158,6 +158,7 @@
         hidden.has(type) ? hidden.delete(type) : hidden.add(type);
         b.setAttribute('aria-pressed', String(!hidden.has(type)));
         if (selected && hidden.has(selected.type)) select(null); else paint();
+        announceTypes();
       });
       legend.append(b);
     });
@@ -204,12 +205,16 @@
 
     function select(id) {
       selected = id ? byId.get(id) : null;
-      if (selected && hidden.has(selected.type)) { hidden.delete(selected.type); [...legend.children].forEach(b => { if (b.classList.contains('kg-' + selected.type)) b.setAttribute('aria-pressed', 'true'); }); }
+      if (selected && hidden.has(selected.type)) { hidden.delete(selected.type); [...legend.children].forEach(b => { if (b.classList.contains('kg-' + selected.type)) b.setAttribute('aria-pressed', 'true'); }); announceTypes(); }
       paint(); renderPanel();
       const url = new URL(location.href);
       selected ? url.searchParams.set('node', selected.id) : url.searchParams.delete('node');
       history.replaceState(null, '', url);
+      root.dispatchEvent(new CustomEvent('kg:select', { detail: { id: selected ? selected.id : null } }));
     }
+    const announceTypes = () => root.dispatchEvent(new CustomEvent('kg:types', { detail: { hidden: [...hidden] } }));
+    // Shared controller for the 3D view (ai-science-graph3d.js), which drives selection through here.
+    window.aiScienceGraph = { select, selected: () => selected && selected.id, hidden: () => [...hidden] };
 
     function renderPanel() {
       panel.replaceChildren();

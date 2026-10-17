@@ -266,7 +266,7 @@ function build(data) {
     if (!focus) {
       card.classList.add('is-intro');
       card.append(h('p', 'kg3d-eyebrow', 'Knowledge graph · ' + nodes.length + ' nodes · ' + edges.length + ' links'));
-      card.append(h('p', 'kg3d-body', small ? 'Tap a glowing node to follow its connections. Swipe sideways to turn the space and pinch to zoom.' : 'Click a glowing node to follow its connections. Drag to orbit, right-drag to pan, scroll to zoom.'));
+      card.append(h('p', 'kg3d-body', small ? 'Tap a glowing node to follow its connections. Swipe sideways to turn the space, twist two fingers to rotate it, and pinch to zoom.' : 'Click a glowing node to follow its connections. Drag to turn the space and flick to set it spinning. Shift-drag or ↺ ↻ rotates it clockwise or anticlockwise; scroll to zoom.'));
       return;
     }
     card.classList.remove('is-intro');
@@ -310,12 +310,50 @@ function build(data) {
     }
     return best;
   }
-  let down = null;
-  canvas.addEventListener('pointerdown', ev => { down = { x: ev.clientX, y: ev.clientY, t: performance.now() }; userInput(); });
+  // Rotation by hand. A drag orbits the space and a flick leaves it spinning that way (clockwise or
+  // anticlockwise seen from above). Shift-drag, a two-finger twist or the ↺ ↻ buttons turn the picture
+  // itself clockwise or anticlockwise around its centre, also with momentum.
+  let down = null, spin = 0, rollVel = 0, twist = null;
+  const touches = new Map(), trail = [];
+  const centre = () => { const r = canvas.getBoundingClientRect(); v.copy(controls.target).project(camera); return [r.left + (v.x + 1) / 2 * W, r.top + (1 - v.y) / 2 * H]; };
+  const twistAngle = () => {
+    if (twist && twist.mouse) { const [cx, cy] = centre(); return Math.atan2(twist.y - cy, twist.x - cx); }
+    const [a, b] = [...touches.values()]; return Math.atan2(b[1] - a[1], b[0] - a[0]);
+  };
+  function rollBy(angle) {
+    // positive angle turns the picture clockwise on screen
+    q.setFromAxisAngle(camDir2.copy(camera.position).sub(controls.target).normalize(), -angle);
+    for (const n of nodes) n.base.sub(controls.target).applyQuaternion(q).add(controls.target);
+  }
+  const q = new THREE.Quaternion(), camDir2 = new THREE.Vector3();
+  canvas.addEventListener('pointerdown', ev => {
+    if (ev.pointerType === 'touch') touches.set(ev.pointerId, [ev.clientX, ev.clientY]);
+    if (ev.shiftKey && ev.pointerType === 'mouse') { controls.enabled = false; twist = { mouse: true, x: ev.clientX, y: ev.clientY }; twist.a = twistAngle(); }
+    else if (touches.size === 2) { twist = { mouse: false }; twist.a = twistAngle(); }
+  }, { capture: true });
+  canvas.addEventListener('pointerdown', ev => { down = { x: ev.clientX, y: ev.clientY, t: performance.now() }; trail.length = 0; spin = 0; rollVel = 0; userInput(); });
+  canvas.addEventListener('pointermove', ev => {
+    if (ev.pointerType === 'touch' && touches.has(ev.pointerId)) touches.set(ev.pointerId, [ev.clientX, ev.clientY]);
+    if (twist && (twist.mouse ? ev.buttons : touches.size === 2)) {
+      if (twist.mouse) { twist.x = ev.clientX; twist.y = ev.clientY; }
+      const a = twistAngle(); let d = a - twist.a; d = Math.atan2(Math.sin(d), Math.cos(d)); twist.a = a;
+      rollBy(d); trail.push([performance.now(), d, 0]);
+    } else if (down) trail.push([performance.now(), 0, ev.clientX]);
+    while (trail.length && performance.now() - trail[0][0] > 120) trail.shift();
+  });
   canvas.addEventListener('pointerup', ev => {
+    touches.delete(ev.pointerId);
+    const now = performance.now(), recent = trail.filter(t => now - t[0] < 120), wasTwist = !!twist;
+    if (twist) { if (twist.mouse || touches.size < 2) { twist = null; controls.enabled = true; } }
+    if (!reduceMotion && recent.length > 1) {
+      const dt = (recent[recent.length - 1][0] - recent[0][0]) / 1000 || 0.016;
+      if (wasTwist) rollVel = Math.max(-4, Math.min(4, recent.reduce((s, t) => s + t[1], 0) / dt));
+      else { const vx = (recent[recent.length - 1][2] - recent[0][2]) / dt; if (Math.abs(vx) > 150) { spin = Math.max(-8, Math.min(8, vx / 60)); controls.autoRotate = true; } }
+    }
     if (!down) return;
     const moved = Math.hypot(ev.clientX - down.x, ev.clientY - down.y), quick = performance.now() - down.t < 600;
     down = null;
+    if (wasTwist) return;
     if (moved > 6 || !quick) return;
     const n = pick(ev.clientX, ev.clientY, ev.pointerType === 'touch' ? 16 : 8);
     select(n);
@@ -354,7 +392,12 @@ function build(data) {
     setFocus(n); // the tour does not rewrite the URL or the panel below
   }
   tourBtn.addEventListener('click', () => { interacted = true; setTour(!touring); });
-  resetBtn.addEventListener('click', () => { userInput(); select(null); });
+  resetBtn.addEventListener('click', () => { userInput(); spin = rollVel = 0; select(null); });
+  host.querySelectorAll('.kg3d-roll').forEach(b => b.addEventListener('click', () => {
+    userInput(); spin = 0;
+    const dir = +b.dataset.dir;
+    if (reduceMotion) rollBy(dir * Math.PI / 4); else rollVel = dir * 2.2; // about 45° per press once it settles
+  }));
   ['input', 'focus'].forEach(t => root.querySelector('#kg-search')?.addEventListener(t, () => { if (touring) setTour(false); interacted = true; }));
   root.querySelector('#kg-legend')?.addEventListener('click', () => { if (touring) setTour(false); interacted = true; });
   if (reduceMotion) tourBtn.hidden = true;
@@ -378,6 +421,9 @@ function build(data) {
       camera.position.lerpVectors(flight.fromC, flight.toC, e);
       if (t >= 1) flight = null;
     }
+    // momentum from a flick or a twist; a flicked spin settles to a slow turn in the same direction
+    if (spin) { spin += (Math.sign(spin) * 0.35 - spin) * Math.min(1, dt * 1.2); controls.autoRotateSpeed = spin; }
+    if (rollVel) { rollBy(rollVel * dt); rollVel *= Math.exp(-dt * 2.5); if (Math.abs(rollVel) < 0.01) rollVel = 0; }
     controls.update(dt);
 
     if (!interacted && !reduceMotion) { idle += dt; if (idle > 2.5 && !touring && !focus) setTour(true); }

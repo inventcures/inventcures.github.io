@@ -582,6 +582,9 @@
     ["google-wet-lab-agents", "related_to", "benchling-science-foundries", "agents driving workcells with human sign-off"],
     ["google-wet-lab-agents", "related_to", "gemini-real-world", "Google's agents moving from ideas to experiments"],
     ["google-wet-lab-agents", "related_to", "periodic-infrastructure", "autonomous labs as infrastructure"],
-    ["aptamer-sandbox", "related_to", "agentrun-grep", "measured checks catch what the optimizer games"]
+    ["aptamer-sandbox", "related_to", "agentrun-grep", "measured checks catch what the optimizer games"],
+    ["aptamer-sandbox", "related_to", "gemini-real-world", "two Goodhart cases: sticky binders here, verbosity exploits there"],
+    ["verid-semantic-lab", "discusses", "c-verification", "a deterministic veto between planner and robot"],
+    ["verid-semantic-lab", "related_to", "uncertainty-layer", "provenance for physical measurements"]
   ]
 }

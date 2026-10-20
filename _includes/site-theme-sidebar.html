@@ -1,4 +1,6 @@
-<aside class="st-sidebar">
+<script>(function(){var o=false;try{o=localStorage.getItem('st-nav')==='open'}catch(e){}if(!o)document.documentElement.classList.add('st-nav-collapsed')})();</script>
+<button type="button" class="st-nav-toggle" aria-controls="st-sidebar" aria-expanded="false" aria-label="Show menu"><span class="st-nav-icon" aria-hidden="true"></span><span class="st-nav-label">Menu</span></button>
+<aside class="st-sidebar" id="st-sidebar">
   <a href="{{ '/' | relative_url }}" class="st-identity"><img src="{{ '/images/tp53.jpeg' | relative_url }}" alt="{{ site.author.name | escape }}" width="132" height="132"><span>{{ site.author.name }}</span></a>
   <p class="st-bio">{{ site.author.bio }}</p>
   <nav aria-label="Main navigation"><ul>{% for item in site.data.navigation.main %}<li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>{% endfor %}</ul></nav>
@@ -12,4 +14,5 @@
     {% if site.author.bluesky %}<li><a href="https://bsky.app/profile/{{ site.author.bluesky }}">Bluesky</a></li>{% endif %}
   </ul></nav>
 </aside>
+<script>(function(){var d=document.documentElement,b=document.querySelector('.st-nav-toggle');function sync(){var open=!d.classList.contains('st-nav-collapsed');b.setAttribute('aria-expanded',open);b.setAttribute('aria-label',open?'Hide menu':'Show menu')}sync();b.addEventListener('click',function(){d.classList.toggle('st-nav-collapsed');try{localStorage.setItem('st-nav',d.classList.contains('st-nav-collapsed')?'closed':'open')}catch(e){}sync()})})();</script>
 <script src="{{ '/assets/js/new-tab-links.js' | relative_url }}" defer></script>

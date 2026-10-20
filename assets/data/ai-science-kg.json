@@ -196,7 +196,10 @@
     {"id": "m-aptamer-loop", "type": "method", "label": "Aptamer lab-in-the-loop", "description": "Pooled synthesis and sequencing readout give a 7–10 day design–test–analyze cycle."},
     {"id": "m-epitope-excision", "type": "method", "label": "Epitope excision", "description": "Re-fold only the local binding pocket of a large target to cut structure-prediction cost."},
     {"id": "m-biosecurity-screening", "type": "method", "label": "Biosecurity screening of designs", "description": "Every designed sequence is screened before synthesis."},
-    {"id": "c-strategy-tactics-split", "type": "concept", "label": "Human strategy, agent tactics", "description": "The scientist chooses where to aim; the agent executes and iterates within that choice."}
+    {"id": "c-strategy-tactics-split", "type": "concept", "label": "Human strategy, agent tactics", "description": "The scientist chooses where to aim; the agent executes and iterates within that choice."},
+    {"id": "p-grant-sanderson", "type": "person", "label": "Grant Sanderson", "description": "Creator of 3Blue1Brown, a YouTube channel of animated mathematics.", "url": "https://www.3blue1brown.com/"},
+    {"id": "c-proof-as-data", "type": "concept", "label": "Proof as raw data", "description": "Once machines generate proofs cheaply, a proof is treated like a numerical result: input for theory building, not the goal."},
+    {"id": "c-math-teaching", "type": "concept", "label": "Teaching as math’s funding base", "description": "Most money for mathematics comes from teaching, which sells problem-solving skill and the joy of the subject."}
   ],
   "edges": [
     ["litt-beginning-mathematics", "authored_by", "p-daniel-litt"],
@@ -585,6 +588,16 @@
     ["aptamer-sandbox", "related_to", "agentrun-grep", "measured checks catch what the optimizer games"],
     ["aptamer-sandbox", "related_to", "gemini-real-world", "two Goodhart cases: sticky binders here, verbosity exploits there"],
     ["verid-semantic-lab", "discusses", "c-verification", "a deterministic veto between planner and robot"],
-    ["verid-semantic-lab", "related_to", "uncertainty-layer", "provenance for physical measurements"]
+    ["verid-semantic-lab", "related_to", "uncertainty-layer", "provenance for physical measurements"],
+    ["3b1b-better-time-for-math", "authored_by", "p-grant-sanderson"],
+    ["3b1b-better-time-for-math", "proposes", "c-proof-as-data"],
+    ["3b1b-better-time-for-math", "discusses", "c-math-teaching"],
+    ["3b1b-better-time-for-math", "discusses", "c-credit-provenance", "credit assignment is what changes most"],
+    ["3b1b-better-time-for-math", "discusses", "c-human-understanding", "theory building over proof"],
+    ["3b1b-better-time-for-math", "discusses", "c-research-taste", "deciding which questions are worth asking"],
+    ["3b1b-better-time-for-math", "discusses", "c-scientific-institutions"],
+    ["3b1b-better-time-for-math", "related_to", "litt-beginning-mathematics", "same debate"],
+    ["3b1b-better-time-for-math", "related_to", "gowers-fields-letter", "same debate"],
+    ["c-proof-as-data", "related_to", "c-proof-indigestion"]
   ]
 }

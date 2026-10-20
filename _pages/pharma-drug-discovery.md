@@ -35,6 +35,12 @@ Essays and reports on how drugs get made, why it has become so hard, and where t
   </li>
 
   <li class="pd-item">
+    <h3><a href="https://deepphenotype.substack.com/p/drug-discovery-has-no-magic-wands" target="_blank" rel="noopener">Drug Discovery Has No Magic Wands</a></h3>
+    <p class="pd-meta">Daphne Koller · Deep Phenotype (insitro) · <time datetime="2026-08-03">3 Aug 2026</time></p>
+    <p class="pd-summary">Argues AI won't transform drug discovery by designing molecules faster, because the real bottleneck is finding the biology that actually changes human disease. Critiques four "magic wand" bets (molecule design, literature-mined hypotheses, closed-loop lab automation, faster trials) and makes the case for mapping causal human biology (<a href="https://x.com/DaphneKoller/status/2084497536434237904" target="_blank" rel="noopener">thread on X</a>).</p>
+  </li>
+
+  <li class="pd-item">
     <h3><a href="https://www.approved.fm/p/keytruda-how-mercks-pembrolizumab" target="_blank" rel="noopener">Keytruda: How Merck's Pembrolizumab Became the Best-Selling Cancer Drug of All Time</a></h3>
     <p class="pd-meta">Alex Kesin &amp; Matthew Pech · Approved podcast · <time datetime="2026-05-14">14 May 2026</time></p>
     <a href="https://www.approved.fm/p/keytruda-how-mercks-pembrolizumab" target="_blank" rel="noopener"><img class="pd-img" src="/images/approved-keytruda.jpg" alt="Approved podcast logo above a Keytruda (pembrolizumab) 50 mg box and vial" width="1200" height="784" loading="lazy"></a>

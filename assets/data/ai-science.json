@@ -1,6 +1,6 @@
 {
   "title": "AI × Science",
-  "updated": "2026-10-16",
+  "updated": "2026-10-20",
   "vision": [
     "I want a future in which AI agents help people ask better questions, explore more possibilities and turn reliable discoveries into benefits that reach more people. Science and mathematics offer extraordinary opportunities for this kind of collaboration, especially in medicine and biology, where better understanding can ultimately mean less suffering and more healthy life. I am interested in human–AI teams and collaborations across laboratories around the world, with each contributing strengths the others lack.",
     "Progress should deepen human agency and meaning: the freedom to choose what matters, understand the work, challenge an answer and share in discovery. That means evaluating evidence rather than just fluent output, preserving uncertainty and giving people real authority over consequential decisions. It also means designing against accidental harm and deliberate misuse, taking dual-use risks seriously, and making the benefits of scientific capability broadly accessible."
@@ -381,7 +381,9 @@
       "group_title": "A conversation: the future of mathematics",
       "group_order": 0,
       "group_role": "Daniel Litt’s essay",
-      "margin_note": "Protect mathematics’ values, not its institutions. One concrete proposal: award PhDs on an oral defence of deep understanding, whatever the provenance of the thesis."
+      "margin_note": "Protect mathematics’ values, not its institutions. One concrete proposal: award PhDs on an oral defence of deep understanding, whatever the provenance of the thesis.",
+      "group_note": "Start with Litt and doomslide’s response, then read Gowers and Hairer on mathematical values and institutional engagement. Close with Grant Sanderson’s video, which asks what survives if AI overtakes each part of a mathematician’s work. Each entry retains its publication date.",
+      "group_note_md": "Litt’s essay and doomslide’s response, followed by Gowers and Hairer on mathematical values and institutional engagement, and Grant Sanderson’s video on what survives if AI overtakes each part of a mathematician’s work."
     },
     {
       "id": "doomslide-mathematics",
@@ -815,6 +817,83 @@
       "group_order": 3,
       "group_role": "A cheaper design loop",
       "margin_note": "Folding cost grows with the square of target length, so trimming a target to a pocket one-seventh its size cuts that term about 49-fold (the reported end-to-end speedup is 8.6x). The human sets strategy and the agent executes tactics: a division of labor, not full autonomy."
+    },
+    {
+      "id": "3b1b-better-time-for-math",
+      "title": "There’s never been a better time to go into math",
+      "type": "Talk",
+      "date": "2026-10-16",
+      "date_precision": "day",
+      "url": "https://www.youtube.com/watch?v=LKrwhjOI8Nc",
+      "op_url": "https://x.com/3blue1brown/status/2111135480116850944",
+      "op_label": "3Blue1Brown · X announcement",
+      "summary": "Grant Sanderson (3Blue1Brown) lists what mathematicians do (prove theorems, pose questions, build theory, find applications, communicate), where math’s value lies (applications, transferable problem-solving, aesthetic joy) and where the money comes from (mostly teaching). He then supposes AI overtakes each layer in turn. His argument is that value and funding barely move while credit assignment has to change, and that a field openly looking for a new shape makes this the best moment to enter it.",
+      "tags": [
+        "Mathematics",
+        "Human agency",
+        "Human–AI collaboration",
+        "Scientific communication",
+        "Research taste"
+      ],
+      "related_urls": [
+        "/files/transcripts/3b1b-never-been-a-better-time-to-go-into-math.pdf",
+        "https://proofsandprompts.com/2026/10/08/100-reactions-to-100-solutions/"
+      ],
+      "related_labels": {
+        "/files/transcripts/3b1b-never-been-a-better-time-to-go-into-math.pdf": "Transcript (PDF, timestamped)",
+        "https://proofsandprompts.com/2026/10/08/100-reactions-to-100-solutions/": "Proofs and Prompts · 100 reactions to 100 solutions (cited in the video)"
+      },
+      "group_id": "future-of-mathematics",
+      "group_title": "A conversation: the future of mathematics",
+      "group_order": 4,
+      "group_role": "Grant Sanderson · advice for a math PhD student",
+      "margin_note": "Treat a proof as raw data, like more digits of π; the prize should go to whoever builds the theory around it. His advice for tomorrow: give lots of talks, and take a long walk with a fellow student to work out what you love about math.",
+      "discussion": {
+        "title": "What the replies on X said",
+        "note": "Read on 20 Oct 2026: 33 of the post’s 52 replies (the quote posts weren’t retrievable). The post had about 2.5K likes, 288 reposts, 59 quotes and 275K views.",
+        "items": [
+          {
+            "who": "@DmitriyDrichel",
+            "url": "https://x.com/DmitriyDrichel/status/2111156411904246155",
+            "text": "(most-liked reply) goes further than Grant: math is now “automatable, scalable and parallelizable”, so this is a golden age."
+          },
+          {
+            "who": "@MathWithShan",
+            "url": "https://x.com/MathWithShan/status/2111262851323289678",
+            "text": "a fellow math animator: if AI floods the world with proofs, the bottleneck moves from producing math to understanding it, so it is also the best time to explain it."
+          },
+          {
+            "who": "@LexiLearn_",
+            "url": "https://x.com/LexiLearn_/status/2111482874037989799",
+            "text": "and @Techboy_Wien: cheap proofs move the value to verification and make the mathematician an auditor, but who will pay people to understand why something is true?"
+          },
+          {
+            "who": "@tiozzo_giulio",
+            "url": "https://x.com/tiozzo_giulio/status/2111359075795525784",
+            "text": "pushes on the teaching pillar: society may decide it can outsource its thinking and stop valuing math teaching."
+          },
+          {
+            "who": "@Davidmdrpi",
+            "url": "https://x.com/Davidmdrpi/status/2111357123997450464",
+            "text": "the elegiac view: there will never be another Perelman, Gödel or Hilbert, “only HAL”. @CagatayCandan offers chess as the precedent to study."
+          },
+          {
+            "who": "@nicholas_diao",
+            "url": "https://x.com/nicholas_diao/status/2111146915836649786",
+            "text": "agrees, and points to his team’s open-sourced research on the Erdős problems (github.com/plasma-ai/erdos)."
+          },
+          {
+            "who": "@hadilq",
+            "url": "https://x.com/hadilq/status/2111510456393474473",
+            "text": "says the funding table misses money flowing from engineering, as with Euler and Gauss, and urges AI labs to hire mathematicians as engineers."
+          },
+          {
+            "who": "@alemmdrake",
+            "url": "https://x.com/alemmdrake/status/2111358397027332348",
+            "text": "asks the personal version: if video models made his videos 1.5× better, would Grant keep making them?"
+          }
+        ]
+      }
     }
   ]
 }

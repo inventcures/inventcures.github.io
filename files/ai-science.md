@@ -4,11 +4,84 @@ I want a future in which AI agents help people ask better questions, explore mor
 
 Progress should deepen human agency and meaning: the freedom to choose what matters, understand the work, challenge an answer and share in discovery. That means evaluating evidence rather than just fluent output, preserving uncertainty and giving people real authority over consequential decisions. It also means designing against accidental harm and deliberate misuse, taking dual-use risks seriously, and making the benefits of scientific capability broadly accessible.
 
-Updated: 2026-10-16
+Updated: 2026-10-20
 
 Dates are first public posting/publication where verified; talks use upload dates. Year-only dates retain their original precision. OP means an original author/team post or identified commentary. Missing posts are marked as unverified.
 
 ## Reading list
+
+### A conversation: the future of mathematics
+
+Litt’s essay and doomslide’s response, followed by Gowers and Hairer on mathematical values and institutional engagement, and Grant Sanderson’s video on what survives if AI overtakes each part of a mathematician’s work.
+
+#### A beginning for mathematics
+
+Distinguishes producing mathematical results from cultivating human understanding, and proposes rewarding research programs, learning and community-building as AI capabilities grow. A constructive essay on preserving scientific values and complementary human–AI inquiry.
+
+- Type: Essay
+- Published: 13 Sep 2026
+- Resource: [A beginning for mathematics](https://www.daniellitt.com/blog/2026/9/13/a-beginning-for-mathematics/)
+- OP: [Daniel Litt · X announcement thread](https://x.com/littmath/status/2099502187667673163)
+- Topics: Mathematics, Human agency, Human–AI collaboration, Research taste
+- Margin note: Protect mathematics’ values, not its institutions. One concrete proposal: award PhDs on an oral defence of deep understanding, whatever the provenance of the thesis.
+- Other version · Proofs and Prompts (14 Sep 2026): https://proofsandprompts.com/2026/09/14/a-beginning-for-mathematics/
+
+#### Mathematics is effectively dead
+
+A critical response to Litt focused on provenance, credit, accountable authorship and open mathematical discourse; its claims about private-data reuse and opaque proof workflows are conditional or speculative.
+
+- Type: Essay
+- Published: 17 Sep 2026
+- Resource: [Mathematics is effectively dead](https://doomslide.substack.com/p/mathematics-is-effectively-dead)
+- OP: [doomslide · author essay](https://doomslide.substack.com/p/mathematics-is-effectively-dead)
+- Topics: Mathematics, Governance, Scientific communication
+- Margin note: Accepts Litt’s goals but says credit breaks first. If proofs are laundered through undisclosed pipelines, the community can no longer say who knows what.
+- doomslide · X discussion cited in essay: https://x.com/doomslide/status/2095440935505010726
+
+#### Why I didn’t sign the Fields medallists’ letter
+
+Timothy Gowers defends a plurality of mathematical motivations, including problem-solving, while arguing that preserving the institutions supporting shared understanding matters more than restricting the supply of AI-generated results.
+
+- Type: Essay
+- Published: 17 Sep 2026
+- Resource: [Why I didn’t sign the Fields medallists’ letter](https://gowers.wordpress.com/2026/09/17/why-i-didnt-sign-the-fields-medallists-letter/)
+- OP: [Timothy Gowers · X author announcement](https://x.com/wtgowers/status/2100480035614343340)
+- Topics: Mathematics, Human agency, Governance
+- Margin note: Gowers treats credit problems as serious but temporary. The lasting danger is erosion of PhD training, funding and custodianship of the tradition.
+
+#### Why I agreed to join AGMAI
+
+Martin Hairer explains his decision to join the Advisory Group on Mathematics and Artificial Intelligence, describes its independence and advisory limits, and argues for engagement with AI labs to improve scholarship and represent community concerns.
+
+- Type: Essay
+- Published: 22 Sep 2026
+- Resource: [Why I agreed to join AGMAI](https://proofsandprompts.com/2026/09/22/why-i-agreed-to-join-agmai/)
+- OP: [Timothy Gowers · commentary on Hairer’s essay](https://x.com/wtgowers/status/2102510624219533693)
+- Topics: Mathematics, Governance, Scientific communication
+- Margin note: Hairer signed the Fields medallists’ statement and joined AGMAI: nine unpaid mathematicians in a purely advisory role. Complaining while refusing a channel would be hypocritical, he argues.
+- Same essay · guest post on Terence Tao’s blog: https://terrytao.wordpress.com/2026/09/22/why-i-agreed-to-join-agmai/
+
+#### There’s never been a better time to go into math
+
+Grant Sanderson (3Blue1Brown) lists what mathematicians do (prove theorems, pose questions, build theory, find applications, communicate), where math’s value lies (applications, transferable problem-solving, aesthetic joy) and where the money comes from (mostly teaching). He then supposes AI overtakes each layer in turn. His argument is that value and funding barely move while credit assignment has to change, and that a field openly looking for a new shape makes this the best moment to enter it.
+
+- Type: Talk
+- Uploaded: 16 Oct 2026
+- Resource: [There’s never been a better time to go into math](https://www.youtube.com/watch?v=LKrwhjOI8Nc)
+- OP: [3Blue1Brown · X announcement](https://x.com/3blue1brown/status/2111135480116850944)
+- Topics: Mathematics, Human agency, Human–AI collaboration, Scientific communication, Research taste
+- Margin note: Treat a proof as raw data, like more digits of π; the prize should go to whoever builds the theory around it. His advice for tomorrow: give lots of talks, and take a long walk with a fellow student to work out what you love about math.
+- Transcript (PDF, timestamped): https://inventcures.github.io/files/transcripts/3b1b-never-been-a-better-time-to-go-into-math.pdf
+- Proofs and Prompts · 100 reactions to 100 solutions (cited in the video): https://proofsandprompts.com/2026/10/08/100-reactions-to-100-solutions/
+- What the replies on X said: Read on 20 Oct 2026: 33 of the post’s 52 replies (the quote posts weren’t retrievable). The post had about 2.5K likes, 288 reposts, 59 quotes and 275K views.
+  - [@DmitriyDrichel](https://x.com/DmitriyDrichel/status/2111156411904246155) (most-liked reply) goes further than Grant: math is now “automatable, scalable and parallelizable”, so this is a golden age.
+  - [@MathWithShan](https://x.com/MathWithShan/status/2111262851323289678) a fellow math animator: if AI floods the world with proofs, the bottleneck moves from producing math to understanding it, so it is also the best time to explain it.
+  - [@LexiLearn_](https://x.com/LexiLearn_/status/2111482874037989799) and @Techboy_Wien: cheap proofs move the value to verification and make the mathematician an auditor, but who will pay people to understand why something is true?
+  - [@tiozzo_giulio](https://x.com/tiozzo_giulio/status/2111359075795525784) pushes on the teaching pillar: society may decide it can outsource its thinking and stop valuing math teaching.
+  - [@Davidmdrpi](https://x.com/Davidmdrpi/status/2111357123997450464) the elegiac view: there will never be another Perelman, Gödel or Hilbert, “only HAL”. @CagatayCandan offers chess as the precedent to study.
+  - [@nicholas_diao](https://x.com/nicholas_diao/status/2111146915836649786) agrees, and points to his team’s open-sourced research on the Erdős problems (github.com/plasma-ai/erdos).
+  - [@hadilq](https://x.com/hadilq/status/2111510456393474473) says the funding table misses money flowing from engineering, as with Euler and Gauss, and urges AI labs to hire mathematicians as engineers.
+  - [@alemmdrake](https://x.com/alemmdrake/status/2111358397027332348) asks the personal version: if video models made his videos 1.5× better, would Grant keep making them?
 
 ### Google Research: building blocks for autonomous wet labs
 
@@ -156,57 +229,6 @@ Tan, Dimakis, Zaharia and colleagues at Berkeley show that running an autoresear
 - Topics: Agents, Scientific discovery, Research taste
 - Margin note: Fork-and-Flush keeps the workspace and clears the chat. This paper clears both and keeps only the best answer. Shrinking edit sizes are a measurable symptom of an agent getting stuck.
 - Alex Dimakis on X: https://x.com/AlexGDimakis/status/2110808302796108249
-
-### A conversation: the future of mathematics
-
-Litt’s essay and doomslide’s response, followed by Gowers and Hairer on mathematical values and institutional engagement.
-
-#### A beginning for mathematics
-
-Distinguishes producing mathematical results from cultivating human understanding, and proposes rewarding research programs, learning and community-building as AI capabilities grow. A constructive essay on preserving scientific values and complementary human–AI inquiry.
-
-- Type: Essay
-- Published: 13 Sep 2026
-- Resource: [A beginning for mathematics](https://www.daniellitt.com/blog/2026/9/13/a-beginning-for-mathematics/)
-- OP: [Daniel Litt · X announcement thread](https://x.com/littmath/status/2099502187667673163)
-- Topics: Mathematics, Human agency, Human–AI collaboration, Research taste
-- Margin note: Protect mathematics’ values, not its institutions. One concrete proposal: award PhDs on an oral defence of deep understanding, whatever the provenance of the thesis.
-- Other version · Proofs and Prompts (14 Sep 2026): https://proofsandprompts.com/2026/09/14/a-beginning-for-mathematics/
-
-#### Mathematics is effectively dead
-
-A critical response to Litt focused on provenance, credit, accountable authorship and open mathematical discourse; its claims about private-data reuse and opaque proof workflows are conditional or speculative.
-
-- Type: Essay
-- Published: 17 Sep 2026
-- Resource: [Mathematics is effectively dead](https://doomslide.substack.com/p/mathematics-is-effectively-dead)
-- OP: [doomslide · author essay](https://doomslide.substack.com/p/mathematics-is-effectively-dead)
-- Topics: Mathematics, Governance, Scientific communication
-- Margin note: Accepts Litt’s goals but says credit breaks first. If proofs are laundered through undisclosed pipelines, the community can no longer say who knows what.
-- doomslide · X discussion cited in essay: https://x.com/doomslide/status/2095440935505010726
-
-#### Why I didn’t sign the Fields medallists’ letter
-
-Timothy Gowers defends a plurality of mathematical motivations, including problem-solving, while arguing that preserving the institutions supporting shared understanding matters more than restricting the supply of AI-generated results.
-
-- Type: Essay
-- Published: 17 Sep 2026
-- Resource: [Why I didn’t sign the Fields medallists’ letter](https://gowers.wordpress.com/2026/09/17/why-i-didnt-sign-the-fields-medallists-letter/)
-- OP: [Timothy Gowers · X author announcement](https://x.com/wtgowers/status/2100480035614343340)
-- Topics: Mathematics, Human agency, Governance
-- Margin note: Gowers treats credit problems as serious but temporary. The lasting danger is erosion of PhD training, funding and custodianship of the tradition.
-
-#### Why I agreed to join AGMAI
-
-Martin Hairer explains his decision to join the Advisory Group on Mathematics and Artificial Intelligence, describes its independence and advisory limits, and argues for engagement with AI labs to improve scholarship and represent community concerns.
-
-- Type: Essay
-- Published: 22 Sep 2026
-- Resource: [Why I agreed to join AGMAI](https://proofsandprompts.com/2026/09/22/why-i-agreed-to-join-agmai/)
-- OP: [Timothy Gowers · commentary on Hairer’s essay](https://x.com/wtgowers/status/2102510624219533693)
-- Topics: Mathematics, Governance, Scientific communication
-- Margin note: Hairer signed the Fields medallists’ statement and joined AGMAI: nine unpaid mathematicians in a purely advisory role. Complaining while refusing a channel would be hypocritical, he argues.
-- Same essay · guest post on Terence Tao’s blog: https://terrytao.wordpress.com/2026/09/22/why-i-agreed-to-join-agmai/
 
 ### Self-Organizing Agent Teams Learn to Reason Together
 

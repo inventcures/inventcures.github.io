@@ -23,6 +23,13 @@ Essays and reports on how drugs get made, why it has become so hard, and where t
 <ul class="pd-list">
 
   <li class="pd-item">
+    <h3><a href="https://www.linkedin.com/pulse/ai-transforming-drug-discovery-wont-cure-all-vas-narasimhan-8dy9e/" target="_blank" rel="noopener">AI is transforming drug discovery, but it won't be a cure-all</a></h3>
+    <p class="pd-meta">Vas Narasimhan · CEO, Novartis · Reimagined (LinkedIn) · <time datetime="2026-10-20">20 Oct 2026</time></p>
+    <p class="pd-summary">AI won't change the pace of biology, but it can change how fast we learn from it: cut the information and operational latency around experiments, and lift the industry's ~8% probability of success toward 15% through earlier safety calls, better molecules and better patient selection. As molecules become abundant, deciding which ideas deserve investment becomes the new bottleneck (<a href="https://www.linkedin.com/posts/vasnarasimhan_maybe-rather-than-asking-when-ai-will-solve-ugcPost-7518233717291503616-BOiL/" target="_blank" rel="noopener">LinkedIn post</a>).</p>
+    <p class="pd-summary"><strong>Dave Ricks (CEO, Eli Lilly) replies:</strong> AI will help conquer disease, but it needs time, effort and lots of data that doesn't exist yet, and robotic labs will make scaling that data more tractable (<a href="https://x.com/DaveARicks/status/2112516340833751349" target="_blank" rel="noopener">post on X</a>).</p>
+  </li>
+
+  <li class="pd-item">
     <h3><a href="https://research.dimensioncap.com/p/six-nanometers-apart" target="_blank" rel="noopener">Six Nanometers Apart</a></h3>
     <p class="pd-meta">Frank Gao · Dimension Research · <time datetime="2026-10-19">19 Oct 2026</time></p>
     <p class="pd-summary">Argues that mapping the cell surface (which proteins are there, which sit next to each other, and where a bound drug travels next) can guide more precise medicines, using HER2's path from trastuzumab to ADCs as the worked example.</p>

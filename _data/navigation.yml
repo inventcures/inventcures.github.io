@@ -15,11 +15,17 @@ main:
   - title: "AI Agents"
     url: /agents/
 
+  - title: "Healthcare AI"
+    url: /healthcare-ai/
+
   - title: "Clinical Reasoning"
     url: /clinical-reasoning/
 
   - title: "Protein Design"
     url: /protein-design/
+
+  - title: "Pharma & Drug Discovery"
+    url: /pharma-drug-discovery/
 
   - title: "Open Problems"
     url: /iml-project-ideas/

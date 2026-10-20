@@ -12,6 +12,7 @@ layout: single
   .pd-meta { margin: 0 0 0.5rem; font-size: 0.85rem; color: #666; }
   .pd-item p.pd-summary { margin: 0 0 0.5rem; }
   .pd-thread { font-size: 0.9rem; }
+  .pd-item p.pd-note { margin: 0 0 0.5rem; padding-left: 0.75rem; border-left: 3px solid #d1d5db; font-style: italic; color: #555; }
 </style>
 
 Essays and reports on how drugs get made, why it has become so hard, and where the industry is heading. Newest first.
@@ -32,13 +33,14 @@ Essays and reports on how drugs get made, why it has become so hard, and where t
 
   <li class="pd-item">
     <h3><a href="https://www.owlposting.com/p/the-ballad-of-tigit" target="_blank" rel="noopener">The ballad of TIGIT</a></h3>
-    <p class="pd-meta">Abhishaike Mahajan · Owl Posting · <time datetime="2026-05-26">26 May 2026</time></p>
+    <p class="pd-meta">Abhishaike Mahajan (<a href="https://x.com/owl_posting" target="_blank" rel="noopener">@owl_posting</a>) · Owl Posting · <time datetime="2026-05-26">26 May 2026</time></p>
     <p class="pd-summary">How TIGIT, hoped to be the next Keytruda, drew billions in parallel trials from Roche, Merck, GSK and others, and how nearly every program failed. A case study in industry herding, and in good science that still doesn't pan out.</p>
+    <p class="pd-note">Everything Owl Posting, aka Abhishaike Mahajan, writes is both a delight to read and will leave you smarter for having read it.</p>
   </li>
 
   <li class="pd-item">
     <h3><a href="https://www.owlposting.com/p/curious-cases-of-financial-engineering" target="_blank" rel="noopener">Curious cases of financial engineering in biotech</a></h3>
-    <p class="pd-meta">Abhishaike Mahajan · Owl Posting · <time datetime="2026-04-27">27 Apr 2026</time></p>
+    <p class="pd-meta">Abhishaike Mahajan (<a href="https://x.com/owl_posting" target="_blank" rel="noopener">@owl_posting</a>) · Owl Posting · <time datetime="2026-04-27">27 Apr 2026</time></p>
     <p class="pd-summary">A tour of the financial structures reshaping drug development: hub-and-spoke biotechs, royalty deals, priority review vouchers, CVRs and buyouts of failing biotechs. Asks whether all this pushes the industry toward legible, low-risk bets and away from the uncertain science behind real breakthroughs.</p>
     <p class="pd-summary"><strong>Watch with it:</strong> <a href="https://www.youtube.com/watch?v=xu86bYKVmRE" target="_blank" rel="noopener">Can Financial Engineering Cure Cancer?</a> <span class="pd-meta">Andrew Lo · TEDxCambridge · <time datetime="2015-10-21">21 Oct 2015</time></span><br>Lo's case for pooling many drug programs into "megafunds" so portfolio theory and securitization make early-stage biomedical research investable.</p>
   </li>

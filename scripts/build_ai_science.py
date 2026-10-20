@@ -15,7 +15,8 @@ assert len({e['id'] for e in entries})==len(entries)
 for e in entries:
  assert e['url'].startswith('https://')
  assert not e.get('op_url') or e['op_url'].startswith('https://')
- assert all(u.startswith('https://') for u in e.get('related_urls',[]))
+ assert all(u.startswith(('https://','/files/')) for u in e.get('related_urls',[]))
+ assert all(r['url'].startswith('https://') for r in e.get('discussion',{}).get('items',[]))
 def prettydate(e):
  d=e.get('date')
  if not d:return 'Date unverified'
@@ -40,10 +41,14 @@ for e in entries:
  op=('<a class="as-chip as-op" href="'+esc(e['op_url'])+'" target="_blank" rel="noopener noreferrer">OP · '+esc(e['op_label'])+' ↗</a>') if e.get('op_url') else '<span class="as-chip as-unverified">OP not yet verified</span>'
  related=''.join('<a href="'+esc(u)+'" target="_blank" rel="noopener noreferrer">'+esc(e.get('related_labels',{}).get(u, 'Project page' if 'scientist-two' in u else 'Related resource'))+' ↗</a>' for u in e.get('related_urls',[]))
  dateprefix='Uploaded' if e['type']=='Talk' else 'Published'
+ discussion=''
+ if e.get('discussion'):
+  dsc=e['discussion']
+  discussion='<details class="as-discussion"><summary>'+esc(dsc['title'])+'</summary><p>'+esc(dsc['note'])+'</p><ul>'+''.join('<li><a href="'+esc(r['url'])+'" target="_blank" rel="noopener noreferrer">'+esc(r['who'])+'</a> '+esc(r['text'])+'</li>' for r in dsc['items'])+'</ul></details>'
  datehtml=('<time datetime="'+esc(e['date'])+'">'+esc(date)+'</time>') if e.get('date_precision')=='day' else '<span>'+esc(date)+'</span>'
  cards.append(f'''<article class="as-entry" id="{esc(e['id'])}" data-title="{esc(e['title'])}" data-type="{esc(e['type'])}" data-tags="{esc('|'.join(e['tags']))}" data-date="{esc(e.get('date') or '')}" data-precision="{esc(e.get('date_precision') or '')}">
-<div class="as-entry-type">{esc(e['type'])}{('<br><span class="as-role">'+esc(e['group_role'])+'</span>') if e.get('group_role') else ''}</div><div class="as-entry-body"><h3><a href="{esc(e['url'])}" target="_blank" rel="noopener noreferrer">{esc(e['title'])}<span aria-hidden="true"> ↗</span></a></h3><p>{esc(e['summary'])}{sidenote(e)}</p><div class="as-chips"><span class="as-chip">{dateprefix} · {datehtml}</span>{op}</div><div class="as-tags">{tags}{related}<a class="as-graph-link" href="#knowledge-graph" data-kg-node="{esc(e['id'])}">See connections in the graph</a></div></div></article>''')
- md += [('#### ' if group else '### ')+e['title'],'',e['summary'],'',f'- Type: {e["type"]}',f'- {dateprefix}: {date}',f'- Resource: [{e["title"]}]({e["url"]})',f'- OP: [{e["op_label"]}]({e["op_url"]})' if e.get('op_url') else '- OP: not yet verified','- Topics: '+', '.join(e['tags'])]+(['- Margin note: '+e['margin_note']] if e.get('margin_note') else [])+['- '+e.get('related_labels',{}).get(u,'Related')+': '+u for u in e.get('related_urls',[])]+['']
+<div class="as-entry-type">{esc(e['type'])}{('<br><span class="as-role">'+esc(e['group_role'])+'</span>') if e.get('group_role') else ''}</div><div class="as-entry-body"><h3><a href="{esc(e['url'])}" target="_blank" rel="noopener noreferrer">{esc(e['title'])}<span aria-hidden="true"> ↗</span></a></h3><p>{esc(e['summary'])}{sidenote(e)}</p><div class="as-chips"><span class="as-chip">{dateprefix} · {datehtml}</span>{op}</div>{discussion}<div class="as-tags">{tags}{related}<a class="as-graph-link" href="#knowledge-graph" data-kg-node="{esc(e['id'])}">See connections in the graph</a></div></div></article>''')
+ md += [('#### ' if group else '### ')+e['title'],'',e['summary'],'',f'- Type: {e["type"]}',f'- {dateprefix}: {date}',f'- Resource: [{e["title"]}]({e["url"]})',f'- OP: [{e["op_label"]}]({e["op_url"]})' if e.get('op_url') else '- OP: not yet verified','- Topics: '+', '.join(e['tags'])]+(['- Margin note: '+e['margin_note']] if e.get('margin_note') else [])+['- '+e.get('related_labels',{}).get(u,'Related')+': '+('https://inventcures.github.io'+u if u.startswith('/') else u) for u in e.get('related_urls',[])]+((['- '+e['discussion']['title']+': '+e['discussion']['note']]+['  - ['+r['who']+']('+r['url']+') '+r['text'] for r in e['discussion']['items']]) if e.get('discussion') else [])+['']
 if active_group:cards.append('</section>')
 graph=build_graph()
 gcount={}

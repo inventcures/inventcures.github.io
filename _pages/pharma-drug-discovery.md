@@ -16,7 +16,9 @@ layout: single
   .pd-item p.pd-note { margin: 0 0 0.5rem; padding-left: 0.75rem; border-left: 3px solid #d1d5db; font-style: italic; color: #555; }
 </style>
 
-Essays and reports on how drugs get made, why it has become so hard, and where the industry is heading. Newest first.
+Essays and reports on how drugs get made, why it has become so hard, and where the industry is heading. Newest first within each section.
+
+## Drug Discovery & the Industry
 
 <ul class="pd-list">
 
@@ -33,26 +35,12 @@ Essays and reports on how drugs get made, why it has become so hard, and where t
   </li>
 
   <li class="pd-item">
-    <h3><a href="https://www.owlposting.com/p/the-ballad-of-tigit" target="_blank" rel="noopener">The ballad of TIGIT</a></h3>
-    <p class="pd-meta">Abhishaike Mahajan (<a href="https://x.com/owl_posting" target="_blank" rel="noopener">@owl_posting</a>) · Owl Posting · <time datetime="2026-05-26">26 May 2026</time></p>
-    <p class="pd-summary">How TIGIT, hoped to be the next Keytruda, drew billions in parallel trials from Roche, Merck, GSK and others, and how nearly every program failed. A case study in industry herding, and in good science that still doesn't pan out.</p>
-    <p class="pd-note">Everything Owl Posting, aka Abhishaike Mahajan, writes is both a delight to read and will leave you smarter for having read it.</p>
-  </li>
-
-  <li class="pd-item">
     <h3><a href="https://www.approved.fm/p/keytruda-how-mercks-pembrolizumab" target="_blank" rel="noopener">Keytruda: How Merck's Pembrolizumab Became the Best-Selling Cancer Drug of All Time</a></h3>
     <p class="pd-meta">Alex Kesin &amp; Matthew Pech · Approved podcast · <time datetime="2026-05-14">14 May 2026</time></p>
     <a href="https://www.approved.fm/p/keytruda-how-mercks-pembrolizumab" target="_blank" rel="noopener"><img class="pd-img" src="/images/approved-keytruda.jpg" alt="Approved podcast logo above a Keytruda (pembrolizumab) 50 mg box and vial" width="1200" height="784" loading="lazy"></a>
     <p class="pd-summary">How a failed rheumatoid arthritis antibody at a small Dutch subsidiary became Merck's best-selling cancer drug: the checkpoint biology, the mergers and trial bets that shaped it, and what comes after the 2028 patent cliff.</p>
     <p class="pd-note">The Approved podcast is a great listen. Highly recommended!</p>
     <p class="pd-thread">Listen on <a href="https://podcasts.apple.com/us/podcast/keytruda-how-mercks-pembrolizumab-became-the-best/id1873356046?i=1000767760619" target="_blank" rel="noopener">Apple Podcasts ↗</a> · <a href="https://open.spotify.com/show/66IeBvvuoDma0ysf8c4I8Z" target="_blank" rel="noopener">Spotify ↗</a> · <a href="https://www.youtube.com/watch?v=a92LdEs9h_I" target="_blank" rel="noopener">YouTube ↗</a> · <a href="https://x.com/DShaywitz/status/2055053065279943017" target="_blank" rel="noopener">David Shaywitz's thread on X ↗</a></p>
-  </li>
-
-  <li class="pd-item">
-    <h3><a href="https://www.owlposting.com/p/curious-cases-of-financial-engineering" target="_blank" rel="noopener">Curious cases of financial engineering in biotech</a></h3>
-    <p class="pd-meta">Abhishaike Mahajan (<a href="https://x.com/owl_posting" target="_blank" rel="noopener">@owl_posting</a>) · Owl Posting · <time datetime="2026-04-27">27 Apr 2026</time></p>
-    <p class="pd-summary">A tour of the financial structures reshaping drug development: hub-and-spoke biotechs, royalty deals, priority review vouchers, CVRs and buyouts of failing biotechs. Asks whether all this pushes the industry toward legible, low-risk bets and away from the uncertain science behind real breakthroughs.</p>
-    <p class="pd-summary"><strong>Watch with it:</strong> <a href="https://www.youtube.com/watch?v=xu86bYKVmRE" target="_blank" rel="noopener">Can Financial Engineering Cure Cancer?</a> <span class="pd-meta">Andrew Lo · TEDxCambridge · <time datetime="2015-10-21">21 Oct 2015</time></span><br>Lo's case for pooling many drug programs into "megafunds" so portfolio theory and securitization make early-stage biomedical research investable.</p>
   </li>
 
   <li class="pd-item">
@@ -67,6 +55,44 @@ Essays and reports on how drugs get made, why it has become so hard, and where t
     <p class="pd-meta">Alex Telford · <time datetime="2023-12-23">23 Dec 2023</time></p>
     <p class="pd-summary">Why drugs cost orders of magnitude more to develop than in the 1950s, and what we can do about it: better disease models, more principled approval standards and cheaper trials.</p>
     <p class="pd-thread"><a href="https://x.com/Atelfo/status/1738593551527616718" target="_blank" rel="noopener">Thread on X ↗</a></p>
+  </li>
+
+</ul>
+
+## Financial Engineering in Pharma & Drug Discovery
+
+<ul class="pd-list">
+
+  <li class="pd-item">
+    <h3><a href="https://www.owlposting.com/p/the-ballad-of-tigit" target="_blank" rel="noopener">The ballad of TIGIT</a></h3>
+    <p class="pd-meta">Abhishaike Mahajan (<a href="https://x.com/owl_posting" target="_blank" rel="noopener">@owl_posting</a>) · Owl Posting · <time datetime="2026-05-26">26 May 2026</time></p>
+    <p class="pd-summary">How TIGIT, hoped to be the next Keytruda, drew billions in parallel trials from Roche, Merck, GSK and others, and how nearly every program failed. A case study in industry herding, and in good science that still doesn't pan out.</p>
+    <p class="pd-note">Everything Owl Posting, aka Abhishaike Mahajan, writes is both a delight to read and will leave you smarter for having read it.</p>
+  </li>
+
+  <li class="pd-item">
+    <h3><a href="https://www.owlposting.com/p/curious-cases-of-financial-engineering" target="_blank" rel="noopener">Curious cases of financial engineering in biotech</a></h3>
+    <p class="pd-meta">Abhishaike Mahajan (<a href="https://x.com/owl_posting" target="_blank" rel="noopener">@owl_posting</a>) · Owl Posting · <time datetime="2026-04-27">27 Apr 2026</time></p>
+    <p class="pd-summary">A tour of the financial structures reshaping drug development: hub-and-spoke biotechs, royalty deals, priority review vouchers, CVRs and buyouts of failing biotechs. Asks whether all this pushes the industry toward legible, low-risk bets and away from the uncertain science behind real breakthroughs.</p>
+    <p class="pd-summary"><strong>Watch with it:</strong> <a href="https://www.youtube.com/watch?v=xu86bYKVmRE" target="_blank" rel="noopener">Can Financial Engineering Cure Cancer?</a> <span class="pd-meta">Andrew Lo · TEDxCambridge · <time datetime="2015-10-21">21 Oct 2015</time></span><br>Lo's case for pooling many drug programs into "megafunds" so portfolio theory and securitization make early-stage biomedical research investable.</p>
+  </li>
+
+</ul>
+
+## Cancer
+
+<ul class="pd-list">
+
+  <li class="pd-item">
+    <h3><a href="https://www.worksinprogress.news/p/pancreatic-cancer-just-met-its-match" target="_blank" rel="noopener">Pancreatic cancer just met its match</a></h3>
+    <p class="pd-meta">Ruxandra Teslo · Works in Progress · <time datetime="2026-05-12">12 May 2026</time></p>
+    <p class="pd-summary">On daraxonrasib, a RAS inhibitor that roughly doubled survival over chemotherapy in a Phase 3 trial for metastatic pancreatic cancer, and the molecular-glue approach that finally made "undruggable" RAS a target.</p>
+  </li>
+
+  <li class="pd-item">
+    <h3><a href="https://www.mundane.beauty/p/the-bad-side-of-medicine-comes-for" target="_blank" rel="noopener">The Bad Side of Medicine Comes for Us All</a></h3>
+    <p class="pd-meta">Hiya Jain · mundane.beauty · <time datetime="2025-10-14">14 Oct 2025</time></p>
+    <p class="pd-summary">How her father's multiple myeloma was caught early, and a case for early detection, including blood-based multi-cancer screening, against worries about false positives and overtreatment.</p>
   </li>
 
 </ul>

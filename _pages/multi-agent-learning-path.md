@@ -169,6 +169,10 @@ An advanced follow-on after the beginner path. Covers verifiers, test-time compu
 
 Advanced material on reasoning, inference-time methods, post-training, search/planning, tool use, code, verification and mathematical agents.
 
+[CMU 11-768: AI Agents](https://www.cmu-agents.com/)
+
+Carnegie Mellon's graduate course on LLM-based agents (Fall 2026): tool use, planning, memory, training, safety and interaction with people.
+
 [Konstantin Dunas (hallerite): On the Nature of the Swarm](https://hallerite.com/posts/on-the-nature-of-the-swarm/)
 
 Blog post (Oct 2026) on why forking persistent sub-agents helps once a single agent hits its context window: compaction is a lossy guess about what will matter later, while peers in a mesh (rather than a tree) let total context grow with the number of agents, until communication cost catches up. A good intuition pump for "how many copies should I fork?"

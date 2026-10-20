@@ -1,3 +1,4 @@
+{% include theme-toggle.html %}
 <script>(function(){var o=false;try{o=localStorage.getItem('st-nav')==='open'}catch(e){}if(!o)document.documentElement.classList.add('st-nav-collapsed')})();</script>
 <button type="button" class="st-nav-toggle" aria-controls="st-sidebar" aria-expanded="false" aria-label="Show menu"><span class="st-nav-icon" aria-hidden="true"></span><span class="st-nav-label">Menu</span></button>
 <aside class="st-sidebar" id="st-sidebar">
@@ -15,3 +16,4 @@
   </ul></nav>
 </aside>
 <script>(function(){var d=document.documentElement,b=document.querySelector('.st-nav-toggle');function sync(){var open=!d.classList.contains('st-nav-collapsed');b.setAttribute('aria-expanded',open);b.setAttribute('aria-label',open?'Hide menu':'Show menu')}sync();b.addEventListener('click',function(){d.classList.toggle('st-nav-collapsed');try{localStorage.setItem('st-nav',d.classList.contains('st-nav-collapsed')?'closed':'open')}catch(e){}sync()})})();</script>
+<script src="{{ '/assets/js/new-tab-links.js' | relative_url }}" defer></script>

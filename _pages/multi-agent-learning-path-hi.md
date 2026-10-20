@@ -167,6 +167,10 @@ RL algorithms के छोटे और सरल implementations मिलत�
 
 Reasoning, inference-time methods, post-training, search/planning, tool use, code, verification और mathematical agents की उन्नत सामग्री है।
 
+[CMU 11-768: AI Agents](https://www.cmu-agents.com/)
+
+LLM-आधारित agents पर Carnegie Mellon का स्नातकोत्तर पाठ्यक्रम (Fall 2026): tool use, planning, memory, training, safety और लोगों के साथ interaction।
+
 ### विशेष रूप से MARL में आगे बढ़ना हो
 
 [MARL पुस्तक का कोड और स्लाइड](https://www.marl-book.com/)

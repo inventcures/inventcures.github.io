@@ -1,0 +1,36 @@
+/* Light/dark theme. The toggle sets data-theme on <html>; the choice is kept in
+   localStorage ("st-theme") and defaults to the system preference.
+   Dark mode repaints the site shell with dark tokens and inverts the reading
+   area, so pages with their own inline colours stay readable; photos, video,
+   canvases and embeds are inverted back to their real colours. */
+.theme-toggle{position:fixed;top:14px;right:14px;z-index:110;display:flex;align-items:center;justify-content:center;width:42px;height:42px;padding:0;border:1px solid transparent;border-radius:50%;background:#333;color:#eee;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.theme-toggle:hover{background:#444}.theme-toggle:focus-visible{outline:3px solid #d17c57;outline-offset:3px}
+.theme-toggle-sun{display:none}[data-theme="dark"] .theme-toggle-sun{display:block}[data-theme="dark"] .theme-toggle-moon{display:none}
+[data-theme="dark"] .theme-toggle{background:#2b2926;border-color:#4a4640;color:#f0c987}[data-theme="dark"] .theme-toggle:hover{background:#3a3733}
+@media(max-width:640px){.theme-toggle{top:auto;bottom:16px;right:16px}}
+.st-embedded .theme-toggle{display:none}
+@media print{.theme-toggle{display:none}}
+
+html[data-theme="dark"]{color-scheme:dark;background:#1a1918}
+html[data-theme="dark"] body.site-theme{--st-paper:#1a1918;--st-ink:#e4e0d8;--st-accent:#e8957a;--st-line:#3a3733;background:#1a1918!important;color:var(--st-ink)}
+html[data-theme="dark"] .site-theme .st-topbar>a,html[data-theme="dark"] .site-theme .page__footer,html[data-theme="dark"] .site-theme .site-footer .footer-meta{color:#a9a49b}
+html[data-theme="dark"] .site-theme .st-sidebar{background:#121110}
+html[data-theme="dark"] .site-theme .st-nav-toggle{background:#2b2926;box-shadow:0 0 0 1px #4a4640}
+html[data-theme="dark"] .site-theme .st-skip{background:#2b2926}
+
+/* Reading area: keep the light tokens and invert the whole block. */
+html[data-theme="dark"] .site-theme .st-reading{--st-paper:#faf8f5;--st-ink:#333;--st-accent:#a94427;--st-line:#dedbd4;color:#333;filter:invert(.9) hue-rotate(180deg)}
+
+/* Skip links are position:fixed, which the filter turns into a box inside the reading area. */
+html[data-theme="dark"] .st-reading .skip:not(:focus){visibility:hidden}
+
+/* Learning path layout. */
+html[data-theme="dark"] body.learning-path{--accent:#e8957a;--line:#3a3733;background:#1a1918;color:#e4e0d8}
+html[data-theme="dark"] .learning-path .lp-sidebar{background:#121110}
+html[data-theme="dark"] .learning-path .lp-topbar>a{color:#a9a49b}
+html[data-theme="dark"] .learning-path .lp-skip{background:#2b2926}
+html[data-theme="dark"] .learning-path .lp-article{--paper:#faf8f5;--ink:#333;--accent:#a94427;--line:#dedbd4;color:#333;filter:invert(.9) hue-rotate(180deg)}
+
+/* Undo the inversion for real-colour media. invert(.9) maps c to .9-.8c, so
+   invert(1) contrast(1.25) is its exact inverse. */
+html[data-theme="dark"] :is(.st-reading,.lp-article) :is(img,picture,video,canvas,iframe,object,embed,[style*="background-image"],[style*="url("],.kg3d):not(.kg3d *):not(picture img){filter:invert(1) contrast(1.25) hue-rotate(180deg)}

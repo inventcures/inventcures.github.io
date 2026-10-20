@@ -42,6 +42,13 @@ Essays, papers and books on how AI is changing clinical care and the training of
     <p class="pd-summary">Bob Wachter's book on how AI is reshaping care delivery, the clinician's role and the health system, with a special section on medical education.</p>
   </li>
 
+  <li class="pd-item">
+    <h3><a href="https://worksinprogress.co/issue/the-algorithm-will-see-you-now/" target="_blank" rel="noopener">The algorithm will see you now</a></h3>
+    <p class="pd-meta">Deena Mousa · Works in Progress, Issue 20 · <time datetime="2025-09-25">25 Sep 2025</time></p>
+    <p class="pd-summary">Radiology looked like the easiest specialty for AI to automate, yet radiologists are busier than ever. Models that beat benchmarks stumble on real hospital data, regulation and malpractice insurance slow adoption, and diagnosis is only part of the job; many knowledge jobs may follow the same path.</p>
+    <p class="pd-thread"><a href="https://x.com/deenamousa/status/1971211468487131157" target="_blank" rel="noopener">Thread on X ↗</a></p>
+  </li>
+
 </ul>
 
 ## Medical Education

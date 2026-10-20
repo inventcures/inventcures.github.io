@@ -12,6 +12,7 @@ layout: single
   .pd-meta { margin: 0 0 0.5rem; font-size: 0.85rem; color: #666; }
   .pd-item p.pd-summary { margin: 0 0 0.5rem; }
   .pd-thread { font-size: 0.9rem; }
+  .pd-img { display: block; width: 100%; height: auto; margin: 0.5rem 0 0.75rem; border-radius: 8px; }
   .pd-item p.pd-note { margin: 0 0 0.5rem; padding-left: 0.75rem; border-left: 3px solid #d1d5db; font-style: italic; color: #555; }
 </style>
 
@@ -36,6 +37,15 @@ Essays and reports on how drugs get made, why it has become so hard, and where t
     <p class="pd-meta">Abhishaike Mahajan (<a href="https://x.com/owl_posting" target="_blank" rel="noopener">@owl_posting</a>) · Owl Posting · <time datetime="2026-05-26">26 May 2026</time></p>
     <p class="pd-summary">How TIGIT, hoped to be the next Keytruda, drew billions in parallel trials from Roche, Merck, GSK and others, and how nearly every program failed. A case study in industry herding, and in good science that still doesn't pan out.</p>
     <p class="pd-note">Everything Owl Posting, aka Abhishaike Mahajan, writes is both a delight to read and will leave you smarter for having read it.</p>
+  </li>
+
+  <li class="pd-item">
+    <h3><a href="https://www.approved.fm/p/keytruda-how-mercks-pembrolizumab" target="_blank" rel="noopener">Keytruda: How Merck's Pembrolizumab Became the Best-Selling Cancer Drug of All Time</a></h3>
+    <p class="pd-meta">Alex Kesin &amp; Matthew Pech · Approved podcast · <time datetime="2026-05-14">14 May 2026</time></p>
+    <a href="https://www.approved.fm/p/keytruda-how-mercks-pembrolizumab" target="_blank" rel="noopener"><img class="pd-img" src="/images/approved-keytruda.jpg" alt="Approved podcast logo above a Keytruda (pembrolizumab) 50 mg box and vial" width="1200" height="784" loading="lazy"></a>
+    <p class="pd-summary">How a failed rheumatoid arthritis antibody at a small Dutch subsidiary became Merck's best-selling cancer drug: the checkpoint biology, the mergers and trial bets that shaped it, and what comes after the 2028 patent cliff.</p>
+    <p class="pd-note">The Approved podcast is a great listen. Highly recommended!</p>
+    <p class="pd-thread">Listen on <a href="https://podcasts.apple.com/us/podcast/keytruda-how-mercks-pembrolizumab-became-the-best/id1873356046?i=1000767760619" target="_blank" rel="noopener">Apple Podcasts ↗</a> · <a href="https://open.spotify.com/show/66IeBvvuoDma0ysf8c4I8Z" target="_blank" rel="noopener">Spotify ↗</a> · <a href="https://www.youtube.com/watch?v=a92LdEs9h_I" target="_blank" rel="noopener">YouTube ↗</a> · <a href="https://x.com/DShaywitz/status/2055053065279943017" target="_blank" rel="noopener">David Shaywitz's thread on X ↗</a></p>
   </li>
 
   <li class="pd-item">

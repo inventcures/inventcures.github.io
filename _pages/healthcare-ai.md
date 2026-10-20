@@ -43,6 +43,13 @@ Essays, papers and books on how AI is changing clinical care and the training of
   </li>
 
   <li class="pd-item">
+    <h3><a href="https://robertwachter.substack.com/p/will-ai-rescue-primary-care" target="_blank" rel="noopener">Will AI Rescue Primary Care? Eventually, But Not Yet</a></h3>
+    <p class="pd-meta">Robert Wachter · Substack · <time datetime="2025-10-08">8 Oct 2025</time></p>
+    <p class="pd-summary">Starting from the collapse of Forward, the AI-heavy primary care startup, Wachter argues that primary care is in crisis and concierge care is too expensive for most people. He predicts a tiered system: AI-first care with clinician oversight for basic plans, human-first care for those with more resources or complex needs. He compares it to economy and first-class seats on a plane.</p>
+    <p class="pd-note">The airline analogy is the heart of it. Economy, business and first class differ in legroom, meals and how much a human attends to you, but every seat flies under the same high minimum safety floor. AI-first care for the "economy" tier is acceptable only if that floor holds: judged against the care people can actually get (often very little, in much of India), and with a safe, well-routed handoff to a human doctor when the case needs one. The analogy stretches further. Autopilot flies most of the trip, yet pilots still go back to the simulator to practise rare failures. Doctors trained alongside agentic AI should likewise keep the skills to give safe care on the day the AI goes down.</p>
+  </li>
+
+  <li class="pd-item">
     <h3><a href="https://worksinprogress.co/issue/the-algorithm-will-see-you-now/" target="_blank" rel="noopener">The algorithm will see you now</a></h3>
     <p class="pd-meta">Deena Mousa · Works in Progress, Issue 20 · <time datetime="2025-09-25">25 Sep 2025</time></p>
     <p class="pd-summary">Radiology looked like the easiest specialty for AI to automate, yet radiologists are busier than ever. Models that beat benchmarks stumble on real hospital data, regulation and malpractice insurance slow adoption, and diagnosis is only part of the job; many knowledge jobs may follow the same path.</p>

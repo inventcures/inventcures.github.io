@@ -31,6 +31,13 @@ Essays, papers and books on how AI is changing clinical care and the training of
 <ul class="pd-list">
 
   <li class="pd-item">
+    <h3><a href="https://x.com/_jasonwei/status/2112259970108686505" target="_blank" rel="noopener">AI will not automate radiologists like you think</a></h3>
+    <p class="pd-meta">Jason Wei (<a href="https://x.com/_jasonwei" target="_blank" rel="noopener">@_jasonwei</a>) · X · <time datetime="2026-10-20">20 Oct 2026</time></p>
+    <p class="pd-summary">Ten years after Hinton said to stop training radiologists, demand for them is higher than ever. Wei argues it stays that way: AI's jagged edge makes it a triage tool first across radiology's thousands of conditions, cheaper reads create elastic demand (Jevons paradox) for many more scans, and medicine keeps inventing new things to read.</p>
+    <p class="pd-thread"><a href="https://x.com/_jasonwei/status/2112259970108686505" target="_blank" rel="noopener">Post on X ↗</a> · <a href="/files/jason-wei-ai-radiologists.pdf" target="_blank" rel="noopener">Full text (PDF) ↗</a></p>
+  </li>
+
+  <li class="pd-item">
     <h3><a href="https://robertwachter.substack.com/p/on-straw-men-and-doormen" target="_blank" rel="noopener">On Straw Men and Doormen</a></h3>
     <p class="pd-meta">Robert Wachter · Substack · <time datetime="2026-08-27">27 Aug 2026</time></p>
     <p class="pd-summary">A gentle rebuttal to Khosla and Emanuel's JAMA argument that a physician in the loop degrades AI diagnosis. Wachter grants that AI often wins on curated facts, but points to garbage-in patient data and the "doorman fallacy" (most clinical work isn't diagnosis), and predicts AI-first primary care alongside AI-enabled clinicians: "And, Not Or."</p>

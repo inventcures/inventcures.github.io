@@ -38,6 +38,14 @@ Essays, papers and books on how AI is changing clinical care and the training of
   </li>
 
   <li class="pd-item">
+    <h3><a href="https://www.nytimes.com/2026/10/08/technology/ai-chatbots-urgent-care.html" target="_blank" rel="noopener">Clinical Trial Indicates A.I. Chatbots Could Aid Urgent Care</a></h3>
+    <p class="pd-meta">Cade Metz · The New York Times · <time datetime="2026-10-08">8 Oct 2026</time></p>
+    <p class="pd-summary">Nearly 100 urgent care patients at Beth Israel Deaconess talked with Google's AMIE before seeing a physician. There were no safety stops, AMIE's differential held the final diagnosis 90% of the time, and about 75% of clinicians found its output helpful (<a href="https://research.google/pubs/a-prospective-clinical-feasibility-study-of-a-conversational-diagnostic-ai-in-an-ambulatory-primary-care-clinic/" target="_blank" rel="noopener">study in The Lancet</a>).</p>
+    <p class="pd-summary"><strong>Spencer Dorn's take:</strong> AI is moving from writing notes about the doctor-patient conversation to running parts of it, much as a teaching attending supervises several trainees at once. We shouldn't romanticize the status quo, but we must be deliberate about what we give up (<a href="https://www.linkedin.com/posts/spencerdorn_my-take-on-the-direction-suggested-by-the-share-7515908032132751361-FaUi/" target="_blank" rel="noopener">LinkedIn post</a>, 13 Oct 2026).</p>
+    <p class="pd-thread"><a href="https://www.linkedin.com/posts/spencerdorn_my-take-on-the-direction-suggested-by-the-share-7515908032132751361-FaUi/" target="_blank" rel="noopener">Dorn's post on LinkedIn ↗</a> · <a href="/files/spencer-dorn-amie-lancet.pdf" target="_blank" rel="noopener">Full text (PDF) ↗</a></p>
+  </li>
+
+  <li class="pd-item">
     <h3><a href="https://robertwachter.substack.com/p/on-straw-men-and-doormen" target="_blank" rel="noopener">On Straw Men and Doormen</a></h3>
     <p class="pd-meta">Robert Wachter · Substack · <time datetime="2026-08-27">27 Aug 2026</time></p>
     <p class="pd-summary">A gentle rebuttal to Khosla and Emanuel's JAMA argument that a physician in the loop degrades AI diagnosis. Wachter grants that AI often wins on curated facts, but points to garbage-in patient data and the "doorman fallacy" (most clinical work isn't diagnosis), and predicts AI-first primary care alongside AI-enabled clinicians: "And, Not Or."</p>

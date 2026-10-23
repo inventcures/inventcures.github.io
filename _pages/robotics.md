@@ -44,6 +44,12 @@ Posts, essays, courses and company news on robot learning and autonomy. Newest f
   </li>
 
   <li class="pd-item">
+    <h3><a href="https://www.medra.ai/medra-lab-001" target="_blank" rel="noopener">Introducing Medra Lab 001: The Largest Autonomous Lab in the United States</a></h3>
+    <p class="pd-meta">Medra · Company blog · <time datetime="2026-04-23">23 Apr 2026</time></p>
+    <p class="pd-summary">Michelle Lee's Medra opens a 38,000 sq ft San Francisco lab where hundreds of robots run biology experiments 24/7, closing the design-make-test-analyze loop for partners like Genentech. Its vision-language-lab-action model operates over 75% of common lab instruments, and the lab doubles as a "data foundry" for AI labs that have no wet lab of their own (<a href="https://x.com/michellearning/status/2047345830856942006" target="_blank" rel="noopener">Michelle Lee on X</a>; Core Memory's launch-day story, <a href="https://www.corememory.com/p/a-hundred-robots-are-running-a-bio-medra-michelle-lee" target="_blank" rel="noopener">"A Hundred Robots Are Running A Bio Lab"</a>).</p>
+  </li>
+
+  <li class="pd-item">
     <h3><a href="https://alephsurgical.com/blogs/research-preview" target="_blank" rel="noopener">Aleph Surgical: Research Preview</a></h3>
     <p class="pd-meta">Aleph Team · Company blog · <time datetime="2026-03-09">9 Mar 2026</time></p>
     <p class="pd-summary">A first look at a fully autonomous surgical robot doing vascular anastomosis. It is driven by an embodied foundation model: internet-scale pretraining, hierarchical reasoning over long procedures, a purpose-built "Mark 0" arm made for autonomy rather than teleoperation, and separate clock rates for thinking, sensing and acting. On 30 Sep 2026 the founders announced a $7.5M pre-seed led by a16z to build "the first surgeon that scales", betting that Physical AI matters most where labor is scarcest and most expensive (<a href="https://x.com/r_mcguire/status/2105311718226415766" target="_blank" rel="noopener">R. McGuire on X</a>).</p>

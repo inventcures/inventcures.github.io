@@ -37,4 +37,16 @@ Posts, essays, courses and company news on robot learning and autonomy. Newest f
     <p class="pd-summary">Robotics has no internet-scale corpus, so Potter surveys how robot training data gets made: teleoperation, real-world RL, simulation, synthetic data, and human video or handheld UMI rigs. Today's robot datasets look roughly 1,000x smaller than LLM text corpora, and closing that gap could cost $10–100B, unless better architectures need less data.</p>
   </li>
 
+  <li class="pd-item">
+    <h3><a href="https://www.nytimes.com/2026/10/07/world/canada/surgery-artificial-intelligence-canada.html" target="_blank" rel="noopener">Can Artificial Intelligence Learn the Art of Surgery?</a></h3>
+    <p class="pd-meta">Vjosa Isai · The New York Times · <time datetime="2026-10-07">7 Oct 2026</time></p>
+    <p class="pd-summary">Canada helped pioneer AI and now wants it to fix its health system. Inside Toronto General Hospital, surgeons are training a machine to tell a safe incision from a catastrophic one (<a href="https://x.com/UHN/status/2107850524892516585" target="_blank" rel="noopener">UHN on X</a>; <a href="https://lnkd.in/p/dN4k3FW4" target="_blank" rel="noopener">LinkedIn post</a>).</p>
+  </li>
+
+  <li class="pd-item">
+    <h3><a href="https://alephsurgical.com/blogs/research-preview" target="_blank" rel="noopener">Aleph Surgical: Research Preview</a></h3>
+    <p class="pd-meta">Aleph Team · Company blog · <time datetime="2026-03-09">9 Mar 2026</time></p>
+    <p class="pd-summary">A first look at a fully autonomous surgical robot doing vascular anastomosis. It is driven by an embodied foundation model: internet-scale pretraining, hierarchical reasoning over long procedures, a purpose-built "Mark 0" arm made for autonomy rather than teleoperation, and separate clock rates for thinking, sensing and acting. On 30 Sep 2026 the founders announced a $7.5M pre-seed led by a16z to build "the first surgeon that scales", betting that Physical AI matters most where labor is scarcest and most expensive (<a href="https://x.com/r_mcguire/status/2105311718226415766" target="_blank" rel="noopener">R. McGuire on X</a>).</p>
+  </li>
+
 </ul>

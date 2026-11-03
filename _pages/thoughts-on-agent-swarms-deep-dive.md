@@ -51,7 +51,7 @@ Then, reading GR's *How to train a swarm* set me thinking about **human swarms**
 
 Everything in this post is a variation on one question:
 
-> 💡 **How do you get a swarm to act for the collective, larger good, beyond each agent's own subtask, without the coordination eating the work?**
+> 💡 **How do you get a swarm to act for the collective, larger good, beyond each agent's own subtask, without the coordination overhead overwhelming the main goal & task?**
 
 "Larger good" has a precise meaning here. It's any benefit that lands somewhere other than the agent paying the cost: in a sibling's tokens, in the swarm's later state, or in an episode that hasn't started. The further away it lands, the harder it is for a reward signal to find it.
 

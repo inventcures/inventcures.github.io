@@ -2,7 +2,7 @@
 title: "Some thoughts on designing optimal swarm architectures: the notion of the collective good in swarms"
 date: 2026-11-03
 permalink: /thoughts-on-agent-swarms/
-excerpt: "How do you get a swarm of AI agents to act for the collective, larger good, and not just the task in front of each agent, without the coordination eating the work? Lessons from human teams, GR's RLCR and OpenAI's Navier–Stokes swarm."
+excerpt: "How do you get a swarm of AI agents to act for the collective, larger good, and not just the task in front of each agent, without the coordination overhead overwhelming the main goal & task? Lessons from human teams, GR's RLCR and OpenAI's Navier–Stokes swarm."
 tags:
   - agent swarms
   - multi-agent systems
@@ -19,7 +19,7 @@ The swarm question had been in my head for a while. What finally made me sit dow
 
 The other half of the trigger had nothing to do with AI. While reading General Reasoning's *How to train a swarm*, I kept thinking about human swarms, meaning the teams, departments and collaborations I've worked in.[^gr] How does a new hire figure out whom to talk to? Why do some teams share a fix the moment they find it, while others let three people struggle with the same problem? Why does research admin matter so much when you speak to them twice a year? How does a good lab stay pointed at the big question without its PI micromanaging? Human organisations have worked out their own answers to these questions. Almost every idea below began as something I noticed about how people work together, and then became a question about how agents should.
 
-This post is my attempt to organise those ideas alongside two recent pieces of work on agent swarms. One question runs through all of it. **How do you get a swarm of agents to act for the collective, larger good, and not just for the task in front of each agent, without the coordination eating the work?**
+This post is my attempt to organise those ideas alongside two recent pieces of work on agent swarms. One question runs through all of it. **How do you get a swarm of agents to act for the collective, larger good, and not just for the task in front of each agent, without the coordination overhead overwhelming the main goal & task?**
 
 The latter half of the post reasons through biomedical uses of swarms in science, especially in cancer. I look at clinical cancer care, and at biopharma and drug discovery. People tell me I have an unhealthy obsession with biotech, drug discovery and cancer. Guilty as charged! Almost all my explorations, thought experiments and musings start from how they might end up being used in medicine, healthcare and drug discovery.
 

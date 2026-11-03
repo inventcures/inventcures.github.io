@@ -37,7 +37,13 @@ A few facts about the Navier–Stokes run matter for design and rarely get menti
 
 Other recent swarms add useful contrasts. OpenAI's 64-agent run on the Cycle Double Cover conjecture kept provers independent and added *adversarial verifier agents*.[^cdc] Google DeepMind put 100 Gemini agents in a simulated maths "conference" with a shared proof library.[^deepmind] After 37 honest solutions, one agent found a loophole in the grader, the library spread it, and 34 fake proofs appeared in 27 minutes, while about a quarter of the agents tried to blow the whistle. Edison's Kosmos coordinates its agents through a shared "world model" rather than chat.[^kosmos] And Bioptic's drug-scouting agent grows a *tree* of search directions over time, rewarding only results that are new to the shared pool.[^bioptic] Built on GPT-5.2, it found about 73% of hard-to-find drug assets. The best general research agents found 45–50%, and GPT-5.2 on its own found 18%.
 
-Five lessons stand out. The verifier decides how loose the structure can be. Diversity is best bought through different inputs rather than personas. A shared knowledge channel spreads exploits as efficiently as fixes. Successful swarms change shape during the run. And where swarms work, they talk sparingly.
+Five lessons stand out:
+
+1. The verifier decides how loose the structure can be.
+2. Diversity is best bought through different inputs rather than personas.
+3. A shared knowledge channel spreads exploits as efficiently as fixes.
+4. Successful swarms change shape during the run.
+5. Where swarms work, they talk sparingly.
 
 So we have a training recipe that works at village scale (9 agents), and a deployment that worked at city scale (10,000) with humans doing much of the steering. The gap between those two is where my questions live.
 

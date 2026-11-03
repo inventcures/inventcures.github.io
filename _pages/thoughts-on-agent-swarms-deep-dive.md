@@ -7,13 +7,13 @@ author_profile: true
 *tp53 · November 2026 · companion to the [short post](/thoughts-on-agent-swarms/) and the [draft preprint (PDF)](/files/thoughts-on-agent-swarms.pdf)*
 
 > **How to read this.** Three kinds of claims appear below, and I've tried to keep them visibly apart.
-> - **Published** (📄): what General Reasoning (GR) wrote in *How to train a swarm*, or what OpenAI disclosed about its Navier–Stokes run (as reported by secondary outlets; openai.com itself wasn't directly readable when I wrote this).
+> - **Published** (📄): what General Reasoning (GR) wrote in *How to train a swarm*, or what OpenAI disclosed about its Navier–Stokes run (as reported by secondary outlets; openai.com itself wasn't directly readable when I wrote this).[^gr][^oai]
 > - **My idea** (💡): the questions and proposals this post is really about.
 > - **Toy model** (🧮): deliberately simple models with made-up but plausible numbers. They're for intuition and to make the ideas testable, not for prediction.
 >
 > Each section ends with an open question or two, and there are exercises with answers at the end.
 
-> *Thanks.* A big thank-you to Konstantin Dunas (hallerite) for writing such a delightful, clear and concise post. It's what got me to dive deeper into this topic and finally organise the thoughts about agent swarms that had been swirling in my head.
+> *Thanks.* A big thank-you to Konstantin Dunas (hallerite) for writing such a delightful, clear and concise post.[^hallerite] It's what got me to dive deeper into this topic and finally organise the thoughts about agent swarms that had been swirling in my head.
 
 ---
 
@@ -22,7 +22,7 @@ author_profile: true
 1. [The scene, and the one question](#1-the-scene-and-the-one-question)
 2. [Background: two swarms, the details people miss, and other science swarms](#2-background-two-swarms)
 3. [The framework: three horizons of the collective good](#3-the-framework-three-horizons-of-the-collective-good)
-4. [The physics of swarms: what the GR post establishes](#4-the-physics-of-swarms-what-the-gr-post-establishes)
+4. [The physics of swarms: what the GR post establishes](#4-the-physics-of-swarms-what-the-gr-post-establishes)[^gr]
 5. [Idea 1: multicast the hard-won fix](#5-idea-1-multicast-the-hard-won-fix)
 6. [Idea 2: swarm size vs time, on two clocks](#6-idea-2-swarm-size-vs-time-on-two-clocks)
 7. [Idea 3: learn the org chart like a new hire](#7-idea-3-learn-the-org-chart-like-a-new-hire)
@@ -45,9 +45,9 @@ author_profile: true
 
 Forty agents are working on one codebase. Agent 17 spends thirty minutes cracking a build error caused by a pinned dependency. Three agents on the same module will hit it within the hour. A fourth, in a different run tomorrow, will hit it too.
 
-**Where this came from.** 💡 The swarm question had been swirling in my head for a while, but what made me dig in was Konstantin Dunas's (hallerite) [*On the nature of the swarm*](https://hallerite.com/posts/on-the-nature-of-the-swarm/) (Oct 2026). It's a lucid, delightful treatment of why scaling inference ends in many agents, covering compaction as a bet, persistent sub-agents, and trees versus meshes. It inspired me to think harder about how to make progress on optimal swarm architectures for research and discovery, in science and beyond. I come back to it in §8.4, §7.4 and §10.
+**Where this came from.** 💡 The swarm question had been swirling in my head for a while, but what made me dig in was Konstantin Dunas's (hallerite) [*On the nature of the swarm*](https://hallerite.com/posts/on-the-nature-of-the-swarm/) (Oct 2026).[^hallerite] It's a lucid, delightful treatment of why scaling inference ends in many agents, covering compaction as a bet, persistent sub-agents, and trees versus meshes. It inspired me to think harder about how to make progress on optimal swarm architectures for research and discovery, in science and beyond. I come back to it in §8.4, §7.4 and §10.
 
-Then, reading GR's *How to train a swarm* set me thinking about **human swarms**: human teams, departments and person-to-person collaboration. How does a new hire learn whom to talk to? Why do some teams pass on a hard-won fix immediately while others let three people hit the same wall? Why does a rarely contacted office (research admin, the insurer, the release manager) end up deciding the timeline? How does a good lab stay aimed at the big question without the PI micromanaging? Human organisations have evolved partial answers to all of these. That comparison was the trigger for this post. Most of the ideas below began as an observation about people working together, and became a question about agents. I keep the human analogy visible throughout (the new hire, the research admin, the PhD advisor, the 9-person startup vs the 1,000-person company), because it's where the intuitions come from, and also where they might mislead.
+Then, reading GR's *How to train a swarm* set me thinking about **human swarms**: human teams, departments and person-to-person collaboration.[^gr] How does a new hire learn whom to talk to? Why do some teams pass on a hard-won fix immediately while others let three people hit the same wall? Why does a rarely contacted office (research admin, the insurer, the release manager) end up deciding the timeline? How does a good lab stay aimed at the big question without the PI micromanaging? Human organisations have evolved partial answers to all of these. That comparison was the trigger for this post. Most of the ideas below began as an observation about people working together, and became a question about agents. I keep the human analogy visible throughout (the new hire, the research admin, the PhD advisor, the 9-person startup vs the 1,000-person company), because it's where the intuitions come from, and also where they might mislead.
 
 Everything in this post is a variation on one question:
 
@@ -61,7 +61,7 @@ Everything in this post is a variation on one question:
 
 ### 2.1 GR's RLCR and Avalon-M1 📄
 
-GR's recipe, *reinforcement learning from collective rewards*, has three ingredients:
+GR's recipe, *reinforcement learning from collective rewards*, has three ingredients:[^gr]
 
 - **One shared policy** plays every agent.
 - **One flat collective advantage**: every token of every agent in a rollout gets the same team-level advantage, $$A^{(i)} = R^{(i)} - \frac{1}{G}\sum_j R^{(j)}$$ (my notation; the post gives no formula).
@@ -75,9 +75,9 @@ Avalon-M1 organisations have **at most 9 agents**: a CEO who hires and fires spe
 - Agents were split into **groups of various sizes that could message only within their group**.
 - **Different groups got different versions of the problem** (the Clay alternatives: prove smoothness on $$\mathbb{R}^3$$ or the torus, or exhibit blow-up).
 - **Codex periodically consolidated the most useful insights** across groups and fed them back.
-- **Humans were the outer loop**: a ~100-agent, ~50 h warm-up on the unforced Euler problem succeeded, compute was moved to Navier–Stokes, new groups were seeded with the Euler result, and agents were moved to a newer checkpoint mid-run.
+- **Humans were the outer loop**: a ~100-agent, ~50 h warm-up on the unforced Euler problem succeeded, compute was moved to Navier–Stokes, new groups were seeded with the Euler result, and agents were moved to a newer checkpoint mid-run.[^oai][^oaidetail]
 - A separate model formalised the proof in **Lean** (~17 h).
-- Noam Brown: "I wouldn't even attribute 10% of the credit to multi-agent." He suggested 1,000 agents might have done nearly as well.
+- Noam Brown: "I wouldn't even attribute 10% of the credit to multi-agent."[^brown] He suggested 1,000 agents might have done nearly as well.
 
 ![Diagram: topologies](/images/thoughts-on-agent-swarms/diagrams/d01-topologies.png)
 
@@ -122,11 +122,11 @@ Most coverage stops at "10,000 agents, 88 hours". These are the details I found 
 
 **Five cross-cutting lessons** (my synthesis 💡):
 
-1. **The verifier sets how loose the structure can be.** With Lean or an automatic evaluator, you can afford a messy, diverse, 10,000-agent search. With a weak verifier, you need internal critics (co-scientist), or you get the DeepMind outcome.
+1. **The verifier sets how loose the structure can be.** With Lean or an automatic evaluator, you can afford a messy, diverse, 10,000-agent search. With a weak verifier, you need internal critics (co-scientist), or you get the DeepMind outcome.[^cosci][^deepmind]
 2. **Diversity comes from inputs, not personalities.** Problem variants, polarity, languages and directives are cheap and controllable. Personas are weak (DeepMind's personas didn't stop the cascade).
 3. **Shared knowledge channels are double-edged.** The DeepMind library is my "multicast the fix" idea in the wild, and it multicast an exploit. **Sharing must be gated by verification at least as strong as the sharing is fast.**
-4. **Structure unfolds over time in every successful system.** OpenAI's reallocation, AlphaEvolve's island resets and Bioptic's tree all grow, prune and reseed during the run.
-5. **Communication is sparse where it works.** About 3 messages per agent-hour at OpenAI; Kosmos coordinates through a shared world model, not chat.
+4. **Structure unfolds over time in every successful system.** OpenAI's reallocation, AlphaEvolve's island resets and Bioptic's tree all grow, prune and reseed during the run.[^bioptic][^evo]
+5. **Communication is sparse where it works.** About 3 messages per agent-hour at OpenAI; Kosmos coordinates through a shared world model, not chat.[^kosmos]
 
 ---
 
@@ -149,7 +149,7 @@ The unifying obstacle is **credit distance**: how far (in agents, in time, in ep
 
 ## 4. The physics of swarms: what the GR post establishes
 
-Before my ideas, here are the highlighted passages from the GR post that everything else rests on, each with the intuition I took from it.
+Before my ideas, here are the highlighted passages from the GR post that everything else rests on, each with the intuition I took from it.[^gr]
 
 ### 4.1 Speed → parallelism → communication 📄
 
@@ -170,7 +170,7 @@ No clock, no reason to parallelise. Clock but no messages, and identical agents 
 
 > "A naive reinforcement learning setup is not guaranteed to get this scaling pattern."
 
-With a discount $$\gamma<1$$, a correct answer after $$T$$ tokens is worth $$\gamma^T$$ at the start: $$0.999^{1000} \approx 0.37$$. GAE with $$\lambda<1$$ starves early tokens of the real outcome. Both quietly teach "be brief". For swarms, which run for hours, any setting that taxes time can stop co-ordination from ever paying. **This matters for horizon 3 later: per-episode returns are a hard version of the same tax.**
+With a discount $$\gamma<1$$, a correct answer after $$T$$ tokens is worth $$\gamma^T$$ at the start: $$0.999^{1000} \approx 0.37$$. GAE with $$\lambda<1$$ starves early tokens of the real outcome.[^gae] Both quietly teach "be brief". For swarms, which run for hours, any setting that taxes time can stop co-ordination from ever paying. **This matters for horizon 3 later: per-episode returns are a hard version of the same tax.**
 
 ### 4.3 RL amplifies, it rarely invents 📄
 
@@ -243,7 +243,7 @@ $$n^\ast = k + \frac{k(r_{\text{hot}}s - \rho)}{\rho - r_{\text{bg}}s} = 8 + \fr
 | Topic channels | Subscribe to `#build`, `#auth`, … | Scales; still simple | Topic choice is a prior |
 | Harness routing | System matches lessons to agents' context | Scales best | Strong harness bias (against §4.5) |
 
-In the spirit of GR's "keep primitives simple", my preferred route is **push (DMs, channels) plus pull (archive), and let RL learn whom to tell**. Add harness routing only if learned routing demonstrably fails at city scale.
+In the spirit of GR's "keep primitives simple", my preferred route is **push (DMs, channels) plus pull (archive), and let RL learn whom to tell**.[^gr] Add harness routing only if learned routing demonstrably fails at city scale.
 
 ### 5.4 "Might face later" has three timescales
 
@@ -268,7 +268,7 @@ Note the shared policy is already a **slow broadcast**: if sharing a fix helped,
 
 ## 6. Idea 2: swarm size vs time, on two clocks
 
-> 📄 GR: "In Avalon-M1, a collective with 5–8 hires starts below the average rollout in terms of useful work, but does nearly twice the average amount by step 200."
+> 📄 GR: "In Avalon-M1, a collective with 5–8 hires starts below the average rollout in terms of useful work, but does nearly twice the average amount by step 200."[^gr]
 >
 > 💡 **My question.** Is there a trade-off between swarm size and step count (total time)? Do bigger swarms need longer to produce useful work, because early time is dominated by communication overhead and by setting up the swarm's structure?
 
@@ -327,7 +327,7 @@ A loop like this is self-reinforcing: better co-ordination lowers $$t^\ast$$, wh
 
 ### 7.2 The bandit view 🧮
 
-Agent $$i$$ picks peer $$j$$ by UCB:
+Agent $$i$$ picks peer $$j$$ by UCB:[^ucb]
 
 $$\text{score}_j = \bar u_j + c\sqrt{\frac{\ln t}{n_j}}.$$
 
@@ -356,10 +356,10 @@ A pure "reinforce what pays" rule **prunes dependency links**, because their pay
 
 ### 7.4 How it could be built
 
-1. **In context (no new primitive).** Agents notice whose replies helped and message them more. RLCR rewards it if it raises team return.
+1. **In context (no new primitive).** Agents notice whose replies helped and message them more. RLCR rewards it if it raises team return.[^gr]
 2. **In the weights, at the role level.** Agents respawn each episode but roles persist. The shared policy can learn norms like "the API specialist pings the test specialist after a schema change": an org chart stored in weights.
 3. **Explicitly, in the harness.** A link-weight matrix updated from usefulness signals. Works, but it's a harness prior.
-4. **For dependency links: a directory, not a relationship.** A who-owns-what registry. Cheap, simple, and arguably a primitive worth adding. [hallerite](https://hallerite.com/posts/on-the-nature-of-the-swarm/) makes the complementary point that specialisation emerges by itself: an agent that has learned one area becomes the cheapest place to ask about it. The directory is how others find it.
+4. **For dependency links: a directory, not a relationship.** A who-owns-what registry. Cheap, simple, and arguably a primitive worth adding. [hallerite](https://hallerite.com/posts/on-the-nature-of-the-swarm/) makes the complementary point that specialisation emerges by itself: an agent that has learned one area becomes the cheapest place to ask about it.[^hallerite] The directory is how others find it.
 
 ### 7.5 Pitfalls
 
@@ -379,7 +379,7 @@ A pure "reinforce what pays" rule **prunes dependency links**, because their pay
 
 ### 8.1 How many sub-swarms: mirror the task's dependency graph
 
-**Conway's law, used on purpose** (the "inverse Conway manoeuvre"): structure the swarm like the task. Draw subtasks as nodes and dependencies as weighted edges; choosing sub-swarms is graph partitioning into $$k$$ parts. Cross-team communication is the **cut weight**; within-team load scales with part size squared.
+**Conway's law, used on purpose** (the "inverse Conway manoeuvre"): structure the swarm like the task.[^conway] Draw subtasks as nodes and dependencies as weighted edges; choosing sub-swarms is graph partitioning into $$k$$ parts. Cross-team communication is the **cut weight**; within-team load scales with part size squared.
 
 🧮 $$n=10{,}000$$ on one board: $$\sim 10^8$$ reads. Split into $$k=100$$ teams of $$g=100$$: $$k g^2 = 10^6$$, a $$100\times$$ saving, plus about $$k$$ summaries per sharing round.
 
@@ -424,9 +424,9 @@ Rules that fall out:
 - **Tear down** when the marginal value of the next hour falls below that compute's value elsewhere (successive halving).
 - **Hysteresis**: spawn threshold above teardown threshold, plus a minimum lifetime, so the swarm doesn't thrash.
 - **Exit memo is mandatory**, so knowledge isn't lost at teardown.
-- **But teardown is a lossy bet.** 📄 [hallerite](https://hallerite.com/posts/on-the-nature-of-the-swarm/) (*On the nature of the swarm*, Oct 2026) frames every compaction as "a bet" on what will matter later: offloading to disk "remembers, but can't think", while a discarded sub-agent "thinks, but can't remember". *Persistent* sub-agents that stay queryable get both. That argues for a third option between "keep running" and "tear down": **park** a team as a low-cost, queryable specialist (the *service* mode of §8.3), woken only when asked.
+- **But teardown is a lossy bet.** 📄 [hallerite](https://hallerite.com/posts/on-the-nature-of-the-swarm/) (*On the nature of the swarm*, Oct 2026) frames every compaction as "a bet" on what will matter later: offloading to disk "remembers, but can't think", while a discarded sub-agent "thinks, but can't remember".[^hallerite] *Persistent* sub-agents that stay queryable get both. That argues for a third option between "keep running" and "tear down": **park** a team as a low-cost, queryable specialist (the *service* mode of §8.3), woken only when asked.
 
-Precedents 📄: OpenAI's human-driven reallocation after the Euler warm-up (a ~100× scale-up driven by evidence); FunSearch/AlphaEvolve resetting weak islands from strong ones; Avalon-M1's CEO hiring and firing (my idea at village scale, already trained); cloud autoscaling with cooldowns.
+Precedents 📄: OpenAI's human-driven reallocation after the Euler warm-up (a ~100× scale-up driven by evidence); FunSearch/AlphaEvolve resetting weak islands from strong ones; Avalon-M1's CEO hiring and firing (my idea at village scale, already trained); cloud autoscaling with cooldowns.[^evo][^gr][^oaidetail]
 
 ### 8.5 Who decides?
 
@@ -469,7 +469,7 @@ Two lessons:
 - **At the optimum, overhead equals drift waste.** Coordinating more often just trades one for the other.
 - **Cost scales as $$\sqrt{\kappa\delta}$$.** Low-touch means shrinking both: cheaper check-ins *and* clearer intent. Better intent lets you check in less.
 
-Pitfalls: too low a gain means slow reaction to real pivots (hence the interrupt path); a coordinator teams must *wait for* isn't low-touch however rarely it speaks; a vague or wrong intent makes everyone efficiently aligned in the wrong direction. In the Navier–Stokes run, the intent-setting job was done by humans.
+Pitfalls: too low a gain means slow reaction to real pivots (hence the interrupt path); a coordinator teams must *wait for* isn't low-touch however rarely it speaks; a vague or wrong intent makes everyone efficiently aligned in the wrong direction. In the Navier–Stokes run, the intent-setting job was done by humans.[^oai]
 
 > **Open questions.** Can intent-setting and revision be learned rather than supplied by humans? How do we measure coordination overhead honestly, when agents rewarded on it may relabel coordination as "work"?
 
@@ -477,7 +477,7 @@ Pitfalls: too low a gain means slow reaction to real pivots (hence the interrupt
 
 ## 10. The village problem
 
-> 📄 GR: "In our initial Avalon-M1 model, we trained organisations with at most 9 agents. But swarms are now deployed with hundreds or thousands of agents. In effect, we are training collectives in villages but deploying them in cities."
+> 📄 GR: "In our initial Avalon-M1 model, we trained organisations with at most 9 agents.[^gr] But swarms are now deployed with hundreds or thousands of agents. In effect, we are training collectives in villages but deploying them in cities."
 
 It's a **distribution shift in team size**, the closest analogue being length generalisation: models trained on short sequences fail on long ones. Here "length" is the number of agents, and it shows up literally as context length.
 
@@ -502,11 +502,11 @@ A habit can transfer if its **per-agent cost stays flat** as $$n$$ grows.
 
 Human organisations settle on spans of about 5–10. With span $$s$$, $$n$$ agents need $$\lceil\log_s n\rceil$$ levels: $$\log_9 1000 \approx 3.1$$, so 4 levels. **If the policy learned "manage up to 8 well", it can be applied recursively**: each hire becomes a sub-CEO of its own village.
 
-**A counterpoint: trees vs meshes.** 📄 [hallerite](https://hallerite.com/posts/on-the-nature-of-the-swarm/) argues that a strict tree "moves the context problem to the root": every message routes upward, so the root fills up and must compact, a Hayekian central planner that can't hold the dispersed knowledge. A mesh of peers that message each other directly avoids this, and hierarchy can still emerge where it pays for itself ("Nobody needs to be beholden to someone above them just to get work done"). The essay suggests a tree is probably fine at 10 agents and a mesh makes more sense at 10,000. I read this as refining villages-of-villages rather than refuting it. Use the hierarchy for *intent and management* (low bandwidth), and allow mesh links for *expertise and fixes* (targeted, peer to peer), which is exactly the targeted-multicast route of §5.
+**A counterpoint: trees vs meshes.** 📄 [hallerite](https://hallerite.com/posts/on-the-nature-of-the-swarm/) argues that a strict tree "moves the context problem to the root": every message routes upward, so the root fills up and must compact, a Hayekian central planner that can't hold the dispersed knowledge.[^hallerite] A mesh of peers that message each other directly avoids this, and hierarchy can still emerge where it pays for itself ("Nobody needs to be beholden to someone above them just to get work done"). The essay suggests a tree is probably fine at 10 agents and a mesh makes more sense at 10,000. I read this as refining villages-of-villages rather than refuting it. Use the hierarchy for *intent and management* (low bandwidth), and allow mesh links for *expertise and fixes* (targeted, peer to peer), which is exactly the targeted-multicast route of §5.
 
 ![Diagram: villages of villages](/images/thoughts-on-agent-swarms/diagrams/d08-villages-of-villages.png)
 
-Ways to close the gap: (1) make the city a **federation of villages** (sidesteps rather than solves); (2) a **curriculum over $$n$$**, like the cap ramp (expensive; credit dilution grows); (3) **train the recursive unit**, villages whose environment includes a manager above and sub-teams below; (4) **mean-field thinking**: read aggregates, not every message; (5) **measure at deployment**: plot reward vs $$n$$ at fixed compute and fixed wall-clock, and find where it bends.
+Ways to close the gap: (1) make the city a **federation of villages** (sidesteps rather than solves); (2) a **curriculum over $$n$$**, like the cap ramp (expensive; credit dilution grows); (3) **train the recursive unit**, villages whose environment includes a manager above and sub-teams below; (4) **mean-field thinking**: read aggregates, not every message; (5) **measure at deployment**: plot reward vs $$n$$ at fixed compute and fixed wall-clock, and find where it bends.[^meanfield]
 
 **What might emerge only at city scale:** herding and correlated errors; congestion collapse on shared channels; cliques; and safety effects. GR reports a safety test where trained teams became *less* likely to report concerns to human overseers 📄. A mild tendency in a village can become a norm in a city.
 
@@ -516,7 +516,7 @@ Ways to close the gap: (1) make the city a **federation of villages** (sidesteps
 
 ## 11. Gifts to agents not yet spawned
 
-> 📄 GR: "More open-ended settings could allow rollouts to share their work with future generations of agents, e.g. by publishing a paper or code library. It is not clear how to reward rollouts for contributing to a public good that does not directly benefit them in the current episode."
+> 📄 GR: "More open-ended settings could allow rollouts to share their work with future generations of agents, e.g. by publishing a paper or code library.[^gr] It is not clear how to reward rollouts for contributing to a public good that does not directly benefit them in the current episode."
 >
 > 💡 **My question.** How do we even predict the utility of something that will only benefit future agents, which haven't been spawned yet, on sub-goals that aren't apparent yet? Do we need very long-range planning? How do we think about the future utility of current actions at all?
 
@@ -587,10 +587,10 @@ Its reward is task progress minus the cost of agent-hours and overhead. This is 
 
 ### 12.2 A pattern that already works: the tree of directives
 
-The clearest published example of structure unfolding over time is Bioptic's asset-scouting agent 📄 (arXiv:2602.15019). It isn't usually described as a swarm, but it is one:
+The clearest published example of structure unfolding over time is Bioptic's asset-scouting agent 📄 (arXiv:2602.15019).[^bioptic] It isn't usually described as a swarm, but it is one:
 
 1. Each **node** is a directive for a sub-team of investigators ("Chinese-language regional press, oncology, preclinical to Phase 2").
-2. **Select** leaves to run by UCB, with exploration constant $$c = 1.2$$:
+2. **Select** leaves to run by UCB, with exploration constant $$c = 1.2$$:[^ucb]
 
 $$\text{UCB}(n) = \frac{W(n)}{N(n)} + c\sqrt{\frac{\log N(\text{parent}(n))}{N(n)}}$$
 
@@ -639,7 +639,7 @@ How would you actually RL such a system? I'd climb a ladder, one rung at a time,
 
 **Credit for structural actions.** A spawn or a migration is one action whose effect is spread over hours and thousands of other agents' tokens. A flat collective advantage will learn it, but slowly. Three ways to sharpen the signal:
 
-1. **Branching rollouts (my proposal).** Fork the swarm at a structural decision point, try alternatives (spawn vs don't; migrate now vs later), and compare returns within the group. This gives a counterfactual advantage *for that decision*, in the spirit of COMA's counterfactual baselines. It's expensive, so fork only at the rare, high-leverage decisions.
+1. **Branching rollouts (my proposal).** Fork the swarm at a structural decision point, try alternatives (spawn vs don't; migrate now vs later), and compare returns within the group. This gives a counterfactual advantage *for that decision*, in the spirit of COMA's counterfactual baselines.[^coma] It's expensive, so fork only at the rare, high-leverage decisions.
 2. **A structure critic.** Learn $$V(\text{swarm state})$$ from dashboards, and use the TD error for slow-loop actions.
 3. **Novelty-gated team rewards** as in §12.2, so a team gets credit for what it *added*, not for what it duplicated.
 
@@ -655,7 +655,7 @@ How would you actually RL such a system? I'd climb a ladder, one rung at a time,
 
 **Curricula.** Ramp the cap (as Avalon does), then ramp $$n$$, then ramp hierarchy depth. Use population-based training to tune slow-loop hyperparameters (migration rate, UCB constant, spawn threshold) across parallel training runs.
 
-**Integrity is part of the architecture.** The DeepMind episode shows that at scale, **a reward hack is a contagion, and the sharing channels are its vector.** Training environments for swarms need deep verification, readable reporting channels, the ability to retract shared items, and sanctions (DeepMind's authors propose agent self-governance: voting on disputes, temporary bans).
+**Integrity is part of the architecture.** The DeepMind episode shows that at scale, **a reward hack is a contagion, and the sharing channels are its vector.**[^deepmind] Training environments for swarms need deep verification, readable reporting channels, the ability to retract shared items, and sanctions (DeepMind's authors propose agent self-governance: voting on disputes, temporary bans).
 
 > **Open questions.** Can the slow loop be learned jointly with the fast loop, or must it be trained separately? Are branching rollouts worth their cost? What's the right reward for a team whose job is to *rule things out*?
 
@@ -713,7 +713,7 @@ How the ideas map:
 
 ### 14.3 Cancer care: the oncologist's point of view
 
-- **Tumour board preparation.** Islands per frame, mirroring the Navier–Stokes problem variants: *guideline-concordant standard of care*; *biomarker-driven targeted therapy*; *clinical trial options*; *de-escalation or palliative-first*. A refuting island looks for reasons each frame fails for *this* patient (comorbidities, performance status, prior toxicities). The integrate team writes one page for the board. The verifier ladder runs through guidelines, pathology review and, finally, the multidisciplinary team.
+- **Tumour board preparation.** Islands per frame, mirroring the Navier–Stokes problem variants: *guideline-concordant standard of care*; *biomarker-driven targeted therapy*; *clinical trial options*; *de-escalation or palliative-first*.[^oai] A refuting island looks for reasons each frame fails for *this* patient (comorbidities, performance status, prior toxicities). The integrate team writes one page for the board. The verifier ladder runs through guidelines, pathology review and, finally, the multidisciplinary team.
 - **Longitudinal surveillance.** Always-on, low-touch watchers over imaging (RECIST), labs, ctDNA and patient-reported outcomes, writing to a dashboard the oncologist reads rather than sending messages. The $$\sqrt{2\kappa\delta}$$ logic of §9 says to make check-ins cheap and the "what counts as drift" intent clear.
 - **Toxicity management.** Early detection of immune-related adverse events (colitis, pneumonitis, endocrinopathies) is the clinical version of "share the fix fast": one signal noticed in the notes should reach whoever acts on it.
 - **Handoffs across the continuum.** Surgery to medical oncology to radiation to survivorship or palliative care. Each handoff is a dependency link where context is lost; the exit memo of §8.4 is the discharge summary done well.
@@ -723,11 +723,11 @@ How the ideas map:
 
 ### 14.4 Early discovery: targets, mechanisms and hits
 
-**Target finding and prioritisation.** "Is gene X a causal driver of disease Y?" Islands by **evidence type**: human genetics (GWAS, Mendelian randomisation, rare-variant burden), functional genomics (CRISPR screens, DepMap), single-cell and spatial expression, pathway context, prior clinical experience with the target class. A **refuting island** argues that X is a passenger, a marker or confounded (reverse causation, linkage to a neighbouring gene, tissue mismatch). Independent evidence types raise $$N_{\text{eff}}$$ (§8.2). Targets with human genetic support are reported to succeed clinically at roughly twice the rate (Nelson et al. 2015; King et al. 2019).
+**Target finding and prioritisation.** "Is gene X a causal driver of disease Y?" Islands by **evidence type**: human genetics (GWAS, Mendelian randomisation, rare-variant burden), functional genomics (CRISPR screens, DepMap), single-cell and spatial expression, pathway context, prior clinical experience with the target class. A **refuting island** argues that X is a passenger, a marker or confounded (reverse causation, linkage to a neighbouring gene, tissue mismatch). Independent evidence types raise $$N_{\text{eff}}$$ (§8.2). Targets with human genetic support are reported to succeed clinically at roughly twice the rate (Nelson et al. 2015; King et al. 2019).[^genetic]
 
-**Causal mechanism understanding.** Islands per mechanistic hypothesis, each tasked with predictions that *distinguish* it from the others. A verifier ladder runs from consistency across datasets, to a perturbation experiment, to an in vivo model. Kosmos 📄 shows the coordination pattern: data-analysis and literature agents sharing one structured world model, with every claim linked to code or a paper.
+**Causal mechanism understanding.** Islands per mechanistic hypothesis, each tasked with predictions that *distinguish* it from the others. A verifier ladder runs from consistency across datasets, to a perturbation experiment, to an in vivo model. Kosmos 📄 shows the coordination pattern: data-analysis and literature agents sharing one structured world model, with every claim linked to code or a paper.[^kosmos]
 
-**Hit finding.** Chemical space is now vast: Enamine REAL Space holds about 40 billion make-on-demand molecules. BIOPTIC B1 📄 (J. Chem. Inf. Model. 2025), a ligand-based virtual screen, searched it in minutes and found novel LRRK2 binders (a Parkinson's target) with $$K_d$$ as low as 110 nM, binding both wild-type and the G2019S mutant. A swarm adds structure on top of such tools: **islands per chemical hypothesis** (orthosteric, allosteric, covalent, degrader) so scaffold diversity is preserved by design, not by luck.
+**Hit finding.** Chemical space is now vast: Enamine REAL Space holds about 40 billion make-on-demand molecules. BIOPTIC B1 📄 (J.[^bioptic] Chem. Inf. Model. 2025), a ligand-based virtual screen, searched it in minutes and found novel LRRK2 binders (a Parkinson's target) with $$K_d$$ as low as 110 nM, binding both wild-type and the G2019S mutant. A swarm adds structure on top of such tools: **islands per chemical hypothesis** (orthosteric, allosteric, covalent, degrader) so scaffold diversity is preserved by design, not by luck.
 
 **Hit-to-lead and lead optimisation.** A *build* team per chemical series (dense talk, tight design-make-test loops), an *integrate* team that shares matched molecular pairs and liability fixes across series (a solubilising group that worked in series A is a "hard-won fix" for series B), and successive halving across series, which is what stage gates already do. The main failure mode is reward hacking against a weak verifier: molecules that dock beautifully and fail in assay. The verifier ladder sets how much confirmation is needed. With 1% true actives, a docking screen with sensitivity 0.6 and specificity 0.9 gives only about 6% positive predictive value. An independent second stage lifts it to about 46%.
 
@@ -735,7 +735,7 @@ How the ideas map:
 
 - **Design swarm.** Islands propose study designs under different model choices: syngeneic vs patient-derived xenograft vs genetically engineered mouse models, and humanised mice for immuno-oncology. Each comes with power calculations and randomisation and blinding plans. A refuting island asks what would make a positive result meaningless (wrong model for the mechanism, under-powered, dosing that doesn't reach target exposure).
 - **Readout swarm.** Different analysis islands apply different, pre-registered models to the same data: mixed-effects tumour-growth models, tumour growth inhibition, survival analysis, PK/PD exposure–response. A refuting island looks for cage, batch and operator effects. Agreement across *independent* analyses is the verifier.
-- **Toxicology in non-human primates.** Clinical pathology, histopathology and safety pharmacology. The species-difference question (does the target's biology, sequence and structure differ between human and model species?) is one of the major error items in Convoke's target-safety rubric 📄. It's a natural *dependency link* to check early.
+- **Toxicology in non-human primates.** Clinical pathology, histopathology and safety pharmacology. The species-difference question (does the target's biology, sequence and structure differ between human and model species?) is one of the major error items in Convoke's target-safety rubric 📄.[^convoke] It's a natural *dependency link* to check early.
 - **The 3Rs.** Every in silico design iteration that prevents a poorly designed animal study is a reduction in animal use, and a collective good of its own.
 
 ### 14.6 Clinical trials, Phases 1 to 3
@@ -800,7 +800,7 @@ Databases record what companies *announce*. Silence is what they *stop* saying: 
 
 ### 15.1 Standalone or hybrid? Where humans add the most
 
-The Navier–Stokes run already *was* a hybrid. Humans chose the portfolio, made the reallocation call, seeded the new groups and revised the prompts. The swarm did the search. That split is worth keeping deliberately, and it follows from the earlier sections:
+The Navier–Stokes run already *was* a hybrid.[^oai] Humans chose the portfolio, made the reallocation call, seeded the new groups and revised the prompts. The swarm did the search. That split is worth keeping deliberately, and it follows from the earlier sections:
 
 - **Humans belong in the slow loop (§12.1).** Choosing the question, setting and revising intent, deciding what counts as success, and making the irreversible calls (spending real money, running an experiment on animals or people). These are low-frequency, high-leverage decisions. They are exactly where judgement and values matter, and where a person's attention is affordable.
 - **Humans are decorrelated agents (§8.2).** 🧮 Ten thousand copies of one model share blind spots ($$\rho$$ between them is high). A human expert who reasons differently is a *low-correlation* attempt. In the $$N_{\text{eff}}$$ formula, one genuinely independent reviewer can be worth more than many extra copies. That's a quantitative reason to keep humans in the refuting island and at the verification gate, not just a moral one.
@@ -809,11 +809,11 @@ The Navier–Stokes run already *was* a hybrid. Humans chose the portfolio, made
 
 ![Diagram: hybrid human ai](/images/thoughts-on-agent-swarms/diagrams/d13-hybrid-human-ai.png)
 
-(Shameless but brief aside: I've been chewing on the hybrid question for a while, and a first, very imperfect attempt at it, *Patients Are Waiting: From Swarms to Synergy. Designing Complementary Collaborative Human–AI Agent Teams for Biomedical Discovery & Invention*, somehow got into the [NeurIPS 2026 Agentic AI for Biological Discovery (Agentic LS) workshop](https://agenticls.github.io/) ([workshop page](https://neurips.cc/virtual/2026/loc/sydney/workshop/137498)). Much of this section is me arguing with my past self.)
+(Shameless but brief aside: I've been chewing on the hybrid question for a while, and a first, very imperfect attempt at it, *Patients Are Waiting: From Swarms to Synergy.[^neurips] Designing Complementary Collaborative Human–AI Agent Teams for Biomedical Discovery & Invention*, somehow got into the [NeurIPS 2026 Agentic AI for Biological Discovery (Agentic LS) workshop](https://agenticls.github.io/) ([workshop page](https://neurips.cc/virtual/2026/loc/sydney/workshop/137498)). Much of this section is me arguing with my past self.)
 
 ### 15.2 Guarding against the atrophy of human skill
 
-The risk is real and already measured outside AI-for-science. A 2025 multicentre study in *Lancet Gastroenterology & Hepatology* reported that endoscopists who had been using AI assistance detected fewer adenomas when they performed colonoscopies *without* it (detection fell from about 28% to about 22%). Aviation has long known the same pattern from autopilot. A science swarm that hands people finished answers will train people who can no longer produce or judge them. Then the "independent human reviewer" of §15.1 quietly stops being independent or expert.
+The risk is real and already measured outside AI-for-science. A 2025 multicentre study in *Lancet Gastroenterology & Hepatology* reported that endoscopists who had been using AI assistance detected fewer adenomas when they performed colonoscopies *without* it (detection fell from about 28% to about 22%).[^lancet] Aviation has long known the same pattern from autopilot. A science swarm that hands people finished answers will train people who can no longer produce or judge them. Then the "independent human reviewer" of §15.1 quietly stops being independent or expert.
 
 Design countermeasures, each mapped to an earlier idea:
 
@@ -925,7 +925,7 @@ This is the verifier ladder of §14.1, made *legible*. Each rung is cheaper and 
 
 1. **Multicast.** A fix saves 10 min; reading costs 0.5 min. (a) 9 agents, each 20% likely to hit it: broadcast? (b) 1,000 agents: 5 at 90%, the rest at 0.1%?
 2. **Size vs time.** Using $$c(n) = 0.1n$$, $$e(n) = 1/(1+0.1(n-1))$$, at roughly which budget $$T$$ does $$n=16$$ first beat $$n=8$$?
-3. **Org chart.** In the UCB example, how many more exchanges with B (if $$\bar u_B$$ stays 0.3) before A is chosen again?
+3. **Org chart.** In the UCB example, how many more exchanges with B (if $$\bar u_B$$ stays 0.3) before A is chosen again?[^ucb]
 4. **Overhead budget.** With $$c+d = 30$$ min and $$m = 3\%$$, what minimum lifetime keeps $$\varphi \le 8\%$$?
 5. **Cadence.** $$\kappa = 0.1$$ h, $$\delta = 0.2$$/h. Find $$\tau^\ast$$ and total cost. What if clearer intent halves $$\delta$$?
 6. **Village.** With span 6, how many management levels does a 10,000-agent swarm need?
@@ -945,24 +945,55 @@ This is the verifier ladder of §14.1, made *legible*. Each rung is cheaper and 
 
 ---
 
-## 19. Sources
+## 19. References (all in one place)
 
-- General Reasoning, *How to train a swarm*. [gr.inc/blog/how-to-train-a-swarm](https://www.gr.inc/blog/how-to-train-a-swarm); Avalon-M1 report, [gr.inc/avalonm1.pdf](https://www.gr.inc/avalonm1.pdf).
-- OpenAI, *On the Navier–Stokes Millennium Prize Problem* (8 Sept 2026). [openai.com/index/navier-stokes-solution](https://openai.com/index/navier-stokes-solution/); Lean repo [github.com/openai/NavierStokesAndEuler](https://github.com/openai/NavierStokesAndEuler).
-- Reporting: [Quanta](https://www.quantamagazine.org/ai-has-solved-one-of-maths-1-million-millennium-prize-problems-20260908/), [VentureBeat](https://venturebeat.com/technology/openai-solves-longstanding-math-problem-with-10-000-agent-swarm-but-cant-rule-out-benefitting-from-a-researchers-private-codex-data), [Understanding AI](https://www.understandingai.org/p/why-agent-swarms-could-be-the-next) (Noam Brown's comments).
-- Kimi Team, *Kimi K2.5*, [arXiv:2602.02276](https://arxiv.org/abs/2602.02276).
-- Extra Navier–Stokes details: [CellCog](https://cellcog.ai/blog/openai-navier-stokes/) (verbatim quotes from OpenAI's post), [Aventine](https://aventineresearchinstitute.substack.com/p/is-this-just-the-beginning-for-ai) (Brown, Kagan-Kans, Anthropic team-size results), [lovex.dev](https://lovex.dev/blog/ai-agent-swarm-coordination).
-- OpenAI Cycle Double Cover run: [imisofts summary](https://imisofts.com/blog/gpt-5-6-sol-ultra-math-proof-agent-swarm-playbook-news-july-13-2026/) of OpenAI's published proof and prompt.
-- Paglieri et al., DeepMind 100-agent experiment, arXiv:2609.04170; [MIT Technology Review](https://www.technologyreview.com/2026/09/14/1144037/ai-agents-blew-whistle-o-cheating-colleagues/); [The Decoder](https://the-decoder.com/deepmind-put-100-ai-agents-in-a-room-and-they-sorted-into-cheaters-converts-and-whistleblowers/).
-- Mitchener et al., *Kosmos: An AI Scientist for Autonomous Discovery*, [arXiv:2511.02824](https://arxiv.org/abs/2511.02824).
-- Vinogradova et al., *Hunt Globally: Deep Research AI Agents for Drug Asset Scouting*, [arXiv:2602.15019](https://arxiv.org/abs/2602.15019).
-- Vinogradov et al., *LLM-Based Agents for Competitive Landscape Mapping in Drug Asset Due Diligence*, [arXiv:2508.16571](https://arxiv.org/abs/2508.16571).
-- Vinogradov, Nguyen et al., *BIOPTIC B1 … Discovers LRRK2 Ligands in Vast Chemical Space*, J. Chem. Inf. Model. 65, 9927 (2025).
+*Everything cited in the margin, plus the background reading, in one place.*
+
+- General Reasoning, [*How to train a swarm*](https://www.gr.inc/blog/how-to-train-a-swarm) (2026), and the [Avalon-M1 report](https://www.gr.inc/avalonm1.pdf).
+- OpenAI, [*On the Navier–Stokes Millennium Prize Problem*](https://openai.com/index/navier-stokes-solution/) (8 Sep 2026), and the [Lean proof repo](https://github.com/openai/NavierStokesAndEuler). Reported by [Quanta](https://www.quantamagazine.org/ai-has-solved-one-of-maths-1-million-millennium-prize-problems-20260908/) and [VentureBeat](https://venturebeat.com/technology/openai-solves-longstanding-math-problem-with-10-000-agent-swarm-but-cant-rule-out-benefitting-from-a-researchers-private-codex-data).
+- Noam Brown's comments, via [Understanding AI](https://www.understandingai.org/p/why-agent-swarms-could-be-the-next) and [Aventine](https://aventineresearchinstitute.substack.com/p/is-this-just-the-beginning-for-ai).
+- Further details of the Navier–Stokes run, from [CellCog](https://cellcog.ai/blog/openai-navier-stokes/) (which quotes OpenAI's post) and [Aventine](https://aventineresearchinstitute.substack.com/p/is-this-just-the-beginning-for-ai). Secondary sources: treat with care.
+- OpenAI's Cycle Double Cover run, as summarised by [imisofts](https://imisofts.com/blog/gpt-5-6-sol-ultra-math-proof-agent-swarm-playbook-news-july-13-2026/) from OpenAI's published proof and prompt.
+- Kimi Team, [*Kimi K2.5*](https://arxiv.org/abs/2602.02276) (2026).
+- Paglieri et al., DeepMind 100-agent experiment, arXiv:2609.04170 (2026); coverage in [MIT Technology Review](https://www.technologyreview.com/2026/09/14/1144037/ai-agents-blew-whistle-o-cheating-colleagues/) and [The Decoder](https://the-decoder.com/deepmind-put-100-ai-agents-in-a-room-and-they-sorted-into-cheaters-converts-and-whistleblowers/).
+- Mitchener et al., [*Kosmos: An AI Scientist for Autonomous Discovery*](https://arxiv.org/abs/2511.02824) (2025).
+- Gottweis et al., *Towards an AI co-scientist* (2025); Ghareeb et al., *Robin* (2025); Swanson et al., *The Virtual Lab*, Nature (2025).
+- Vinogradova et al., [*Hunt Globally: Deep Research AI Agents for Drug Asset Scouting*](https://arxiv.org/abs/2602.15019) (2026); Vinogradov et al., [*LLM-Based Agents for Competitive Landscape Mapping in Drug Asset Due Diligence*](https://arxiv.org/abs/2508.16571) (2025); Vinogradov, Nguyen et al., *BIOPTIC B1*, J. Chem. Inf. Model. 65, 9927 (2025).
 - Convoke, [*Benchmarking biopharma knowledge work*](https://convoke.bio/blog/benchmarking-biopharma-knowledge-work) (Sep 2026).
-- tp53, *Patients Are Waiting: From Swarms to Synergy. Designing Complementary Collaborative Human–AI Agent Teams for Biomedical Discovery & Invention*, NeurIPS 2026 Agentic LS workshop ([agenticls.github.io](https://agenticls.github.io/)).
-- hallerite (Konstantin Dunas), [*On the nature of the swarm: why scaling inference ends in many agents*](https://hallerite.com/posts/on-the-nature-of-the-swarm/) (Oct 2026).
+- tp53, *Patients Are Waiting: From Swarms to Synergy*, NeurIPS 2026 Agentic LS workshop ([agenticls.github.io](https://agenticls.github.io/); [workshop page](https://neurips.cc/virtual/2026/loc/sydney/workshop/137498)).
+- Konstantin Dunas (hallerite), [*On the nature of the swarm: why scaling inference ends in many agents*](https://hallerite.com/posts/on-the-nature-of-the-swarm/) (Oct 2026).
 - Budzyń et al., deskilling of endoscopists after AI exposure, *Lancet Gastroenterology & Hepatology* (2025).
-- Gottweis et al., *Towards an AI co-scientist* (2025); Ghareeb et al., *Robin* (2025); Swanson et al., *The Virtual Lab* (Nature 2025); Nelson et al. (Nat. Genet. 2015) and King et al. (PLoS Genet. 2019) on genetic support.
-- Background ideas (worth checking against originals): CommNet, IC3Net and TarMAC (learned and targeted communication in multi-agent RL); island-model genetic algorithms, FunSearch and AlphaEvolve; Voyager's skill library; RUDDER and hindsight credit assignment; mean-field MARL; Granovetter, *The strength of weak ties*; Conway's law; mission command.
+- Nelson et al., *Nature Genetics* 47, 856 (2015); King et al., *PLoS Genetics* 15, e1008489 (2019).
+- Auer, Cesa-Bianchi & Fischer, *Finite-time analysis of the multiarmed bandit problem*, Machine Learning 47 (2002).
+- Schulman et al., *High-dimensional continuous control using generalized advantage estimation*, ICLR (2016).
+- Foerster et al., *Counterfactual multi-agent policy gradients*, AAAI (2018).
+- Sukhbaatar et al., *CommNet* (NeurIPS 2016); Singh et al., *IC3Net* (ICLR 2019); Das et al., *TarMAC* (ICML 2019).
+- Island-model genetic algorithms; Romera-Paredes et al., *FunSearch*, Nature 625 (2024); Novikov et al., *AlphaEvolve* (2025).
+- Wang et al., *Voyager: An open-ended embodied agent with large language models* (2023).
+- Arjona-Medina et al., *RUDDER* (NeurIPS 2019); Harutyunyan et al., *Hindsight credit assignment* (NeurIPS 2019).
+- Yang et al., *Mean field multi-agent reinforcement learning*, ICML (2018).
+- Granovetter, *The strength of weak ties*, American Journal of Sociology 78, 1360 (1973).
+- Conway, *How do committees invent?*, Datamation (1968).
 
-*Companion notes with fuller derivations: `notes/how-to-train-a-swarm/notes.pdf` and `navier-stokes-swarm.pdf`.*
+<link rel="stylesheet" href="/assets/css/sidenotes.css">
+<script src="/assets/js/sidenotes.js" defer></script>
+
+[^gr]: General Reasoning, [*How to train a swarm*](https://www.gr.inc/blog/how-to-train-a-swarm) (2026), and the [Avalon-M1 report](https://www.gr.inc/avalonm1.pdf).
+[^hallerite]: Konstantin Dunas (hallerite), [*On the nature of the swarm: why scaling inference ends in many agents*](https://hallerite.com/posts/on-the-nature-of-the-swarm/) (Oct 2026).
+[^oai]: OpenAI, [*On the Navier–Stokes Millennium Prize Problem*](https://openai.com/index/navier-stokes-solution/) (8 Sep 2026), and the [Lean proof repo](https://github.com/openai/NavierStokesAndEuler). Reported by [Quanta](https://www.quantamagazine.org/ai-has-solved-one-of-maths-1-million-millennium-prize-problems-20260908/) and [VentureBeat](https://venturebeat.com/technology/openai-solves-longstanding-math-problem-with-10-000-agent-swarm-but-cant-rule-out-benefitting-from-a-researchers-private-codex-data).
+[^brown]: Noam Brown's comments, via [Understanding AI](https://www.understandingai.org/p/why-agent-swarms-could-be-the-next) and [Aventine](https://aventineresearchinstitute.substack.com/p/is-this-just-the-beginning-for-ai).
+[^oaidetail]: Further details of the Navier–Stokes run, from [CellCog](https://cellcog.ai/blog/openai-navier-stokes/) (which quotes OpenAI's post) and [Aventine](https://aventineresearchinstitute.substack.com/p/is-this-just-the-beginning-for-ai). Secondary sources: treat with care.
+[^deepmind]: Paglieri et al., DeepMind 100-agent experiment, arXiv:2609.04170 (2026); coverage in [MIT Technology Review](https://www.technologyreview.com/2026/09/14/1144037/ai-agents-blew-whistle-o-cheating-colleagues/) and [The Decoder](https://the-decoder.com/deepmind-put-100-ai-agents-in-a-room-and-they-sorted-into-cheaters-converts-and-whistleblowers/).
+[^kosmos]: Mitchener et al., [*Kosmos: An AI Scientist for Autonomous Discovery*](https://arxiv.org/abs/2511.02824) (2025).
+[^cosci]: Gottweis et al., *Towards an AI co-scientist* (2025); Ghareeb et al., *Robin* (2025); Swanson et al., *The Virtual Lab*, Nature (2025).
+[^bioptic]: Vinogradova et al., [*Hunt Globally: Deep Research AI Agents for Drug Asset Scouting*](https://arxiv.org/abs/2602.15019) (2026); Vinogradov et al., [*LLM-Based Agents for Competitive Landscape Mapping in Drug Asset Due Diligence*](https://arxiv.org/abs/2508.16571) (2025); Vinogradov, Nguyen et al., *BIOPTIC B1*, J. Chem. Inf. Model. 65, 9927 (2025).
+[^convoke]: Convoke, [*Benchmarking biopharma knowledge work*](https://convoke.bio/blog/benchmarking-biopharma-knowledge-work) (Sep 2026).
+[^neurips]: tp53, *Patients Are Waiting: From Swarms to Synergy*, NeurIPS 2026 Agentic LS workshop ([agenticls.github.io](https://agenticls.github.io/); [workshop page](https://neurips.cc/virtual/2026/loc/sydney/workshop/137498)).
+[^lancet]: Budzyń et al., deskilling of endoscopists after AI exposure, *Lancet Gastroenterology & Hepatology* (2025).
+[^genetic]: Nelson et al., *Nature Genetics* 47, 856 (2015); King et al., *PLoS Genetics* 15, e1008489 (2019).
+[^ucb]: Auer, Cesa-Bianchi & Fischer, *Finite-time analysis of the multiarmed bandit problem*, Machine Learning 47 (2002).
+[^gae]: Schulman et al., *High-dimensional continuous control using generalized advantage estimation*, ICLR (2016).
+[^coma]: Foerster et al., *Counterfactual multi-agent policy gradients*, AAAI (2018).
+[^evo]: Island-model genetic algorithms; Romera-Paredes et al., *FunSearch*, Nature 625 (2024); Novikov et al., *AlphaEvolve* (2025).
+[^meanfield]: Yang et al., *Mean field multi-agent reinforcement learning*, ICML (2018).
+[^conway]: Conway, *How do committees invent?*, Datamation (1968).

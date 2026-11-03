@@ -33,6 +33,10 @@ Two pieces of work frame what follows. Both are published facts; everything afte
 
 **OpenAI's Navier–Stokes swarm** (September 2026) is the largest public example of a swarm at work.[^oai] On the order of 10,000 copies of one strong model were split into groups that could only message within their group. Different groups got different versions of the problem (prove smoothness, or find a blow-up). Codex periodically consolidated the best insights across groups, and humans moved compute toward what was working, after a cheap ~100-agent warm-up on a related Euler problem succeeded.[^oaidetail] A separate model formalised the result in Lean. OpenAI's Noam Brown has said he "wouldn't even attribute 10% of the credit to multi-agent".[^brown] The model did the heavy lifting, and the swarm bought speed and coverage.
 
+![Diagram: swarm topologies](/images/thoughts-on-agent-swarms/diagrams/d01-topologies.png)
+
+*My simplified drawing of three published designs: Kimi K2.5's trained orchestrator with sub-agents[^kimi], GR's Avalon-M1 "village" with a message board[^gr], and OpenAI's Navier–Stokes islands with mediated migration and a Lean check[^oai].*
+
 ### The details most coverage misses
 
 A few facts about the Navier–Stokes run matter for design and rarely get mentioned. It began as a *portfolio*: agent groups were set on all the remaining Millennium problems (reportedly prompted by a rumour that Anthropic had solved two), and resources moved to Navier–Stokes only after the cheap Euler warm-up surprised the team. The model had been in training for just four days when the run began, and agents were moved to a newer checkpoint mid-run, so the swarm's accumulated state mattered more than any one model. Altman described it as having "no hierarchy". Humans steered by writing follow-up prompts that drew on the agents' own intermediate results. And communication was sparse. Dividing the reported totals (about 2.7 million messages over about 88 hours, for about 10,000 agents and about 130 billion output tokens) gives roughly 3 messages per agent-hour and about 48,000 output tokens per message.[^oaidetail]
@@ -61,6 +65,10 @@ My hypothesis is that each horizon is harder than the last, because the benefit 
 
 Here are the six ideas, roughly in that order. After them come how to make the structure adapt and train it, where it matters most, and how to keep humans at the centre.
 
+![Diagram: three horizons of the larger good](/images/thoughts-on-agent-swarms/diagrams/d02-three-horizons.png)
+
+*Conceptual diagram (mine): the three horizons of the "larger good", from the current task to the whole swarm to future agents.*
+
 ## 1. Multicast the hard-won fix, to the agents who need it
 
 **The idea.** When one agent cracks an obstacle that siblings are facing now, or will face later, the fix should go to all of them, or to the subset likely to hit it.
@@ -71,6 +79,14 @@ My hypothesis is that in a 9-agent village most agents clear that bar, so broadc
 
 **Why it matters for training.** If this is right, training at 9 agents would teach "always broadcast", a habit that could be the wrong one at 1,000.
 
+![Diagram: multicast flow](/images/thoughts-on-agent-swarms/diagrams/d03-multicast-flow.png)
+
+*Conceptual diagram (mine): a fix is pushed to the agents likely to hit the same problem, and archived for everyone else.*
+
+![Sketch: broadcast vs targeted sharing](/images/thoughts-on-agent-swarms/sketches/multicast-sketch.png)
+
+*My hypothesis: broadcasting every fix to everyone costs more reading time than it saves once the swarm is large; targeted push plus a searchable archive keeps paying. Qualitative sketch of my hypothesis; no data, axes have no units.*
+
 ## 2. Bigger swarms need more time before they pay off, on two clocks
 
 **The idea.** I suspect there's a trade-off between swarm size and time: bigger swarms spend their early time on setup and communication before useful work starts.
@@ -78,6 +94,14 @@ My hypothesis is that in a 9-agent village most agents clear that bar, so broadc
 **The intuition.** There are two different clocks here. On the *wall-clock inside one run*, a bigger team pays more setup before it overtakes a single agent. My hypothesis is that the best team size grows with the time budget, and that a big team given too little time can score nothing, because it's still briefing itself. On the *training clock*, I'd expect bigger teams also to need more updates to learn to co-ordinate, because one team-level reward is spread over more agents' actions. GR's own data shows this shape: teams with 5–8 hires start below average on useful work and reach nearly twice the average by step 200.[^gr]
 
 The time-cap ramp ties the two clocks together: as training progresses, longer caps let larger teams pay back.
+
+![Sketch: progress vs time budget for different swarm sizes](/images/thoughts-on-agent-swarms/sketches/size-vs-time-sketch.png)
+
+*My hypothesis: a bigger team pays a setup cost first, so it only pulls ahead when the time budget is long enough. Qualitative sketch of my hypothesis; no data, axes have no units.*
+
+![Diagram: two clocks](/images/thoughts-on-agent-swarms/diagrams/d04-two-clocks.png)
+
+*Conceptual diagram (mine), a hypothesised feedback loop: as the time cap ramps up during training, bigger teams can pay back their setup cost, training reinforces coordination, overhead falls, and the break-even point moves earlier.*
 
 ## 3. Learn the org chart the way a new hire does
 
@@ -89,6 +113,10 @@ I think this exposes a flaw in naive link reinforcement. **Average reward per me
 
 For dependency links, the answer is probably not a reinforced relationship but a **directory**: a simple "who owns what" registry the agent can consult when needed.
 
+![Diagram: org chart](/images/thoughts-on-agent-swarms/diagrams/d05-org-chart.png)
+
+*Conceptual diagram (mine): sub-swarms joined by a few reinforced bridges and weak ties, plus a directory of who owns what, the map a new hire builds in their first weeks.*
+
 ## 4. A swarm that reorganises itself, but cheaply
 
 **The idea.** Swarm structure needn't be static. If you spawn 10,000 agents, spin sub-swarms up as new needs appear and tear them down as they finish. The swarm's shape should evolve with what it discovers. But orchestration must always be much, much smaller than the work.
@@ -99,6 +127,14 @@ What *kind* of sub-swarm to spawn matters as much as how many. I find it useful 
 
 The number of sub-swarms is set by two opposing forces: the task's dependency structure (keep tightly coupled work in one team) and the need for diversity (independent teams may avoid herding on the first plausible idea). OpenAI's island design leans hard on the second. The standard design effect for correlated samples suggests why this might help.[^kish] If attempts within one group are correlated, adding agents to that group yields fewer and fewer independent attempts, while isolated groups each start fresh. Whether agent attempts actually behave this way is untested.
 
+![Diagram: reorganisation lifecycle](/images/thoughts-on-agent-swarms/diagrams/d06-lifecycle.png)
+
+*Conceptual diagram (mine): a team's lifecycle, from proposed to spawned, running, split or merged, and torn down with an exit memo written to the archive.*
+
+![Sketch: one herd vs isolated islands](/images/thoughts-on-agent-swarms/sketches/herd-vs-islands-sketch.png)
+
+*My hypothesis, borrowing the logic of Kish's design effect for correlated samples[^kish]: correlated attempts in one herd add little new information, while isolated islands keep more of it. Qualitative sketch of my hypothesis; no data, axes have no units.*
+
 ## 5. Coordination that is always on but low-touch
 
 **The idea.** Coordination should be constantly present, keeping the whole swarm pointed toward the larger, future goal. But the coordinating layer itself should be lightweight.
@@ -106,6 +142,10 @@ The number of sub-swarms is set by two opposing forces: the task's dependency st
 These sound contradictory until you separate *how often the orchestrator looks* from *how much it intervenes*. Three habits make that work: steer by **intent** rather than instructions (my hope is that one clear objective can keep many agents aligned without extra traffic); **observe shared state** (dashboards, test results, the archive) instead of interrogating agents; and **intervene rarely**, on a slow schedule plus an interrupt path for big events.[^interrupt]
 
 **The intuition.** Suppose teams drift off-target gradually and each check-in costs a little. A simple model then says there's an optimal check-in interval, at which the overhead equals the drift waste, and the total cost scales as the square root of *(check-in cost × drift rate)*. This is the same square-root trade-off as the classic economic order quantity.[^eoq] If the model holds for swarms, which is untested, the two levers for low-touch coordination are cheaper check-ins (summaries, not meetings) and clearer intent (less drift). And an orchestrator that teams must *wait for* is never low-touch, however rarely it speaks.
+
+![Diagram: low-touch coordination sequence](/images/thoughts-on-agent-swarms/diagrams/d07-low-touch-sequence.png)
+
+*Conceptual diagram (mine): a thin coordinator sets intent once, reads shared dashboards on a schedule, and teams interrupt it only for big events. Teams never block waiting on it.*
 
 ## 6. The village problem, and gifts to future agents
 
@@ -117,6 +157,14 @@ My hope is that 9 agents can serve as *one span of management*. If a policy lear
 
 My question was: how can you predict the utility of something for agents that haven't been spawned yet, on goals that aren't apparent yet? My hypothesis is that you mostly don't have to predict it. Science and open source largely *measure* value afterwards, through use (citations, imports, dependents), and pay credit back. A training system could log provenance, give hindsight credit to the runs whose artifacts later runs used (checked counterfactually, so mere use isn't enough), and let agents learn the general norms that historically paid: write general, documented, correct things, and record your dead ends.[^rudder] You don't need long-range planning; you need option value.
 
+![Diagram: villages of villages](/images/thoughts-on-agent-swarms/diagrams/d08-villages-of-villages.png)
+
+*Conceptual diagram (mine): small villages nested inside larger ones.*
+
+![Diagram: credit for public goods](/images/thoughts-on-agent-swarms/diagrams/d09-public-goods-credit.png)
+
+*Conceptual diagram (mine): an episode that writes a reusable library gets credit later if future episodes that import it beat comparable ones that didn't.*
+
 ## 7. Structure that unfolds over time, and how to train it
 
 Ideas 2, 4 and 5 add up to one claim. **A swarm's structure isn't a diagram; it's a slow policy.** Workers act every few seconds. The structure (spawn a team, retire one, merge two, pass an insight across, revise the intent, move compute) acts every few hours.
@@ -124,6 +172,10 @@ Ideas 2, 4 and 5 add up to one claim. **A swarm's structure isn't a diagram; it'
 There's already a working pattern for this. Bioptic's scouting agent treats each sub-team as a node in a tree of search directions.[^bioptic] It runs the most promising nodes (a bandit rule balancing past yield against curiosity). A coach then splits each one into narrower, non-overlapping children, using a short summary of why previous candidates were rejected. The reward is the share of results that pass validation, multiplied by **how many verified items were new to the shared pool**. That one design choice rewards the collective good directly: duplicating a sibling earns nothing, adding to the commons earns everything.
 
 To *train* such a system with RL, I'd climb a ladder. First, a hand-designed controller with strong workers (where OpenAI is). Next, a trained orchestrator with frozen workers (like Kimi).[^kimi] Then joint training of everyone in villages, with structural actions as tools (like Avalon-M1's hiring and firing).[^gr] Then recursive villages with curricula over time and team size. Last, credit that reaches across episodes. I expect the hard part to be credit for rare, high-leverage structural decisions. One option I'd like to test is *branching rollouts*: fork the swarm at a decision point, try the alternatives, and compare. My reading of the DeepMind episode is that integrity belongs in the architecture.[^deepmind] **Sharing must be gated by verification at least as strong as the sharing is fast.**
+
+![Diagram: training ladder](/images/thoughts-on-agent-swarms/diagrams/d10-training-ladder.png)
+
+*Conceptual diagram (mine): a ladder of training difficulty, from hand-designed control (as in OpenAI's run[^oai]) to a trained orchestrator (Kimi K2.5[^kimi]) to joint training in villages (Avalon-M1[^gr]), then two rungs that nobody has built yet as far as I know.*
 
 ## 8. Where this matters most: science, cancer care and drug discovery
 
@@ -136,6 +188,10 @@ My hypothesis, generalising from the maths cases, is that **the speed and trustw
 **Drug discovery, end to end.** *Target finding*: islands by evidence type (genetics, CRISPR screens, single-cell data) plus a team arguing the gene is a bystander, because independent evidence is worth more than correlated evidence.[^indep] *Mechanism*: one team per hypothesis, each looking for predictions that separate it from the rest. *Hit finding*: chemical space is now around 40 billion purchasable molecules, and ML screens can search it in minutes (one found new Parkinson's-target binders this way)[^chem], so islands per chemical strategy keep scaffold diversity by design. *Lead optimisation*: build teams per series, with an integrator passing a "fix" that worked in one series to the others. *Preclinical studies in mice and monkeys*: islands propose designs under different animal models, independent pre-registered analyses read out the same data, and a refuting team hunts for cage and batch effects. *Trials, Phases 1–3*: always-on safety watchers in Phase 1, a refuting team against subgroup fishing in Phase 2, and comparator choice, enrolment forecasting and readouts in Phase 3.
 
 **Asset scouting and "finding silence".** Analysts, pharma BD teams and investors do "find-all" work. Benchmarks show the gap: general agents find about half of the right assets on hard queries, purpose-built tree-search agents about three quarters.[^bioptic] Models are good at compiling lists and weak at synthesis.[^convoke] A scouting swarm splits the search by region, language, source and stage, validates and de-duplicates every candidate, and keeps a catalyst calendar with quiet watchers. My favourite extension is **reading silence**: assets that stop being reported. My hypothesis is that silence becomes signal when a gap is long relative to that asset's own usual update rhythm. The *cause* could then be weighed from independent public signals. A registry marked "terminated" with patents lapsing might point to safety, efficacy or money. Patents kept alive, new continuations filed and manufacturing hires might point to a company going quiet to keep its edge. None of this has been tested on real pipeline data. One team per hypothesis argues each cause; humans make the call; and only public information is used.
+
+![Diagram: cancer care swarm](/images/thoughts-on-agent-swarms/diagrams/d12-cancer-care-swarm.png)
+
+*Conceptual diagram (mine): one possible shape for a cancer-care swarm. A design idea, not a built system.*
 
 ## 9. Looking ahead: hybrid human–AI swarms, and keeping humans sharp
 
@@ -157,6 +213,14 @@ Where this goes next matters to me more than any single architecture. **How do w
 
 This is the chain of cheaper checks from section 8, made legible. My reading is that Lean made mathematics safe for a 10,000-agent search because it made claims precise and checking cheap. If so, biology would get that benefit only by investing in the same two things. And the last link should always be a person who understands *why*. My own small experiment in that formal corner is [Lean-Bio](/lean-bio/), which compiles biochemical models into theorems the Lean 4 kernel checks; it covers the parts of biology that can be formal, not the empirical rest.
 
+![Diagram: hybrid human-AI swarm](/images/thoughts-on-agent-swarms/diagrams/d13-hybrid-human-ai.png)
+
+*Conceptual diagram (mine): humans in the slow loop (question, intent, gates, independent refutation), the swarm in the fast loop.*
+
+![Diagram: a verifier ladder for biology](/images/thoughts-on-agent-swarms/diagrams/d14-lean-for-biology.png)
+
+*Conceptual diagram (mine): what a "Lean for biology" pipeline could look like, rung by rung.*
+
 ## Putting it together: a sketch
 
 If I had to draw the architecture these ideas point toward, it would be:
@@ -169,6 +233,10 @@ If I had to draw the architecture these ideas point toward, it would be:
 - **Integrity built in**: sharing gated by verification, archive entries that can be retracted, and reporting channels someone actually reads.
 
 Everything in that list is a hypothesis. None of it has been tested at scale.
+
+![Diagram: overall architecture](/images/thoughts-on-agent-swarms/diagrams/d11-architecture.png)
+
+*Conceptual diagram (mine): the pieces above put together in one architecture.*
 
 ## The open questions
 

@@ -9,7 +9,7 @@ author_profile: true
 > **How to read this.** Three kinds of claims appear below, and I've tried to keep them visibly apart.
 > - **Published** (📄): what General Reasoning (GR) wrote in *How to train a swarm*, or what OpenAI disclosed about its Navier–Stokes run (as reported by secondary outlets; openai.com itself wasn't directly readable when I wrote this).[^gr][^oai]
 > - **My idea** (💡): the questions and proposals this post is really about.
-> - **Toy model** (🧮): deliberately simple models with made-up but plausible numbers. They're for intuition and to make the ideas testable, not for prediction.
+> - **Toy model** (🧮): my own deliberately simple models, with made-up but plausible numbers. **I haven't run any experiments yet**, so no 🧮 number is a finding. Each one shows its assumptions, and where a toy borrows a standard model, the model is cited. These are for intuition and to make the ideas testable, not for prediction.[^nums]
 >
 > Each section ends with an open question or two, and there are exercises with answers at the end.
 
@@ -385,7 +385,7 @@ A pure "reinforce what pays" rule **prunes dependency links**, because their pay
 
 🧮 $$n=10{,}000$$ on one board: $$\sim 10^8$$ reads. Split into $$k=100$$ teams of $$g=100$$: $$k g^2 = 10^6$$, a $$100\times$$ saving, plus about $$k$$ summaries per sharing round.
 
-### 8.2 A second force: diversity 🧮
+### 8.2 A second force: diversity 🧮[^kish]
 
 When the bottleneck is *insight*, not throughput, you want independent attempts. If agents' attempts are correlated at level $$\rho$$, $$N$$ agents behave like
 
@@ -457,7 +457,7 @@ These sound contradictory until you separate **how often the orchestrator looks*
 
 ![Diagram: low touch sequence](/images/thoughts-on-agent-swarms/diagrams/d07-low-touch-sequence.png)
 
-### 9.1 How often to course-correct? 🧮
+### 9.1 How often to course-correct? 🧮[^eoq]
 
 Teams drift so that waste grows like $$\delta t$$ between corrections; each correction costs $$\kappa$$ hours of team time. Correcting every $$\tau$$ hours costs, per hour,
 
@@ -471,7 +471,7 @@ Two lessons:
 - **At the optimum, overhead equals drift waste.** Coordinating more often just trades one for the other.
 - **Cost scales as $$\sqrt{\kappa\delta}$$.** Low-touch means shrinking both: cheaper check-ins *and* clearer intent. Better intent lets you check in less.
 
-Pitfalls: too low a gain means slow reaction to real pivots (hence the interrupt path); a coordinator teams must *wait for* isn't low-touch however rarely it speaks; a vague or wrong intent makes everyone efficiently aligned in the wrong direction. In the Navier–Stokes run, the intent-setting job was done by humans.[^oai]
+Pitfalls: too low a gain means slow reaction to real pivots (hence the interrupt path[^interrupt]); a coordinator teams must *wait for* isn't low-touch however rarely it speaks; a vague or wrong intent makes everyone efficiently aligned in the wrong direction. In the Navier–Stokes run, the intent-setting job was done by humans.[^oai]
 
 > **Open questions.** Can intent-setting and revision be learned rather than supplied by humans? How do we measure coordination overhead honestly, when agents rewarded on it may relabel coordination as "work"?
 
@@ -698,7 +698,7 @@ Down the table, the swarm generates faster than the world can check. The design 
 
 ### 14.2 Cancer care journeys: the patient and family point of view
 
-A cancer journey is a long, branching trajectory: symptoms, diagnosis, staging and biomarkers, the treatment decision, treatment and side effects, monitoring, recurrence or survivorship, and sometimes palliative and end-of-life care. Families describe it as a second job: understanding, scheduling, chasing, deciding, all while frightened.
+A cancer journey is a long, branching trajectory: symptoms, diagnosis, staging and biomarkers, the treatment decision, treatment and side effects, monitoring, recurrence or survivorship, and sometimes palliative and end-of-life care. For many families it can feel like a second job: understanding, scheduling, chasing, deciding, all while frightened.
 
 A swarm for one patient and family is a natural fit for the ideas above.
 
@@ -729,7 +729,7 @@ How the ideas map:
 
 **Causal mechanism understanding.** Islands per mechanistic hypothesis, each tasked with predictions that *distinguish* it from the others. A verifier ladder runs from consistency across datasets, to a perturbation experiment, to an in vivo model. Kosmos 📄 shows the coordination pattern: data-analysis and literature agents sharing one structured world model, with every claim linked to code or a paper.[^kosmos]
 
-**Hit finding.** Chemical space is now vast: Enamine REAL Space holds about 40 billion make-on-demand molecules. BIOPTIC B1 📄 (J.[^bioptic] Chem. Inf. Model. 2025), a ligand-based virtual screen, searched it in minutes and found novel LRRK2 binders (a Parkinson's target) with $$K_d$$ as low as 110 nM, binding both wild-type and the G2019S mutant. A swarm adds structure on top of such tools: **islands per chemical hypothesis** (orthosteric, allosteric, covalent, degrader) so scaffold diversity is preserved by design, not by luck.
+**Hit finding.** Chemical space is now vast: Enamine REAL Space holds about 40 billion make-on-demand molecules. BIOPTIC B1 📄 (J. Chem. Inf. Model. 2025)[^bioptic], a ligand-based virtual screen, searched it in minutes and found novel LRRK2 binders (a Parkinson's target) with $$K_d$$ as low as 110 nM, binding both wild-type and the G2019S mutant. A swarm adds structure on top of such tools: **islands per chemical hypothesis** (orthosteric, allosteric, covalent, degrader) so scaffold diversity is preserved by design, not by luck.
 
 **Hit-to-lead and lead optimisation.** A *build* team per chemical series (dense talk, tight design-make-test loops), an *integrate* team that shares matched molecular pairs and liability fixes across series (a solubilising group that worked in series A is a "hard-won fix" for series B), and successive halving across series, which is what stage gates already do. The main failure mode is reward hacking against a weak verifier: molecules that dock beautifully and fail in assay. The verifier ladder sets how much confirmation is needed. With 1% true actives, a docking screen with sensitivity 0.6 and specificity 0.9 gives only about 6% positive predictive value. An independent second stage lifts it to about 46%.
 
@@ -766,7 +766,7 @@ A swarm design for scouting, built from this post's ideas:
 - **Always-on watchers** maintain the catalyst calendar, and stay quiet until something changes.
 - **Novelty-gated rewards** (§12.2), so effort flows to directives that still find new assets.
 
-Why it matters: shelved drugs have been revived to great effect. Tovorafenib was in-licensed by Day One from Takeda and approved in 2024 for paediatric low-grade glioma. Ibrutinib began as a Celera program that Pharmacyclics acquired cheaply, and it became Imbruvica (AbbVie later bought Pharmacyclics for about \$21B).
+Why it matters: shelved drugs have been revived to great effect. Tovorafenib[^revived] was in-licensed by Day One from Takeda and approved in 2024 for paediatric low-grade glioma. Ibrutinib began as a Celera program that Pharmacyclics acquired cheaply, and it became Imbruvica (AbbVie later bought Pharmacyclics for about \$21B).
 
 ### 14.8 Finding silence
 
@@ -815,7 +815,7 @@ The Navier–Stokes run already *was* a hybrid.[^oai] Humans chose the portfolio
 
 ### 15.2 Guarding against the atrophy of human skill
 
-The risk is real and already measured outside AI-for-science. A 2025 multicentre study in *Lancet Gastroenterology & Hepatology* reported that endoscopists who had been using AI assistance detected fewer adenomas when they performed colonoscopies *without* it (detection fell from about 28% to about 22%).[^lancet] Aviation has long known the same pattern from autopilot. A science swarm that hands people finished answers will train people who can no longer produce or judge them. Then the "independent human reviewer" of §15.1 quietly stops being independent or expert.
+The risk is real and already measured outside AI-for-science. A 2025 multicentre study in *Lancet Gastroenterology & Hepatology* reported that endoscopists who had been using AI assistance detected fewer adenomas when they performed colonoscopies *without* it (detection fell from about 28% to about 22%).[^lancet] Aviation has long known the same pattern[^aviation] from autopilot. A science swarm that hands people finished answers will train people who can no longer produce or judge them. Then the "independent human reviewer" of §15.1 quietly stops being independent or expert.
 
 Design countermeasures, each mapped to an earlier idea:
 
@@ -957,7 +957,7 @@ This is the verifier ladder of §14.1, made *legible*. Each rung is cheaper and 
 - Further details of the Navier–Stokes run, from [CellCog](https://cellcog.ai/blog/openai-navier-stokes/) (which quotes OpenAI's post) and [Aventine](https://aventineresearchinstitute.substack.com/p/is-this-just-the-beginning-for-ai). Secondary sources: treat with care.
 - OpenAI's Cycle Double Cover run, as summarised by [imisofts](https://imisofts.com/blog/gpt-5-6-sol-ultra-math-proof-agent-swarm-playbook-news-july-13-2026/) from OpenAI's published proof and prompt.
 - Kimi Team, [*Kimi K2.5*](https://arxiv.org/abs/2602.02276) (2026).
-- Paglieri et al., DeepMind 100-agent experiment, arXiv:2609.04170 (2026); coverage in [MIT Technology Review](https://www.technologyreview.com/2026/09/14/1144037/ai-agents-blew-whistle-o-cheating-colleagues/) and [The Decoder](https://the-decoder.com/deepmind-put-100-ai-agents-in-a-room-and-they-sorted-into-cheaters-converts-and-whistleblowers/).
+- Paglieri, Cross, Genewein, Leibo, Tomasev et al. (Google DeepMind), [*A Case Study on Emergent Cheating and Whistleblowing in Autonomous Research Swarms*](https://arxiv.org/abs/2609.04170v1), arXiv:2609.04170 (Sep 2026); coverage in [MIT Technology Review](https://www.technologyreview.com/2026/09/14/1144037/ai-agents-blew-whistle-o-cheating-colleagues/) and [The Decoder](https://the-decoder.com/deepmind-put-100-ai-agents-in-a-room-and-they-sorted-into-cheaters-converts-and-whistleblowers/).
 - Mitchener et al., [*Kosmos: An AI Scientist for Autonomous Discovery*](https://arxiv.org/abs/2511.02824) (2025).
 - Gottweis et al., *Towards an AI co-scientist* (2025); Ghareeb et al., *Robin* (2025); Swanson et al., *The Virtual Lab*, Nature (2025).
 - Vinogradova et al., [*Hunt Globally: Deep Research AI Agents for Drug Asset Scouting*](https://arxiv.org/abs/2602.15019) (2026); Vinogradov et al., [*LLM-Based Agents for Competitive Landscape Mapping in Drug Asset Due Diligence*](https://arxiv.org/abs/2508.16571) (2025); Vinogradov, Nguyen et al., *BIOPTIC B1*, J. Chem. Inf. Model. 65, 9927 (2025).
@@ -985,7 +985,7 @@ This is the verifier ladder of §14.1, made *legible*. Each rung is cheaper and 
 [^oai]: OpenAI, [*On the Navier–Stokes Millennium Prize Problem*](https://openai.com/index/navier-stokes-solution/) (8 Sep 2026), and the [Lean proof repo](https://github.com/openai/NavierStokesAndEuler). Reported by [Quanta](https://www.quantamagazine.org/ai-has-solved-one-of-maths-1-million-millennium-prize-problems-20260908/) and [VentureBeat](https://venturebeat.com/technology/openai-solves-longstanding-math-problem-with-10-000-agent-swarm-but-cant-rule-out-benefitting-from-a-researchers-private-codex-data).
 [^brown]: Noam Brown's comments, via [Understanding AI](https://www.understandingai.org/p/why-agent-swarms-could-be-the-next) and [Aventine](https://aventineresearchinstitute.substack.com/p/is-this-just-the-beginning-for-ai).
 [^oaidetail]: Further details of the Navier–Stokes run, from [CellCog](https://cellcog.ai/blog/openai-navier-stokes/) (which quotes OpenAI's post) and [Aventine](https://aventineresearchinstitute.substack.com/p/is-this-just-the-beginning-for-ai). Secondary sources: treat with care.
-[^deepmind]: Paglieri et al., DeepMind 100-agent experiment, arXiv:2609.04170 (2026); coverage in [MIT Technology Review](https://www.technologyreview.com/2026/09/14/1144037/ai-agents-blew-whistle-o-cheating-colleagues/) and [The Decoder](https://the-decoder.com/deepmind-put-100-ai-agents-in-a-room-and-they-sorted-into-cheaters-converts-and-whistleblowers/).
+[^deepmind]: Paglieri, Cross, Genewein, Leibo, Tomasev et al. (Google DeepMind), [*A Case Study on Emergent Cheating and Whistleblowing in Autonomous Research Swarms*](https://arxiv.org/abs/2609.04170v1), arXiv:2609.04170 (Sep 2026); coverage in [MIT Technology Review](https://www.technologyreview.com/2026/09/14/1144037/ai-agents-blew-whistle-o-cheating-colleagues/) and [The Decoder](https://the-decoder.com/deepmind-put-100-ai-agents-in-a-room-and-they-sorted-into-cheaters-converts-and-whistleblowers/).
 [^kosmos]: Mitchener et al., [*Kosmos: An AI Scientist for Autonomous Discovery*](https://arxiv.org/abs/2511.02824) (2025).
 [^cosci]: Gottweis et al., *Towards an AI co-scientist* (2025); Ghareeb et al., *Robin* (2025); Swanson et al., *The Virtual Lab*, Nature (2025).
 [^bioptic]: Vinogradova et al., [*Hunt Globally: Deep Research AI Agents for Drug Asset Scouting*](https://arxiv.org/abs/2602.15019) (2026); Vinogradov et al., [*LLM-Based Agents for Competitive Landscape Mapping in Drug Asset Due Diligence*](https://arxiv.org/abs/2508.16571) (2025); Vinogradov, Nguyen et al., *BIOPTIC B1*, J. Chem. Inf. Model. 65, 9927 (2025).
@@ -999,3 +999,9 @@ This is the verifier ladder of §14.1, made *legible*. Each rung is cheaper and 
 [^evo]: Island-model genetic algorithms; Romera-Paredes et al., *FunSearch*, Nature 625 (2024); Novikov et al., *AlphaEvolve* (2025).
 [^meanfield]: Yang et al., *Mean field multi-agent reinforcement learning*, ICML (2018).
 [^conway]: Conway, *How do committees invent?*, Datamation (1968).
+[^nums]: **Where the numbers come from.** I haven't run any experiments yet. Every 🧮 number is my own back-of-envelope calculation or toy simulation, with made-up but plausible parameters. The assumptions are stated next to each one.
+[^kish]: The N_eff formula is the standard design effect for correlated samples (Kish, *Survey Sampling*, 1965). Applying it to agents, and the value ρ = 0.01, are my own toy assumptions, not measurements.
+[^eoq]: This is the same square-root trade-off as the classic economic order quantity (Harris, *How many parts to make at once*, 1913). Its use for swarm check-ins, and the parameters, are my toy assumptions.
+[^aviation]: On automation and manual flying skills, see the FAA-commissioned report *Operational Use of Flight Path Management Systems* (PARC/CAST Flight Deck Automation Working Group, 2013).
+[^revived]: Tovorafenib (Ojemda) received FDA accelerated approval in April 2024 for paediatric low-grade glioma. Ibrutinib: Pharmacyclics acquired the programme from Celera in 2006, and AbbVie announced its acquisition of Pharmacyclics for about $21 billion in March 2015.
+[^interrupt]: Paglieri et al. (Google DeepMind), [*A Case Study on Emergent Cheating and Whistleblowing in Autonomous Research Swarms*](https://arxiv.org/abs/2609.04170v1) (2026). This is the same 100-agent maths experiment described above. Agents who spotted the cheating audited the fake proofs, warned peers on broadcast and private channels, organised boycotts and filed formal complaints. That is an interrupt path in action. The open design question is who reads those complaints, and how quickly.

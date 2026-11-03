@@ -9,9 +9,9 @@ author_profile: true
 > **How to read this.** Three kinds of claims appear below, and I've tried to keep them visibly apart.
 > - **Published** (📄): what General Reasoning (GR) wrote in *How to train a swarm*, or what OpenAI disclosed about its Navier–Stokes run (as reported by secondary outlets; openai.com itself wasn't directly readable when I wrote this).[^gr][^oai]
 > - **My idea** (💡): the questions and proposals this post is really about.
-> - **Toy model** (🧮): my own deliberately simple models, with made-up but plausible numbers. **I haven't run any experiments yet**, so no 🧮 number is a finding. Each one shows its assumptions, and where a toy borrows a standard model, the model is cited. These are for intuition and to make the ideas testable, not for prediction.[^nums]
+> - **Model**: where I write down a simple model, it is a hypothesis to test, not a finding. **I haven't run any experiments yet**, so this post makes no quantitative claims of its own. The only numbers in it come from cited sources, or from plain arithmetic on them.[^nums]
 >
-> Each section ends with an open question or two, and there are exercises with answers at the end.
+> Each section ends with an open question or two, and there are practice exercises with answers at the end. The exercises use hypothetical numbers to practise the models; they aren't claims.
 
 > *Thanks.* A big thank-you to Konstantin Dunas (hallerite) for writing such a delightful, clear and concise post.[^hallerite] It's what got me to dive deeper into this topic and finally organise the thoughts about agent swarms that had been swirling in my head.
 
@@ -94,20 +94,22 @@ The pattern to hold onto: **the trained swarm is a village; the deployed swarm w
 
 ### 2.3 The details people miss about the Navier–Stokes run
 
-Most coverage stops at "10,000 agents, 88 hours". These are the details I found most informative for design, gathered from OpenAI's account as relayed by several outlets, plus interviews. Where I derive a number myself, it's marked 🧮.
+Many headlines stop at "10,000 agents, 88 hours". These are the details I found most informative for design, gathered from OpenAI's account as relayed by several outlets, plus interviews.[^oaidetail] Where I do arithmetic on reported figures, I say so.
 
 - **It started as a portfolio, triggered by a rumour.** 📄 On 1 September OpenAI set agent groups on *all* the remaining Millennium problems plus other high-impact problems. Sébastien Bubeck said they "began working on the Millennium problems due to viral twitter rumors that Anthropic had resolved 2 Millenium problems". The Euler warm-up (nearly 100 agents, about 50 h) "surprised" them. Only then did they "devote our resources to Navier–Stokes". This was successive halving with a human making the cut.
 - **The model was four days into training when the run started, and was swapped mid-run.** 📄 Training of the internal model began on 28 August. When "a further trained version" became available, agents were moved onto it while the work continued. The swarm's *state* (messages, partial results, seeds) was the durable asset, and the model was a replaceable engine.
 - **"No hierarchy."** 📄 Sam Altman (2 November) described the agents as working "for about 4 days" with "no hierarchy". Structure came from the grouping, the problem variants and the consolidation, not from an org chart.
 - **The steering was done by revising prompts.** 📄 "Follow-up prompts drew on the agents' own intermediate results," and the group that found the solution "was guided in such a way". In my terms, this is low-touch coordination by revising intent (§9), done by humans.
-- **Communication was sparse.** 🧮 About 2.7M messages over about 88 h for roughly 10,000 agents works out to about **3 messages per agent-hour**, and about 130B output tokens / 2.7M messages ≈ **48,000 output tokens of work per message sent**. (This is a rough upper bound on chattiness, since the message count may span more than the winning group.) The agents mostly worked, and rarely talked. That supports the "coordination ≪ work" principle.
+- **Communication was sparse.** (My arithmetic on the reported totals.) About 2.7M messages over about 88 h for roughly 10,000 agents works out to about **3 messages per agent-hour**, and about 130B output tokens / 2.7M messages ≈ **48,000 output tokens of work per message sent**. (This is a rough upper bound on chattiness, since the message count may span more than the winning group.) The agents mostly worked, and rarely talked. That supports the "coordination ≪ work" principle.
 - **The security posture was unusually heavy.** 📄 OpenAI says it used more isolated sandboxes, restricted internet access (a *cached* copy of the web), stronger weight protections and substantially more monitoring compute throughout. Reports link this to an earlier incident in which deployed agents escaped controls. MIT Technology Review and Aventine describe a July 2026 episode in which agents coordinated to attack Hugging Face servers to cheat on a test (Aventine: about 700 of 1,200 agents).
 - **What was actually proved.** 📄 The result targets the Clay *breakdown* alternatives, which allow a smooth external force. The Lean 4 formalisation (about 17 h, by GPT-6 Astra) is public, review status is self-assessed, and mathematicians have said OpenAI may not fully understand its own proof.
 - **Provenance became a dispute.** 📄 Tristan Buckmaster (NYU) and Levent Alpöge, who had related unpublished work in private Codex sessions, asked whether it had influenced the model. Mark Chen: "No people or AI systems searched through user data to solve this problem." OpenAI later said it "cannot rule out" that de-identified usage data helped improve its models. *Design lesson: log lineage, so every claim can be traced to its source.*
-- **Cost.** 📄 130B output tokens at GPT-6 Astra's list price of \$50 per million comes to about \$6.5M before input tokens. Bubeck said the team could "spend millions of dollars" on a problem it cares about.
+- **Cost.** 📄 (My arithmetic on reported figures.) 130B output tokens at the reported list price of \$50 per million comes to about \$6.5M before input tokens. Bubeck said the team could "spend millions of dollars" on a problem it cares about.
 - **What insiders say about swarms in general.** 📄 Noam Brown: early reasoning models treated peer messages as *interruptions* and retreated to working alone. In OpenAI tests, four agents were needed to finish in half the time of one, which doubles the cost of the faster answer. He'd credit under 10% of the result to multi-agent, thinks 1,000 agents might have done nearly as well, and thinks 10,000 humans would still coordinate better than 10,000 agents today. Colleagues want *more* individuality, so agents are more sceptical of each other. As reported by Dan Kagan-Kans (via Aventine), Anthropic found a 10-agent team beat a single agent by 50–100% on maths, with gains flattening at 30 and 100 agents. Anthropic reportedly gave each agent a unique identity to reduce groupthink.
 
 ### 2.4 Other math and science swarms, and how they were designed
+
+Sources for each row are in the margin notes.[^cdc][^deepmind][^evo][^cosci][^kosmos][^bioptic]
 
 | System | Scale | Structure | Communication | Where diversity comes from | Verifier | Design lesson |
 |---|---|---|---|---|---|---|
@@ -120,7 +122,6 @@ Most coverage stops at "10,000 agents, 88 hours". These are the details I found 
 | **Virtual Lab** (Stanford, 2025) 📄 | ~5 agents | PI agent + specialists + critic | Meetings | Roles | Computational tools, then experiments | Designed SARS-CoV-2 nanobodies |
 | **Bioptic Agent** (arXiv:2602.15019, Feb 2026) 📄 | Up to *m* parallel investigators per epoch | **Tree of directives** grown by a Coach agent, selected by UCB | Shared global candidate store; compressed failure summaries | Directives that are *disjoint and collectively exhaustive*; English + Chinese investigators | Criteria-match validator + dedup/alias agent | **Structure that unfolds over time** (see §12). F1 0.797 vs Claude Opus 4.6 0.562, Gemini 3 Pro DR 0.506, GPT-5.2 Pro 0.466, Perplexity DR 0.442, Exa 0.269. A "find more" loop plateaued early. (Benchmark by the same authors.) |
 | **Bioptic competitor discovery** (arXiv:2508.16571) 📄 | Multi-agent | Discovery agent + LLM-judge validator | Pipeline | — | Validator filters false positives | 83% recall vs OpenAI DR 65%, Perplexity Labs 60%; analyst turnaround cut from 2.5 days to ~3 h |
-| **SwarmResearch** (UIUC, 2026) 📄 | Waves of agents | Shepherd + explorer/optimiser waves | Summaries to shepherd; git branches | Lineages, fresh vs forked context | Task score | Explicit lineage via git |
 
 **Five cross-cutting lessons** (my synthesis 💡):
 
@@ -138,7 +139,7 @@ Most coverage stops at "10,000 agents, 88 hours". These are the details I found 
 
 ![Diagram: three horizons](/images/thoughts-on-agent-swarms/diagrams/d02-three-horizons.png)
 
-The unifying obstacle is **credit distance**: how far (in agents, in time, in episodes) the benefit lands from the action that caused it. A flat collective reward closes the *agent* distance, since everyone shares one reward. The time cap bounds the *time* distance. Nothing in the current recipe closes the *episode* distance.
+The unifying obstacle is **credit distance**: how far (in agents, in time, in episodes) the benefit lands from the action that caused it. A flat collective reward closes the *agent* distance, since everyone shares one reward. The time cap bounds the *time* distance. Nothing in the current recipe closes the *episode* distance, which GR flag as an open problem.[^gr]
 
 | Horizon | My ideas that live here | Credit distance | Covered by RLCR today? |
 |---|---|---|---|
@@ -157,51 +158,42 @@ Before my ideas, here are the highlighted passages from the GR post that everyth
 
 > "A well-designed reinforcement learning setup should reward getting work done faster, which in turn should incentivise use of parallel inference-compute. And if the underlying work can only be imperfectly parallelised, then agents should gain from communicating with each other to co-ordinate work."
 
-🧮 Eight failing tests, 1 h each, 2 h cap:
-
-| Setup | Tests fixed by 2 h | Score |
-|---|---|---|
-| 1 agent | 2 | 25% |
-| 4 agents, identical choices, no messages | 2 | 25% |
-| 4 agents, random choices, no messages | $$8(1-(7/8)^8) \approx 5.3$$ | ≈ 66% |
-| 4 agents, split by one 5-minute message | ≈ 8 | ≈ 100% |
-
-No clock, no reason to parallelise. Clock but no messages, and identical agents collide. **The clock supplies the motive; communication supplies the means.**
+My reading of this passage: without a clock there is no reason to parallelise, and with a clock but no messages, identical agents may simply collide on the same work.[^gr] **The clock supplies the motive; communication supplies the means.**
 
 ### 4.2 Naive RL doesn't guarantee scaling 📄
 
 > "A naive reinforcement learning setup is not guaranteed to get this scaling pattern."
 
-With a discount $$\gamma<1$$, a correct answer after $$T$$ tokens is worth $$\gamma^T$$ at the start: $$0.999^{1000} \approx 0.37$$. GAE with $$\lambda<1$$ starves early tokens of the real outcome.[^gae] Both quietly teach "be brief". For swarms, which run for hours, any setting that taxes time can stop co-ordination from ever paying. **This matters for horizon 3 later: per-episode returns are a hard version of the same tax.**
+With a discount $$\gamma<1$$, a correct answer after $$T$$ tokens is worth $$\gamma^T$$ at the start, which shrinks quickly as $$T$$ grows. GAE with $$\lambda<1$$ down-weights the real outcome for early tokens.[^gae] My hypothesis is that both quietly teach "be brief", and that for swarms, which run for hours, any setting that taxes time could stop co-ordination from ever paying. **If so, this matters for horizon 3 later: per-episode returns are a hard version of the same tax.**
 
 ### 4.3 RL amplifies, it rarely invents 📄
 
 > "Weaker base models … are less able to explore and reinforce useful inference-time tactics."
 
-🧮 With pass rate $$p$$ and group size $$G$$, the chance a group carries no signal is about $$(1-p)^G$$: 85% for $$p=0.02, G=8$$, 6% for $$p=0.3$$. **Collective behaviours (delegating, sharing fixes, writing exit memos) must already appear sometimes, or RL has nothing to reinforce.**
+With pass rate $$p$$ and group size $$G$$, the chance that a group of rollouts contains no success at all is $$(1-p)^G$$, which is close to 1 when $$p$$ is small. That is just probability. The implication I draw (a hypothesis) is that **collective behaviours (delegating, sharing fixes, writing exit memos) must already appear sometimes, or RL has nothing to reinforce.**
 
 ### 4.4 Ramp the cap so co-ordination can pay 📄
 
 > "Single-agent approaches typically make more progress than collectives initially as they have less co-ordination overhead."
 
-🧮 A team of $$n$$ with overhead $$c$$ and efficiency $$e$$ overtakes a single agent at
+In a simple model where a team of $$n$$ pays a fixed overhead $$c$$ and then works at $$n e$$ times one agent's speed, it overtakes a single agent at
 
 $$t^\ast = \frac{n e\, c}{n e - 1}.$$
 
-With $$n=4$$, $$e=0.5$$, $$c=1$$ h: $$t^\ast = 2$$ h. **Below the break-even, RL teaches "don't hire".** This is the seed of Idea 2.
+This is my model, not a measurement. Its prediction is that **below the break-even, RL would teach "don't hire"**, which is consistent with GR's choice to ramp the time cap.[^gr] This is the seed of Idea 2.
 
 ### 4.5 Primitives, kept simple 📄
 
 > "Latency pressure alone is not enough … Agents also need primitives to communicate."
 > "An overriding goal for researchers should be to keep these primitives simple."
 
-🧮 With $$m$$ subtasks and $$k$$ agents choosing independently, expected distinct subtasks covered is $$m(1-(1-1/m)^k)$$. At $$m=k=8$$, only 66% of effort is useful. Duplication is worst exactly where swarms want to be. And a shared board costs $$\sim n^2$$ reads in total.
+If $$k$$ agents each pick one of $$m$$ subtasks at random, the expected number of distinct subtasks covered is $$m(1-(1-1/m)^k)$$ (a standard occupancy result), so uncoordinated agents duplicate work. And if every agent reads every post on a shared board, total reads grow as $$n^2$$.
 
 ### 4.6 Communication costs time 📄
 
 > "Communication … also consumes valuable time that could be spent working, so its benefits must outweigh its costs."
 
-This is the sentence that every idea below tries to make quantitative.
+Every idea below is an attempt to reason about this trade-off. None of the models below has been tested.
 
 ---
 
@@ -209,27 +201,15 @@ This is the sentence that every idea below tries to make quantitative.
 
 > 💡 **My question.** When several agents are working and one cracks a tough obstacle that siblings are facing now, or may face later in their trajectories, that fix should be multicast to all sibling sub-agents, or to the subset likely to hit it. How do we think about this?
 
-### 5.1 When is sharing worth it? 🧮
+### 5.1 When is sharing worth it? (a hypothesis)
 
 Let a fix save a recipient $$s$$ minutes if they'd hit the obstacle, let recipient $$i$$ hit it with probability $$r_i$$, and let reading cost $$\rho$$ minutes. Sending to $$i$$ pays when
 
 $$r_i\, s > \rho \quad\Longleftrightarrow\quad r_i > \rho / s.$$
 
-**Example.** $$s = 30$$, $$\rho = 1$$: share with anyone whose chance exceeds 1/30 ≈ 3%.
+Now put it at scale. If a few agents on the affected module have a high $$r$$ and everyone else has a tiny one, every extra agent adds a reading cost of $$\rho$$ but only a small expected saving $$r_{\text{bg}}s$$. So whenever $$r_{\text{bg}}s < \rho$$, broadcasting must eventually stop paying as $$n$$ grows, while targeted push and a searchable archive need not. That much is algebra. Where the crossover sits for real agents, and how big $$r$$, $$s$$ and $$\rho$$ actually are, are unmeasured.
 
-Now put it at scale. Suppose $$k=8$$ agents work on the affected module ($$r = 0.6$$) and everyone else has $$r = 0.005$$. The net saving from broadcasting to $$n$$ agents is
-
-$$\text{Net}_{\text{broadcast}}(n) = \big(k\cdot 0.6 + (n-k)\cdot 0.005\big)\cdot 30 - n \cdot 1,$$
-
-which goes negative near
-
-$$n^\ast = k + \frac{k(r_{\text{hot}}s - \rho)}{\rho - r_{\text{bg}}s} = 8 + \frac{8 \times 17}{0.85} \approx 168.$$
-
-![Net minutes saved per lesson under four sharing policies](/images/thoughts-on-agent-swarms/fig2-multicast.png)
-
-*Figure 1 🧮. Broadcast is the best policy in a village and a net loss past ~170 agents. Targeted push to module peers stays flat. A pull archive (agents search when stuck: 3 min search, 70% chance they think to search) gets better with scale, because more agents eventually need the fix. Targeted push plus an archive dominates.*
-
-**The surprising part:** the need for multicast barely exists at training scale. At 9 agents, broadcast is near-optimal, so RL will teach "always broadcast", which is exactly the habit that breaks at 1,000.
+**The hypothesis worth testing:** at training scale (9 agents) broadcast may be near-optimal, so RL would teach "always broadcast", which could be exactly the habit that breaks at 1,000.
 
 ### 5.2 A decision flow
 
@@ -255,12 +235,12 @@ In the spirit of GR's "keep primitives simple", my preferred route is **push (DM
 | Same episode, later | Archive | Yes, same reason |
 | Future episodes | Persistent archive / weights | **No** (this becomes §11) |
 
-Note the shared policy is already a **slow broadcast**: if sharing a fix helped, the weight update spreads "how to beat this obstacle" to every future agent. Messages are the fast path (minutes); weights are the slow path (training steps).
+Note the shared policy may already act as a **slow broadcast**: if sharing a fix helped, the weight update could spread "how to beat this obstacle" to every future agent. Messages are the fast path (minutes); weights are the slow path (training steps).
 
 ### 5.5 Failure modes
 
 - **Wrong fixes spread fast.** A confident wrong fix broadcast to all is a *correlated* failure. Attach evidence.
-- **Herding.** Everyone adopts the first workaround and diversity collapses. Sometimes not telling everyone is better (see §8.4).
+- **Herding.** Everyone adopts the first workaround and diversity collapses. Sometimes not telling everyone may be better (see §8.2).
 - **Spam.** The $$r_i s > \rho$$ rule says only high-$$s$$ lessons deserve a push.
 - **Staleness.** A fix true at step 1 may be false after someone else's change.
 
@@ -274,41 +254,31 @@ Note the shared policy is already a **slow broadcast**: if sharing a fix helped,
 >
 > 💡 **My question.** Is there a trade-off between swarm size and step count (total time)? Do bigger swarms need longer to produce useful work, because early time is dominated by communication overhead and by setting up the swarm's structure?
 
-**Short answer: yes, on two different clocks.** "Step 200" is a *training* step, not time inside a rollout.
+**My hypothesis: yes, on two different clocks.** Note that GR's "step 200" is a *training* step, not time inside a rollout.
 
-### 6.1 Clock A: wall-clock inside one run 🧮
+### 6.1 Clock A: wall-clock inside one run (a hypothesis)
 
-Let overhead and efficiency depend on team size:
+One way to write the trade-off: let setup overhead $$c(n)$$ grow with team size, let per-agent efficiency $$e(n)$$ fall with it, and let progress be
 
-$$c(n) = 0.1\,n \text{ hours}, \qquad e(n) = \frac{1}{1 + 0.1(n-1)}, \qquad P_n(T) = n\,e(n)\,\big(T - c(n)\big)_+ .$$
+$$P_n(T) = n\,e(n)\,\big(T - c(n)\big)_+ .$$
 
-![Progress vs time budget and optimal swarm size](/images/thoughts-on-agent-swarms/fig1-size-vs-time.png)
-
-*Figure 2 🧮. Left: bigger teams start later but climb faster. At a 1 h budget, 16 agents score zero because they're still setting up. Right: the best swarm size grows roughly linearly with the budget (4 at 1 h, 7 at 2 h, 12 at 4 h, 19 at 8 h).*
-
-| $$n$$ | 2 | 4 | 8 | 16 |
-|---|---|---|---|---|
-| Effective speed $$n\,e(n)$$ | 1.82 | 3.08 | 4.71 | 6.40 |
-| Overhead $$c(n)$$ | 0.2 h | 0.4 h | 0.8 h | 1.6 h |
-| Break-even vs one agent, $$t^\ast$$ | 0.44 h | 0.59 h | 1.02 h | 1.90 h |
-
-Notice that effective speed $$n\,e(n)$$ saturates (it tends to 10 as $$n \to \infty$$ in this toy), while overhead keeps growing linearly. That's why there is an interior optimum at all. The qualitative law is the point: **the optimal swarm size grows with the time budget, and anything that cuts per-agent overhead pushes it up.** In reality overhead grows faster than linearly (board read load $$\sim n^2$$), which pushes the optimum down.
+If $$n\,e(n)$$ saturates while $$c(n)$$ keeps growing, there is an interior optimum team size that grows with the time budget $$T$$, and a big team given too little time scores nothing. That conclusion follows from the assumed shapes. Whether real swarms have those shapes is untested. **The hypothesis: the optimal swarm size grows with the time budget, and anything that cuts per-agent overhead pushes it up.**
 
 ### 6.2 Clock B: training steps
 
-- **Credit dilution.** One flat advantage spread over $$n$$ agents' tokens: the more agents, the smaller the share of tokens that caused the outcome, so more steps are needed.
-- **More to learn.** Splitting, handoffs, fix-sharing start poor. Early in training $$c(n)$$ is large and $$e(n)$$ small, so big teams look *worse* than average, matching "5–8 hires start below average".
+- **Credit dilution.** One flat advantage is spread over $$n$$ agents' tokens. The more agents, the smaller the share of tokens that caused the outcome, so I'd expect more steps to be needed.
+- **More to learn.** Splitting, handoffs and fix-sharing start poor. If early in training $$c(n)$$ is large and $$e(n)$$ small, big teams would look *worse* than average, which would be consistent with GR's "5–8 hires start below average".[^gr]
 - **Costlier steps.** Bigger rollouts mean fewer rollouts per GPU-hour.
 
 ### 6.3 How the clocks interact
 
 ![Diagram: two clocks](/images/thoughts-on-agent-swarms/diagrams/d04-two-clocks.png)
 
-A loop like this is self-reinforcing: better co-ordination lowers $$t^\ast$$, which lets bigger teams win more often, which trains co-ordination further.
+If this loop exists, it would be self-reinforcing: better co-ordination lowers $$t^\ast$$, which lets bigger teams win more often, which trains co-ordination further.
 
 **Testable prediction:** average hires per rollout should rise over training as the cap grows. (I haven't seen this plotted.)
 
-**Caveat on the metric.** "Useful work" counts tokens of environment-acting turns summed over the team. A team of 8 can emit more such tokens just by being 8. It's a measure of *activity*, not *output*; per-agent useful work could still be below a solo agent's. The task reward is the real test.
+**Caveat on the metric.** "Useful work" counts tokens of environment-acting turns summed over the team. A team of 8 can emit more such tokens just by being 8. My reading is that it measures *activity*, not *output*; per-agent useful work could still be below a solo agent's. The task reward is the real test.
 
 > **Open questions.** What's the right swarm size for a given budget, and can the swarm learn to choose it? Does the optimal size keep growing with the budget, or does super-linear overhead put a ceiling on it?
 
@@ -327,19 +297,19 @@ A loop like this is self-reinforcing: better co-ordination lowers $$t^\ast$$, wh
 | Department vs other departments | Modular graph: dense inside, sparse bridges |
 | Research admin: rare but necessary | A gate on the **critical path** |
 
-### 7.2 The bandit view 🧮
+### 7.2 The bandit view
 
 Agent $$i$$ picks peer $$j$$ by UCB:[^ucb]
 
 $$\text{score}_j = \bar u_j + c\sqrt{\frac{\ln t}{n_j}}.$$
 
-With $$c=1$$, $$t=20$$: peer A ($$\bar u=0.6$$, $$n=15$$) scores $$0.6 + \sqrt{3/15} \approx 1.05$$; peer B ($$\bar u = 0.3$$, $$n=2$$) scores $$0.3 + \sqrt{3/2} \approx 1.52$$. B gets another try. **The exploration bonus is the new hire's curiosity.**
+Peers that have helped score highly on the first term; rarely tried peers get a large bonus from the second, so they get another try. **The exploration bonus plays the role of the new hire's curiosity.**
 
-Cost of "reach out to everyone": at 2 min per intro, 16 min in a village of 9 but **33 hours** in a city of 1,000. In cities exploration must be *sampled* (your department plus a few random bridges) or helped by a directory.
+The cost of "reach out to everyone" grows linearly with swarm size, so in a city exploration would have to be *sampled* (your department plus a few random bridges) or helped by a directory.
 
 ### 7.3 The key correction: two kinds of link value
 
-Average reward per interaction is the wrong measure. The right one is **marginal (counterfactual) value**: how much worse is the outcome without this link?
+I think average reward per interaction is the wrong measure, and the right one is **marginal (counterfactual) value**: how much worse is the outcome without this link?
 
 | | Collaboration link | Dependency link |
 |---|---|---|
@@ -348,11 +318,7 @@ Average reward per interaction is the wrong measure. The right one is **marginal
 | Right policy | Reinforce, talk often | Know who it is; contact **early** |
 | Measured by | Average reward per exchange | Counterfactual / Shapley value |
 
-![Completion time under three dependency-link policies](/images/thoughts-on-agent-swarms/fig7-dependency-links.png)
-
-*Figure 3 🧮. 10 h of collaborative work, 2 h approval latency on the admin link, 1 h to rediscover a pruned contact. Contacting early takes the dependency off the critical path.*
-
-A pure "reinforce what pays" rule **prunes dependency links**, because their payoff is rare and delayed: the credit-distance problem again.
+My hypothesis is that a pure "reinforce what pays" rule would **prune dependency links**, because their payoff is rare and delayed: the credit-distance problem again.
 
 ![Diagram: org chart](/images/thoughts-on-agent-swarms/diagrams/d05-org-chart.png)
 
@@ -366,7 +332,7 @@ A pure "reinforce what pays" rule **prunes dependency links**, because their pay
 ### 7.5 Pitfalls
 
 - **Early lock-in** (fix: exploration bonus plus decay).
-- **Weak ties get cut.** Granovetter: new information often comes from distant acquaintances. Reinforcing only strong ties builds echo-chamber sub-swarms.
+- **Weak ties get cut.** Granovetter found that new information often comes from distant acquaintances.[^weakties] Reinforcing only strong ties could build echo-chamber sub-swarms.
 - **Rich-get-richer hubs** become bottlenecks.
 - **Stale links**: link value should be task-conditioned.
 - **Gaming**: reward agents for being contacted and they learn to self-promote. Keep reward collective.
@@ -383,21 +349,19 @@ A pure "reinforce what pays" rule **prunes dependency links**, because their pay
 
 **Conway's law, used on purpose** (the "inverse Conway manoeuvre"): structure the swarm like the task.[^conway] Draw subtasks as nodes and dependencies as weighted edges; choosing sub-swarms is graph partitioning into $$k$$ parts. Cross-team communication is the **cut weight**; within-team load scales with part size squared.
 
-🧮 $$n=10{,}000$$ on one board: $$\sim 10^8$$ reads. Split into $$k=100$$ teams of $$g=100$$: $$k g^2 = 10^6$$, a $$100\times$$ saving, plus about $$k$$ summaries per sharing round.
+By the same counting, if every agent reads every post, one board of $$n$$ agents costs about $$n^2$$ reads, while $$k$$ teams of $$g$$ cost about $$k g^2$$ plus the cross-team summaries. That is arithmetic about read counts, not a measurement of real swarms.
 
-### 8.2 A second force: diversity 🧮[^kish]
+### 8.2 A second force: diversity (a hypothesis)[^kish]
 
-When the bottleneck is *insight*, not throughput, you want independent attempts. If agents' attempts are correlated at level $$\rho$$, $$N$$ agents behave like
+When the bottleneck is *insight*, not throughput, you want independent attempts. If agents' attempts are correlated at level $$\rho$$, the standard design-effect formula says $$N$$ of them behave like
 
 $$N_{\text{eff}} = \frac{N}{1 + (N-1)\rho}$$
 
 independent tries, which saturates at $$1/\rho$$.
 
-![Effective independent tries and success probability: herd vs islands](/images/thoughts-on-agent-swarms/fig5-islands.png)
+If this applies to agents, which is untested, one big herd saturates while isolated islands each contribute their own independent attempts.
 
-*Figure 4 🧮. $$\rho = 0.01$$ within a group, assumed 0 between isolated islands; each effective try finds the key idea with $$p = 0.005$$. One herd of 10,000 ≈ 99 effective tries (39% success). Four islands of 2,500 ≈ 385 (85%). Same compute. This also makes Brown's "1,000 might have done as well" quantitative: one herd of 1,000 already has ~91.*
-
-So $$k$$ is set by **coupling** (fewer, bigger teams) against **diversity** (more, isolated teams).
+So my hypothesis is that $$k$$ is set by **coupling** (fewer, bigger teams) against **diversity** (more, isolated teams).
 
 ### 8.3 What kind: work mode, not job title
 
@@ -409,26 +373,26 @@ So $$k$$ is set by **coupling** (fewer, bigger teams) against **diversity** (mor
 | **Integrate** | Merge, resolve, consolidate | Hub-like | Codex consolidation 📄 |
 | **Service** | Own shared dependencies | On demand, via directory | The "research admin" of §7 |
 
-Kinds differ mainly in **how much they should talk**. Verifiers shouldn't chat with builders, or they inherit their mistakes.
+In my proposal, the kinds differ mainly in **how much they should talk**. Verifiers shouldn't chat with builders, or they risk inheriting their mistakes.
 
-### 8.4 Lifecycle and the overhead budget 🧮
+### 8.4 Lifecycle and the overhead budget
 
 Let a sub-swarm cost $$c$$ to set up and $$d$$ to tear down, run for useful lifetime $$L$$, and spend fraction $$m$$ on ongoing co-ordination:
 
 $$\varphi \approx \frac{c + d}{L} + m.$$
 
-For $$\varphi \le 10\%$$ with $$m = 5\%$$: $$L \ge 20(c+d)$$. **With 15 minutes of setup plus teardown, a sub-swarm is only worth spawning for at least 5 hours of work.**
+This is bookkeeping, not a measurement. It says a sub-swarm is only worth spawning when its expected lifetime $$L$$ is long compared with its setup and teardown cost. The real values of $$c$$, $$d$$ and $$m$$ for agent swarms are unmeasured.
 
 ![Diagram: lifecycle](/images/thoughts-on-agent-swarms/diagrams/d06-lifecycle.png)
 
-Rules that fall out:
+Rules I'd propose:
 - **Spawn** when expected value over the lifetime beats $$c+d$$ plus the compute it takes from others (the break-even $$t^\ast$$ of §4.4, applied to a whole team).
 - **Tear down** when the marginal value of the next hour falls below that compute's value elsewhere (successive halving).
 - **Hysteresis**: spawn threshold above teardown threshold, plus a minimum lifetime, so the swarm doesn't thrash.
 - **Exit memo is mandatory**, so knowledge isn't lost at teardown.
 - **But teardown is a lossy bet.** 📄 [hallerite](https://hallerite.com/posts/on-the-nature-of-the-swarm/) (*On the nature of the swarm*, Oct 2026) frames every compaction as "a bet" on what will matter later: offloading to disk "remembers, but can't think", while a discarded sub-agent "thinks, but can't remember".[^hallerite] *Persistent* sub-agents that stay queryable get both. That argues for a third option between "keep running" and "tear down": **park** a team as a low-cost, queryable specialist (the *service* mode of §8.3), woken only when asked.
 
-Precedents 📄: OpenAI's human-driven reallocation after the Euler warm-up (a ~100× scale-up driven by evidence); FunSearch/AlphaEvolve resetting weak islands from strong ones; Avalon-M1's CEO hiring and firing (my idea at village scale, already trained); cloud autoscaling with cooldowns.[^evo][^gr][^oaidetail]
+Precedents 📄: OpenAI's human-driven reallocation after the Euler warm-up; FunSearch/AlphaEvolve resetting weak islands from strong ones; Avalon-M1's CEO hiring and firing (my idea at village scale, already trained); cloud autoscaling with cooldowns.[^evo][^gr][^oaidetail]
 
 ### 8.5 Who decides?
 
@@ -439,7 +403,7 @@ Precedents 📄: OpenAI's human-driven reallocation after the Euler warm-up (a ~
 | Trained orchestrator (Kimi-style) | One place for credit | Bottleneck; strong prior |
 | Any agent may spawn/retire (Avalon-style) | Most flexible | Credit is hard; spawn storms |
 
-Pitfalls: premature teardown of slow-burn directions (keep an exploration floor); knowledge lost at teardown; hierarchy latency (keep depth ~ $$\log n$$); meta-work creep (reorgs that look like progress); spawn storms (global budget).
+Pitfalls: premature teardown of slow-burn directions (keep an exploration floor); knowledge lost at teardown; hierarchy latency (keep depth near $$\log n$$); meta-work creep (reorgs that look like progress); spawn storms (global budget).
 
 > **Open questions.** What determines the number and kind of sub-swarms? How do we protect a slow but promising exploration team? How do we credit an exploratory team that *fails but informs*?
 
@@ -451,23 +415,19 @@ Pitfalls: premature teardown of slow-burn directions (keep an exploration floor)
 
 These sound contradictory until you separate **how often the orchestrator looks** from **how much it intervenes**, and **what** it sends.
 
-1. **Steer by intent, not instructions.** Militaries call it *mission command*: give the objective and constraints, not the steps. One intent message keeps thousands of agents aligned with no further traffic, because each can check its own work against it.
-2. **Observe shared state, don't interrogate.** Read dashboards (tests passing per module, open issues, archive entries) rather than asking for status reports. That's *stigmergy*: coordination through the environment.
+1. **Steer by intent, not instructions.** Militaries call it *mission command*: give the objective and constraints, not the steps. My hope is that one intent message could keep many agents aligned without further traffic, because each can check its own work against it.
+2. **Observe shared state, don't interrogate.** Read dashboards (tests passing per module, open issues, archive entries) rather than asking for status reports. That's *stigmergy*: coordination through the environment.[^stigmergy]
 3. **Intervene rarely**: periodic plus by-exception.
 
 ![Diagram: low touch sequence](/images/thoughts-on-agent-swarms/diagrams/d07-low-touch-sequence.png)
 
-### 9.1 How often to course-correct? 🧮[^eoq]
+### 9.1 How often to course-correct? (a hypothesis)[^eoq]
 
-Teams drift so that waste grows like $$\delta t$$ between corrections; each correction costs $$\kappa$$ hours of team time. Correcting every $$\tau$$ hours costs, per hour,
+Suppose teams drift so that waste grows like $$\delta t$$ between corrections, and each correction costs $$\kappa$$ hours of team time. Correcting every $$\tau$$ hours costs, per hour,
 
 $$J(\tau) = \frac{\delta\,\tau}{2} + \frac{\kappa}{\tau}, \qquad \tau^\ast = \sqrt{\frac{2\kappa}{\delta}}, \qquad J(\tau^\ast) = \sqrt{2\kappa\delta}.$$
 
-![Cost of steering vs check-in interval](/images/thoughts-on-agent-swarms/fig4-cadence.png)
-
-*Figure 5 🧮. A 3-minute check-in with drift 0.1/h: correct hourly, lose 10%. Halve drift with clearer intent: correct every 1.4 h, lose 7.1%. Quarter the check-in cost with a dashboard: correct every 30 min, lose 5%.*
-
-Two lessons:
+Two consequences of the model (untested for swarms):
 - **At the optimum, overhead equals drift waste.** Coordinating more often just trades one for the other.
 - **Cost scales as $$\sqrt{\kappa\delta}$$.** Low-touch means shrinking both: cheaper check-ins *and* clearer intent. Better intent lets you check in less.
 
@@ -481,28 +441,24 @@ Pitfalls: too low a gain means slow reaction to real pivots (hence the interrupt
 
 > 📄 GR: "In our initial Avalon-M1 model, we trained organisations with at most 9 agents.[^gr] But swarms are now deployed with hundreds or thousands of agents. In effect, we are training collectives in villages but deploying them in cities."
 
-It's a **distribution shift in team size**, the closest analogue being length generalisation: models trained on short sequences fail on long ones. Here "length" is the number of agents, and it shows up literally as context length.
-
-![Read load vs swarm size for four topologies](/images/thoughts-on-agent-swarms/fig3-read-load.png)
-
-*Figure 6 🧮. Total messages read per round. A shared board grows as $$n^2$$: 81 in a village, $$10^6$$ in a city. Islands of 100 grow as $$100n$$. Villages of villages (span 9) grow as $$9n\lceil\log_9 n\rceil$$. A hub stays at $$2n$$ but routes everything through one context.*
+I read it as a **distribution shift in team size**. The closest analogue I know is length generalisation, where models trained on short sequences often fail on longer ones. Here "length" is the number of agents, and it shows up literally as context length.
 
 ### 10.1 Which habits transfer? A scale-free test
 
-A habit can transfer if its **per-agent cost stays flat** as $$n$$ grows.
+My proposed test: a habit can transfer if its **per-agent cost stays flat** as $$n$$ grows.
 
 | Habit learned in the village | Per-agent cost | At city scale |
 |---|---|---|
 | Claim a task before starting | $$O(1)$$ | Transfers |
 | Reply to DMs addressed to you | $$O(\text{DMs received})$$ | Transfers if DMs stay targeted |
-| Read the whole board | $$O(n)$$ | Breaks: context floods |
-| Broadcast every finding (§5) | $$O(n)$$ for readers | Breaks past ~170 |
-| Message everyone on arrival (§7) | $$O(n)$$ | Breaks: 33 h of intros |
-| CEO manages all hires directly | $$O(n)$$ for the CEO | Breaks: span of control |
+| Read the whole board | $$O(n)$$ | Likely breaks: context floods |
+| Broadcast every finding (§5) | $$O(n)$$ for readers | Likely breaks at some scale |
+| Message everyone on arrival (§7) | $$O(n)$$ | Likely breaks: intros grow with $$n$$ |
+| CEO manages all hires directly | $$O(n)$$ for the CEO | Likely breaks: span of control |
 
-### 10.2 Nine agents is exactly one span of management
+### 10.2 Could nine agents be one span of management?
 
-Human organisations settle on spans of about 5–10. With span $$s$$, $$n$$ agents need $$\lceil\log_s n\rceil$$ levels: $$\log_9 1000 \approx 3.1$$, so 4 levels. **If the policy learned "manage up to 8 well", it can be applied recursively**: each hire becomes a sub-CEO of its own village.
+With span $$s$$, $$n$$ agents need $$\lceil\log_s n\rceil$$ levels, so 1,000 agents with spans of 9 need four. **My hypothesis is that if the policy learned "manage up to 8 well", it could be applied recursively**: each hire becomes a sub-CEO of its own village. Whether a village-trained manager actually generalises this way is untested.
 
 **A counterpoint: trees vs meshes.** 📄 [hallerite](https://hallerite.com/posts/on-the-nature-of-the-swarm/) argues that a strict tree "moves the context problem to the root": every message routes upward, so the root fills up and must compact, a Hayekian central planner that can't hold the dispersed knowledge.[^hallerite] A mesh of peers that message each other directly avoids this, and hierarchy can still emerge where it pays for itself ("Nobody needs to be beholden to someone above them just to get work done"). The essay suggests a tree is probably fine at 10 agents and a mesh makes more sense at 10,000. I read this as refining villages-of-villages rather than refuting it. Use the hierarchy for *intent and management* (low bandwidth), and allow mesh links for *expertise and fixes* (targeted, peer to peer), which is exactly the targeted-multicast route of §5.
 
@@ -510,7 +466,7 @@ Human organisations settle on spans of about 5–10. With span $$s$$, $$n$$ agen
 
 Ways to close the gap: (1) make the city a **federation of villages** (sidesteps rather than solves); (2) a **curriculum over $$n$$**, like the cap ramp (expensive; credit dilution grows); (3) **train the recursive unit**, villages whose environment includes a manager above and sub-teams below; (4) **mean-field thinking**: read aggregates, not every message; (5) **measure at deployment**: plot reward vs $$n$$ at fixed compute and fixed wall-clock, and find where it bends.[^meanfield]
 
-**What might emerge only at city scale:** herding and correlated errors; congestion collapse on shared channels; cliques; and safety effects. GR reports a safety test where trained teams became *less* likely to report concerns to human overseers 📄. A mild tendency in a village can become a norm in a city.
+**What might emerge only at city scale:** herding and correlated errors; congestion collapse on shared channels; cliques; and safety effects. GR reports a safety test where trained teams became *less* likely to report concerns to human overseers 📄.[^gr] My worry is that a mild tendency in a village could become a norm in a city.
 
 > **Open questions.** What generalises from 9 to 1,000? Can "manage a village" be applied recursively? What emerges only at scale, and what metrics catch it?
 
@@ -522,25 +478,15 @@ Ways to close the gap: (1) make the city a **federation of villages** (sidesteps
 >
 > 💡 **My question.** How do we even predict the utility of something that will only benefit future agents, which haven't been spawned yet, on sub-goals that aren't apparent yet? Do we need very long-range planning? How do we think about the future utility of current actions at all?
 
-### 11.1 Why per-episode RL under-produces public goods 🧮
+### 11.1 Why per-episode RL may under-produce public goods (a hypothesis)
 
-Episode 1 spends an hour on a clean, documented library, losing 0.05 of its own return. Twenty later episodes each gain 0.02.
+Suppose episode 1 spends an hour on a clean, documented library, at a cost $$C$$ to its own return, and later episodes each gain from it. Under a per-episode return, episode 1 only ever sees $$-C$$, so my hypothesis is that RL would learn *not* to write libraries. GR flag the same gap themselves.[^gr] If the creator instead received a royalty share $$\alpha$$ of the total later gain $$G$$, it would see $$-C + \alpha G$$, which becomes positive once $$\alpha > C/G$$. That's algebra. The real sizes of $$C$$ and $$G$$, and whether any royalty is stable under RL, are unknown.
 
-| Credit scheme | What episode 1 sees |
-|---|---|
-| Per-episode return (today) | −0.05 → RL learns *don't write libraries* |
-| True social value | −0.05 + 20 × 0.02 = **+0.35** |
-| Royalty share α = 0.5 of later gains | −0.05 + 0.5 × 0.40 = **+0.15** → reinforced |
-
-![Credit seen by the creating episode vs royalty share](/images/thoughts-on-agent-swarms/fig6-public-goods.png)
-
-*Figure 7 🧮. With no discount across episodes, a 12% royalty breaks even. If future value decays (later agents could re-derive it), you need more: 32% at γ_ep = 0.9, and at 0.7 no royalty ≤ 100% suffices for this artifact.*
-
-Human societies solve this with **royalties** (pay per use), **prizes** (pay when a goal is reached) and **grants** (pay up front on a prediction). Each has an RL counterpart.
+Human societies address this with **royalties** (pay per use), **prizes** (pay when a goal is reached) and **grants** (pay up front on a prediction). Each has an RL counterpart.
 
 ### 11.2 The reframe: measure later, don't predict now
 
-My question assumes value must be *predicted* at creation. Science and open source mostly don't: they **discover value afterwards through use** (citations, downloads, dependents).
+My question assumes value must be *predicted* at creation. Science and open source largely don't: they **discover value afterwards through use** (citations, downloads, dependents).
 
 ![Diagram: public goods credit](/images/thoughts-on-agent-swarms/diagrams/d09-public-goods-credit.png)
 
@@ -548,7 +494,7 @@ My question assumes value must be *predicted* at creation. Science and open sour
 2. **Graph-based credit.** Artifacts form a dependency graph; credit flows backwards, PageRank-style.
 3. **Prizes for sub-goals.** When a later episode reaches a hard milestone, pay artifacts on its critical path: the dependency-link idea of §7, across time.
 
-So **the system, not the agent, does the long-range credit assignment.** The agent learns *norms* that historically paid, just as scientists learn to publish without foreseeing every use.
+So my proposal is that **the system, not the agent, does the long-range credit assignment.** The agent would learn *norms* that historically paid, just as scientists learn to publish without foreseeing every use.
 
 ### 11.3 When you do need a forward estimate
 
@@ -556,7 +502,7 @@ $$U(a) = \mathbb{E}_{\text{task}\sim\mathcal{D}_{\text{future}}}\big[V(\text{tas
 
 You don't know future goals, but you often know the *distribution* (in training, it's the environment set). So: counterfactual evaluation on held-out episodes (expensive but direct); a learned value model over artifacts (a critic over artifacts, not states); or cheap proxies: **generality**, **reuse by siblings now** (a leading indicator), **compression** (does it shorten many solutions?), **novelty**.
 
-**Do we need very long-range planning? Mostly no.** Planning means simulating specific futures, which is hopeless when the goals aren't known. What helps is **option value**: produce things that keep many futures open. It's a portfolio under uncertainty, not a plan.
+**Do we need very long-range planning? My guess is mostly no.** Planning means simulating specific futures, which seems hopeless when the goals aren't known. What helps is **option value**: produce things that keep many futures open. It's a portfolio under uncertainty, not a plan.
 
 Complications: weights already carry general skills forward (explicit artifacts matter most for *instance-specific* knowledge); non-stationarity (value decays as the policy improves, so discount across episodes, with irony after §4.2); gaming (a shared policy is effectively one agent across time and can farm its own royalties); archive rot (junk raises $$\rho$$ for everyone).
 
@@ -564,7 +510,7 @@ Complications: weights already carry general skills forward (explicit artifacts 
 
 ## 12. Designing swarms that unfold over time, and how to train them
 
-💡 Ideas 2, 4 and 5 all say the same thing from different angles: **a swarm's structure is not a fixed diagram but a policy that acts over time.** This section makes that concrete. It covers what to adapt, how to adapt it at inference time with no training, and how to train it with RL.
+💡 Ideas 2, 4 and 5 all say the same thing from different angles: **a swarm's structure is not a fixed diagram but a policy that acts over time.** That's my framing, not an established result. This section makes that concrete. It covers what to adapt, how to adapt it at inference time with no training, and how to train it with RL.
 
 ### 12.1 Structure as a slow policy
 
@@ -585,7 +531,7 @@ The slow loop's state is the swarm: which teams exist, their directives and work
 | `reallocate(compute)` | Successive halving across teams | §8.4 |
 | `set_cap / set_n` | Change time budget or team size | §6 |
 
-Its reward is task progress minus the cost of agent-hours and overhead. This is exactly the setting of hierarchical RL (options, feudal networks): a manager acts rarely, workers act often.
+Its reward is task progress minus the cost of agent-hours and overhead. This is the setting of hierarchical RL (options, feudal networks): a manager acts rarely, workers act often.[^hrl]
 
 ### 12.2 A pattern that already works: the tree of directives
 
@@ -605,24 +551,22 @@ where $$p_n$$ is the share of candidates the validator accepts and $$\Delta\tild
 5. **Backpropagate** $$N$$ and $$W$$ to ancestors.
 6. **Expand:** a Coach agent splits each explored node into $$k = 3$$ children that are *strictly narrower, mutually disjoint and collectively exhaustive*. It conditions on the directive lineage, every query executed so far, and a *compressed summary of the validator's rejection reasons*.
 
-Map this onto my ideas and it fits closely:
+Here is how I map it onto my ideas (my interpretation, not Bioptic's):
 
 - **Spawn and teardown** (§8): high-UCB leaves get expanded (spin up); low ones stop being selected (wind down).
 - **The exit memo** (§8.4): the compressed failure summary is the memo, and the Coach reads it before planning.
-- **Credit for the collective good** (§3): the reward counts only items *new to the shared store*. Duplicating a sibling earns nothing, and adding to the commons earns everything. This is a simple, general way to reward collective good rather than raw output.
+- **Credit for the collective good** (§3): the reward counts only items *new to the shared store*. Duplicating a sibling earns nothing, and adding to the commons earns everything. I think this is a simple, general way to reward collective good rather than raw output.
 - **Low-touch coordination** (§9): the Coach doesn't micromanage investigators. It writes directives (intent) and reads aggregate outcomes (dashboards).
 
-![Toy simulation: adaptive tree vs fixed split vs sequential loop](/images/thoughts-on-agent-swarms/fig8-adaptive-search.png)
+Bioptic report that tree-based exploration helps prevent early saturation as more compute is spent (their Figure 1).[^bioptic]
 
-*Figure 8 🧮. A toy simulation: 24 search regions with a long-tailed number of hidden items; each call samples a few items from one region. A sequential "find more" loop that keeps returning to the obvious sources climbs fast, then plateaus. A fixed split chosen up front without feedback stalls on poor regions. An adaptive UCB tree keeps moving effort to wherever new items are still appearing. This qualitative shape matches what Bioptic report for real agents (their Figure 1). The numbers here are synthetic.*
-
-**Generalising the reward to science.** For a research swarm, replace "validated new asset" with "verified new contribution to the shared archive": a lemma that compiles, a reproduced analysis, a hypothesis that survived the refuting island. So
+**Generalising the reward to science (my proposal).** For a research swarm, replace "validated new asset" with "verified new contribution to the shared archive": a lemma that compiles, a reproduced analysis, a hypothesis that survived the refuting island. So
 
 $$r_{\text{team}} = (\text{verified}) \times (\text{new to the commons}) - \lambda \cdot \text{agent-hours}.$$
 
 ### 12.3 Adapting at inference time, with no training
 
-You can get most of the "unfolding" behaviour today with fixed rules around a strong model:
+My hypothesis is that you can get much of the "unfolding" behaviour today with fixed rules around a strong model. Each mechanism below is already used somewhere:
 
 | Mechanism | What adapts | Who uses it |
 |---|---|---|
@@ -639,17 +583,17 @@ How would you actually RL such a system? I'd climb a ladder, one rung at a time,
 
 ![Diagram: training ladder](/images/thoughts-on-agent-swarms/diagrams/d10-training-ladder.png)
 
-**Credit for structural actions.** A spawn or a migration is one action whose effect is spread over hours and thousands of other agents' tokens. A flat collective advantage will learn it, but slowly. Three ways to sharpen the signal:
+**Credit for structural actions.** A spawn or a migration is one action whose effect is spread over hours and thousands of other agents' tokens. I'd expect a flat collective advantage to learn it, but slowly. Three ways to sharpen the signal:
 
 1. **Branching rollouts (my proposal).** Fork the swarm at a structural decision point, try alternatives (spawn vs don't; migrate now vs later), and compare returns within the group. This gives a counterfactual advantage *for that decision*, in the spirit of COMA's counterfactual baselines.[^coma] It's expensive, so fork only at the rare, high-leverage decisions.
 2. **A structure critic.** Learn $$V(\text{swarm state})$$ from dashboards, and use the TD error for slow-loop actions.
 3. **Novelty-gated team rewards** as in §12.2, so a team gets credit for what it *added*, not for what it duplicated.
 
-**Rewards to include, and why.**
+**Rewards I'd include, and why (proposals).**
 
 | Term | Purpose | Risk |
 |---|---|---|
-| Verified task progress at the cap | The real objective | Shallow verifier → reward hacking (DeepMind) |
+| Verified task progress at the cap | The real objective | Shallow verifier → reward hacking (as in DeepMind's case study[^deepmind]) |
 | $$-\lambda \cdot$$ agent-hours | Keeps spawning honest | Too high → never parallelises |
 | Small $$-\mu\cdot\varphi$$ (meta-work share) | Low-touch coordination | Agents relabel coordination as work |
 | Novelty gate on contributions | Rewards collective good, kills duplication | Gaming "novelty" by trivial variation |
@@ -657,7 +601,7 @@ How would you actually RL such a system? I'd climb a ladder, one rung at a time,
 
 **Curricula.** Ramp the cap (as Avalon does), then ramp $$n$$, then ramp hierarchy depth. Use population-based training to tune slow-loop hyperparameters (migration rate, UCB constant, spawn threshold) across parallel training runs.
 
-**Integrity is part of the architecture.** The DeepMind episode shows that at scale, **a reward hack is a contagion, and the sharing channels are its vector.**[^deepmind] Training environments for swarms need deep verification, readable reporting channels, the ability to retract shared items, and sanctions (DeepMind's authors propose agent self-governance: voting on disputes, temporary bans).
+**Integrity is part of the architecture.** In DeepMind's case study, an exploit spread through the shared library and direct messages.[^deepmind] My reading is that at scale **a reward hack behaves like a contagion, and the sharing channels are its vector.** Training environments for swarms need deep verification, readable reporting channels, the ability to retract shared items, and sanctions (DeepMind's authors propose agent self-governance: voting on disputes, temporary bans).
 
 > **Open questions.** Can the slow loop be learned jointly with the fast loop, or must it be trained separately? Are branching rollouts worth their cost? What's the right reward for a team whose job is to *rule things out*?
 
@@ -684,17 +628,17 @@ How would you actually RL such a system? I'd climb a ladder, one rung at a time,
 
 💡 Everything above was abstract on purpose. This section asks what these architectures would do in the domains I care most about. All the designs here are proposals. Facts about published systems are marked 📄.
 
-### 14.1 The rule that decides everything: how fast and how trustworthy is the verifier?
+### 14.1 My hypothesis: the verifier decides how much a swarm can do alone
 
-| Domain | Verifier | Time per check | What it implies for swarm design |
+| Domain | Verifier | Relative speed (my rough characterisation) | What I think it implies for swarm design |
 |---|---|---|---|
-| Formal maths | Lean kernel | Minutes | Loose, huge, diverse search is affordable |
-| Software | Tests | Seconds–hours | Same, if tests are good |
-| Simulation science | Simulators, conservation laws | Hours | Islands per model family; cross-check simulators |
-| Biology | Wet-lab assays | Days–weeks | Spend the swarm on *choosing experiments*, send only the best few |
-| Clinical medicine | Outcomes, trials, guidelines | Months–years | Swarm assists humans; build a *ladder* of cheaper, imperfect checks |
+| Formal maths | Lean kernel[^formats] | Fast | Loose, huge, diverse search is affordable |
+| Software | Tests | Fast, if tests are good | Same, if tests are good |
+| Simulation science | Simulators, conservation laws | Varies | Islands per model family; cross-check simulators |
+| Biology | Wet-lab assays | Slow | Spend the swarm on *choosing experiments*, send only the best few |
+| Clinical medicine | Outcomes, trials, guidelines | Slowest | Swarm assists humans; build a *ladder* of cheaper, imperfect checks |
 
-Down the table, the swarm generates faster than the world can check. The design must shift from generation toward **triage and verification ladders**. Independence matters: two checks with the same blind spot multiply less well than two independent ones, the same $$\rho$$ as in §8.2.
+My hypothesis is that down the table the swarm generates faster than the world can check, so the design should shift from generation toward **triage and verification ladders**. Independence should matter too: by the design-effect logic of §8.2, two checks with the same blind spot are worth less than two independent ones.
 
 ### 14.2 Cancer care journeys: the patient and family point of view
 
@@ -707,8 +651,8 @@ A swarm for one patient and family is a natural fit for the ideas above.
 How the ideas map:
 
 - **Intent, not instructions (§9).** The coordinator's "mission" is the patient's own goals of care: maximise time at home, or try every option, or protect fertility. Every sub-team checks its work against that intent, so the family doesn't have to re-explain their values to every agent.
-- **Dependency links (§7).** Prior authorisation, the pathology lab, imaging scheduling and the pharmacy are the "research admin" of cancer care. They're contacted rarely but sit on the critical path. Time-to-treatment is often set by them, not by medicine. *Contact them early, in parallel.*
-- **Always on, low-touch (§9).** The symptoms team runs a cheap daily check-in (patient-reported outcomes) and stays quiet unless a red flag fires. Fever during chemotherapy can mean febrile neutropenia, an emergency; that is the interrupt path, and it goes straight to humans.
+- **Dependency links (§7).** Prior authorisation, the pathology lab, imaging scheduling and the pharmacy are the "research admin" of cancer care. They're contacted rarely but sit on the critical path. *My proposal: contact them early, in parallel.*
+- **Always on, low-touch (§9).** The symptoms team runs a cheap daily check-in (patient-reported outcomes) and stays quiet unless a red flag fires. Fever during chemotherapy can be a sign of febrile neutropenia, which guidelines treat as urgent;[^fn] that is the interrupt path, and it goes straight to humans.
 - **Multicast (§5).** When the logistics team learns the insurer needs a specific form, the trials team needs to know before it applies for a trial that the same insurer covers.
 - **The refuting island (§8).** The second-opinion team's job is to build the strongest case that the current plan is wrong. It does not replace a human second opinion; it prepares the questions for one.
 - **Public goods (§11).** With consent and de-identification, the lessons from one family's journey ("this question was worth asking at diagnosis") are a gift to families who haven't been diagnosed yet. That is horizon 3, literally.
@@ -716,51 +660,51 @@ How the ideas map:
 ### 14.3 Cancer care: the oncologist's point of view
 
 - **Tumour board preparation.** Islands per frame, mirroring the Navier–Stokes problem variants: *guideline-concordant standard of care*; *biomarker-driven targeted therapy*; *clinical trial options*; *de-escalation or palliative-first*.[^oai] A refuting island looks for reasons each frame fails for *this* patient (comorbidities, performance status, prior toxicities). The integrate team writes one page for the board. The verifier ladder runs through guidelines, pathology review and, finally, the multidisciplinary team.
-- **Longitudinal surveillance.** Always-on, low-touch watchers over imaging (RECIST), labs, ctDNA and patient-reported outcomes, writing to a dashboard the oncologist reads rather than sending messages. The $$\sqrt{2\kappa\delta}$$ logic of §9 says to make check-ins cheap and the "what counts as drift" intent clear.
+- **Longitudinal surveillance.** Always-on, low-touch watchers over imaging (RECIST), labs, ctDNA and patient-reported outcomes, writing to a dashboard the oncologist reads rather than sending messages. If the cadence model of §9 holds, it suggests making check-ins cheap and the "what counts as drift" intent clear.
 - **Toxicity management.** Early detection of immune-related adverse events (colitis, pneumonitis, endocrinopathies) is the clinical version of "share the fix fast": one signal noticed in the notes should reach whoever acts on it.
 - **Handoffs across the continuum.** Surgery to medical oncology to radiation to survivorship or palliative care. Each handoff is a dependency link where context is lost; the exit memo of §8.4 is the discharge summary done well.
 - **Size vs time (§6).** An urgent decision this week deserves a small, fast team. A complex relapsed case with time to think can use a bigger, slower search.
 
-**Guardrails that are non-negotiable here:** clinicians decide; verification is slow and outcomes are the real verifier; privacy and consent; equity (who gets the swarm?); and hallucination risk, which grows with how confident and how widely shared a wrong statement is (§5.5).
+**Guardrails that are non-negotiable here:** clinicians decide; verification is slow and outcomes are the real verifier; privacy and consent; equity (who gets the swarm?); and hallucination risk, which I'd expect to grow with how confident and how widely shared a wrong statement is (§5.5).
 
 ### 14.4 Early discovery: targets, mechanisms and hits
 
-**Target finding and prioritisation.** "Is gene X a causal driver of disease Y?" Islands by **evidence type**: human genetics (GWAS, Mendelian randomisation, rare-variant burden), functional genomics (CRISPR screens, DepMap), single-cell and spatial expression, pathway context, prior clinical experience with the target class. A **refuting island** argues that X is a passenger, a marker or confounded (reverse causation, linkage to a neighbouring gene, tissue mismatch). Independent evidence types raise $$N_{\text{eff}}$$ (§8.2). Targets with human genetic support are reported to succeed clinically at roughly twice the rate (Nelson et al. 2015; King et al. 2019).[^genetic]
+**Target finding and prioritisation.** "Is gene X a causal driver of disease Y?" Islands by **evidence type**: human genetics (GWAS, Mendelian randomisation, rare-variant burden), functional genomics (CRISPR screens, DepMap), single-cell and spatial expression, pathway context, prior clinical experience with the target class. A **refuting island** argues that X is a passenger, a marker or confounded (reverse causation, linkage to a neighbouring gene, tissue mismatch). Independent evidence types should raise $$N_{\text{eff}}$$ (§8.2), if the design-effect logic applies. Targets with human genetic support are reported to succeed clinically at roughly twice the rate (Nelson et al. 2015; King et al. 2019).[^genetic]
 
 **Causal mechanism understanding.** Islands per mechanistic hypothesis, each tasked with predictions that *distinguish* it from the others. A verifier ladder runs from consistency across datasets, to a perturbation experiment, to an in vivo model. Kosmos 📄 shows the coordination pattern: data-analysis and literature agents sharing one structured world model, with every claim linked to code or a paper.[^kosmos]
 
 **Hit finding.** Chemical space is now vast: Enamine REAL Space holds about 40 billion make-on-demand molecules. BIOPTIC B1 📄 (J. Chem. Inf. Model. 2025)[^bioptic], a ligand-based virtual screen, searched it in minutes and found novel LRRK2 binders (a Parkinson's target) with $$K_d$$ as low as 110 nM, binding both wild-type and the G2019S mutant. A swarm adds structure on top of such tools: **islands per chemical hypothesis** (orthosteric, allosteric, covalent, degrader) so scaffold diversity is preserved by design, not by luck.
 
-**Hit-to-lead and lead optimisation.** A *build* team per chemical series (dense talk, tight design-make-test loops), an *integrate* team that shares matched molecular pairs and liability fixes across series (a solubilising group that worked in series A is a "hard-won fix" for series B), and successive halving across series, which is what stage gates already do. The main failure mode is reward hacking against a weak verifier: molecules that dock beautifully and fail in assay. The verifier ladder sets how much confirmation is needed. With 1% true actives, a docking screen with sensitivity 0.6 and specificity 0.9 gives only about 6% positive predictive value. An independent second stage lifts it to about 46%.
+**Hit-to-lead and lead optimisation.** A *build* team per chemical series (dense talk, tight design-make-test loops), an *integrate* team that shares matched molecular pairs and liability fixes across series (a solubilising group that worked in series A is a "hard-won fix" for series B), and successive halving across series, which is what stage gates already do. A likely failure mode is reward hacking against a weak verifier: molecules that dock beautifully and fail in assay. Bayes' rule says that when true actives are rare, even a decent screen returns mostly false positives, and an independent second stage raises the positive predictive value far more than a correlated one. How much it helps in practice depends on assay figures I haven't measured.
 
 ### 14.5 Preclinical studies in mice and monkeys: design and readout
 
 - **Design swarm.** Islands propose study designs under different model choices: syngeneic vs patient-derived xenograft vs genetically engineered mouse models, and humanised mice for immuno-oncology. Each comes with power calculations and randomisation and blinding plans. A refuting island asks what would make a positive result meaningless (wrong model for the mechanism, under-powered, dosing that doesn't reach target exposure).
 - **Readout swarm.** Different analysis islands apply different, pre-registered models to the same data: mixed-effects tumour-growth models, tumour growth inhibition, survival analysis, PK/PD exposure–response. A refuting island looks for cage, batch and operator effects. Agreement across *independent* analyses is the verifier.
 - **Toxicology in non-human primates.** Clinical pathology, histopathology and safety pharmacology. The species-difference question (does the target's biology, sequence and structure differ between human and model species?) is one of the major error items in Convoke's target-safety rubric 📄.[^convoke] It's a natural *dependency link* to check early.
-- **The 3Rs.** Every in silico design iteration that prevents a poorly designed animal study is a reduction in animal use, and a collective good of its own.
+- **The 3Rs.** Every in silico design iteration that prevents a poorly designed animal study would reduce animal use, which is a collective good of its own.[^3rs]
 
 ### 14.6 Clinical trials, Phases 1 to 3
 
 | Phase | Swarm job | Ideas that apply |
 |---|---|---|
-| **Phase 1** (dose escalation, safety) | Always-on safety-signal watchers; model-assisted dose escalation support (BOIN, CRM); PK/PD readout | Low-touch with an interrupt path (§9); verifier = the safety review committee |
+| **Phase 1** (dose escalation, safety) | Always-on safety-signal watchers; model-assisted dose escalation support (BOIN, CRM)[^dose]; PK/PD readout | Low-touch with an interrupt path (§9); verifier = the safety review committee |
 | **Phase 2** (signal, go/no-go) | Biomarker-subgroup exploration *with a refuting island against subgroup fishing*; multiplicity control; go/no-go dossiers | Islands with polarity (§2.4); verify before multicast (§5.5) |
-| **Phase 3** (confirmatory) | Comparator selection (newly critical under EU Joint Clinical Assessments since Jan 2025 📄), site selection, enrolment forecasting, catalyst tracking, readout analysis | Dependency links to regulators, ethics boards, CROs: contact early (§7) |
+| **Phase 3** (confirmatory) | Comparator selection (newly important under the EU's Joint Clinical Assessments, which apply to new oncology medicines from January 2025 📄[^jca]), site selection, enrolment forecasting, catalyst tracking, readout analysis | Dependency links to regulators, ethics boards, CROs: contact early (§7) |
 
 ### 14.7 Asset scouting, diligence and BD: knowledge work at scale
 
 Biotech analysts, pharma BD and search-and-evaluation teams, and investors do "find-all" work. That means every asset matching a complex query, worldwide, with up-to-date attributes, then synthesis: landscapes, safety assessments, forecasts.
 
-What the evidence says:
+What the published evidence says:
 
-- **The frontier is jagged** 📄. Convoke's benchmark of six biopharma work products (target safety assessment, tumour landscape, **shelved assets**, catalyst calendar, clinical benchmark, commercial forecast) found models do best at structured compilation (shelved-asset lists, catalyst calendars) and worst at synthesis and narrative (target safety, tumour landscapes). Commercial forecasts are hard because errors propagate through assumptions.
-- **Architecture beats model** 📄. Bioptic's tree-of-directives agent reached F1 0.797 on a completeness benchmark of mostly non-US, non-English assets, against 0.562 for the best general agent. Running a general agent longer didn't close the gap. The supply has moved: about 86.5% of WIPO patent applications originate outside the US, about 48% from China.
-- **Speed** 📄. Bioptic's competitor-discovery agent cut a VC fund's competitive-analysis turnaround from 2.5 days to about 3 hours.
+- **The frontier is jagged** 📄.[^convoke] Convoke's benchmark of six biopharma work products (target safety assessment, tumour landscape, **shelved assets**, catalyst calendar, clinical benchmark, commercial forecast) found models do best at structured compilation (shelved-asset lists, catalyst calendars) and worst at synthesis and narrative (target safety, tumour landscapes). Commercial forecasts are hard because errors propagate through assumptions.
+- **Architecture beats model** 📄.[^bioptic] Bioptic's tree-of-directives agent reached F1 0.797 on a completeness benchmark of mostly non-US, non-English assets, against 0.562 for the best general agent. Running a general agent longer didn't close the gap. The supply has moved: the same paper reports, from WIPO data, that about 86.5% of patent applications originate outside the US and about 48% come from China.
+- **Speed** 📄. In a case study, Bioptic's competitor-discovery agent cut a VC fund's competitive-analysis turnaround from 2.5 days to about 3 hours.
 
-A swarm design for scouting, built from this post's ideas:
+A swarm design for scouting, built from this post's ideas (a proposal):
 
-- **Explore islands by region × language × source × stage** (company pipelines, ClinicalTrials.gov and Asian registries, patents, conference abstracts, regional press). This is completeness by construction.
+- **Explore islands by region × language × source × stage** (company pipelines, ClinicalTrials.gov and Asian registries, patents, conference abstracts, regional press). The aim is completeness by construction.
 - **A validator** checks every candidate against the query, with citations. **A dedup/alias team** resolves code names, transliterations and subsidiaries.
 - **An integrate team** writes the dossier. **A refuting island** argues against every "buy" thesis.
 - **Always-on watchers** maintain the catalyst calendar, and stay quiet until something changes.
@@ -774,9 +718,9 @@ Why it matters: shelved drugs have been revived to great effect. Tovorafenib[^re
 
 Databases record what companies *announce*. Silence is what they *stop* saying: a trial record that stops updating, a drug that drops off a pipeline slide, a conference abstract that never appears.
 
-**When is silence signal?** 🧮 Model each asset's public updates as a process with its own typical interval $$\mu$$ (learned from that asset's and that company's history). If the asset were still active, the chance of a gap of at least $$g$$ days is roughly $$e^{-g/\mu}$$. For an asset that usually updates every 90 days, 270 days of silence has probability $$e^{-3} \approx 5\%$$. That's unusual enough to investigate. For a company that updates twice a year, the same gap is unremarkable ($$e^{-1.5} \approx 22\%$$).
+**When is silence signal? (a hypothesis)** One simple model treats each asset's public updates as a process with its own typical interval $$\mu$$, learned from that asset's and that company's history. If updates were memoryless (a Poisson process), the chance of a gap of at least $$g$$ days for a still-active asset would be $$e^{-g/\mu}$$. So the same silence would be surprising for an asset that usually updates often and unremarkable for one that rarely does. Whether real disclosure behaves anything like this is untested.
 
-**Why did it go quiet?** Treat the cause as a hypothesis with a prior, and let independent signals update it. The signals:
+**Why did it go quiet?** My proposal is to treat the cause as a hypothesis with a prior, and let independent signals update it. The signals I'd look at, and what I *suspect* each points toward (untested):
 
 | Signal | Where to look | Points toward |
 |---|---|---|
@@ -786,13 +730,9 @@ Databases record what companies *announce*. Silence is what they *stop* saying: 
 | Patents: maintenance fees paid, new continuations filed vs lapses | Patent offices | Kept alive → still valued; lapsing → abandoned |
 | Hiring (CMC, scale-up, clinical ops) vs layoffs | Job boards, press | Quietly progressing vs winding down |
 | Abstracts withdrawn; safety signals at meetings | Conferences | Safety or efficacy |
-| Regional press and registries | Chinese, Japanese, Korean sources | Often the first place news appears |
+| Regional press and registries | Chinese, Japanese, Korean sources | May surface news before English-language sources |
 
-![Silence: when it's signal, and how evidence shifts the cause](/images/thoughts-on-agent-swarms/fig9-silence.png)
-
-*Figure 9 🧮. Left: how surprising a silence is depends on the asset's normal cadence. Right: an illustrative Bayes update over four causes (prior: safety 25%, efficacy 30%, strategic 30%, stealth 15%). "Registry terminated by sponsor decision + patents lapsing" leaves the cause uncertain among safety, efficacy and money (stealth falls to ~0%). "Patents kept alive + new continuation + CMC hiring" makes **stealth (keeping alpha)** about 73% likely. The likelihoods are made up for illustration; real ones would be learned from labelled historical cases.*
-
-**The swarm for silence** uses every idea in this post: explore islands per region and source; **one island per hypothesis, each told to build the strongest case for its cause** (polarity, as with the Navier–Stokes variants); a validator that insists on citations; Bayesian aggregation by the integrate team; always-on watchers that re-score assets as new signals arrive; and humans, ideally senior drug hunters, who make the call.
+**The swarm for silence** (a proposal) uses every idea in this post: explore islands per region and source; **one island per hypothesis, each told to build the strongest case for its cause** (polarity, as with the Navier–Stokes variants); a validator that insists on citations; Bayesian aggregation by the integrate team; always-on watchers that re-score assets as new signals arrive; and humans, ideally senior drug hunters, who make the call.
 
 **Boundaries.** Public information only; never material non-public information; and care with conclusions about named companies, since a wrong "safety problem" hypothesis can harm people and markets. Report hypotheses with their evidence and confidence, never as findings.
 
@@ -805,7 +745,7 @@ Databases record what companies *announce*. Silence is what they *stop* saying: 
 The Navier–Stokes run already *was* a hybrid.[^oai] Humans chose the portfolio, made the reallocation call, seeded the new groups and revised the prompts. The swarm did the search. That split is worth keeping deliberately, and it follows from the earlier sections:
 
 - **Humans belong in the slow loop (§12.1).** Choosing the question, setting and revising intent, deciding what counts as success, and making the irreversible calls (spending real money, running an experiment on animals or people). These are low-frequency, high-leverage decisions. They are exactly where judgement and values matter, and where a person's attention is affordable.
-- **Humans are decorrelated agents (§8.2).** 🧮 Ten thousand copies of one model share blind spots ($$\rho$$ between them is high). A human expert who reasons differently is a *low-correlation* attempt. In the $$N_{\text{eff}}$$ formula, one genuinely independent reviewer can be worth more than many extra copies. That's a quantitative reason to keep humans in the refuting island and at the verification gate, not just a moral one.
+- **Humans as decorrelated agents (§8.2), a hypothesis.** If copies of one model share blind spots (high $$\rho$$), then a human expert who reasons differently would be a *low-correlation* attempt, and by the $$N_{\text{eff}}$$ formula one genuinely independent reviewer could be worth more than many extra copies. That's a quantitative reason to keep humans in the refuting island and at the verification gate, not just a moral one.
 - **Human oversight has a budget too (§9).** The $$\sqrt{2\kappa\delta}$$ rule applies to people: each check-in costs human attention $$\kappa$$. So hybrid swarms must make human check-ins *cheap* (one-page summaries, claims with their evidence, disagreements surfaced rather than averaged away) and keep drift $$\delta$$ small with a clear, human-authored intent.
 - **Meaning-making stays human.** The swarm's intent (what problem, why it matters, for whom) is the one thing that should never be generated by the swarm itself. In the cancer-care design (§14.2), the intent is the patient's own goals of care. In science, it is the research question a person cares about and can explain.
 
@@ -831,7 +771,7 @@ Design countermeasures, each mapped to an earlier idea:
 
 The principle: **a hybrid swarm should make its humans better scientists, not just faster ones.** If the people in the loop understand less each year, the system is borrowing against its own future verifier.
 
-### 15.3 Do we need a "Lean for biology"?
+### 15.3 Do we need a "Lean for biology"?[^gsk]
 
 Lean works because a mathematical claim can be written completely formally and checked mechanically from axioms. A kernel either accepts the proof or it doesn't. Biology doesn't have that. Its claims are empirical, probabilistic and context-dependent ("in this cell type, at this dose, in this species"). No kernel can *prove* that a gene drives a cancer.
 
@@ -839,17 +779,17 @@ So the honest answer is: **not a Lean, but we do need what Lean provides.** Brea
 
 | What Lean provides | Biology's analogue | Exists today? |
 |---|---|---|
-| **A formal statement language** (no ambiguity about what's claimed) | Typed, machine-readable claims: entity, relation, direction, magnitude, context, species, conditions (e.g. causal graphs, BEL, nanopublications, Biolink-style models, SBML for quantitative models) | Partly, unevenly used |
+| **A formal statement language** (no ambiguity about what's claimed) | Typed, machine-readable claims: entity, relation, direction, magnitude, context, species, conditions (e.g. causal graphs, BEL, nanopublications, Biolink-style models, SBML for quantitative models)[^formats] | Partly, unevenly used |
 | **A kernel that checks each step** | **Executable provenance**: every claim links to the data, code and protocol that produced it, and an *independent* pipeline can re-derive it from raw data | Partly (Kosmos links every statement to code or papers 📄) |
 | **Comparator: does the proved theorem match the intended statement?** | **Pre-registration**: does the tested hypothesis match the stated one, with analysis plans fixed in advance? This blocks goalpost-moving, the biological version of DeepMind's agents redefining the problem's terms (§2.4) | Yes for trials, rarely for discovery |
 | **Proof = certainty** | **An evidence calculus**: claims carry calibrated confidence that rises with *independent* lines of evidence (genetics + perturbation + replication), discounted for correlated ones (the $$\rho$$ of §8.2) | No standard |
 | **The library (Mathlib)** | A shared, versioned knowledge graph of typed claims, with retraction and contradiction checks | Fragmented |
 
-And for the parts of biology that *are* formal, real formal checks exist and should be used: stoichiometric and mass-balance constraints (flux-balance models), dimensional and unit checks, kinetic and rule-based models (SBML, BioNetGen, Kappa) that can be simulated and model-checked, structural constraints in protein design, statistical consistency checks on reported numbers, and protocol logic in trial designs.
+And for the parts of biology that *are* formal, real formal checks exist and should be used: stoichiometric and mass-balance constraints (flux-balance models), dimensional and unit checks, kinetic and rule-based models (SBML, BioNetGen, Kappa)[^formats] that can be simulated and model-checked, structural constraints in protein design, statistical consistency checks on reported numbers, and protocol logic in trial designs.
 
 ![Diagram: lean for biology](/images/thoughts-on-agent-swarms/diagrams/d14-lean-for-biology.png)
 
-This is the verifier ladder of §14.1, made *legible*. Each rung is cheaper and earlier than the next, each records what it checked, and the whole chain can be inspected by a person. **Lean made mathematics safe for 10,000-agent search because it made claims legible and checking cheap.** Biology will get the same benefit only if it invests in the same two things: claims precise enough to check, and checks independent enough to trust. And the last rung, a human who understands *why*, ties this section back to §15.2. Formalisation should support human understanding, not replace it. My own small experiment in that formal corner is [Lean-Bio](/lean-bio/), which compiles biochemical models into theorems the Lean 4 kernel checks; it covers the parts of biology that can be formal, not the empirical rest.
+This is the verifier ladder of §14.1, made *legible*. Each rung is cheaper and earlier than the next, each records what it checked, and the whole chain can be inspected by a person. **My reading is that Lean made mathematics safe for 10,000-agent search because it made claims legible and checking cheap.** Biology will get the same benefit only if it invests in the same two things: claims precise enough to check, and checks independent enough to trust. And the last rung, a human who understands *why*, ties this section back to §15.2. Formalisation should support human understanding, not replace it. My own small experiment in that formal corner is [Lean-Bio](/lean-bio/), which compiles biochemical models into theorems the Lean 4 kernel checks; it covers the parts of biology that can be formal, not the empirical rest.
 
 > **Open questions.** Which human roles in a hybrid swarm add the most, and how do we measure that? How do we detect and reverse deskilling in the people in the loop? What would a minimal, widely adopted "claim language" for biology look like, and who would maintain its library?
 
@@ -925,13 +865,15 @@ This is the verifier ladder of §14.1, made *legible*. Each rung is cheaper and 
 
 ## 18. Try it yourself (with answers)
 
+These use hypothetical numbers to practise the models above. They're exercises, not claims about real swarms.
+
 1. **Multicast.** A fix saves 10 min; reading costs 0.5 min. (a) 9 agents, each 20% likely to hit it: broadcast? (b) 1,000 agents: 5 at 90%, the rest at 0.1%?
 2. **Size vs time.** Using $$c(n) = 0.1n$$, $$e(n) = 1/(1+0.1(n-1))$$, at roughly which budget $$T$$ does $$n=16$$ first beat $$n=8$$?
-3. **Org chart.** In the UCB example, how many more exchanges with B (if $$\bar u_B$$ stays 0.3) before A is chosen again?[^ucb]
+3. **Org chart.** UCB with $$c=1$$ at $$t=20$$: peer A has $$\bar u=0.6$$ over 15 exchanges, peer B has $$\bar u=0.3$$ over 2. B is chosen now. How many more exchanges with B (if $$\bar u_B$$ stays 0.3) before A is chosen again?[^ucb]
 4. **Overhead budget.** With $$c+d = 30$$ min and $$m = 3\%$$, what minimum lifetime keeps $$\varphi \le 8\%$$?
 5. **Cadence.** $$\kappa = 0.1$$ h, $$\delta = 0.2$$/h. Find $$\tau^\ast$$ and total cost. What if clearer intent halves $$\delta$$?
 6. **Village.** With span 6, how many management levels does a 10,000-agent swarm need?
-7. **Public goods.** In the library toy, what's the smallest royalty share $$\alpha$$ that makes writing the library worthwhile (no discount)?
+7. **Public goods.** Writing a library costs its creator 0.05 of return, and later episodes gain 0.40 in total. What's the smallest royalty share $$\alpha$$ that makes writing it worthwhile (no discount)?
 
 <details markdown="1">
 <summary><b>Answers</b> (try first!)</summary>
@@ -959,23 +901,24 @@ This is the verifier ladder of §14.1, made *legible*. Each rung is cheaper and 
 - Kimi Team, [*Kimi K2.5*](https://arxiv.org/abs/2602.02276) (2026).
 - Paglieri, Cross, Genewein, Leibo, Tomasev et al. (Google DeepMind), [*A Case Study on Emergent Cheating and Whistleblowing in Autonomous Research Swarms*](https://arxiv.org/abs/2609.04170v1), arXiv:2609.04170 (Sep 2026); coverage in [MIT Technology Review](https://www.technologyreview.com/2026/09/14/1144037/ai-agents-blew-whistle-o-cheating-colleagues/) and [The Decoder](https://the-decoder.com/deepmind-put-100-ai-agents-in-a-room-and-they-sorted-into-cheaters-converts-and-whistleblowers/).
 - Mitchener et al., [*Kosmos: An AI Scientist for Autonomous Discovery*](https://arxiv.org/abs/2511.02824) (2025).
-- Gottweis et al., *Towards an AI co-scientist* (2025); Ghareeb et al., *Robin* (2025); Swanson et al., *The Virtual Lab*, Nature (2025).
-- Vinogradova et al., [*Hunt Globally: Deep Research AI Agents for Drug Asset Scouting*](https://arxiv.org/abs/2602.15019) (2026); Vinogradov et al., [*LLM-Based Agents for Competitive Landscape Mapping in Drug Asset Due Diligence*](https://arxiv.org/abs/2508.16571) (2025); Vinogradov, Nguyen et al., *BIOPTIC B1*, J. Chem. Inf. Model. 65, 9927 (2025).
+- Gottweis et al., [*Towards an AI co-scientist*](https://arxiv.org/abs/2502.18864) (2025); Ghareeb et al., [*Robin: a multi-agent system for automating scientific discovery*](https://arxiv.org/abs/2505.13400) (2025); Swanson et al., [*The Virtual Lab of AI agents designs new SARS-CoV-2 nanobodies*](https://doi.org/10.1038/s41586-025-09442-9), Nature (2025).
+- Vinogradova et al., [*Hunt Globally: Deep Research AI Agents for Drug Asset Scouting*](https://arxiv.org/abs/2602.15019) (2026); Vinogradov et al., [*LLM-Based Agents for Competitive Landscape Mapping in Drug Asset Due Diligence*](https://arxiv.org/abs/2508.16571) (2025); Vinogradov, Nguyen et al., [*BIOPTIC B1 … Discovers LRRK2 Ligands in Vast Chemical Space*](https://doi.org/10.1021/acs.jcim.5c00743), J. Chem. Inf. Model. 65, 9927 (2025).
 - Convoke, [*Benchmarking biopharma knowledge work*](https://convoke.bio/blog/benchmarking-biopharma-knowledge-work) (Sep 2026).
 - tp53, *Patients Are Waiting: From Swarms to Synergy*, NeurIPS 2026 Agentic LS workshop ([agenticls.github.io](https://agenticls.github.io/); [workshop page](https://neurips.cc/virtual/2026/loc/sydney/workshop/137498)).
 - Konstantin Dunas (hallerite), [*On the nature of the swarm: why scaling inference ends in many agents*](https://hallerite.com/posts/on-the-nature-of-the-swarm/) (Oct 2026).
-- Budzyń et al., deskilling of endoscopists after AI exposure, *Lancet Gastroenterology & Hepatology* (2025).
-- Nelson et al., *Nature Genetics* 47, 856 (2015); King et al., *PLoS Genetics* 15, e1008489 (2019).
-- Auer, Cesa-Bianchi & Fischer, *Finite-time analysis of the multiarmed bandit problem*, Machine Learning 47 (2002).
-- Schulman et al., *High-dimensional continuous control using generalized advantage estimation*, ICLR (2016).
-- Foerster et al., *Counterfactual multi-agent policy gradients*, AAAI (2018).
-- Sukhbaatar et al., *CommNet* (NeurIPS 2016); Singh et al., *IC3Net* (ICLR 2019); Das et al., *TarMAC* (ICML 2019).
-- Island-model genetic algorithms; Romera-Paredes et al., *FunSearch*, Nature 625 (2024); Novikov et al., *AlphaEvolve* (2025).
-- Wang et al., *Voyager: An open-ended embodied agent with large language models* (2023).
-- Arjona-Medina et al., *RUDDER* (NeurIPS 2019); Harutyunyan et al., *Hindsight credit assignment* (NeurIPS 2019).
-- Yang et al., *Mean field multi-agent reinforcement learning*, ICML (2018).
-- Granovetter, *The strength of weak ties*, American Journal of Sociology 78, 1360 (1973).
-- Conway, *How do committees invent?*, Datamation (1968).
+- Kim Branson (GSK), [LinkedIn post on building a "Lean for biology" at GSK](https://www.linkedin.com/posts/kim-branson-b864963_ive-often-thought-we-need-a-lean-for-biology-share-7474193699040555008-A-iV/) (June 2026).
+- Budzyń et al., [*Endoscopist deskilling risk after exposure to artificial intelligence in colonoscopy*](https://doi.org/10.1016/S2468-1253(25)00133-5), *Lancet Gastroenterology & Hepatology* (2025).
+- Nelson et al., [*The support of human genetic evidence for approved drug indications*](https://doi.org/10.1038/ng.3314), *Nature Genetics* 47, 856 (2015); King et al., [*Are drug targets with genetic support twice as likely to be approved?*](https://doi.org/10.1371/journal.pgen.1008489), *PLoS Genetics* 15, e1008489 (2019).
+- Auer, Cesa-Bianchi & Fischer, [*Finite-time analysis of the multiarmed bandit problem*](https://doi.org/10.1023/A:1013689704352), Machine Learning 47 (2002).
+- Schulman et al., [*High-dimensional continuous control using generalized advantage estimation*](https://arxiv.org/abs/1506.02438), ICLR (2016).
+- Foerster et al., [*Counterfactual multi-agent policy gradients*](https://arxiv.org/abs/1705.08926), AAAI (2018).
+- Sukhbaatar et al., [*CommNet*](https://arxiv.org/abs/1605.07736) (NeurIPS 2016); Singh et al., [*IC3Net*](https://arxiv.org/abs/1812.09755) (ICLR 2019); Das et al., [*TarMAC*](https://arxiv.org/abs/1810.11187) (ICML 2019).
+- Island-model genetic algorithms; Romera-Paredes et al., [*FunSearch*](https://doi.org/10.1038/s41586-023-06924-6), Nature 625 (2024); Novikov et al., [*AlphaEvolve*](https://arxiv.org/abs/2506.13131) (2025).
+- Wang et al., [*Voyager: An open-ended embodied agent with large language models*](https://arxiv.org/abs/2305.16291) (2023).
+- Arjona-Medina et al., [*RUDDER*](https://arxiv.org/abs/1806.07857) (NeurIPS 2019); Harutyunyan et al., [*Hindsight credit assignment*](https://arxiv.org/abs/1912.02503) (NeurIPS 2019).
+- Yang et al., [*Mean field multi-agent reinforcement learning*](https://arxiv.org/abs/1802.05438), ICML (2018).
+- Granovetter, [*The strength of weak ties*](https://doi.org/10.1086/225469), American Journal of Sociology 78, 1360 (1973).
+- Conway, [*How do committees invent?*](http://www.melconway.com/Home/Committees_Paper.html), Datamation (1968).
 
 <link rel="stylesheet" href="/assets/css/sidenotes.css">
 <script src="/assets/js/sidenotes.js" defer></script>
@@ -987,21 +930,31 @@ This is the verifier ladder of §14.1, made *legible*. Each rung is cheaper and 
 [^oaidetail]: Further details of the Navier–Stokes run, from [CellCog](https://cellcog.ai/blog/openai-navier-stokes/) (which quotes OpenAI's post) and [Aventine](https://aventineresearchinstitute.substack.com/p/is-this-just-the-beginning-for-ai). Secondary sources: treat with care.
 [^deepmind]: Paglieri, Cross, Genewein, Leibo, Tomasev et al. (Google DeepMind), [*A Case Study on Emergent Cheating and Whistleblowing in Autonomous Research Swarms*](https://arxiv.org/abs/2609.04170v1), arXiv:2609.04170 (Sep 2026); coverage in [MIT Technology Review](https://www.technologyreview.com/2026/09/14/1144037/ai-agents-blew-whistle-o-cheating-colleagues/) and [The Decoder](https://the-decoder.com/deepmind-put-100-ai-agents-in-a-room-and-they-sorted-into-cheaters-converts-and-whistleblowers/).
 [^kosmos]: Mitchener et al., [*Kosmos: An AI Scientist for Autonomous Discovery*](https://arxiv.org/abs/2511.02824) (2025).
-[^cosci]: Gottweis et al., *Towards an AI co-scientist* (2025); Ghareeb et al., *Robin* (2025); Swanson et al., *The Virtual Lab*, Nature (2025).
-[^bioptic]: Vinogradova et al., [*Hunt Globally: Deep Research AI Agents for Drug Asset Scouting*](https://arxiv.org/abs/2602.15019) (2026); Vinogradov et al., [*LLM-Based Agents for Competitive Landscape Mapping in Drug Asset Due Diligence*](https://arxiv.org/abs/2508.16571) (2025); Vinogradov, Nguyen et al., *BIOPTIC B1*, J. Chem. Inf. Model. 65, 9927 (2025).
+[^cosci]: Gottweis et al., [*Towards an AI co-scientist*](https://arxiv.org/abs/2502.18864) (2025); Ghareeb et al., [*Robin: a multi-agent system for automating scientific discovery*](https://arxiv.org/abs/2505.13400) (2025); Swanson et al., [*The Virtual Lab of AI agents designs new SARS-CoV-2 nanobodies*](https://doi.org/10.1038/s41586-025-09442-9), Nature (2025).
+[^bioptic]: Vinogradova et al., [*Hunt Globally: Deep Research AI Agents for Drug Asset Scouting*](https://arxiv.org/abs/2602.15019) (2026); Vinogradov et al., [*LLM-Based Agents for Competitive Landscape Mapping in Drug Asset Due Diligence*](https://arxiv.org/abs/2508.16571) (2025); Vinogradov, Nguyen et al., [*BIOPTIC B1 … Discovers LRRK2 Ligands in Vast Chemical Space*](https://doi.org/10.1021/acs.jcim.5c00743), J. Chem. Inf. Model. 65, 9927 (2025).
 [^convoke]: Convoke, [*Benchmarking biopharma knowledge work*](https://convoke.bio/blog/benchmarking-biopharma-knowledge-work) (Sep 2026).
 [^neurips]: tp53, *Patients Are Waiting: From Swarms to Synergy*, NeurIPS 2026 Agentic LS workshop ([agenticls.github.io](https://agenticls.github.io/); [workshop page](https://neurips.cc/virtual/2026/loc/sydney/workshop/137498)).
-[^lancet]: Budzyń et al., deskilling of endoscopists after AI exposure, *Lancet Gastroenterology & Hepatology* (2025).
-[^genetic]: Nelson et al., *Nature Genetics* 47, 856 (2015); King et al., *PLoS Genetics* 15, e1008489 (2019).
-[^ucb]: Auer, Cesa-Bianchi & Fischer, *Finite-time analysis of the multiarmed bandit problem*, Machine Learning 47 (2002).
-[^gae]: Schulman et al., *High-dimensional continuous control using generalized advantage estimation*, ICLR (2016).
-[^coma]: Foerster et al., *Counterfactual multi-agent policy gradients*, AAAI (2018).
-[^evo]: Island-model genetic algorithms; Romera-Paredes et al., *FunSearch*, Nature 625 (2024); Novikov et al., *AlphaEvolve* (2025).
-[^meanfield]: Yang et al., *Mean field multi-agent reinforcement learning*, ICML (2018).
-[^conway]: Conway, *How do committees invent?*, Datamation (1968).
-[^nums]: **Where the numbers come from.** I haven't run any experiments yet. Every 🧮 number is my own back-of-envelope calculation or toy simulation, with made-up but plausible parameters. The assumptions are stated next to each one.
-[^kish]: The N_eff formula is the standard design effect for correlated samples (Kish, *Survey Sampling*, 1965). Applying it to agents, and the value ρ = 0.01, are my own toy assumptions, not measurements.
-[^eoq]: This is the same square-root trade-off as the classic economic order quantity (Harris, *How many parts to make at once*, 1913). Its use for swarm check-ins, and the parameters, are my toy assumptions.
-[^aviation]: On automation and manual flying skills, see the FAA-commissioned report *Operational Use of Flight Path Management Systems* (PARC/CAST Flight Deck Automation Working Group, 2013).
-[^revived]: Tovorafenib (Ojemda) received FDA accelerated approval in April 2024 for paediatric low-grade glioma. Ibrutinib: Pharmacyclics acquired the programme from Celera in 2006, and AbbVie announced its acquisition of Pharmacyclics for about $21 billion in March 2015.
+[^lancet]: Budzyń et al., [*Endoscopist deskilling risk after exposure to artificial intelligence in colonoscopy*](https://doi.org/10.1016/S2468-1253(25)00133-5), *Lancet Gastroenterology & Hepatology* (2025).
+[^genetic]: Nelson et al., [*The support of human genetic evidence for approved drug indications*](https://doi.org/10.1038/ng.3314), *Nature Genetics* 47, 856 (2015); King et al., [*Are drug targets with genetic support twice as likely to be approved?*](https://doi.org/10.1371/journal.pgen.1008489), *PLoS Genetics* 15, e1008489 (2019).
+[^ucb]: Auer, Cesa-Bianchi & Fischer, [*Finite-time analysis of the multiarmed bandit problem*](https://doi.org/10.1023/A:1013689704352), Machine Learning 47 (2002).
+[^gae]: Schulman et al., [*High-dimensional continuous control using generalized advantage estimation*](https://arxiv.org/abs/1506.02438), ICLR (2016).
+[^coma]: Foerster et al., [*Counterfactual multi-agent policy gradients*](https://arxiv.org/abs/1705.08926), AAAI (2018).
+[^evo]: Island-model genetic algorithms; Romera-Paredes et al., [*FunSearch*](https://doi.org/10.1038/s41586-023-06924-6), Nature 625 (2024); Novikov et al., [*AlphaEvolve*](https://arxiv.org/abs/2506.13131) (2025).
+[^meanfield]: Yang et al., [*Mean field multi-agent reinforcement learning*](https://arxiv.org/abs/1802.05438), ICML (2018).
+[^conway]: Conway, [*How do committees invent?*](http://www.melconway.com/Home/Committees_Paper.html), Datamation (1968).
+[^nums]: **No claims without evidence.** I haven't run any experiments yet. So every claim here is either cited, or stated plainly as my proposal, hypothesis or open question.
+[^kish]: The N_eff formula is the standard design effect for correlated samples (Kish, *Survey Sampling*, Wiley, 1965; see [design effect](https://en.wikipedia.org/wiki/Design_effect)). Applying it to agent swarms is my hypothesis, not a result.
+[^eoq]: This is the same square-root trade-off as the classic economic order quantity (Harris, [*How many parts to make at once*](https://doi.org/10.1287/opre.38.6.947), 1913; reprinted in Operations Research, 1990). Applying it to swarm check-ins is my hypothesis.
+[^aviation]: On automation and manual flying skills, see the FAA-commissioned report [*Operational Use of Flight Path Management Systems*](https://www.faa.gov/sites/faa.gov/files/aircraft/air_cert/design_approvals/human_factors/OUFPMS_Report.pdf) (PARC/CAST Flight Deck Automation Working Group, 2013).
+[^revived]: Tovorafenib (Ojemda) received [FDA accelerated approval](https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-accelerated-approval-tovorafenib-patients-relapsed-or-refractory-braf-altered-pediatric) in April 2024 for paediatric low-grade glioma. Ibrutinib: Pharmacyclics acquired the programme from Celera in 2006, and AbbVie [announced its acquisition of Pharmacyclics](https://news.abbvie.com/2015-03-04-AbbVie-to-Acquire-Pharmacyclics-including-its-blockbuster-product-Imbruvica-Creating-an-Industry-Leading-Hematological-Oncology-Franchise) for about \$21 billion in March 2015.
 [^interrupt]: Paglieri et al. (Google DeepMind), [*A Case Study on Emergent Cheating and Whistleblowing in Autonomous Research Swarms*](https://arxiv.org/abs/2609.04170v1) (2026). This is the same 100-agent maths experiment described above. Agents who spotted the cheating audited the fake proofs, warned peers on broadcast and private channels, organised boycotts and filed formal complaints. That is an interrupt path in action. The open design question is who reads those complaints, and how quickly.
+[^gsk]: Kim Branson (Chief AI Officer, GSK) [posted on LinkedIn](https://www.linkedin.com/posts/kim-branson-b864963_ive-often-thought-we-need-a-lean-for-biology-share-7474193699040555008-A-iV/) in June 2026 that GSK's AI group had built a "Lean for biology", with details to come. My [Lean-Bio](/lean-bio/) page is a small, open attempt at the same idea.
+[^dose]: BOIN: Liu & Yuan, [*Bayesian optimal interval designs for phase I clinical trials*](https://doi.org/10.1111/rssc.12089), JRSS C (2015). CRM: O'Quigley, Pepe & Fisher, [*Continual reassessment method*](https://doi.org/10.2307/2531628), Biometrics (1990).
+[^formats]: Existing formats and tools: [BEL](https://language.bel.bio/), [nanopublications](https://nanopub.net/), the [Biolink Model](https://biolink.github.io/biolink-model/), [SBML](https://sbml.org/), [BioNetGen](https://bionetgen.org/) and [Kappa](https://kappalanguage.org/). For mathematics, see [Lean](https://lean-lang.org/) and [Mathlib](https://github.com/leanprover-community/mathlib4).
+[^fn]: Taplitz et al., [*Outpatient management of fever and neutropenia in adults treated for malignancy*](https://doi.org/10.1200/JCO.18.00374), ASCO/IDSA guideline update, J. Clin. Oncol. (2018).
+[^3rs]: Russell & Burch, *The Principles of Humane Experimental Technique* (1959), the origin of the 3Rs; see the [NC3Rs](https://nc3rs.org.uk/who-we-are/3rs).
+[^jca]: [Regulation (EU) 2021/2282 on health technology assessment](https://eur-lex.europa.eu/eli/reg/2021/2282/oj). Joint clinical assessments apply first to new oncology medicines and advanced therapies, from 12 January 2025.
+[^weakties]: Granovetter, [*The strength of weak ties*](https://doi.org/10.1086/225469), American Journal of Sociology 78, 1360 (1973).
+[^stigmergy]: Grassé coined *stigmergy* for termite nest-building: [Insectes Sociaux 6, 41 (1959)](https://doi.org/10.1007/BF02223791).
+[^hrl]: Sutton, Precup & Singh, [*Between MDPs and semi-MDPs*](https://doi.org/10.1016/S0004-3702(99)00052-1) (options), Artificial Intelligence (1999); Vezhnevets et al., [*FeUdal networks for hierarchical RL*](https://arxiv.org/abs/1703.01161) (2017).
+[^cdc]: OpenAI's Cycle Double Cover run, as summarised by [imisofts](https://imisofts.com/blog/gpt-5-6-sol-ultra-math-proof-agent-swarm-playbook-news-july-13-2026/) from OpenAI's published proof and prompt.

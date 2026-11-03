@@ -55,6 +55,8 @@ Everything in this post is a variation on one question:
 
 "Larger good" has a precise meaning here. It's any benefit that lands somewhere other than the agent paying the cost: in a sibling's tokens, in the swarm's later state, or in an episode that hasn't started. The further away it lands, the harder it is for a reward signal to find it.
 
+The latter half of the post, from [section 14](#14-where-this-matters-science-medicine-and-drug-discovery) on, reasons through biomedical uses of swarms in science, especially in cancer. I look at clinical cancer care, and at biopharma and drug discovery. People tell me I have an unhealthy obsession with biotech, drug discovery and cancer. Guilty as charged! Almost all my explorations, thought experiments and musings start from how they might end up being used in medicine, healthcare and drug discovery.
+
 **A note on words.** By *swarm* I mean the whole population of agents working on one problem. I use **teams**, **sub-swarms** and **agent orgs** to denote sub-structure within a swarm: a group of agents that shares a goal, talks to its own members more than to outsiders, and is spun up, steered or torn down as a unit. I use the three terms more or less interchangeably, with a slight lean in each. *Agent org* is the word I reach for when the group has internal roles, like GR's organisations of up to 9 agents, where a CEO hires and fires specialists. *Sub-swarm* is for a large, loosely structured group, like one of OpenAI's isolated groups of thousands. *Team* covers everything in between. These groups can nest, so you can have teams of teams.
 
 ---

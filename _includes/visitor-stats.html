@@ -1,0 +1,69 @@
+{% comment %}
+  Homepage visitor count + world heatmap.
+  Numbers come from _data/visitor_stats.json (refreshed daily by the
+  "Update visitor stats" GitHub Action from GoatCounter).
+{% endcomment %}
+{% assign vs_code = site.visitor_stats.goatcounter_code %}
+{% if vs_code and vs_code != "" %}
+{% assign vs = site.data.visitor_stats %}
+{% assign vs_since = vs.since | default: site.visitor_stats.since %}
+<section class="visitor-stats" id="visitors" aria-labelledby="visitor-stats-title">
+  <div class="vs-head">
+    <h2 class="section-title" id="visitor-stats-title">Visitors</h2>
+    <p class="vs-total"><span class="vs-number" id="vs-total" data-total="{{ vs.total_visitors | default: 0 }}">{{ vs.total_visitors | default: 0 }}</span> visitors across all pages since {{ vs_since | date: "%-d %b %Y" }}{% if vs.countries.size > 0 %}, from {{ vs.countries.size }} {% if vs.countries.size == 1 %}country{% else %}countries{% endif %}{% endif %}</p>
+  </div>
+
+  <div class="vs-map" id="vs-map" role="img" aria-label="World map shaded by number of visitors per country"></div>
+
+  {% if vs.countries.size > 0 %}
+  <div class="vs-legend" aria-hidden="true"><span>fewer</span><span class="vs-ramp"></span><span>more</span></div>
+  <ol class="vs-top">
+    {% for c in vs.countries limit: 5 %}<li><span>{{ c.name }}</span><span class="vs-count">{{ c.count }}</span></li>{% endfor %}
+  </ol>
+  {% else %}
+  <p class="vs-empty">The map fills in after the first daily update of the stats.</p>
+  {% endif %}
+
+  <p class="vs-note">Counted with <a href="https://www.goatcounter.com" target="_blank" rel="noopener">GoatCounter</a>, which sets no cookies and does not store IP addresses; each visit is reduced to a country. {% if vs.updated %}Map updated {{ vs.updated | date: "%-d %b %Y" }}.{% endif %}</p>
+</section>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.7.0/dist/jsvectormap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.7.0/dist/jsvectormap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.7.0/dist/maps/world.js" defer></script>
+<script>
+  (function () {
+    var countries = {{ vs.countries | default: empty | jsonify }} || [];
+    var totalEl = document.getElementById('vs-total');
+    var fmt = function (n) { return Number(n).toLocaleString('en-US'); };
+    totalEl.textContent = fmt(totalEl.getAttribute('data-total'));
+
+    function draw() {
+      if (!window.jsVectorMap) return;
+      var counts = {}, shade = {};
+      countries.forEach(function (c) {
+        counts[c.code] = c.count;
+        // Log scale, so one country with most of the traffic doesn't wash out the rest.
+        shade[c.code] = Math.log(1 + c.count);
+      });
+      var opts = {
+        selector: '#vs-map',
+        map: 'world',
+        zoomButtons: false,
+        zoomOnScroll: false,
+        regionStyle: {
+          initial: { fill: '#e6e1d9', stroke: '#faf8f5', strokeWidth: 0.4 },
+          hover: { fillOpacity: 0.8, cursor: 'default' }
+        },
+        onRegionTooltipShow: function (event, tooltip, cc) {
+          var n = counts[cc] || 0;
+          tooltip.text(tooltip.text() + ': ' + fmt(n) + (n === 1 ? ' visitor' : ' visitors'));
+        }
+      };
+      if (countries.length) opts.visualizeData = { scale: ['#efc9b8', '#8a2f17'], values: shade };
+      new jsVectorMap(opts);
+    }
+    if (document.readyState === 'complete') draw();
+    else window.addEventListener('load', draw);
+  })();
+</script>
+{% endif %}

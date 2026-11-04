@@ -39,3 +39,19 @@ body.site-theme{--st-paper:#faf8f5;--st-ink:#333;--st-accent:#a94427;--st-line:#
 @media(max-width:640px){.site-theme .st-nav-toggle{position:static;width:100%;height:44px;border-radius:0;box-shadow:none;justify-content:flex-start;padding:0 22px;font-size:14px;letter-spacing:.04em}.site-theme .st-nav-label{display:inline}.st-nav-collapsed .site-theme .st-sidebar{display:none}.site-theme .st-sidebar{transition:none}.st-nav-collapsed .site-theme .st-main{padding-left:22px}}
 @media(prefers-reduced-motion:reduce){.site-theme .st-sidebar,.site-theme .st-main,.site-theme .st-nav-icon,.site-theme .st-nav-icon::before,.site-theme .st-nav-icon::after{transition:none}}
 @media print{.site-theme .st-nav-toggle{display:none}}
+
+/* Homepage visitor count + world heatmap (_includes/visitor-stats.html) */
+.site-theme .visitor-stats{margin-top:50px;padding-top:30px;border-top:1px solid var(--st-line)}
+.site-theme .visitor-stats .section-title{margin:0 0 8px}
+.site-theme .vs-total{margin:0 0 18px;color:#555;font-size:15px}
+.site-theme .vs-number{display:block;font-size:44px;line-height:1.1;font-weight:600;color:var(--st-accent);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.site-theme .vs-map{width:100%;aspect-ratio:2/1;max-height:440px;background:transparent}
+.site-theme .vs-legend{display:flex;align-items:center;gap:8px;margin:10px 0 4px;font-size:12px;color:#666}
+.site-theme .vs-ramp{display:inline-block;width:120px;height:8px;background:linear-gradient(90deg,#efc9b8,#8a2f17)}
+.site-theme .vs-top{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px 20px;font-size:14px}
+.site-theme .vs-top li{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--st-line);padding:4px 0}
+.site-theme .vs-count{font-variant-numeric:tabular-nums;color:#555}
+.site-theme .vs-empty,.site-theme .vs-note{font-size:13px;color:#666;margin:10px 0 0}
+.site-theme .vs-note a{color:var(--st-accent)}
+.jvm-tooltip{font-family:inherit;font-size:13px;background:#333;border-radius:3px;padding:4px 8px}
+@media(max-width:640px){.site-theme .vs-number{font-size:36px}}

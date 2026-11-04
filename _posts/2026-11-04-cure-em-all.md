@@ -1,5 +1,5 @@
 ---
-title: 'Permission to Dream Bigger: AI, agents, and curing all disease "ahead of schedule"'
+title: "Curing All Disease, Ahead of Schedule: Permission to dream bigger with complementary AI–human teams"
 date: 2026-11-04
 permalink: /cure-em-all/
 redirect_from:

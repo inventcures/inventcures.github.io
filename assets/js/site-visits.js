@@ -9,6 +9,15 @@ sitemap: false
   var code = {{ site.visitor_stats.goatcounter_code | default: "" | jsonify }};
   if (!code || window.__siteVisitsLoaded) return;
   window.__siteVisitsLoaded = true;
+  // Keep campaign tags (utm_*, ref) out of the page path, so "/?utm_source=x"
+  // counts as "/". GoatCounter still records them as referrer/campaign.
+  window.goatcounter = window.goatcounter || {};
+  window.goatcounter.path = function (p) {
+    var q = location.search.replace(/^\?/, '').split('&').filter(function (kv) {
+      return kv && !/^(utm_[a-z]+|ref)=/i.test(kv);
+    }).join('&');
+    return location.pathname + (q ? '?' + q : '');
+  };
   var s = document.createElement('script');
   s.async = true;
   s.src = 'https://gc.zgo.at/count.js';

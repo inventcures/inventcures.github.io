@@ -1,0 +1,372 @@
+---
+layout: null
+permalink: /admin/analytics/
+sitemap: false
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Site analytics</title>
+<style>
+  :root{--ink:#2b2b2b;--muted:#6b6b6b;--line:#dedbd4;--paper:#faf8f5;--card:#fff;--accent:#a94427;--accent-soft:#f3e2da;--bar:#c46a4c}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  a{color:var(--accent)}
+  header{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:16px;border-bottom:1px solid var(--line);background:var(--card)}
+  header h1{font-size:18px;margin:0}
+  header .who{font-size:13px;color:var(--muted)}
+  main{max-width:1180px;margin:0 auto;padding:16px}
+  button,select,input{font:inherit;color:inherit}
+  button{background:var(--accent);color:#fff;border:0;padding:7px 14px;border-radius:4px;cursor:pointer}
+  button.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+  input,select{border:1px solid var(--line);border-radius:4px;padding:7px 9px;background:#fff;min-width:0}
+  .signin{max-width:440px;margin:60px auto;background:var(--card);border:1px solid var(--line);padding:24px;border-radius:6px}
+  .signin h2{margin:0 0 6px;font-size:20px}
+  .signin label{display:block;font-size:13px;color:var(--muted);margin:14px 0 4px}
+  .signin input[type=text],.signin input[type=password]{width:100%}
+  .signin .row{display:flex;gap:8px;align-items:center;margin-top:14px;font-size:13px}
+  .err{color:#b3261e;font-size:13px;min-height:1.2em;margin-top:10px}
+  .hint{font-size:13px;color:var(--muted)}
+  .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:16px}
+  .toolbar .range button{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:0;margin-right:-1px}
+  .toolbar .range button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:16px}
+  .kpi{background:var(--card);border:1px solid var(--line);padding:12px 14px;border-radius:6px}
+  .kpi b{display:block;font-size:26px;font-variant-numeric:tabular-nums;color:var(--accent)}
+  .kpi span{font-size:12px;color:var(--muted)}
+  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:14px;min-width:0}
+  .card.wide{grid-column:1/-1}
+  .card h3{margin:0 0 10px;font-size:15px;display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+  .card h3 small{font-weight:400;color:var(--muted);font-size:12px}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  td{padding:5px 6px;border-bottom:1px solid var(--line);vertical-align:middle}
+  td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;width:1%}
+  td.name{word-break:break-all}
+  tr.click{cursor:pointer}
+  tr.click:hover td{background:var(--accent-soft)}
+  tr.sel td{background:var(--accent-soft);font-weight:600}
+  .barcell{width:35%}
+  .bar{height:8px;background:var(--bar);border-radius:2px;min-width:2px}
+  .empty{color:var(--muted);font-size:13px;padding:8px 0}
+  .crumb{font-size:12px;color:var(--muted);margin:-4px 0 8px}
+  .crumb a{cursor:pointer}
+  #chart{width:100%;height:160px;display:block}
+  #chart rect{fill:var(--bar)}
+  #chart text{font-size:10px;fill:var(--muted)}
+  .builder{display:grid;grid-template-columns:2fr 1fr 1fr 1.4fr auto;gap:8px;align-items:end}
+  .builder label{font-size:12px;color:var(--muted);display:block;margin-bottom:3px}
+  .builder input,.builder select{width:100%}
+  .out{display:flex;gap:8px;margin-top:10px}
+  .out input{flex:1;font-family:ui-monospace,Menlo,monospace;font-size:13px}
+  .loading{opacity:.5;pointer-events:none}
+  @media(max-width:820px){.grid{grid-template-columns:1fr}.builder{grid-template-columns:1fr 1fr}.builder .full{grid-column:1/-1}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Site analytics</h1>
+  <div class="who" id="who"></div>
+</header>
+
+<main>
+  <!-- Sign-in. The key is the login: the page holds no data until a valid
+       GoatCounter API key is entered, and everything is fetched straight from
+       GoatCounter with it. Nothing is stored in this repository. -->
+  <section class="signin" id="signin" hidden>
+    <h2>Sign in</h2>
+    <p class="hint">Use a GoatCounter API key with <em>Read statistics</em> permission (GoatCounter → your name → API).</p>
+    <form id="signin-form">
+      <label for="f-code">GoatCounter site code</label>
+      <input type="text" id="f-code" autocomplete="username" value="{{ site.visitor_stats.goatcounter_code }}" required>
+      <label for="f-key">API key</label>
+      <input type="password" id="f-key" autocomplete="current-password" required>
+      <div class="row"><input type="checkbox" id="f-remember"><label for="f-remember" style="margin:0">Keep me signed in on this device</label></div>
+      <div class="row"><button type="submit">Sign in</button></div>
+      <div class="err" id="signin-err"></div>
+    </form>
+  </section>
+
+  <section id="dash" hidden>
+    <div class="toolbar">
+      <div class="range" id="range">
+        <button data-days="1">24h</button><button data-days="7">7 days</button><button data-days="30" class="on">30 days</button><button data-days="90">90 days</button><button data-days="all">All time</button>
+      </div>
+      <button class="ghost" id="refresh">Refresh</button>
+      <a href="#" id="gc-link" target="_blank" rel="noopener" class="hint">Open the full GoatCounter dashboard ↗</a>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi"><b id="k-total">–</b><span>visitors</span></div>
+      <div class="kpi"><b id="k-pages">–</b><span>pages visited</span></div>
+      <div class="kpi"><b id="k-countries">–</b><span>countries</span></div>
+      <div class="kpi"><b id="k-top">–</b><span>top referrer</span></div>
+    </div>
+
+    <div class="grid">
+      <div class="card wide">
+        <h3>Visitors per day <small id="chart-note"></small></h3>
+        <svg id="chart" role="img" aria-label="Visitors per day"></svg>
+      </div>
+
+      <div class="card">
+        <h3>Pages <small>click a page to filter everything else to it</small></h3>
+        <div class="crumb" id="page-crumb" hidden>Filtered to <b id="page-name"></b> · <a id="page-clear">show all pages</a></div>
+        <table id="t-pages"></table>
+      </div>
+
+      <div class="card">
+        <h3>Where from <small>click a country for states/regions</small></h3>
+        <div class="crumb" id="loc-crumb" hidden><a id="loc-back">All countries</a> › <b id="loc-name"></b></div>
+        <table id="t-locations"></table>
+      </div>
+
+      <div class="card">
+        <h3>Referrers <small id="ref-note">X, LinkedIn, search, other sites</small></h3>
+        <table id="t-refs"></table>
+      </div>
+
+      <div class="card">
+        <h3>Campaigns <small>from utm_campaign on shared links</small></h3>
+        <table id="t-campaigns"></table>
+      </div>
+
+      <div class="card">
+        <h3>Browsers</h3>
+        <table id="t-browsers"></table>
+      </div>
+
+      <div class="card">
+        <h3>Systems</h3>
+        <table id="t-systems"></table>
+      </div>
+
+      <div class="card wide">
+        <h3>Tracked link builder <small>tag a link before posting it, so its visits show up under Referrers and Campaigns</small></h3>
+        <div class="builder">
+          <div class="full"><label for="b-path">Page on this site</label><input id="b-path" value="/" placeholder="/robotics/"></div>
+          <div><label for="b-source">Where you'll post it</label>
+            <select id="b-source"><option value="x">X</option><option value="linkedin">LinkedIn</option><option value="bluesky">Bluesky</option><option value="newsletter">Newsletter</option><option value="email">Email</option><option value="whatsapp">WhatsApp</option><option value="other">Other…</option></select></div>
+          <div><label for="b-medium">Medium</label><select id="b-medium"><option>social</option><option>email</option><option>chat</option><option>referral</option></select></div>
+          <div><label for="b-campaign">Campaign name</label><input id="b-campaign" placeholder="robotics-launch"></div>
+          <div><button id="b-copy" type="button">Copy</button></div>
+        </div>
+        <div class="out"><input id="b-out" readonly aria-label="Tagged link"></div>
+      </div>
+    </div>
+    <p class="hint" style="margin-top:16px">GoatCounter counts a visitor once per page per session and never stores IP addresses, so location stops at country and region. Visits of this admin page are not counted.</p>
+  </section>
+</main>
+
+<script>
+(function () {
+  var SITE = {{ site.url | jsonify }};
+  var SINCE = {{ site.visitor_stats.since | default: "2026-01-01" | jsonify }};
+  var KEY = 'gc-admin';
+  var auth = null, days = '30', pathFilter = null, locCountry = null;
+
+  var $ = function (id) { return document.getElementById(id); };
+  var fmt = function (n) { return Number(n || 0).toLocaleString('en-US'); };
+  var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); };
+
+  function store(get, val, remember) {
+    try {
+      if (get) return JSON.parse(sessionStorage.getItem(KEY) || localStorage.getItem(KEY) || 'null');
+      sessionStorage.removeItem(KEY); localStorage.removeItem(KEY);
+      if (val) (remember ? localStorage : sessionStorage).setItem(KEY, JSON.stringify(val));
+    } catch (e) { return null; }
+  }
+
+  // GoatCounter allows 4 requests/second, so space calls out.
+  var queue = Promise.resolve();
+  function api(path, params) {
+    var qs = Object.keys(params || {}).filter(function (k) { return params[k] != null && params[k] !== ''; })
+      .map(function (k) { return encodeURIComponent(k) + '=' + encodeURIComponent(params[k]); }).join('&');
+    var url = 'https://' + auth.code + '.goatcounter.com/api/v0' + path + (qs ? '?' + qs : '');
+    var p = queue.then(function () {
+      return fetch(url, { headers: { 'Authorization': 'Bearer ' + auth.key, 'Content-Type': 'application/json' } });
+    }).then(function (r) {
+      if (r.status === 401 || r.status === 403) { var e = new Error('auth'); e.auth = true; throw e; }
+      if (!r.ok) throw new Error('GoatCounter returned ' + r.status);
+      return r.json();
+    });
+    queue = p.catch(function () {}).then(function () { return new Promise(function (res) { setTimeout(res, 280); }); });
+    return p;
+  }
+
+  function range() {
+    var end = new Date(); end.setUTCMinutes(0, 0, 0); end.setUTCHours(end.getUTCHours() + 1);
+    var start = days === 'all' ? new Date(SINCE + 'T00:00:00Z') : new Date(end.getTime() - Number(days) * 864e5);
+    var iso = function (d) { return d.toISOString().replace(/\.\d{3}Z$/, 'Z'); };
+    return { start: iso(start), end: iso(end) };
+  }
+
+  function table(el, rows, opts) {
+    opts = opts || {};
+    if (!rows.length) { el.innerHTML = '<tr><td class="empty">No visits in this period.</td></tr>'; return; }
+    var max = Math.max.apply(null, rows.map(function (r) { return r.count; })) || 1;
+    el.innerHTML = rows.map(function (r, i) {
+      var cls = (opts.onClick ? 'click' : '') + (opts.selected && opts.selected === r.key ? ' sel' : '');
+      var label = opts.link && r.link ? '<a href="' + esc(r.link) + '" target="_blank" rel="noopener">' + esc(r.name) + '</a>' : esc(r.name);
+      return '<tr class="' + cls + '" data-i="' + i + '"><td class="name">' + label + '</td><td class="barcell"><div class="bar" style="width:' + (100 * r.count / max).toFixed(1) + '%"></div></td><td class="n">' + fmt(r.count) + '</td></tr>';
+    }).join('');
+    if (opts.onClick) Array.prototype.forEach.call(el.querySelectorAll('tr.click'), function (tr) {
+      tr.addEventListener('click', function (ev) { if (ev.target.tagName !== 'A') opts.onClick(rows[+tr.getAttribute('data-i')]); });
+    });
+  }
+
+  function chart(stats) {
+    var svg = $('chart'), W = svg.clientWidth || 800, H = 160, pad = 18;
+    var data = (stats || []).map(function (s) { return { day: s.day, n: s.daily || 0 }; });
+    if (!data.length) { svg.innerHTML = ''; return; }
+    var max = Math.max.apply(null, data.map(function (d) { return d.n; })) || 1;
+    var bw = (W - 4) / data.length;
+    var out = data.map(function (d, i) {
+      var h = (H - pad - 6) * d.n / max;
+      return '<rect x="' + (2 + i * bw + bw * 0.12).toFixed(1) + '" y="' + (H - pad - h).toFixed(1) + '" width="' + Math.max(1, bw * 0.76).toFixed(1) + '" height="' + h.toFixed(1) + '"><title>' + d.day + ': ' + fmt(d.n) + '</title></rect>';
+    });
+    var step = Math.ceil(data.length / 8);
+    for (var i = 0; i < data.length - step / 2; i += step)
+      out.push('<text x="' + (2 + i * bw).toFixed(1) + '" y="' + (H - 4) + '">' + data[i].day.slice(5) + '</text>');
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    svg.innerHTML = out.join('');
+  }
+
+  function stats(name, extra) {
+    var p = Object.assign(range(), { limit: 30 }, extra || {});
+    if (pathFilter) p.include_paths = pathFilter.id;
+    return api('/stats/' + name, p).then(function (d) {
+      return (d.stats || []).map(function (s) { return { key: s.id, id: s.id, name: s.name || s.id || '(unknown)', count: s.count }; });
+    });
+  }
+
+  function loadLocations() {
+    var path = locCountry ? 'locations/' + encodeURIComponent(locCountry.id) : 'locations';
+    $('loc-crumb').hidden = !locCountry;
+    if (locCountry) $('loc-name').textContent = locCountry.name;
+    return stats(path, { limit: 50 }).then(function (rows) {
+      if (!locCountry) $('k-countries').textContent = fmt(rows.filter(function (r) { return r.id; }).length);
+      table($('t-locations'), rows, locCountry ? {} : { onClick: function (r) { if (r.id) { locCountry = r; loadLocations(); } } });
+    });
+  }
+
+  function loadRefs() {
+    if (pathFilter) {
+      $('ref-note').textContent = 'to ' + pathFilter.name;
+      return api('/stats/hits/' + pathFilter.id, Object.assign(range(), { limit: 30 })).then(function (d) {
+        table($('t-refs'), (d.refs || []).map(function (s) { return { name: s.name || '(direct / unknown)', count: s.count }; }));
+      });
+    }
+    $('ref-note').textContent = 'X, LinkedIn, search, other sites';
+    return stats('toprefs').then(function (rows) {
+      rows.forEach(function (r) { if (!r.id) r.name = '(direct / unknown)'; });
+      $('k-top').textContent = (rows.filter(function (r) { return r.id; })[0] || { name: '–' }).name;
+      table($('t-refs'), rows);
+    });
+  }
+
+  function load() {
+    var dash = $('dash'); dash.classList.add('loading');
+    $('page-crumb').hidden = !pathFilter;
+    if (pathFilter) $('page-name').textContent = pathFilter.name;
+    var r = range(), tp = Object.assign({}, r);
+    if (pathFilter) tp.include_paths = pathFilter.id;
+
+    var jobs = [
+      api('/stats/total', tp).then(function (d) {
+        $('k-total').textContent = fmt(d.total);
+        chart(d.stats);
+        var peak = Math.max.apply(null, (d.stats || []).map(function (x) { return x.daily || 0; }).concat(0));
+        $('chart-note').textContent = (pathFilter ? pathFilter.name : 'all pages') + ' · peak ' + fmt(peak) + '/day';
+      }),
+      api('/stats/hits', Object.assign({}, r, { limit: 100 })).then(function (d) {
+        var rows = (d.hits || []).filter(function (h) { return !h.event; }).map(function (h) {
+          return { key: h.path_id, id: h.path_id, name: h.path, count: h.count, link: SITE + h.path };
+        });
+        $('k-pages').textContent = fmt(rows.length);
+        table($('t-pages'), rows, { link: true, selected: pathFilter && pathFilter.id, onClick: function (row) {
+          pathFilter = pathFilter && pathFilter.id === row.id ? null : row; locCountry = null; load();
+        } });
+      }),
+      loadLocations(),
+      loadRefs(),
+      stats('campaigns').then(function (rows) { table($('t-campaigns'), rows); }),
+      stats('browsers', { limit: 10 }).then(function (rows) { table($('t-browsers'), rows); }),
+      stats('systems', { limit: 10 }).then(function (rows) { table($('t-systems'), rows); })
+    ];
+    return Promise.all(jobs).catch(function (e) {
+      if (e.auth) { signOut('Your API key was refused. Check it has "Read statistics" permission.'); return; }
+      alert('Could not load stats: ' + e.message);
+    }).then(function () { dash.classList.remove('loading'); });
+  }
+
+  function showDash() {
+    $('signin').hidden = true; $('dash').hidden = false;
+    $('who').innerHTML = esc(auth.code) + '.goatcounter.com · <a href="#" id="signout">Sign out</a>';
+    $('signout').addEventListener('click', function (e) { e.preventDefault(); signOut(); });
+    $('gc-link').href = 'https://' + auth.code + '.goatcounter.com';
+    load();
+  }
+
+  function signOut(msg) {
+    auth = null; store(false, null);
+    $('dash').hidden = true; $('signin').hidden = false; $('who').textContent = '';
+    $('f-key').value = ''; $('signin-err').textContent = msg || '';
+  }
+
+  $('signin-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var cand = { code: $('f-code').value.trim().toLowerCase(), key: $('f-key').value.trim() };
+    $('signin-err').textContent = 'Checking…';
+    auth = cand;
+    api('/me').then(function () {
+      store(false, cand, $('f-remember').checked);
+      $('signin-err').textContent = '';
+      showDash();
+    }).catch(function (err) {
+      auth = null;
+      $('signin-err').textContent = err.auth ? 'That key was refused.' : 'Could not reach ' + cand.code + '.goatcounter.com.';
+    });
+  });
+
+  $('range').addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) return;
+    Array.prototype.forEach.call(this.children, function (x) { x.classList.toggle('on', x === b); });
+    days = b.getAttribute('data-days'); load();
+  });
+  $('refresh').addEventListener('click', load);
+  $('page-clear').addEventListener('click', function () { pathFilter = null; locCountry = null; load(); });
+  $('loc-back').addEventListener('click', function () { locCountry = null; loadLocations(); });
+
+  // Tracked link builder
+  function build() {
+    var path = $('b-path').value.trim() || '/';
+    if (!/^https?:/i.test(path)) path = SITE + (path.charAt(0) === '/' ? '' : '/') + path;
+    var src = $('b-source').value === 'other' ? (prompt('Source name (e.g. hackernews)') || 'other') : $('b-source').value;
+    if ($('b-source').value === 'other') { var o = document.createElement('option'); o.value = o.textContent = src; $('b-source').insertBefore(o, $('b-source').lastElementChild); $('b-source').value = src; }
+    var u; try { u = new URL(path); } catch (e) { $('b-out').value = 'Not a valid address'; return; }
+    u.searchParams.set('utm_source', src);
+    u.searchParams.set('utm_medium', $('b-medium').value);
+    var c = $('b-campaign').value.trim().toLowerCase().replace(/\s+/g, '-');
+    if (c) u.searchParams.set('utm_campaign', c); else u.searchParams.delete('utm_campaign');
+    $('b-out').value = u.toString();
+  }
+  ['b-path', 'b-campaign'].forEach(function (id) { $(id).addEventListener('input', build); });
+  ['b-source', 'b-medium'].forEach(function (id) { $(id).addEventListener('change', build); });
+  $('b-copy').addEventListener('click', function () {
+    var v = $('b-out').value; if (!v) return;
+    (navigator.clipboard ? navigator.clipboard.writeText(v) : Promise.reject()).then(function () {
+      $('b-copy').textContent = 'Copied'; setTimeout(function () { $('b-copy').textContent = 'Copy'; }, 1200);
+    }, function () { $('b-out').select(); });
+  });
+  build();
+
+  auth = store(true);
+  if (auth && auth.key) showDash(); else signOut();
+})();
+</script>
+</body>
+</html>

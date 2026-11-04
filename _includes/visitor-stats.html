@@ -41,7 +41,7 @@
       var counts = {}, shade = {};
       countries.forEach(function (c) {
         counts[c.code] = c.count;
-        // Log scale, so one country with most of the traffic doesn't wash out the rest.
+        /* Log scale, so one country with most of the traffic does not wash out the rest. */
         shade[c.code] = Math.log(1 + c.count);
       });
       var opts = {
@@ -58,6 +58,9 @@
           tooltip.text(tooltip.text() + ': ' + fmt(n) + (n === 1 ? ' visitor' : ' visitors'));
         }
       };
+      /* Anchor the scale at zero visitors: it keeps the shading honest, and it avoids
+         jsvectormap's bug where equal min and max values produce an invalid (black) fill. */
+      shade.__zero = 0;
       if (countries.length) opts.visualizeData = { scale: ['#efc9b8', '#8a2f17'], values: shade };
       new jsVectorMap(opts);
     }

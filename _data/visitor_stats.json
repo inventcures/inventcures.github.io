@@ -1,6 +1,17 @@
 {
-  "updated": "2026-11-04T13:41:09Z",
+  "updated": "2026-11-04T14:18:01Z",
   "since": "2026-11-04",
-  "total_visitors": 0,
-  "countries": []
+  "total_visitors": 2,
+  "countries": [
+    {
+      "code": "CA",
+      "name": "Canada",
+      "count": 1
+    },
+    {
+      "code": "IN",
+      "name": "India",
+      "count": 1
+    }
+  ]
 }

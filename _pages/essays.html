@@ -1,0 +1,33 @@
+---
+layout: single
+title: "Essays"
+permalink: /essays/
+redirect_from:
+  - /year-archive/
+  - /blog/
+---
+{% include writing/styles.html %}
+<p class="w-intro">Long form and well baked: fewer of these, each one thought through. For quicker, rougher takes on whatever I'm reading, see the <a href="{{ '/scribbles/' | relative_url }}">scribbles</a>. Essays marked <span style="color:var(--st-accent)">★</span> took a lot more work.</p>
+<p class="w-feeds"><a href="{{ '/essays/feed.xml' | relative_url }}">RSS / Atom feed</a></p>
+
+{% assign essays = site.essays | where_exp: "e", "e.published != false" | sort: "date" | reverse %}
+{% if essays.size == 0 %}<p>Nothing here yet.</p>{% endif %}
+{% assign year = "" %}
+{% for e in essays %}
+  {% assign y = e.date | date: "%Y" %}
+  {% if y != year %}
+    {% unless forloop.first %}</ul>{% endunless %}
+    <h2 class="w-year" id="y{{ y }}">{{ y }}</h2>
+    <ul class="w-list">
+    {% assign year = y %}
+  {% endif %}
+  <li>
+    <time class="w-date" datetime="{{ e.date | date: '%Y-%m-%d' }}">{{ e.date | date: "%d %b %Y" }}</time>
+    <div>
+      <a class="w-title" href="{{ e.url | relative_url }}">{{ e.title }}</a>{% if e.starred %}<span class="w-star" title="Starred: took significantly more work" aria-label="starred">★</span>{% endif %}
+      {% assign sum = e.summary | default: e.excerpt | strip_html | strip_newlines %}
+      {% if sum != "" %}<p class="w-sum">{{ sum | truncatewords: 45 }}</p>{% endif %}
+    </div>
+  </li>
+  {% if forloop.last %}</ul>{% endif %}
+{% endfor %}

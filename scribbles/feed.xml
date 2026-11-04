@@ -1,0 +1,28 @@
+---
+layout: null
+permalink: /scribbles/feed.xml
+---
+<?xml version="1.0" encoding="utf-8"?>
+{%- comment -%} Hand-written so untitled scribbles still get a readable title in feed readers. {%- endcomment -%}
+{%- assign scribbles = site.scribbles | where_exp: "s", "s.published != false" | sort: "date" | reverse -%}
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ site.title | xml_escape }} · Scribbles</title>
+  <subtitle>Short, spontaneous, topical notes.</subtitle>
+  <link href="{{ '/scribbles/feed.xml' | absolute_url }}" rel="self" type="application/atom+xml"/>
+  <link href="{{ '/scribbles/' | absolute_url }}" rel="alternate" type="text/html"/>
+  <id>{{ '/scribbles/' | absolute_url }}</id>
+  <updated>{% if scribbles.size > 0 %}{{ scribbles.first.date | date_to_xmlschema }}{% else %}{{ site.time | date_to_xmlschema }}{% endif %}</updated>
+  <author><name>{{ site.author.name | xml_escape }}</name></author>
+  {%- for s in scribbles limit: 50 %}
+  {%- capture t %}{% if s.title != "" %}{{ s.title }}{% else %}{{ s.content | strip_html | strip_newlines | truncatewords: 12 }}{% endif %}{% endcapture %}
+  <entry>
+    <title type="html">{{ t | strip | xml_escape }}</title>
+    <link href="{{ s.url | absolute_url }}" rel="alternate" type="text/html"/>
+    <id>{{ s.url | absolute_url }}</id>
+    <published>{{ s.date | date_to_xmlschema }}</published>
+    <updated>{{ s.last_modified_at | default: s.date | date_to_xmlschema }}</updated>
+    {%- for tag in s.tags %}<category term="{{ tag | xml_escape }}"/>{% endfor %}
+    <content type="html" xml:base="{{ s.url | absolute_url }}">{% if s.re.url %}{{ '<p>re: <a href="' | append: s.re.url | append: '">' | append: s.re.title | default: s.re.url | append: '</a></p>' | xml_escape }}{% endif %}{{ s.content | xml_escape }}</content>
+  </entry>
+  {%- endfor %}
+</feed>

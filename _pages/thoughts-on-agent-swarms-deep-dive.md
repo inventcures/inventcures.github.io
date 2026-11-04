@@ -1,6 +1,8 @@
 ---
 title: "Some thoughts on designing optimal swarm architectures: the notion of the collective good in swarms: the deep dive"
 permalink: /thoughts-on-agent-swarms/deep-dive/
+redirect_from:
+  - /essays/2026/11/thoughts-on-agent-swarms/deep-dive/
 author_profile: true
 ---
 

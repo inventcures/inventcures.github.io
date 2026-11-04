@@ -44,6 +44,13 @@ Posts, essays, courses and company news on robot learning and autonomy. Newest f
   </li>
 
   <li class="pd-item">
+    <h3><a href="https://www.corememory.com/p/a-hundred-robots-are-running-a-bio-medra-michelle-lee" target="_blank" rel="noopener">A Hundred Robots Are Running A Bio Lab</a></h3>
+    <p class="pd-meta">Jolie Gan · Core Memory · <time datetime="2026-04-23">23 Apr 2026</time></p>
+    <p class="pd-summary">A walk through Medra's "pharma factory for the AI age", where courier robots loop the floors of Michelle Lee's 38,000 sq ft San Francisco lab and hundreds of robots run biology experiments 24/7 for partners like Genentech. Its vision-language-lab-action model operates over 75% of common lab instruments and closes the design-make-test-analyze loop (<a href="https://www.medra.ai/medra-lab-001" target="_blank" rel="noopener">Medra's launch post</a>; <a href="https://x.com/michellearning/status/2047345830856942006" target="_blank" rel="noopener">Michelle Lee on X</a>).</p>
+    <p class="pd-thread">Paid post: Core Memory's "Claim my free post" button unlocks it free with an email.</p>
+  </li>
+
+  <li class="pd-item">
     <h3><a href="https://alephsurgical.com/blogs/research-preview" target="_blank" rel="noopener">Aleph Surgical: Research Preview</a></h3>
     <p class="pd-meta">Aleph Team · Company blog · <time datetime="2026-03-09">9 Mar 2026</time></p>
     <p class="pd-summary">A first look at a fully autonomous surgical robot doing vascular anastomosis. It is driven by an embodied foundation model: internet-scale pretraining, hierarchical reasoning over long procedures, a purpose-built "Mark 0" arm made for autonomy rather than teleoperation, and separate clock rates for thinking, sensing and acting. On 30 Sep 2026 the founders announced a $7.5M pre-seed led by a16z to build "the first surgeon that scales", betting that Physical AI matters most where labor is scarcest and most expensive (<a href="https://x.com/r_mcguire/status/2105311718226415766" target="_blank" rel="noopener">R. McGuire on X</a>).</p>

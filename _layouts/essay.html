@@ -1,0 +1,9 @@
+---
+layout: single
+---
+{% include writing/styles.html %}
+<p class="w-kicker"><a href="{{ '/essays/' | relative_url }}">Essay</a>{% if page.starred %} · ★ starred{% endif %}</p>
+
+{{ content }}
+
+<p class="w-back"><a href="{{ '/essays/' | relative_url }}">← All essays</a> · <a href="{{ '/scribbles/' | relative_url }}">Scribbles</a></p>

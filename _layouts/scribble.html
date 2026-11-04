@@ -1,0 +1,22 @@
+---
+layout: default
+---
+{% include writing/styles.html %}
+<div id="main" role="main">
+  <article class="scribble-page" itemscope itemtype="http://schema.org/BlogPosting">
+    <p class="w-kicker"><a href="{{ '/scribbles/' | relative_url }}">Scribble</a> · <span class="w-date">{% include writing/scribble-time.html s=page %}</span></p>
+    {% if page.title != "" %}<h1 itemprop="headline">{{ page.title }}</h1>{% endif %}
+    {% include writing/scribble-re.html s=page %}
+    <div class="scribble-body page__content" itemprop="text">
+      {{ content }}
+    </div>
+    {% if page.tags.size > 0 %}<p class="scribble-tags">{% for t in page.tags %}<span class="w-tag">#{{ t }}</span>{% endfor %}</p>{% endif %}
+
+    {% comment %} Collection order is oldest first, so "previous" is the older scribble. {% endcomment %}
+    <nav class="w-pager" aria-label="More scribbles">
+      <span>{% if page.previous %}<a href="{{ page.previous.url | relative_url }}">← Older</a>{% endif %}</span>
+      <span>{% if page.next %}<a href="{{ page.next.url | relative_url }}">Newer →</a>{% endif %}</span>
+    </nav>
+    <p class="w-back"><a href="{{ '/scribbles/' | relative_url }}">All scribbles</a> · <a href="{{ '/essays/' | relative_url }}">Essays</a></p>
+  </article>
+</div>

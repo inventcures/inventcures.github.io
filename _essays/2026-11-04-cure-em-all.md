@@ -3,6 +3,7 @@ title: "Curing All Disease, Ahead of Schedule: Permission to dream bigger with c
 date: 2026-11-04
 permalink: /cure-em-all/
 redirect_from:
+  - /essays/2026/11/cure-em-all/
   - /ai-to-amplify-our-ambitions/
 excerpt: "From Andrew Lo's megafund to Mithril, Orchestra and Coefficient: what the AI hub-and-spoke means for pharma, CROs and the frontier labs, why Demis's ten years is both too optimistic and too pessimistic, and why humans must stay at the center of discovery."
 tags:

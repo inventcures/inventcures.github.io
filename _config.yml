@@ -145,6 +145,7 @@ exclude:
   - Gruntfile.js
   - LICENSE
   - README
+  - WRITING.md
   - Rakefile
   - assets/js/_main.js
   - assets/js/plugins
@@ -197,6 +198,13 @@ collections:
   talks:
     output: true
     permalink: /:collection/:path/
+  # Writing: see WRITING.md for how to publish
+  essays:
+    output: true
+    permalink: /essays/:year/:month/:title/
+  scribbles:
+    output: true
+    permalink: /scribbles/:year/:month/:day/:title/
 
 
 # Defaults
@@ -254,6 +262,23 @@ defaults:
       layout: talk
       author_profile: true
       share: true
+  # _essays: long form, well baked, less frequent
+  - scope:
+      path: ""
+      type: essays
+    values:
+      layout: essay
+      author_profile: true
+      read_time: true
+      share: true
+  # _scribbles: short, quick, reactive, frequent
+  - scope:
+      path: ""
+      type: scribbles
+    values:
+      layout: scribble
+      author_profile: true
+      title: ""   # titles are optional for scribbles
 
 
 # Sass/SCSS
@@ -266,8 +291,16 @@ sass:
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
-timezone: America/Los_Angeles # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Kolkata # scribbles show the time of day, so use the author time zone (was America/Los_Angeles)
 
+
+# Feeds: the site feed (/feed.xml) plus one feed per writing type
+feed:
+  collections:
+    essays:
+      path: "/essays/feed.xml"
+    scribbles:
+      path: "/scribbles/feed.xml"
 
 # Plugins
 plugins:

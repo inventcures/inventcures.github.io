@@ -1,0 +1,28 @@
+---
+layout: single
+title: "Scribbles"
+permalink: /scribbles/
+---
+{% include writing/styles.html %}
+<p class="w-intro">Short, spontaneous and topical: quick reactions to what I'm reading, building and thinking about, written fast and not thought all the way through. The well-baked stuff lives in <a href="{{ '/essays/' | relative_url }}">essays</a>. Newest first; the timestamp links to each scribble's own page.</p>
+<p class="w-feeds"><a href="{{ '/scribbles/feed.xml' | relative_url }}">RSS / Atom feed</a></p>
+
+{% assign scribbles = site.scribbles | where_exp: "s", "s.published != false" | sort: "date" | reverse %}
+{% if scribbles.size == 0 %}<p>Nothing here yet.</p>{% endif %}
+{% assign month = "" %}
+{% for s in scribbles %}
+  {% assign m = s.date | date: "%B %Y" %}
+  {% if m != month %}
+    <h2 class="w-month" id="{{ s.date | date: '%Y-%m' }}">{{ m }}</h2>
+    {% assign month = m %}
+  {% endif %}
+  <article class="scribble" id="{{ s.date | date: '%Y%m%d' }}-{{ s.slug }}">
+    <header class="scribble-head">
+      <span class="w-date"><a href="{{ s.url | relative_url }}" title="Permalink">{% include writing/scribble-time.html s=s %}</a></span>
+      {% if s.title != "" %}<h2><a href="{{ s.url | relative_url }}">{{ s.title }}</a></h2>{% endif %}
+    </header>
+    {% include writing/scribble-re.html s=s %}
+    <div class="scribble-body">{{ s.content }}</div>
+    {% if s.tags.size > 0 %}<p class="scribble-tags">{% for t in s.tags %}<span class="w-tag">#{{ t }}</span>{% endfor %}</p>{% endif %}
+  </article>
+{% endfor %}

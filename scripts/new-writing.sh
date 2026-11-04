@@ -16,6 +16,7 @@ day="$(date +%Y-%m-%d)"
 slug="$(printf '%s' "$title" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+|-+$//g')"
 [ -z "$slug" ] && slug="$(date +%H%M)"
 q_title="${title//\"/\\\"}"
+mkdir -p "$root/_scribbles" "$root/_essays"
 
 if [ "$kind" = scribble ]; then
   file="$root/_scribbles/$day-$slug.md"

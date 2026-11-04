@@ -67,14 +67,17 @@ tags: [agent swarms]
 
 Essays use the same page layout as the rest of the site (read time, date, footnotes, MathJax), with an "All essays" link at the bottom.
 
-### Custom URLs
+### Old URLs
 
-An essay can keep a short URL of its own by setting `permalink:`. The two essays that were published before this system existed do this, so their original links keep working:
+Every essay lives under `/essays/YYYY/MM/<slug>/`. The two essays published before this system existed used to live at the site root. Their old links still work as redirects, listed under `redirect_from:` in their front matter:
 
-- `/thoughts-on-agent-swarms/` (and `/thoughts-on-agent-swarms/deep-dive/`, and the PDF at `/files/thoughts-on-agent-swarms.pdf`)
-- `/cure-em-all/`
+- `/thoughts-on-agent-swarms/` → `/essays/2026/11/thoughts-on-agent-swarms/`
+- `/thoughts-on-agent-swarms/deep-dive/` → `/essays/2026/11/thoughts-on-agent-swarms/deep-dive/`
+- `/cure-em-all/` (and `/ai-to-amplify-our-ambitions/`) → `/essays/2026/11/cure-em-all/`
 
-Each also answers at a structured alias, `/essays/2026/11/<slug>/`, which redirects to the original. To add an alias to any page, list it under `redirect_from:`.
+The swarms preprint PDF stays at `/files/thoughts-on-agent-swarms.pdf`.
+
+If you ever rename an essay's slug, add its old URL under `redirect_from:` so existing links don't break.
 
 ## Preview locally
 

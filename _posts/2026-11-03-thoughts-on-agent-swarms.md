@@ -272,57 +272,57 @@ Every item in that list is a hypothesis. None of it has been tested at scale.
 
 ## The open questions
 
-These are the questions I think matter most, grouped by horizon.
+These are the questions I think matter most, grouped by horizon. They are numbered so you can point to one. Each also has its own link, so question 7 is at [#q7](#q7).
 
 **Siblings, now**
 
-1. Will a swarm trained with collective rewards learn to share fixes on its own, when the benefit shows up in another agent's actions, often much later? How would we measure it? One test would be to count duplicate struggles, where two agents hit the same obstacle, and check that they become rarer over training.
-2. How should an agent decide who needs a fix? The options include broadcast, targeted messages, topic channels, an archive that agents search, or routing built into the system. Can the targeting be learned, or does it have to be designed in?
-3. How do we stop wrong fixes from spreading fast, and stop agents herding onto the first workaround, without slowing the spread of good fixes?
+1. {:#q1}Will a swarm trained with collective rewards learn to share fixes on its own, when the benefit shows up in another agent's actions, often much later? How would we measure it? One test would be to count duplicate struggles, where two agents hit the same obstacle, and check that they become rarer over training.
+2. {:#q2}How should an agent decide who needs a fix? The options include broadcast, targeted messages, topic channels, an archive that agents search, or routing built into the system. Can the targeting be learned, or does it have to be designed in?
+3. {:#q3}How do we stop wrong fixes from spreading fast, and stop agents herding onto the first workaround, without slowing the spread of good fixes?
 
 **The swarm, over its lifetime**
 
 {:start="4"}
-4. What is the right swarm size for a given time budget, and can the swarm learn to choose it? For example, does average team size rise as the time cap grows?
-5. Can link reinforcement learn the difference between collaboration links and dependency links, or do dependency links need a separate mechanism like a directory?
-6. Weak ties between teams are often where new information comes from.[^weakties] How do we keep them alive without forcing communication?
-7. What determines the number and the kind of sub-swarms? When should a new one be spun up, and when torn down? How do we protect a slow but promising exploration team from being torn down too early?
-8. Who should make structural decisions? Humans, a fixed rule, a trained orchestrator, or every agent? How do we prevent spawn storms and pointless reorganisation?
-9. How do we make coordination always on but low-touch in practice? And how do we measure overhead honestly, when agents might learn to relabel coordination as work?
+4. {:#q4}What is the right swarm size for a given time budget, and can the swarm learn to choose it? For example, does average team size rise as the time cap grows?
+5. {:#q5}Can link reinforcement learn the difference between collaboration links and dependency links, or do dependency links need a separate mechanism like a directory?
+6. {:#q6}Weak ties between teams are often where new information comes from.[^weakties] How do we keep them alive without forcing communication?
+7. {:#q7}What determines the number and the kind of sub-swarms? When should a new one be spun up, and when torn down? How do we protect a slow but promising exploration team from being torn down too early?
+8. {:#q8}Who should make structural decisions? Humans, a fixed rule, a trained orchestrator, or every agent? How do we prevent spawn storms and pointless reorganisation?
+9. {:#q9}How do we make coordination always on but low-touch in practice? And how do we measure overhead honestly, when agents might learn to relabel coordination as work?
 
 **Scale**
 
 {:start="10"}
-10. What carries over from 9 agents to 1,000? Can a skill for managing a village be applied recursively to build a city?
-11. What only emerges at city scale, such as congestion, cliques, correlated errors or norms that matter for safety? What metrics would catch it?
+10. {:#q10}What carries over from 9 agents to 1,000? Can a skill for managing a village be applied recursively to build a city?
+11. {:#q11}What only emerges at city scale, such as congestion, cliques, correlated errors or norms that matter for safety? What metrics would catch it?
 
 **Agents not yet spawned**
 
 {:start="12"}
-12. How do we give credit for contributions that only help future runs? Is hindsight royalty credit stable, or will a shared policy learn to game it by citing itself across episodes?
-13. When we need an estimate of an artifact's future value in advance, what are good cheap proxies? Candidates include generality, reuse by siblings now, compression and novelty.
-14. How should we balance explicit artifacts against what the shared weights already carry forward?
+12. {:#q12}How do we give credit for contributions that only help future runs? Is hindsight royalty credit stable, or will a shared policy learn to game it by citing itself across episodes?
+13. {:#q13}When we need an estimate of an artifact's future value in advance, what are good cheap proxies? Candidates include generality, reuse by siblings now, compression and novelty.
+14. {:#q14}How should we balance explicit artifacts against what the shared weights already carry forward?
 
 **Design over time, and training**
 
 {:start="15"}
-15. Can the slow structural decisions of spawning, retiring, merging, migrating and revising intent be learned together with the workers' behaviour? How do we give credit to one rare structural decision?
-16. How do we gate sharing by verification without chilling useful but tentative ideas, when exploits spread through the same channels?
-17. How much of the human outer loop that steered the Navier–Stokes run could a learned coordinator replace?[^oai]
+15. {:#q15}Can the slow structural decisions of spawning, retiring, merging, migrating and revising intent be learned together with the workers' behaviour? How do we give credit to one rare structural decision?
+16. {:#q16}How do we gate sharing by verification without chilling useful but tentative ideas, when exploits spread through the same channels?
+17. {:#q17}How much of the human outer loop that steered the Navier–Stokes run could a learned coordinator replace?[^oai]
 
 **Applications**
 
 {:start="18"}
-18. Which parts of a cancer journey can a swarm take on safely, and how do we keep the patient's goals of care as the intent everything answers to?
-19. Where verification takes weeks, as in wet-lab and animal studies, or years, as in trials, how should a swarm trade breadth of in silico work against the few experiments it gets?
-20. Can silence be read reliably from public signals, and how do we test hypotheses about its cause without harming the companies and patients involved?
+18. {:#q18}Which parts of a cancer journey can a swarm take on safely, and how do we keep the patient's goals of care as the intent everything answers to?
+19. {:#q19}Where verification takes weeks, as in wet-lab and animal studies, or years, as in trials, how should a swarm trade breadth of in silico work against the few experiments it gets?
+20. {:#q20}Can silence be read reliably from public signals, and how do we test hypotheses about its cause without harming the companies and patients involved?
 
 **Hybrid teams and human agency**
 
 {:start="21"}
-21. How should standalone and hybrid human–AI swarms divide the work, and which human roles add the most?
-22. How do we detect and reverse the atrophy of human skills, especially critical thinking and scientific understanding, in people who work with swarms?
-23. Does biology need a Lean? What minimal claim language, provenance standard and evidence calculus would make AI-discovered biology legible and checkable?
+21. {:#q21}How should standalone and hybrid human–AI swarms divide the work, and which human roles add the most?
+22. {:#q22}How do we detect and reverse the atrophy of human skills, especially critical thinking and scientific understanding, in people who work with swarms?
+23. {:#q23}Does biology need a Lean? What minimal claim language, provenance standard and evidence calculus would make AI-discovered biology legible and checkable?
 
 ## What's fact and what isn't
 

@@ -1,0 +1,4 @@
+{%- comment -%} Timestamp for a scribble: date, plus the time when one was given. {%- endcomment -%}
+{%- assign s = include.s -%}
+{%- assign hm = s.date | date: "%H:%M" -%}
+<time datetime="{{ s.date | date_to_xmlschema }}">{{ s.date | date: "%Y-%m-%d" }}{% if hm != "00:00" %} {{ hm }}{% endif %}</time>

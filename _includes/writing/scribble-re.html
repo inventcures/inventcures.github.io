@@ -1,0 +1,8 @@
+{%- comment -%} "re:" line: what a scribble reacts to, plus any X / LinkedIn threads. Pass s=the scribble. {%- endcomment -%}
+{%- assign s = include.s -%}
+{%- if s.re or s.x or s.linkedin -%}
+<p class="scribble-re">
+  {%- if s.re -%}re: {% if s.re.url %}<a href="{{ s.re.url }}" target="_blank" rel="noopener">{{ s.re.title | default: s.re.url }}</a>{% else %}{{ s.re }}{% endif %}{% if s.re.by %} · {{ s.re.by }}{% endif %}{%- endif -%}
+  {%- if s.x or s.linkedin -%}{% if s.re %} {% endif %}({% if s.x %}<a href="{{ s.x }}" target="_blank" rel="noopener">X thread</a>{% endif %}{% if s.x and s.linkedin %}, {% endif %}{% if s.linkedin %}<a href="{{ s.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}){%- endif -%}
+</p>
+{%- endif -%}

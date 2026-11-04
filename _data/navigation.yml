@@ -9,6 +9,12 @@ main:
   - title: "Projects"
     url: /projects/
 
+  - title: "Essays"
+    url: /essays/
+
+  - title: "Scribbles"
+    url: /scribbles/
+
   - title: "AI × Science"
     url: /ai+science/
 
@@ -41,6 +47,3 @@ main:
 
   - title: "🧬 Cancer"
     url: /cancer/
-
-  - title: "Blog"
-    url: /year-archive/

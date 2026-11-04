@@ -2,6 +2,8 @@
 title: "Some thoughts on designing optimal swarm architectures: the notion of the collective good in swarms"
 date: 2026-11-03
 permalink: /thoughts-on-agent-swarms/
+redirect_from:
+  - /essays/2026/11/thoughts-on-agent-swarms/   # structured alias; the original URL above stays canonical
 excerpt: "How do you get a swarm of AI agents to act for the collective, larger good, and not just the task in front of each agent, without the coordination overhead overwhelming the main goal & task? Lessons from human teams, GR's RLCR and OpenAI's Navier–Stokes swarm."
 tags:
   - agent swarms

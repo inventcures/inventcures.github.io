@@ -1,0 +1,38 @@
+/* Essays and scribbles. Quiet, text-first, dated. Colours come from the site
+   theme tokens, so dark mode keeps working through theme.css. */
+.site-theme .w-kicker{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#777;margin:0 0 10px}
+.site-theme .w-kicker a{color:inherit;text-decoration:none}.site-theme .w-kicker a:hover{text-decoration:underline}
+.site-theme .w-mono,.site-theme .w-date{font-family:"JetBrains Mono","SF Mono",Menlo,Consolas,monospace;font-size:.82em;color:#777;font-variant-numeric:tabular-nums}
+.site-theme .w-intro{color:#555;margin-bottom:28px}
+.site-theme .w-intro a{white-space:nowrap}
+.site-theme .w-feeds{font-size:14px;color:#777;margin:-12px 0 34px}
+
+/* Essay index: one line per essay, grouped by year, with a short summary. */
+.site-theme .w-year{font-size:1.05rem;font-weight:600;letter-spacing:.02em;margin:40px 0 6px;padding-bottom:6px;border-bottom:1px solid var(--st-line)}
+.site-theme .w-list{list-style:none;padding:0;margin:0}
+.site-theme .w-list>li{display:grid;grid-template-columns:7.2em 1fr;column-gap:16px;padding:12px 0;margin:0;border-bottom:1px dashed var(--st-line)}
+.site-theme .w-list>li:last-child{border-bottom:0}
+.site-theme .w-list .w-date{padding-top:.28em}
+.site-theme .w-list .w-title{font-size:1.08rem;line-height:1.45}
+.site-theme .w-list .w-star{color:var(--st-accent);margin-left:6px;text-decoration:none;cursor:help}
+.site-theme .w-list .w-sum{margin:4px 0 0;font-size:.93rem;line-height:1.6;color:#555}
+@media(max-width:640px){.site-theme .w-list>li{grid-template-columns:1fr}.site-theme .w-list .w-date{padding:0 0 2px}}
+
+/* Scribble stream: every scribble in full, newest first, headed by its timestamp. */
+.site-theme .w-month{font-size:.95rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#777;margin:46px 0 0;padding-bottom:6px;border-bottom:1px solid var(--st-line)}
+.site-theme .scribble{padding:22px 0 8px;border-bottom:1px dashed var(--st-line)}
+.site-theme .scribble:last-child{border-bottom:0}
+.site-theme .scribble-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin:0 0 8px}
+.site-theme .scribble-head .w-date a{color:inherit;text-decoration:none}.site-theme .scribble-head .w-date a:hover{color:var(--st-accent);text-decoration:underline}
+.site-theme .scribble-head h2,.site-theme .scribble-head h1{font-size:1.15rem;font-weight:600;letter-spacing:0;line-height:1.4;margin:0}
+.site-theme .scribble-head h2 a{color:var(--st-ink);text-decoration:none}.site-theme .scribble-head h2 a:hover{text-decoration:underline}
+.site-theme .scribble-re{font-size:.93rem;color:#555;margin:0 0 10px;padding-left:12px;border-left:2px solid var(--st-line)}
+.site-theme .scribble-body>:last-child{margin-bottom:12px}
+.site-theme .scribble-tags{font-size:13px;color:#777;margin:0 0 10px}
+.site-theme .w-tag{display:inline-block;margin-right:10px}
+
+/* Single scribble page */
+.site-theme .scribble-page h1{font-size:1.7rem;font-weight:400!important;margin:0 0 12px}
+.site-theme .w-pager{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin:40px 0 0;padding-top:16px;border-top:1px solid var(--st-line);font-size:15px}
+.site-theme .w-pager span{max-width:48%}
+.site-theme .w-back{font-size:15px;margin-top:22px}

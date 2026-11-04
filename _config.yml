@@ -125,6 +125,9 @@ analytics:
 visitor_stats:
   goatcounter_code       : "inventcures" # the site code chosen at signup: https://<code>.goatcounter.com
   since                  : "2026-11-04"  # first day of counting; earlier days are ignored
+  # City-level counts from the Cloudflare Worker in worker/ (see docs/city-visitor-stats-spec.md).
+  # Paste the Worker URL here after the "Deploy city stats worker" Action has run; empty = off.
+  cities_endpoint        : ""
 
 
 # Reading Files
@@ -157,6 +160,8 @@ exclude:
   - package.json
   - tmp
   - vendor
+  - docs
+  - worker
 keep_files:
   - .git
   - .svn

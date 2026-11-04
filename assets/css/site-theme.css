@@ -55,3 +55,5 @@ body.site-theme{--st-paper:#faf8f5;--st-ink:#333;--st-accent:#a94427;--st-line:#
 .site-theme .vs-note a{color:var(--st-accent)}
 .jvm-tooltip{font-family:inherit;font-size:13px;background:#333;border-radius:3px;padding:4px 8px}
 @media(max-width:640px){.site-theme .vs-number{font-size:36px}}
+.site-theme .vs-sub{font-size:15px;margin:22px 0 4px;font-weight:600}
+.site-theme .vs-cities .vs-top{margin-top:6px}

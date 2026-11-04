@@ -84,6 +84,8 @@ sitemap: false
       <input type="text" id="f-code" autocomplete="username" value="{{ site.visitor_stats.goatcounter_code }}" required>
       <label for="f-key">API key</label>
       <input type="password" id="f-key" autocomplete="current-password" required>
+      <label for="f-ckey">City stats key <span style="font-weight:400">(optional; the CITY_STATS_ADMIN_TOKEN secret)</span></label>
+      <input type="password" id="f-ckey" autocomplete="off">
       <div class="row"><input type="checkbox" id="f-remember"><label for="f-remember" style="margin:0">Keep me signed in on this device</label></div>
       <div class="row"><button type="submit">Sign in</button></div>
       <div class="err" id="signin-err"></div>
@@ -145,6 +147,11 @@ sitemap: false
       </div>
 
       <div class="card wide">
+        <h3>Cities <small id="city-note">all cities, no threshold · only you can see this</small></h3>
+        <table id="t-cities"></table>
+      </div>
+
+      <div class="card wide">
         <h3>Tracked link builder <small>tag a link before posting it, so its visits show up under Referrers and Campaigns</small></h3>
         <div class="builder">
           <div class="full"><label for="b-path">Page on this site</label><input id="b-path" value="/" placeholder="/robotics/"></div>
@@ -165,6 +172,7 @@ sitemap: false
 (function () {
   var SITE = {{ site.url | jsonify }};
   var SINCE = {{ site.visitor_stats.since | default: "2026-01-01" | jsonify }};
+  var CITIES = {{ site.visitor_stats.cities_endpoint | default: "" | jsonify }};
   var KEY = 'gc-admin';
   var auth = null, days = '30', pathFilter = null, locCountry = null;
 
@@ -268,6 +276,26 @@ sitemap: false
     });
   }
 
+  function loadCities() {
+    var el = $('t-cities');
+    if (!CITIES) { el.innerHTML = '<tr><td class="empty">City stats are off: set visitor_stats.cities_endpoint in _config.yml after deploying the Worker.</td></tr>'; return Promise.resolve(); }
+    if (!auth.ckey) { el.innerHTML = '<tr><td class="empty">Sign out and back in with your city stats key to see cities.</td></tr>'; return Promise.resolve(); }
+    var d = days === 'all' ? 3650 : Math.max(1, Math.ceil(Number(days)));
+    var u = CITIES.replace(/\/$/, '') + '/admin?days=' + d + (pathFilter ? '&path=' + encodeURIComponent(pathFilter.name) : '');
+    return fetch(u, { headers: { 'Authorization': 'Bearer ' + auth.ckey } }).then(function (r) {
+      if (r.status === 401) throw new Error('key');
+      if (!r.ok) throw new Error('http ' + r.status);
+      return r.json();
+    }).then(function (data) {
+      $('city-note').textContent = (pathFilter ? 'on ' + pathFilter.name + ' · ' : '') + 'all cities, no threshold · only you can see this';
+      table(el, (data.cities || []).map(function (c) {
+        return { name: (c.city || '(unknown city)') + (c.region ? ', ' + c.region : '') + ' · ' + c.country, count: c.count };
+      }));
+    }).catch(function (e) {
+      el.innerHTML = '<tr><td class="empty">' + (e.message === 'key' ? 'The city stats key was refused.' : 'Could not reach the city stats Worker.') + '</td></tr>';
+    });
+  }
+
   function load() {
     var dash = $('dash'); dash.classList.add('loading');
     $('page-crumb').hidden = !pathFilter;
@@ -295,7 +323,8 @@ sitemap: false
       loadRefs(),
       stats('campaigns').then(function (rows) { table($('t-campaigns'), rows); }),
       stats('browsers', { limit: 10 }).then(function (rows) { table($('t-browsers'), rows); }),
-      stats('systems', { limit: 10 }).then(function (rows) { table($('t-systems'), rows); })
+      stats('systems', { limit: 10 }).then(function (rows) { table($('t-systems'), rows); }),
+      loadCities()
     ];
     return Promise.all(jobs).catch(function (e) {
       if (e.auth) { signOut('Your API key was refused. Check it has "Read statistics" permission.'); return; }
@@ -314,12 +343,12 @@ sitemap: false
   function signOut(msg) {
     auth = null; store(false, null);
     $('dash').hidden = true; $('signin').hidden = false; $('who').textContent = '';
-    $('f-key').value = ''; $('signin-err').textContent = msg || '';
+    $('f-key').value = ''; $('f-ckey').value = ''; $('signin-err').textContent = msg || '';
   }
 
   $('signin-form').addEventListener('submit', function (e) {
     e.preventDefault();
-    var cand = { code: $('f-code').value.trim().toLowerCase(), key: $('f-key').value.trim() };
+    var cand = { code: $('f-code').value.trim().toLowerCase(), key: $('f-key').value.trim(), ckey: $('f-ckey').value.trim() };
     $('signin-err').textContent = 'Checking…';
     auth = cand;
     api('/me').then(function () {

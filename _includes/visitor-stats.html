@@ -7,6 +7,7 @@
 {% if vs_code and vs_code != "" %}
 {% assign vs = site.data.visitor_stats %}
 {% assign vs_since = vs.since | default: site.visitor_stats.since %}
+{% assign vs_cities = site.visitor_stats.cities_endpoint | default: "" %}
 <section class="visitor-stats" id="visitors" aria-labelledby="visitor-stats-title">
   <div class="vs-head">
     <h2 class="section-title" id="visitor-stats-title">Visitors</h2>
@@ -20,10 +21,17 @@
   <ol class="vs-top">
     {% for c in vs.countries limit: 5 %}<li><span>{{ c.name }}</span><span class="vs-count">{{ c.count }}</span></li>{% endfor %}
   </ol>
-  {% else %}
   {% endif %}
 
-  <p class="vs-note">Counted with <a href="https://www.goatcounter.com" target="_blank" rel="noopener">GoatCounter</a>, which sets no cookies and does not store IP addresses; each visit is reduced to a country. {% if vs.updated %}Map updated {{ vs.updated | date: "%-d %b %Y" }}.{% endif %}</p>
+  {% if vs_cities != "" %}
+  <div class="vs-cities" id="vs-cities" hidden>
+    <h3 class="vs-sub">Top cities</h3>
+    <ol class="vs-top" id="vs-city-list"></ol>
+    <p class="vs-note" id="vs-city-note"></p>
+  </div>
+  {% endif %}
+
+  <p class="vs-note">Counted with <a href="https://www.goatcounter.com" target="_blank" rel="noopener">GoatCounter</a>, which sets no cookies and does not store IP addresses; each visit is reduced to a country.{% if vs_cities != "" %} Cities come from a separate small counter that also stores no IP addresses, only place names.{% endif %} {% if vs.updated %}Map updated {{ vs.updated | date: "%-d %b %Y" }}.{% endif %}</p>
 </section>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.7.0/dist/jsvectormap.min.css">
@@ -35,6 +43,32 @@
     var totalEl = document.getElementById('vs-total');
     var fmt = function (n) { return Number(n).toLocaleString('en-US'); };
     if (totalEl) totalEl.textContent = fmt(totalEl.getAttribute('data-total'));
+
+    /* City counts from the Worker. Only cities with at least k visits are ever
+       returned, so this can be public. See docs/city-visitor-stats-spec.md. */
+    var citiesUrl = {{ vs_cities | jsonify }};
+    var citiesReady = !citiesUrl ? Promise.resolve(null) : Promise.race([
+      fetch(citiesUrl.replace(/\/$/, '') + '/public').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
+      new Promise(function (res) { setTimeout(function () { res(null); }, 4000); })
+    ]);
+
+    function showCities(d) {
+      var box = document.getElementById('vs-cities');
+      if (!box || !d || !d.cities) return;
+      var list = document.getElementById('vs-city-list');
+      list.innerHTML = '';
+      d.cities.slice(0, 8).forEach(function (c) {
+        var li = document.createElement('li');
+        var a = document.createElement('span'); a.textContent = c.city + (c.country ? ', ' + c.country : '');
+        var b = document.createElement('span'); b.className = 'vs-count'; b.textContent = fmt(c.count);
+        li.appendChild(a); li.appendChild(b); list.appendChild(li);
+      });
+      if (!d.cities.length) list.innerHTML = '<li><span>None yet</span></li>';
+      var hid = d.hidden || { visits: 0 };
+      document.getElementById('vs-city-note').textContent = 'A city appears once at least ' + d.k + ' visits come from it' +
+        (hid.visits ? '; ' + fmt(hid.visits) + (hid.visits === 1 ? ' visit' : ' visits') + ' from smaller places are counted by country only.' : '.');
+      box.hidden = false;
+    }
 
     function draw() {
       if (!window.jsVectorMap) return;
@@ -62,7 +96,22 @@
          jsvectormap's bug where equal min and max values produce an invalid (black) fill. */
       shade.__zero = 0;
       if (countries.length) opts.visualizeData = { scale: ['#efc9b8', '#8a2f17'], values: shade };
-      new jsVectorMap(opts);
+      citiesReady.then(function (d) {
+        var cs = (d && d.cities || []).filter(function (c) { return c.lat != null && c.lon != null; });
+        if (cs.length) {
+          var max = Math.max.apply(null, cs.map(function (c) { return c.count; }));
+          opts.markers = cs.map(function (c) {
+            return { name: c.city + ': ' + fmt(c.count) + (c.count === 1 ? ' visit' : ' visits'), coords: [c.lat, c.lon],
+                     style: { initial: { r: 3 + 6 * Math.sqrt(c.count / max) } } };
+          });
+          opts.markerStyle = {
+            initial: { fill: '#2b2b2b', fillOpacity: 0.75, stroke: '#ffffff', strokeWidth: 1, strokeOpacity: 1 },
+            hover: { fill: '#2b2b2b', fillOpacity: 1, cursor: 'default' }
+          };
+        }
+        new jsVectorMap(opts);
+        showCities(d);
+      });
     }
     if (document.readyState === 'complete') draw();
     else window.addEventListener('load', draw);

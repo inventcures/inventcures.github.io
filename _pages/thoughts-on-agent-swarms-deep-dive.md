@@ -1,12 +1,12 @@
 ---
 title: "Some thoughts on designing optimal swarm architectures: the notion of the collective good in swarms: the deep dive"
-permalink: /thoughts-on-agent-swarms/deep-dive/
+permalink: /essays/2026/11/thoughts-on-agent-swarms/deep-dive/
 redirect_from:
-  - /essays/2026/11/thoughts-on-agent-swarms/deep-dive/
+  - /thoughts-on-agent-swarms/deep-dive/   # original URL, kept working as a redirect
 author_profile: true
 ---
 
-*tp53 · November 2026 · companion to the [short post](/thoughts-on-agent-swarms/) and the [draft preprint (PDF)](/files/thoughts-on-agent-swarms.pdf)*
+*tp53 · November 2026 · companion to the [short post](/essays/2026/11/thoughts-on-agent-swarms/) and the [draft preprint (PDF)](/files/thoughts-on-agent-swarms.pdf)*
 
 > **How to read this.** Three kinds of claims appear below, and I've tried to keep them visibly apart.
 > - **Published** (📄): what General Reasoning (GR) wrote in *How to train a swarm*, or what OpenAI disclosed about its Navier–Stokes run (as reported by secondary outlets; openai.com itself wasn't directly readable when I wrote this).[^gr][^oai]

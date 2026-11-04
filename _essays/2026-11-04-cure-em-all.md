@@ -1,9 +1,9 @@
 ---
 title: "Curing All Disease, Ahead of Schedule: Permission to dream bigger with complementary AI–human teams"
 date: 2026-11-04
-permalink: /cure-em-all/
+permalink: /essays/2026/11/cure-em-all/
 redirect_from:
-  - /essays/2026/11/cure-em-all/
+  - /cure-em-all/   # original URL, kept working as a redirect
   - /ai-to-amplify-our-ambitions/
 excerpt: "From Andrew Lo's megafund to Mithril, Orchestra and Coefficient: what the AI hub-and-spoke means for pharma, CROs and the frontier labs, why Demis's ten years is both too optimistic and too pessimistic, and why humans must stay at the center of discovery."
 tags:

@@ -1,9 +1,9 @@
 ---
 title: "Some thoughts on designing optimal swarm architectures: the notion of the collective good in swarms"
 date: 2026-11-03
-permalink: /thoughts-on-agent-swarms/
+permalink: /essays/2026/11/thoughts-on-agent-swarms/
 redirect_from:
-  - /essays/2026/11/thoughts-on-agent-swarms/   # structured alias; the original URL above stays canonical
+  - /thoughts-on-agent-swarms/   # original URL, kept working as a redirect
 excerpt: "How do you get a swarm of AI agents to act for the collective, larger good, and not just the task in front of each agent, without the coordination overhead overwhelming the main goal & task? Lessons from human teams, GR's RLCR and OpenAI's Navier–Stokes swarm."
 tags:
   - agent swarms
@@ -27,7 +27,7 @@ The latter half of the post reasons through biomedical uses of swarms in science
 
 **A note on words.** By *swarm* I mean the whole population of agents working on one problem. I use *teams*, *sub-swarms* and *agent orgs* for sub-structure within a swarm. Each is a group of agents that shares a goal, talks to its own members more than to outsiders, and gets spun up, steered or torn down as a unit. I use the three terms more or less interchangeably, though each leans a little. I say *agent org* when the group has internal roles, like GR's organisations of up to 9 agents, where a CEO hires and fires specialists. I say *sub-swarm* for a large, loosely structured group, like one of OpenAI's isolated groups of thousands. *Team* covers everything in between. These groups can nest, so you can have teams of teams.
 
-*This is the short version. A [longer deep dive](/thoughts-on-agent-swarms/deep-dive/) has the models, more diagrams and some exercises, and there is also a [draft preprint (PDF)](/files/thoughts-on-agent-swarms.pdf).*
+*This is the short version. A [longer deep dive](/essays/2026/11/thoughts-on-agent-swarms/deep-dive/) has the models, more diagrams and some exercises, and there is also a [draft preprint (PDF)](/files/thoughts-on-agent-swarms.pdf).*
 
 ## Where the field is right now
 
@@ -328,13 +328,13 @@ These are the questions I think matter most, grouped by horizon. They are number
 
 ## What's fact and what isn't
 
-The descriptions of RLCR, Avalon-M1 and the Navier–Stokes run come from General Reasoning's post, from OpenAI's account and from secondary outlets that reported on it.[^gr][^oai] The ideas in sections 1 to 9 that I don't attribute to them are mine. I haven't run any experiments yet, so these are proposals and hypotheses, not findings. Every number in the post comes from a cited source or from plain arithmetic on one. The [deep dive](/thoughts-on-agent-swarms/deep-dive/) goes further into the models, and the [draft preprint (PDF)](/files/thoughts-on-agent-swarms.pdf) sits alongside it.
+The descriptions of RLCR, Avalon-M1 and the Navier–Stokes run come from General Reasoning's post, from OpenAI's account and from secondary outlets that reported on it.[^gr][^oai] The ideas in sections 1 to 9 that I don't attribute to them are mine. I haven't run any experiments yet, so these are proposals and hypotheses, not findings. Every number in the post comes from a cited source or from plain arithmetic on one. The [deep dive](/essays/2026/11/thoughts-on-agent-swarms/deep-dive/) goes further into the models, and the [draft preprint (PDF)](/files/thoughts-on-agent-swarms.pdf) sits alongside it.
 
 *Thanks.* A big thank-you to Konstantin Dunas for writing such a clear and enjoyable post.[^hallerite] It's what got me to dig into this topic and finally organise my thoughts about agent swarms.
 
 ## References
 
-*Every source cited in the margin, plus the background reading behind this post and its [deep dive](/thoughts-on-agent-swarms/deep-dive/), in one place.*
+*Every source cited in the margin, plus the background reading behind this post and its [deep dive](/essays/2026/11/thoughts-on-agent-swarms/deep-dive/), in one place.*
 
 - General Reasoning, [*How to train a swarm*](https://www.gr.inc/blog/how-to-train-a-swarm) (2026), and the [Avalon-M1 report](https://www.gr.inc/avalonm1.pdf).
 - OpenAI, [*On the Navier–Stokes Millennium Prize Problem*](https://openai.com/index/navier-stokes-solution/) (8 Sep 2026), and the [Lean proof repo](https://github.com/openai/NavierStokesAndEuler). Reported by [Quanta](https://www.quantamagazine.org/ai-has-solved-one-of-maths-1-million-millennium-prize-problems-20260908/) and [VentureBeat](https://venturebeat.com/technology/openai-solves-longstanding-math-problem-with-10-000-agent-swarm-but-cant-rule-out-benefitting-from-a-researchers-private-codex-data).

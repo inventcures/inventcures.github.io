@@ -127,7 +127,7 @@ visitor_stats:
   since                  : "2026-11-04"  # first day of counting; earlier days are ignored
   # City-level counts from the Cloudflare Worker in worker/ (see docs/city-visitor-stats-spec.md).
   # Paste the Worker URL here after the "Deploy city stats worker" Action has run; empty = off.
-  cities_endpoint        : ""
+  cities_endpoint        : "https://visitor-cities.spiff007.workers.dev"
 
 
 # Reading Files

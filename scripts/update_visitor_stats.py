@@ -11,6 +11,7 @@ import json
 import os
 import re
 import sys
+import urllib.error
 import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
@@ -37,8 +38,18 @@ def get(api, path, token, **params):
         "Content-Type": "application/json",
         "User-Agent": "visitor-stats-action",
     })
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return json.load(resp)
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            return json.load(resp)
+    except urllib.error.HTTPError as e:
+        body = e.read().decode("utf-8", "replace")[:500]
+        raise ApiError(e.code, f"GET {path} returned HTTP {e.code}: {body}") from None
+
+
+class ApiError(Exception):
+    def __init__(self, status, message):
+        super().__init__(message)
+        self.status = status
 
 
 def main():
@@ -54,7 +65,17 @@ def main():
     end = datetime.now(timezone.utc).replace(minute=0, second=0, microsecond=0)
     end = end.strftime("%Y-%m-%dT%H:%M:%SZ")
 
-    total = get(api, "/stats/total", token, start=start, end=end).get("total", 0)
+    try:
+        total = get(api, "/stats/total", token, start=start, end=end).get("total", 0)
+    except ApiError as e:
+        if e.status == 401:
+            print(f"::error::GoatCounter refused the API key. Check GOATCOUNTER_TOKEN has 'Read statistics' permission. {e}")
+            return 1
+        if e.status == 404:
+            # GoatCounter answers 404 while a site has no recorded pageviews yet.
+            print(f"::warning::No stats on {code}.goatcounter.com yet (it may have no pageviews so far); keeping the current file. {e}")
+            return 0
+        raise
 
     # Locations come back as ISO 3166-1 codes, sometimes with a region suffix
     # ("US-CA"); fold everything to the country.

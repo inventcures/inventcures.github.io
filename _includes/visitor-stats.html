@@ -10,7 +10,7 @@
 <section class="visitor-stats" id="visitors" aria-labelledby="visitor-stats-title">
   <div class="vs-head">
     <h2 class="section-title" id="visitor-stats-title">Visitors</h2>
-    <p class="vs-total"><span class="vs-number" id="vs-total" data-total="{{ vs.total_visitors | default: 0 }}">{{ vs.total_visitors | default: 0 }}</span> visitors across all pages since {{ vs_since | date: "%-d %b %Y" }}{% if vs.countries.size > 0 %}, from {{ vs.countries.size }} {% if vs.countries.size == 1 %}country{% else %}countries{% endif %}{% endif %}</p>
+    {% if vs.updated %}<p class="vs-total"><span class="vs-number" id="vs-total" data-total="{{ vs.total_visitors | default: 0 }}">{{ vs.total_visitors | default: 0 }}</span> visitors across all pages since {{ vs_since | date: "%-d %b %Y" }}{% if vs.countries.size > 0 %}, from {{ vs.countries.size }} {% if vs.countries.size == 1 %}country{% else %}countries{% endif %}{% endif %}</p>{% else %}<p class="vs-total"><span class="vs-number">Counting</span> since {{ vs_since | date: "%-d %b %Y" }}; the first totals appear after the daily stats update.</p>{% endif %}
   </div>
 
   <div class="vs-map" id="vs-map" role="img" aria-label="World map shaded by number of visitors per country"></div>
@@ -21,7 +21,6 @@
     {% for c in vs.countries limit: 5 %}<li><span>{{ c.name }}</span><span class="vs-count">{{ c.count }}</span></li>{% endfor %}
   </ol>
   {% else %}
-  <p class="vs-empty">The map fills in after the first daily update of the stats.</p>
   {% endif %}
 
   <p class="vs-note">Counted with <a href="https://www.goatcounter.com" target="_blank" rel="noopener">GoatCounter</a>, which sets no cookies and does not store IP addresses; each visit is reduced to a country. {% if vs.updated %}Map updated {{ vs.updated | date: "%-d %b %Y" }}.{% endif %}</p>
@@ -35,7 +34,7 @@
     var countries = {{ vs.countries | default: empty | jsonify }} || [];
     var totalEl = document.getElementById('vs-total');
     var fmt = function (n) { return Number(n).toLocaleString('en-US'); };
-    totalEl.textContent = fmt(totalEl.getAttribute('data-total'));
+    if (totalEl) totalEl.textContent = fmt(totalEl.getAttribute('data-total'));
 
     function draw() {
       if (!window.jsVectorMap) return;

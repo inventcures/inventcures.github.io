@@ -80,4 +80,9 @@ jobs:
             echo ""
             echo "Set \`visitor_stats.cities_endpoint: \"$url\"\` in \`_config.yml\` to turn it on."
           } >> "$GITHUB_STEP_SUMMARY"
-          curl -fsS "$url/health"
+          # A brand-new workers.dev URL can take a minute to start answering.
+          for i in $(seq 1 12); do
+            if curl -fsS "$url/health"; then exit 0; fi
+            sleep 10
+          done
+          echo "::warning::Deployed, but $url/health did not answer within 2 minutes; check it again shortly."

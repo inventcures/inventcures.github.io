@@ -1,5 +1,5 @@
 ---
-title: "Gotta Cure 'Em All: The AI-Native Roivant and the Permission to Dream Bigger"
+title: 'Permission to Dream Bigger: AI, agents, and curing all disease "ahead of schedule"'
 date: 2026-11-04
 permalink: /cure-em-all/
 redirect_from:

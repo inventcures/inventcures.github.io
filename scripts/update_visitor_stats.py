@@ -14,7 +14,7 @@ import sys
 import urllib.error
 import urllib.parse
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -62,7 +62,8 @@ def main():
 
     api = f"https://{code}.goatcounter.com/api/v0"
     start = f"{since}T00:00:00Z"
-    end = datetime.now(timezone.utc).replace(minute=0, second=0, microsecond=0)
+    # The API wants whole hours; round *up* so visits from the current hour count.
+    end = datetime.now(timezone.utc).replace(minute=0, second=0, microsecond=0) + timedelta(hours=1)
     end = end.strftime("%Y-%m-%dT%H:%M:%SZ")
 
     try:

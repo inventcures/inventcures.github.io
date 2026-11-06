@@ -1,13 +1,13 @@
 /* Margin sidenotes built from kramdown footnotes (see /assets/js/sidenotes.js).
    Without JS, the footnotes simply stay as a numbered list at the end. */
-.page__content sup[role="doc-noteref"] {
+.page__content sup[id^="fnref"] {
   line-height: 0;
   vertical-align: baseline;
   position: relative;
   top: -0.5em;
   font-size: 0.75em;
 }
-.page__content sup[role="doc-noteref"] a.footnote {
+.page__content sup[id^="fnref"] a.footnote {
   font-weight: 600;
   text-decoration: none;
   padding: 0 0.1em;
@@ -45,4 +45,4 @@
   background: rgba(127, 127, 127, 0.08);
   border-radius: 4px;
 }
-.page__content sup[role="doc-noteref"] + sup[role="doc-noteref"]::before { content: ","; }
+.page__content sup[id^="fnref"] + sup[id^="fnref"]::before { content: ","; }

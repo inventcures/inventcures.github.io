@@ -6,7 +6,7 @@
   if (!content || !main) return;
   var foot = content.querySelector('.footnotes');
   if (!foot) return;
-  var refs = Array.prototype.slice.call(content.querySelectorAll('sup[role="doc-noteref"]'));
+  var refs = Array.prototype.slice.call(content.querySelectorAll('sup[id^="fnref"]'));
   if (!refs.length) return;
   document.documentElement.classList.add('sn-js');
 
@@ -25,6 +25,12 @@
     n.className = 'sn-note';
     n.innerHTML = noteHTML(ref) || '';
     n.setAttribute('role', 'note');
+    // Every source link in a note opens in a new tab, including links to this site.
+    Array.prototype.forEach.call(n.querySelectorAll('a[href]'), function (l) {
+      if (l.getAttribute('href').charAt(0) === '#') return;
+      l.target = '_blank';
+      l.rel = 'noopener noreferrer';
+    });
     return n;
   });
 

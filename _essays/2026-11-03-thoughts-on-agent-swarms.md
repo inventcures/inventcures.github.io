@@ -364,8 +364,6 @@ The descriptions of RLCR, Avalon-M1 and the Navier–Stokes run come from Genera
 - Granovetter, [*The strength of weak ties*](https://doi.org/10.1086/225469), American Journal of Sociology 78, 1360 (1973).
 - Conway, [*How do committees invent?*](http://www.melconway.com/Home/Committees_Paper.html), Datamation (1968).
 
-<link rel="stylesheet" href="/assets/css/sidenotes.css">
-<script src="/assets/js/sidenotes.js" defer></script>
 
 [^gr]: General Reasoning, [*How to train a swarm*](https://www.gr.inc/blog/how-to-train-a-swarm) (2026), and the [Avalon-M1 report](https://www.gr.inc/avalonm1.pdf).
 [^hallerite]: Konstantin Dunas (hallerite), [*On the nature of the swarm: why scaling inference ends in many agents*](https://hallerite.com/posts/on-the-nature-of-the-swarm/) (Oct 2026).

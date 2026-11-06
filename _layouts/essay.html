@@ -2,6 +2,8 @@
 layout: single
 ---
 {% include writing/styles.html %}
+{% unless page.sidenotes == false %}<link rel="stylesheet" href="{{ '/assets/css/sidenotes.css' | relative_url }}">
+<script src="{{ '/assets/js/sidenotes.js' | relative_url }}" defer></script>{% endunless %}
 <p class="w-kicker"><a href="{{ '/essays/' | relative_url }}">Essay</a>{% if page.starred %} · ★ starred{% endif %}</p>
 
 {{ content }}

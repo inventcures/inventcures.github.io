@@ -67,6 +67,18 @@ tags: [agent swarms]
 
 Essays use the same page layout as the rest of the site (read time, date, footnotes, MathJax), with an "All essays" link at the bottom.
 
+### Margin references
+
+Every essay shows its footnotes as references in the right margin, next to the sentence that cites them (like [hallerite's swarm post](https://hallerite.com/posts/on-the-nature-of-the-swarm/)). On a phone, tapping a footnote number opens the note under the paragraph. Links in the notes open in new tabs. Keep the inline hyperlink in the sentence too, and add a footnote for the source:
+
+```markdown
+Booth warns of a "tsunami of programs".[^booth]
+
+[^booth]: Bruce Booth, ["The fruits of AI drug abundance"](https://lifescivc.com/...), *Life Sci VC* (30 Oct 2026).
+```
+
+Footnote definitions can sit anywhere in the file; the end is tidiest. To turn margin notes off for one essay, set `sidenotes: false` in its front matter. Other pages can opt in by adding the two lines at the end of `_pages/thoughts-on-agent-swarms-deep-dive.md`.
+
 ### Custom URLs
 
 An essay can keep a short URL of its own by setting `permalink:`. The two essays that were published before this system existed do this, so their original links keep working:

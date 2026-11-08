@@ -1,22 +1,27 @@
 {
-  "updated": "2026-11-07T08:54:27Z",
+  "updated": "2026-11-08T09:07:55Z",
   "since": "2026-11-04",
-  "total_visitors": 63,
+  "total_visitors": 70,
   "countries": [
     {
       "code": "IN",
       "name": "India",
-      "count": 39
+      "count": 43
     },
     {
       "code": "US",
       "name": "United States",
-      "count": 18
+      "count": 19
     },
     {
       "code": "CH",
       "name": "Switzerland",
       "count": 2
+    },
+    {
+      "code": "AU",
+      "name": "Australia",
+      "count": 1
     },
     {
       "code": "CA",
@@ -31,6 +36,11 @@
     {
       "code": "JP",
       "name": "Japan",
+      "count": 1
+    },
+    {
+      "code": "OM",
+      "name": "Oman",
       "count": 1
     },
     {

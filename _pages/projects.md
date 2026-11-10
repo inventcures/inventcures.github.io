@@ -17,6 +17,26 @@ layout: default
   <p style="margin: 0; color: #555;">If you are interested, write to me at my Ashoka email with the subject line <em>"Research Intern interest"</em>, including a short paragraph about your background and which of these areas you would like to do research on.</p>
 </div>
 
+<!-- write-on - NEW (writing tool; sits above the Medicine/Biotech toggle because it belongs to neither) -->
+<section class="featured-section">
+  <a href="/write-on/" style="display: block; background: linear-gradient(135deg, #1c1917 0%, #3b2a1e 100%); border: 2px solid #e08a66; border-radius: 12px; overflow: hidden; text-decoration: none; position: relative; margin-bottom: 2rem;">
+    <div style="position: absolute; top: -8px; right: 20px; background: linear-gradient(135deg, #e08a66, #c15f3c); color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.3rem 0.6rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 12px rgba(193, 95, 60, 0.4);">New</div>
+    <div style="padding: 1.5rem 2rem;">
+      <div style="display: inline-block; background: #c15f3c; color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">AI + Writing</div>
+      <h3 style="color: #fff; font-size: 1.5rem; margin: 0 0 0.4rem 0; font-weight: 700;">write-on ✍️</h3>
+      <p style="color: #f0b49c; font-size: 0.9rem; margin: 0 0 0.75rem 0; font-weight: 500;">A Writing Thought Partner That Never Writes for You</p>
+      <p style="color: #ddd; font-size: 0.85rem; line-height: 1.5; margin: 0 0 1rem 0;">Built on Jason Fried's Write_On: alternatives at the word, sentence and paragraph level, plus dimming and stashing text nearby. On top of it, a learning layer grounded in deep research on AI co-writing, which notices how you write and nudges like a trusted editor instead of drafting for you. Phase 0, the no-AI workbench, is being built now.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem;">
+        <span style="background: rgba(224,138,102,0.15); color: #f0b49c; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">Alternative Control</span>
+        <span style="background: rgba(224,138,102,0.15); color: #f0b49c; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">Writing = Thinking</span>
+        <span style="background: rgba(224,138,102,0.15); color: #f0b49c; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">Style Learning</span>
+        <span style="background: rgba(224,138,102,0.15); color: #f0b49c; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">Open Source</span>
+      </div>
+      <span style="color: #f0b49c; font-weight: 600; font-size: 0.9rem;">See the Project &amp; Try the Idea &rarr;</span>
+    </div>
+  </a>
+</section>
+
 <!-- Toggle Navigation -->
 <div style="display: flex; gap: 0; margin: 2rem 0 2.5rem 0; border-radius: 8px; overflow: hidden; border: 2px solid #e5e7eb;">
   <button onclick="showSection('medicine')" id="btn-medicine" aria-pressed="true" style="flex: 1; padding: 1rem 1.5rem; border: none; background: #818cf8; color: white; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">

@@ -7,7 +7,7 @@ layout: null
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>write-on</title>
-<meta name="description" content="write-on: a writing thought partner that learns how you write and nudges like a trusted editor, but never writes for you. Built on Jason Fried's Write_On and a deep dive into the research on AI co-writing.">
+<meta name="description" content="write-on: a pairing partner for your writing, a thought partner that learns how you write and nudges like a trusted editor, but never writes for you. Built on Jason Fried's Write_On and a deep dive into the research on AI co-writing.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="write-on: a writing thought partner that never writes for you">
 <meta property="og:description" content="Alternative control at the word, sentence and paragraph level, plus a learning layer that notices how you write. Inspired by Jason Fried's Write_On.">
@@ -140,6 +140,12 @@ sup.fn a{text-decoration:none;font-family:var(--sans);font-weight:600;padding:0 
 .doc-card b{display:block;font-size:16.5px;color:var(--accent)}
 .doc-card span{display:block;font-size:14.5px;color:var(--muted);margin-top:3px}
 
+.pair{margin:22px 0 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.pair > div{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--card);font-size:15px;line-height:1.55}
+.pair b{display:block;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.pair .you{border-color:var(--plum);background:var(--plum-soft)}
+.pair .partner{border-color:var(--blue);background:var(--blue-soft)}
+@media (max-width:680px){.pair{grid-template-columns:1fr}}
 .name-note{margin:18px 0 0;padding:12px 16px;border-radius:10px;background:var(--amber-soft);border:1px solid var(--amber);font-size:15.5px}
 
 .notes ol{padding-left:1.8em;margin:14px 0}
@@ -160,7 +166,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 <header>
 <p class="eyebrow">Writing · Thinking · Open source</p>
 <h1>write-on</h1>
-<p class="lede">A writing tool that works like a thought partner. It keeps every way you tried to say something within reach, learns how <i>you</i> write, and nudges like a trusted editor. <b>It never writes for you.</b></p>
+<p class="lede">A <b>pairing partner for your writing</b>, a true writing (= thinking) partner. It keeps every way you tried to say something within reach, learns how <i>you</i> write, and nudges like a trusted editor. <b>It never writes for you.</b></p>
 <ul class="facts" aria-label="Key facts">
   <li><b>Status:</b> Phase 0 live, no AI yet</li>
   <li><b>Built on:</b> Jason Fried's Write_On</li>
@@ -188,6 +194,17 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 <div class="prose">
 <p>Leslie Lamport put it bluntly: "If you're thinking without writing, you only think you're thinking."<sup class="fn"><a href="#ref-graham">2</a></sup> The struggle to find the right word is not a cost to be automated away. It is where you work out what you mean.</p>
 <p>That is why a tool that writes for you also thinks for you, and it is the one thing write-on refuses to do. The goal is to make you a better and faster version of yourself, while every sentence that ships stays yours.</p>
+</div>
+
+<p class="kicker" id="pairing">The idea</p>
+<h2>A pairing partner for your writing</h2>
+<div class="prose">
+<p>Programmers have a practice called <a href="https://martinfowler.com/articles/on-pair-programming.html">pair programming</a>. Two people share one screen. The <em>driver</em> types. The <em>navigator</em> sits alongside, looking over the driver's shoulder: catching the slip before it becomes a bug, keeping the bigger goal in mind, and asking "wait, why this way?" at the right moment. A good navigator rarely grabs the keyboard. Most of the time they stay quiet, and the driver goes faster and thinks more clearly because someone is paying attention.</p>
+<p>write-on brings that to writing. <strong>You are always the driver; write-on is the navigator.</strong> It keeps you on track without being a distraction or an annoyance. When you need help, it gives it: a question, an alternative to flip to, a reminder of how you usually open a paragraph. Then it largely gets out of your way. A pairing writer, not a ghostwriter.</p>
+</div>
+<div class="pair">
+  <div class="you"><b>You, the driver</b>Type every sentence. Choose between alternatives. Decide what stays, what fades and what gets stashed.</div>
+  <div class="partner"><b>write-on, the navigator</b>Watches quietly, remembers how you write, speaks up only when it is worth it, keeps it short, and lets you ignore it.</div>
 </div>
 
 <div class="contrast">

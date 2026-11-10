@@ -176,7 +176,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 <div class="actions">
   <a class="btn" href="https://write-on.up.railway.app">Try write-on</a>
   <a class="btn ghost" href="#try">Try the idea on this page</a>
-  <a class="btn ghost" href="https://docs.google.com/document/d/1cUtefDRhKz6MH6sLBR8UJH2IvLyExLXTrn-mxrCDDBE/edit?usp=sharing">Read the research report</a>
+  <a class="btn ghost" href="https://docs.google.com/document/d/1cUtefDRhKz6MH6sLBR8UJH2IvLyExLXTrn-mxrCDDBE/view">Read the research report</a>
 </div>
 </header>
 
@@ -185,7 +185,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 <p>This project exists because of <strong>Jason Fried</strong>, co-founder of 37signals. In September 2026 he posted <a href="https://x.com/jasonfried/status/2105403067793584590">a short video of Write_On</a>, a writing tool he had wanted for about a decade and built over a weekend with Claude's help.<sup class="fn"><a href="#ref-fried">1</a></sup> He described it like this:</p>
 <blockquote>"Essentially it's 'alternative control' at the word, sentence, and paragraph level, plus a way to dim stuff back, and stash stuff near by. Not version control, but alternative control."<span class="who">Jason Fried, on X</span></blockquote>
 <p>Watching that video changed how I think about writing tools. It showed me that a tool can make room for the way you actually think while you write: trying three versions of a line, keeping the one you're unsure of faded on the page, setting aside a sentence you love but can't use yet. <strong>All credit for that interface idea is his.</strong> Please <a href="https://x.com/jasonfried/status/2105403067793584590">watch his video</a> first; it explains the idea better than any description.</p>
-<p>write-on uses Write_On as its base and builds on top of it. I spent the first part of this project on deep research into what academia and industry know about writing copilots and thought partners that <em>augment</em> writing rather than replace it, and folded what I found into the design. The short version of that research is below. The full report is a <a href="https://docs.google.com/document/d/1cUtefDRhKz6MH6sLBR8UJH2IvLyExLXTrn-mxrCDDBE/edit?usp=sharing">public Google Doc</a>.</p>
+<p>write-on uses Write_On as its base and builds on top of it. I spent the first part of this project on deep research into what academia and industry know about writing copilots and thought partners that <em>augment</em> writing rather than replace it, and folded what I found into the design. The short version of that research is below. The full report is a <a href="https://docs.google.com/document/d/1cUtefDRhKz6MH6sLBR8UJH2IvLyExLXTrn-mxrCDDBE/view">public Google Doc</a>.</p>
 <p>A related thread I've been pulling on: <strong>"unslopping" LLM writing</strong>, meaning stripping out the tells of machine prose ("delve", "not just X, but Y", ideas forced into groups of three) and putting a human voice back. I'm building on <a href="https://github.com/poteto">@poteto</a>'s <a href="https://github.com/cursor/plugins/blob/main/pstack/skills/unslop/SKILL.md">unslop skill</a> with <a href="https://github.com/inventcures/tp53_unslop/blob/main/SKILL.md">my own version</a>, which adds a pass for voice: have opinions, vary the rhythm, use "I" when it fits, be specific. Unslop cleans machine text after the fact. write-on comes at the same problem from the other side, by keeping machine words from replacing yours in the first place.</p>
 <p class="name-note"><strong>About the name.</strong> write-on is a nod to Fried's Write_On, and also to <em>Rock On!!</em>, the Farhan Akhtar film and its title song. Write on, rock on.</p>
 </section>
@@ -266,7 +266,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
   <li><b>Plain files you own.</b><span>Pieces are Markdown. Your style data stays local by default and can be exported or deleted.</span></li>
 </ol>
 
-<a class="doc-card" href="https://docs.google.com/document/d/1cUtefDRhKz6MH6sLBR8UJH2IvLyExLXTrn-mxrCDDBE/edit?usp=sharing">
+<a class="doc-card" href="https://docs.google.com/document/d/1cUtefDRhKz6MH6sLBR8UJH2IvLyExLXTrn-mxrCDDBE/view">
   <b>Read the full research report →</b>
   <span>"Writing copilots that augment, not replace: state of the art (November 2026)". Commercial tools, HCI studies, style-learning methods, the design principles and evaluation metrics, with every source linked. Public Google Doc.</span>
 </a>

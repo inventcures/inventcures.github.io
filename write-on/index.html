@@ -66,6 +66,25 @@ sup.fn a{text-decoration:none;font-family:var(--sans);font-weight:600;padding:0 
 .btn:hover{filter:brightness(1.06)}
 .sn-toc-src{display:none}
 
+/* reading tree: right margin, terminal style */
+.tree{display:none;position:fixed;top:56px;left:calc(50% + 400px);width:min(230px,calc(50vw - 420px));font:13px/1.5 var(--mono);color:var(--muted);z-index:2}
+.tree-label{margin:0 0 8px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.tree ol{list-style:none;margin:0;padding:0}
+.tree ol ol{padding-left:2ch}
+.tree a{display:block;padding:2px 0;color:var(--muted);text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tree a::before{content:"└ ";color:var(--muted);opacity:.55}
+.tree a:hover{color:var(--fg)}
+.tree a.is-current{color:var(--fg)}
+.tree a.is-current::before{content:"└▸";color:var(--accent);opacity:1}
+.tree-bar{display:flex;align-items:center;gap:1ch;margin:22px 0 0;font-size:12.5px;white-space:nowrap}
+.tree-cells{color:var(--accent);letter-spacing:-.02em}
+.tree-cells .rest{color:var(--muted);opacity:.4}
+.tree-pct{min-width:4ch;color:var(--fg)}
+.tree-time{margin:10px 0 0;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase}
+.readline{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:3;pointer-events:none}
+@media (min-width:1220px){.tree{display:block}.readline{display:none}}
+@media print{.tree,.readline{display:none}}
+
 /* credit card */
 .credit{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:16px 20px;margin:30px 0 0}
 .credit p{margin:8px 0;font-size:16.5px}
@@ -169,7 +188,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 </style>
 </head>
 <body>
-<main data-sidenotes data-sidenotes-toc>
+<main data-sidenotes data-sidenotes-side="left">
 
 <header>
 <p class="eyebrow">Writing · Thinking · Open source</p>
@@ -219,7 +238,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
   <div class="partner"><b>write-on, the navigator</b>Watches quietly, remembers how you write, speaks up only when it is worth it, keeps it short, and lets you ignore it.</div>
 </div>
 
-<h3>Three things I wanted from a pair programmer for writing</h3>
+<h3 id="wants">Three things I wanted from a pair programmer for writing</h3>
 <ul class="wants">
   <li><b>Fast</b>No waiting between a thought and the page.</li>
   <li><b>Performant</b>Stays smooth on a long piece with lots of alternatives.</li>
@@ -272,7 +291,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 <p>Meanwhile the market has learned to copy your voice and then aimed that skill at ghostwriting. Every commercial tool checked uses its model of your voice to generate or rewrite text. None uses it to give you feedback. That gap is where write-on lives: <strong>use what the tool learns about your writing to notice and nudge, not to draft.</strong></p>
 </div>
 
-<h3>The rules that came out of it</h3>
+<h3 id="rules">The rules that came out of it</h3>
 <ol class="rules">
   <li><b>Machine words enter only as options.</b><span>AI output is added as one more alternative under a span, never swapped in. Your version stays active until you flip.</span></li>
   <li><b>The AI may cut or flag, not rewrite.</b><span>Trims are deletions shown as ghosts. Weak sentences are marked, not replaced.</span></li>
@@ -347,6 +366,25 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 <footer>write-on is an open-source project in development by <a href="/">inventcures</a>. It is not affiliated with Jason Fried or 37signals; Write_On and its demo video are his. No frames or footage from his video are used on this page.</footer>
 
 </main>
+<aside class="tree" aria-label="Page outline and reading progress">
+  <p class="tree-label">Tree</p>
+  <ol>
+    <li><a href="#credit-h">Origin</a></li>
+    <li><a href="#why">Why</a></li>
+    <li><a href="#pairing">Pairing</a>
+      <ol><li><a href="#wants">Three wants</a></li></ol></li>
+    <li><a href="#try">Try it</a></li>
+    <li><a href="#what">Roles</a></li>
+    <li><a href="#research">Research</a>
+      <ol><li><a href="#rules">Rules</a></li></ol></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#watch">Watch</a></li>
+    <li><a href="#references">References</a></li>
+  </ol>
+  <div class="tree-bar" aria-hidden="true"><span class="tree-cells"></span><span class="tree-pct">0%</span></div>
+  <p class="tree-time"></p>
+</aside>
+<div class="readline" aria-hidden="true"></div>
 
 <script>
 (function(){
@@ -413,6 +451,38 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
   document.getElementById('demo-reset').addEventListener('click', function(){
     demo.innerHTML = initial; overflowEl.innerHTML = initialOverflow; wire(); wireOverflow();
   });
+})();
+</script>
+<script>
+(function(){
+  var tree=document.querySelector('.tree'); if(!tree) return;
+  var links=[].slice.call(tree.querySelectorAll('a'));
+  var targets=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
+  var cells=tree.querySelector('.tree-cells'), pct=tree.querySelector('.tree-pct'), line=document.querySelector('.readline');
+  var N=20, PART=['','▏','▎','▍','▌','▋','▊','▉'];
+  var main=document.querySelector('main');
+  var words=(main.innerText||main.textContent).split(/\s+/).filter(Boolean).length;
+  tree.querySelector('.tree-time').textContent=Math.max(1,Math.round(words/230))+' min read';
+  var ticking=false;
+  function update(){
+    ticking=false;
+    var max=document.documentElement.scrollHeight-window.innerHeight;
+    var f=max>0?Math.min(1,Math.max(0,window.scrollY/max)):1;
+    var units=Math.round(f*N*8), full=Math.floor(units/8), part=PART[units%8];
+    var rest=N-full-(part?1:0);
+    cells.innerHTML=Array(full+1).join('█')+part+'<span class="rest">'+Array(rest+1).join('░')+'</span>';
+    pct.textContent=Math.round(f*100)+'%';
+    line.style.width=(f*100)+'%';
+    var cur=-1;
+    targets.forEach(function(t,i){if(t&&t.getBoundingClientRect().top<window.innerHeight*0.3)cur=i;});
+    if(f>=0.995)cur=links.length-1;
+    links.forEach(function(a,i){var on=i===cur;a.classList.toggle('is-current',on);if(on)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});
+  }
+  function req(){if(!ticking){ticking=true;requestAnimationFrame(update);}}
+  window.addEventListener('scroll',req,{passive:true});
+  window.addEventListener('resize',req);
+  window.addEventListener('load',req);
+  update();
 })();
 </script>
 <script src="/assets/js/new-tab-links.js" defer></script>

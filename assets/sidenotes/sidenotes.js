@@ -5,7 +5,9 @@
 // note under its paragraph when there is not. Add data-sidenotes-toc to also get a
 // sticky contents list in the left margin, built from a nav.sn-toc inside the container
 // or, failing that, from the container's h2 headings. A page that places its own notes
-// can leave out data-sidenotes-list and still get the contents list.
+// can leave out data-sidenotes-list and still get the contents list. Add
+// data-sidenotes-side="left" to put the notes in the left margin instead, which frees
+// the right margin for something else (leave out data-sidenotes-toc then).
 (function () {
   'use strict';
 
@@ -102,11 +104,15 @@
       var contentRight = box.width - parseFloat(style.paddingRight);
       var viewport = document.documentElement.clientWidth;
 
-      var noteWidth = Math.min(NOTE_MAX, viewport - (box.left + contentRight + GAP) - EDGE);
+      var leftSide = root.getAttribute('data-sidenotes-side') === 'left';
+      var noteWidth = leftSide
+        ? Math.min(NOTE_MAX, box.left + contentLeft - GAP - EDGE)
+        : Math.min(NOTE_MAX, viewport - (box.left + contentRight + GAP) - EDGE);
       var wide = refs.length > 0 && noteWidth >= NOTE_MIN;
       root.classList.toggle('sn-wide', wide);
+      root.classList.toggle('sn-left', leftSide);
       if (wide) {
-        rail.style.left = (contentRight + GAP) + 'px';
+        rail.style.left = (leftSide ? contentLeft - GAP - noteWidth : contentRight + GAP) + 'px';
         rail.style.width = noteWidth + 'px';
         var origin = rail.getBoundingClientRect().top;
         var floor = 0;

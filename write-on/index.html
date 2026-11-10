@@ -4,6 +4,7 @@ layout: null
 <!doctype html>
 <html lang="en">
 <head>
+<script>(function(){var t=null;try{t=localStorage.getItem('st-theme')}catch(e){}if(t!=='light'&&t!=='dark')t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})();</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>write-on</title>
@@ -84,6 +85,15 @@ sup.fn a{text-decoration:none;font-family:var(--sans);font-weight:600;padding:0 
 .readline{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:3;pointer-events:none}
 @media (min-width:1220px){.tree{display:block}.readline{display:none}}
 @media print{.tree,.readline{display:none}}
+/* theme switch: same markup and st-theme storage key as _includes/theme-toggle.html, without its inverting site css */
+.theme-toggle{position:fixed;top:14px;right:14px;z-index:4;display:flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border:1px solid var(--line);border-radius:50%;background:var(--card);color:var(--fg);cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
+.theme-toggle:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.theme-toggle-sun{display:none}
+:root[data-theme="dark"] .theme-toggle-sun{display:block}
+:root[data-theme="dark"] .theme-toggle-moon{display:none}
+@media (max-width:640px){.theme-toggle{top:auto;bottom:16px;right:16px}}
+@media print{.theme-toggle{display:none}}
 
 /* credit card */
 .credit{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:16px 20px;margin:30px 0 0}
@@ -188,6 +198,8 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 </style>
 </head>
 <body>
+<button type="button" class="theme-toggle" data-label-dark="Switch to dark theme" data-label-light="Switch to light theme"><svg class="theme-toggle-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M20.7 14.6A8.5 8.5 0 0 1 9.4 3.3a8.5 8.5 0 1 0 11.3 11.3z"/></svg><svg class="theme-toggle-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 1.5v2.5M12 20v2.5M1.5 12H4M20 12h2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg></button>
+<script>(function(){var d=document.documentElement,b=document.currentScript.previousElementSibling;function sync(){var dark=d.getAttribute('data-theme')==='dark';b.setAttribute('aria-label',dark?b.getAttribute('data-label-light'):b.getAttribute('data-label-dark'));b.title=b.getAttribute('aria-label')}sync();b.addEventListener('click',function(){var t=d.getAttribute('data-theme')==='dark'?'light':'dark';d.setAttribute('data-theme',t);try{localStorage.setItem('st-theme',t)}catch(e){}sync()});if(window.matchMedia){var m=matchMedia('(prefers-color-scheme: dark)'),f=function(e){var s=null;try{s=localStorage.getItem('st-theme')}catch(x){}if(!s){d.setAttribute('data-theme',e.matches?'dark':'light');sync()}};m.addEventListener?m.addEventListener('change',f):m.addListener&&m.addListener(f)}})();</script>
 <main data-sidenotes data-sidenotes-side="left">
 
 <header>

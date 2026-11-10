@@ -354,9 +354,19 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 </nav>
 </header>
 
-<p class="vid-choose">Two versions of the explainer: the full walkthrough below, or a <a href="#video-short">3-minute version</a> if you are short of time.</p>
+<p class="vid-choose">Two versions of the explainer: a 3-minute version first, then the <a href="#video">full 14-minute walkthrough</a> underneath.</p>
 
-<figure class="xp-figure" id="video">
+<figure class="xp-figure" id="video-short">
+  <div class="vid-short">
+    <video controls preload="metadata" playsinline poster="media/vaani-sakhi-short.jpg">
+      <source src="media/vaani-sakhi-short.mp4" type="video/mp4">
+      Your browser cannot play this video. <a href="media/vaani-sakhi-short.mp4">Download the 3-minute version</a>.
+    </video>
+  </div>
+  <figcaption class="xp-credit">The short version: 3 minutes, cut from the same explainer. Kamla and her call are fictional illustrations.</figcaption>
+</figure>
+
+<figure class="xp-figure" id="video" style="margin-top:28px">
   <div class="xp">
     <video controls preload="metadata" playsinline poster="media/vaani-sakhi-explainer.jpg">
       <source src="media/vaani-sakhi-explainer.mp4" type="video/mp4">
@@ -365,16 +375,6 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
     </video>
   </div>
   <figcaption class="xp-credit">A 3Blue1Brown-style explainer video, inspired by Grant Sanderson (<a href="https://www.youtube.com/@3blue1brown">3Blue1Brown on YouTube</a>). 14 minutes, captions on by default. Kamla and her call are fictional illustrations.</figcaption>
-</figure>
-
-<figure class="xp-figure" id="video-short" style="margin-top:28px">
-  <div class="vid-short">
-    <video controls preload="metadata" playsinline poster="media/vaani-sakhi-short.jpg">
-      <source src="media/vaani-sakhi-short.mp4" type="video/mp4">
-      Your browser cannot play this video. <a href="media/vaani-sakhi-short.mp4">Download the 3-minute version</a>.
-    </video>
-  </div>
-  <figcaption class="xp-credit">The short version: 3 minutes, cut from the same explainer. Kamla and her call are fictional illustrations.</figcaption>
 </figure>
 
 <section class="summary" aria-labelledby="summary-h">
@@ -394,7 +394,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 <h2 id="status-h" style="font-size:21px;margin:0">Where it stands today</h2>
 <p>A working prototype of Vaani Sakhi exists, and we are currently talking to potential clinical, health-system, NGO and non-profit partners about where to pilot it.</p>
 <p>The engine underneath it is Palli Sahayak, our palliative-care voice helpline, which is open source under an MIT licence (<a href="https://github.com/inventcures/rag_gci/">code on GitHub</a>). It has been through a structured expert review: 40 synthetic but realistic cases, each rated by 4 palliative care physicians, 160 reviews in all, mean score 7.8 out of 10. The cases were written for the review, so no patient data was involved.</p>
-<p>A full clinical evaluation of Palli Sahayak, including a randomised controlled trial, is planned across four sites: CMC Vellore, KMC Manipal (MAHE), the Coimbatore Cancer Foundation, and the Cachar Cancer Hospital &amp; Research Centre. It has been selected for an evaluation grant, with the formal award still pending, so the evaluation has not begun enrolling.</p>
+<p>A full clinical evaluation of Palli Sahayak, including a randomised controlled trial, is planned across four sites: CMC Vellore, KMC Manipal (MAHE), the Coimbatore Cancer Foundation, and the Cachar Cancer Hospital &amp; Research Centre. It has been selected for an evaluation grant, with the formal award still pending, so the evaluation has not begun enrolling. Vaani Sakhi itself is at prototype stage and has not yet been tested with patients.</p>
 </section>
 
 <p class="kicker" id="why">The problem</p>

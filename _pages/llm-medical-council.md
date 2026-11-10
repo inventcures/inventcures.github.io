@@ -5,7 +5,7 @@ excerpt: "Several LLMs answer one medical case, review each other anonymously, a
 layout: single
 author_profile: false
 # Set this to the Railway URL once the app is deployed; the "Try it" buttons switch on by themselves.
-demo_url: ""
+demo_url: "https://medical-llm-council-production.up.railway.app"
 ---
 
 <!-- Google tag (gtag.js) -->
@@ -66,6 +66,8 @@ demo_url: ""
 .mlc-cta h2 { color: #fff !important; margin: 0 0 8px !important; }
 .mlc-cta p { color: #d0d0d0; margin: 0 0 20px; }
 .mlc-cta .mlc-actions a:not(.mlc-btn) { color: #f0b49c; }
+.mlc-cta .mlc-btn--ghost { color: #f0b49c !important; border-color: #f0b49c; }
+.mlc-cta .mlc-btn--ghost:hover { background: #444; }
 .mlc-disclaimer { font-size: 13px; color: var(--mlc-muted); margin-top: 26px; }
 
 @media (max-width: 760px) {
@@ -172,7 +174,7 @@ demo_url: ""
 
 <h2 id="try-it">Try it yourself</h2>
 
-<p>The council runs in your browser against real models, paid for with your own <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a> key. Each case makes about ten model calls, so expect to pay cents per case, not dollars.</p>
+<p>The council calls real models, paid for with your own <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a> key. Each case makes about ten model calls, so expect to pay cents per case, not dollars.</p>
 
 <ol class="mlc-steps">
   <li><strong>Get an OpenRouter key</strong><span>Sign up at <a href="https://openrouter.ai/keys" target="_blank" rel="noopener">openrouter.ai/keys</a>, add a little credit, and create a key. It starts with <code>sk-or-</code>. Setting a spending limit on the key is a good idea.</span></li>

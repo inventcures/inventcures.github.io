@@ -208,3 +208,5 @@ description: "An open-source voice assistant for palliative care: ask out loud, 
 </section>
 
 </div>
+
+{% include essay-tree.html content=".ps" %}

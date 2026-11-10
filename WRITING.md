@@ -67,6 +67,10 @@ tags: [agent swarms]
 
 Essays use the same page layout as the rest of the site (read time, date, footnotes, MathJax), with an "All essays" link at the bottom.
 
+### Tree, progress bar and share links
+
+Every essay gets a left rail, built from its `##` and `###` headings: the essay title, a **Tree** outline with the current section highlighted as you scroll, a dithered reading-progress bar with a percentage, the read time, and **Share** links (X.com, LinkedIn, Email, Copy URL, Copy markdown). Nothing to do when writing; give sections clear `##`/`###` headings and the tree follows. On screens too narrow for a left rail (below about 1400px wide), a small "Tree 42%" button at the bottom left opens the same panel. "Copy markdown" copies the essay's source from GitHub (front matter removed). To turn the rail off for one essay, set `tree: false` in its front matter. Any other long page can have it too by adding `{% include essay-tree.html content=".ps" %}` at the end, where `content` is the CSS selector of the page's text column (see `/palli-sahayak/` and `/vaani-sakhi/`; other options are listed at the top of `_includes/essay-tree.html`).
+
 ### Margin references
 
 Every essay shows its footnotes as references in the right margin, next to the sentence that cites them (like [hallerite's swarm post](https://hallerite.com/posts/on-the-nature-of-the-swarm/)). On a phone, tapping a footnote number opens the note under the paragraph. Links in the notes open in new tabs. Keep the inline hyperlink in the sentence too, and add a footnote for the source:

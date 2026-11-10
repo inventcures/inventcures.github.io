@@ -4,6 +4,8 @@ layout: single
 {% include writing/styles.html %}
 {% unless page.sidenotes == false %}<link rel="stylesheet" href="{{ '/assets/css/sidenotes.css' | relative_url }}">
 <script src="{{ '/assets/js/sidenotes.js' | relative_url }}" defer></script>{% endunless %}
+{% unless page.tree == false %}{% assign et_words = content | strip_html | number_of_words %}{% assign et_mins = et_words | divided_by: site.words_per_minute %}{% if et_mins < 1 %}{% assign et_mins = 1 %}{% endif %}{% capture et_raw %}https://raw.githubusercontent.com/{{ site.repository }}/master/{{ page.path }}{% endcapture %}
+{% include essay-tree.html mins=et_mins raw=et_raw %}{% endunless %}
 <p class="w-kicker"><a href="{{ '/essays/' | relative_url }}">Essay</a>{% if page.starred %} · ★ starred{% endif %}</p>
 
 {{ content }}

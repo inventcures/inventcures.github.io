@@ -355,21 +355,11 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 
 <p class="kicker" id="watch">Watch</p>
 <h2>A short orientation: how to think with write-on</h2>
-<p>It opens with a note in my own voice on why I built this, then walks through the four ideas behind write-on and what to do in your first minute.</p>
-<div class="yt" id="watch-player">
-  <video controls playsinline preload="metadata" src="https://write-on.up.railway.app/explainer.mp4" aria-label="write-on: an orientation, with the author's voice note"></video>
+<p>It walks through the four ideas behind write-on and what to do in your first minute.</p>
+<div class="yt">
+  <iframe src="https://www.youtube-nocookie.com/embed/W9uIdwJmBO4" title="write-on: an orientation (YouTube)" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
-<p class="small">Inspired by Jason Fried's Write_On; animated with Grant Sanderson's <a href="https://github.com/3b1b/manim">manim</a>. The video streams from the <a href="https://write-on.up.railway.app">write-on app</a>, where it also has captions. Prefer the shorter, narrator-only cut? <a href="https://www.youtube.com/watch?v=W9uIdwJmBO4">Watch it on YouTube</a>.</p>
-<script>
-(function(){
-  // If the app can't serve the video, show the narrator-only cut from YouTube instead.
-  var box=document.getElementById('watch-player'), v=box&&box.querySelector('video');
-  if(!v) return;
-  v.addEventListener('error',function(){
-    box.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/W9uIdwJmBO4" title="write-on: an orientation (YouTube)" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
-  },{once:true});
-})();
-</script>
+<p class="small">Inspired by Jason Fried's Write_On; animated with Grant Sanderson's <a href="https://github.com/3b1b/manim">manim</a>. <a href="https://www.youtube.com/watch?v=W9uIdwJmBO4">Watch on YouTube</a>.</p>
 
 <section class="notes" id="references" aria-labelledby="notes-h" data-sidenotes-list>
 <h2 id="notes-h">References</h2>

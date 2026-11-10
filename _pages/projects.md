@@ -123,7 +123,7 @@ layout: default
 
 <!-- Medical LLM Council - NEW -->
 <section class="featured-section">
-  <a href="/llm-medical-council/" style="display: block; background: linear-gradient(135deg, #1c1917 0%, #44281c 100%); border: 2px solid #f0b49c; border-radius: 12px; overflow: hidden; text-decoration: none; position: relative; margin-bottom: 2rem;">
+  <a href="/medical-llm-council/" style="display: block; background: linear-gradient(135deg, #1c1917 0%, #44281c 100%); border: 2px solid #f0b49c; border-radius: 12px; overflow: hidden; text-decoration: none; position: relative; margin-bottom: 2rem;">
     <div style="position: absolute; top: -8px; right: 20px; background: linear-gradient(135deg, #f97316, #b45309); color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.3rem 0.6rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);">New</div>
     <div style="padding: 1.5rem 2rem;">
       <div style="display: inline-block; background: #f0b49c; color: #1c1917; font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Multi-LLM + Medicine</div>

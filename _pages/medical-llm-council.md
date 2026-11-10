@@ -1,11 +1,12 @@
 ---
-permalink: /llm-medical-council/
+permalink: /medical-llm-council/
+redirect_from: /llm-medical-council/
 title: "Medical LLM Council"
 excerpt: "Several LLMs answer one medical case, review each other anonymously, and have their answers merged by rules built for clinical risk."
 layout: single
 author_profile: false
 # Set this to the Railway URL once the app is deployed; the "Try it" buttons switch on by themselves.
-demo_url: "https://medical-llm-council-production.up.railway.app"
+demo_url: "https://medical-llm-council.up.railway.app"
 ---
 
 <!-- Google tag (gtag.js) -->
@@ -94,10 +95,8 @@ demo_url: "https://medical-llm-council-production.up.railway.app"
 <p class="mlc-lede">Put one medical case to a council of LLMs. Each model answers on its own, then reviews the others' answers without knowing who wrote them, and the answers are merged by rules built around clinical risk, so that one model's warning is never outvoted by three models' reassurance.</p>
 
 <div class="mlc-actions">
-  <a class="mlc-btn" href="https://github.com/inventcures/medical-llm-council" target="_blank" rel="noopener">View the code</a>
-  {% if page.demo_url != "" %}<a class="mlc-btn mlc-btn--ghost" href="{{ page.demo_url }}" target="_blank" rel="noopener">Try it with your own key &rarr;</a>{% else %}<a class="mlc-btn mlc-btn--soon" href="#try-it">Live demo coming soon</a>{% endif %}
+  {% if page.demo_url != "" %}<a class="mlc-btn" href="{{ page.demo_url }}" target="_blank" rel="noopener">Try it with your own key &rarr;</a>{% else %}<a class="mlc-btn mlc-btn--soon" href="#try-it">Live demo coming soon</a>{% endif %}
   <a href="#how-it-works">How it works</a>
-  <a href="https://docs.google.com/document/d/1qJsNUMRpHqpRX836GFdSRprMTKrJwwnF9tX47mXFbu0/edit" target="_blank" rel="noopener">Read the research</a>
 </div>
 
 <h2>The idea</h2>
@@ -197,7 +196,6 @@ demo_url: "https://medical-llm-council-production.up.railway.app"
   <p>Happy to talk about evaluation, merge rules, or clinical use cases.</p>
   <div class="mlc-actions">
     {% if page.demo_url != "" %}<a class="mlc-btn" href="{{ page.demo_url }}" target="_blank" rel="noopener">Try it with your own key</a>{% endif %}
-    <a class="mlc-btn mlc-btn--ghost" href="https://github.com/inventcures/medical-llm-council" target="_blank" rel="noopener">View on GitHub</a>
     <a href="mailto:spiff007@gmail.com?subject=Medical%20LLM%20Council">Email me</a>
     <a href="https://linkedin.com/in/tp53" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://twitter.com/inventcures" target="_blank" rel="noopener">Twitter/X</a>

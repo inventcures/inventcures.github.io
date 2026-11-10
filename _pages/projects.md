@@ -121,6 +121,26 @@ layout: default
   </a>
 </section>
 
+<!-- Medical LLM Council - NEW -->
+<section class="featured-section">
+  <a href="/llm-medical-council/" style="display: block; background: linear-gradient(135deg, #1c1917 0%, #44281c 100%); border: 2px solid #f0b49c; border-radius: 12px; overflow: hidden; text-decoration: none; position: relative; margin-bottom: 2rem;">
+    <div style="position: absolute; top: -8px; right: 20px; background: linear-gradient(135deg, #f97316, #b45309); color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.3rem 0.6rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);">New</div>
+    <div style="padding: 1.5rem 2rem;">
+      <div style="display: inline-block; background: #f0b49c; color: #1c1917; font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Multi-LLM + Medicine</div>
+      <h3 style="color: #fff; font-size: 1.5rem; margin: 0 0 0.4rem 0; font-weight: 700;">Medical LLM Council</h3>
+      <p style="color: #fed7aa; font-size: 0.9rem; margin: 0 0 0.75rem 0; font-weight: 500;">Four LLMs. Anonymous Peer Review. Safety-First Merge.</p>
+      <p style="color: #ddd; font-size: 0.85rem; line-height: 1.5; margin: 0 0 1rem 0;">Inspired by Karpathy's llm-council and adapted for medicine: models answer a case independently, review each other anonymously with Danger Calls, and are merged by rules where one model's safety warning is never outvoted by the others' reassurance. Includes oncology treatment-plan merging, a weighted vote for multiple choice, a benchmark, and a side-by-side disagreement map.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem;">
+        <span style="background: rgba(240,180,156,0.15); color: #fed7aa; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">Safety-First Merge</span>
+        <span style="background: rgba(240,180,156,0.15); color: #fed7aa; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">Danger Calls</span>
+        <span style="background: rgba(240,180,156,0.15); color: #fed7aa; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">Oncology Plans</span>
+        <span style="background: rgba(240,180,156,0.15); color: #fed7aa; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">Bring Your Own Key</span>
+      </div>
+      <span style="color: #fed7aa; font-weight: 600; font-size: 0.9rem;">See How It Works &rarr;</span>
+    </div>
+  </a>
+</section>
+
 <!-- Virtual Tumor Board - Featured -->
 <section class="featured-section">
   <a href="/ai-powered-virtual-mtb/" style="display: block; background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); border: 2px solid #818cf8; border-radius: 12px; overflow: hidden; text-decoration: none; position: relative; margin-bottom: 2rem;">

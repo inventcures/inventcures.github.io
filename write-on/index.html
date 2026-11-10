@@ -13,8 +13,6 @@ layout: null
 <meta property="og:description" content="Alternative control at the word, sentence and paragraph level, plus a learning layer that notices how you write. Inspired by Jason Fried's Write_On.">
 <link rel="canonical" href="https://inventcures.github.io/write-on/">
 {% include analytics.html %}
-<link rel="stylesheet" href="/assets/explainer-player/explainer-player.css">
-<script src="/assets/explainer-player/explainer-player.js" defer></script>
 <link rel="stylesheet" href="/assets/sidenotes/sidenotes.css">
 <script src="/assets/sidenotes/sidenotes.js" defer></script>
 <style>
@@ -154,6 +152,8 @@ sup.fn a{text-decoration:none;font-family:var(--sans);font-weight:600;padding:0 
 .wants li b{display:block;font-family:var(--serif);font-size:21px;font-weight:600;margin-bottom:4px}
 .wants li.main{border:2px solid var(--accent);background:var(--accent-soft)}
 @media (max-width:680px){.wants{grid-template-columns:1fr}}
+.yt{position:relative;aspect-ratio:16/9;margin:18px 0 0;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#020817}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .name-note{margin:18px 0 0;padding:12px 16px;border-radius:10px;background:var(--amber-soft);border:1px solid var(--amber);font-size:15.5px}
 
 .notes ol{padding-left:1.8em;margin:14px 0}
@@ -183,20 +183,11 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 </ul>
 <div class="actions">
   <a class="btn" href="https://write-on.up.railway.app">Try write-on</a>
+  <a class="btn ghost" href="#watch">Watch the orientation</a>
   <a class="btn ghost" href="#try">Try the idea on this page</a>
   <a class="btn ghost" href="https://docs.google.com/document/d/1cUtefDRhKz6MH6sLBR8UJH2IvLyExLXTrn-mxrCDDBE/view">Read the research report</a>
 </div>
 </header>
-
-<figure class="xp-figure" id="video" style="margin:30px 0 0">
-  <div class="xp">
-    <video controls preload="none" playsinline poster="media/write-on-orientation.jpg">
-      <source src="https://write-on.up.railway.app/explainer.mp4" type="video/mp4">
-      <track kind="captions" src="media/write-on-orientation.vtt" srclang="en" label="English" default>
-    </video>
-  </div>
-  <figcaption class="xp-credit">A 5-minute orientation: how to think with write-on. Inspired by Jason Fried's Write_On; animated with Grant Sanderson's <a href="https://github.com/3b1b/manim">manim</a>. Captions on by default.</figcaption>
-</figure>
 
 <section class="credit" aria-labelledby="credit-h">
 <h2 id="credit-h" style="font-size:21px;margin:0">Where it started</h2>
@@ -330,6 +321,14 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
   </li>
 </ol>
 <p><strong><a href="https://write-on.up.railway.app">Try Phase 0 at write-on.up.railway.app</a>.</strong> It opens with a sample piece to play with. The code and design notes are on <a href="https://github.com/inventcures/write-on">GitHub</a>.</p>
+
+<p class="kicker" id="watch">Watch</p>
+<h2>A short orientation: how to think with write-on</h2>
+<p>It walks through the four ideas behind write-on and what to do in your first minute.</p>
+<div class="yt">
+  <iframe src="https://www.youtube-nocookie.com/embed/W9uIdwJmBO4" title="write-on: an orientation (YouTube)" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+<p class="small">Inspired by Jason Fried's Write_On; animated with Grant Sanderson's <a href="https://github.com/3b1b/manim">manim</a>. <a href="https://www.youtube.com/watch?v=W9uIdwJmBO4">Watch on YouTube</a>.</p>
 
 <section class="notes" id="references" aria-labelledby="notes-h" data-sidenotes-list>
 <h2 id="notes-h">References</h2>

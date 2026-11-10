@@ -43,30 +43,19 @@
   document.body.appendChild(rail);
   rail.hidden = false;
   var root = document.documentElement;
-  var meter = rail.querySelector('.et-meter'), cells = rail.querySelector('.et-cells'), pct = rail.querySelector('.et-pct');
-  var meterHome = meter.nextSibling, CELLS = 16, cellEls = [], tcellEls = null;
-  // Segmented cells, like a terminal progress bar: full, one partly filled, then shaded.
-  cells.textContent = '';
-  for (var ci = 0; ci < CELLS; ci++) cellEls.push(cells.appendChild(document.createElement('i')));
-  function fillCells(els, p) {
-    var x = p * els.length;
-    els.forEach(function (c, i) {
-      var f = Math.max(0, Math.min(1, x - i));
-      c.style.setProperty('--f', (Math.round(f * 8) / 8 * 100) + '%');
-    });
-  }
-  function drawCells(p) { fillCells(cellEls, p); if (tcellEls) fillCells(tcellEls, p); }
+  var meter = rail.querySelector('.et-meter'), fills = [rail.querySelector('.et-fill')], pct = rail.querySelector('.et-pct');
+  var meterHome = meter.nextSibling;
+  function drawCells(p) { fills.forEach(function (f) { f.style.width = (p * 100) + '%'; }); }
 
   var toggle = document.createElement('button');
   toggle.type = 'button';
   toggle.className = 'et-toggle';
   toggle.setAttribute('aria-controls', 'et-rail');
   toggle.setAttribute('aria-expanded', 'false');
-  toggle.innerHTML = '<span>Tree</span><span class="et-cells" aria-hidden="true"></span><span class="et-tpct">0%</span>';
+  toggle.innerHTML = '<span>Tree</span><span class="et-bar" aria-hidden="true"><span class="et-fill"></span></span><span class="et-tpct">0%</span>';
   document.body.appendChild(toggle);
-  var tpct = toggle.querySelector('.et-tpct'), tcells = toggle.querySelector('.et-cells');
-  tcellEls = [];
-  for (var ti = 0; ti < 8; ti++) tcellEls.push(tcells.appendChild(document.createElement('i')));
+  var tpct = toggle.querySelector('.et-tpct');
+  fills.push(toggle.querySelector('.et-fill'));
   function setOpen(o) { rail.classList.toggle('et-open', o); toggle.setAttribute('aria-expanded', o); }
   toggle.addEventListener('click', function () { setOpen(!rail.classList.contains('et-open')); });
   rail.addEventListener('click', function (e) { if (e.target.closest('nav a') && !wideMode) setOpen(false); });

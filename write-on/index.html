@@ -149,6 +149,11 @@ sup.fn a{text-decoration:none;font-family:var(--sans);font-weight:600;padding:0 
 .pair .you{border-color:var(--plum);background:var(--plum-soft)}
 .pair .partner{border-color:var(--blue);background:var(--blue-soft)}
 @media (max-width:680px){.pair{grid-template-columns:1fr}}
+.wants{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.wants li{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--card);font-size:15px;line-height:1.5}
+.wants li b{display:block;font-family:var(--serif);font-size:21px;font-weight:600;margin-bottom:4px}
+.wants li.main{border:2px solid var(--accent);background:var(--accent-soft)}
+@media (max-width:680px){.wants{grid-template-columns:1fr}}
 .name-note{margin:18px 0 0;padding:12px 16px;border-radius:10px;background:var(--amber-soft);border:1px solid var(--amber);font-size:15.5px}
 
 .notes ol{padding-left:1.8em;margin:14px 0}
@@ -222,6 +227,13 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
   <div class="you"><b>You, the driver</b>Type every sentence. Choose between alternatives. Decide what stays, what fades and what gets stashed.</div>
   <div class="partner"><b>write-on, the navigator</b>Watches quietly, remembers how you write, speaks up only when it is worth it, keeps it short, and lets you ignore it.</div>
 </div>
+
+<h3>Three things I wanted from a pair programmer for writing</h3>
+<ul class="wants">
+  <li><b>Fast</b>No waiting between a thought and the page.</li>
+  <li><b>Performant</b>Stays smooth on a long piece with lots of alternatives.</li>
+  <li class="main"><b>Productive</b>Most important of all: it assists when nudged, else stays out of your way.</li>
+</ul>
 
 <div class="contrast">
   <div class="no"><b>A ghostwriter</b>You type <q>The meeting was really very productive and we made a lot of progress.</q> It rewrites the sentence for you.</div>

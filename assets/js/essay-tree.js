@@ -3,12 +3,29 @@
 // screens: a "Tree · 42%" button that opens the same panel as a sheet.
 (function () {
   var rail = document.getElementById('et-rail');
-  var content = document.querySelector('.page__content');
+  if (!rail) return;
+  var content = document.querySelector(rail.getAttribute('data-content') || '.page__content');
   var stMain = document.querySelector('.st-main');
-  if (!rail || !content) return;
-  var heads = Array.prototype.filter.call(content.querySelectorAll('h2, h3'), function (h) {
-    return h.id && !h.closest('.footnotes, .sn-note');
+  if (!content) return;
+  var used = {};
+  function slug(t) {
+    var b = t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'section', s = b, i = 2;
+    while (used[s] || document.getElementById(s)) s = b + '-' + i++;
+    used[s] = 1;
+    return s;
+  }
+  var heads = Array.prototype.filter.call(content.querySelectorAll(rail.getAttribute('data-heads') || 'h2, h3'), function (h) {
+    if (h.closest('.footnotes, .sn-note, .sn, .sn-rail, .sn-toc-rail, nav, figure, aside') || !h.textContent.trim()) return false;
+    if (!h.id) h.id = slug(h.textContent);
+    h.classList.add('et-target');
+    return true;
   });
+  // Read time, when the page didn't supply one.
+  var readEl = rail.querySelector('.et-read');
+  if (readEl && !readEl.textContent.trim()) {
+    var words = (content.innerText || content.textContent).split(/\s+/).filter(Boolean).length;
+    readEl.textContent = Math.max(1, Math.round(words / (parseFloat(rail.getAttribute('data-wpm')) || 160))) + ' min read';
+  }
   var list = rail.querySelector('.et-tree');
   var links = heads.map(function (h) {
     var li = document.createElement('li');
@@ -68,7 +85,8 @@
       copyText(url).then(function () { flash(a, 'Copied URL'); }, function () { flash(a, 'Copy failed'); });
       return;
     }
-    var md = fetch(share.getAttribute('data-raw')).then(function (r) {
+    var raw = share.getAttribute('data-raw');
+    var md = (raw ? fetch(raw) : Promise.reject()).then(function (r) {
       if (!r.ok) throw new Error(r.status);
       return r.text();
     }).then(function (t) {
@@ -83,16 +101,17 @@
     } else md.then(copyText).then(done, fail);
   });
 
-  var footer = document.querySelector('.page__footer'), TOP = 96;
-  var MINW = 180, MAXW = 260, GAP = 44, wideMode = null;
+  var footer = document.querySelector(rail.getAttribute('data-footer') || '.page__footer'), TOP = 96;
+  var MINW = 160, MAXW = 260, GAP = 36, wideMode = null;
   function place() {
     var cr = content.getBoundingClientRect();
+    var cl = cr.left + (parseFloat(getComputedStyle(content).paddingLeft) || 0);
     var floor = 16;
     if (stMain) {
       var sr = stMain.getBoundingClientRect();
       floor = sr.left + Math.max(16, parseFloat(getComputedStyle(stMain).paddingLeft) || 0);
     }
-    var room = cr.left - floor - GAP;
+    var room = cl - floor - GAP;
     var w = room >= MINW;
     if (w !== wideMode) {
       wideMode = w;
@@ -103,7 +122,7 @@
     if (w) {
       var width = Math.min(MAXW, room);
       rail.style.width = width + 'px';
-      rail.style.left = (cr.left - GAP - width) + 'px';
+      rail.style.left = (cl - GAP - width) + 'px';
     } else {
       rail.style.width = rail.style.left = rail.style.top = '';
     }

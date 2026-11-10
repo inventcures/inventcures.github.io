@@ -1,0 +1,29 @@
+{% comment %}
+  Left rail with title, heading TREE, dithered reading progress, read time and
+  SHARE links. Used by every essay (_layouts/essay.html); other long pages can
+  include it too. Parameters, all optional:
+    content  CSS selector of the text column (default ".page__content")
+    heads    headings to list (default "h2, h3")
+    footer   element the rail must not cover (default ".page__footer")
+    mins     read time in minutes (default: counted in the browser)
+    raw      URL of the markdown source for "Copy markdown"
+             (default: copies a markdown link to the page)
+    title    rail title (default page.title)
+{% endcomment %}{% assign et_url = page.url | absolute_url %}{% assign et_t = include.title | default: page.title | markdownify | strip_html | strip %}
+<link rel="stylesheet" href="{{ '/assets/css/essay-tree.css' | relative_url }}">
+<script src="{{ '/assets/js/essay-tree.js' | relative_url }}" defer></script>
+<aside class="et-rail" id="et-rail" aria-label="Outline and reading progress" hidden{% if include.content %} data-content="{{ include.content }}"{% endif %}{% if include.heads %} data-heads="{{ include.heads }}"{% endif %}{% if include.footer %} data-footer="{{ include.footer }}"{% endif %} data-wpm="{{ site.words_per_minute | default: 160 }}">
+  <p class="et-title">{{ et_t }}</p>
+  <p class="et-label">Tree</p>
+  <nav aria-label="Sections"><ol class="et-tree"></ol></nav>
+  <div class="et-progress"><span class="et-bar" role="progressbar" aria-label="Reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="et-fill"></span></span><span class="et-pct">0%</span></div>
+  <p class="et-read">{% if include.mins %}{{ include.mins }} min read{% endif %}</p>
+  <p class="et-label et-share-label">Share</p>
+  <ul class="et-tree et-share"{% if include.raw %} data-raw="{{ include.raw }}"{% endif %} data-url="{{ et_url }}" data-title="{{ et_t | escape }}">
+    <li><a href="https://x.com/intent/post?text={{ et_t | url_encode }}&amp;url={{ et_url | url_encode }}" target="_blank" rel="noopener noreferrer">X.com</a></li>
+    <li><a href="https://www.linkedin.com/sharing/share-offsite/?url={{ et_url | url_encode }}" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+    <li><a href="mailto:?subject={{ et_t | url_encode }}&amp;body={{ et_url | url_encode }}">Email</a></li>
+    <li><a href="#" data-copy="url">Copy URL</a></li>
+    <li><a href="#" data-copy="md">Copy markdown</a></li>
+  </ul>
+</aside>

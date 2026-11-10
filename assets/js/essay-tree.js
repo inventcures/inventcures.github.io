@@ -43,16 +43,30 @@
   document.body.appendChild(rail);
   rail.hidden = false;
   var root = document.documentElement;
-  var fill = rail.querySelector('.et-fill'), bar = rail.querySelector('.et-bar'), pct = rail.querySelector('.et-pct');
+  var meter = rail.querySelector('.et-meter'), cells = rail.querySelector('.et-cells'), pct = rail.querySelector('.et-pct');
+  var meterHome = meter.nextSibling, CELLS = 16, cellEls = [], tcellEls = null;
+  // Segmented cells, like a terminal progress bar: full, one partly filled, then shaded.
+  cells.textContent = '';
+  for (var ci = 0; ci < CELLS; ci++) cellEls.push(cells.appendChild(document.createElement('i')));
+  function fillCells(els, p) {
+    var x = p * els.length;
+    els.forEach(function (c, i) {
+      var f = Math.max(0, Math.min(1, x - i));
+      c.style.setProperty('--f', (Math.round(f * 8) / 8 * 100) + '%');
+    });
+  }
+  function drawCells(p) { fillCells(cellEls, p); if (tcellEls) fillCells(tcellEls, p); }
 
   var toggle = document.createElement('button');
   toggle.type = 'button';
   toggle.className = 'et-toggle';
   toggle.setAttribute('aria-controls', 'et-rail');
   toggle.setAttribute('aria-expanded', 'false');
-  toggle.innerHTML = '<span>Tree</span><span class="et-tpct">0%</span>';
+  toggle.innerHTML = '<span>Tree</span><span class="et-cells" aria-hidden="true"></span><span class="et-tpct">0%</span>';
   document.body.appendChild(toggle);
-  var tpct = toggle.querySelector('.et-tpct');
+  var tpct = toggle.querySelector('.et-tpct'), tcells = toggle.querySelector('.et-cells');
+  tcellEls = [];
+  for (var ti = 0; ti < 8; ti++) tcellEls.push(tcells.appendChild(document.createElement('i')));
   function setOpen(o) { rail.classList.toggle('et-open', o); toggle.setAttribute('aria-expanded', o); }
   toggle.addEventListener('click', function () { setOpen(!rail.classList.contains('et-open')); });
   rail.addEventListener('click', function (e) { if (e.target.closest('nav a') && !wideMode) setOpen(false); });
@@ -101,6 +115,7 @@
     } else md.then(copyText).then(done, fail);
   });
 
+  var floatMeter = false, MTOP = 16;
   var footer = document.querySelector(rail.getAttribute('data-footer') || '.page__footer'), TOP = 96;
   var MINW = 160, MAXW = 260, GAP = 36, wideMode = null;
   function place() {
@@ -126,6 +141,25 @@
     } else {
       rail.style.width = rail.style.left = rail.style.top = '';
     }
+    // The progress meter sits in the right margin, fixed, when it fits there.
+    var cright = cr.right - (parseFloat(getComputedStyle(content).paddingRight) || 0);
+    if (meter.parentNode !== document.body) { document.body.appendChild(meter); }
+    meter.classList.add('et-float');
+    var mw = meter.offsetWidth, mleft = cright + 32;
+    // Keep clear of the round theme button in the top-right corner: sit beside
+    // it when there's room, otherwise just below it.
+    var fitsBeside = mleft + mw <= window.innerWidth - 72;
+    var float = window.innerWidth >= 900 && (fitsBeside || mleft + mw <= window.innerWidth - 16);
+    MTOP = fitsBeside ? 16 : 68;
+    if (float) {
+      meter.style.left = mleft + 'px';
+    } else {
+      meter.classList.remove('et-float');
+      meter.style.left = meter.style.top = '';
+      rail.insertBefore(meter, meterHome);
+    }
+    floatMeter = float;
+    root.classList.toggle('et-meter-right', float);
     update();
   }
 
@@ -136,13 +170,18 @@
     var p = total > 0 ? -cr.top / total : (cr.top < 0 ? 1 : 0);
     p = Math.max(0, Math.min(1, p));
     var n = Math.round(p * 100);
-    fill.style.width = (p * 100) + '%';
+    drawCells(p);
     pct.textContent = tpct.textContent = n + '%';
-    bar.setAttribute('aria-valuenow', n);
+    meter.setAttribute('aria-valuenow', n);
     // Like position:sticky: the rail slides up rather than covering the footer.
     if (wideMode && footer) {
       var ft = footer.getBoundingClientRect().top - (parseFloat(getComputedStyle(footer).marginTop) || 0);
       rail.style.top = Math.min(TOP, ft - rail.offsetHeight - 24) + 'px';
+    }
+    if (floatMeter) {
+      var mt = MTOP;
+      if (footer) mt = Math.min(MTOP, footer.getBoundingClientRect().top - (parseFloat(getComputedStyle(footer).marginTop) || 0) - meter.offsetHeight - 24);
+      meter.style.top = mt + 'px';
     }
 
     var line = Math.min(140, window.innerHeight * 0.3), cur = -1;

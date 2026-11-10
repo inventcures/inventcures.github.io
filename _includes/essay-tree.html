@@ -1,6 +1,6 @@
 {% comment %}
   Left rail with title, heading TREE, dithered reading progress, read time and
-  SHARE links. Used by every essay (_layouts/essay.html); other long pages can
+  SHARE links. The progress meter floats in the right margin when there is room. Used by every essay (_layouts/essay.html); other long pages can
   include it too. Parameters, all optional:
     content  CSS selector of the text column (default ".page__content")
     heads    headings to list (default "h2, h3")
@@ -16,7 +16,7 @@
   <p class="et-title">{{ et_t }}</p>
   <p class="et-label">Tree</p>
   <nav aria-label="Sections"><ol class="et-tree"></ol></nav>
-  <div class="et-progress"><span class="et-bar" role="progressbar" aria-label="Reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="et-fill"></span></span><span class="et-pct">0%</span></div>
+  <div class="et-meter" role="progressbar" aria-label="Reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="et-meter-t" aria-hidden="true">progress</span><span class="et-cells" aria-hidden="true"></span><span class="et-pct">0%</span></div>
   <p class="et-read">{% if include.mins %}{{ include.mins }} min read{% endif %}</p>
   <p class="et-label et-share-label">Share</p>
   <ul class="et-tree et-share"{% if include.raw %} data-raw="{{ include.raw }}"{% endif %} data-url="{{ et_url }}" data-title="{{ et_t | escape }}">

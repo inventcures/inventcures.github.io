@@ -12,6 +12,8 @@ layout: null
 <meta property="og:title" content="write-on: a writing thought partner that never writes for you">
 <meta property="og:description" content="Alternative control at the word, sentence and paragraph level, plus a learning layer that notices how you write. Inspired by Jason Fried's Write_On.">
 <link rel="canonical" href="https://inventcures.github.io/write-on/">
+<link rel="stylesheet" href="/assets/explainer-player/explainer-player.css">
+<script src="/assets/explainer-player/explainer-player.js" defer></script>
 <link rel="stylesheet" href="/assets/sidenotes/sidenotes.css">
 <script src="/assets/sidenotes/sidenotes.js" defer></script>
 <style>
@@ -180,9 +182,21 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 </div>
 </header>
 
+<figure class="xp-figure" id="video" style="margin:30px 0 0">
+  <div class="xp">
+    <video controls preload="none" playsinline poster="media/write-on-orientation.jpg">
+      <source src="https://write-on.up.railway.app/explainer.mp4" type="video/mp4">
+      <track kind="captions" src="media/write-on-orientation.vtt" srclang="en" label="English" default>
+    </video>
+  </div>
+  <figcaption class="xp-credit">A 5-minute orientation: how to think with write-on. Inspired by Jason Fried's Write_On; animated with Grant Sanderson's <a href="https://github.com/3b1b/manim">manim</a>. Captions on by default.</figcaption>
+</figure>
+
 <section class="credit" aria-labelledby="credit-h">
 <h2 id="credit-h" style="font-size:21px;margin:0">Where it started</h2>
-<p>This project exists because of <strong>Jason Fried</strong>, co-founder of 37signals. In September 2026 he posted <a href="https://x.com/jasonfried/status/2105403067793584590">a short video of Write_On</a>, a writing tool he had wanted for about a decade and built over a weekend with Claude's help.<sup class="fn"><a href="#ref-fried">1</a></sup> He described it like this:</p>
+<p>On 10 November 2026 Anthropic released Fable 5.2, and my X timeline filled up with people pushing it to its limits: one-shotting hardware devices, reasoning through long, detailed chemical reactions step by step. It looked like all the interesting stuff had already been built. So what could I make that would stand out, and that I actually wanted for myself?</p>
+<p>I'd been wanting to write more, and more thoughtfully: to think before I jot things down, and not hand my thinking over to an LLM. I scrolled back to one of my favourite uses of AI, Jason Fried's Write_On post from a month or so earlier. He hadn't released it as open source. So I took what he'd shown publicly, added my own ideas, did deep research on writing assistants in academia and industry, and started building the moment Fable 5.2 showed up on my Claude desktop. This is that attempt: a minimal, useful thought partner for anyone who wants to write.</p>
+<p>The idea at its heart belongs to <strong>Jason Fried</strong>, co-founder of 37signals. In September 2026 he posted <a href="https://x.com/jasonfried/status/2105403067793584590">a short video of Write_On</a>, a writing tool he had wanted for about a decade and built over a weekend with Claude's help.<sup class="fn"><a href="#ref-fried">1</a></sup> He described it like this:</p>
 <blockquote>"Essentially it's 'alternative control' at the word, sentence, and paragraph level, plus a way to dim stuff back, and stash stuff near by. Not version control, but alternative control."<span class="who">Jason Fried, on X</span></blockquote>
 <p>Watching that video changed how I think about writing tools. It showed me that a tool can make room for the way you actually think while you write: trying three versions of a line, keeping the one you're unsure of faded on the page, setting aside a sentence you love but can't use yet. <strong>All credit for that interface idea is his.</strong> Please <a href="https://x.com/jasonfried/status/2105403067793584590">watch his video</a> first; it explains the idea better than any description.</p>
 <p>write-on uses Write_On as its base and builds on top of it. I spent the first part of this project on deep research into what academia and industry know about writing copilots and thought partners that <em>augment</em> writing rather than replace it, and folded what I found into the design. The short version of that research is below. The full report is a <a href="https://docs.google.com/document/d/1cUtefDRhKz6MH6sLBR8UJH2IvLyExLXTrn-mxrCDDBE/view">public Google Doc</a>.</p>

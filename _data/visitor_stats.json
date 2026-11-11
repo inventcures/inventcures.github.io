@@ -1,21 +1,36 @@
 {
-  "updated": "2026-11-08T09:07:55Z",
+  "updated": "2026-11-11T09:33:50Z",
   "since": "2026-11-04",
-  "total_visitors": 70,
+  "total_visitors": 163,
   "countries": [
     {
       "code": "IN",
       "name": "India",
-      "count": 43
+      "count": 105
     },
     {
       "code": "US",
       "name": "United States",
-      "count": 19
+      "count": 37
+    },
+    {
+      "code": "GB",
+      "name": "United Kingdom",
+      "count": 5
+    },
+    {
+      "code": "PL",
+      "name": "Poland",
+      "count": 4
     },
     {
       "code": "CH",
       "name": "Switzerland",
+      "count": 3
+    },
+    {
+      "code": "JP",
+      "name": "Japan",
       "count": 2
     },
     {
@@ -29,13 +44,13 @@
       "count": 1
     },
     {
-      "code": "DK",
-      "name": "Denmark",
+      "code": "CN",
+      "name": "China",
       "count": 1
     },
     {
-      "code": "JP",
-      "name": "Japan",
+      "code": "DK",
+      "name": "Denmark",
       "count": 1
     },
     {
@@ -44,8 +59,13 @@
       "count": 1
     },
     {
-      "code": "GB",
-      "name": "United Kingdom",
+      "code": "ES",
+      "name": "Spain",
+      "count": 1
+    },
+    {
+      "code": "AE",
+      "name": "United Arab Emirates",
       "count": 1
     }
   ]

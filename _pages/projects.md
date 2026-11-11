@@ -73,7 +73,6 @@ layout: default
         <span style="background: rgba(224,138,102,0.15); color: #f0b49c; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">ClinicalTrials.gov</span>
         <span style="background: rgba(224,138,102,0.15); color: #f0b49c; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">Open Targets</span>
         <span style="background: rgba(224,138,102,0.15); color: #f0b49c; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">2026 Meeting Abstracts</span>
-        <span style="background: rgba(224,138,102,0.15); color: #f0b49c; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">Open Source</span>
       </div>
       <span style="color: #f0b49c; font-weight: 600; font-size: 0.9rem;">See the Project &amp; Open the App &rarr;</span>
     </div>

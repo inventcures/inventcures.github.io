@@ -1,0 +1,332 @@
+---
+layout: null
+---
+<!doctype html>
+<html lang="en">
+<head>
+<script>(function(){var t=null;try{t=localStorage.getItem('st-theme')}catch(e){}if(t!=='light'&&t!=='dark')t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})();</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OncoSignal</title>
+<meta name="description" content="OncoSignal: an open oncology intelligence tracker. For each cancer it shows trial news from registry changes, the trial landscape, lead investigators, genetically supported targets and 2026 conference abstracts, all from open data.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OncoSignal: open oncology intelligence, one cancer at a time">
+<meta property="og:description" content="Trial news, the trial landscape, lead investigators, genetically supported targets and 2026 meeting abstracts for each cancer, built on ClinicalTrials.gov, PubMed, Open Targets and Crossref.">
+<meta property="og:image" content="https://inventcures.github.io/onco-signal/media/targets-nsclc.png">
+<link rel="canonical" href="https://inventcures.github.io/onco-signal/">
+{% include analytics.html %}
+<style>
+:root{
+  --bg:#faf9f5;--card:#fffdf9;--fg:#29261b;--muted:#7a7466;--line:#e8e1d3;--soft:#f3ece0;
+  --accent:#c15f3c;--accent-soft:#f9e3dc;--blue:#2f6f8f;--blue-soft:#e3eef3;
+  --green:#3f6212;--green-soft:#e6efdc;--amber:#8a5a12;--amber-soft:#fbf1d9;
+  --serif:ui-serif,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#262624;--card:#2c2b28;--fg:#ece9e1;--muted:#a9a395;--line:#3d3a34;--soft:#34322e;
+  --accent:#e08a66;--accent-soft:#46271f;--blue:#7fb3cc;--blue-soft:#24343c;
+  --green:#b5d48c;--green-soft:#2e3a24;--amber:#ecc77d;--amber-soft:#3a3120}}
+:root[data-theme="dark"]{
+  --bg:#262624;--card:#2c2b28;--fg:#ece9e1;--muted:#a9a395;--line:#3d3a34;--soft:#34322e;
+  --accent:#e08a66;--accent-soft:#46271f;--blue:#7fb3cc;--blue-soft:#24343c;
+  --green:#b5d48c;--green-soft:#2e3a24;--amber:#ecc77d;--amber-soft:#3a3120}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 var(--sans)}
+main{max-width:760px;margin:0 auto;padding:56px 20px 72px}
+header{margin:0 0 22px}
+.eyebrow,.kicker{font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+.kicker{margin:64px 0 6px}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(38px,7vw,56px);line-height:1.05;letter-spacing:-.01em;margin:0 0 10px}
+.lede{font-size:19.5px;color:var(--muted);margin:0}
+.lede b{color:var(--fg);font-weight:600}
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(24px,4vw,29px);margin:0 0 10px;letter-spacing:-.005em}
+h3{font-size:17px;font-weight:650;margin:22px 0 6px}
+p{margin:12px 0}
+a{color:var(--accent)}
+.prose p{font-family:var(--serif);font-size:18.5px;line-height:1.7}
+.small{font-size:14px;color:var(--muted)}
+code{font-family:var(--mono);font-size:.84em;background:var(--soft);border:1px solid var(--line);border-radius:5px;padding:.05em .35em;white-space:nowrap}
+:target{scroll-margin-top:24px}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none}
+.facts li{font-size:13.5px;line-height:1.35;padding:6px 11px;border-radius:999px;background:var(--card);border:1px solid var(--line)}
+.facts b{font-weight:650}
+.facts a{text-decoration:none}
+.actions{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin:22px 0 0;font-size:15px}
+.btn{display:inline-block;padding:9px 16px;border-radius:8px;background:var(--accent);color:var(--bg) !important;text-decoration:none;font-weight:600;border:1px solid var(--accent)}
+.btn.ghost{background:transparent;color:var(--accent) !important}
+.btn:hover{filter:brightness(1.06)}
+
+/* reading tree: right margin, terminal style */
+.tree{display:none;position:fixed;top:56px;left:calc(50% + 400px);width:min(230px,calc(50vw - 420px));font:13px/1.5 var(--mono);color:var(--muted);z-index:2}
+.tree-label{margin:0 0 8px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.tree ol{list-style:none;margin:0;padding:0}
+.tree ol ol{padding-left:2ch}
+.tree a{display:block;padding:2px 0;color:var(--muted);text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tree a::before{content:"└ ";color:var(--muted);opacity:.55}
+.tree a:hover{color:var(--fg)}
+.tree a.is-current{color:var(--fg)}
+.tree a.is-current::before{content:"└▸";color:var(--accent);opacity:1}
+.tree-bar{display:flex;align-items:center;gap:1ch;margin:22px 0 0;font-size:12.5px;white-space:nowrap}
+.tree-cells{color:var(--accent);letter-spacing:-.02em}
+.tree-cells .rest{color:var(--muted);opacity:.4}
+.tree-pct{min-width:4ch;color:var(--fg)}
+.tree-time{margin:10px 0 0;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase}
+.readline{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:3;pointer-events:none}
+@media (min-width:1220px){.tree{display:block}.readline{display:none}}
+@media print{.tree,.readline{display:none}}
+.theme-toggle{position:fixed;top:14px;right:14px;z-index:4;display:flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border:1px solid var(--line);border-radius:50%;background:var(--card);color:var(--fg);cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
+.theme-toggle:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.theme-toggle-sun{display:none}
+:root[data-theme="dark"] .theme-toggle-sun{display:block}
+:root[data-theme="dark"] .theme-toggle-moon{display:none}
+@media (max-width:640px){.theme-toggle{top:auto;bottom:16px;right:16px}}
+@media print{.theme-toggle{display:none}}
+
+.credit{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:16px 20px;margin:30px 0 0}
+.credit p{margin:8px 0;font-size:16.5px}
+
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:22px 0 0}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px 12px}
+.tile .num{font-family:var(--serif);font-size:34px;line-height:1.05;font-weight:600}
+.tile .what{font-size:14.5px;line-height:1.45;margin-top:6px}
+
+.shot{margin:18px 0 0}
+.shot > a{display:block;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#f6f6f2}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{margin:8px 0 0;font-size:13.5px;line-height:1.5;color:var(--muted)}
+
+.rules{counter-reset:r;list-style:none;margin:16px 0 0;padding:0}
+.rules li{counter-increment:r;position:relative;padding:10px 0 10px 44px;border-top:1px solid var(--line);font-size:16px}
+.rules li:last-child{border-bottom:1px solid var(--line)}
+.rules li::before{content:counter(r);position:absolute;left:0;top:10px;width:28px;height:28px;border-radius:50%;border:1px solid var(--accent);color:var(--accent);font-size:13px;font-weight:700;display:grid;place-items:center}
+.rules b{font-weight:650}
+.rules span{display:block;color:var(--muted);font-size:14.5px}
+
+.src{width:100%;border-collapse:collapse;margin:16px 0 0;font-size:15px;line-height:1.5}
+.src th,.src td{text-align:left;vertical-align:top;padding:9px 10px 9px 0;border-bottom:1px solid var(--line)}
+.src th{font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.src td:first-child{font-weight:600}
+
+.phases{list-style:none;margin:18px 0 0;padding:0}
+.phase{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--card);margin:0 0 12px}
+.phase.now{border:2px solid var(--blue);background:var(--blue-soft)}
+.phase h3{margin:0 0 4px;font-size:16.5px}
+.phase .state{float:right;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:4px;background:var(--soft);color:var(--muted);margin-left:10px}
+.phase.now .state{background:var(--blue);color:var(--bg)}
+.phase p{margin:4px 0 0;font-size:15px;line-height:1.55}
+
+.doc-card{display:block;text-decoration:none;color:inherit;margin:12px 0 0;padding:14px 18px;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+.doc-card:hover,.doc-card:focus-visible{border-color:var(--accent)}
+.doc-card b{display:block;font-size:16.5px;color:var(--accent)}
+.doc-card span{display:block;font-size:14.5px;color:var(--muted);margin-top:3px}
+.name-note{margin:18px 0 0;padding:12px 16px;border-radius:10px;background:var(--amber-soft);border:1px solid var(--amber);font-size:15.5px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}
+
+@media (max-width:680px){
+  .tiles{grid-template-columns:1fr}
+  .src{font-size:14px}
+}
+</style>
+</head>
+<body>
+<button type="button" class="theme-toggle" data-label-dark="Switch to dark theme" data-label-light="Switch to light theme"><svg class="theme-toggle-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M20.7 14.6A8.5 8.5 0 0 1 9.4 3.3a8.5 8.5 0 1 0 11.3 11.3z"/></svg><svg class="theme-toggle-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 1.5v2.5M12 20v2.5M1.5 12H4M20 12h2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg></button>
+<script>(function(){var d=document.documentElement,b=document.currentScript.previousElementSibling;function sync(){var dark=d.getAttribute('data-theme')==='dark';b.setAttribute('aria-label',dark?b.getAttribute('data-label-light'):b.getAttribute('data-label-dark'));b.title=b.getAttribute('aria-label')}sync();b.addEventListener('click',function(){var t=d.getAttribute('data-theme')==='dark'?'light':'dark';d.setAttribute('data-theme',t);try{localStorage.setItem('st-theme',t)}catch(e){}sync()});if(window.matchMedia){var m=matchMedia('(prefers-color-scheme: dark)'),f=function(e){var s=null;try{s=localStorage.getItem('st-theme')}catch(x){}if(!s){d.setAttribute('data-theme',e.matches?'dark':'light');sync()}};m.addEventListener?m.addEventListener('change',f):m.addListener&&m.addListener(f)}})();</script>
+<main>
+
+<header>
+<p class="eyebrow">Oncology · Open data · Open source</p>
+<h1>OncoSignal</h1>
+<p class="lede">An <b>open oncology intelligence tracker</b>. For one cancer at a time it shows what moved in the trial registry, who is running the trials, which targets have human genetics behind them, and what was presented at the 2026 meetings. <b>Every row links to its source.</b></p>
+<ul class="facts" aria-label="Key facts">
+  <li><b>Status:</b> live, still growing</li>
+  <li><b>Data:</b> real and public only, no mock or sample rows</li>
+  <li><a href="https://github.com/inventcures/onco-trials-p0"><b>Code:</b> github.com/inventcures/onco-trials-p0</a></li>
+  <li><a href="https://onco-signal.up.railway.app"><b>Live app:</b> onco-signal.up.railway.app</a></li>
+</ul>
+<div class="actions">
+  <a class="btn" href="https://onco-signal.up.railway.app">Open OncoSignal</a>
+  <a class="btn ghost" href="https://onco-signal.up.railway.app/i/nsclc">See the lung cancer dashboard</a>
+  <a class="btn ghost" href="https://onco-signal.up.railway.app/target/ENSG00000146648">See a target page: EGFR</a>
+</div>
+</header>
+
+<section class="credit" aria-labelledby="credit-h">
+<h2 id="credit-h" style="font-size:21px;margin:0">Where it started</h2>
+<p>OncoSignal was inspired by <strong>Khushi Shelat</strong>'s <a href="https://clinicaltrialresearch.paralleldemos.com/">clinical trial research demo</a> for Parallel. Her demo showed how much of a trial landscape you can assemble from public sources. I wanted the same thing kept current for oncology, one cancer per page, with the genetic evidence for each target beside the pipeline.</p>
+<p>The reason to build it is in my essay <a href="/cure-em-all/">Curing All Disease, Ahead of Schedule</a>. It argues that drug development is held back less by discovery than by herding: companies crowd onto the same validated targets. OncoSignal puts that herd on one screen, then asks where the human genetic evidence points that the pipeline has not gone yet.</p>
+<p>I'm Ashish Makani (tp53; <a href="https://github.com/inventcures">GitHub</a> and <a href="https://x.com/inventcures">X</a>: inventcures), an academic in India working on computational protein and antibody design and drug discovery.</p>
+</section>
+
+<p class="kicker" id="now">On the live site</p>
+<h2>What is there today</h2>
+<p>Counts as shown on the live site on 11 November 2026. The site is still being built, so they will have moved by the time you read this.</p>
+<div class="tiles" role="list">
+  <div class="tile" role="listitem"><div class="num">15</div><div class="what">cancers, each with its own dashboard: solid tumours, blood cancers, brain tumours and six childhood cancers.</div></div>
+  <div class="tile" role="listitem"><div class="num">233</div><div class="what">2026 meeting abstracts found by web research and verified against a source page: ESMO 124, ASH 68, SITC 18, ASCO 13, AACR 10.</div></div>
+  <div class="tile" role="listitem"><div class="num">5</div><div class="what">views per cancer: trial news, landscape, lead investigators, targets and abstracts.</div></div>
+  <div class="tile" role="listitem"><div class="num">4</div><div class="what">open sources behind every view: ClinicalTrials.gov, PubMed, Open Targets and Crossref.</div></div>
+</div>
+
+<p class="kicker" id="views">What it shows</p>
+<h2>Five views for each cancer</h2>
+<p>The screenshots below are of the live site, taken on 11 November 2026. Click one to open that view.</p>
+
+<h3 id="news">1. Trial news</h3>
+<p>Events derived from changes in the registry: an asset's first Phase 2 or Phase 3 trial, new pivotal trials, results posted, readouts coming due, and stopped trials with the reason the registry gives. New trial papers from PubMed sit in the same feed.</p>
+<figure class="shot">
+  <a href="https://onco-signal.up.railway.app/i/nsclc?tab=news"><img src="media/news-nsclc.png" width="1160" height="870" loading="lazy" alt="OncoSignal trial news for non-small cell lung cancer: counts of phase advances, new Phase 2+ trials, results posted, readouts due and trial papers, above a dated feed of stopped trials, posted results and papers."></a>
+  <figcaption>Trial news for non-small cell lung cancer.</figcaption>
+</figure>
+
+<h3 id="landscape">2. Landscape</h3>
+<p>Every asset's trials on one timeline, sized by phase, so you can see who moved from Phase 1 to Phase 3 and when.</p>
+<figure class="shot">
+  <a href="https://onco-signal.up.railway.app/i/nsclc?tab=trials"><img src="media/landscape-nsclc.png" width="1160" height="870" loading="lazy" alt="OncoSignal landscape for non-small cell lung cancer: one row per drug with its lead sponsor and a dot for each trial on a 2009 to 2026 timeline; Phase 3 trials are orange."></a>
+  <figcaption>The lung cancer landscape. Each row is an asset; each dot is one of its trials; orange is Phase 3.</figcaption>
+</figure>
+
+<h3 id="investigators">3. Lead investigators</h3>
+<p>Principal investigators and study chairs named on the registry, ranked by Phase 2 and later trials in that cancer, with their trials and PubMed output.</p>
+
+<h3 id="targets">4. Genetically supported targets</h3>
+<p>Targets from the Open Targets Platform, with inherited (germline) and tumour-mutation (somatic) evidence split out. A chart sets genetic evidence against drug evidence, so the targets with strong genetics and few drugs stand apart.</p>
+<figure class="shot">
+  <a href="https://onco-signal.up.railway.app/i/nsclc?tab=targets"><img src="media/targets-nsclc.png" width="1160" height="1010" loading="lazy" alt="OncoSignal targets chart for non-small cell lung cancer: a scatter plot of human genetic evidence against drug evidence for the top 50 Open Targets targets, with TP53, TERT, DICER1 and PIK3CA in the strong genetics, few drugs corner and KRAS, ERBB2 and KIF5B in the corner with drugs in the clinic."></a>
+  <figcaption>Lung cancer targets: genetic evidence (up) against drug evidence (right). Scores are Open Targets' summary of how much evidence exists, not the chance a drug will work.</figcaption>
+</figure>
+<p>Each target has its own page, with the drugs recorded against it by type and stage, and the evidence for it across cancers.</p>
+<figure class="shot">
+  <a href="https://onco-signal.up.railway.app/target/ENSG00000146648"><img src="media/target-egfr.png" width="1140" height="1505" loading="lazy" alt="OncoSignal target page for EGFR: a flow chart from drug type (small molecule, antibody, antibody drug conjugate) to furthest stage reached (approved, Phase 3, Phase 2, Phase 1, withdrawn), and a dot plot of inherited and tumour-mutation evidence for EGFR in fifteen cancers."></a>
+  <figcaption>The <a href="https://onco-signal.up.railway.app/target/ENSG00000146648">EGFR target page</a>: drugs by type and furthest stage, then germline and somatic evidence by cancer.</figcaption>
+</figure>
+
+<h3 id="abstracts">5. 2026 meeting abstracts</h3>
+<p>Abstracts from ESMO, ASCO, AACR, ASH and SITC 2026, filed by cancer, late-breakers first, each with its trial, NCT ID and source link. ASCO, AACR and SITC supplements are searched live through Crossref. ESMO and ASH abstracts are pulled with the <a href="https://parallel.ai">Parallel</a> API, and a row is kept only if its number and title were verified against a fetched source. Abstract text is never stored.</p>
+<figure class="shot">
+  <a href="https://onco-signal.up.railway.app/i/nsclc?tab=abstracts"><img src="media/abstracts-nsclc.png" width="1160" height="870" loading="lazy" alt="OncoSignal abstracts view for non-small cell lung cancer with tabs for SITC, ESMO, ASCO, AACR and ASH 2026, listing ESMO late-breaking abstracts with presenter, trial name, NCT ID, drugs and a verification note."></a>
+  <figcaption>ESMO 2026 lung cancer abstracts, with how each row was verified.</figcaption>
+</figure>
+
+<p class="kicker" id="rules">Ground rules</p>
+<h2>Real data only</h2>
+<ol class="rules">
+  <li><b>No mock, sample or synthetic data.</b><span>Not in the app and not in the repo.</span></li>
+  <li><b>Every row links back to its source record.</b><span>A trial to ClinicalTrials.gov, a paper to PubMed, a target to Open Targets, an abstract to its DOI or source page.</span></li>
+  <li><b>If a source fails, the view shows the error.</b><span>It never fills the gap with substitute data.</span></li>
+  <li><b>Unverified abstracts are dropped.</b><span>Web research finds candidates; only rows confirmed on a source page stay.</span></li>
+</ol>
+
+<p class="kicker" id="sources">Sources</p>
+<h2>Where the data comes from</h2>
+<table class="src">
+  <thead><tr><th>View</th><th>Source</th></tr></thead>
+  <tbody>
+    <tr><td>Trial news, landscape, investigators</td><td><a href="https://clinicaltrials.gov/data-api/api">ClinicalTrials.gov API v2</a></td></tr>
+    <tr><td>Papers, investigator output</td><td><a href="https://www.ncbi.nlm.nih.gov/books/NBK25499/">PubMed E-utilities</a></td></tr>
+    <tr><td>Targets</td><td><a href="https://platform.opentargets.org/">Open Targets Platform</a> (EMBL-EBI)</td></tr>
+    <tr><td>ASCO, AACR and SITC abstracts</td><td><a href="https://www.crossref.org/">Crossref</a> supplement DOIs</td></tr>
+    <tr><td>ESMO and ASH abstracts</td><td><a href="https://parallel.ai">Parallel</a> web research, each row verified against a source page</td></tr>
+    <tr><td>Paediatric target flag</td><td>FDA Pediatric Relevant Molecular Target List</td></tr>
+  </tbody>
+</table>
+<p class="small">Full details, including how each event is derived, are on the app's <a href="https://onco-signal.up.railway.app/about">Sources &amp; roadmap</a> page. JSON for every view is at <code>/api/i/&lt;indication&gt;/&lt;view&gt;</code>.</p>
+
+<p class="kicker" id="roadmap">Where it stands</p>
+<h2>Built versus planned</h2>
+<ol class="phases">
+  <li class="phase now">
+    <span class="state">Live</span>
+    <h3>Now</h3>
+    <p>Live registry, PubMed, Open Targets and Crossref data on every view; verified ESMO and ASH abstracts; fifteen cancers and a paediatric view.</p>
+  </li>
+  <li class="phase">
+    <span class="state">Next</span>
+    <h3>Complete abstract books</h3>
+    <p>Full harvests for ASCO, AACR and SITC, session-by-session pulls for ESMO and ASH, and topline results as structured fields.</p>
+  </li>
+  <li class="phase">
+    <span class="state">Next</span>
+    <h3>Readouts and deals</h3>
+    <p>Which trial read out and what was reported, from company disclosures, with citations, joined to NCT IDs.</p>
+  </li>
+  <li class="phase">
+    <span class="state">Later</span>
+    <h3>Briefs, alerts and a herd map</h3>
+    <p>A weekly brief per cancer, alerts on phase advances, and a map of pipeline crowding against genetic support.</p>
+  </li>
+</ol>
+<p class="name-note"><strong>Not medical advice.</strong> OncoSignal is a research tool built on public records. It is not a guide to treatment.</p>
+
+<p class="kicker" id="related">Related work</p>
+<h2>More of my work on trials and oncology</h2>
+<a class="doc-card" href="/cure-em-all/"><b>Curing All Disease, Ahead of Schedule →</b><span>The essay behind OncoSignal.</span></a>
+<a class="doc-card" href="https://fda-crl-analysis.vercel.app/"><b>FDA CRL analysis →</b><span>An analysis of FDA Complete Response Letters.</span></a>
+<a class="doc-card" href="/aacr2025/"><b>AACR 2025 clinical trials dashboard →</b><span>Trial phases, therapeutic targets and outcomes from AACR 2025.</span></a>
+<a class="doc-card" href="/asco2025.html"><b>ASCO 2025 data visualization →</b><span>Oncology research presented at the ASCO 2025 annual meeting.</span></a>
+
+<footer>OncoSignal is an open-source project in development by <a href="/">inventcures</a>, built on open data from ClinicalTrials.gov, PubMed, Open Targets Platform (EMBL-EBI) and Crossref. It is not affiliated with Parallel or Khushi Shelat; the clinical trial research demo is hers.</footer>
+
+</main>
+<aside class="tree" aria-label="Page outline and reading progress">
+  <p class="tree-label">Tree</p>
+  <ol>
+    <li><a href="#credit-h">Origin</a></li>
+    <li><a href="#now">Today</a></li>
+    <li><a href="#views">Five views</a>
+      <ol>
+        <li><a href="#news">Trial news</a></li>
+        <li><a href="#landscape">Landscape</a></li>
+        <li><a href="#investigators">Investigators</a></li>
+        <li><a href="#targets">Targets</a></li>
+        <li><a href="#abstracts">Abstracts</a></li>
+      </ol></li>
+    <li><a href="#rules">Ground rules</a></li>
+    <li><a href="#sources">Sources</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#related">Related work</a></li>
+  </ol>
+  <div class="tree-bar" aria-hidden="true"><span class="tree-cells"></span><span class="tree-pct">0%</span></div>
+  <p class="tree-time"></p>
+</aside>
+<div class="readline" aria-hidden="true"></div>
+
+<script>
+(function(){
+  var tree=document.querySelector('.tree'); if(!tree) return;
+  var links=[].slice.call(tree.querySelectorAll('a'));
+  var targets=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
+  var cells=tree.querySelector('.tree-cells'), pct=tree.querySelector('.tree-pct'), line=document.querySelector('.readline');
+  var N=20, PART=['','▏','▎','▍','▌','▋','▊','▉'];
+  var main=document.querySelector('main');
+  var words=(main.innerText||main.textContent).split(/\s+/).filter(Boolean).length;
+  tree.querySelector('.tree-time').textContent=Math.max(1,Math.round(words/230))+' min read';
+  var ticking=false;
+  function update(){
+    ticking=false;
+    var max=document.documentElement.scrollHeight-window.innerHeight;
+    var f=max>0?Math.min(1,Math.max(0,window.scrollY/max)):1;
+    var units=Math.round(f*N*8), full=Math.floor(units/8), part=PART[units%8];
+    var rest=N-full-(part?1:0);
+    cells.innerHTML=Array(full+1).join('█')+part+'<span class="rest">'+Array(rest+1).join('░')+'</span>';
+    pct.textContent=Math.round(f*100)+'%';
+    line.style.width=(f*100)+'%';
+    var cur=-1;
+    targets.forEach(function(t,i){if(t&&t.getBoundingClientRect().top<window.innerHeight*0.3)cur=i;});
+    if(f>=0.995)cur=links.length-1;
+    links.forEach(function(a,i){var on=i===cur;a.classList.toggle('is-current',on);if(on)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});
+  }
+  function req(){if(!ticking){ticking=true;requestAnimationFrame(update);}}
+  window.addEventListener('scroll',req,{passive:true});
+  window.addEventListener('resize',req);
+  window.addEventListener('load',req);
+  update();
+})();
+</script>
+<script src="/assets/js/new-tab-links.js" defer></script>
+<script src="/assets/js/site-visits.js" async></script>
+</body>
+</html>

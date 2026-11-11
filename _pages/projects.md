@@ -60,6 +60,26 @@ layout: default
 <h2 style="margin-top: 1rem; padding-bottom: 0.5rem; border-bottom: 3px solid #818cf8; color: #1e1b4b;">ML + Medicine</h2>
 <p style="color: #666; margin-bottom: 2rem;">Clinical AI, healthcare tools, and medical decision support systems.</p>
 
+<!-- OncoSignal - NEW -->
+<section class="featured-section">
+  <a href="/onco-signal/" style="display: block; background: linear-gradient(135deg, #1c1917 0%, #3b2a1e 100%); border: 2px solid #e08a66; border-radius: 12px; overflow: hidden; text-decoration: none; position: relative; margin-bottom: 2rem;">
+    <div style="position: absolute; top: -8px; right: 20px; background: linear-gradient(135deg, #e08a66, #c15f3c); color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.3rem 0.6rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 12px rgba(193, 95, 60, 0.4);">New</div>
+    <div style="padding: 1.5rem 2rem;">
+      <div style="display: inline-block; background: #c15f3c; color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Oncology + Open Data</div>
+      <h3 style="color: #fff; font-size: 1.5rem; margin: 0 0 0.4rem 0; font-weight: 700;">OncoSignal</h3>
+      <p style="color: #f0b49c; font-size: 0.9rem; margin: 0 0 0.75rem 0; font-weight: 500;">Open Oncology Intelligence, One Cancer at a Time</p>
+      <p style="color: #ddd; font-size: 0.85rem; line-height: 1.5; margin: 0 0 1rem 0;">For each cancer: trial news derived from registry changes (phase advances, new pivotal trials, posted results, readouts, stopped trials), the trial landscape, lead investigators, genetically supported targets from Open Targets, and 2026 abstracts from ESMO, ASCO, AACR, ASH and SITC. Real data only, every row linked to its source. Live at onco-signal.up.railway.app.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem;">
+        <span style="background: rgba(224,138,102,0.15); color: #f0b49c; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">ClinicalTrials.gov</span>
+        <span style="background: rgba(224,138,102,0.15); color: #f0b49c; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">Open Targets</span>
+        <span style="background: rgba(224,138,102,0.15); color: #f0b49c; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">2026 Meeting Abstracts</span>
+        <span style="background: rgba(224,138,102,0.15); color: #f0b49c; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">Open Source</span>
+      </div>
+      <span style="color: #f0b49c; font-weight: 600; font-size: 0.9rem;">See the Project &amp; Open the App &rarr;</span>
+    </div>
+  </a>
+</section>
+
 
 <!-- Merlin CT Evaluation - HIDDEN until ready to publish
 <section class="featured-section">

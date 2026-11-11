@@ -124,6 +124,10 @@ code{font-family:var(--mono);font-size:.84em;background:var(--soft);border:1px s
 .doc-card:hover,.doc-card:focus-visible{border-color:var(--accent)}
 .doc-card b{display:block;font-size:16.5px;color:var(--accent)}
 .doc-card span{display:block;font-size:14.5px;color:var(--muted);margin-top:3px}
+.yt{position:relative;aspect-ratio:16/9;margin:18px 0 0;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#020817}
+.yt video{position:absolute;inset:0;width:100%;height:100%;border:0;background:#020817}
+.yt .gone{position:absolute;inset:0;display:grid;place-items:center;padding:20px;text-align:center;color:#ece9e1;font-size:15px}
+.yt .gone a{color:#e08a66}
 .name-note{margin:18px 0 0;padding:12px 16px;border-radius:10px;background:var(--amber-soft);border:1px solid var(--amber);font-size:15.5px}
 footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}
 
@@ -165,6 +169,28 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 <h2>Surface what has been tacit</h2>
 <blockquote class="aim">What can we uniquely surface to our target users, which so far has been tacit, and living in expert drug hunters' heads and mental models?</blockquote>
 <p>Show some insights, learnings, which no other comparable platform currently does, to our target users. That is the bar for what OncoSignal builds next.</p>
+
+<p class="kicker" id="watch">Watch</p>
+<h2>Why IGF-1R antibodies failed in Ewing sarcoma</h2>
+<p>A five-minute explainer of the first case study OncoSignal has released. In March 2019 a phase 3 trial of ganitumab in metastatic Ewing sarcoma, a childhood cancer, was recommended to close early. The video asks why blocking IGF-1R changed nothing after earlier trials had seen tumours shrink.</p>
+<div class="yt" id="watch-player">
+  <video controls playsinline preload="metadata" controlsList="nodownload noremoteplayback" disablePictureInPicture poster="https://onco-signal.up.railway.app/case-videos/ganitumab-ewing-poster.png" aria-label="IGF-1R antibodies in Ewing sarcoma: an explainer">
+    <source src="https://onco-signal.up.railway.app/case-videos/ganitumab-ewing.mp4" type="video/mp4">
+    <track kind="captions" src="media/ganitumab-ewing.en.vtt" srclang="en" label="English" default>
+  </video>
+</div>
+<p class="small">With English captions. Every number in it comes from the checked sources on the <a href="https://onco-signal.up.railway.app/case-studies/ganitumab-ewing">case study page</a>. The analysis has not yet been checked line by line by a person.</p>
+<script>
+(function(){
+  var box=document.getElementById('watch-player'), v=box&&box.querySelector('video');
+  if(!v) return;
+  v.addEventListener('contextmenu',function(e){e.preventDefault();});
+  var src=v.querySelector('source');
+  src.addEventListener('error',function(){
+    box.innerHTML='<p class="gone">The video plays on the <a href="https://onco-signal.up.railway.app/case-studies/ganitumab-ewing">case study page</a>.</p>';
+  },{once:true});
+})();
+</script>
 
 <p class="kicker" id="now">On the live site</p>
 <h2>What is there today</h2>
@@ -281,6 +307,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
   <ol>
     <li><a href="#credit-h">Origin</a></li>
     <li><a href="#aim">The aim</a></li>
+    <li><a href="#watch">Watch</a></li>
     <li><a href="#now">Today</a></li>
     <li><a href="#views">Five views</a>
       <ol>

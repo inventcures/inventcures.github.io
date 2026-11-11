@@ -75,6 +75,11 @@ sup.r a{text-decoration:none;font-family:var(--sans);font-weight:600;padding:0 .
 .video-slot p{margin:2px 0;font-size:15px;color:var(--muted)}
 .video-slot p b{color:var(--fg);font-weight:650}
 
+/* short-version video */
+.vid-choose{margin:0 0 12px;font-size:14px;color:var(--muted)}
+.vid-short{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:8px;overflow:hidden}
+.vid-short video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000}
+
 /* summary card */
 .summary{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:16px 20px;margin:26px 0 0}
 .summary p{margin:8px 0;font-size:16.5px}
@@ -345,11 +350,23 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 <h1>Vaani Sakhi <span class="dev" lang="hi">वाणी सखी</span></h1>
 <p class="lede">A clinically grounded voice-AI agent for women's health, starting with postmenopausal care. A woman, or her ASHA worker, phones it and talks in Hindi or English.</p>
 <nav class="toc" aria-label="On this page">
-  <a href="#why">Why</a><a href="#architecture">Architecture</a><a href="#call">A call, step by step</a><a href="#modes">Two modes</a><a href="#tools">Four tools</a><a href="#data">Safety and data</a><a href="#validation">Testing</a><a href="#aspiration">Where it's going</a>
+  <a href="#status">Where it stands</a><a href="#why">Why</a><a href="#architecture">Architecture</a><a href="#call">A call, step by step</a><a href="#modes">Two modes</a><a href="#tools">Four tools</a><a href="#data">Safety and data</a><a href="#validation">Testing</a><a href="#aspiration">Where it's going</a>
 </nav>
 </header>
 
-<figure class="xp-figure" id="video">
+<p class="vid-choose">Two versions of the explainer: a 3-minute version first, then the <a href="#video">full 14-minute walkthrough</a> underneath.</p>
+
+<figure class="xp-figure" id="video-short">
+  <div class="vid-short">
+    <video controls preload="metadata" playsinline poster="media/vaani-sakhi-short.jpg">
+      <source src="media/vaani-sakhi-short.mp4" type="video/mp4">
+      Your browser cannot play this video. <a href="media/vaani-sakhi-short.mp4">Download the 3-minute version</a>.
+    </video>
+  </div>
+  <figcaption class="xp-credit">The short version: 3 minutes, cut from the same explainer. Kamla and her call are fictional illustrations.</figcaption>
+</figure>
+
+<figure class="xp-figure" id="video" style="margin-top:28px">
   <div class="xp">
     <video controls preload="metadata" playsinline poster="media/vaani-sakhi-explainer.jpg">
       <source src="media/vaani-sakhi-explainer.mp4" type="video/mp4">
@@ -369,9 +386,16 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 <div class="tiles" role="list">
   <div class="tile" role="listitem"><div class="num">~46 <small>yrs</small></div><div class="what">Average age at menopause in India, about five years earlier than in Western women</div><div class="src">IMS survey 2016<sup class="r"><a href="#ref-ims16">1</a></sup></div></div>
   <div class="tile" role="listitem"><div class="num">~2%</div><div class="what">Breast-cancer screening coverage among Indian women</div><div class="src">South Asian J Cancer 2017<sup class="r"><a href="#ref-sajc" id="cite-5">5</a></sup></div></div>
-  <div class="tile" role="listitem"><div class="num">7.8<small>/10</small></div><div class="what">Palli Sahayak expert score over 160 reviews. 59% endorsed it without reservation</div><div class="src">Earlier helpline evaluation</div></div>
+  <div class="tile" role="listitem"><div class="num">7.8<small>/10</small></div><div class="what">Mean expert score for Palli Sahayak: 40 synthetic cases, 4 palliative care physicians, 160 reviews</div><div class="src">Earlier helpline evaluation</div></div>
   <div class="tile" role="listitem"><div class="num">≥85%</div><div class="what">Target: answers to test cases that clinicians judge safe</div><div class="src">Vaani Sakhi safety bar</div></div>
 </div>
+
+<section class="summary" id="status" aria-labelledby="status-h" style="margin-top:22px">
+<h2 id="status-h" style="font-size:21px;margin:0">Where it stands today</h2>
+<p>A working prototype of Vaani Sakhi exists, and we are currently talking to potential clinical, health-system, NGO and non-profit partners about where to pilot it.</p>
+<p>The engine underneath it is Palli Sahayak, our palliative-care voice helpline, which is open source under an MIT licence (<a href="https://github.com/inventcures/rag_gci/">code on GitHub</a>). It has been through a structured expert review: 40 synthetic but realistic cases, each rated by 4 palliative care physicians, 160 reviews in all, mean score 7.8 out of 10. The cases were written for the review, so no patient data was involved.</p>
+<p>A full clinical evaluation of Palli Sahayak, including a randomised controlled trial, is planned across four sites: CMC Vellore, KMC Manipal (MAHE), the Coimbatore Cancer Foundation, and the Cachar Cancer Hospital &amp; Research Centre. It has been selected for an evaluation grant, with the formal award still pending, so the evaluation has not begun enrolling. Vaani Sakhi itself is at prototype stage and has not yet been tested with patients.</p>
+</section>
 
 <p class="kicker" id="why">The problem</p>
 <h2>Five organ systems change at once</h2>
@@ -404,7 +428,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 </figure>
 
 <h3>What Palli Sahayak taught us</h3>
-<p style="margin-top:0">Palli Sahayak, our earlier helpline for palliative care, has the engine Vaani Sakhi reuses: hybrid search over guidelines, speech recognition in all 22 scheduled Indian languages, a five-pillar safety framework and a warm handoff to a human. Its expert evaluation showed where it failed, and Vaani Sakhi is designed around those failures.</p>
+<p style="margin-top:0">Palli Sahayak, our earlier helpline for palliative care, has the engine Vaani Sakhi reuses: hybrid search over guidelines, speech recognition in all 22 scheduled Indian languages, a five-pillar safety framework and a warm handoff to a human. Its expert review &mdash; 40 synthetic but realistic cases, 160 reviews by 4 palliative care physicians, mean score 7.8/10 &mdash; showed where it failed, and Vaani Sakhi is designed around those failures.</p>
 <figure class="fig" style="margin-top:12px">
   <div class="fig-body">
     <div class="lesson-head" aria-hidden="true"><span>Palli Sahayak finding</span><span></span><span>Vaani Sakhi response</span></div>

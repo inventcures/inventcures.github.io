@@ -1,7 +1,7 @@
 ---
 title: "The shape of Hindi: mapping one language, three scripts and a lot of English inside an LLM"
 date: 2026-11-17
-excerpt: "A recent field note mapped thousands of English and Chinese conversations inside Qwen3-1.7B and found Chinese sitting off to one side. What would the same map show for Hindi, which arrives as Devanagari, Urdu script, romanized text and Hinglish? A plan, the research behind it, and a link to Anthropic's finding that Claude is warmest in Hindi."
+excerpt: "A recent field note mapped thousands of English and Chinese conversations inside Qwen3-1.7B and found Chinese sitting off to one side. What would the same map show for Hindi, which arrives as Devanagari, Urdu script, romanized text and Hinglish? A plan, a first pilot run with numbers, and a link to Anthropic's finding that Claude is warmest in Hindi."
 tags:
   - interpretability
   - multilingual LLMs
@@ -16,7 +16,7 @@ To a Hindi speaker the first two are the same sentence. The third is a cousin of
 
 Two things sent me down this path in the same week. One was a field note by operator0x that mapped thousands of conversations inside Qwen3-1.7B and found Chinese sitting to one side of English.[^op] The other was Anthropic's July 2026 study showing that Claude leans further toward warmth in Hindi than in any of its top 20 languages, and furthest toward rigor in Russian.[^vml] One is a picture of geometry and the other is a measurement of behaviour. I think they are two views of the same question, and Hindi is the best language I know of for asking it.
 
-This essay covers what the field note did and what its critics said, what four years of multilingual interpretability research predicts, and the experiment I want to run. *This is the short version. The full plan, the related-work notes and the code are in the [shape-of-hindi repo](https://github.com/inventcures/shape-of-hindi), and there is a longer [draft paper (PDF)](/files/shape-of-hindi.pdf) with the maths and the exercise answers.*
+This essay covers what the field note did and what its critics said, what four years of multilingual interpretability research predicts, the experiment I want to run, and what a first small run showed. *This is the short version. The full plan, the related-work notes and the code are in the [shape-of-hindi repo](https://github.com/inventcures/shape-of-hindi), and there is a longer [draft paper (PDF)](/files/shape-of-hindi.pdf) with the maths and the exercise answers.*
 
 ## What the field note found
 
@@ -110,6 +110,32 @@ I wrote down predictions before running anything. Three I care most about:
 
 If the third one fails, I'll have learned something. It would mean the model groups languages by alphabet more than by meaning, even in the middle.
 
+## What a first small run showed
+
+On the morning of 17 November I ran a pilot on Modal: 20 items in 8 versions, 160 conversations, through Qwen3-1.7B on one A10G GPU. The extraction took under a minute and the analysis about eight. Before you read anything into it, three warnings. I wrote all the non-English text myself with a model's help, and no native speaker has checked it yet. With 20 items, chance retrieval is 5% and every result moves in steps of 5 points, so one item is the difference between 85% and 90%. And it is one model, at the end of the second turn only.
+
+![Flowchart of the pilot: 20 items in 8 versions go through Qwen3-1.7B, the state is read at all 28 layers, and versions are compared](/images/shape-of-hindi/fig1-pipeline.png)
+
+**The token tax is real and it is about the script.** Hindi in Devanagari cost 4.1 times as many tokens as the same English conversation, and Marathi 4.2 times. The same Hindi typed in Roman letters cost 1.8 times, and Hinglish in Roman letters 1.4 times. Chinese came in under English. So the tokenizer charges for the alphabet, not the language.
+
+![Bar chart: Hinglish in Devanagari 4.3 times English, Marathi 4.2, Hindi 4.1, Urdu 3.0, romanized Hindi 1.8, Hinglish in Roman 1.4, English 1.0, Chinese 0.9](/images/shape-of-hindi/fig2-tokens.png)
+
+**Hindi lines up with English in the middle, and most of the gap is a single offset.** For each English item I asked whether its nearest Hindi state was its own translation. With the raw states, the answer was yes for 45% of items at layer 16 and 10% at the last layer. After subtracting each language's average state, it was yes for 90% at layer 16 and 65% at the last layer. That is prediction 2 from the plan: a peak in the middle and a fall at the end. It also says that much of what keeps Hindi and English apart inside the model is one shift of the whole cloud, which is easy to remove and easy to miss in a 3D plot.
+
+![Six small line charts, one per version, of how often an English item's nearest state is its own translation, by layer. Hindi peaks at 90% at layer 16 after removing each version's average, and falls to 65% by layer 28](/images/shape-of-hindi/fig3-retrieval-by-layer.png)
+
+Hindi also sits further from English at the last layer than Chinese does. Raw retrieval there was 10% for Hindi and 35% for Chinese, and centred retrieval 65% against 85%. That fits prediction 1, though Chinese looked suspiciously easy throughout, at 100% for most of the middle. I suspect my Chinese items were close to word-for-word translations, which makes matching easy. Hinglish in Roman script matched English almost perfectly at every layer, which is less interesting than it sounds, because half its words are English. One result went against me. I expected Hindi typed in Roman letters to sit closer to English than Devanagari Hindi in the late layers, since it shares English's alphabet. It didn't. By the similarity measure below it was further from English at 23 of 28 layers, and at the last layer it matched English 50% of the time against 65% for Devanagari.
+
+**Script first, language later, with a tie in the middle.** Prediction 3 was the one I cared about most. I measured how similar the cloud of Urdu states was to the cloud of Hindi states, and the same for Marathi. In layers 1 to 4, Marathi was closer, as you'd expect from the shared alphabet. From layer 5 Urdu pulled ahead, the two were about level from layer 11 to 19, and from layer 20 to the end Urdu was clearly closer, at 0.86 against 0.80 at the last layer. Urdu was closer at 18 of 28 layers. That is the right shape for "the model groups by alphabet at first and by language later", but the middle-layer tie is not what I predicted, and with 20 items I'd not bet much on any one layer.
+
+![Left: line chart of similarity to Hindi for Urdu and Marathi across layers. Right: bar chart of Urdu minus Marathi, negative in layers 1 to 4, positive from 5 to 10, near zero from 11 to 19, positive from 20 to 28](/images/shape-of-hindi/fig4-script-vs-language.png)
+
+**Two warnings from the data itself.** The top 10 directions of the state cloud predict a conversation's log token count with an R² of about 0.95 to 0.98 at every layer. That sounds damning, but in this pilot length and language are almost the same variable: a simple classifier names the version from the state 93 to 98% of the time, and Devanagari versions are all about four times longer. The pilot cannot separate the two. That is what the length-matched subset and the Gemma-3 comparison in the full plan are for. The second warning is the first token. From layer 3 onward its largest value is over a thousand times that of a typical token, falling to about 9 times by layer 27. Any PCA that includes it would be a picture of that one token, so I dropped it.
+
+![Left: line chart showing the top 10 directions explain 95 to 98% of variation in length at every layer. Right: log-scale line chart of the first token's largest value relative to a typical token's, jumping to about 1,244 times at layer 3 and decaying to about 9 times by layer 27](/images/shape-of-hindi/fig5-confounds.png)
+
+What I take from the pilot is that the pipeline works end to end, the token numbers are solid, and the geometry points the way the plan predicted. None of the representation results should be quoted as findings until the 600-item run with checked translations. The figures, the code that draws them and the raw metrics are in the [repo](https://github.com/inventcures/shape-of-hindi/tree/claude/project-thread-m93dhm/figures/pilot).
+
 ## The values thread
 
 Anthropic's two values studies are where this stops being only about geometry.
@@ -143,12 +169,13 @@ I learn best by doing problems, so here are a few. Answers are in the last secti
 5. Which of these comparisons isolates script: Hindi vs Marathi, Hindi vs Urdu, Hindi vs Hinglish? Which isolates language?
 6. A cloud of states has covariance eigenvalues 4, 4, 1 and 1. What is its participation ratio, the effective number of dimensions it uses? The formula is the square of the sum of the eigenvalues divided by the sum of their squares.
 7. Suppose the warmth projection is higher for Hindi replies than English ones, but only on Indian-topic items. What would you conclude about where the lean comes from?
+8. In the pilot, centred retrieval between Hindi and Urdu at the last layer was 95% and between Hindi and Marathi 80%, out of 20 items each. How many items is that difference? Would you call it evidence that the model groups Hindi with Urdu?
 
 ## Where this leaves me
 
 The original field note drew a pretty picture and stopped. I don't think that's a flaw in a field note, but it left the most interesting question open. When a model reads a sentence, how much of what it does depends on meaning, and how much on the alphabet, the token count and the social register the sentence was written in?
 
-Hindi is the right place to ask, because one spoken language arrives in three scripts, mixes freely with English, puts social relationships into its pronouns, and costs four times as many tokens as English in a popular open model. Most of the work is cheap. A 1.7B model fits on a laptop and the forward passes take under an hour. The slow part is native speakers checking 600 items in Hindi, Urdu, Marathi and Hinglish, and that is the part I'd least want to cut.
+Hindi is the right place to ask, because one spoken language arrives in three scripts, mixes freely with English, puts social relationships into its pronouns, and costs four times as many tokens as English in a popular open model. Most of the work is cheap. The pilot ran on a rented GPU in about ten minutes. The slow part is native speakers checking 600 items in Hindi, Urdu, Marathi and Hinglish, and that is the part I'd least want to cut.
 
 [^op]: operator0x, ["What thousands of conversations look like inside a language model"](https://operator0x.com/field-notes/qwen-conversation-state-space/), field note (November 2026).
 [^brief]: Numbers as quoted in a [Hacker News front-page briefing](https://thecontext.dev/en/briefing/) (15 November 2026). I could not load the original page from my research setup.

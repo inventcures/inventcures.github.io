@@ -116,6 +116,18 @@ On the morning of 17 November I ran a pilot on Modal: 20 items in 8 versions, 16
 
 ![Flowchart of the pilot: 20 items in 8 versions go through Qwen3-1.7B, the state is read at all 28 layers, and versions are compared](/images/shape-of-hindi/fig1-pipeline.png)
 
+**First, the picture.** The field note's figures were rotating 3D clouds: every token of 900 conversations at the final layer, one colour per language, with English as a thin sheet and Chinese as a parallel sheet off to one side. Here is the same kind of map for the pilot. I flattened it to two directions and gave each version its own panel on the same axes, because a spinning 3D cloud on a page hides as much as it shows.
+
+![Eight small scatter maps of every token at the final layer, one per version on shared axes. English, romanized Hindi and Roman-script Hinglish overlap in one diagonal band. The three Devanagari versions share a wider patch beside it. Urdu sits further to the right and Chinese sits apart above](/images/shape-of-hindi/fig6-token-map.png)
+
+It looks a lot like the original. Chinese sits apart, as it did there. Hindi typed in Roman letters lands in a band along English. The three Devanagari versions, Hindi, Hinglish and Marathi, cover nearly the same ground as each other, and Urdu has its own patch next to them. At the last layer, the map mostly tells you which alphabet the model is about to write in.
+
+The field note also refitted its map on whole conversations and found the sheet opened into lobes. I did that at four depths, using the state where the model's reply ends.
+
+![Four scatter maps of the 160 pilot conversations at layers 7, 14, 21 and 28. At layer 7, Urdu, Devanagari and Roman-script conversations form three separate bands. By layer 14 they overlap. At layer 28 Devanagari and Urdu conversations sit together at one end, with English at the other](/images/shape-of-hindi/fig7-layer-maps.png)
+
+At layer 7 the conversations fall into three clean bands: Urdu script, Devanagari, and everything in Roman or Chinese characters. By layer 14 the bands have run together. By the last layer, the Devanagari and Urdu conversations sit at the same end of the map, away from English. That is the same script-first, language-later story as the similarity numbers below, seen as a picture. Pictures like these are where the field note stopped, and the critics were right that they can mislead, so I treat them as illustrations and let the numbers that follow carry the claims.
+
 **The token tax is real and it is about the script.** Hindi in Devanagari cost 4.1 times as many tokens as the same English conversation, and Marathi 4.2 times. The same Hindi typed in Roman letters cost 1.8 times, and Hinglish in Roman letters 1.4 times. Chinese came in under English. So the tokenizer charges for the alphabet, not the language.
 
 ![Bar chart: Hinglish in Devanagari 4.3 times English, Marathi 4.2, Hindi 4.1, Urdu 3.0, romanized Hindi 1.8, Hinglish in Roman 1.4, English 1.0, Chinese 0.9](/images/shape-of-hindi/fig2-tokens.png)

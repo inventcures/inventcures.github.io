@@ -11,7 +11,7 @@ tags:
   - MedQA
 ---
 
-*Draft, 18 November 2026. Claude drafted this from the study's results, and I set the questions and checked the numbers. It follows [Where Hindi meets English inside five open LLMs](/essays/2026/11/shape-of-hindi-edison-version/), which asked how models represent Hindi. This one asks whether that representation predicts the answer. A fifth model, Sarvam-105B, is still finishing MedQA, and I'll add its numbers when it does.*
+*Draft, 18 November 2026. Claude drafted this from the study's results, and I set the questions and checked the numbers. It follows [Where Hindi meets English inside five open LLMs](/essays/2026/11/shape-of-hindi-edison-version/), which asked how models represent Hindi. This one asks whether that representation predicts the answer. A fifth model, Sarvam-105B, finished only MedQA, and its results are in that section.*
 
 A man in Patna types to a chatbot: *mere papa ko 3 din se bukhar hai aur ab saans lene mein dikkat ho rahi hai, kya karein?* My father has had a fever for three days and now he is struggling to breathe, what should we do? The right answer is to take him to a hospital now. I wanted to know whether a chatbot says that as readily in Hindi as in English.
 
@@ -77,17 +77,31 @@ MedQA asks for one letter, so it only tests whether a model recognises the answe
 | | English | Hindi | Roman Hindi | Hinglish |
 |---|---|---|---|---|
 | Qwen3-1.7B | 48.2% | 14.8% | 33.1% | 45.8% |
-| Qwen3.8-27B | 84.2% | 69.0% | 66.9% | 79.6% |
+| Qwen3.8-27B | 84.2% | 69.0% | 68.3% | 79.6% |
 | gpt-oss-120b | **90.1%** | 78.9% | 71.8% | **85.6%** |
 | Gemma 4 31B | 83.8% | **79.6%** | **72.9%** | 81.7% |
 
 *MedQA accuracy on 284 four-option questions. Chance is 25%.*
 
-Romanized Hindi is again the hardest form for the three bigger models. But for gpt-oss and Qwen3.8, multiple choice loses about half as much as open advice does. In romanized Hindi gpt-oss drops 20% of its English accuracy here, against 41% of its English HealthBench score. Qwen3.8 drops 21% against 36%. Gemma 4 loses about the same either way, 13% against 16%.
+Romanized Hindi is again the hardest form for the three bigger models. But for gpt-oss and Qwen3.8, multiple choice loses about half as much as open advice does. In romanized Hindi gpt-oss drops 20% of its English accuracy here, against 41% of its English HealthBench score. Qwen3.8 drops 19% against 36%. Gemma 4 loses about the same either way, 13% against 16%.
 
 So a model can know enough Hindi to pick the right drug and still struggle to explain in Hindi when to go to hospital. A benchmark made only of multiple-choice questions would make gpt-oss look nearly as good in Hindi as Gemma, when on advice it isn't.
 
 Qwen3-1.7B fails in its own way. In Devanagari it ignores the instruction to answer with a letter in 129 of 284 questions, and writes a long Hindi explanation until it runs out of tokens. I count those as wrong.
+
+**Sarvam-105B.** India's own open model finished 258 of the MedQA questions in all four forms before it ran out of memory on the longest ones. On those 258, here it is next to the others.
+
+| | English | Hindi | Roman Hindi | Hinglish |
+|---|---|---|---|---|
+| Qwen3-1.7B | 48.8% | 15.1% | 34.1% | 46.5% |
+| Qwen3.8-27B | 83.7% | 69.4% | 68.2% | 80.2% |
+| gpt-oss-120b | **90.3%** | 79.8% | 73.3% | **86.4%** |
+| Gemma 4 31B | 83.7% | **80.6%** | **74.4%** | 82.2% |
+| Sarvam-105B | 58.1% | 50.8% | 48.1% | 60.9% |
+
+*MedQA accuracy on the 258 questions all five models answered in every form.*
+
+Sarvam scores 20 to 32 points below the other large models in every form, English included. Its pattern matches theirs, with Hinglish its best form and romanized Hindi its worst. Part of the gap is format, not medicine. In 126 answers it reasons step by step and runs out of its 512-token budget before naming a letter, and I count those as wrong. With a bigger budget it would score higher, though I doubt it would close a gap that size.
 
 The representation result holds here too. Every model matches 97 to 100% of the Hindi MedQA questions to their English twins at its peak layer. Alignment barely predicts which ones it gets right, with ρ between 0.03 and 0.10 and every interval crossing zero.
 
@@ -103,7 +117,7 @@ I'd also spend less effort on comprehension. The models already know what was as
 
 - **No native speaker has read the questions or answers.** A clumsy translation could make a question harder. The near-perfect retrieval suggests the meaning survived, but it tells me nothing about the tone.
 - **One grader.** Gemini judged answers in all four forms. If it grades Hindi more harshly, the grader causes part of the drop. A second grader and a doctor reading a sample would settle it.
-- **Sarvam-105B is mostly missing.** India's own open model was the one I most wanted to see. On my setup it ran about seven times slower per token than gpt-oss, and Modal took its GPUs away twice. Both of its HealthBench runs failed before writing an answer, so I dropped them to stay in budget. Its MedQA run is still going, and I'll add the results here when it finishes.
+- **Sarvam-105B is mostly missing.** India's own open model was the one I most wanted to see. On my setup it ran about seven times slower per token than gpt-oss, and Modal took its GPUs away twice. Both of its HealthBench runs failed before writing an answer, so I dropped them to stay in budget. It answered 258 MedQA questions in all four forms, which I report above.
 - **Only 100 questions.** The intervals on the correlations are wide, and confirming a correlation of 0.25 would take a few hundred.
 - **Cancer questions.** gpt-oss never got a GPU for the HealthBench cancer set, and the two Qwen models' cancer answers are still being graded. Those go into the next draft.
 

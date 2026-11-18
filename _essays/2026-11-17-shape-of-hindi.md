@@ -1,7 +1,7 @@
 ---
 title: "The shape of Hindi: mapping one language, three scripts and a lot of English inside an LLM"
 date: 2026-11-17
-excerpt: "A recent field note mapped thousands of English and Chinese conversations inside Qwen3-1.7B and found Chinese sitting off to one side. What would the same map show for Hindi, which arrives as Devanagari, Urdu script, romanized text and Hinglish? A plan, a first pilot run with numbers, and a link to Anthropic's finding that Claude is warmest in Hindi."
+excerpt: "A recent field note mapped thousands of English and Chinese conversations inside Qwen3-1.7B and found Chinese sitting off to one side. What would the same map show for Hindi, which arrives as Devanagari, Urdu script, romanized text and Hinglish? A plan, a 20-item pilot, a 1,000-conversation run in 11 versions with rotating maps, what Hindi costs in tokens, and a link to Anthropic's finding that Claude is warmest in Hindi."
 tags:
   - interpretability
   - multilingual LLMs
@@ -16,7 +16,7 @@ To a Hindi speaker the first two are the same sentence. The third is a cousin of
 
 Two things sent me down this path in the same week. One was a field note by operator0x that mapped thousands of conversations inside Qwen3-1.7B and found Chinese sitting to one side of English.[^op] The other was Anthropic's July 2026 study showing that Claude leans further toward warmth in Hindi than in any of its top 20 languages, and furthest toward rigor in Russian.[^vml] One is a picture of geometry and the other is a measurement of behaviour. I think they are two views of the same question, and Hindi is the best language I know of for asking it.
 
-This essay covers what the field note did and what its critics said, what four years of multilingual interpretability research predicts, the experiment I want to run, and what a first small run showed. *This is the short version. The full plan, the related-work notes and the code are in the [shape-of-hindi repo](https://github.com/inventcures/shape-of-hindi), and there is a longer [draft paper (PDF)](/files/shape-of-hindi.pdf) with the maths and the exercise answers.*
+This essay covers what the field note did and what its critics said, what four years of multilingual interpretability research predicts, the experiment, what a small pilot and then a 1,000-conversation run showed, and what Hindi costs in tokens. *This is the short version. The full plan, the related-work notes and the code are in the [shape-of-hindi repo](https://github.com/inventcures/shape-of-hindi), and there is a longer [draft paper (PDF)](/files/shape-of-hindi.pdf) with the maths and the exercise answers.*
 
 ## What the field note found
 
@@ -146,7 +146,120 @@ Hindi also sits further from English at the last layer than Chinese does. Raw re
 
 ![Left: line chart showing the top 10 directions explain 95 to 98% of variation in length at every layer. Right: log-scale line chart of the first token's largest value relative to a typical token's, jumping to about 1,244 times at layer 3 and decaying to about 9 times by layer 27](/images/shape-of-hindi/fig5-confounds.png)
 
-What I take from the pilot is that the pipeline works end to end, the token numbers are solid, and the geometry points the way the plan predicted. None of the representation results should be quoted as findings until the 600-item run with checked translations. The figures, the code that draws them and the raw metrics are in the [repo](https://github.com/inventcures/shape-of-hindi/tree/claude/project-thread-m93dhm/figures/pilot).
+What I take from the pilot is that the pipeline works end to end, the token numbers are solid, and the geometry points the way the plan predicted. None of the representation results should be quoted as findings on their own. The next section repeats everything on 1,000 conversations. The figures, the code that draws them and the raw metrics are in the [repo](https://github.com/inventcures/shape-of-hindi/tree/claude/project-thread-m93dhm/figures/pilot).
+
+## What 1,000 conversations showed
+
+Twenty items was enough to test the pipeline and not much more, so I scaled up. An open model, Qwen3-32B, wrote 1,200 short English exchanges: 24 domains from health and money to law, farming, religion and ethics, 10 topics in each, half of them rooted in Indian life, and five kinds of question per topic (explain, how to, feedback on a plan, choose between options, and a personal problem). The same model then translated each exchange into ten other versions. Three new ones joined the pilot's eight:
+
+- **formal, Sanskritized Hindi**, the register of government notices and news anchors;
+- **Urdu written in Devanagari**, transliterated letter by letter from the Urdu, so the pair differs only in script;
+- **Bhojpuri**, spoken by tens of millions in eastern Uttar Pradesh and Bihar.
+
+Items that failed a script or length check in any version were dropped, which left 1,000 items in all 11 versions, 11,000 conversations in all. The whole run, from generation to the last metric, took 1 hour 52 minutes on Modal H100s. The data, code and results are in the [repo](https://github.com/inventcures/shape-of-hindi), with a [guide to rerunning it](https://github.com/inventcures/shape-of-hindi/blob/claude/project-thread-m93dhm/REPRODUCE.md).
+
+**First, how good are the translations?** I read 12 random items in every version. Chinese was clean. Everyday and formal Hindi had one meaning error in 12: Ayushman Bharat, the health scheme, came out as अयोग्य भारत, "unfit India". Marathi had three, including turning an inter-caste marriage into a marriage within one's caste. Urdu was the weakest, with six of 12 wrong somewhere: JEE became "JE six", stress became tiredness, a music genre became جنس, which means sex or gender. And the Bhojpuri reads more like a mix of Hindi, Bhojpuri and Maithili than like Bhojpuri. These errors are mostly in single words, while the script and register, which most of the geometry tracks, were right in every item I read. Still, keep the Urdu and Bhojpuri caveats in mind below. The full tally is in the [data card](https://github.com/inventcures/shape-of-hindi/blob/claude/project-thread-m93dhm/docs/04-data-card.md).
+
+**The picture, now in 3D.** The field note's figures rotated, so here are rotating versions too. This one is about 66,000 tokens, 6,000 drawn from each version, at the last layer:
+
+![Rotating 3D cloud of tokens at Qwen3-1.7B's last layer, coloured by version. Roman-script Hindi and English share one region, the Devanagari versions form a large orange mass, Urdu in Perso-Arabic script sits below, and Chinese sits apart](/images/shape-of-hindi/spin-all-versions.gif)
+
+And these are whole conversations, one dot each, at layer 7 and at the last layer:
+
+![Rotating 3D cloud of 11,000 conversations at layer 7. English, Chinese, Roman-script Hindi, Urdu in Perso-Arabic and the Devanagari versions form six separate clusters](/images/shape-of-hindi/spin-conversations-layer7.gif)
+
+![Rotating 3D cloud of 11,000 conversations at the last layer. The clusters have spread and partly merged; Urdu now overlaps the Devanagari versions](/images/shape-of-hindi/spin-conversations-layer28.gif)
+
+A spinning cloud is fun to watch but hard to read, so here are the same states as flat small multiples. Every token at the last layer, one panel per version:
+
+![Eleven scatter maps of tokens at the final layer, one per version, on shared axes. English, romanized Hindi and Roman Hinglish cover the left side. All six Devanagari versions cover the same patch to the right. Urdu in Perso-Arabic sits lower right and Chinese sits apart at the top](/images/shape-of-hindi/fig6-token-map-large.png)
+
+All six Devanagari versions, from formal Hindi to Bhojpuri to Urdu in Devanagari, cover almost the same ground. Urdu in its own script has its own patch. At the last layer the map still mostly tells you which alphabet comes next.
+
+![Four scatter maps of the 11,000 conversations at layers 7, 14, 21 and 28. At layers 7 and 14, English, Chinese, Roman-script Hindi, Devanagari and Urdu form separate groups. At layers 21 and 28 Urdu moves into the Devanagari group](/images/shape-of-hindi/fig7-layer-maps-large.png)
+
+Whole conversations tell the same story as in the pilot, now with 55 times the data. At layers 7 and 14, Urdu is a separate island. By layer 21 it has moved into the Devanagari group, and by the last layer the two overlap. Script first, language later.
+
+**Retrieval, now with a harder test.** With 1,000 candidates, chance is 0.1%, not 5%, so the numbers are lower than the pilot's and not comparable with them. After removing each version's average, everyday Hindi finds its English twin 55% of the time at layer 13, falling to 15% at the last layer. Formal Hindi peaks at 58%, Urdu at 46 to 48% in either script, Bhojpuri at 44%, Marathi at 40%, and romanized Hindi at only 39%. That is prediction 2 again: a peak in the middle and a fall at the end, for every version.
+
+![Ten small line charts, one per version, of how often an English item's nearest state is its own translation among 1,000. After removing averages, Hindi peaks at 55% at layer 13, formal Hindi 58%, Roman Hinglish 74% at layer 4, Chinese 97%, and the others 39 to 48%. Raw retrieval stays near zero except for Chinese](/images/shape-of-hindi/fig3-retrieval-by-layer-large.png)
+
+Prediction 1 holds more strongly than in the pilot. At the last layer, Hindi matches English 15% of the time and Chinese 64%. Chinese again looks easy, at 97% in the middle, and I still suspect close, word-for-word translations. The pilot's surprise also held: Hindi typed in Roman letters, which shares English's alphabet, is further from English than Devanagari Hindi at 24 of 28 layers.
+
+**Script or language: a cleaner test.** This is where the new versions earn their place. Compare each version's states with everyday Hindi's, layer by layer:
+
+![Line chart of similarity to everyday Hindi across layers for four versions. Urdu in Devanagari is highest throughout, peaking near 0.8. Marathi and Urdu in Perso-Arabic track each other closely, near 0.74 in the middle and 0.57 at the end. Hindi in Roman letters is lowest from layer 10 on, ending at 0.47](/images/shape-of-hindi/fig4-script-vs-language-large.png)
+
+Two pairs here change only one thing at a time.
+
+- **Same script, different language.** Urdu in Devanagari against Marathi. Both are written in Hindi's alphabet, but Urdu is nearly the same spoken language as Hindi and Marathi isn't. Urdu wins at all 28 layers, by about 0.09 at the end. Language matters.
+- **Same language, different script.** Urdu in Devanagari against Urdu in Perso-Arabic. These are the same words, letter for letter. Changing the script costs about 0.07 in the middle and 0.10 at the end. Script matters about as much.
+
+The pilot's version of prediction 3, Urdu in its own script against Marathi, turns out to be a near tie: Urdu is ahead at 8 of 28 layers, mostly early, and Marathi is ahead by at most 0.025 from layer 12 on. The pilot's late lead for Urdu (0.86 against 0.80) did not survive. In that comparison the two effects cancel: Urdu gains for being the same language and loses the same amount for its different alphabet. The Urdu translations being the weakest probably pushes it down a little more. The starkest line is romanized Hindi, which is the same Hindi as the reference in different letters, and still ends up furthest away.
+
+**Who sits with whom.** Here is every pair at layer 14 and at the last layer.
+
+![Triangle of similarity scores between all 11 versions at layer 14. Everyday and formal Hindi 0.85, English and Chinese 0.84, the two Urdu scripts 0.79](/images/shape-of-hindi/fig8-similarity-matrix-layer14.png)
+
+![Triangle of similarity scores between all 11 versions at layer 28. Everyday and formal Hindi 0.77, Hindi and Urdu in Devanagari 0.66, the two Urdu scripts 0.64, English and Chinese 0.63, and romanized Hindi under 0.5 with everything](/images/shape-of-hindi/fig8-similarity-matrix-layer28.png)
+
+Everyday and formal Hindi are the closest pair at both depths, which is reassuring: a change of register moves the states less than anything else. More surprising, English and Chinese are almost as close in the middle, at 0.84, as the two Hindi registers. Romanized Hindi is the loner by the last layer, under 0.5 with every other version, including the Devanagari Hindi it was transliterated from.
+
+**The length warning, again.** The top 10 directions predict a conversation's token count with an R² of 0.94 to 0.98 at every layer. As in the pilot, that number pools all versions, and the Devanagari versions are both five times longer and grouped together, so length and script are tangled. Untangling them needs a model whose tokenizer charges Hindi and English the same, which is the next run.
+
+![Left: line chart of length explained by the top 10 directions, between 0.94 and 0.98 at every layer. Right: log-scale chart of the first token's largest value relative to a typical token, jumping to about 1,174 times at layer 3](/images/shape-of-hindi/fig5-confounds-large.png)
+
+**Check yourself.** Urdu in Devanagari scores 0.66 with Hindi at the last layer, Urdu in Perso-Arabic 0.56 and Marathi 0.57. Using only these three numbers, how much does switching alphabet cost, and how much does switching language cost? *Alphabet: 0.66 − 0.56 = 0.10, comparing the two Urdus. Language: 0.66 − 0.57 = 0.09, comparing the two Devanagari versions. That is why Urdu in Perso-Arabic and Marathi tie: each pays one of the two costs.*
+
+## What Hindi costs in tokens
+
+A language model doesn't read letters or words. It reads tokens, chunks of text from a fixed vocabulary, and everything about running a model is priced in them: the bill, the wait, the memory, the electricity. So when the same sentence takes more tokens in Hindi than in English, a Hindi speaker pays more for the same answer. People call this the token tax.
+
+Here is one question in eight versions, cut into tokens by the tokenizer of Qwen3, the model in this study.
+
+![Eight rows of boxes, one box per token. English takes 17 tokens, Roman Hinglish 18, romanized Hindi 27, Chinese 14, Urdu 50, Hindi in Devanagari 66, Marathi 69 and formal Hindi 95. In the Devanagari rows many boxes are hollow, marking letters split into raw bytes](/images/shape-of-hindi/tc1-token-strips.png)
+
+English takes 17 tokens. Hindi in Devanagari takes 66, and the formal, Sanskritized version 95. Hinglish typed in Roman letters takes 18, barely more than English. Across all 1,000 conversations in the large run the averages say the same thing: everyday Hindi costs 4.95 times as many tokens as English, formal Hindi 5.14 times, Urdu 3.64 times, romanized Hindi 2.13 times and Roman Hinglish 1.67 times.
+
+### Why it happens
+
+Text reaches the tokenizer as bytes. In UTF-8, the standard encoding, a Latin letter takes one byte and a Devanagari letter takes three. So "payment" is 7 bytes and "पेमेंट" is 18, even though both have six or seven visible symbols.
+
+A tokenizer is built by finding the byte sequences that appear most often in its training text and giving each one an entry in the vocabulary. English dominates that text, so English gets whole words and common word pieces. Qwen3's vocabulary has 151,669 entries. About 70,000 are pure Latin-letter pieces, 25,557 contain a Chinese character and 3,635 contain Arabic script. Only 71 contain a Devanagari letter.
+
+![Bar chart of Qwen3 vocabulary entries by script: 70,096 Latin, 25,557 Chinese, 3,635 Arabic script and 71 Devanagari](/images/shape-of-hindi/tc2-vocab-by-script.png)
+
+With 71 entries, the tokenizer has nothing bigger than a single letter for most of Hindi, and often not even that. The first word of the Hindi question, यूपीआई, comes out as 7 tokens: य, two raw bytes that only make sense together, प, the vowel sign ी, आ and ई. Nearly half the tokens in the Hindi row are fragments like these. That works out to about one token per character for Hindi, against about four characters per token for English.
+
+Chinese is the counterexample. It is a non-Latin script too, but the Qwen team trained on a lot of Chinese and gave it 25,000 entries, so Chinese costs slightly less than English.
+
+### It depends a lot on the tokenizer
+
+A friend pointed out that this tax has been falling, and they were right. I counted tokens for the same 1,000 conversations under tokenizers from 2020 to 2026.
+
+![Dot chart of Hindi's token cost relative to English under each tokenizer, from about 8 times for GPT-3 to about 1.2 to 1.6 times for the newest](/images/shape-of-hindi/tc3-tokenizer-eras.png)
+
+Under GPT-3's tokenizer, Hindi cost about 8 times English. GPT-4's brought that to about 5.3, and GPT-4o's to 1.6. Gemma 4 (and Sarvam's newest model, which uses the same tokenizer) and BLOOM are near 1.3, and Sarvam-1, built for Indian languages, 1.2. The word नमस्कार went from 13 tokens under GPT-3 to 7 under GPT-4, 3 under GPT-4o and 1 under Gemma 4.
+
+But not every recent model has caught up. Qwen3, released in 2025, sits at 4.95. GLM-5.3, released this August, is at 4.8. So the tax is now a design choice, not a law of nature. One more twist: under the newest tokenizers, Hindi typed in Roman letters costs about 2 times English, more than Hindi in Devanagari. The old advice to type romanized Hindi to save tokens has flipped.
+
+### Back of the envelope
+
+Here is what a factor of 5 means in practice, using Qwen3's tokenizer and round numbers.
+
+**Money.** API prices are per token, the same in every language. Say a cheap model charges $0.50 per million output tokens, and a service answers a million questions a day with 70-word replies. An English reply is about 1.15 tokens per word, so about 80 tokens. The day's output is 80 million tokens, which is $40. In Hindi each reply is about 5 times longer in tokens, 400 tokens, so the same service costs $200 a day. That is about $15,000 a year in English against $73,000 in Hindi, for the same answers. With a 1.6 times tokenizer, the Hindi bill drops to about $23,000.
+
+**Waiting.** A model that writes 50 tokens a second finishes the English reply in 1.6 seconds and the Hindi one in 8.
+
+**Memory.** A 32,000-token context window holds about 540 of our English conversations, at 59 tokens each, but only about 110 in Hindi, at 292 each. Long documents, chat history and retrieved sources all run out five times sooner.
+
+**Compute.** A forward pass costs about 2 floating-point operations per parameter per token. For a 1.7-billion-parameter model that is about 3.4 billion operations per token. An English conversation of 59 tokens costs about 0.2 trillion operations, and the Hindi one, at 292 tokens, about 1 trillion. Attention grows with the square of the length, so for long inputs that part of the work grows by 5 × 5 = 25 times, not 5.
+
+**Energy.** A 2026 EMNLP paper measured this directly.[^energy] On a reading-comprehension benchmark with Qwen3-8B, which uses the same tokenizer, Hindi in Devanagari used 0.20 joules per output token against English's 0.10, and 8.5 times as much energy in total. Romanized Hindi used 6.1 times and Urdu 5.0 times. Kannada was worst among Indian languages at 34 times. The cost per token rises too, not only the number of tokens, because longer sequences fill the GPU's memory and leave room for fewer requests at once. A rough check: about 5 times the tokens at 2 times the energy per token gives about 10 times the energy, in the same range as their 8.5.
+
+**Check yourself.** If a tokenizer brings Hindi down to 1.6 times English, and the energy per token falls to 1.2 times English's, about how much more energy does a Hindi reply use? *About 1.6 × 1.2 ≈ 1.9 times, against roughly 10 times with Qwen3's tokenizer.*
+
+There is also a cost that doesn't show up on any bill. A model that sees Hindi as one letter at a time has to spend layers stitching letters back into words before it can work with meaning. That is one reason the length confound matters so much for the geometry in this essay, and one reason I want to repeat the study on a model whose tokenizer treats Hindi fairly.
 
 ## The values thread
 
@@ -187,7 +300,7 @@ I learn best by doing problems, so here are a few. Answers are in the last secti
 
 The original field note drew a pretty picture and stopped. I don't think that's a flaw in a field note, but it left the most interesting question open. When a model reads a sentence, how much of what it does depends on meaning, and how much on the alphabet, the token count and the social register the sentence was written in?
 
-Hindi is the right place to ask, because one spoken language arrives in three scripts, mixes freely with English, puts social relationships into its pronouns, and costs four times as many tokens as English in a popular open model. Most of the work is cheap. The pilot ran on a rented GPU in about ten minutes. The slow part is native speakers checking 600 items in Hindi, Urdu, Marathi and Hinglish, and that is the part I'd least want to cut.
+Hindi is the right place to ask, because one spoken language arrives in three scripts, mixes freely with English, puts social relationships into its pronouns, and costs five times as many tokens as English in a popular open model. Most of the work is cheap. The pilot ran on a rented GPU in about ten minutes, and the 1,000-conversation run in under two hours. The 1,000 items say the model sorts by script about as much as by language, and that romanized Hindi, the way millions of people actually type, ends up furthest from everything. The slow part now is native speakers checking the translations, above all the Urdu and the Bhojpuri, and that is the part I'd least want to cut. After that, the same run on a model whose tokenizer charges Hindi fairly, to pull length and script apart.
 
 [^op]: operator0x, ["What thousands of conversations look like inside a language model"](https://operator0x.com/field-notes/qwen-conversation-state-space/), field note (November 2026).
 [^brief]: Numbers as quoted in a [Hacker News front-page briefing](https://thecontext.dev/en/briefing/) (15 November 2026). I could not load the original page from my research setup.
@@ -203,6 +316,7 @@ Hindi is the right place to ask, because one spoken language arrives in three sc
 [^arith]: Gurgurov et al., ["Language arithmetics: towards systematic language neuron identification and manipulation"](https://arxiv.org/abs/2507.22608), IJCNLP-AACL 2025.
 [^romanlens]: Saji et al., ["RomanLens: the role of latent romanization in multilinguality in LLMs"](https://arxiv.org/abs/2502.07424) (2025).
 [^latin]: Gurgurov, Saji et al., ["The Latin substrate: how language models represent and mediate script choice"](https://arxiv.org/abs/2605.31363) (2026).
+[^energy]: Deng, Shen, Feng, Nwatu, Chung, Chowdhury, Chen, Mihalcea, ["The language–energy divide: measuring energy costs of multilingual LLM inference"](https://aclanthology.org/2026.emnlp-main.2113/), EMNLP 2026. Indian-language figures are from their Table 5, Qwen3-8B on Belebele; the ratios to English are my arithmetic from their totals.
 [^tok]: Qwen3-8B, which shares the Qwen3 tokenizer, at 4.75 tokens per Hindi word and 1.26 per English word on FLORES-200, from ["BrahmicTokenizer-131K"](https://arxiv.org/abs/2605.29379) (2026). Romanized Hindi at 0.43 times native-script cost on the Qwen2.5 tokenizer, from Johny, Ghosh, Sam, ["The Indic token tax in 2026"](https://arxiv.org/abs/2611.13058).
 [^massive]: Sun et al., ["Massive activations in large language models"](https://arxiv.org/abs/2402.17762) (2024); for Qwen3, Shi et al., ["A single layer to explain them all"](https://arxiv.org/abs/2605.08504), ICML 2026.
 [^specious]: Chari and Pachter, ["The specious art of single-cell genomics"](https://doi.org/10.1371/journal.pcbi.1011288), PLoS Computational Biology (2023).

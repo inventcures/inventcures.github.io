@@ -1,7 +1,8 @@
 ---
 title: "Script costs as much as language: Hindi, Urdu and Hinglish inside a small LLM"
 date: 2026-11-18
-permalink: /shape-of-hindi-edison-version/
+redirect_from:
+  - /shape-of-hindi-edison-version/
 excerpt: "I wrote 1,000 conversations in 11 versions of Hindi and its neighbours, ran them through Qwen3-1.7B, and measured where the versions meet inside the model. Changing the alphabet moves the model's states about as far as changing the language. Romanized Hindi, the way millions of people type, ends up furthest from everything. And the same Hindi question costs five times as many tokens as English, though newer tokenizers have cut that to about 1.3."
 tags:
   - interpretability

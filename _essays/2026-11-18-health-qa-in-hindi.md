@@ -11,6 +11,8 @@ tags:
   - MedQA
 ---
 
+*Update, 18 November 2026, 10:45 pm IST. A reviewer asked whether the Hindi drop comes from the models or from my translations and my grader. So I ran two controls. In one, the models get the Hindi question with a line asking for an English answer. In the other, a separate model translates the Hindi answers into English so I can grade them again. Both have run, but they aren't graded yet. I describe them in [Two controls](#two-controls) below and will add their scores once grading is done.*
+
 *Draft, 18 November 2026. Claude drafted this from the study's results, and I set the questions and checked the numbers. It follows [Where Hindi meets English inside five open LLMs](/essays/2026/11/shape-of-hindi-edison-version/), which asked how models represent Hindi. This one asks whether that representation predicts the answer. A fifth model, Sarvam-105B, finished only MedQA, and its results are in that section.*
 
 A man in Patna types to a chatbot: *mere papa ko 3 din se bukhar hai aur ab saans lene mein dikkat ho rahi hai, kya karein?* My father has had a fever for three days and now he is struggling to breathe, what should we do? The right answer is to take him to a hospital now. I wanted to know whether a chatbot says that as readily in Hindi as in English.
@@ -111,15 +113,27 @@ The representation result holds here too. Every model matches 97 to 100% of the 
 
 If I were building a health chatbot for India, I'd test it in romanized Hindi, because that's what people type and it's the hardest form for every model I tried. The Hindi test sets I've seen use Devanagari instead. I wouldn't pick a model by its English score either.
 
-I'd also spend less effort on comprehension. The models already know what was asked, so the loss comes somewhere between the middle layers and the written answer. I can't yet say where. So I'd try fixes that change how the model writes the answer. One is to take the question in Hindi, let the model answer in English, and translate the answer back.
+I'd also spend less effort on comprehension. The models already match the question to its English twin, so the loss comes somewhere between the middle layers and the written answer. I can't yet say where. So I'd try fixes that change how the model writes the answer. One is to take the question in Hindi, let the model answer in English, and translate the answer back.
+
+## Two controls
+
+A Hindi answer could score worse for three reasons. My translation of the question might be off, the grader might mark Hindi harder, or the model might really write worse advice in Hindi. Only the last one is what I claim, so I ran two controls to pull them apart.
+
+**Control A asks in Hindi and wants the answer in English.** I gave Qwen3-1.7B and Qwen3.8-27B the same 100 questions in all four forms, each with one line in the question's own form asking for an English answer. In romanized Hindi that line reads *Kripya jawab English mein dein.* The English questions got the same line, so I can see what the instruction does on its own. Both models did as asked every time, and all 800 answers are more than 90% Latin script. Now the grader reads English in every case. If the Hindi-question scores climb back to the English level, the model read the Hindi question fine and the loss sits in writing Hindi, or in the grader. If they stay low, something goes wrong earlier, while the model works on the question.
+
+**Control B translates the Hindi answers and grades them again.** I took the 900 Hindi answers I already had from Qwen3-1.7B, Qwen3.8-27B and gpt-oss-120b and had Qwen3-32B translate them into English. It's the model that translated the questions, and it isn't the grader, so Gemini never grades its own writing. If the translations score about the same as the Hindi originals, the grader treats Hindi fairly. If they score near English, the grader penalises Hindi text and part of the gap in my tables is the grader's.
+
+Two things show up before any grading. The translator smooths Qwen3-1.7B's garbled Hindi into fluent English, so Control B will flatter that model. And 92 of its 300 translations hit the length limit, because its Hindi answers loop and repeat, against 2 for the other two models together. I also noticed that gpt-oss sometimes answers a romanized Hindi question in Devanagari.
+
+The two controls cost about $7. Their scores go into the next update, along with the cancer grades.
 
 ## What I haven't checked
 
 - **No native speaker has read the questions or answers.** A clumsy translation could make a question harder. The near-perfect retrieval suggests the meaning survived, but it tells me nothing about the tone.
-- **One grader.** Gemini judged answers in all four forms. If it grades Hindi more harshly, the grader causes part of the drop. A second grader and a doctor reading a sample would settle it.
+- **One grader.** Gemini judged answers in all four forms. If it grades Hindi more harshly, the grader causes part of the drop. Control B tests exactly this, and a doctor reading a sample would settle it.
 - **Sarvam-105B is mostly missing.** India's own open model was the one I most wanted to see. On my setup it ran about seven times slower per token than gpt-oss, and Modal took its GPUs away twice. Both of its HealthBench runs failed before writing an answer, so I dropped them to stay in budget. It answered 258 MedQA questions in all four forms, which I report above.
 - **Only 100 questions.** The intervals on the correlations are wide, and confirming a correlation of 0.25 would take a few hundred.
-- **Cancer questions.** gpt-oss never got a GPU for the HealthBench cancer set, and the two Qwen models' cancer answers are still being graded. Those go into the next draft.
+- **Cancer questions.** gpt-oss and both Qwen models have now answered the 45 HealthBench cancer questions in all four forms, but their grades wait on my grading quota. Those go into the next update.
 
 ## Try it yourself
 
@@ -127,8 +141,10 @@ Try this before you open the answer. Qwen3-1.7B matches nearly every Hindi quest
 
 <details><summary>One answer</summary>
 
-Ask the question in Hindi but tell the model to answer in English, and grade that English answer. If the score climbs back toward the English baseline, the model understood and the loss is in writing Hindi. If it stays low, the meaning is getting lost between the middle layers and the output. A finer version patches the middle-layer state from the Hindi question into the English run and checks whether the English answer survives.
+Ask the question in Hindi but tell the model to answer in English, and grade that English answer. If the score climbs back toward the English baseline, the model read the question fine and the loss is in writing Hindi. If it stays low, the meaning is getting lost between the middle layers and the output. A finer version patches the middle-layer state from the Hindi question into the English run and checks whether the English answer survives.
 
 </details>
 
-The preprint, with the methods in full, is [here as a PDF](/files/health-qa-in-hindi.pdf). Code, questions, answers and grades are in [inventcures/shape-of-hindi](https://github.com/inventcures/shape-of-hindi) under `src/health/`. The whole study cost me about $40 of GPU time and grading.
+That first experiment is Control A above, and its scores come in the next update.
+
+The preprint, with the methods in full, is [here as a PDF](/files/health-qa-in-hindi.pdf). Code, questions, answers and grades are in [inventcures/shape-of-hindi](https://github.com/inventcures/shape-of-hindi) under `src/health/`. The whole study, controls included, cost me about $63 of GPU time and grading.

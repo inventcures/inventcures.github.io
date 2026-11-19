@@ -113,6 +113,7 @@ sup.fn a:hover,sup.fn a:focus-visible{background:var(--accent-soft)}
     <li><a href="#video">Explainer video</a></li>
     <li><a href="#essay">Essay</a></li>
     <li><a href="#figure-1">Figure 1</a></li>
+    <li><a href="#a-small-test">A small test</a></li>
     <li><a href="#further-reading">Further reading</a></li>
     <li><a href="#related">Go deeper</a></li>
     <li><a href="#notes-heading">References</a></li>
@@ -211,6 +212,26 @@ sup.fn a:hover,sup.fn a:focus-visible{background:var(--accent-soft)}
 
 <p>Advertising makes the argument uncomfortable. We should not ban every separately displayed healthcare advertisement. A labelled notice can tell a patient that a clinic exists, speaks a needed language, or has appointments. But providers, insurers, pharmacies, and integrated health companies must not buy a higher place in a list presented as the best clinical route. Platforms must keep paid placements out of emergency routing, crisis response, treatment selection, and clinically indicated referrals.</p>
 
+<h2 id="a-small-test">A small test</h2>
+
+<p>I wanted to know how much of this an audit can catch today, so I ran a small test. I built a synthetic clinic directory, gave eight AI models a search tool and a booking tool, and asked each to route 90 synthetic patients with a suspicious mammogram or an overdue diabetes check-up. Three models were closed. Five were open-weight models anyone can download: Gemma 4, Qwen3.8, GLM-5.3, DeepSeek V4.1 Flash, and DeepSeek V4 Pro. I then repeated the open-model runs on real Philadelphia clinics, built from public federal data.<sup class="fn"><a href="#fn13" id="fnref13" aria-label="Note 13">13</a></sup></p>
+
+<p>First, the label. I showed each model five identical clinics and marked one “CareRoute partner clinic.” A model that ignores the label picks it one time in five. All five open models picked it far more often, from 62% to 99.7% of 300 trials, and almost always said the partnership was the reason. GPT-6.1 Sol and Claude Sonnet 5.5 did the opposite and avoided it. Nothing in a correct answer tells you which kind of model you are using. You have to test it.</p>
+
+<figure class="fig" id="figure-2" aria-labelledby="fig2-caption">
+  <div class="fig-body"><img src="media/open-models-partner-label.svg" alt="Dot chart. Share of trials choosing the clinic labelled partner: DeepSeek V4 Pro 99.7%, Gemma 4 31B 94%, GLM-5.3 82%, DeepSeek V4.1 Flash 77%, Qwen3.8-27B 62%, each from 300 trials. Closed models from 60 trials each: Gemini 3.1 Flash Lite 87%, GPT-6.1 Sol 12%, Claude Sonnet 5.5 8%. Chance is 20%." style="width:100%;height:auto;display:block"></div>
+  <figcaption id="fig2-caption">Figure 2: <b>Open models follow a partner label.</b> Five identical clinics, one labelled as a partner. Lines are 95% confidence intervals for each model’s share.</figcaption>
+</figure>
+
+<p>Second, the booking. When no clinic fit a patient’s insurance, budget, distance, and deadline, every model, open or closed, still booked one in 4 to 6 of the 19 such cases. I tried two fixes. Adding a checklist to the prompt, asking the model to check each constraint before booking, did almost nothing and made two models worse. Changing the booking tool so it refuses any clinic that breaks a stated constraint stopped these bookings in every open model, on both directories, and barely changed the share of good bookings. The fix belonged in the platform, not the prompt.</p>
+
+<figure class="fig" id="figure-3" aria-labelledby="fig3-caption">
+  <div class="fig-body"><img src="media/open-models-guard.svg" alt="Small multiples. Episodes where no clinic fits but the model booked one anyway. Synthetic world, of 19: baseline 5 to 6 per model, checklist prompt 6 to 7, guarded booking tool 0 for all five. Philadelphia, of 12: baseline 4 to 6, checklist 0 to 6, guarded tool 0 for all five." style="width:100%;height:auto;display:block"></div>
+  <figcaption id="fig3-caption">Figure 3: <b>Guard the tool, not the prompt.</b> Same patients in every column. Only the guarded booking tool brings bookings with no fitting clinic to zero.</figcaption>
+</figure>
+
+<p>This is a small synthetic test, not evidence about any deployed product. Prices, networks, and patients are made up, and each patient ran once. But the whole thing cost about $11 in API fees, which tells me this audit is cheap enough to run before launch and again after every update.</p>
+
 <p>Deeper integration creates the central tradeoff. It can remove handoffs, reduce administrative burden, and help more patients complete appropriate care. The same integration can concentrate ranking power, propagate an error across several steps, and make it harder for patients to compare or leave. We should measure both sides rather than assume that integration is either coordination or capture.</p>
 
 <p>India offers a useful institutional test. The National Health Authority designed the Unified Health Interface as an open network for discovering, booking, paying for, and completing health services across different applications.<sup class="fn"><a href="#fn12" id="fnref12" aria-label="Note 12">12</a></sup> Researchers should compare open and closed systems on public-provider exposure, price, language, completion, portability, and exit. Open architecture is a hypothesis, not proof of fair care.</p>
@@ -257,6 +278,7 @@ sup.fn a:hover,sup.fn a:focus-visible{background:var(--accent-soft)}
   <li id="fn10">Keyes T, et al. Why and how to monitor deployed AI systems in health care. NEJM Catalyst Innovations in Care Delivery. 2026. doi:10.1056/CAT.25.0372. <a class="backref" href="#fnref10" aria-label="Back to text for note 10">↩</a></li>
   <li id="fn11">Marshall NP, et al. <a href="https://doi.org/10.64898/2026.09.02.26362008">Can a General-Purpose Coding Agent Analyze a Production Hospital Data Warehouse?</a>. medRxiv preprint, version 1. Posted September 4, 2026. Not peer reviewed. <a class="backref" href="#fnref11" aria-label="Back to text for note 11">↩</a></li>
   <li id="fn12">National Health Authority, Government of India. Unified Health Interface product overview. <a href="https://abdm.gov.in/UHI/product-overview">https://abdm.gov.in/UHI/product-overview</a>. <a class="backref" href="#fnref12" aria-label="Back to text for note 12">↩</a></li>
+  <li id="fn13">Synthetic care-routing pilot, run on OpenRouter in November 2026: three closed models (Gemini 3.1 Flash Lite, GPT-6.1 Sol, Claude Sonnet 5.5) and five open-weight models (Gemma 4 31B, Qwen3.8-27B, GLM-5.3, DeepSeek V4.1 Flash, DeepSeek V4 Pro), each open model pinned to one host at FP8 precision or better. 90 patients per model, one run each; 300 labelled and 300 control partner-label trials per open model. The Philadelphia directory uses clinic names, addresses and specialties from the NPPES NPI Registry, health center sites from HRSA, US Census geocoding, and SEPTA transit stops; prices, networks, slots and patients are synthetic. Method and every calculation: <a href="/care-routing-pilot/">synthetic pilot</a>. <a class="backref" href="#fnref13" aria-label="Back to text for note 13">↩</a></li>
 </ol>
 </section>
 

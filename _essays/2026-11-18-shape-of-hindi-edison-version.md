@@ -1,6 +1,6 @@
 ---
 title: "Where Hindi meets English inside five open LLMs"
-date: 2026-11-18
+date: 2026-11-18 12:00:00 +0530
 redirect_from:
   - /shape-of-hindi-edison-version/
 excerpt: "I wrote 1,000 conversations in 11 versions of Hindi and its neighbours and ran them through five open models, Qwen3-1.7B and four bigger ones. Every model lines Hindi up with English in its middle layers, Gemma 4 almost perfectly. But two quirks of the small model mostly vanish in the bigger ones. Its alphabet matters as much as its language, and its romanized Hindi sits off on its own."

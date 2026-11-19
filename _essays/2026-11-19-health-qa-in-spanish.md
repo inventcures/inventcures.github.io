@@ -1,6 +1,6 @@
 ---
 title: "Understood in Spanish, answered a little worse"
-date: 2026-11-19
+date: 2026-11-19 23:30:00 +0530
 excerpt: "I asked the same four open models the same health questions again, this time in Spanish, Spanish typed without accents, and Spanglish. Three of the four still answer worse than in English, but they lose about half as much as they did in Hindi. Every model matches every Spanish question to its English twin, and that match still barely predicts the answer."
 tags:
   - interpretability
@@ -22,11 +22,11 @@ Spanish is a good test. Hindi is thin in most training data, uses its own script
 1. **Three of four models still answer worse in Spanish than in English.** It's the same three as in Hindi. On 87 general HealthBench questions, Qwen3.8-27B and gpt-oss-120b lose 0.05 to 0.08, and Qwen3-1.7B loses 0.15 to 0.20. Gemma 4 31B loses nothing I can tell apart from zero, as in Hindi.
 2. **They lose about half as much as in Hindi.** On the same questions, gpt-oss drops 0.07 in Spanish against 0.18 in Devanagari Hindi. Qwen3-1.7B drops 0.15 against 0.36, and doesn't fall to zero. Across the three sets, the Spanish drop is clearly smaller than its Hindi twin in 19 of 36 model and form pairs, and clearly bigger in none.
 3. **Spanish typed without accents costs the most on multiple choice.** On 231 MedQA questions, dropping accents and ¿ ¡ costs every model 4 to 8 points of accuracy, with every interval below zero. It's the only form that does that for all four.
-4. **Spanglish costs about as much as standard Spanish.** Mixing in English medical words neither rescues nor sinks the answer on open questions. On multiple choice it does a little better than standard Spanish.
+4. **Spanglish costs about as much as standard Spanish.** On open questions the two drops are within 0.05 of each other for every model, so mixing in English medical words neither rescues nor sinks the answer. On multiple choice it does a little better than standard Spanish.
 5. **Every model knows which question it was asked.** At its best layer, each model matches 100% of the Spanish questions, in all three forms, to their own English twins. Chance is 1% or less.
 6. **Representation still barely predicts the answer.** On the general and MedQA sets, the rank correlation between how closely a question lines up with English and how much it loses runs from −0.15 to 0.23, and 23 of 24 intervals include zero.
 
-So the gap isn't only a Hindi problem. A model can know a language well and still give worse advice in it, just less worse.
+So the gap isn't only a Hindi problem. A model can know a language well and still give worse advice in it, only by less.
 
 ## The setup
 
@@ -82,7 +82,7 @@ Qwen3-1.7B is the clearest case. In Hindi its answers averaged below zero, which
 
 ![Change in MedQA accuracy from English, Spanish next to Hindi](/images/health-qa-in-spanish/s2-gaps.png)
 
-Here the informally typed form is the only one that costs every model, 4 to 8 points, with every interval below zero. That surprised me, because on open questions it cost little extra. My guess is that a long exam question with every *á* and *ó* stripped looks less like the text these models learned medicine from than a short message typed on a phone does, but I haven't tested that.
+Here the informally typed form is the only one that costs every model, 4 to 8 points, with every interval below zero. That surprised me, because on open questions it cost little extra. My guess is that the models learned medicine from properly accented text. A long exam question with every *á* and *ó* stripped looks less like that text than a short phone message does. I haven't tested this.
 
 gpt-oss loses the most in Spanish, about 7 points. Spanglish costs every model the least, probably because it keeps the English medical terms the questions turn on.
 
@@ -103,7 +103,7 @@ With 40 questions the intervals are about ±0.08, so only the biggest drops are 
 
 ## Every model knows the question, and it still barely matters
 
-At each model's best layer, 100% of the Spanish questions find their own English twin, in every form and in every set. In Hindi the range was 93 to 100%. So the models hold the meaning of a Spanish question at least as well as a Hindi one.
+At each model's best layer, 100% of the Spanish questions find their own English twin, in every form and in every set. In Hindi the range was 93 to 100%. So the models match a Spanish question to its English twin at least as reliably as a Hindi one.
 
 ![Spearman correlation between alignment and the change in score, for each model and form](/images/health-qa-in-spanish/s4-representation.png)
 
@@ -166,4 +166,4 @@ Strip the accents from only the medical words in the exam questions and leave th
 
 </details>
 
-Code, questions, answers and grades are available on request. The Spanish run cost about $64 of GPU time on Modal, more than I planned, because a queue for GPUs and a restart doubled one model's run, and about $18 of grading.
+Code, questions, answers and grades are available on request. The Spanish run cost about $64 of GPU time on Modal, more than I planned, partly because a restart made one model answer every question twice, and about $18 of grading.

@@ -1,7 +1,7 @@
 ---
 title: "Worse health advice outside English, and where it goes wrong"
-date: 2026-11-19
-excerpt: "Across two studies, the same four open models answered the same health questions in English, Hindi and Spanish. Three of four gave worse advice in both languages, about twice as much worse in Hindi as in Spanish. The models understood the questions. The grader wasn't to blame. Here's what I can say about why, and what I can't yet."
+date: 2026-11-19 23:50:00 +0530
+excerpt: "Across two studies, the same four open models answered the same health questions in English, Hindi and Spanish. Three of four gave worse advice in both languages, about twice as much worse in Hindi as in Spanish. The models recognised the questions. The grader wasn't to blame. Here's what I can say about why, and what I can't yet."
 tags:
   - multilingual LLMs
   - health
@@ -34,7 +34,7 @@ For gpt-oss, a drop of 0.18 means its Hindi answers meet about 38% fewer rubric 
 
 **It isn't the grader.** If Gemini marked non-English text down, translating an answer into English should raise its score. I translated the answers of three models into English with a different model and graded them again. In both languages the translations scored within a few hundredths of the originals, and never clearly higher, in all eighteen model and form pairs. Grading the same English answers twice also gave the same scores within 0.02.
 
-**It isn't that the model misreads the question.** While each model read a question, I saved its internal state at every layer and checked whether the nearest English question was the question's own translation. At the best layer, 93 to 100% of Hindi questions and 100% of Spanish questions found their own English twin, where chance is about 1%. Even Qwen3-1.7B, whose Hindi answers scored zero, does this.
+**It isn't that the model fails to recognise the question.** While each model read a question, I saved its internal state at every layer and checked whether the nearest English question was the question's own translation. At the best layer, 93 to 100% of Hindi questions and 100% of Spanish questions found their own English twin, where chance is about 1%. Even Qwen3-1.7B, whose Hindi answers scored zero, does this. Matching a twin isn't the same as catching every clinical detail, though, and that matters below.
 
 **It isn't how closely the question lines up with English.** If a loose match caused the loss, the questions that matched English most closely would lose least. Across both studies the rank correlation between closeness and loss sits near zero, and most intervals include zero. On the general questions the strongest explains about 5% of the variation.
 
@@ -52,7 +52,7 @@ For gpt-oss, a drop of 0.18 means its Hindi answers meet about 38% fewer rubric 
 
 ## Why, as best I can tell
 
-Putting the pieces together, the models hold the meaning of a non-English question well. The points go missing between that representation and a good answer: in how the model reasons from the question, and, for smaller models, in how it writes. The drop shrinks with more exposure to a language and is bigger for open advice than for picking an option.
+Putting the pieces together, the models recognise a non-English question well. The points go missing between that representation and a good answer: in how the model reasons from the question, and, for smaller models, in how it writes. The drop shrinks with more exposure to a language and is bigger for open advice than for picking an option.
 
 My working explanation is that the skill of giving careful health advice is learned mostly in English and carries over to other languages only in part. Most instruction tuning and preference data is in English, and a rubric rewards exactly the things that tuning teaches: asking about red flags, saying when to seek care, hedging where the evidence is thin. That would explain why recognition survives and advice doesn't, and why a better-covered language loses less. I haven't tested it, though. Testing it would mean comparing models whose tuning data differ only in language, or patching an English answer's middle-layer state into a Hindi run and seeing whether the advice improves.
 

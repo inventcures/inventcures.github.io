@@ -1,6 +1,6 @@
 ---
 title: "Guard the booking tool, not the prompt"
-date: 2026-11-19
+date: 2026-11-19 10:00:00 +0530
 excerpt: "I gave eight AI models a clinic search tool and a booking tool and asked them to route 90 patients, on a made-up directory and on real Philadelphia clinics. All five open models picked a clinic labelled 'partner' 62 to 99.7% of the time, against 20% by chance. Every model booked clinics that didn't fit the patient. A checklist in the prompt didn't stop that. A booking tool that refuses did, for every open model."
 tags:
   - consumer health AI

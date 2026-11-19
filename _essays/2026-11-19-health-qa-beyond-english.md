@@ -1,6 +1,6 @@
 ---
 title: "Worse health advice outside English, and where it goes wrong"
-date: 2026-11-19
+date: 2026-11-19 23:50:00 +0530
 excerpt: "Across two studies, the same four open models answered the same health questions in English, Hindi and Spanish. Three of four gave worse advice in both languages, about twice as much worse in Hindi as in Spanish. The models recognised the questions. The grader wasn't to blame. Here's what I can say about why, and what I can't yet."
 tags:
   - multilingual LLMs

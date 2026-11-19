@@ -1,6 +1,6 @@
 ---
 title: "Understood in Spanish, answered a little worse"
-date: 2026-11-19
+date: 2026-11-19 23:30:00 +0530
 excerpt: "I asked the same four open models the same health questions again, this time in Spanish, Spanish typed without accents, and Spanglish. Three of the four still answer worse than in English, but they lose about half as much as they did in Hindi. Every model matches every Spanish question to its English twin, and that match still barely predicts the answer."
 tags:
   - interpretability

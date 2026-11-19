@@ -1,6 +1,6 @@
 ---
 title: "Understood in Hindi, answered worse"
-date: 2026-11-18
+date: 2026-11-18 20:00:00 +0530
 excerpt: "I asked four open models 429 health questions in English, Hindi, romanized Hindi and Hinglish, and read their middle layers while they did. At their best layer, the models matched 93 to 100% of Hindi questions to their English twins. Three of the four still answered clearly worse in Hindi, down to a score of zero for Qwen3-1.7B. Gemma 4's drop was clear only in romanized Hindi."
 tags:
   - interpretability

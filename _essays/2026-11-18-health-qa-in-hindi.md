@@ -1,7 +1,7 @@
 ---
 title: "Understood in Hindi, answered worse"
 date: 2026-11-18
-excerpt: "I asked four open models 429 health questions in English, Hindi, romanized Hindi and Hinglish, and read their middle layers while they did. At their best layer, the models matched 93 to 100% of Hindi questions to their English twins. Every model still answered worse in Hindi, from a 0.03 drop for Gemma 4 to a score of zero for Qwen3-1.7B."
+excerpt: "I asked four open models 429 health questions in English, Hindi, romanized Hindi and Hinglish, and read their middle layers while they did. At their best layer, the models matched 93 to 100% of Hindi questions to their English twins. Three of the four still answered clearly worse in Hindi, down to a score of zero for Qwen3-1.7B. Gemma 4's drop was clear only in romanized Hindi."
 tags:
   - interpretability
   - multilingual LLMs
@@ -21,10 +21,10 @@ In [the last essay](/essays/2026/11/shape-of-hindi-edison-version/) I found that
 
 ## What I found
 
-1. **Every model answers worse in Hindi than in English.** I graded answers to 100 HealthBench questions against rubrics that physicians wrote. Gemma 4 31B loses 0.03 points in Hindi. Qwen3.8-27B and gpt-oss-120b lose 0.10 to 0.20. Qwen3-1.7B falls to zero.
-2. **On general health questions, romanized Hindi is the hardest form for every model.** On the smaller cancer set the forms are too close to rank. Many Indians type Hindi this way on their phones, though I haven't found a reliable count. Hinglish, which keeps Hindi grammar and borrows English words, does about as well as Devanagari.
+1. **Three of four models answer clearly worse in every Hindi form.** I graded answers to 100 HealthBench questions against rubrics that physicians wrote. Qwen3.8-27B and gpt-oss-120b lose 0.10 to 0.20, and Qwen3-1.7B falls to zero. Gemma 4 31B loses 0.08 in romanized Hindi, but its 0.03 drops in Devanagari and Hinglish are too small to tell apart from zero.
+2. **On general health questions, romanized Hindi scores lowest for every model.** On the smaller cancer set the forms are too close to rank. Many Indians type Hindi this way on their phones, though I haven't found a reliable count. Hinglish, which keeps Hindi grammar and borrows English words, does about as well as Devanagari.
 3. **Every model can tell which question it was asked.** At its best layer, each model matches a Hindi question to its own English twin 93 to 100% of the time. Chance is 1%. Qwen3-1.7B does this too, and then scores zero.
-4. **Representation barely predicts the answer.** Within a model, a question that lines up closely with its English twin doesn't lose much less than one that lines up loosely. The rank correlation mostly sits between 0 and 0.25. I started with four hypotheses, and the one that fits best is that the models represent Hindi well and still answer it poorly.
+4. **Representation barely predicts the answer.** Within a model, a question that lines up closely with its English twin doesn't lose much less than one that lines up loosely. The rank correlation sits between −0.02 and 0.23, and most intervals include zero. I started with four hypotheses, and the one that fits best is that the models represent Hindi well and still answer it poorly.
 5. **Multiple choice shrinks the gap for most models.** On 284 USMLE questions from MedQA, gpt-oss-120b keeps 80% of its English accuracy in romanized Hindi, while on HealthBench it keeps only 59% of its English score. Gemma 4 loses about the same on both.
 6. **The drop isn't the grader's, and for Qwen3.8 it isn't mostly about writing Hindi.** English translations of the Hindi answers score no higher than the originals. When Qwen3.8 answers a Devanagari question in English, it scores 0.44, against 0.53 for an English question with the same instruction, almost the same gap as before. For the small Qwen3-1.7B, answering in English recovers 40 to 70% of the gap. I ran this control on the two Qwen models only.
 
@@ -44,7 +44,7 @@ In [the last essay](/essays/2026/11/shape-of-hindi-edison-version/) I found that
 
 **Representation.** While each model read a question, before it wrote a word, I saved its residual stream at every layer and averaged it over the question's tokens. I subtracted each form's average state, so that what's left is about the question and not about the script. Then at each layer I measured two things. *Retrieval* checks whether a Hindi question's nearest English question is its own twin. *Alignment* is the cosine between a question's state and its twin's.
 
-## Every model answers worse in Hindi
+## Three models answer clearly worse in Hindi
 
 | | English | Hindi | Roman Hindi | Hinglish |
 |---|---|---|---|---|
@@ -57,7 +57,9 @@ In [the last essay](/essays/2026/11/shape-of-hindi-edison-version/) I found that
 
 Qwen3.8-27B writes the best English answers, but Gemma 4 writes the best Hindi ones. If I picked a model for Hindi users from the English column, I'd pick the wrong one. Qwen3-1.7B worries me more. Its Hindi answers trip more "must not do" items than they meet good ones, so on average they lose points. Before clipping, its Hindi averages run from −0.06 to −0.15.
 
-Romanized Hindi is the worst form for every model. That column bothers me most, because it's how Hindi usually gets typed on a phone.
+Paired question by question, the drop is clear for Qwen3-1.7B, Qwen3.8 and gpt-oss in all three forms, with every 95% interval below zero. For Gemma only romanized Hindi is clearly worse, at −0.08 with an interval of −0.13 to −0.03. Its Devanagari and Hinglish intervals both cross zero.
+
+Romanized Hindi scores lowest for every model. That column bothers me most, because it's how Hindi usually gets typed on a phone.
 
 ## Every model knows which question it was asked
 
@@ -67,9 +69,9 @@ Qwen3-1.7B is the starkest case. Its middle layers find the English twin almost 
 
 ## Alignment barely predicts the drop
 
-Within a model, I ranked the 100 questions by how closely each lined up with its English twin at the peak layer, and by how much its score dropped. If representation drove quality, the best-aligned questions would lose the least.
+Within a model, I ranked the 100 questions by how closely each lined up with its English twin, and by how much its score dropped. For the bigger models, retrieval sits at its top value across a long run of layers, up to 42 for Qwen3.8, so I measure alignment in the middle of that run. If representation drove quality, the best-aligned questions would lose the least.
 
-Mostly they don't. The Spearman correlation sits between 0 and 0.25 for most models and forms, and most of the 95% intervals include zero. Only two pairs clear zero. Gemma 4 on romanized Hindi has ρ = 0.25, with an interval of 0.04 to 0.43. Qwen3-1.7B on Hinglish has 0.24, with 0.05 to 0.43. Even there, alignment explains about 6% of the variation in the drop.
+Mostly they don't. The Spearman correlation runs from −0.02 to 0.23, and 10 of the 12 intervals include zero. The two that clear it are both romanized Hindi: Gemma 4 at 0.23, with an interval of 0.03 to 0.43, and Qwen3.8 at 0.22, with 0.04 to 0.41. Which pairs clear zero shifts a little with the layer I pick, so I wouldn't lean on any single one. Even the strongest explains about 5% of the variation in the drop. The one pattern that holds is romanized Hindi. There ρ is positive for every model on both benchmarks, from 0.07 to 0.23, so it's a weak but steady sign that alignment matters most for that form.
 
 I started with four hypotheses. A question could be *represented well and answered well*, *represented well but answered poorly*, or *represented poorly and answered poorly*, or quality could be *proportional to representation*. The first fits Gemma 4. The second fits Qwen3-1.7B, and to a lesser degree gpt-oss and Qwen3.8 on romanized Hindi. The third barely happens, because almost nothing is represented poorly. The fourth gets weak support at best.
 
@@ -104,9 +106,9 @@ Qwen3-1.7B fails in its own way. In Devanagari it ignores the instruction to ans
 
 *MedQA accuracy on the 258 questions all five models answered in every form.*
 
-Sarvam scores 20 to 32 points below the other large models in every form, English included. Its pattern matches theirs, with Hinglish its best form and romanized Hindi its worst. Part of the gap is format, not medicine. In 126 answers it reasons step by step and runs out of its 512-token budget before naming a letter, and I count those as wrong. With a bigger budget it would score higher, though I doubt it would close a gap that size.
+Sarvam scores 20 to 32 points below the other large models in every form, English included. Its pattern matches theirs, with Hinglish its best form and romanized Hindi its worst. Part of the gap is format, not medicine. In 33 answers, mostly English ones, it reasons step by step and runs out of its 512-token budget before naming a letter, and I count those as wrong. That's 3% of its answers, so a bigger budget would add a few points at most and wouldn't close a gap that size.
 
-The representation result holds here too. Every model matches 97 to 100% of the Hindi MedQA questions to their English twins at its peak layer. Alignment barely predicts which ones it gets right, with ρ between 0.03 and 0.10 and every interval crossing zero.
+The representation result holds here too. Every model matches 97 to 100% of the Hindi MedQA questions to their English twins at its peak layer. Alignment barely predicts which ones it gets right. Most questions get the same mark in Hindi and English, so the ranks are full of ties, and I give tied values their average rank. ρ runs from −0.02 to 0.16, and 4 of the 15 intervals clear zero: Qwen3.8 in romanized Hindi and Hinglish, Gemma in romanized Hindi and Sarvam in Devanagari.
 
 **Cancer questions.** On the 26 questions Gemini labels as mainly oncology, the pattern is the same. gpt-oss scores 96% in English and 81% in romanized Hindi, and Gemma scores 88% and 81%. With 26 questions each one is worth almost 4 points, so I wouldn't read much into the differences between models. The 45 HealthBench cancer questions tell the same story with open answers.
 
@@ -119,11 +121,11 @@ The representation result holds here too. Every model matches 97 to 100% of the 
 
 *HealthBench score on 45 cancer questions, with the average drop from English in brackets.*
 
-Every model again answers worse in Hindi. Qwen3.8 drops more on cancer questions than on general ones, 0.17 in Devanagari against 0.10. Gemma stays the steadiest in Devanagari but loses as much as the others in the romanized forms. With 45 questions the intervals are about ±0.08, so I wouldn't rank the forms or the models from this table.
+Every model again scores lower in Hindi, and 10 of the 12 intervals sit below zero. The two that touch zero are Gemma in Devanagari and gpt-oss in Hinglish. Qwen3.8 drops more on cancer questions than on general ones, 0.17 in Devanagari against 0.10. Gemma stays the steadiest in Devanagari but loses as much as the others in the romanized forms. With 45 questions the intervals are about ±0.08, so I wouldn't rank the forms or the models from this table.
 
 ## What this means
 
-If I were building a health chatbot for India, I'd test it in romanized Hindi, because that's what people type and on general questions it's the hardest form for every model I tried. The Hindi test sets I've seen use Devanagari instead. I wouldn't pick a model by its English score either.
+If I were building a health chatbot for India, I'd test it in romanized Hindi, because that's what people type and on general questions it scores lowest for every model I tried. The Hindi test sets I've seen use Devanagari instead. I wouldn't pick a model by its English score either.
 
 I'd also not count on the obvious fix. I expected that letting the model answer a Hindi question in English, and translating the answer back, would recover most of the loss. For Qwen3.8 on Devanagari and romanized Hindi it doesn't. Its middle layers find the right English twin, but the answer it builds from a Hindi question is still worse, whatever language it writes in. So the fix has to reach how the model reasons from a Hindi question, or the question itself has to be checked, which is what a native speaker would do next.
 
@@ -177,7 +179,7 @@ The two controls cost about $7 to run and about $7 to grade.
 - **One grader.** Gemini judged answers in all four forms. Control B shows it doesn't mark Hindi down, but a doctor reading a sample would still be the real check.
 - **Sarvam-105B is mostly missing.** India's own open model was the one I most wanted to see. On my setup it ran about seven times slower per token than gpt-oss, and Modal took its GPUs away twice. Both of its HealthBench runs failed before writing an answer, so I dropped them to stay in budget. It answered 258 MedQA questions in all four forms, which I report above.
 - **Only 100 questions.** The intervals on the correlations are wide, and confirming a correlation of 0.25 would take a few hundred.
-- **Only 45 cancer questions.** That's enough to show every model loses in Hindi on cancer too, but not to rank the forms or the models.
+- **Only 45 cancer questions.** That's enough to show the models lose in Hindi on cancer too, but not to rank the forms or the models.
 
 ## Try it yourself
 

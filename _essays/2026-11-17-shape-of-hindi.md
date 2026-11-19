@@ -16,7 +16,7 @@ To a Hindi speaker the first two are the same sentence. The third is a cousin of
 
 Two things sent me down this path in the same week. One was a field note by operator0x that mapped thousands of conversations inside Qwen3-1.7B and found Chinese sitting to one side of English.[^op] The other was Anthropic's July 2026 study showing that Claude leans further toward warmth in Hindi than in any of its top 20 languages, and furthest toward rigor in Russian.[^vml] One is a picture of geometry and the other is a measurement of behaviour. I think they are two views of the same question, and Hindi is the best language I know of for asking it.
 
-This essay covers what the field note did and what its critics said, what four years of multilingual interpretability research predicts, the experiment, what a small pilot and then a 1,000-conversation run showed, and what Hindi costs in tokens. *This is the short version. The full plan, the related-work notes and the code are in the [shape-of-hindi repo](https://github.com/inventcures/shape-of-hindi), and there is a longer [draft paper (PDF)](/files/shape-of-hindi.pdf) with the maths and the exercise answers.*
+This essay covers what the field note did and what its critics said, what four years of multilingual interpretability research predicts, the experiment, what a small pilot and then a 1,000-conversation run showed, and what Hindi costs in tokens. *This is the short version. The full plan, the related-work notes and the code are available on request, and there is a longer [draft paper (PDF)](/files/shape-of-hindi.pdf) with the maths and the exercise answers.*
 
 ## What the field note found
 
@@ -146,7 +146,7 @@ Hindi also sits further from English at the last layer than Chinese does. Raw re
 
 ![Left: line chart showing the top 10 directions explain 95 to 98% of variation in length at every layer. Right: log-scale line chart of the first token's largest value relative to a typical token's, jumping to about 1,244 times at layer 3 and decaying to about 9 times by layer 27](/images/shape-of-hindi/fig5-confounds.png)
 
-What I take from the pilot is that the pipeline works end to end, the token numbers are solid, and the geometry points the way the plan predicted. None of the representation results should be quoted as findings on their own. The next section repeats everything on 1,000 conversations. The figures, the code that draws them and the raw metrics are in the [repo](https://github.com/inventcures/shape-of-hindi/tree/claude/project-thread-m93dhm/figures/pilot).
+What I take from the pilot is that the pipeline works end to end, the token numbers are solid, and the geometry points the way the plan predicted. None of the representation results should be quoted as findings on their own. The next section repeats everything on 1,000 conversations. The figures, the code that draws them and the raw metrics are available on request.
 
 ## What 1,000 conversations showed
 
@@ -156,9 +156,9 @@ Twenty items was enough to test the pipeline and not much more, so I scaled up. 
 - **Urdu written in Devanagari**, transliterated letter by letter from the Urdu, so the pair differs only in script;
 - **Bhojpuri**, spoken by tens of millions in eastern Uttar Pradesh and Bihar.
 
-Items that failed a script or length check in any version were dropped, which left 1,000 items in all 11 versions, 11,000 conversations in all. The whole run, from generation to the last metric, took 1 hour 52 minutes on Modal H100s. The data, code and results are in the [repo](https://github.com/inventcures/shape-of-hindi), with a [guide to rerunning it](https://github.com/inventcures/shape-of-hindi/blob/claude/project-thread-m93dhm/REPRODUCE.md).
+Items that failed a script or length check in any version were dropped, which left 1,000 items in all 11 versions, 11,000 conversations in all. The whole run, from generation to the last metric, took 1 hour 52 minutes on Modal H100s. The data, code, results and a guide to rerunning it are available on request.
 
-**First, how good are the translations?** I read 12 random items in every version. Chinese was clean. Everyday and formal Hindi had one meaning error in 12: Ayushman Bharat, the health scheme, came out as अयोग्य भारत, "unfit India". Marathi had three, including turning an inter-caste marriage into a marriage within one's caste. Urdu was the weakest, with six of 12 wrong somewhere: JEE became "JE six", stress became tiredness, a music genre became جنس, which means sex or gender. And the Bhojpuri reads more like a mix of Hindi, Bhojpuri and Maithili than like Bhojpuri. These errors are mostly in single words, while the script and register, which most of the geometry tracks, were right in every item I read. Still, keep the Urdu and Bhojpuri caveats in mind below. The full tally is in the [data card](https://github.com/inventcures/shape-of-hindi/blob/claude/project-thread-m93dhm/docs/04-data-card.md).
+**First, how good are the translations?** I read 12 random items in every version. Chinese was clean. Everyday and formal Hindi had one meaning error in 12: Ayushman Bharat, the health scheme, came out as अयोग्य भारत, "unfit India". Marathi had three, including turning an inter-caste marriage into a marriage within one's caste. Urdu was the weakest, with six of 12 wrong somewhere: JEE became "JE six", stress became tiredness, a music genre became جنس, which means sex or gender. And the Bhojpuri reads more like a mix of Hindi, Bhojpuri and Maithili than like Bhojpuri. These errors are mostly in single words, while the script and register, which most of the geometry tracks, were right in every item I read. Still, keep the Urdu and Bhojpuri caveats in mind below. The full tally is in the data card, available on request.
 
 **The picture, now in 3D.** The field note's figures rotated, so here are rotating versions too. This one is about 66,000 tokens, 6,000 drawn from each version, at the last layer:
 

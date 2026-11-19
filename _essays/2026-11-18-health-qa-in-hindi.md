@@ -193,4 +193,4 @@ Ask the question in Hindi but tell the model to answer in English, and grade tha
 
 That first experiment is Control A above. For Qwen3-1.7B the score climbs back 40 to 70% of the way. For Qwen3.8 on a Devanagari question it barely moves.
 
-The preprint, with the methods in full, is [here as a PDF](/files/health-qa-in-hindi.pdf). Code, questions, answers and grades are in [inventcures/shape-of-hindi](https://github.com/inventcures/shape-of-hindi) under `src/health/`. The whole study, controls included, cost me about $73 of GPU time and grading.
+Code, questions, answers and grades are available on request. The whole study, controls included, cost me about $73 of GPU time and grading.

@@ -264,7 +264,7 @@ Then I read 12 random items in every version myself, the way The Pudding admits 
 | Bhojpuri | 3 of 12 | most items mix Hindi, Bhojpuri and Maithili forms |
 | Urdu | 6 of 12 | JEE became "JE six"; a music genre became جنس, sex or gender |
 
-The errors are mostly single words. The script and register, which is what most of the measurements track, were right in every item I read. But read the Urdu results with that 6 in 12 in mind, and read "Bhojpuri" as "a Hindi-like eastern variety". The full tally is in the [data card](https://github.com/inventcures/shape-of-hindi/blob/claude/project-thread-m93dhm/docs/04-data-card.md).
+The errors are mostly single words. The script and register, which is what most of the measurements track, were right in every item I read. But read the Urdu results with that 6 in 12 in mind, and read "Bhojpuri" as "a Hindi-like eastern variety". The full tally is in the data card, available on request.
 
 ## What could fool these numbers
 
@@ -301,7 +301,7 @@ The other starting point was Anthropic's July 2026 finding that Claude leans fur
 
 *Answers. 1: 0.66 and 0.56, the two Urdus; Urdu in Perso-Arabic pays for its alphabet and Marathi for its language, about equally. 2: with more candidates there are more near misses, so the nearest neighbour is more often a similar but wrong item. 3: Urdu script usually leaves short vowels unwritten, and its letters take two bytes in UTF-8 against Devanagari's three. 4: about 1.6 × 1.2 ≈ 1.9 times. 5: that cheap tokens are not enough, and the correlation leans on one small model. To isolate the tokenizer you'd train or fine-tune the same model with two tokenizers and hold everything else fixed.*
 
-The code, data, results and figures are in the [shape-of-hindi repo](https://github.com/inventcures/shape-of-hindi), with a [guide to rerunning everything](https://github.com/inventcures/shape-of-hindi/blob/claude/project-thread-m93dhm/REPRODUCE.md). The longer [paper (PDF)](/files/shape-of-hindi-new-edition.pdf) has the methods and the full literature.
+The code, data, results, figures and a guide to rerunning everything are available on request. The longer [paper (PDF)](/files/shape-of-hindi-new-edition.pdf) has the methods and the full literature.
 
 When the woman in Lucknow types *mera business plan dekh ke batao kaisa hai*, every model I tried files her sentence next to the English one somewhere in its middle layers, and then pulls it away again. How tightly depends on the model. At its best layer Gemma 4 almost never loses the match. Qwen3-1.7B loses it nearly half the time, and if she had typed in Devanagari it would have charged her five times as much to answer.
 

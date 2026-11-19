@@ -1,0 +1,59 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='860' height='560' viewBox='0 0 860 560'>
+<rect width='860' height='560' fill='white'/>
+<text x='20.0' y='32.0' font-family='Helvetica, Arial, sans-serif' font-size='17' fill='#222222' text-anchor='start' font-weight='bold' stroke='white' stroke-width='3' paint-order='stroke'>All five open models pick the clinic labelled 'partner' far more often than chance</text>
+<text x='20.0' y='54.0' font-family='Helvetica, Arial, sans-serif' font-size='13' fill='#6b6b6b' text-anchor='start' font-weight='normal' stroke='white' stroke-width='3' paint-order='stroke'>Share of trials in which the model chose the one clinic of five labelled 'CareRoute partner clinic'. The</text>
+<text x='20.0' y='72.0' font-family='Helvetica, Arial, sans-serif' font-size='13' fill='#6b6b6b' text-anchor='start' font-weight='normal' stroke='white' stroke-width='3' paint-order='stroke'>five clinics are otherwise identical, so a model that ignores the label would pick it 20% of the time.</text>
+<line x1='190.0' y1='116' x2='190.0' y2='420' stroke='#d9d9d9'/>
+<text x='190.0' y='440.0' font-family='Helvetica, Arial, sans-serif' font-size='12' fill='#6b6b6b' text-anchor='middle' font-weight='normal' stroke='white' stroke-width='3' paint-order='stroke'>0%</text>
+<line x1='272.0' y1='116' x2='272.0' y2='420' stroke='#d9d9d9'/>
+<text x='272.0' y='440.0' font-family='Helvetica, Arial, sans-serif' font-size='12' fill='#6b6b6b' text-anchor='middle' font-weight='normal' stroke='white' stroke-width='3' paint-order='stroke'>20%</text>
+<line x1='354.0' y1='116' x2='354.0' y2='420' stroke='#d9d9d9'/>
+<text x='354.0' y='440.0' font-family='Helvetica, Arial, sans-serif' font-size='12' fill='#6b6b6b' text-anchor='middle' font-weight='normal' stroke='white' stroke-width='3' paint-order='stroke'>40%</text>
+<line x1='436.0' y1='116' x2='436.0' y2='420' stroke='#d9d9d9'/>
+<text x='436.0' y='440.0' font-family='Helvetica, Arial, sans-serif' font-size='12' fill='#6b6b6b' text-anchor='middle' font-weight='normal' stroke='white' stroke-width='3' paint-order='stroke'>60%</text>
+<line x1='518.0' y1='116' x2='518.0' y2='420' stroke='#d9d9d9'/>
+<text x='518.0' y='440.0' font-family='Helvetica, Arial, sans-serif' font-size='12' fill='#6b6b6b' text-anchor='middle' font-weight='normal' stroke='white' stroke-width='3' paint-order='stroke'>80%</text>
+<line x1='600.0' y1='116' x2='600.0' y2='420' stroke='#d9d9d9'/>
+<text x='600.0' y='440.0' font-family='Helvetica, Arial, sans-serif' font-size='12' fill='#6b6b6b' text-anchor='middle' font-weight='normal' stroke='white' stroke-width='3' paint-order='stroke'>100%</text>
+<line x1='272.0' y1='116' x2='272.0' y2='420' stroke='#222222' stroke-dasharray='4 3'/>
+<text x='277.0' y='110.0' font-family='Helvetica, Arial, sans-serif' font-size='12' fill='#222222' text-anchor='start' font-weight='normal' stroke='white' stroke-width='3' paint-order='stroke'>chance (20%)</text>
+<text x='20.0' y='140.0' font-family='Helvetica, Arial, sans-serif' font-size='13' fill='#0072B2' text-anchor='start' font-weight='bold' stroke='white' stroke-width='3' paint-order='stroke'>Open-weight models (this run)</text>
+<text x='178.0' y='169.0' font-family='Helvetica, Arial, sans-serif' font-size='13' fill='#222222' text-anchor='end' font-weight='normal' stroke='white' stroke-width='3' paint-order='stroke'>DeepSeek V4 Pro</text>
+<line x1='595.9' y1='165.0' x2='600.0' y2='165.0' stroke='#0072B2' stroke-width='2.5'/>
+<circle cx='598.6' cy='165.0' r='5.5' fill='#0072B2'/>
+<text x='610.0' y='169.0' font-family='Helvetica, Arial, sans-serif' font-size='12' fill='#0072B2' text-anchor='start' font-weight='normal' stroke='white' stroke-width='3' paint-order='stroke'>99.7%  (299 of 300 trials)</text>
+<text x='178.0' y='199.0' font-family='Helvetica, Arial, sans-serif' font-size='13' fill='#222222' text-anchor='end' font-weight='normal' stroke='white' stroke-width='3' paint-order='stroke'>DeepSeek V4.1 Flash</text>
+<line x1='485.2' y1='195.0' x2='523.5' y2='195.0' stroke='#0072B2' stroke-width='2.5'/>
+<circle cx='504.3' cy='195.0' r='5.5' fill='#0072B2'/>
+<text x='533.5' y='199.0' font-family='Helvetica, Arial, sans-serif' font-size='12' fill='#0072B2' text-anchor='start' font-weight='normal' stroke='white' stroke-width='3' paint-order='stroke'>77%  (230 of 300 trials)</text>
+<text x='178.0' y='229.0' font-family='Helvetica, Arial, sans-serif' font-size='13' fill='#222222' text-anchor='end' font-weight='normal' stroke='white' stroke-width='3' paint-order='stroke'>Gemma 4 31B</text>
+<line x1='561.7' y1='225.0' x2='585.0' y2='225.0' stroke='#0072B2' stroke-width='2.5'/>
+<circle cx='574.0' cy='225.0' r='5.5' fill='#0072B2'/>
+<text x='595.0' y='229.0' font-family='Helvetica, Arial, sans-serif' font-size='12' fill='#0072B2' text-anchor='start' font-weight='normal' stroke='white' stroke-width='3' paint-order='stroke'>94%  (281 of 300 trials)</text>
+<text x='178.0' y='259.0' font-family='Helvetica, Arial, sans-serif' font-size='13' fill='#222222' text-anchor='end' font-weight='normal' stroke='white' stroke-width='3' paint-order='stroke'>GLM-5.3</text>
+<line x1='508.4' y1='255.0' x2='544.0' y2='255.0' stroke='#0072B2' stroke-width='2.5'/>
+<circle cx='526.2' cy='255.0' r='5.5' fill='#0072B2'/>
+<text x='554.0' y='259.0' font-family='Helvetica, Arial, sans-serif' font-size='12' fill='#0072B2' text-anchor='start' font-weight='normal' stroke='white' stroke-width='3' paint-order='stroke'>82%  (246 of 300 trials)</text>
+<text x='178.0' y='289.0' font-family='Helvetica, Arial, sans-serif' font-size='13' fill='#222222' text-anchor='end' font-weight='normal' stroke='white' stroke-width='3' paint-order='stroke'>Qwen3.8-27B</text>
+<line x1='421.0' y1='285.0' x2='464.7' y2='285.0' stroke='#0072B2' stroke-width='2.5'/>
+<circle cx='442.8' cy='285.0' r='5.5' fill='#0072B2'/>
+<text x='474.7' y='289.0' font-family='Helvetica, Arial, sans-serif' font-size='12' fill='#0072B2' text-anchor='start' font-weight='normal' stroke='white' stroke-width='3' paint-order='stroke'>62%  (185 of 300 trials)</text>
+<text x='20.0' y='320.0' font-family='Helvetica, Arial, sans-serif' font-size='13' fill='#8c8c8c' text-anchor='start' font-weight='bold' stroke='white' stroke-width='3' paint-order='stroke'>Closed models, for context (published pilot)</text>
+<text x='178.0' y='349.0' font-family='Helvetica, Arial, sans-serif' font-size='13' fill='#222222' text-anchor='end' font-weight='normal' stroke='white' stroke-width='3' paint-order='stroke'>Claude Sonnet 5.5</text>
+<line x1='196.8' y1='345.0' x2='251.5' y2='345.0' stroke='#8c8c8c' stroke-width='2.5'/>
+<circle cx='224.2' cy='345.0' r='5.5' fill='#8c8c8c'/>
+<text x='261.5' y='349.0' font-family='Helvetica, Arial, sans-serif' font-size='12' fill='#8c8c8c' text-anchor='start' font-weight='normal' stroke='white' stroke-width='3' paint-order='stroke'>8%  (5 of 60 trials)</text>
+<text x='178.0' y='379.0' font-family='Helvetica, Arial, sans-serif' font-size='13' fill='#222222' text-anchor='end' font-weight='normal' stroke='white' stroke-width='3' paint-order='stroke'>Gemini 3.1 Flash Lite</text>
+<line x1='504.3' y1='375.0' x2='579.5' y2='375.0' stroke='#8c8c8c' stroke-width='2.5'/>
+<circle cx='545.3' cy='375.0' r='5.5' fill='#8c8c8c'/>
+<text x='589.5' y='379.0' font-family='Helvetica, Arial, sans-serif' font-size='12' fill='#8c8c8c' text-anchor='start' font-weight='normal' stroke='white' stroke-width='3' paint-order='stroke'>87%  (52 of 60 trials)</text>
+<text x='178.0' y='409.0' font-family='Helvetica, Arial, sans-serif' font-size='13' fill='#222222' text-anchor='end' font-weight='normal' stroke='white' stroke-width='3' paint-order='stroke'>GPT-6.1 Sol</text>
+<line x1='210.5' y1='405.0' x2='272.0' y2='405.0' stroke='#8c8c8c' stroke-width='2.5'/>
+<circle cx='237.8' cy='405.0' r='5.5' fill='#8c8c8c'/>
+<text x='282.0' y='409.0' font-family='Helvetica, Arial, sans-serif' font-size='12' fill='#8c8c8c' text-anchor='start' font-weight='normal' stroke='white' stroke-width='3' paint-order='stroke'>12%  (7 of 60 trials)</text>
+<text x='395.0' y='460.0' font-family='Helvetica, Arial, sans-serif' font-size='12' fill='#6b6b6b' text-anchor='middle' font-weight='normal' stroke='white' stroke-width='3' paint-order='stroke'>Share of labelled trials in which the model chose the partner clinic</text>
+<text x='20.0' y='488.0' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#6b6b6b' text-anchor='start' font-weight='normal' stroke='white' stroke-width='3' paint-order='stroke'>Horizontal lines are 95% confidence intervals (bootstrap): the range of each model's true share that fits these trials. They show</text>
+<text x='20.0' y='504.0' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#6b6b6b' text-anchor='start' font-weight='normal' stroke='white' stroke-width='3' paint-order='stroke'>uncertainty about the share, not how much single trials vary. Open models: run 19 Nov 2026 via OpenRouter, one pinned FP8-or-better</text>
+<text x='20.0' y='520.0' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#6b6b6b' text-anchor='start' font-weight='normal' stroke='white' stroke-width='3' paint-order='stroke'>host per model, temperature 1.0; clinic order and the labelled clinic randomised per trial. Closed models: 60 labelled trials each, from</text>
+<text x='20.0' y='536.0' font-family='Helvetica, Arial, sans-serif' font-size='11' fill='#6b6b6b' text-anchor='start' font-weight='normal' stroke='white' stroke-width='3' paint-order='stroke'>the published pilot. Synthetic clinics. Source, data and code: care-routing-open-models (results/affiliation_powered, code/make_figures.py).</text>
+</svg>

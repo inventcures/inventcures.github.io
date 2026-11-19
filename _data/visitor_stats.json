@@ -1,17 +1,17 @@
 {
-  "updated": "2026-11-18T10:18:31Z",
+  "updated": "2026-11-19T10:28:39Z",
   "since": "2026-11-04",
-  "total_visitors": 406,
+  "total_visitors": 439,
   "countries": [
     {
       "code": "IN",
       "name": "India",
-      "count": 233
+      "count": 257
     },
     {
       "code": "US",
       "name": "United States",
-      "count": 102
+      "count": 109
     },
     {
       "code": "GB",
@@ -39,6 +39,11 @@
       "count": 4
     },
     {
+      "code": "ES",
+      "name": "Spain",
+      "count": 4
+    },
+    {
       "code": "AR",
       "name": "Argentina",
       "count": 3
@@ -49,13 +54,13 @@
       "count": 3
     },
     {
-      "code": "ES",
-      "name": "Spain",
-      "count": 3
-    },
-    {
       "code": "BR",
       "name": "Brazil",
+      "count": 2
+    },
+    {
+      "code": "CO",
+      "name": "Colombia",
       "count": 2
     },
     {
@@ -86,11 +91,6 @@
     {
       "code": "CN",
       "name": "China",
-      "count": 1
-    },
-    {
-      "code": "CO",
-      "name": "Colombia",
       "count": 1
     },
     {

@@ -106,7 +106,7 @@ Qwen3-1.7B fails in its own way. In Devanagari it ignores the instruction to ans
 
 *MedQA accuracy on the 258 questions all five models answered in every form.*
 
-Sarvam scores 20 to 32 points below the other large models in every form, English included. Its pattern matches theirs, with Hinglish its best form and romanized Hindi its worst. Part of the gap is format, not medicine. In 33 answers, mostly English ones, it reasons step by step and runs out of its 512-token budget before naming a letter, and I count those as wrong. That's 3% of its answers, so a bigger budget would add a few points at most and wouldn't close a gap that size.
+Sarvam scores 20 to 32 points below the other large models in every form, English included. Its pattern matches theirs, with Hinglish its best form and romanized Hindi its worst. Part of the gap is format, not medicine. In 33 answers, mostly English ones, it never names a letter, and I count those as wrong. In 28 of them it reasons step by step and runs out of its 512-token budget first. That's 3% of its answers, so a bigger budget would add a few points at most and wouldn't close a gap that size.
 
 The representation result holds here too. Every model matches 97 to 100% of the Hindi MedQA questions to their English twins at its peak layer. Alignment barely predicts which ones it gets right. Most questions get the same mark in Hindi and English, so the ranks are full of ties, and I give tied values their average rank. ρ runs from −0.02 to 0.16, and 4 of the 15 intervals clear zero: Qwen3.8 in romanized Hindi and Hinglish, Gemma in romanized Hindi and Sarvam in Devanagari.
 

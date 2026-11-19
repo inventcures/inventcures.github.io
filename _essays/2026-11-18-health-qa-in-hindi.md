@@ -169,7 +169,7 @@ Two caveats. The translator smooths Qwen3-1.7B's garbled Hindi into fluent Engli
 
 **Putting them together.** The grader is fair to Hindi for all three models I tested. What else happens depends on the model and the form. For Qwen3-1.7B, and for Hinglish questions, writing Hindi explains much of the drop. For Qwen3.8 on Devanagari and romanized Hindi, most of the drop comes from the Hindi question itself, even though its middle layers match that question to the right English twin. Two things could explain that. My translations could have changed some clinical detail, or the model could hold the gist of the question and lose the specifics. A native speaker checking the questions would tell those apart, and that's the next control I'd run.
 
-The two controls cost about $7 to run and about $10 to grade.
+The two controls cost about $7 to run and about $7 to grade.
 
 ## What I haven't checked
 

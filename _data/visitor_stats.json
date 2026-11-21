@@ -1,22 +1,22 @@
 {
-  "updated": "2026-11-19T10:28:39Z",
+  "updated": "2026-11-21T09:56:25Z",
   "since": "2026-11-04",
-  "total_visitors": 439,
+  "total_visitors": 455,
   "countries": [
     {
       "code": "IN",
       "name": "India",
-      "count": 257
+      "count": 267
     },
     {
       "code": "US",
       "name": "United States",
-      "count": 109
+      "count": 113
     },
     {
       "code": "GB",
       "name": "United Kingdom",
-      "count": 17
+      "count": 18
     },
     {
       "code": "QA",
@@ -49,6 +49,11 @@
       "count": 3
     },
     {
+      "code": "CO",
+      "name": "Colombia",
+      "count": 3
+    },
+    {
       "code": "IL",
       "name": "Israel",
       "count": 3
@@ -56,11 +61,6 @@
     {
       "code": "BR",
       "name": "Brazil",
-      "count": 2
-    },
-    {
-      "code": "CO",
-      "name": "Colombia",
       "count": 2
     },
     {

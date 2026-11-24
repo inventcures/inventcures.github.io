@@ -1,0 +1,383 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.142
+Here's a bet nobody sane would take.
+
+00:00:03.142 --> 00:00:07.593
+You spend two hundred million dollars and ten years
+
+00:00:07.593 --> 00:00:09.251
+on one cancer drug.
+
+00:00:09.601 --> 00:00:11.644
+One time in twenty it works,
+
+00:00:11.644 --> 00:00:15.220
+and then it's worth about twelve billion dollars.
+
+00:00:15.220 --> 00:00:18.212
+The other nineteen times you get nothing.
+
+00:00:18.562 --> 00:00:21.714
+Andrew Lo at MIT asked a simple question.
+
+00:00:21.714 --> 00:00:24.712
+What if you made a hundred and fifty of
+
+00:00:24.712 --> 00:00:26.173
+these bets at once?
+
+00:00:26.500 --> 00:00:29.893
+Think of each drug as a weighted coin that
+
+00:00:29.893 --> 00:00:32.882
+lands heads five percent of the time.
+
+00:00:32.882 --> 00:00:35.871
+Now flip a hundred and fifty of them.
+
+00:00:36.221 --> 00:00:39.521
+On average you get seven and a half winners.
+
+00:00:39.521 --> 00:00:42.897
+Here's how often you get each possible count,
+
+00:00:42.897 --> 00:00:45.672
+if the coins don't affect each other.
+
+00:00:46.022 --> 00:00:50.097
+Lo's bonds default if fewer than two drugs work.
+
+00:00:50.097 --> 00:00:53.833
+That happens about four times in a thousand.
+
+00:00:54.183 --> 00:00:57.722
+Something that safe can be sold as a bond,
+
+00:00:57.722 --> 00:01:01.429
+and pension funds buy bonds by the trillion.
+
+00:01:01.429 --> 00:01:03.114
+That's the megafund.
+
+00:01:03.433 --> 00:01:06.638
+The catch is the word independent.
+
+00:01:06.638 --> 00:01:09.654
+Drugs share biology, regulators,
+
+00:01:09.654 --> 00:01:12.764
+and fashions in what gets funded.
+
+00:01:13.114 --> 00:01:15.798
+So give every coin a shared nudge.
+
+00:01:15.798 --> 00:01:17.534
+When the nudge is bad,
+
+00:01:17.534 --> 00:01:21.323
+every coin gets a little worse at the same time.
+
+00:01:21.323 --> 00:01:24.086
+I set its correlation to point two,
+
+00:01:24.086 --> 00:01:27.085
+the kind of model Lo's own group uses.
+
+00:01:27.435 --> 00:01:29.275
+The average doesn't move.
+
+00:01:29.275 --> 00:01:31.336
+It's still seven and a half.
+
+00:01:31.336 --> 00:01:34.206
+But look at the left side of the chart.
+
+00:01:34.556 --> 00:01:39.148
+Now the bonds default about one time in five.
+
+00:01:39.148 --> 00:01:43.127
+One run in ten produces no drug at all.
+
+00:01:43.477 --> 00:01:46.284
+There's a neat rule behind this.
+
+00:01:46.284 --> 00:01:48.126
+With correlation rho,
+
+00:01:48.126 --> 00:01:51.283
+N bets behave like N over one plus N
+
+00:01:51.283 --> 00:01:54.528
+minus one times rho independent ones.
+
+00:01:54.878 --> 00:01:57.748
+Make N as big as you like and you
+
+00:01:57.748 --> 00:02:00.183
+never get past one over rho.
+
+00:02:00.183 --> 00:02:02.793
+At a correlation of point one,
+
+00:02:02.793 --> 00:02:05.663
+that's ten bets' worth of safety,
+
+00:02:05.663 --> 00:02:07.489
+however many you own.
+
+00:02:07.839 --> 00:02:10.228
+And these numbers are real now.
+
+00:02:10.228 --> 00:02:10.999
+This June,
+
+00:02:10.999 --> 00:02:17.088
+Lo's group estimated correlations across more than twenty-five thousand trials.
+
+00:02:17.088 --> 00:02:20.325
+About point one inside a therapeutic area.
+
+00:02:20.325 --> 00:02:24.410
+Up to point four among trials that share a mechanism.
+
+00:02:25.817 --> 00:02:30.333
+BridgeBio is the closest anyone has come to building this.
+
+00:02:30.333 --> 00:02:32.357
+More than thirty programs,
+
+00:02:32.357 --> 00:02:35.628
+mostly in unrelated rare genetic diseases.
+
+00:02:35.978 --> 00:02:41.590
+In December 2021 one heart drug missed its twelve-month endpoint.
+
+00:02:41.590 --> 00:02:45.389
+The stock fell sixty-seven percent that day.
+
+00:02:45.739 --> 00:02:49.339
+Over the next months the company cut about thirty
+
+00:02:49.339 --> 00:02:52.939
+percent of its staff and paused programs that had
+
+00:02:52.939 --> 00:02:55.070
+nothing to do with that drug.
+
+00:02:55.420 --> 00:02:58.782
+What tied them together was the stock price and
+
+00:02:58.782 --> 00:03:01.501
+more than two billion dollars of debt.
+
+00:03:01.501 --> 00:03:04.076
+The drugs were close to independent.
+
+00:03:04.076 --> 00:03:07.510
+The money behind them was one big shared factor.
+
+00:03:07.860 --> 00:03:11.130
+The heart drug won at thirty months anyway,
+
+00:03:11.130 --> 00:03:13.562
+and the FDA approved it in 2024.
+
+00:03:13.562 --> 00:03:16.831
+A trial database would never see that link.
+
+00:03:17.133 --> 00:03:20.650
+There's another way to make money from drug risk,
+
+00:03:20.650 --> 00:03:23.233
+and it's the opposite of a megafund.
+
+00:03:23.233 --> 00:03:26.103
+You don't own a hundred and fifty coins.
+
+00:03:26.103 --> 00:03:28.902
+You try to learn how one coin will land
+
+00:03:28.902 --> 00:03:30.624
+before anyone else does.
+
+00:03:30.974 --> 00:03:35.700
+Bapineuzumab was an Alzheimer's antibody from Elan and Wyeth.
+
+00:03:35.700 --> 00:03:37.482
+In 2008 Mathew Martoma,
+
+00:03:37.482 --> 00:03:41.046
+a portfolio manager in the SAC Capital family,
+
+00:03:41.046 --> 00:03:45.074
+was paying a neurologist named Sidney Gilman about a
+
+00:03:45.074 --> 00:03:49.025
+thousand dollars an hour through an expert network.
+
+00:03:49.375 --> 00:03:52.304
+Gilman chaired the trial's safety committee.
+
+00:03:52.304 --> 00:03:55.765
+About two weeks before the detailed results came out
+
+00:03:55.765 --> 00:03:57.629
+on the twenty-ninth of July,
+
+00:03:57.629 --> 00:03:59.626
+he told Martoma they were bad.
+
+00:03:59.976 --> 00:04:03.629
+The funds held more than seven hundred million dollars
+
+00:04:03.629 --> 00:04:04.847
+of Elan and Wyeth.
+
+00:04:04.847 --> 00:04:07.485
+In just over a week they sold more than
+
+00:04:07.485 --> 00:04:11.747
+nine hundred and sixty million dollars of stock and went short.
+
+00:04:12.097 --> 00:04:16.677
+The SEC counted eighty-two million dollars of profit and
+
+00:04:16.677 --> 00:04:20.930
+a hundred and ninety-four million of losses avoided.
+
+00:04:20.930 --> 00:04:26.247
+That's two hundred and seventy-six million dollars from one coin,
+
+00:04:26.247 --> 00:04:27.228
+known early.
+
+00:04:27.578 --> 00:04:29.963
+Martoma got nine years in prison,
+
+00:04:29.963 --> 00:04:32.998
+and bapineuzumab failed in Phase 3 anyway.
+
+00:04:32.998 --> 00:04:36.828
+Leave the crime aside and the arithmetic still holds.
+
+00:04:36.828 --> 00:04:40.441
+Knowing one outcome better than the price is where
+
+00:04:40.441 --> 00:04:41.381
+the money is,
+
+00:04:41.381 --> 00:04:45.789
+and better odds help whether your bets are correlated or not.
+
+00:04:47.500 --> 00:04:49.785
+Now the case that worries me.
+
+00:04:49.785 --> 00:04:54.041
+Abhishaike Mahajan asks whether a drug like PrEP would
+
+00:04:54.041 --> 00:04:57.351
+ever come out of a financialized pipeline.
+
+00:04:57.701 --> 00:04:59.356
+Take lenacapavir,
+
+00:04:59.356 --> 00:05:04.713
+Gilead's HIV prevention shot that you get twice a year.
+
+00:05:04.713 --> 00:05:06.953
+In the PURPOSE 1 trial,
+
+00:05:06.953 --> 00:05:10.361
+mostly young women in South Africa,
+
+00:05:10.361 --> 00:05:15.912
+2,136 took daily Truvada pills and 39 of them caught HIV.
+
+00:05:16.262 --> 00:05:19.175
+2,134 got lenacapavir,
+
+00:05:19.175 --> 00:05:22.353
+and not one of them did.
+
+00:05:22.703 --> 00:05:23.599
+To show that,
+
+00:05:23.599 --> 00:05:27.117
+Gilead had to enrol more than five thousand healthy
+
+00:05:27.117 --> 00:05:29.324
+people and wait for rare events.
+
+00:05:29.324 --> 00:05:32.910
+The US list price is now about twenty-eight thousand
+
+00:05:32.910 --> 00:05:33.944
+dollars a year.
+
+00:05:33.944 --> 00:05:38.634
+Independent modellers think a generic could be made for about forty.
+
+00:05:38.984 --> 00:05:41.854
+Put that into Lo's spreadsheet.
+
+00:05:41.854 --> 00:05:44.539
+A huge trial, healthy people,
+
+00:05:44.539 --> 00:05:47.686
+an endpoint that's rare by design,
+
+00:05:47.686 --> 00:05:51.760
+and the patients who need it most can't pay.
+
+00:05:51.760 --> 00:05:54.815
+Nobody can write down those odds,
+
+00:05:54.815 --> 00:05:57.315
+so a bond buyer walks away.
+
+00:05:58.617 --> 00:06:00.617
+So here's where I've landed.
+
+00:06:00.617 --> 00:06:04.688
+Lo was right that drug outcomes are close to independent,
+
+00:06:04.688 --> 00:06:08.188
+and even a correlation of point one hurts a bond.
+
+00:06:08.538 --> 00:06:12.059
+The money behind a portfolio is far more correlated
+
+00:06:12.059 --> 00:06:13.509
+than the drugs in it.
+
+00:06:13.859 --> 00:06:16.910
+If you build an AI hub that picks targets
+
+00:06:16.910 --> 00:06:18.026
+with one model,
+
+00:06:18.026 --> 00:06:20.408
+measure how alike its picks are,
+
+00:06:20.408 --> 00:06:23.013
+and cap how many share a mechanism.
+
+00:06:23.013 --> 00:06:26.511
+Spend the agents on better odds per drug before
+
+00:06:26.511 --> 00:06:28.670
+you spend them on more drugs.
+
+00:06:29.020 --> 00:06:30.297
+And leave room,
+
+00:06:30.297 --> 00:06:33.533
+through philanthropy and public money,
+
+00:06:33.533 --> 00:06:35.066
+for the next PrEP.
+
+00:06:35.066 --> 00:06:37.790
+It will never fit a spreadsheet.
+

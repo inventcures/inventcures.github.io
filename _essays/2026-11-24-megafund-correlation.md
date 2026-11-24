@@ -16,7 +16,7 @@ tags:
 
 *Draft for comment, 24 November 2026. Claude helped me research and draft this from the sources at the bottom, and I set the argument and checked the numbers. Comments and corrections are very welcome.*
 
-If you'd rather watch, here's a six-and-a-half minute animated version. It adds two case studies the essay only touches on, the bapineuzumab insider trade and the PrEP trial that money nearly passed over.
+If you'd rather watch, here's a six-and-a-half minute animated version. It adds two case studies the essay only touches on, the bapineuzumab insider trade and why a drug like PrEP is so hard to finance.
 
 {% include substack-player.html id="megafund-video" src="/files/megafund/megafund-explainer.mp4" poster="/files/megafund/megafund-explainer-poster.jpg" vtt="/files/megafund/megafund-explainer.vtt" title="Can 150 long-shot drugs back a bond? 6:38" youtube="https://youtu.be/vto6MOwswXA" %}
 

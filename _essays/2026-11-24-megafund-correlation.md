@@ -1,8 +1,9 @@
 ---
 title: "What ten years of hub-and-spoke biotech say about Andrew Lo's megafund"
 date: 2026-11-24 13:00:00 +0530
-permalink: /megafund-correlation/
+permalink: /essays/2026/11/andrew-lo-megafund-to-cure-cancer/
 redirect_from:
+  - /megafund-correlation/
   - /essays/2026/11/megafund-correlation/
 excerpt: "Andrew Lo showed that 150 independent long-shot drugs could back a bond. New trial data from his own group finally measures how independent drug bets are, and BridgeBio, Centessa and Roivant show where the idea broke. The trouble came less from the drugs than from how those companies were financed."
 tags:

@@ -16,6 +16,10 @@ tags:
 
 *Draft for comment, 24 November 2026. Claude helped me research and draft this from the sources at the bottom, and I set the argument and checked the numbers. Comments and corrections are very welcome.*
 
+If you'd rather watch, here's a six-and-a-half minute animated version. It adds two case studies the essay only touches on, the bapineuzumab insider trade and the PrEP trial that money nearly passed over.
+
+{% include substack-player.html id="megafund-video" src="/files/megafund/megafund-explainer.mp4" poster="/files/megafund/megafund-explainer-poster.jpg" vtt="/files/megafund/megafund-explainer.vtt" title="Can 150 long-shot drugs back a bond? 6:38" youtube="https://youtu.be/vto6MOwswXA" %}
+
 I found Andrew Lo's [TEDx talk](https://www.youtube.com/watch?v=xu86bYKVmRE) through Abhishaike Mahajan, who linked it in his [Owl Posting essay](https://www.owlposting.com/p/curious-cases-of-financial-engineering) on financial engineering in biotech and told readers to watch the whole thing. I did, it became my favourite TED talk, and a few weeks later I wrote a long essay called ["Cure 'Em All"](/cure-em-all/) that relied on it a lot. Since then I've been reading about what happened to the companies that tried his idea, and I think I relied on the wrong half of it.
 
 Lo's pitch, in his own numbers, goes like this. One cancer drug candidate costs about $200 million, takes about ten years and has roughly a 1 in 20 chance of working. If it works it is worth about $12.3 billion. Nobody sane puts their retirement into one of those. But own 150 of them in a $30 billion fund and, if they are independent, the chance of at least three winners is 98%. Something that reliable can issue bonds, and pension funds and insurers buy bonds in amounts biotech VCs will never match. The paper behind the talk is Fernandez, Stein and Lo in Nature Biotechnology, 2012. My grandmother died of leukemia before I was born, which is part of why I go by tp53, so I have a soft spot for anyone who says out loud that he won't accept losing more people to cancer and then sits down and does the arithmetic.

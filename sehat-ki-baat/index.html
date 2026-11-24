@@ -1,0 +1,109 @@
+---
+layout: null
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sehat Ki Baat</title>
+<meta name="description" content="Sehat Ki Baat (सेहत की बात) is a Hindi health question-answering benchmark for LLMs, built for the way people in India actually ask: in Devanagari, in Roman letters and in Hinglish.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sehat Ki Baat: a Hindi health benchmark for LLMs">
+<meta property="og:description" content="Health questions in Devanagari, romanized Hindi and Hinglish, open advice graded against clinician rubrics, with disease areas weighted by India's burden and a separate cancer track.">
+<style>
+:root{
+  --bg:#faf9f5;--card:#fffdf9;--fg:#29261b;--muted:#6f6a5c;--line:#e8e1d3;--soft:#f3ece0;
+  --accent:#b4532f;--accent-soft:#f9e3dc;--blue:#2f6f8f;--blue-soft:#e3eef3;
+  --serif:ui-serif,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans Devanagari",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#262624;--card:#2c2b28;--fg:#ece9e1;--muted:#a9a395;--line:#3d3a34;--soft:#34322e;
+  --accent:#e08a66;--accent-soft:#46271f;--blue:#7fb3cc;--blue-soft:#24343c}}
+:root[data-theme="dark"]{
+  --bg:#262624;--card:#2c2b28;--fg:#ece9e1;--muted:#a9a395;--line:#3d3a34;--soft:#34322e;
+  --accent:#e08a66;--accent-soft:#46271f;--blue:#7fb3cc;--blue-soft:#24343c}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 var(--sans)}
+main{max-width:760px;margin:0 auto;padding:56px 16px 72px}
+.hi{font-family:"Noto Sans Devanagari","Mangal",var(--sans)}
+.eyebrow{font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,6vw,48px);line-height:1.1;margin:0 0 6px}
+.sub{font-size:22px;color:var(--muted);margin:0 0 18px}
+.lede{font-family:var(--serif);font-size:20px;line-height:1.6;margin:0}
+h2{font-family:var(--serif);font-weight:600;font-size:26px;margin:52px 0 8px}
+p,li{font-family:var(--serif);font-size:18px;line-height:1.7}
+ul{padding-left:1.2em}
+li{margin:6px 0}
+a{color:var(--accent)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:20px 0}
+.forms{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:18px 0}
+.form{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.form b{display:block;font-family:var(--sans);font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
+.form span{font-size:17px;line-height:1.5}
+.tablewrap{overflow-x:auto;margin:18px 0}
+table{border-collapse:collapse;width:100%;font-size:15.5px;font-variant-numeric:tabular-nums}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+thead th{font-weight:600;color:var(--muted);font-size:13.5px}
+.caption{font-size:14px;color:var(--muted);margin:6px 0 0;font-family:var(--sans)}
+.status{display:inline-block;font-family:var(--sans);font-size:13.5px;font-weight:600;background:var(--accent-soft);color:var(--accent);padding:4px 10px;border-radius:99px}
+footer{margin-top:56px;border-top:1px solid var(--line);padding-top:18px;font-size:14.5px;color:var(--muted);font-family:var(--sans)}
+footer p{font-family:var(--sans);font-size:14.5px}
+</style>
+</head>
+<body>
+<main>
+<p class="eyebrow">A Hindi health benchmark for LLMs</p>
+<h1>Sehat Ki Baat</h1>
+<p class="sub hi">सेहत की बात</p>
+<p class="lede">Sehat Ki Baat tests whether a language model gives good health advice to people who ask in Hindi the way they actually type it: in Devanagari, in Roman letters on a phone, and in Hinglish. I'm building it now, and this page marks where it starts.</p>
+<p><span class="status">In development · first announced 24 November 2026</span></p>
+
+<h2>Why I'm building it</h2>
+<p>A man in Patna types to a chatbot: <em>mere papa ko 3 din se bukhar hai aur ab saans lene mein dikkat ho rahi hai, kya karein?</em> My father has had a fever for three days and now he's struggling to breathe, what should we do? The right answer is to get him to a hospital now. I want to know whether a model says that as readily in Hindi as it does in English.</p>
+<p>In two studies this month I asked four open models the same health questions in English and in three forms of Hindi, and graded the answers against rubrics that physicians wrote. Three of the four gave clearly worse advice in every Hindi form. Romanized Hindi, the way most people type Hindi on a phone, scored lowest for every model on general questions.</p>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>Model</th><th>English</th><th>Hindi</th><th>Roman Hindi</th><th>Hinglish</th></tr></thead>
+<tbody>
+<tr><td>Qwen3-1.7B</td><td>0.25</td><td>0.00</td><td>0.00</td><td>0.00</td></tr>
+<tr><td>Qwen3.8-27B</td><td>0.55</td><td>0.46</td><td>0.36</td><td>0.45</td></tr>
+<tr><td>gpt-oss-120b</td><td>0.49</td><td>0.32</td><td>0.30</td><td>0.36</td></tr>
+<tr><td>Gemma 4 31B</td><td>0.49</td><td>0.46</td><td>0.41</td><td>0.46</td></tr>
+</tbody>
+</table>
+<p class="caption">Score on 100 HealthBench questions, graded against physician rubrics. 1 is a perfect answer. Averages below 0 show as 0. From <a href="/essays/2026/11/health-qa-in-hindi/">Understood in Hindi, answered worse</a>.</p>
+</div>
+
+<p>The models weren't confused about what was asked. Their middle layers matched 93 to 100% of Hindi questions to the right English question. The grader wasn't marking Hindi down either: English translations of the Hindi answers scored no higher. The advice itself got worse. I wrote up what I can and can't say about why in <a href="/essays/2026/11/health-qa-beyond-english/">Worse health advice outside English</a>.</p>
+<p>Most Hindi medical test sets I've found are multiple choice, in Devanagari, and machine translated from English exams. Multiple choice hides much of this gap, and almost nobody tests romanized Hindi or Hinglish. Sehat Ki Baat is meant to fill that hole.</p>
+
+<h2>What it tests</h2>
+<p>Every question comes in the forms people really use.</p>
+<div class="forms">
+<div class="form"><b>Devanagari</b><span class="hi">पापा को तीन दिन से बुखार है, अब साँस लेने में दिक्कत है</span></div>
+<div class="form"><b>Roman Hindi</b><span>papa ko 3 din se bukhar hai, ab saans lene mein dikkat hai</span></div>
+<div class="form"><b>Hinglish</b><span>papa ko 3 days se fever hai, ab breathing mein problem ho rahi hai</span></div>
+</div>
+<ul>
+<li><strong>Open advice, not just letters.</strong> Most items ask for the kind of answer a worried family member needs, graded against a rubric: does it spot the red flag, say when to go to hospital, avoid unsafe advice. A multiple-choice track sits alongside, so the two can be compared.</li>
+<li><strong>India's disease burden first.</strong> Topics are weighted by what makes people in India and other low- and middle-income countries sick: heart disease and stroke, diabetes and high blood pressure, tuberculosis, maternal and newborn health, fever and infections such as dengue and malaria, anaemia and nutrition, breathing problems, mental health, snakebite and injuries.</li>
+<li><strong>A separate cancer track.</strong> Cancer gets its own set, weighted toward the cancers India sees most, such as mouth, breast, cervix and lung, along with tobacco, screening, late diagnosis, treatment side effects and palliative care.</li>
+<li><strong>Checked by people.</strong> Native speakers check every Hindi form, and clinicians check the questions and rubrics, so a score reflects the model and not a clumsy translation.</li>
+<li><strong>Open and closed models.</strong> The open models from my studies already have results on a first version. The benchmark will be run on closed models too.</li>
+</ul>
+
+<h2>Status</h2>
+<p>The design is in progress, drawing on the two studies above and a survey of existing Hindi and Indic medical benchmarks. Questions, code and results will come out with the paper. Until then they're available on request.</p>
+
+<footer>
+<p>Sehat Ki Baat (SehatKiBaat-Bench) · Ashish Makani (tp53) · first announced 24 November 2026.</p>
+<p>Related essays: <a href="/essays/2026/11/health-qa-in-hindi/">Understood in Hindi, answered worse</a> · <a href="/essays/2026/11/health-qa-in-spanish/">Understood in Spanish, answered a little worse</a> · <a href="/essays/2026/11/health-qa-beyond-english/">Worse health advice outside English</a></p>
+</footer>
+</main>
+</body>
+</html>

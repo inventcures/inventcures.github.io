@@ -1,22 +1,22 @@
 {
-  "updated": "2026-11-21T09:56:25Z",
+  "updated": "2026-11-25T11:26:55Z",
   "since": "2026-11-04",
-  "total_visitors": 455,
+  "total_visitors": 526,
   "countries": [
     {
       "code": "IN",
       "name": "India",
-      "count": 267
+      "count": 312
     },
     {
       "code": "US",
       "name": "United States",
-      "count": 113
+      "count": 124
     },
     {
       "code": "GB",
       "name": "United Kingdom",
-      "count": 18
+      "count": 20
     },
     {
       "code": "QA",
@@ -26,11 +26,16 @@
     {
       "code": "CH",
       "name": "Switzerland",
-      "count": 6
+      "count": 9
     },
     {
       "code": "DE",
       "name": "Germany",
+      "count": 4
+    },
+    {
+      "code": "JP",
+      "name": "Japan",
       "count": 4
     },
     {
@@ -49,6 +54,11 @@
       "count": 3
     },
     {
+      "code": "AU",
+      "name": "Australia",
+      "count": 3
+    },
+    {
       "code": "CO",
       "name": "Colombia",
       "count": 3
@@ -64,19 +74,24 @@
       "count": 2
     },
     {
-      "code": "JP",
-      "name": "Japan",
+      "code": "DK",
+      "name": "Denmark",
+      "count": 2
+    },
+    {
+      "code": "TR",
+      "name": "Turkey",
+      "count": 2
+    },
+    {
+      "code": "AE",
+      "name": "United Arab Emirates",
       "count": 2
     },
     {
       "code": "VE",
       "name": "Venezuela",
       "count": 2
-    },
-    {
-      "code": "AU",
-      "name": "Australia",
-      "count": 1
     },
     {
       "code": "BE",
@@ -91,11 +106,6 @@
     {
       "code": "CN",
       "name": "China",
-      "count": 1
-    },
-    {
-      "code": "DK",
-      "name": "Denmark",
       "count": 1
     },
     {
@@ -124,13 +134,18 @@
       "count": 1
     },
     {
-      "code": "TR",
-      "name": "Turkey",
+      "code": "SG",
+      "name": "Singapore",
       "count": 1
     },
     {
-      "code": "AE",
-      "name": "United Arab Emirates",
+      "code": "KR",
+      "name": "South Korea",
+      "count": 1
+    },
+    {
+      "code": "TW",
+      "name": "Taiwan",
       "count": 1
     }
   ]

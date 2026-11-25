@@ -894,6 +894,33 @@
           }
         ]
       }
+    },
+    {
+      "id": "turbine-vcc-2026",
+      "title": "Virtual Cell Challenge 2026: the hard part begins now",
+      "type": "Blog post",
+      "date": "2026-11-24",
+      "date_precision": "day",
+      "url": "https://blog.turbine.ai/p/virtual-cell-challenge-2026-the-hard",
+      "op_url": null,
+      "op_label": null,
+      "summary": "Kris Szalay (Turbine) looks back on Arc Institute's 2026 Virtual Cell Challenge, which asked teams to predict knockdown transcriptomes in unseen cell lines. Reported: winning scores of 0.32 to 0.43 close about a third of the gap between the training-set average and an experimental replicate. Arc's own check found that the top ten entries predicted nearly the same response in every line, with cross-line cosine 0.77 to 0.89 against 0.55 for the real data. Commentary: the leaderboard cannot separate a better baseline from new biology. AI agents excelled at the baseline engineering, while cell-specific responses remain largely missed. Turbine proposes scoring only the selective responders.",
+      "tags": [
+        "Biology",
+        "Evaluation",
+        "Agents",
+        "Biopharma",
+        "Evidence"
+      ],
+      "related_urls": [
+        "https://arcinstitute.org/news/virtual-cell-challenge-2026-wrap-up",
+        "https://documents.turbine.ai/view/83376aa4d22241b0b15e29c8bc32c858b4ca45cf809844c581f67b1d34d5c175/VCC2026_observations_Turbine"
+      ],
+      "related_labels": {
+        "https://arcinstitute.org/news/virtual-cell-challenge-2026-wrap-up": "Arc Institute · Virtual Cell Challenge 2026 wrap-up",
+        "https://documents.turbine.ai/view/83376aa4d22241b0b15e29c8bc32c858b4ca45cf809844c581f67b1d34d5c175/VCC2026_observations_Turbine": "Turbine · selective-responder scoring protocol"
+      },
+      "margin_note": "Think of the score table as mean + cell-line effect + perturbation effect + interaction. Most of the score sits in the first three terms, while the interaction is the reason to run the experiment at all. A model whose predictions agree across lines more than the real data does (here 0.77 to 0.89 against 0.55) has collapsed the interaction. Treat that as a predictive-validity red flag, whatever the headline score."
     }
   ]
 }

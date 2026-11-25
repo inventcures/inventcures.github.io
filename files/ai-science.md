@@ -10,6 +10,19 @@ Dates are first public posting/publication where verified; talks use upload date
 
 ## Reading list
 
+### Virtual Cell Challenge 2026: the hard part begins now
+
+Kris Szalay (Turbine) looks back on Arc Institute's 2026 Virtual Cell Challenge, which asked teams to predict knockdown transcriptomes in unseen cell lines. Reported: winning scores of 0.32 to 0.43 close about a third of the gap between the training-set average and an experimental replicate. Arc's own check found that the top ten entries predicted nearly the same response in every line, with cross-line cosine 0.77 to 0.89 against 0.55 for the real data. Commentary: the leaderboard cannot separate a better baseline from new biology. AI agents excelled at the baseline engineering, while cell-specific responses remain largely missed. Turbine proposes scoring only the selective responders.
+
+- Type: Blog post
+- Published: 24 Nov 2026
+- Resource: [Virtual Cell Challenge 2026: the hard part begins now](https://blog.turbine.ai/p/virtual-cell-challenge-2026-the-hard)
+- OP: not yet verified
+- Topics: Biology, Evaluation, Agents, Biopharma, Evidence
+- Margin note: Think of the score table as mean + cell-line effect + perturbation effect + interaction. Most of the score sits in the first three terms, while the interaction is the reason to run the experiment at all. A model whose predictions agree across lines more than the real data does (here 0.77 to 0.89 against 0.55) has collapsed the interaction. Treat that as a predictive-validity red flag, whatever the headline score.
+- Arc Institute · Virtual Cell Challenge 2026 wrap-up: https://arcinstitute.org/news/virtual-cell-challenge-2026-wrap-up
+- Turbine · selective-responder scoring protocol: https://documents.turbine.ai/view/83376aa4d22241b0b15e29c8bc32c858b4ca45cf809844c581f67b1d34d5c175/VCC2026_observations_Turbine
+
 ### A conversation: the future of mathematics
 
 Litt’s essay and doomslide’s response, followed by Gowers and Hairer on mathematical values and institutional engagement, and Grant Sanderson’s video on what survives if AI overtakes each part of a mathematician’s work.
